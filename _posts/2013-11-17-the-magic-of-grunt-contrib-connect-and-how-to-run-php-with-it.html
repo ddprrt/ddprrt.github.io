@@ -1,0 +1,182 @@
+---
+layout: post
+title: The magic of grunt-contrib-connect, and how to run PHP with it
+categories:
+- Javascript
+- Tools
+- Workflows
+tags:
+- connect
+- Grunt
+- node.js
+- PHP
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sd_is_markdown: '1'
+---
+<p>One of the most loved <a href="http://gruntjs.com">Grunt.js</a> extensions in our team is the ability to spawn a server for your project with the virtual push of a button, and to be able to see all the changes directly in the browser with a little <a href="https://github.com/livereload/livereload-js">Livereload</a> magic. The seemingly endless Apache configuration days seemed to be over, and every front-end dev in our group was happy with the new workflow established. However, from time to time there was the urge to run some little PHP scripts. Not the big apps, mostly an inclusion of CMS managed labels. This need brought me to delve deeper into the mysteries of the connect task. <!--more--></p>
+
+<h2>Behind every great task lies a great program: connect</h2>
+
+<p>What I like a lot about Grunt.js is the fact that it makes Node.js much more accessible. At least for me. I never spent any thought on learning this piece of software, but with the possibilities that Grunt.js brings for the workflow of a big front-end team, taking a look on server-side JavaScripting was inevitable. That's because Grunt.js in its very core just provides a structured and customisable interface to other Node.js programs underneath. The uglify task just starts Uglify.js, compass executes the Compass-Ruby gem, etc.</p>
+
+<p>Same goes for connect. The task you install with <strong>grunt-contrib-connect</strong> just provides an interface to SenchaLab's <a href="http://www.senchalabs.org/connect/">Connect</a> node module. Connect itself is a middleware framework for node's <code>http</code> package. Which means it comes with a lot of standard tasks which you need when creating a server.</p>
+
+<p>Creating a server is already a rather simple task with node, but connect has some really neat built-in middleware for browsing a directory, serving files with the correct mime-type, handle sessions, etc. It also comes with a lot of third party middleware, one of the most popular ones being mentioned <a href="https://github.com/intesso/connect-livereload">connect-livereload</a>, or the <a href="http://www.fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/">proxy middleware</a> we bespoke earlier on.</p>
+
+<h2>connect middleware</h2>
+
+<p>So how does this middleware tool work? Rather easy. Connect creates a stack of different middleware tasks and runs through this stack on every request taken. The middleware itself checks if it has something to do with this request, or if the request just has to be passed on to the next middleware in the stack.</p>
+
+<p>The middleware stack is simply an array of middleware functions. To create a middleware for connect, you just have to implement the following interface:</p>
+
+<pre><code class="language-javascript">function myMiddleware(req, res, next) {
+  //Magic happens
+}
+</code></pre>
+
+<p>The <code>req</code> and <code>res</code> object should be familiar with all of you who did create a server with the <code>http</code> module in node once. For all the others, in a nutshell: <code>req</code> represents the request, <code>res</code> the response, i.e. the stuff you want to appear in the browser.</p>
+
+<p><code>next</code> is a function which just calls the next middleware in the stack. Stephen Sugden wrote a <a href="http://stephensugden.com/middleware_guide/">good tutorial</a> on creating middleware with really useful examples. So check that out if you want to know more on that topic.</p>
+
+<p><strong>grunt-contrib-connect</strong> uses two of the built-in middlwares and one third party middleware. Let's check out how it works:</p>
+
+<pre><code class="language-javascript">middleware: function(connect, options) {
+    var middlewares = [];
+    var directory = options.directory ||
+      options.base[options.base.length - 1];
+    if (!Array.isArray(options.base)) {
+        options.base = [options.base];
+    }
+
+    options.base.forEach(function(base) {
+        // Serve static files.
+        middlewares.push(connect.static(base));
+    });
+
+    // Make directory browse-able.
+    middlewares.push(connect.directory(directory));
+    return middlewares;
+}
+</code></pre>
+
+<p>Straight-forward, actually. It creates an array where to serve all static files in the defined base-directories (which can be an array of directories, but does not have to). It also uses connect.directory to make the main app directory browsable. This is the most basic server you can get.</p>
+
+<p>Below it injects <strong>livereload</strong>. This tool has become so popular, it found its way into the official grunt-contrib-connect task.</p>
+
+<pre><code class="language-javascript">
+// Inject live reload snippet
+if (options.livereload !== false) {
+  if (options.livereload === true) {
+    options.livereload = 35729;
+  }
+  //put livereload to the first place 
+  middleware.unshift(injectLiveReload({port: options.livereload}));
+}
+</code></pre>
+
+<p>So livereload takes every request, injects a JavaScript snippet when necessary and starts the livereload watcher to communicate between your browser and the the file system. Sweet.</p>
+
+<p>At the time of this writing, it isn't possible to access the middleware array directly from your <strong>Gruntfile.js</strong>. But you can override the middleware function from the task, to create your very own stack of middleware for connect. Alas, this will kill the basic serving of directories and static files. So I suggest to reimplement the middleware function from above and insert your middleware snippets an the appropriate place. We'll get on to that below. The livereload option still will work whatsoever.</p>
+
+<h2>A PHP middleware</h2>
+
+<p>Before we continue, a quick disclaimer: Yeah, we are going to recreate the possibility of serving PHP files, but we won't be able to use all the server variables of PHP like <code>$_SESSION</code> or <code>$_POST</code>. Well, yet. I'm working on that issue, but for basic tasks this should work nonetheless.</p>
+
+<p>So, to make PHP files parseable, we need to do two things:</p>
+
+<ul>
+<li>Create a middleware that executes PHP</li>
+<li>Include this middleware into our Grunt connect task</li>
+</ul>
+
+<p>Even if it's kind of rough, the first part is actually really easy: Every time we get a request to a <code>.php</code> file, we call the php command line interface to parse this file, and write the result into our response:</p>
+
+<pre><code class="language-javascript">
+function(req, res, next) {
+  if(req.url.endsWith('.php')) {
+    exec('php ' + directory + req.url, 
+      function callback(error, stdout, stderr){
+        if(error) {
+          console.error(stderr);
+        }
+        res.write(stdout);
+        res.end();
+        return;
+    });
+   } else {
+     // No .php file? Moving on ...
+     next();
+   }
+}
+</code></pre>
+
+<p>This code snippet makes use of the <code>exec</code> module of node. The <code>directory</code> parameter points to the served folder in your filesystem. This code above lacks some initialisation methods, but you can install the whole middleware function from the <a href="https://npmjs.org/package/connect-php">NPM registry</a> via</p>
+
+<pre><code>
+npm install connect-php
+</code></pre>
+
+<h2>Include the new middleware in your Gruntfile.js</h2>
+
+<p>Always keep in mind that your Gruntfile.js is not only a configuration, but a JavaScript file. You can code there. And if necessary, you should!</p>
+
+<p>So the first thing we are going to do is require our new module:</p>
+
+<pre><code class="language-javscript">
+//Add this to the beginning of your Gruntfile.js
+var phpMiddleware = require('connect-php');
+</code></pre>
+
+<p>Then, as mentioned above, we are going to recreate <strong>grunt-contrib-connect</strong>'s middleware function, directly where you have your connect task:</p>
+
+<pre><code class="language-javascript">
+grunt.initConfig({
+  ...
+  connect: {
+    options: {
+      port: 9000,
+      livereload: 35729,
+      hostname: 'localhost',
+      middleware: function(connect, options) {
+        // Add here the code snippet below                   
+      }
+    },
+    ...
+  }
+});
+</code></pre>
+
+<pre><code class="language-javascript">
+middleware: function(connect, options) {
+    // Same as in grunt-contrib-connect
+  var middlewares = [];
+  var directory = options.directory ||
+    options.base[options.base.length - 1];
+  if (!Array.isArray(options.base)) {
+    options.base = [options.base];
+  }
+
+  // Here comes the PHP middleware
+  middlewares.push(phpMiddleware(directory));
+
+    // Same as in grunt-contrib-connect
+  options.base.forEach(function(base) {
+    middlewares.push(connect.static(base));
+  });
+
+  middlewares.push(connect.directory(directory));
+  return middlewares;
+}
+</code></pre>
+
+<p>And that's it. You are now able to parse basic PHP files!</p>
+
+<h2>Bottom line</h2>
+
+<p>Actually, the whole PHP thing is just a way of showing you how to extend <strong>connect</strong> with middleware that serves your own needs. For us, the possibility of <code>echo</code>-ing and <code>include</code>-ing in PHP is enough to develop our website templates without having broken output while coding. It still lacks major features, but it's a good start. I'm thinking of reworking the script to tunnel all requests to a spawned PHP server to fill this gap, so stay tuned!</p>
+
+<p>Trying to extend our developing environment with this certain feature taught me a lot about the mechanics behind <strong>Grunt.js</strong> and the Node.js cosmos behind that. I think it's the beauty of <strong>Grunt.js</strong> to demand nothing more than being a simple task runner for node tasks, and thus being exceptionally extensible. We didn't have this freedom and power with all the other build tools and developing environments we had before.</p>

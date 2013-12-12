@@ -1,0 +1,52 @@
+---
+layout: post
+title: 'Content Loading Priorities or: When is the document ready()?'
+categories:
+- Browser
+- Javascript
+tags:
+- Chrome
+- DOMContentLoaded
+- IE9
+- javascript
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+---
+<p>A client of ours had a desperate call: Their website, though highly optimised with modern frontend technologies, loads just outright slow with a 1 MBit connection on IE9. Our first reaction was, "Right, it's just 1 MBit", but that wasn't the troubling part. Our customer's issue was "<strong>It takes forever until our logo is shown!</strong>".</p>
+
+<p>The problem occurred heavily on one single page: A rich product catalog with about 200 to 300 products. Unfortunately, due to system constraints, we have to load the whole catalog at once, included in the DOM.</p>
+
+<p>The symptoms -- as our customer reported -- where:</p>
+
+<ul>
+<li>the company's logo isn't shown until the end of the loading process</li>
+<li>the dropdown menus take forever until they show up</li>
+<li>for several seconds (up to half a minute on 1 MBit connections) website's dynamic components aren't usable at all</li>
+</ul>
+
+<!--more-->
+
+<p>We worked with modern coding principles, like putting all the JavaScript files on the bottom of the page, just having one single CSS file, and loading fallbacks depending on your browser's features.</p>
+
+<p>This is how IE9 loads the site:</p>
+
+<ul>
+<li>files are getting loaded and parsed once they have a reference in the HTML document</li>
+<li>which means that if a browser can afford 3 connections at a time, and you have a lot of references, it takes some time until the scripts get loaded.</li>
+<li>once every element on the website is loaded, IE9 fires the DOMContentLoaded event (better known as $(document).ready(...) for you jQuery webworkers out there)</li>
+<li>scripts are parsed and executed immediately</li>
+<li>once all elements are available, the objects (fonts/images) referenced in the stylesheet are loaded. This means that once </li>
+</ul>
+
+<p>And this is, according to the <a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/DOMContentLoaded_(event)" target="_blank">documentation at MDN</a>, a bug:</p>
+
+<blockquote>
+  <p>The DOMContentLoaded event is fired when the document has finished loading and being parsed, <strong>without waiting for stylesheets, images, and subframes to be done loading</strong> (the load event can be used to detect a fully-loaded page</p>
+</blockquote>
+
+<p>Alright, according to the WHATWG specification, it's just badly interpreted.</p>
+
+<p>This is also why Chrome feels so fast. Not only is DOMContentLoaded fired at the right time, but files have a different priority when downloading. Scripts are getting downloaded (and executed) immediately, images referenced in stylesheets do have a higher priority and are downloaded earlier, and all the other bulk which doesn't have to be available immediately can take it's time, without</p>

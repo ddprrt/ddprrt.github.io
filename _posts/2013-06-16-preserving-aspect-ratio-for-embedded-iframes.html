@@ -1,0 +1,59 @@
+---
+layout: post
+title: Preserving aspect ratio for embedded iframes
+categories:
+- CSS
+- Mobile
+tags:
+- CSS
+- Responsive
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+If you want to use videos on your webpage which are hosted on another server (YouTube, Vimeo, whatever), you most likely will use their embedding possibility rather than the HTML5 &lt;video&gt; Tag or a flash plugin hosted on your server. These embedding codes mostly use &lt;iframe&gt;, which is good since they detect all your needs on their site, like in "what format do you need", "use either HTML5 or Flash", or "streaming HD or lower definition for mobile phones". A lot of decisions are taken from you!
+
+However, you will have to specify the size of the iframe. And if your responsive layout scales your content flexibly according to the viewport width rather than fixed widths on breakpoints (like this page), the embedding iframe may look especially bad on smaller screens. Here's a solution to keep the aspect ratio:
+
+<!--more-->
+
+I'll use a trailer video from on of our projects. The girl in this video is Tina, one of our developers. The standard embedding code I get from vimeo looks something like this:
+<pre><code class="language-markup">
+&lt;iframe src="http://player.vimeo.com/video/61337126"
+  width="550" height="281" frameborder="0"&gt;
+&lt;iframe&gt;
+</code></pre>
+Alright, the cheapest way to achieve resizing according to viewport/content width is by simply adding some CSS for your iframe:
+<pre><code class="language-css">
+iframe {
+  width: 100%;
+}
+</code></pre>
+And the iframe is as wide as the container you put him in. However, the height can't be controlled that easily. To preserve that aspect ratio, you need a wrapper div, let's call it .aspect-ratio:
+<pre><code class="language-css">
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 51%;
+}
+</code></pre>
+This div is as wide as the content/viewport area, the height is zero. So practically this shouldn't be visible. However. The padding of this one is the height of the video divided through its width, or in other words: the aspect ratio in percent! No matter how much you resize your window, it will always stay in this ratio. So, all you need now is to let the iframe inside flow to each corner of its parent:
+<pre><code class="language-css">
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+</code></pre>
+
+Since the parent element has no height, we place it absolutely on the top left corner and let the iframe use the space created by the padding.
+
+And voilá:
+<div class="content-wrapper">
+<div class="aspect-video"><iframe src="http://player.vimeo.com/video/61337126" height="281" width="550" allowfullscreen="" frameborder="0"></iframe></div>
+</div>
+Resize the window and try it!

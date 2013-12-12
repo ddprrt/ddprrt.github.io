@@ -1,0 +1,120 @@
+---
+layout: post
+title: Robust (but hacky) way of portrait / land­scape detection
+categories:
+- HTML5
+- Javascript
+- Mobile
+tags:
+- Android
+- feature sniffing
+- HTML5
+- iOS
+- javascript
+- media queries
+- orientation
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>On mobile devices it's pretty easy (and in some cases also pretty cool) to change the look of your website respectively to the orientation of your device with media queries. However, sometimes the orientation does not only affect your layout, but also the routines of your Javascript. This article shows some possibilites how to detect portrait/landscape orientation on your mobile device. Some are less robust considering multiple device vendors, and some are in exchange a lot more hacky. You're gonna love it.</p>
+  <p>When searching for portrait/landscape orientation detection we mostly get the following, well known results on Stackoverflow and consorts:</p>
+<!--more-->
+<pre class="prettyprint"><code class="language-javascript">window.onorientationchange = function() {
+  switch(window.orientation) {
+    case 0:
+      //do portrait stuff
+      break;
+    case 90:
+      //do landscape stuff
+      break;
+    case -90:
+      //do landscape stuff
+      break;
+    case 180:
+      //do portrait stuff upside-down
+      break;
+  }
+}</code>
+</pre>
+<p>Pretty easy to understand: When the device changes it's orientation, check the degrees of your device, and in case of 0 or 180 degrees it's portrait mode, landscape mode otherwise. This is true for almost all mobile phones out there and was heavily popularized by Apple and it's <a target="_blank" href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html">Mobile Safari Web Development Documentation</a>.</p>
+
+<h2>Samsung Galaxy Tab 10.1 and consorts</h2>
+
+<p>
+The new Samsung Galaxy Tab (and some other devices like Toshiba Thrive) however, do things a little different: Here <code>window.orientation</code> results in 0 degrees respectively 180 degrees in <strong>landscape</strong> mode.
+</p>
+<p>And acutally, that's okay. That's how the Galaxy Tab should be held by the users. That's it's zero degree orientation by definition. It's just a pain in the ass for us developers.</p>
+
+<h2>matchMedia for media queries in Javascript</h2>
+
+Media queries are cool for device detection because they're really checking for portrait and landscape orientation, not for the devices degree orientation. And there is actually a way to use media queries in Javascript. Credits to the code snipplet go to <a target="_blank" href="http://davidwalsh.name/orientation-change">David Walsh</a>. 
+
+<pre class="prettyprint"><code class="language-javascript">var mql = window.matchMedia("(orientation: portrait)");
+
+// If there are matches, we're in portrait
+if(mql.matches) {  
+  // Portrait orientation
+} else {  
+  // Landscape orientation
+}
+
+// Add a media query change listener
+mql.addListener(function(m) {
+  if(m.matches) {
+    // Changed to portrait
+  }
+  else {
+    // Changed to landscape
+  }
+});</code>
+</pre>
+<p>However, <code>window.matchMedia</code> is not support prior to iOS5 and Android 2.3. </p>
+
+<h2>Hacky Media Query solution</h2>
+
+<p>But there's another way to bring media queries to your Javascript for this use case. By its roots, the CSS file:</p>
+
+<pre class="prettyprint"><code class="language-css">body:after {
+  content: "";
+  position: absolute;
+  color: transparent;
+}
+
+@media all and (orientation: portrait) {
+  body:after {
+    content: "p";
+  }
+}
+
+@media all and (orientation: landscape) {
+  body:after {
+    content: "l";
+  }
+}</code>
+</pre>
+
+<p>We create a <code>body:after</code> pseudo element (because it's always here and doesn't require an extra DOM element) which is placed absolutely (so it doesn't take any space) and has a transparent color (so we don't see its contents). According to our orientation, we change the element's content to respectively.</p>
+
+<p>And this is our Javascript:</p>
+
+<pre class="prettyprint"><code class="language-javascript">//get style of the body:after element
+var bodyAfterStyle = window.getComputedStyle(
+  document.body, ":after");
+
+window.onorientationchange = function() {
+  if(bodyAfterStyle.content == 'p') {
+    //do portrait stuff
+  } else if(bodyAfterStyle.content == 'l') {
+    //do landscape stuff
+  }
+}</code>
+</pre>
+
+<p>Pretty self explanatory. I know that there're other ways, like calculating with the device window width and height, but there might be some issues because the windows width is defined by its content. So I think it's better to stick with one of the solutions above.</p>
+
+<p><strong>Bottom line:</strong>
+Know your devices and if possible, use <code>window.matchMedia</code> for your orientation detection.
+</p>

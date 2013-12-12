@@ -1,0 +1,155 @@
+---
+layout: post
+title: Great Scott! Five lesser known shortcuts for Emmet.io that rock!
+categories:
+- CSS
+- Tools
+tags:
+- CSS
+- Emmet
+- Tooling
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sd_is_markdown: '1'
+---
+<p>I'm a huge fan of <a href="http://emmet.io">Emmet</a>. It allows you not only to create markup in no-time by using a CSS-like syntax in your most favourite code editor (e.g. <code>ul&gt;li*5</code> expands to one <code>&lt;ul&gt;</code> element with five nested <code>&lt;li&gt;</code> elements in HTML after hitting the tab key. Alternatively, you can just type <code>m20</code> in your CSS to get <code>margin: 20px</code> after hitting tab).</p>
+
+<p>If you don't have Emmet, check out the list of <a href="http://emmet.io/download/">available plugins</a> and install it right now. Or if you want to just give it a try <a href="http://codepen.io">Codepen</a> also implements Emmet in their CSS and HTML views.</p>
+
+<p>Here a the five shortcuts, that not only surprised me most, but also boosted my productivity up to eleven!<!--more--></p>
+
+<p class="img-holder">
+  <img src="http://upload.wikimedia.org/wikipedia/en/9/97/Doc_Brown.JPG" />
+</p>
+
+<h2>CSS: bxsd -- txs</h2>
+
+<p>I never can remember the values for both the <code>box-shadow</code> and <code>text-shadow</code> properties in CSS. I know them a little, but I always have to try it out first in dev tools. But if I type</p>
+
+<pre><code>bxsd
+</code></pre>
+
+<p>and hit the tab key, I get this snippet inserted in my CSS code:</p>
+
+<pre><code class="language-css">-webkit-box-shadow: inset hoff voff blur color;
+-moz-box-shadow: inset hoff voff blur color;
+box-shadow: inset hoff voff blur color;
+</code></pre>
+
+<p>Wohoo! Just need to adapt the values (Sublime does multi-cursor, too) and I'm all done.</p>
+
+<p>In Codepen, <code>bxs</code> does the same, just Sublime needs an extra <code>d</code>. SCNR.</p>
+
+<p>Same goes for <code>text-shadow</code>. A simple</p>
+
+<pre><code>txs
+</code></pre>
+
+<p>expands to</p>
+
+<pre><code class="language-css">text-shadow: hoff voff blur #000;
+</code></pre>
+
+<p>I don't use prefixed <code>box-shadow</code> anymore, but deleting lines is always a lot easier than typing each value on its own.</p>
+
+<h3>Update</h3>
+
+<p>The guys from Emmet told me via Twitter, that you can update your <a href="http://docs.emmet.io/customization/preferences/">preferences</a> to disable certain prefixes. Thank you, guys!</p>
+
+<h2>HTML: lorem</h2>
+
+<p>You know what</p>
+
+<pre><code>p*5>lorem
+</code></pre>
+
+<p>does? Exactly that. It inserts five paragraphs of Lorem Ipsum.</p>
+
+<pre><code>p*5>ipsum
+</code></pre>
+
+<p>does the same. You know that <a href="http://www.youtube.com/watch?v=eB2p4UPXY1k">Lorem Ipsum is fucking evil</a>, and I'm absolutely behind that. But to check if your design holds a massive amount of text, there's no easier way to do that.</p>
+
+<p>If you just need it every once in a while, type <code>lorem</code> or <code>ipsum</code> to get just one paragraph.</p>
+
+<h2>CSS: bz</h2>
+
+<p>box-sizing is at the moment the only CSS property that I still prefix. It's mostly (I even think just) used for layout tasks, and leaving it unprefixed would cause issues on older Android browsers. Writing all prefixed properties is cumbersome, so before using Emmet, I included a little Sass mixing that came with Bootstrap:</p>
+
+<pre><code class="language-css">@mixin box-sizing($val: border-box) {
+    -webkit-box-sizing: $val;
+    -moz-box-sizing: $val;
+    box-sizing: $val;
+}
+</code></pre>
+
+<p>to use with:</p>
+
+<pre><code class="language-css">@include box-sizing();
+</code></pre>
+
+<p>It's okay, but I always find mixins kinda laborious, especially if they just prefix stuff. Emmet knows, that if you want to add <code>box-sizing</code> in your CSS, you might just have one and only one desire: Set it to <code>border-box</code> for all available platforms. So if you type:</p>
+
+<pre><code>bz
+</code></pre>
+
+<p>it expands to</p>
+
+<pre><code>-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+</code></pre>
+
+<p>after hitting the tab key. Great, all I need and just by typing two letters!</p>
+
+<h2>CSS: lg()</h2>
+
+<p>Another thing that I always used a mixin for was linear gradients. Mostly because specification changed over and over, and after having almost the same implementation across all platforms, the very first value describing the direction got changed by a W3C specification. If you know German, check out <a href="http://www.peterkroener.de/aenderungen-in-der-neuen-css3-farbverlauf-syntax-ohne-vendor-prefix/">buddy Peter's cents on that topic</a>. Anyhow, I never gave much ado about it, and mostly used a tool or a mixin for that task.</p>
+
+<p>But with <code>lg</code> in Emmet, everything seems so much, much easier.</p>
+
+<p>Typing</p>
+
+<pre><code class="language-css">lg(left, #bada55 60%, #c0ffee)
+</code></pre>
+
+<p>and hitting tab, results in</p>
+
+<pre><code class="language-css">background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0.6, #bada55), to(#c0ffee));
+background-image: -webkit-linear-gradient(left, #bada55 60%, #c0ffee 100%);
+background-image: -moz-linear-gradient(left, #bada55 60%, #c0ffee 100%);
+background-image: -o-linear-gradient(left, #bada55 60%, #c0ffee 100%);
+background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
+</code></pre>
+
+<p>This does not include the W3C proposed specification, well, at least yet. But I think it will be in a future update. For know, it works, at least for me.</p>
+
+<h2>HTML: !</h2>
+
+<p>My most favourite of all is the <code>!</code> shortcut. I found it especially tedious to create the basic HTML structure, so i used a lot of HTML boilerplate code and created some snippets for sublime. Emmet just needs a little</p>
+
+<pre><code>!
+</code></pre>
+
+<p>at the start of a line in your HTML, and you get this:</p>
+
+<pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>with the cursor pointing to the start of the <code>&lt;title&gt;</code> tag (which is by the way the thing I forget most when creating new sites). This is heavy!</p>
+
+<h2>Also interesting</h2>
+
+<p>If you want to have a complete overview of available Emmet shortcuts, be sure to check out there <a href="http://docs.emmet.io/cheat-sheet/">cheat sheet</a></p>
+
+<p><em>Image: <a href="http://en.wikipedia.org/wiki/File:Doc_Brown.JPG">Wikipedia</a></em></p>

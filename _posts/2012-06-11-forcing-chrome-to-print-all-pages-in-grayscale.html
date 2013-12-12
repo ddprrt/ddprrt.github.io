@@ -1,0 +1,69 @@
+---
+layout: post
+title: Forcing browsers to print all pages in grayscale
+categories:
+- CSS
+tags:
+- CSS
+- filter
+- media queries
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: forcing-browsers-to-print-all-pages-in-grayscale
+---
+<p>Very short snipplet, but very effective.</p>
+  <p>With Chrome 18 CSS3 filters are finally implemented and you can do amazing stuff with them. One thing we tried and which we found rather useful than fancy is to force Chrome printing all content on your website in grayscale.</p>
+<!--more-->
+<p>And this is the code:</p>
+
+<pre class="prettyprint language-css"><code class=" language-css">@media print {
+  body {
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%); /* Does not work atm */
+        -ms-filter: grayscale(100%); /* Does not work atm */
+         -o-filter: grayscale(100%); /* Does not work atm */
+    filter: grayscale(100%); /* future-proof */
+  }
+}
+</code>
+</pre>
+
+<p>And that's it!</p>
+
+<h2>Update</h2>
+
+<p>And for the record, here is the full flegded version covering all major browsers:</p>
+
+<pre class="prettyprint language-css"><code class=" language-css">
+@media print {
+  body {
+    /* IE4-8 and 9 (deprecated). Thanks Travis for the tip! */
+    filter: Gray();
+    /* SVG version for IE10, Chrome 17, FF3.5, 
+       Safari 5.2 and Opera 11.6 -- does not 
+       need to be prefixed. See below */
+    filter: url('#grayscale'); 
+    /* CSS3 filter, at the moment Webkit only. Prefix it for
+       future implementations */
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%); /* future-proof */
+  }
+}
+</code>
+</pre>
+
+And here's the SVG Markup for the grayscale filter:
+
+<pre class="prettyprint"><code class="language-markup">
+&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+ &lt;filter id="grayscale"&gt;
+  &lt;feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 
+                                       0.3333 0.3333 0.3333 0 0 
+                                       0.3333 0.3333 0.3333 0 0 
+                                       0 0 0 1 0"/&gt;
+ &lt;/filter&gt;
+&lt;/svg&gt;</code>
+</pre>

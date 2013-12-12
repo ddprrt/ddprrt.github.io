@@ -1,0 +1,57 @@
+---
+layout: post
+title: Content vs. value
+categories:
+- CSS
+- General
+- HTML5
+tags:
+- Codepen
+- CSS
+- Specification
+status: publish
+type: post
+published: true
+meta:
+  _sd_is_markdown: '1'
+  _edit_last: '1'
+---
+<p>Title's for all content strategists out there who expect something really meta and with a lot of additional bla bla. Well, this is about HTML Content vs. Input Values.</p>
+
+<p>Margin psycho and Sass expert <a href="http://hugogiraudel.com/">Hugo Giraudel</a> (check out his awesome blog, btw!) brought up a pretty sweet <a href="http://codepen.io/HugoGiraudel/pen/19441aa6d183b640154a02eace1b37c4">sample on Codepen</a>, showing an input field resizing it's width depending on the characters typed in, using the new 'ch' unit. The original question was, if there was a CSS only way to recreate this behavior:
+<!--more--></p>
+
+<blockquote>
+  <p>Do any of you guys think of a pure CSS way to make an input element wrap around its content? I'm not sure it's possible actually.</p>
+</blockquote>
+
+<p>And Hugo is completely right, it isn't possible. And that's per definition. <code>input</code> elements are content-less in HTML terms, since they can't hold content like other HTML elements do:</p>
+
+<pre><code class="language-markup">&lt;p&gt;this is content&lt;/p&gt;
+&lt;span&gt;this is also content&lt;/span&gt;
+&lt;input&gt;IMPOSSIBRU&lt;/input&gt;
+</code></pre>
+
+<p>The last one is obviously bogus. Correct way would be <code>&lt;input type="text" value="That is better"&gt;</code>. Auto-width in CSS is only possible with elements that can have content.</p>
+
+<p>If you compare it to other CSS techniques, you'll notice that input elements can't have pseudo elements like <code>:before</code> and <code>:after</code> because of the very same reason. Those two elements are  placed <em>before</em> and <em>after</em> the content of one element:</p>
+
+<pre><code class="language-markup">&lt;p&gt;
+ &lt;before goes here&gt;
+ Content
+ &lt;after goes there&gt;
+&lt;/p&gt;
+</code></pre>
+
+<p>I'm not sure why <code>input</code>s can't have content. I assume it has something to do with being connected tightly with the Operating System (at least in the past). Maybe you can help me on that one. The <a href="http://dev.w3.org/html5/markup/syntax.html#content-model">spec</a> defines them as void elements which aren't allowed to have content in any way.</p>
+
+<h2>How can you achieve this behavior CSS only?</h2>
+
+<p>Rape accessibility and use a span.</p>
+
+<pre><code class="language-markup">&lt;span contenteditable&gt;
+ this is my content
+&lt;/span&gt;
+</code></pre>
+
+<p>Rape's bad, if you haven't known already. So use Hugo's sample. This should work just fine for you!</p>
