@@ -1,4 +1,4 @@
-name: Stefan Baumgartner's front-end technology talk
+name: front-end technology talk
 markdown: redcarpet
 pygments: true
 permalink: /blog/:year/:month/:day/:title/

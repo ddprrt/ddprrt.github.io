@@ -4,17 +4,19 @@
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 18px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+	min-height: 100%;
 }
 
 body {
-	font-size: 1.8em;
+	line-height: 1.5em;
 	font-family: $serifFont;
 	background-color: $bgColor;
 	border-top: 5px solid $linkColor;
+	border-bottom: 5px solid $linkColor;
 }
 
 p, ul, ol, dl,
@@ -32,11 +34,11 @@ sup {
 }
 
 sup {
-	top: -0.5em;
+	top: -0.5rem;
 }
 
 sub {
-	bottom: -0.25em;
+	bottom: -0.25rem;
 }
 
 
@@ -48,27 +50,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2.18em;
+	font-size: 2.18rem;
 }
 
 h2 {
-	font-size: 1.64em;
+	font-size: 1.64rem;
 }
 
 h3 {
-	font-size: 1.45em;
+	font-size: 1.45rem;
 }
 
 h4 {
-	font-size: 1.18em;
+	font-size: 1.18rem;
 }
 
 h5 {
-	font-size: 1.1em;
+	font-size: 1.1rem;
 }
 
 h6 {
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 a, a:active {
