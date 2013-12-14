@@ -11,31 +11,32 @@
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/css/main.css">
+	<script src="//use.edgefonts.net/droid-serif:n4,i4,n7,i7;lato:n7,n9;source-code-pro:n4.js"></script>
 </head>
 <body>
+	
+	<div class="header">
+		<h1 class="title"><a href="/">{{ site.name }}</a></h1>
+		<a class="extra" href="/">home</a>
+	</div>
 
-	<div class="site">
-		<div class="header">
-			<h1 class="title"><a href="/">{{ site.name }}</a></h1>
-			<a class="extra" href="/">home</a>
-		</div>
-
+	<article class="wrapper">
 		{{ content }}
+	</article>
 
-		<div class="footer">
-			<div class="contact">
-				<p>
-					Your Name<br />
-					What You Are<br />
-					you@example.com
-				</p>
-			</div>
-			<div class="contact">
-				<p>
-					<a href="https://github.com/yourusername">github.com/yourusername</a><br />
-					<a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-				</p>
-			</div>
+	<div class="footer">
+		<div class="contact">
+			<p>
+				Your Name<br />
+				What You Are<br />
+				you@example.com
+			</p>
+		</div>
+		<div class="contact">
+			<p>
+				<a href="https://github.com/yourusername">github.com/yourusername</a><br />
+				<a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+			</p>
 		</div>
 	</div>
 

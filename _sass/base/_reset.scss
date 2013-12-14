@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	font-size: 1.8em;
+	font-family: $serifFont;
+	background-color: $bgColor;
+	border-top: 5px solid $linkColor;
+}
+
+p, ul, ol, dl,
+blockquote, pre, td, th, label, textarea, caption, details, figure, blockquote {
+	margin-bottom: $spacing;
+	line-height: 1.5em;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sansFont;
+	font-weight: 900;
+	line-height: 1.2em;
+	margin-bottom: $spacing;
+}
+
+h1 {
+	font-size: 2.18em;
+}
+
+h2 {
+	font-size: 1.64em;
+}
+
+h3 {
+	font-size: 1.45em;
+}
+
+h4 {
+	font-size: 1.18em;
+}
+
+h5 {
+	font-size: 1.1em;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+a, a:active {
+	color: $linkColor;
+	text-decoration: none;
+	-webkit-transition: color 0.1s;
+	-moz-transition: color 0.1s;
+	-ms-transition: color 0.1s;
+	-o-transition: color 0.1s;
+	transition: color 0.1s;
+}
+
+a:hover {
+	color: darken($linkColor, 20);
+	text-decoration: underline;
+}
+
+code {
+	font-family: $monoFont;
+}
