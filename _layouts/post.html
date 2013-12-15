@@ -10,6 +10,14 @@ layout: default
 	{{ content }}
 
 
+	<nav>
+		<ul>
+			{% if page.previous %}<li><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
+			{% if page.next %}<li><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
+		</ul>
+	</nav>
+
+
 	{% unless page.nocomments %}
 	<h2>Comments</h2>
 	<div id="disqus_thread"></div>

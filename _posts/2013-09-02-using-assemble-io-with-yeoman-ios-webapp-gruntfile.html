@@ -41,27 +41,27 @@ meta:
 <p>A basic layout can be like that:</p>
 
 {% highlight html %}
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;!-- the title from the page --&gt;
-    &lt;title&gt;{{title}}&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- Include a nav from partials --&gt;
-    {{>nav}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- the title from the page -->
+    <title>{% raw %}{{title}}{% endraw %}</title>
+</head>
+<body>
+  <!-- Include a nav from partials -->
+  {% raw %}{{>nav}}{% endraw %}
   
-  &lt;div class="wrapper"&gt;
-    &lt;!-- The body of the page --&gt;
-    {{>body}}
-  &lt;/div&gt;
+  <div class="wrapper">
+    <!-- The body of the page -->
+    {% raw %}{{>body}}{% endraw %}
+  </div>
 
-    &lt;!-- Another partial --&gt;
-    {{>footer}}
+  <!-- Another partial -->
+  {% raw %}{{>footer}}{% endraw %}
     
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 {% endhighlight %}
 
 <p>We already included some partials (navigation and footer), as well as some parts we define later in the pages. Either with parameters (title) or with content (body).</p>
@@ -74,12 +74,12 @@ meta:
 ---
 title: About
 ---
-&lt;h1&gt;About everything&lt;/h1&gt;
+<h1>About everything</h1>
 
-&lt;p&gt;Lorem Ipsum is not good for content&lt;/p&gt;
-&lt;ul&gt;
+<p>Lorem Ipsum is not good for content</p>
+<ul>
   ...
-&lt;/ul&gt;
+</ul>
 {% endhighlight %}
 
 <p>Easy!</p>
@@ -93,11 +93,11 @@ title: About
 <p>For our websites, those module categories do have separated folders in a template folder in our app directory:</p>
 
 <pre><code>
-    app
-      |-- templates
-          |-- layouts
-          |-- pages
-          |-- partials
+app
+  |-- templates
+      |-- layouts
+      |-- pages
+      |-- partials
 </code></pre>
 
 <h2>Adding it to yeoman.io's webapp Gruntfile</h2>
@@ -132,9 +132,9 @@ assemble: {
   options: {
     flatten: true,
     layout: 'layout.hbs',
-    layoutdir: '&lt;%= yeoman.app %&gt;/templates/layouts',
+    layoutdir: '<%= yeoman.app %>/templates/layouts',
     assets: 'dist/images',
-    partials: ['&lt;%= yeoman.app %&gt;/templates/partials/*.hbs']
+    partials: ['<%= yeoman.app %>/templates/partials/*.hbs']
   },
   …
 }
@@ -154,13 +154,13 @@ assemble: {
   options: {
     flatten: true,
     layout: 'layout.hbs',
-    layoutdir: '&lt;%= yeoman.app %&gt;/templates/layouts',
+    layoutdir: '<%= yeoman.app %>;/templates/layouts',
     assets: 'dist/images',
-    partials: ['&lt;%= yeoman.app %&gt;/templates/partials/*.hbs']
+    partials: ['<%= yeoman.app %>;/templates/partials/*.hbs']
   },
   dist: {
     files: {
-      '&lt;%= yeoman.dist %&gt;/': ['&lt;%= yeoman.app %&gt;/templates/pages/*.hbs']
+      '<%= yeoman.dist %>;/': ['<%= yeoman.app %>;/templates/pages/*.hbs']
     } 
   }
 }
@@ -175,13 +175,13 @@ assemble: {
   options: {
     flatten: true,
     layout: 'layout.hbs',
-    layoutdir: '&lt;%= yeoman.app %&gt;/templates/layouts',
+    layoutdir: '<%= yeoman.app %>/templates/layouts',
     assets: 'dist/images',
-    partials: ['&lt;%= yeoman.app %&gt;/templates/partials/*.hbs']
+    partials: ['<%= yeoman.app %>/templates/partials/*.hbs']
   },
   dist: {
     files: {
-      '.tmp': ['&lt;%= yeoman.app %&gt;/templates/pages/*.hbs']
+      '.tmp': ['<%= yeoman.app %>/templates/pages/*.hbs']
     } 
   }
 }
@@ -196,7 +196,7 @@ htmlmin: {
       expand: true,
       cwd: '.tmp',
       src: '*.html',
-      dest: '&lt;%= yeoman.dist %&gt;'
+      dest: '<%= yeoman.dist %>'
     }]
   }
 },
@@ -217,7 +217,7 @@ assemble: {
   …
   server: {
     files: {
-      '.tmp/': ['&lt;%= yeoman.app %&gt;/templates/pages/*.hbs']
+      '.tmp/': ['<%= yeoman.app %>/templates/pages/*.hbs']
     } 
   }
 }
@@ -229,9 +229,9 @@ assemble: {
 watch: {
   … 
   assemble: {
-   files: ['&lt;%= yeoman.app %&gt;/templates/layouts/*.hbs',
-           '&lt;%= yeoman.app %&gt;/templates/pages/*.hbs',
-           '&lt;%= yeoman.app %&gt;/templates/partials/*.hbs'],
+   files: ['<%= yeoman.app %>/templates/layouts/*.hbs',
+           '<%= yeoman.app %>/templates/pages/*.hbs',
+           '<%= yeoman.app %>/templates/partials/*.hbs'],
    tasks: ['assemble:server']
   }
 },

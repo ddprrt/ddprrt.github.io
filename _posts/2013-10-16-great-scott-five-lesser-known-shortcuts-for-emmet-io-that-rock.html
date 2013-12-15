@@ -118,7 +118,8 @@ box-sizing: border-box;
 
 <p>and hitting tab, results in</p>
 
-{% highlight css %}background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0.6, #bada55), to(#c0ffee));
+{% highlight css %}background-image: -webkit-gradient(linear, 0 0, 100% 0, 
+  color-stop(0.6, #bada55), to(#c0ffee));
 background-image: -webkit-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -moz-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -o-linear-gradient(left, #bada55 60%, #c0ffee 100%);
@@ -136,14 +137,14 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 
 <p>at the start of a line in your HTML, and you get this:</p>
 
-{% highlight html %}&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/html&gt;
+{% highlight html %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+</html>
 {% endhighlight %}
 
 <p>with the cursor pointing to the start of the <code>&lt;title&gt;</code> tag (which is by the way the thing I forget most when creating new sites). This is heavy!</p>
