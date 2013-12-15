@@ -46,7 +46,7 @@ npm install --save-dev grunt-connect-proxy
 
 <p>Search your <code>connect</code> task in your Gruntfile and add this little snippet:</p>
 
-<pre><code class="language">
+{% highlight javascript %}
 connect: {
     ...
     server: {
@@ -59,19 +59,19 @@ connect: {
         ]
     }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>This snippet tells us, that any call which can't be answered by your machine will be forwared to <code>someserver.com</code>. There are a lot more options, you might also need <code>https</code> or <code>port</code> parameters for instance. Check out <a href="https://github.com/drewzboto/grunt-connect-proxy">the GitHub repo</a> for more information on that.</p>
 
 <p>Add this part to the top of your <code>Gruntfile.js</code>, right before <code>module.exports</code>.</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
-</code></pre>
+{% endhighlight %}
 
 <p>and call the <code>proxySnippet</code> middleware in your <code>livereload</code> configuration:</p>
 
-<pre><code class="language">
+{% highlight javascript %}
 connect: {
     ...
     livereload: {
@@ -87,11 +87,11 @@ connect: {
         }
     }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Now you're all set up. The last thing you've to do is to call <code>configureProxies</code> before using <code>connect</code> in your task, and everything's ready to go:</p>
 
-<pre><code class="language">
+{% highlight javascript %}
 grunt.task.run([
     'clean:server',
     'concurrent:server',
@@ -100,7 +100,7 @@ grunt.task.run([
     'open',
     'watch'
 ]);
-</code></pre>
+{% endhighlight %}
 
 <p>It's as easy as that. We added this to our main Gruntfile we use for scaffolding our projects, so everytime we need a proxy, it's just peace of cake instead of endless subdomain and subserver configuration in the old <code>httpd-vhosts.conf</code> file.</p>
 
@@ -108,7 +108,7 @@ grunt.task.run([
 
 <p>This was actually a part which required a lot more thinking and understanding of proxies to get this done right. We had the -- at least for us -- rather specific use case to retrieve our data from more than one server at the same time. Mainly because there was one server handling the content, and one server which took care of all the user data. As you can see, the <code>proxies</code> option in the default task is actually an array, which means we can easily define more than one proxy configuration.</p>
 
-<pre><code class="language">
+{% highlight javascript %}
 connect: {
     ...
     server: {
@@ -126,13 +126,13 @@ connect: {
         ]
     }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Creating the new context <code>user</code> which should allow me to use <code>http://localhost:9000/user</code> to get to <code>http://userserver.com</code>. I put that one before the other on purpose, cause at the moment this will actually do nothing at all.</p>
 
 <p>Reason is that the proxy can't decide why to redirect all the <code>user</code> calls to the other service. We need to define a redirection for the original proxy to make this happen:</p>
 
-<pre><code class="language">
+{% highlight javascript %}
 connect: {
     ...
     server: {
@@ -153,7 +153,7 @@ connect: {
         ]
     }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>This rewrite rule tells the proxy that ever call which starts with <code>user</code> gets redirected to the <code>user</code> context we defined earlier. It won't work the other way round, since the context has to be defined beforehand, but that shouldn't matter actually. Feel free to include as many proxies and rewrites. Using this structure everything should work fine.</p>
 

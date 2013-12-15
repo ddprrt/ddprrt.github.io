@@ -34,10 +34,10 @@ meta:
 
 <p>and hit the tab key, I get this snippet inserted in my CSS code:</p>
 
-<pre><code class="language-css">-webkit-box-shadow: inset hoff voff blur color;
+{% highlight css %}-webkit-box-shadow: inset hoff voff blur color;
 -moz-box-shadow: inset hoff voff blur color;
 box-shadow: inset hoff voff blur color;
-</code></pre>
+{% endhighlight %}
 
 <p>Wohoo! Just need to adapt the values (Sublime does multi-cursor, too) and I'm all done.</p>
 
@@ -50,8 +50,8 @@ box-shadow: inset hoff voff blur color;
 
 <p>expands to</p>
 
-<pre><code class="language-css">text-shadow: hoff voff blur #000;
-</code></pre>
+{% highlight css %}text-shadow: hoff voff blur #000;
+{% endhighlight %}
 
 <p>I don't use prefixed <code>box-shadow</code> anymore, but deleting lines is always a lot easier than typing each value on its own.</p>
 
@@ -79,17 +79,17 @@ box-shadow: inset hoff voff blur color;
 
 <p>box-sizing is at the moment the only CSS property that I still prefix. It's mostly (I even think just) used for layout tasks, and leaving it unprefixed would cause issues on older Android browsers. Writing all prefixed properties is cumbersome, so before using Emmet, I included a little Sass mixing that came with Bootstrap:</p>
 
-<pre><code class="language-css">@mixin box-sizing($val: border-box) {
+{% highlight css %}@mixin box-sizing($val: border-box) {
     -webkit-box-sizing: $val;
     -moz-box-sizing: $val;
     box-sizing: $val;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>to use with:</p>
 
-<pre><code class="language-css">@include box-sizing();
-</code></pre>
+{% highlight css %}@include box-sizing();
+{% endhighlight %}
 
 <p>It's okay, but I always find mixins kinda laborious, especially if they just prefix stuff. Emmet knows, that if you want to add <code>box-sizing</code> in your CSS, you might just have one and only one desire: Set it to <code>border-box</code> for all available platforms. So if you type:</p>
 
@@ -113,17 +113,17 @@ box-sizing: border-box;
 
 <p>Typing</p>
 
-<pre><code class="language-css">lg(left, #bada55 60%, #c0ffee)
-</code></pre>
+{% highlight css %}lg(left, #bada55 60%, #c0ffee)
+{% endhighlight %}
 
 <p>and hitting tab, results in</p>
 
-<pre><code class="language-css">background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0.6, #bada55), to(#c0ffee));
+{% highlight css %}background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0.6, #bada55), to(#c0ffee));
 background-image: -webkit-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -moz-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -o-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
-</code></pre>
+{% endhighlight %}
 
 <p>This does not include the W3C proposed specification, well, at least yet. But I think it will be in a future update. For know, it works, at least for me.</p>
 
@@ -136,7 +136,7 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 
 <p>at the start of a line in your HTML, and you get this:</p>
 
-<pre><code class="language-markup">&lt;!doctype html&gt;
+{% highlight html %}&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -144,7 +144,7 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 &lt;/head&gt;
 &lt;body&gt;
 &lt;/html&gt;
-</code></pre>
+{% endhighlight %}
 
 <p>with the cursor pointing to the start of the <code>&lt;title&gt;</code> tag (which is by the way the thing I forget most when creating new sites). This is heavy!</p>
 

@@ -48,7 +48,7 @@ Considering mobile environments, we might recall some basic Javascript facts we 
 
 With this in mind, I'd like to show you a somewhat abbreviated example of a real world application, developed before those smartphones were even considered for browsing the web. We got a call from a customer who said that his product filter didn't work quite well on the iPad, since the filter checkboxes were overall slow and didn't respond to our fingers. We spent quite some time on talking a look on the checkboxes before even thinking of looking at the operation behind. This was (in some way) the original code:
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 $('input.checkbox').click(function(e) {
   e.preventDefault();
   var code = $(this).val();
@@ -58,7 +58,7 @@ $('input.checkbox').click(function(e) {
     }
   });
 });
-</code></pre>
+{% endhighlight %}
 
 The real example was somewhat more complex, but this here is sufficient to show what's the deal: You click on a checkbox (Event), and run through all elements checking if the selected code is in a code-list (which is done in a rather bad way by not using the HTML5 data-attributes, but hey, this happened 2008 or 2009), and if so, hide it (Manipulation). Yeah, even if you cache the element, this was still slow on the iPad using jQuery 1.4.
 

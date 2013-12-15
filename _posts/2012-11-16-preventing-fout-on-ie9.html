@@ -27,7 +27,7 @@ meta:
 
 <p>In one certain case, after considering server architecture and our clients desktop environment, and even after applying caching routines, this effect was so bad that it wasn't bearable at all. Put there is a certain way of handling this. First of all, we take a look at the currently recommended way of including webfonts for cross browser purposes:</p>
 
-<pre><code class="language-css">
+{% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
     src: url('../fonts/MySpecialFont.eot'); /* IE9 compatibility mode */
@@ -38,24 +38,24 @@ meta:
     font-weight: normal;
     font-style: normal;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>All modern browsers are capable of handling WOFF, so this should be your format of choice. EOT is more or less just for legacy purposes, and so is TrueType or SVG. So, if you are just reducing your Webfont declaration to the one you need for modern 
 browsers, you end up with this.</p>
 
-<pre><code class="language-css">
+{% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
     src: url('../fonts/MySpecialFont.woff');
     font-weight: normal;
     font-style: normal;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Maybe you add a fallback for older mobile devices, which know how to handle the comma seperated syntax.</p>
 
 
-<pre><code class="language-css">
+{% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
     src: url('../fonts/MySpecialFont.woff'), 
@@ -64,11 +64,11 @@ browsers, you end up with this.</p>
     font-weight: normal;
     font-style: normal;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Now, the only browser with FOUT would be IE9 by today's standards. IE9 has the problem that he first loads the stylesheet and then loads the font. The time between those two loading processes can vary. However, if you happen to have the font right here after parsing through the whole stylesheet, you won't get a FOUT. We simply can achieve this by embedding the whole font as a data-URI:</p>
 
-<pre><code class="language-css">
+{% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
     src: url("data:application/x-font-woff;base64,MUMBOJUMBO"),
@@ -77,25 +77,25 @@ browsers, you end up with this.</p>
     font-weight: normal;
     font-style: normal;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Use a tool <a href="http://t.larskl.de/dataurl" target="_blank">like that one</a> for generating those embedded data streams. Now you need to support IE7 and IE8 extra, because IE9 might load the EOT file before checking on the embedded WOFF. We're doing this by creating another Stylesheet, soley for IE legacy purposes. With CSS preprocessors it's a quick thing to do.</p>
 
-<pre><code class="language-css">
+{% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
     src: url('../fonts/MySpecialFont.eot');
     font-weight: normal;
     font-style: normal;
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Seperate those two files by including them in that way:</p>
 
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;!--[if lt IE 9]&gt;&lt;link rel="stylesheet" href="../static/css/styleie8.css"&gt;&lt;![endif]--&gt;
 &lt;!--[if gt IE 8]&gt;&lt;!-->&lt;link rel="stylesheet" href="../static/css/style.css"&gt; &lt;!--&lt;![endif]--&gt;
-</code></pre>
+{% endhighlight %}
 
 <p>The seperating of those browser related stylesheets might not be the most elegant way, but it definitely works and using CSS preprocessors, you won't have that much work in generating those files.</p>

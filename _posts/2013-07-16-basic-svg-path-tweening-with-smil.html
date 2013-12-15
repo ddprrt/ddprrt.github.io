@@ -52,7 +52,7 @@ meta:
 
 <p>Anyhow, I did want to stick to SMIL, but even by using Tavmjongs data I wasn't able to recreate one transition between two bats. It took me some time to realize how Tavmjong was implementing his animation. Mostly because I didn't take a good look at the values. The <code class="language-markup">&lt;animate&gt;</code>-element is pretty straightforward, but the values do need some explanation: To create an animation from path A to B, the values inside the element have to feature both paths, separated by a semicolon. So if you want a transition from Figure A to B, you first have to include the path in your <code class="language-markup">&lt;path&gt;</code>-element, and then again as the first value tuple in your animation:</p>
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;!-- The 'd' in path is the first bat --&gt;
 &lt;path 
   d="M 256,213 C 245,181 206,187  ..."
@@ -65,7 +65,7 @@ meta:
     values="M 256,213 C 245,181 206,187 ... Z; 
             M 212,220 C 197,171 156,153 ... Z;"/&gt;
 &lt;/path&gt;
-</code></pre>
+{% endhighlight %}
 
 <h3>Result</h3>
 
@@ -87,7 +87,7 @@ meta:
 
 <p>We are not done with that. One thing you might realize is that the animation always jumps back to it's initial frame (which is why we also need to define the original path in the parent <code class="language-markup">&lt;path&gt;</code> element). To make sure that the ending state is preserved, we add another attribute called <code class="language-markup">fill</code> and set its value to <code class="language-markup">freeze</code>. In other elements, <code class="language-markup">fill</code> is used to define the filling color, in animation it's the state at the end.</p>
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;animate 
   dur="2s" 
 
@@ -96,7 +96,7 @@ meta:
   repeatCount="1" 
   attributeName="d"
   values="..." /&gt;
-</code></pre>
+{% endhighlight %}
 
 <h3>Result</h3>
 
@@ -111,7 +111,7 @@ meta:
 
 </p>And this is where this stuff becomes really good, as you can add at least some control to your animation. You can either use DOM events for that, like <code class="language-javascript">click</code> (as shown in the example above) or <code class="language-javascript">mouseover</code>, but you also can use time constraints to apply a certain delay:</p>
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;!-- Triggers the animation after 1s --&gt;
 &lt;animate
   dur="2s" repeatCount="indefinite"
@@ -158,7 +158,7 @@ meta:
   values="..."
 /&gt;
 
-</code></pre>
+{% endhighlight %}
 
 <p>These parameters take almost any input based DOM event, but with one very special constraint: The SVG data has to be embedded in the DOM. If you have your SVG in a file and are referencing it in an image tag or whatever, the DOM events won't trigger.</p>
 
@@ -166,7 +166,7 @@ meta:
 
 <p>This gives us a multitude of possibilities. Look at that the following example:</p>
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;svg&gt;
   &lt;path d="..."&gt;
     &lt;animate
@@ -184,7 +184,7 @@ meta:
       values="..." /&gt;
   &lt;/path&gt;
 &lt;/svg&gt;
-</code></pre>
+{% endhighlight %}
 
 <p>Here we start the second animation once the first one has already started.</p>
 
@@ -205,7 +205,7 @@ meta:
 
 <p>I dropped this idea due to browser constraints, tough it would've been easy: Simply add the callback into your markup, or use <code class="language-javascript">addEventListener</code> to achieve the same.</p>
 
-<pre><code class="language-markup">
+{% highlight html %}
 &lt;animate 
   dur="2s" fill="freeze" begin="click"
   repeatCount="1" 
@@ -214,13 +214,13 @@ meta:
   onend="cry()"
   
   values="..." /&gt;
-</code></pre>
+{% endhighlight %}
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 function cry() {
   alert("I'M BATMAN");
 }
-</code></pre>
+{% endhighlight %}
 
 <p>Other events include <code class="language-javascript">onbegin</code> which is obviously triggered when the animation starts, and <code class="language-javascript">onrepeat</code>, which counts the number of interations the animation has run and fires every time one iteration is complete.</p>
 
@@ -240,20 +240,20 @@ function cry() {
 
 <p>With that one you can detect SMIL:</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 return !!document.createElementNS('http://www.w3.org/2000/svg', 'animate');
-</code></pre>
+{% endhighlight %}
 
 <p>Place it in a try-catch block! To check for event callbacks, this is how it <em>should</em> work.</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 var el = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
 return !!el.onend;
-</code></pre>
+{% endhighlight %}
 
 <p>However, not even Firefox provides interfaces in their DOM API. This is a workaround: Add an almost empty SVG markup to your DOM and have it call a function once it starts. In this function, set your bools or classes, or whatever you like or need.</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 function smilEventsSupported() {
   //set classes or whatever
 }
@@ -265,7 +265,7 @@ document.body.innerHTML += '&lt;svg width="0" height="0"&gt;'
   + 'attributeName="d" begin="0s" repeatCount="0"' 
   + 'onbegin="smilEventsSupported()"/&gt;'
   + '&lt;/path&gt;&lt;/svg&gt;'
-</code></pre>
+{% endhighlight %}
 
 
 <h2>Bottom line</h2>

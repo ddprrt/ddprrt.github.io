@@ -40,7 +40,7 @@ meta:
 
 <p>A basic layout can be like that:</p>
 
-<pre class="language-markup"><code>
+{% highlight html %}
 &lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -62,7 +62,7 @@ meta:
     
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+{% endhighlight %}
 
 <p>We already included some partials (navigation and footer), as well as some parts we define later in the pages. Either with parameters (title) or with content (body).</p>
 
@@ -70,7 +70,7 @@ meta:
 
 <p>With the whole HTML layout in the layout modules, a page is a lot cleaner. It defines parameters in a sort of setup header, after that there's the content that is included when calling <code class="language-stuff">{{> body}}</code></p>
 
-<pre class="language-markup"><code>
+{% highlight html %}
 ---
 title: About
 ---
@@ -80,7 +80,7 @@ title: About
 &lt;ul&gt;
   ...
 &lt;/ul&gt;
-</code></pre>
+{% endhighlight %}
 
 <p>Easy!</p>
 
@@ -92,7 +92,7 @@ title: About
 
 <p>For our websites, those module categories do have separated folders in a template folder in our app directory:</p>
 
-<pre class="language-stuff"><code class="language-stuff">
+<pre><code>
     app
       |-- templates
           |-- layouts
@@ -110,25 +110,23 @@ title: About
 
 <p>First of all: Be sure to install assemble correctly after scaffolding your web app:</p>
 
-<pre class="language-"><code>
-yo webapp
+<pre><code>yo webapp
 npm install --save-dev assemble
 </code></pre>
 
 <p>Open your Gruntfile.js, and add assemble right after defining the module:</p>
 
-<pre class="language-javascript"><code>
-
+{% highlight javascript %}
 module.exports = function (grunt) {
   grunt.loadNpmTasks('assemble');
   …
 };
 
-</code></pre>
+{% endhighlight %}
 
 <p>With that done, we can do the basic setup for the assemble task. Just add this part anywhere inside the <code class="language-stuff">.initConfig</code> scope:</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 
 assemble: {
   options: {
@@ -141,7 +139,7 @@ assemble: {
   …
 }
 
-</code></pre>
+{% endhighlight %}
 
 <p>Pretty self-explanatory. We'll define the location of layout, partials, and some other stuff which you can ignore for now. Note that partials can be an array of folders, make use of that.</p>
 
@@ -151,7 +149,7 @@ assemble: {
 
 <p>With the setup being complete, just add a line for the "dist" target. This is yeoman's default target for anything building and distribution related.</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 assemble: {
   options: {
     flatten: true,
@@ -166,13 +164,13 @@ assemble: {
     } 
   }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>We have defined layouts and partials in the setup, the dist-target tells us where pages are located and where the assembled output should land. It's pretty straightforward: Just put all the pages in <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>, the output directory of the build process.</p>
 
 <p><strong>Note:</strong> This can create some conflicts if you're using the <code>htmlmin</code> task, since it tries for itself to copy everything HTML related from <code class="language-stuff">&lt;%= yeoman.app %&gt;/</code> to <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>. Just put everything done by assemble into a temporary directory, and let <code class="language-stuff">htmlmin</code> (which strangely never worked for me…) fetch the files from there:</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 assemble: {
   options: {
     flatten: true,
@@ -187,9 +185,9 @@ assemble: {
     } 
   }
 }
-</code></pre>
+{% endhighlight %}
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 htmlmin: {
   dist: {
     options: {
@@ -202,7 +200,7 @@ htmlmin: {
     }]
   }
 },
-</code></pre>
+{% endhighlight %}
 
 <p>Voilà, you're done.</p>
 
@@ -214,7 +212,7 @@ htmlmin: {
 
 <p>To achieve that, grunt creates a TMP directory where it puts all compiled stuff into. The server also points to that directory. So for having our HTML files assembled, just add this line of code to our assemble setup:</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 assemble: {
   …
   server: {
@@ -223,11 +221,11 @@ assemble: {
     } 
   }
 }
-</code></pre>
+{% endhighlight %}
 
 <p>If you start your server the first time, all pages are compiled and available. If you want to update your server anytime a <code class="language-stuff">*.hbs</code> file changes, add the following line to the <code class="language-stuff">watch</code> task:</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 watch: {
   … 
   assemble: {
@@ -238,13 +236,13 @@ watch: {
   }
 },
 ...
-</code></pre>
+{% endhighlight %}
 
 <p>Which actually just says: If anything changed in our layout/pages/partials folder, execute the assemble task again!</p>
 
 <p>To have the changes displayed without refreshing, tell livereload to have a look at the HTML files compiled into the TMP directory of the server:</p>
 
-<pre class="language-javascript"><code>
+{% highlight javascript %}
 
 watch: {
   …
@@ -259,7 +257,7 @@ watch: {
   }
 },
 
-</code></pre>
+{% endhighlight %}
 
 <p>And you're done! Enjoy!</p>
 
@@ -269,18 +267,18 @@ watch: {
 
 <p>Peter pointed out that with the current setup, <code>usemin</code> won't be able to run through your code and compile scripts and style files. You can either point the <code>useminPrepare</code> task to one of the template or partial files, or you just direct them to the <code>.tmp</code> directory:</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 useminPrepare: {
   options: {
     dest: '<%= yeoman.dist %>'
   },
   html: '.tmp/index.html'
 },
-</code></pre>
+{% endhighlight %}
 
 <p>Just run <code>useminPrepare</code> after <code>assemble</code>, which I forgot to add anyways. Thanks Sarith for pointing me onto that one!</p>
 
-<pre><code class="language-javascript">
+{% highlight javascript %}
 ...
   concurrent: {
     server: [
@@ -308,7 +306,7 @@ grunt.registerTask('build', [
   'copy:dist',
   'usemin'
 ]);
-</code></pre>
+{% endhighlight %}
 
 <p>Thanks again for the great feedback! I really appreciate it!</p>
 
