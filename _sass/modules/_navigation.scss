@@ -11,7 +11,7 @@
 
 .navigation {
 	font-family: $sansFont;
-	font-size: 0.8rem;
+	font-size: 0.85rem;
 
 	list-style-type: none;
 	
@@ -19,7 +19,7 @@
 	table-layout: fixed;
 
 	width: 100%;
-	max-width: 50rem;
+	max-width: $wrapperWidth;
 	margin: 0 auto;
 
 
