@@ -7,9 +7,18 @@ header {
 }
 
 .title {
-	color: $titleColor;
 	position: absolute;
 	bottom: $spacing * 2;
 	width: 100%;
 	text-align: center;
+
+	a, a:active {
+		color: $titleColor;
+		transition: color 0.2s ease;
+	}
+
+	a:hover {
+		color: darken($titleColor, 10);
+		text-decoration: none;
+	}
 }
