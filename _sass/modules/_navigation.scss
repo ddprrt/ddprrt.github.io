@@ -1,0 +1,40 @@
+.social {
+	font-family: 'icomoon';
+}
+
+.navigation-wrapper {
+	width: 100%;
+	background-color: $areaColor;
+	position: absolute;
+	bottom: 0;
+}
+
+.navigation {
+	font-family: $sansFont;
+	font-size: 0.8rem;
+
+	list-style-type: none;
+	
+	display: table;
+	table-layout: fixed;
+
+	width: 100%;
+	max-width: 50rem;
+	margin: 0 auto;
+
+
+	> li {
+		display: table-cell;
+		text-align: center;
+
+		a, a:active {
+			color: $areaFontColor;
+			display: block;
+			padding: $spacing / 2;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}

@@ -4,6 +4,7 @@
 
 @import "base/reset";
 @import "base/modifiers";
+@import "base/fonts";
 
 // LAYOUT
 
@@ -14,4 +15,5 @@
 @import "modules/header";
 @import "modules/overview";
 @import "modules/footer";
+@import "modules/navigation";
 @import "modules/syntax";
