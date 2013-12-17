@@ -16,16 +16,14 @@ meta:
 
 <p>But then, even this small feature can be misused in a very unforgiving way, and I almost freaked out when I found this codebit:</p>
 
-<pre>
-<code class="language-sass">
+{% highlight css %}
 $green:  #88b83b;
 $grey:   #505050;
 $h1-3:   #444;
 $text:   #444;
 $violet: #5c1c70;
 $red:    #d73a41;
-</code>
-</pre>
+{% endhighlight %}
 
 <p>This is just amazing, since it lacks any semantics whatsoever. Alright, one might argue that it is okay giving $text and $h1-3 a certain color, but then please just give it a name which is somewhat describing. <code class="language-css">$headline-color: #444;</code> would be nice, since you could use it also with other headlines. <code class="language-css">$text</code> would be nice as <code class="language-css">$standard-text-color</code>, so you might notice that it is a <em>color</em> to begin with. </p>
 
@@ -33,8 +31,7 @@ $red:    #d73a41;
 
 <p>If you find it easier to give colors of a certain brand style guide a name like green, grey, whatsoever, define a position with colors in your preprocessor CSS file, and then using describtive variables, e.g.:</p>
 
-<pre>
-<code class="language-sass">
+{% highlight css %}
 /** CI COLORS **/
 $green:  #88b83b;
 $red:    #d73a41;
@@ -54,6 +51,4 @@ h1, .h1 {
 }
 
 ...
-
-</code>
-</pre>
+{% endhighlight %}

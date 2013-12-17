@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+%icon {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -21,26 +21,50 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
 }
 
-.icon-github:before {
+[class^="icon-"], [class*=" icon-"] {
+	@extend %icon;
+}
+
+%icon-github:before {
+	@extend %icon;
 	content: "\47";
 }
-.icon-twitter:before {
+%icon-twitter:before {
+	@extend %icon;
 	content: "\54";
 }
-.icon-lanyrd:before {
+%icon-lanyrd:before {
+	@extend %icon;
 	content: "\4c";
 }
-.icon-feed:before {
+%icon-feed:before {
+	@extend %icon;
 	content: "\52";
 }
-.icon-bubble:before {
+%icon-bubble:before {
+	@extend %icon;
 	content: "\e604";
 }
-.icon-clock:before {
+%icon-clock:before {
+	@extend %icon;
 	content: "\e605";
 }
-.icon-image:before {
+%icon-image:before {
+	@extend %icon;
 	content: "\53";
+}
+%icon-podcast:before {
+	@extend %icon;
+	content: "\e600";
+}
+%icon-arrow-right:before {
+	@extend %icon;
+	content: "\e601";
+}
+%icon-arrow-left:before {
+	@extend %icon;
+	content: "\e602";
 }

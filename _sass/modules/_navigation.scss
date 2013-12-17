@@ -5,8 +5,6 @@
 .navigation-wrapper {
 	width: 100%;
 	background-color: $areaColor;
-	position: absolute;
-	bottom: 0;
 }
 
 .navigation {
@@ -24,8 +22,14 @@
 
 
 	> li {
-		display: table-cell;
+
+		@media(min-width: $minWidth) {
+			display: table-cell;
+		}
+
+		vertical-align: middle;
 		text-align: center;
+		position: relative;
 
 		a, a:active {
 			color: $areaFontColor;
@@ -37,4 +41,32 @@
 			text-decoration: none;
 		}
 	}
+}
+
+%paging__symbol {
+	position: absolute;
+	font-size: 1.5rem;
+	color: $areaFontColor;
+	top: 50%;
+	margin-top: -($spacing/2);
+}
+
+.paging__prev {
+	padding-left: $spacing;
+	&:before {
+		@extend %icon-arrow-left:before;
+		@extend %paging__symbol;
+		left: 0;
+	}
+	text-align: left;
+}
+
+.paging__next {
+	padding-right: $spacing;
+	&:after {
+		@extend %icon-arrow-right:before;
+		@extend %paging__symbol;
+		right: 0;
+	}
+	text-align: right;
 }

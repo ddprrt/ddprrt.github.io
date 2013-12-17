@@ -4,11 +4,17 @@ title: Stefan Baumgartner's front-end technology talk
 ---
 
 <section class="wrapper">
-	<h1>Articles</h1>
-	{% for post in site.posts %}
-		<article>
+	{% for post in paginator.posts %}
+		<article class="post">
 			<span>{{ post.date | date_to_string }}</span>
-			<h2 class="overview__header"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+			<h2 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		</article>
 	{% endfor %}
 </section>
+
+<nav class="navigation-wrapper">
+	<ul class="navigation paging">
+		{% if paginator.previous_page %}<li class="paging__prev"><a href="{{ paginator.previous_page_path }}">Previous</a></li>{% endif %}
+		{% if paginator.next_page %}<li class="paging__next"><a href="{{ paginator.next_page_path }}">Next</a></li>{% endif %}
+	</ul>
+</nav>

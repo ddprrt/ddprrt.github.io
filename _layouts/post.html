@@ -10,14 +10,6 @@ layout: default
 	{{ content }}
 
 
-	<nav>
-		<ul>
-			{% if page.previous %}<li><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
-			{% if page.next %}<li><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
-		</ul>
-	</nav>
-
-
 	{% unless page.nocomments %}
 	<h2>Comments</h2>
 	<div id="disqus_thread"></div>
@@ -36,5 +28,10 @@ layout: default
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 	{% endunless %}
 
-
 </article>
+<nav class="navigation-wrapper">
+	<ul class="navigation paging">
+		{% if page.previous %}<li class="paging__prev"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
+		{% if page.next %}<li class="paging__next"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
+	</ul>
+</nav>

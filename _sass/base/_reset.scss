@@ -20,7 +20,7 @@ body {
 
 p, ul, ol, dl,
 blockquote, pre, td, th, label, textarea, caption, details, figure, blockquote {
-	margin-bottom: $spacing;
+	margin-top: 1.5rem;
 	line-height: 1.5em;
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $sansFont;
 	font-weight: 900;
 	line-height: 1.2em;
-	margin-bottom: $spacing;
+	margin-top: 1.2em;
 }
 
 p {
@@ -93,4 +93,25 @@ a:hover {
 
 code {
 	font-family: $monoFont;
+}
+
+img {
+	max-width: 100%;
+}
+
+.img-holder {
+	text-align: center;
+}
+
+
+#disqus_thread {
+	margin-top: $spacing;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
 }
