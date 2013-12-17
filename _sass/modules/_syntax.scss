@@ -8,10 +8,10 @@ pre {
 
 $comment: #999988;
 $generic: #999988;
-$string: #d14;
-$number: #009999;
+$string: #DD1121;
+$number: $string;
 $inserted: #000;
-$name: #008080;
+$name: #25AFD1;
 $func: #fe0000;
 $tag: #fff;
 
@@ -37,7 +37,7 @@ $tag: #fff;
 .highlight .s { color: $string; } /* Literal.String */
 .highlight .na { color: $name; } /* Name.Attribute */
 .highlight .nb { color: #0086B3 } /* Name.Builtin */
-.highlight .nc { color: #445588; } /* Name.Class */
+.highlight .nc { color: $func; } /* Name.Class */
 .highlight .no { color: $name; } /* Name.Constant */
 .highlight .ni { color: #800080 } /* Name.Entity */
 .highlight .ne { color: $func; } /* Name.Exception */

@@ -8,6 +8,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+	color: #333;
 }
 
 body {
@@ -97,15 +98,6 @@ code {
 
 img {
 	max-width: 100%;
-}
-
-.img-holder {
-	text-align: center;
-}
-
-
-#disqus_thread {
-	margin-top: $spacing;
 }
 
 @-ms-viewport {
