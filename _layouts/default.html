@@ -12,7 +12,11 @@
 </head>
 <body>
 	
+	{%if page.titleimg %}
+	<header style="background-image: url({{ page.titleimg }}); background-size: cover; background-position: center center;">
+	{% else %}
 	<header>
+	{% endif %}
 		<h1 class="title"><a href="/">{{ site.name }}</a></h1>
 	</header>
 
