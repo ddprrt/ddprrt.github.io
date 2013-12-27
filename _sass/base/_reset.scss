@@ -25,6 +25,19 @@ blockquote, pre, td, th, label, textarea, caption, details, figure, blockquote {
 	line-height: 1.5em;
 }
 
+ul, ol {
+	margin-left: 1rem;
+
+	@media(min-width: $minWidth) {
+		margin-left: 0;
+	}
+}
+
+blockquote {
+	padding-left: $spacing;
+	border-left: 3px solid $areaColor;
+}
+
 sub,
 sup {
 	font-size: 75%;
