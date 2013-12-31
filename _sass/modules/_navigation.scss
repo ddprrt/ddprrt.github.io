@@ -43,6 +43,12 @@
 	}
 }
 
+.navigation__main {
+	&:before {
+		@extend %icon-menu;
+	}
+}
+
 %paging__symbol {
 	position: absolute;
 	font-size: 1.5rem;
@@ -54,7 +60,7 @@
 .paging__prev {
 	padding-left: $spacing;
 	&:before {
-		@extend %icon-arrow-left:before;
+		@extend %icon-arrow-left;
 		@extend %paging__symbol;
 		left: 0;
 	}
@@ -64,7 +70,7 @@
 .paging__next {
 	padding-right: $spacing;
 	&:after {
-		@extend %icon-arrow-right:before;
+		@extend %icon-arrow-right;
 		@extend %paging__symbol;
 		right: 0;
 	}

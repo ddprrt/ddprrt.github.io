@@ -4,4 +4,10 @@ footer {
 	color: $areaFontColor;
 	font-family: $sansFont;
 	font-weight: 400;
+
+	@media(min-width: $minWidth) {
+		p:first-of-type {
+			margin-top: 0;
+		}	
+	}
 }

@@ -28,43 +28,47 @@
 	@extend %icon;
 }
 
-%icon-github:before {
+%icon-github {
 	@extend %icon;
 	content: "\47";
 }
-%icon-twitter:before {
+%icon-twitter {
 	@extend %icon;
 	content: "\54";
 }
-%icon-lanyrd:before {
+%icon-lanyrd {
 	@extend %icon;
 	content: "\4c";
 }
-%icon-feed:before {
+%icon-feed {
 	@extend %icon;
 	content: "\52";
 }
-%icon-bubble:before {
+%icon-bubble {
 	@extend %icon;
 	content: "\e604";
 }
-%icon-clock:before {
+%icon-clock {
 	@extend %icon;
 	content: "\e605";
 }
-%icon-image:before {
+%icon-image {
 	@extend %icon;
 	content: "\53";
 }
-%icon-podcast:before {
+%icon-menu {
+	@extend %icon;
+	content: "\e603";
+}
+%icon-podcast {
 	@extend %icon;
 	content: "\e600";
 }
-%icon-arrow-right:before {
+%icon-arrow-right {
 	@extend %icon;
 	content: "\e601";
 }
-%icon-arrow-left:before {
+%icon-arrow-left {
 	@extend %icon;
 	content: "\e602";
 }
