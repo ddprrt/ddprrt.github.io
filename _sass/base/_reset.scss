@@ -33,6 +33,14 @@ ul, ol {
 	}
 }
 
+li {
+	text-align: justify;
+
+	+ li {
+		margin-top: $spacing / 2;
+	}
+}
+
 blockquote {
 	padding-left: $spacing;
 	border-left: 3px solid $areaColor;
