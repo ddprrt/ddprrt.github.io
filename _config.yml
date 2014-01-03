@@ -1,5 +1,7 @@
 name: front-end technology talk
 markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough"]
 pygments: true
 permalink: /blog/:year/:month/:day/:title/
 paginate: 10

@@ -9,6 +9,8 @@ categories:
 ---
 Even tough I was pretty satisfied with my old blog, and especially its design, I felt the need to go into another round of updating not only the look, but more importantly the system behind it. So, even if everything looks shiny and new (more likely: crappy), this is all about the nuts and bolts behind the content: **Converting your blog from Wordpress to Jekyll**
 
+*Last updated on 2014/01/03*
+
 ## Why the change?
 
 Probably the most interesting question of all. Well, i felt the need to change for several reasons:
@@ -81,7 +83,11 @@ even tough I now have more posts on one page as before, but it saves at least so
 
 For all the pages you get a folder called `_pages` after converting. While posts were just there, I needed some extra work on them. One of the great things in Jekyll is how they handle those pretty URLs. So, if you want to have some URL called `http://somedomain.com/contact`, just create a folder `contact` and put an `index.html` in there. You don't need anything more. So I took those two pages ([Speaking](/talks-slides) and [About](/contact) and put the into their respective folder. Take care of the naming conventions (might be a Ruby thing): If something starts with an underscore, it will be ignored on publishing.
 
-As for the domain name, I just added a CNAME file according to [this page](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) and gave my new domain keeper a short notice were to point that A record.
+As for the domain name, if you use GitHub Pages, I just added a CNAME file according to [this page](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) and gave my new domain keeper a short notice were to point that A record.
+
+## Saving Assets
+
+If you had a lot of images and other uploads, you can easily save them if you still use the same URLs. Wordpress uses (for whatever reason) absolute paths to all your uploads, which are mostly located in `wp-content/uploads`. So just download this folder, and put it in your own repository.
 
 ## RSS feed
 
@@ -134,7 +140,7 @@ GitHub recently created a very nice and short tutorial on how to use [Pages](htt
 
 1. No search anymore. Not that I really needed them
 2. No categories and category search results as in Wordpress, at least not without a plugin
-3. -No custom 404-. Forget that... Just provide a 404.html and your done!
+3. ~~No custom 404~~. Forget that... Just provide a 404.html and your done!
 
 ### Benefits
 
