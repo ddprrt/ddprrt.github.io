@@ -47,11 +47,14 @@
 	color: $areaFontColor;
 	background-color: $areaColor;
 	border-radius: 5px;
+	font-size: 1.25rem;
 	line-height: 1em;
 	position: absolute;
-	left: $spacing / 2;
-	margin-top: -1 * $spacing - ($spacing / 2);
+	right: $spacing / 2;
+	margin-top: -1 * $spacing - ($spacing / 4) * 3;
 	padding: $spacing / 4;
+	z-index: 2;
+	overflow: hidden;
 }
 
 .navigation__main {
