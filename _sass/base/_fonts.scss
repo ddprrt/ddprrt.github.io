@@ -9,6 +9,7 @@
 	font-style: normal;
 }
 
+
 %icon {
 	font-family: 'icomoon';
 	speak: none;
@@ -22,6 +23,10 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: inline-block;
+}
+
+.icon {
+	@extend %icon;
 }
 
 [class^="icon-"], [class*=" icon-"] {
