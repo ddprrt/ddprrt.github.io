@@ -37,7 +37,7 @@ Depending on your configuration, `sudo` might be required. What I found strange 
 Once installed, just create a new directory and type 
 
 ```
-jekyll init .
+jekyll new .
 ```
 
 inside. And voilà, you have a basic theme with a standard post already there!
@@ -81,7 +81,7 @@ paginate_path: /blog/page/:num
 
 even tough I now have more posts on one page as before, but it saves at least some of the URLs.
 
-For all the pages you get a folder called `_pages` after converting. While posts were just there, I needed some extra work on them. One of the great things in Jekyll is how they handle those pretty URLs. So, if you want to have some URL called `http://somedomain.com/contact`, just create a folder `contact` and put an `index.html` in there. You don't need anything more. So I took those two pages ([Speaking](/talks-slides) and [About](/contact) and put the into their respective folder. Take care of the naming conventions (might be a Ruby thing): If something starts with an underscore, it will be ignored on publishing.
+For all the pages you get a folder called `_pages` after converting. While posts were just there, I needed some extra work on them. One of the great things in Jekyll is how they handle those pretty URLs. So, if you want to have some URL called *http://somedomain.com/<wbr>contact*, just create a folder `contact` and put an `index.html` in there. You don't need anything more. So I took those two pages ([Speaking](/talks-slides) and [About](/contact) and put the into their respective folder. Take care of the naming conventions (might be a Ruby thing): If something starts with an underscore, it will be ignored on publishing.
 
 As for the domain name, if you use GitHub Pages, I just added a CNAME file according to [this page](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) and gave my new domain keeper a short notice were to point that A record.
 
@@ -140,7 +140,7 @@ GitHub recently created a very nice and short tutorial on how to use [Pages](htt
 
 1. No search anymore. Not that I really needed them
 2. No categories and category search results as in Wordpress, at least not without a plugin
-3. ~~No custom 404~~. Forget that... Just provide a 404.html and your done!
+3. ~~No custom 404~. Forget that... Just provide a 404.html and your done!
 
 ### Benefits
 
