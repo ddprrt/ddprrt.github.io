@@ -140,7 +140,7 @@ GitHub recently created a very nice and short tutorial on how to use [Pages](htt
 
 1. No search anymore. Not that I really needed them
 2. No categories and category search results as in Wordpress, at least not without a plugin
-3. ~~No custom 404~. Forget that... Just provide a 404.html and your done!
+3. ~~No custom 404~~. Forget that... Just provide a 404.html and your done!
 
 ### Benefits
 
