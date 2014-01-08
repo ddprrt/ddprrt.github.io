@@ -35,6 +35,7 @@
 			color: $areaFontColor;
 			display: block;
 			padding: $spacing / 2;
+			position: relative;
 		}
 
 		a:hover {
@@ -89,7 +90,7 @@
 
 .paging__prev {
 	padding-left: $spacing;
-	&:before {
+	a:before {
 		@extend %icon-arrow-left;
 		@extend %paging__symbol;
 		left: 0;
@@ -99,7 +100,7 @@
 
 .paging__next {
 	padding-right: $spacing;
-	&:after {
+	a:after {
 		@extend %icon-arrow-right;
 		@extend %paging__symbol;
 		right: 0;
