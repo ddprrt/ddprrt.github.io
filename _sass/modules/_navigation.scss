@@ -89,7 +89,9 @@
 }
 
 .paging__prev {
-	padding-left: $spacing;
+	a {
+		padding-left: $spacing;	
+	}
 	a:before {
 		@extend %icon-arrow-left;
 		@extend %paging__symbol;
@@ -99,7 +101,9 @@
 }
 
 .paging__next {
-	padding-right: $spacing;
+	a {
+		padding-right: $spacing;
+	}
 	a:after {
 		@extend %icon-arrow-right;
 		@extend %paging__symbol;
