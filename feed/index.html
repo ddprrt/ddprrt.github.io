@@ -11,7 +11,11 @@ layout: none
 		{% for post in site.posts %}
 			{% unless post.preview %}
 			<item>
+				{% if post.feed_title %}
+				<title>{{ post.feed_title }}</title>
+				{% else %}
 				<title>{{ post.title }}</title>
+				{% endif %}
 				<description>{{ post.excerpt | xml_escape }}</description>
 				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
 				<link>http://fettblog.eu{{ post.url }}</link>
