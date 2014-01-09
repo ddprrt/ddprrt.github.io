@@ -1,4 +1,5 @@
 name: front-end technology talk
+url: http://www.fettblog.eu
 markdown: redcarpet
 redcarpet:
   extensions: ["strikethrough"]
