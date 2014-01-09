@@ -86,7 +86,7 @@ title: About
 
 <h3>Partials</h3>
 
-<p>I guess you get the idea by now… I'll cover the usage of parameters and stuff sometime later. This is all about the grunt setup.</p>
+<p>I guess you get the idea by now... I'll cover the usage of parameters and stuff sometime later. This is all about the grunt setup.</p>
 
 <h3>Folder structure</h3>
 
@@ -118,7 +118,7 @@ npm install --save-dev assemble
 {% highlight javascript %}
 module.exports = function (grunt) {
   grunt.loadNpmTasks('assemble');
-  …
+  ...
 };
 
 {% endhighlight %}
@@ -135,7 +135,7 @@ assemble: {
     assets: 'dist/images',
     partials: ['<%= yeoman.app %>/templates/partials/*.hbs']
   },
-  …
+  ...
 }
 
 {% endhighlight %}
@@ -167,7 +167,7 @@ assemble: {
 
 <p>We have defined layouts and partials in the setup, the dist-target tells us where pages are located and where the assembled output should land. It's pretty straightforward: Just put all the pages in <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>, the output directory of the build process.</p>
 
-<p><strong>Note:</strong> This can create some conflicts if you're using the <code>htmlmin</code> task, since it tries for itself to copy everything HTML related from <code class="language-stuff">&lt;%= yeoman.app %&gt;/</code> to <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>. Just put everything done by assemble into a temporary directory, and let <code class="language-stuff">htmlmin</code> (which strangely never worked for me…) fetch the files from there:</p>
+<p><strong>Note:</strong> This can create some conflicts if you're using the <code>htmlmin</code> task, since it tries for itself to copy everything HTML related from <code class="language-stuff">&lt;%= yeoman.app %&gt;/</code> to <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>. Just put everything done by assemble into a temporary directory, and let <code class="language-stuff">htmlmin</code> (which strangely never worked for me...) fetch the files from there:</p>
 
 {% highlight javascript %}
 assemble: {
@@ -213,7 +213,7 @@ htmlmin: {
 
 {% highlight javascript %}
 assemble: {
-  …
+  ...
   server: {
     files: {
       '.tmp/': ['<%= yeoman.app %>/templates/pages/*.hbs']
@@ -226,7 +226,7 @@ assemble: {
 
 {% highlight javascript %}
 watch: {
-  … 
+  ... 
   assemble: {
    files: ['<%= yeoman.app %>/templates/layouts/*.hbs',
            '<%= yeoman.app %>/templates/pages/*.hbs',
@@ -244,14 +244,14 @@ watch: {
 {% highlight javascript %}
 
 watch: {
-  …
+  ...
   livereload: {
     options: {
       livereload: LIVERELOAD_PORT
     },
     files: [
       '.tmp/*.html', // Add this
-      … 
+      ... 
     ]
   }
 },
