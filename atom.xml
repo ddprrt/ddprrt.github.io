@@ -1,27 +1,30 @@
 ---
 layout: none
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>{{ site.name }}</title>
-		<description>{{ site.description }}</description>
-		<link>http://fettblog.eu</link>
-		<atom:link href="http://fettblog.eu/feed" rel="self" type="application/rss+xml" />
-		{% for post in site.posts %}
-			{% unless post.preview %}
-			<item>
-				{% if post.feed_title %}
-				<title>{{ post.feed_title }}</title>
-				{% else %}
-				<title>{{ post.title }}</title>
-				{% endif %}
-				<description>{{ post.excerpt | xml_escape }}</description>
-				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-				<link>http://fettblog.eu{{ post.url }}</link>
-				<guid isPermaLink="true">http://fettblog.eu/feed{{ post.url }}</guid>
-			</item>
-			{% endunless %}
-		{% endfor %}
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>{{ site.title }}</title>
+	<link href="{{ site.url }}/atom.xml" rel="self"/>
+	<link href="{{ site.url }}/"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>{{ site.url }}</id>
+	<author>
+		<name>{{ site.author.name }}</name>
+		<email>{{ site.author.email }}</email>
+	</author>
+
+	{% for post in site.posts %}
+	<entry>
+		{% if post.feed_title %}
+		<title>{{ post.feed_title }}</title>
+		{% else %}
+		<title>{{ post.title }}</title>
+		{% endif %}
+		<link href="{{ site.url }}{{ post.url }}"/>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<id>{{ site.url }}{{ post.id }}</id>
+		<content type="html">{{ post.excerpt | xml_escape }}</content>
+	</entry>
+	{% endfor %}
+</feed>
