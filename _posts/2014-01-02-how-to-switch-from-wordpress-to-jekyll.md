@@ -151,3 +151,5 @@ GitHub recently created a very nice and short tutorial on how to use [Pages](htt
 5. It's just so much more fun working and adapting your website without the CMS clutter. I'm a front-end dev, and I finally can work in my environment.
 
 If you have any questions concerning this setup, feel free to check out [the source code](https://github.com/ddprrt/ddprrt.github.io) or ask me in the comments or on [Twitter](http://twitter.com/ddpprt).
+
+*Update 2014/01/16*: My friend Tomomi (aka [GirlieMac](http://girliemac.com/blog/2013/12/27/wordpress-to-jekyll/)) also switched from Wordpress to Jekyll at almost the same time. Check out her awesome [article](http://girliemac.com/blog/2013/12/27/wordpress-to-jekyll/) for some good tips on how to secure everything from your Wordpress installation without strange prerelase packages.
