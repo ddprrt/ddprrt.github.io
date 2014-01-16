@@ -8,7 +8,7 @@ categories:
 - Bower
 ---
 
-Having a set of reusable and ready software components is a great thing, for a multitude of reasons like ensuring DRY development or boosting efficiency. A software component is a self contained unit of program code which can be accessed only by a defined interface. Or like [Berkely University puts it](http://www.eecs.berkeley.edu/~newton/Classes/EE290sp99/lectures/ee290aSp994_1/tsld009.htm):
+Having a set of reusable and ready software components is a great thing. And for a multitude of reasons, like ensuring DRY development or boosting efficiency. A software component is a self contained unit of program code which can be accessed only by a defined interface. Or like [Berkely University puts it](http://www.eecs.berkeley.edu/~newton/Classes/EE290sp99/lectures/ee290aSp994_1/tsld009.htm):
 
 > A software component is a unit of composition with contractually specified interfaces and explicit context dependencies only. A software component can be deployed independently and is subject to composition by third parties
 
