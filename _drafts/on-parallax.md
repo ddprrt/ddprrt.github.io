@@ -19,3 +19,7 @@ The screenshot above should showcase that technique. It's a sample from a fairly
 
 ## Parallax scrolling sites: Not parallax
 
+## CSS only parallax
+
+Some days ago [Keith Clarke](https://twitter.com/keithclarkcouk) showed us a CSS only technique for parallax scrolling. And besides being just done in CSS and thus not trying to re-implement browser features, it's approach is just pure beauty.
+
