@@ -12,7 +12,11 @@ html {
 
 	@media(min-width: $minWidth) {
 		font-size: 18px;
-	}	
+	}
+
+    @media(min-width: $minWidthWide) {
+        font-size: 21px;
+    }
 }
 
 body {
