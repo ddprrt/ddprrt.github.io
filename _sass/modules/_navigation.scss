@@ -12,7 +12,7 @@
 	font-size: 0.85rem;
 
 	list-style-type: none;
-	
+
 	display: table;
 	table-layout: fixed;
 
@@ -90,12 +90,12 @@
 
 .paging__prev {
 	a {
-		padding-left: $spacing;	
+		padding-left: $spacing;
 	}
 	a:before {
 		@extend %icon-arrow-left;
 		@extend %paging__symbol;
-		left: 0;
+		left: -$spacing / 3;
 	}
 	text-align: left;
 }
@@ -107,7 +107,7 @@
 	a:after {
 		@extend %icon-arrow-right;
 		@extend %paging__symbol;
-		right: 0;
+		right:  -$spacing / 3;
 	}
 	text-align: right;
 }
