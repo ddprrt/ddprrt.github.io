@@ -20,7 +20,9 @@ Also, [several](http://remysharp.com/2012/02/09/vendor-prefixes-about-to-go-sout
 
 Well, we kept them using anyways. Mostly because we were used to it, and there were tools (Sass mixins, [Emmet.io](http://emmet.io) autocompletion), which helped creating more code than necessary.
 
-Another reason was because we love using [Modernizr](http://modernizr.com) and the great ability to do feature based decision making. If feature *A* exists, use that code, otherwise do it in a different way. Modernizr tests **do** also check for prefixed features. So, for your switch to work in all cases, prefixes were again mandatory.
+Another reason was because we love using [Modernizr](http://modernizr.com) and the great ability to do feature based decision making: If feature *A* exists, use that code, otherwise do it in a different way. Modernizr tests **do** also check for prefixed features. So, for your switch to work in all cases, prefixes were again mandatory.
+
+Modernizr is an indispensable tool for my daily workflow and helps me progressively enhancing my websites and applications.
 
 We had some [discussion](https://github.com/Modernizr/Modernizr/issues/1082) over at Modernizr and decided to try if a robust and easy to opt-in possibility exists for that very case. And now, with the upcoming release, there's a flag for that.
 
