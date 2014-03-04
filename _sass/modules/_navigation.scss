@@ -95,7 +95,7 @@
 	a:before {
 		@extend %icon-arrow-left;
 		@extend %paging__symbol;
-		left: -$spacing / 3;
+		left: 0;
 	}
 	text-align: left;
 }
@@ -107,7 +107,7 @@
 	a:after {
 		@extend %icon-arrow-right;
 		@extend %paging__symbol;
-		right:  -$spacing / 3;
+		right:  0;
 	}
 	text-align: right;
 }
