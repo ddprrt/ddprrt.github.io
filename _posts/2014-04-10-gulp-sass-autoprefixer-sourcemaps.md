@@ -41,7 +41,7 @@ Initialize your gulp setup:
 npm init && npm install --save-dev gulp gulp-autoprefixer gulp-ruby-sass
 ```
 
-The interface of `gulp-sass` (which uses a much faster native implementation) and the one of `gulp-ruby-sass` are identical. So once `gulp-sass` is based on Sass 3.3, you can easily switch plugins.
+The interface of `gulp-sass` (which uses a much faster native implementation) and the one of `gulp-ruby-sass` are **not** identical. So once `gulp-sass` is based on Sass 3.3, you not only have to switch plugins, but also adapt their parameters.
 
 Your `gulpfile.js`
 
