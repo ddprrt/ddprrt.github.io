@@ -37,6 +37,8 @@ copy: {
 
 The function takes two parameters: *dest* and *src*, with *dest* being the destination directory. Be sure to attach a trailing slash at the end. *src* is the current file, so if your expression catches more than one file, you can access them one by one here.
 
+I just copied the files from the same directory *to* the same directory. By having a different suffix all the files stay where the were. So afterwards, being already in the *dist* folder, delete all the '*.html' files using *grunt-contrib-clean*.
+
 ## Beware!
 
 Be aware that this very method is an internal utility for file operations in grunt and might not be there in the future. However, until we get something better, why not use what's there!
