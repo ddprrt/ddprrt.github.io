@@ -14,6 +14,7 @@ meta:
   _edit_last: '1'
   _wp_old_slug: forcing-browsers-to-print-all-pages-in-grayscale
 ---
+<p><em>Slightly updated on 2014/05/27</em></p>
 <p>Very short snipplet, but very effective.</p>
   <p>With Chrome 18 CSS3 filters are finally implemented and you can do amazing stuff with them. One thing we tried and which we found rather useful than fancy is to force Chrome printing all content on your website in grayscale.</p>
 <!--more-->
@@ -22,9 +23,6 @@ meta:
 <pre class="prettyprint language-css"><code class=" language-css">@media print {
   body {
     -webkit-filter: grayscale(100%);
-       -moz-filter: grayscale(100%); /* Does not work atm */
-        -ms-filter: grayscale(100%); /* Does not work atm */
-         -o-filter: grayscale(100%); /* Does not work atm */
     filter: grayscale(100%); /* future-proof */
   }
 }
@@ -46,8 +44,7 @@ meta:
        Safari 5.2 and Opera 11.6 -- does not 
        need to be prefixed. See below */
     filter: url('#grayscale'); 
-    /* CSS3 filter, at the moment Webkit only. Prefix it for
-       future implementations */
+    /* CSS3 filter */
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%); /* future-proof */
   }
