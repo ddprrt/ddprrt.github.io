@@ -87,4 +87,4 @@ While this sample works at the moment, parts of it are rather hacky and thus mig
 
 ## Further information
 
-This sample was part of my talk at the [Webinale](http://www.webinale.de) in June 2014. Get the whole slide deck [here](https://speakerdeck.com/ddprrt/keeping-the-web-native).
+This sample was part of my talk at the [Webinale](http://www.webinale.de) in June 2014. Get the whole slide deck [here](https://speakerdeck.com/ddprrt/keeping-the-web-native). See the whole example [at Codepen](http://codepen.io/ddprrt/pen/leLab).
