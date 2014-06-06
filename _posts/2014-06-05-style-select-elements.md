@@ -9,7 +9,7 @@ categories:
 
 Remember those days where developers made the most amazing forms in Flash because they both had to do everything from scratch due to lack of being close to an operating system. And designers decided to put extra effort in looks in behaviour because of ... design?
 
-We took this pattern over to HTML sites and were close to recreating every single form element or adding JavaScript extravaganza, especially when we were doing `&lt;select&gt;` elements.
+We took this pattern over to HTML sites and were close to recreating every single form element or adding JavaScript extravaganza, especially when we were doing `<select>` elements.
 
 We had (good) jQuery plugins like [Select2](http://ivaynberg.github.io/select2/), who even were accessible and had lots of good extra features, but what we thoroughly missed was usability on those little buggers everyone has in their pockets: Smartphones.
 
