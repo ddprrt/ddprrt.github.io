@@ -2,6 +2,7 @@
 title: "Undocumented Grunt.js features: Renaming of files"
 layout: post
 published: true
+permalink: /blog/2014/05/27/undocumented-features-rename/
 categories:
 - Tools
 - Grunt
