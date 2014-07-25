@@ -4,6 +4,7 @@ title: front-end technology talk
 ---
 
 <section class="wrapper">
+	<h1 class="visually-hidden">List of articles</h1>
 	{% for post in paginator.posts %}
 		<article class="post">
 			<div class="post__date">{{ post.date | date_to_long_string }} <!-- | 
