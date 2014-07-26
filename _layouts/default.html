@@ -1,11 +1,23 @@
 <!doctype html>
-<html>
+{% if page.lang %}
+<html lang="{{ page.lang }}">
+{% else %}
+<html lang="en">
+{% endif %}
 <head>
 	<meta charset="utf-8">
 	<title>{{ page.title }}</title>
 	<meta name="viewport" content="width=device-width">
+	{% if page.description %}
+	<meta name="description" content="{% page.description %}">
+	{% else %}
 	<meta name="description" content="Blog with articles on all things web development: CSS, JS, Node, HTML, A11Y">
+	{% endif %}
+	{% if page.keywords %}
+	<meta name="keywords" content="{% page.keywords %}">
+	{% else %}
 	<meta name="keywords" content="CSS, Scss, Sass, LESS, preprocessors, postprocessors, JavaScript, Mobile, Web, Browsers, HTML, HTML5">
+	{% endif %}
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/css/main.css">
