@@ -260,7 +260,7 @@ watch: {
 
 <p>And you're done! Enjoy!</p>
 
-<h2>Update</h2>
+<h2>Updates</h2>
 
 <p>I got some great feedback in the comments. Thank you guys, you're amazing! Here are some issues I forgot to address:</p>
 
@@ -308,6 +308,25 @@ grunt.registerTask('build', [
 {% endhighlight %}
 
 <p>Thanks again for the great feedback! I really appreciate it!</p>
+
+
+<p>As Mark Paul pointed out, you need some updates in your usemin configuration, otherwise you won't get any <code>rev</code> updates:</p>
+
+{% highlight javascript %}
+// Performs rewrites based on rev and the useminPrepare configuration
+...
+usemin: {
+  options: {
+    assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+  },
+  html: ['<%= config.dist %>/{,*/}*.html', '.tmp/{,*/}*.html'],
+  css: ['<%= config.dist %>/styles/{,*/}*.css']
+}
+...
+{% endhighlight %}
+
+<p>Thank you for mentioning!</p>
+
 
 <h2>Bottom line</h2>
 
