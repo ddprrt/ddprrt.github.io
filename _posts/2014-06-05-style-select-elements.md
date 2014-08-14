@@ -85,6 +85,10 @@ And have the styled select box you ever wanted.
 
 While this sample works at the moment, parts of it are rather hacky and thus might have a different outcome in the future. At the moment there isn't a standard for styling native controls, so be aware that everything here might change! 
 
+### Update
+
+As said, it is a hack. Therefore there might be some troubles with some browsers, like Firefox 31 and 32... it will work again with Firefox 33.
+
 ## Further information
 
 This sample was part of my talk at the [Webinale](http://www.webinale.de) in June 2014. Get the whole slide deck [here](https://speakerdeck.com/ddprrt/keeping-the-web-native). See the whole example [at Codepen](http://codepen.io/ddprrt/pen/leLab).
