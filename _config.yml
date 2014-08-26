@@ -10,3 +10,5 @@ paginate_path: /blog/page/:num
 author:
   name: Stefan Baumgartner
   email: sbaumg@gmail.com
+gems:
+- jekyll-sitemap
