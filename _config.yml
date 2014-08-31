@@ -12,3 +12,4 @@ author:
   email: sbaumg@gmail.com
 gems:
 - jekyll-sitemap
+- jekyll-redirect-from
