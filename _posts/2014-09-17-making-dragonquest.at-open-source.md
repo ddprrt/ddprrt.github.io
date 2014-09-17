@@ -10,7 +10,7 @@ categories:
 
 No tutorials or tech guides today, this is something rather personal! Yesterday while waiting for the launch of Netflix I got an E-Mail that the original *Dragon Quest* is available for Smartphones, making it the first time that this game makes it to Europe since its original release in 1986.
 
-I've always been a huge fan of the series and *Dragon Quest* played an essential role in me becoming a web developer. Back in the days I was maintaining a little pet project which I called *The Dragon's Hoard* before finally buying a domain. It was essentially a website about all things *Dragon Quest*: News, community and especially guides. There were some walkthroughs scratching on the 100 pages mark, not counting images, with a *lot* of information on almost every part of an entry in the series.
+I've always been a huge fan of the series and *Dragon Quest* played an essential role in me becoming a web developer. Back in the days I was maintaining a little pet project which I called *The Dragon's Hoard*. It was essentially a website about all things *Dragon Quest*: News, community and especially guides. There were some walkthroughs scratching on the 100 pages mark, not counting images, with a *lot* of information on almost every part of an entry in the series.
 
 <p class="img-holder">
 	<img src="/wp-content/uploads/2014/dragons.jpg" alt="The very first design for the Dragon Quest webpage">
