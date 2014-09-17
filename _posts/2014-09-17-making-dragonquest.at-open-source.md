@@ -42,6 +42,8 @@ Thank you, *Dragon Quest*, for letting me find my purpose and having some really
 
 ![Then, into the Legend -- all heroes of the first seven DQs](/wp-content/uploads/2014/dq-mainart.jpg)
 
+Btw. if you are stuck with the first *Dragon Quest* game. Here's a (German) [walthrough](/dragonquest.at/2007/01/15/komplettlosung.html)
+
 ## Links
 
 * [The GitHub repo](https://github.com/ddprrt/dragonquest.at)
