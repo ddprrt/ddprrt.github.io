@@ -1,5 +1,5 @@
 ---
-title: Gulp.js: src() is now a writable passthrough
+title: "Gulp.js: src() is now a writable passthrough"
 layout: post
 published: true
 permalink: gulp-src-writable-passthrough
