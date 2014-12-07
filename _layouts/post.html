@@ -5,14 +5,13 @@ layout: default
 <article class="wrapper">
 		
 	<h1>{{ page.title }}</h1>
-	<p data-modified="{%if page.modified %}{{ page.modified }}{% else %}{{ page.date }}{% endif %}" class="post__date">{{ page.date | date_to_long_string }} by <a href="http://twitter.com//ddprrt">@ddprrt</a></p>
+	<p data-modified="{%if page.modified %}{{ page.modified }}{% else %}{{ page.date }}{% endif %}" class="post__date">{{ page.date | date_to_long_string }} by <a href="http://twitter.com//ddprrt">@ddprrt</a> | Posted in: <span>{{ page.categories | join: ', '}}</span></p>
 
 	{{ content }}
 
-
 	{% unless page.nocomments %}
 	<p>
-		<em>Starting with December 2014, comments are closed due to technical difficulties with comment form providers. If you have any additions to the topic, shoot me a <a href="http://twitter.com/ddprrt">tweet</a>, I'm happy to answer as soon as possible.</em>
+		<em>Comments? Shoot me a <a href="http://twitter.com/ddprrt">tweet</a>!</em>
 	</p>
 	{% endunless %}
 
