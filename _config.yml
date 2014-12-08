@@ -10,6 +10,9 @@ paginate_path: /blog/page/:num
 author:
   name: Stefan Baumgartner
   email: sbaumg@gmail.com
+sass:
+  sass_dir: _sass/
+  style: compressed
 gems:
 - jekyll-sitemap
 - jekyll-redirect-from
