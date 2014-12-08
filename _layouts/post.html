@@ -2,12 +2,14 @@
 layout: default
 ---
 
-<article class="wrapper">
+<article class="wrapper h-entry">
 		
 	<h1>{{ page.title }}</h1>
 	<p data-modified="{%if page.modified %}{{ page.modified }}{% else %}{{ page.date }}{% endif %}" class="post__date">{{ page.date | date_to_long_string }} by <a href="http://twitter.com//ddprrt">@ddprrt</a> | Posted in: <span>{{ page.categories | join: ', '}}</span></p>
 
+	<div class="e-content">
 	{{ content }}
+	</div>
 
 	{% unless page.nocomments %}
 	<p>
