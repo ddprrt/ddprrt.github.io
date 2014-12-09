@@ -22,7 +22,7 @@ A few weeks ago I did a short talk on [Yeoman](http://yeoman.io) at the Linzer e
 2. It might actually be that you’ve heard from the Yeoman warders who guard the tower of London. They’re also called beefeaters and might happen to have a strong taste for gin
 3. They even have their own brand, which tastes great btw.
 4. Anyhow, the Yeoman warders at the Tower of London are helpful guides and show you around on your sightseeing tour. This helpfulness inspired a bunch of software developers like Addy Osmani to create a not less helpful tool or toolchain to guide you in your software development process. And Yeoman, or not be precise, Yo, is the result.
-5. We’re using Yo to overcome a lot of obstacles in our day-to-day workflow. First and foremost, because of this well know situation. This is Pinky, my colleague and the guy I work with most of the time. The other one is a random “Brain” from our team. 
+5. We’re using Yo to overcome a lot of obstacles in our day-to-day workflow. This is Pinky, my colleague and the guy I work with most of the time. The other one is a random “Brain” from our team. 
 6. We happen to do a lot of new projects, mostly microsites, and have the need to kick-start a new project often on a weekly base. So, if we try to get a new project running, every developer has his own way of doing so.
 7. While Pinky might call his folders like the technology he is using,
 8. Our random brain might call it after the actual type: Styles, scripts and templates.
