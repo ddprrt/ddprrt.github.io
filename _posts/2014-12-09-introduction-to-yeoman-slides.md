@@ -8,6 +8,7 @@ categories:
 - Tools
 - Yeoman
 - Talk
+- Slides
 ---
 
 A few weeks ago I did a short talk on [Yeoman](http://yeoman.io) at the Linzer edition of [Codeweek](http://codeweek.eu) and how it helps us in our daily workflow. For the first time I tried to have some sort of script, and afterwards I even made notes. So aside from funny images, you even can read what I was talking about. Have fun!

@@ -7,6 +7,9 @@ titleimg: /wp-content/uploads/2015/grunt.jpg
 categories:
 - Tools
 - Workshop
+- Yeoman
+- Grunt
+- Gulp
 - Slides
 ---
 
