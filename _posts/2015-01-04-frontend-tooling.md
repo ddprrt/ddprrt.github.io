@@ -7,7 +7,7 @@ titleimg: /wp-content/uploads/2015/grunt.jpg
 categories:
 - Tools
 - Workshop
-- Talk
+- Slides
 ---
 
 I happen to hold my third iteration of the "Frontend Tooling with Grunt and Yeoman" workshop at this years  <a href="http://javascript-days.de/2015/">JavaScript Days</a> in March. It's in Munich, so if you happen to be bear this lovely town, drop by and learn a lot about different JavaScript technologies.
