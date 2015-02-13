@@ -17,10 +17,10 @@ Back in 2011 when we started using preprocessors at our company the decision fel
 
 And we where very happy with it. Let's say for half a year or so, when we started to switch to much more popular [Sass](http://sass-lang.org) preprocessor:
 
-1. We all had Macs by now and thus Ruby pre-installed. A short way to Sass. Especially when you want to run it on your Jenkins server, too.
+1. We all had Macs by now and thus Ruby pre-installed. A short way to Sass. Especially if you want to run it on your Jenkins server, too.
 2. We had `@extend`, and I loved that.
 
-And stuck with it since. Life was good, and we're still using it up to this day. When I started lecturing at the University of Applied Sciences in Hagenberg, me and my colleagues decided to teach them CSS preprocessors, because they rock. But our choice went again back to LESS. Mostly because it was easy to get on the university's exercise PCs (download a JS and include it, enough for running demos!) and my colleagues was very uncomfortable with every programming language that did not had at least a little "Java" in its name. Brr.
+And stuck with it since. Life was good, and we're still using it up to this day. When I started lecturing at the University of Applied Sciences in Hagenberg, me and my colleagues decided to teach them CSS preprocessors, because they rock. But our choice went  back to LESS. Mostly because it was easy to get on the university's PCs (download a JS and include it, enough for running demos!) and one of my colleagues was very uncomfortable with every programming language that did not had at least a little "Java" in its name. Brr.
 
 Anyhow. As CSS and tooling guy, it was my task to take a closer look at LESS as it was now and create a little 2 hour talk on it. And I found out, boy, in three years time a lot has changed:
 
@@ -129,7 +129,7 @@ Anyways. The next feature is one which is super cool:
 
 ## Importing CSS files
 
-Huuuuuh? Huuuuuuuh? Let it roll over your tongue: Import CSS files! Oh yeah, you can import any CSS file as long as you don't forget to state the extension:
+Let it roll over your tongue: Import CSS files! Oh yeah, you can import any CSS file as long as you don't forget to state the extension:
 
 {% highlight css %}
 @import 'mylessmodule';
