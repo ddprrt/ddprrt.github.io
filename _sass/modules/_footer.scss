@@ -14,7 +14,7 @@ footer {
 	a {
 		color: $footerLinkColor;
 		&:hover {
-			darken($footerLinkColor, 10);
+			color: darken($footerLinkColor, 10);
 		}
 	}
 }
