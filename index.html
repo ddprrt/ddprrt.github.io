@@ -15,7 +15,7 @@ title: front-end technology talk
 
 <nav class="navigation-wrapper">
 	<ul class="navigation paging">
-		{% if paginator.previous_page %}<li class="paging__prev"><a href="{{ paginator.previous_page_path }}">Previous</a></li>{% endif %}
-		{% if paginator.next_page %}<li class="paging__next"><a href="{{ paginator.next_page_path }}">Next</a></li>{% endif %}
+		{% if paginator.previous_page %}<li class="paging__prev"><a rel="prev" href="{{ paginator.previous_page_path }}">Previous</a></li>{% endif %}
+		{% if paginator.next_page %}<li class="paging__next"><a rel="next" href="{{ paginator.next_page_path }}">Next</a></li>{% endif %}
 	</ul>
 </nav>
