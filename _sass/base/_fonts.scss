@@ -32,7 +32,7 @@
 [class^="icon-"], [class*=" icon-"] {
 	@extend %icon;
 }
-
+/*
 %icon-github {
 	@extend %icon;
 	content: "\47";
@@ -68,7 +68,7 @@
 %icon-podcast {
 	@extend %icon;
 	content: "\e600";
-}
+}*/
 %icon-arrow-right {
 	@extend %icon;
 	content: "\e601";

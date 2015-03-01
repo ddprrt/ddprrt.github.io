@@ -10,4 +10,11 @@ footer {
 			margin-top: 0;
 		}	
 	}
+
+	a {
+		color: $footerLinkColor;
+		&:hover {
+			darken($footerLinkColor, 10);
+		}
+	}
 }
