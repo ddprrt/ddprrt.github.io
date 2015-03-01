@@ -32,7 +32,7 @@ A few weeks ago I did a short talk on [Yeoman](http://yeoman.io) at the Linzer e
 11. which looked like this (Animation)
 12. And this was my face when my co-workers asked me to change the build to their new setup. Every single time.
 13. This is where our Yeomen come in. 
-14. First the give me the much needed Gin,
+14. First it give's me the much needed Gin,
 15. but actually they’re helping me to settle on a good set of defaults and best practices, and provide a way to distribute them to everybody in my team.
 16. They’re doing this by so-called generators. Each generator is used for a different eco-system. You even can develop a generator to create a custom project setup for your very own team.
 17. It also helps to overcome the blank page angst. You don’t have to start from scratch and actually have a good setup where you can easily add your new parts. This helped me a lot when starting with Angular, because there were a lot of repetitive patterns which I couldn’t memorise at first.
