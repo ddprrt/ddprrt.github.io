@@ -129,11 +129,11 @@ Anyways. The next feature is one which is super cool:
 
 ## Importing CSS files
 
-Let it roll over your tongue: Import CSS files! Oh yeah, you can import any CSS file as long as you don't forget to state the extension:
+Let it roll over your tongue: Import CSS files! Oh yeah, you can import any CSS file as long as you don't forget to state the extension and call what to do with it:
 
 {% highlight css %}
 @import 'mylessmodule';
-@import 'csscodefromtheinterwebs.css';
+@import (inline) 'csscodefromtheinterwebs.css';
 {% endhighlight %}
 
 Boom! Use any blindly downloaded CSS code directly in your one and only `main.less` file. But importing does not stop here! Think of having more LESS modules which require one certain file to be imported. You want to make sure that this file *is* there, but you don't want to import multiple times? There's the keyword `once` which deals with that. And that's even the default behaviour.
