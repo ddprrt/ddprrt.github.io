@@ -7,6 +7,10 @@ categories:
 - Sass
 - Gulp
 ---
+
+**Update 2015/03**: *There has been a breaking change with `gulp-ruby-sass` v1.0. The files have been updated.*
+
+
 Having Sourcemaps is one of the new big things in Sass 3.3. And rightfully so: The opportunity to fully track selectors and rules back to its very origin in your debugger is really, really helpful! And also, it's rather easy to set up. Just add the `--sourcemaps` flag and you are done.
 
 Things can be complicated if you're using a more complex chain of build processes and tools. Like booting up *gulp* or *grunt*, processing your Sass files and post-processing it afterwards with `autoprefixer` or similar.
@@ -50,12 +54,13 @@ Your `gulpfile.js`
 {% highlight js %}
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var prefix = require('gulp-autoprefixer');
 
 gulp.task('default', function () {
-    gulp.src('src/app.scss')
-        .pipe(sass({sourcemap: true, style: 'compact'}))
+    sass('src/app.scss', {sourcemap: true, style: 'compact'})
         .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
+        .pipe(sourcemaps('.'))
         .pipe(gulp.dest('dist'));
 });
 {% endhighlight %}
