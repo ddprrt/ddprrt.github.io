@@ -1,16 +1,14 @@
 ---
-title: Gulp, Sass, Autoprefixer, Sourcemaps!
+title: "Gulp, Sass, Autoprefixer, Sourcemaps!"
 layout: post
 published: true
+modified: "2015-03-25"
 categories:
-modified: 2015-03-25
 - Tools
 - Sass
 - Gulp
 ---
-
 **Update 2015/03**: *There has been a breaking change with `gulp-ruby-sass` v1.0. The files have been updated.*
-
 
 Having Sourcemaps is one of the new big things in Sass 3.3. And rightfully so: The opportunity to fully track selectors and rules back to its very origin in your debugger is really, really helpful! And also, it's rather easy to set up. Just add the `--sourcemaps` flag and you are done.
 
