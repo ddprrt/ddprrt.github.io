@@ -23,16 +23,6 @@ Anyhow, if you want to have both benefits -- kick-ass sourcemaps and some help b
 
 But there is an easy trick how you can achieve both with minimal effort. Just don't allow  new lines to be created. Both Sass and `autoprefixer` care a lot about your style of coding. Which means that they don't f**k up your code once you've decided how the output is created. So, if you tell Sass to write each rule into one single line (output style `compact`), `autoprefixer` will add the new rules in exact the same line, thus keeping the sourcemap information intact.
 
-Here's the setup, this time with `gulp`:
-
-First, add the sourcemap information to your main.scss file:
-
-{% highlight css %}
-/*# sourceMappingURL=main.css.map */
-{% endhighlight %}
-
-Being a multiline comment, Sass will keep those comments. Your browser will take the reference and loads the map.
-
 When you're using `gulp`, be sure to use the ruby version of the plugin, and also make sure that you've Sass 3.3 installed.
 
 ```
@@ -48,6 +38,8 @@ npm init && npm install --save-dev gulp gulp-autoprefixer gulp-ruby-sass
 The interface of `gulp-sass` (which uses a much faster native implementation) and the one of `gulp-ruby-sass` are **not** identical. So once `gulp-sass` is based on Sass 3.3, you not only have to switch plugins, but also adapt their parameters.
 
 **Update 2014/6/3**: Apparently `gulp-sass` does not allow to use `outputStyle: compressed`, so you have to stick with the Ruby version for now.
+
+**Update 2015/3/25**: With Sass 3.4. and `gulp-ruby-sass` 1.0 the interface has changed again. It now has been adapted to realise that's just a wrapper for the original Sass and not a piped through task, and also requires Gulp's sourcemap module to work properly. This might also change the behaviour with Autoprefixer and Sourcemaps in general.
 
 Your `gulpfile.js`
 
