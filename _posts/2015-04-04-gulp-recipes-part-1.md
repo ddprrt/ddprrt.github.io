@@ -125,7 +125,8 @@ var gulp   = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var merge  = require('merge-stream');
+// this node module will do the trick
+var merge  = require('merge2');
 
 gulp.task('scripts', function() {
 	// we use the array map function to map each
