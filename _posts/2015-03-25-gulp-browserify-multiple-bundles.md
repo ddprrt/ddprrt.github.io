@@ -74,7 +74,7 @@ gulp.task('default', function() {
         './app/main-b.js'
     ];
     // map them to our stream function
-    files.map(function(entry) {
+    var tasks = files.map(function(entry) {
         return browserify({ entries: [entry] })
             .bundle()
             .pipe(source(entry))
