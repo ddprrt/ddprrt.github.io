@@ -105,8 +105,8 @@ var gulp       = require('gulp'),
     glob       = require('node-glob'),
     es         = require('event-stream');
 
-gulp.task('default', function() {
-    return glob('./app/main-**.js', function(err, files) {
+gulp.task('default', function(done) {
+    glob('./app/main-**.js', function(err, files) {
         var tasks = files.map(function(entry) {
             return browserify({ entries: [entry] })
                 .bundle()
@@ -116,7 +116,8 @@ gulp.task('default', function() {
                 }))
                 .pipe(gulp.dest('./dist')); 
             });
-        return es.merge.apply(null, tasks);
+        es.merge.apply(null, tasks);
+        done();
     })
 });
 {% endhighlight %}
