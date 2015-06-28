@@ -116,8 +116,7 @@ gulp.task('default', function(done) {
                 }))
                 .pipe(gulp.dest('./dist')); 
             });
-        es.merge.apply(null, tasks);
-        done();
+        es.merge(tasks).on('end', done);
     })
 });
 {% endhighlight %}
@@ -127,3 +126,5 @@ So this one makes it even more flexible.
 ## Bottom line
 
 One thing I learned when doing this example over and over, was to appreciate and understand streams. That concept seems clear from the get go when you're starting with Gulp, but in the end it's much more than that. Gulp's just a use-case for streams, not a stream implementation. If you can divide streams and virtual file objects (a.k.a vinyl objects), and focus your learnings on the stream part, you realise that you can do wonderful things with it.
+
+**Thanks to <a href="https://twitter.com/simondean">Simon Dean</a> and <a href="https://twitter.com/blacksonic86">Soós Gábor</a> for updates on the last task**
