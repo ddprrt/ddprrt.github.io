@@ -107,6 +107,8 @@ var gulp       = require('gulp'),
 
 gulp.task('default', function(done) {
     glob('./app/main-**.js', function(err, files) {
+        if(err) done(err);
+        
         var tasks = files.map(function(entry) {
             return browserify({ entries: [entry] })
                 .bundle()
