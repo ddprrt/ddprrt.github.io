@@ -1,5 +1,5 @@
 ---
-title: "My contribution to Christoph Rumpel's \"10 things that will make you a better developer\" (external)"
+title: "My contribution to Christoph Rumpel's \"10 things that will make you a better developer\""
 published: true
 permalink: /contribution-to-10-things/
 categories:
