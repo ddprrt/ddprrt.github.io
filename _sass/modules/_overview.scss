@@ -13,3 +13,7 @@
 	font-size: 0.8rem;
 	color: #777;
 }
+
+.post__title a[href^=http]:after {
+    content: ' \279e';
+}
