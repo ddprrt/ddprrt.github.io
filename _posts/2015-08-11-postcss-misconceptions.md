@@ -5,6 +5,7 @@ published: true
 permalink: /postcss-misconceptions/
 layout: redirect
 external: https://medium.com/@ddprrt/postcss-misconceptions-faf5dc5038df
+showcontent: true
 categories:
 - articles
 ---
