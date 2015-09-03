@@ -88,6 +88,7 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 		var trackOutboundLink = function(url) {
+			url = this.href;
    			ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
      			function () {
      				document.location = url;
@@ -95,7 +96,7 @@
    			});
 		}
 
-		document.querySelectorAll('[href*=manning.com]' trackOutboundLink);
+		document.querySelectorAll('[href*=manning.com]', trackOutboundLink);
 </script>
 	})();
 	</script>
