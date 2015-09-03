@@ -96,7 +96,10 @@
    			});
 		}
 
-		document.querySelectorAll('[href*=manning.com]', trackOutboundLink);
+		var res = document.querySelectorAll('[href*=manning.com]');
+		[].prototype.slice.call(res).forEach(item, function() {
+			item.addEventListener('click', trackOutboundLink);
+		})
 </script>
 	})();
 	</script>
