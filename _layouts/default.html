@@ -24,7 +24,7 @@
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/rss+xml" title="front-end technology talk &raquo; Updates" href="http://www.fettblog.eu/atom.xml" />
-	
+
 	<!-- Webmentions -->
 	<link rel="pingback" href="https://webmention.io/fettblog.eu/xmlrpc" />
 	<link rel="webmention" href="https://webmention.io/fettblog.eu/webmention" />
@@ -86,6 +86,17 @@
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+		var trackOutboundLink = function(url) {
+   			ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+     			function () {
+     				document.location = url;
+     			}
+   			});
+		}
+
+		document.querySelectorAll('[href*=manning.com]' trackOutboundLink);
+</script>
 	})();
 	</script>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
