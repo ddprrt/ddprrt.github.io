@@ -87,7 +87,7 @@
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
-		var trackOutboundLink = function(url) {
+		var trackOutboundLink = function() {
 			url = this.href;
    			ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
      			function () {
@@ -96,10 +96,10 @@
    			});
 		}
 
-		var res = document.querySelectorAll('[href*=manning.com]');
-		[].prototype.slice.call(res).forEach(item, function() {
+		var res = document.querySelectorAll('[href*="manning.com"]');
+		[].slice.call(res).forEach(function(item) {
 			item.addEventListener('click', trackOutboundLink);
-		})
+		});
 </script>
 	})();
 	</script>
