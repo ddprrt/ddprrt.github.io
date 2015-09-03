@@ -9,7 +9,7 @@ categories:
 ---
 
 One really cool feature on the Gulp 4 roadmap is the inclusion of native
-sourcemaps. A commit roughly two weeks ago at the `[vinyl-fs](git://github.com/wearefractal/vinyl-fs)`
+sourcemaps. A commit roughly two weeks ago at the [vinyl-fs](git://github.com/wearefractal/vinyl-fs)
 package makes this possible now. Instead of using the `gulp-sourcemaps`
 package directly, you can use a flag in `gulp.src`. Gulp takes care of the rest:
 
