@@ -88,7 +88,7 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
 		var trackOutboundLink = function(e) {
-			_gaq.push(['_trackEvent', 'outbound', 'click', document.location]);
+			_gaq.push(['_trackEvent', 'outbound', 'click']);
 		}
 
 		var res = document.querySelectorAll('[href*="manning.com"]');
