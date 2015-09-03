@@ -1,7 +1,7 @@
 ---
 title: "Frontend-Tooling Workshop in March - Slides inside"
 published: true
-layout: post
+layout: book
 permalink: /frontend-tooling-2015/
 titleimg: /wp-content/uploads/2015/grunt.jpg
 categories:

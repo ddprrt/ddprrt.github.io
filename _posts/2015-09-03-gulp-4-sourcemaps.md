@@ -1,6 +1,6 @@
 ---
 title: "Gulp 4: Built-in Sourcemaps"
-layout: post
+layout: book
 published: true
 permalink: /gulp-4-sourcemaps/
 categories:

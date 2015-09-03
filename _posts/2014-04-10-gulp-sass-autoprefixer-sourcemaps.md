@@ -1,6 +1,6 @@
 ---
 title: "Gulp, Sass, Autoprefixer, Sourcemaps!"
-layout: post
+layout: book
 published: true
 modified: "2015-03-25"
 categories:

@@ -1,6 +1,6 @@
 ---
 title: "Gulp: Creating multiple bundles with Browserify"
-layout: post
+layout: book
 published: true
 permalink: /gulp-browserify-multiple-bundles/
 categories:
@@ -12,7 +12,7 @@ categories:
 With the ever-changing eco system of Node.js tools, a short version disclaimer. This article has been created using
 
 * Gulp v3.8
-* Browserify 
+* Browserify
 * Glob 5.0
 * Event Stream 3.3
 * Vinyl Source Stream 1.1
@@ -82,7 +82,7 @@ gulp.task('default', function() {
             .pipe(rename({
                 extname: '.bundle.js'
             }))
-            .pipe(gulp.dest('./dist')); 
+            .pipe(gulp.dest('./dist'));
         });
     // create a merged stream
     return es.merge.apply(null, tasks);
@@ -116,7 +116,7 @@ gulp.task('default', function(done) {
                 .pipe(rename({
                     extname: '.bundle.js'
                 }))
-                .pipe(gulp.dest('./dist')); 
+                .pipe(gulp.dest('./dist'));
             });
         es.merge(tasks).on('end', done);
     })

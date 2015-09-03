@@ -1,6 +1,6 @@
 ---
 title: "Gulp Recipes - Part One"
-layout: post
+layout: book
 published: true
 permalink: /gulp-recipes-part-1/
 categories:

@@ -1,6 +1,6 @@
 ---
 title: "Lesser known Grunt.js features: Renaming of files"
-layout: post
+layout: book
 published: true
 permalink: /blog/2014/05/27/undocumented-features-rename/
 categories:

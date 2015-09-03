@@ -1,7 +1,7 @@
 ---
 title: "Slides and notes to: Introduction to Yeoman"
 published: true
-layout: post
+layout: book
 permalink: /introduction-to-yeoman-slides/
 titleimg: /wp-content/uploads/2014/yeoman.jpg
 categories:
@@ -23,7 +23,7 @@ A few weeks ago I did a short talk on [Yeoman](http://yeoman.io) at the Linzer e
 2. It might actually be that you’ve heard from the Yeoman warders who guard the tower of London. They’re also called beefeaters and might happen to have a strong taste for gin
 3. They even have their own brand, which tastes great btw.
 4. Anyhow, the Yeoman warders at the Tower of London are helpful guides and show you around on your sightseeing tour. This helpfulness inspired a bunch of software developers like Addy Osmani to create a not less helpful tool or toolchain to guide you in your software development process. And Yeoman, or not be precise, Yo, is the result.
-5. We’re using Yo to overcome a lot of obstacles in our day-to-day workflow. This is Pinky, my colleague and the guy I work with most of the time. The other one is a random “Brain” from our team. 
+5. We’re using Yo to overcome a lot of obstacles in our day-to-day workflow. This is Pinky, my colleague and the guy I work with most of the time. The other one is a random “Brain” from our team.
 6. We happen to do a lot of new projects, mostly microsites, and have the need to kick-start a new project often on a weekly base. So, if we try to get a new project running, every developer has his own way of doing so.
 7. While Pinky might call his folders like the technology he is using,
 8. Our random brain might call it after the actual type: Styles, scripts and templates.
@@ -31,7 +31,7 @@ A few weeks ago I did a short talk on [Yeoman](http://yeoman.io) at the Linzer e
 10. This was even worse when we used a 1500 lines of code Ant File
 11. which looked like this (Animation)
 12. And this was my face when my co-workers asked me to change the build to their new setup. Every single time.
-13. This is where our Yeomen come in. 
+13. This is where our Yeomen come in.
 14. First it give's me the much needed Gin,
 15. but actually they’re helping me to settle on a good set of defaults and best practices, and provide a way to distribute them to everybody in my team.
 16. They’re doing this by so-called generators. Each generator is used for a different eco-system. You even can develop a generator to create a custom project setup for your very own team.

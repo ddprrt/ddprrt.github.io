@@ -1,6 +1,6 @@
 ---
 title: "Gulp Recipes - Part Two: You might not need this plugin"
-layout: post
+layout: book
 published: true
 permalink: /gulp-recipes-part-2/
 categories:
@@ -48,7 +48,7 @@ One important piece in here is the `done` callback. This one has to be passed an
 
 This problem has come up multiple times on StackOverflow recently: People wanting to sync two folders, having all contents available in one folder also available in another. They have been searching for the best plugin, but didn't find anything really fitting their needs.
 
-Before I came up with solutions, I asked a few things back: 
+Before I came up with solutions, I asked a few things back:
 
 * Do you really want to keep both folders in sync, which means having changes in folder A appear in folder B, *and* vice versa?
 * Do you need this sync as part of some deployment on a remote location (if so, use [gulp-rsync](https://www.npmjs.com/package/gulp-prompt)), or during development process, where you have a watcher running.

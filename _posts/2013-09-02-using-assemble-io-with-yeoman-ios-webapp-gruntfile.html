@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: book
 title: Using assemble.io with yeoman.io's webapp Gruntfile
 categories:
 - Tools
@@ -51,7 +51,7 @@ meta:
 <body>
   <!-- Include a nav from partials -->
   {% raw %}{{>nav}}{% endraw %}
-  
+
   <div class="wrapper">
     <!-- The body of the page -->
     {% raw %}{{>body}}{% endraw %}
@@ -59,7 +59,7 @@ meta:
 
   <!-- Another partial -->
   {% raw %}{{>footer}}{% endraw %}
-    
+
 </body>
 </html>
 {% endhighlight %}
@@ -160,7 +160,7 @@ assemble: {
   dist: {
     files: {
       '<%= yeoman.dist %>;/': ['<%= yeoman.app %>;/templates/pages/*.hbs']
-    } 
+    }
   }
 }
 {% endhighlight %}
@@ -181,7 +181,7 @@ assemble: {
   dist: {
     files: {
       '.tmp': ['<%= yeoman.app %>/templates/pages/*.hbs']
-    } 
+    }
   }
 }
 {% endhighlight %}
@@ -217,7 +217,7 @@ assemble: {
   server: {
     files: {
       '.tmp/': ['<%= yeoman.app %>/templates/pages/*.hbs']
-    } 
+    }
   }
 }
 {% endhighlight %}
@@ -226,7 +226,7 @@ assemble: {
 
 {% highlight javascript %}
 watch: {
-  ... 
+  ...
   assemble: {
    files: ['<%= yeoman.app %>/templates/layouts/*.hbs',
            '<%= yeoman.app %>/templates/pages/*.hbs',
@@ -251,7 +251,7 @@ watch: {
     },
     files: [
       '.tmp/*.html', // Add this
-      ... 
+      ...
     ]
   }
 },
