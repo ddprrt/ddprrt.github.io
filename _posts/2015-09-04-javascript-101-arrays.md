@@ -242,6 +242,7 @@ through arrays by a so called 'forEach' method, where you pass a function which 
 for each element in your array.
 
 The function takes up to three arguments:
+
 * element - The element itself
 * index - The index of this element in the array
 * array - The array itself
