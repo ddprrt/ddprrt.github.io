@@ -5,7 +5,7 @@ published: true
 categories:
 - Tools
 - Sass
-- Bower
+- bower
 ---
 
 Having a set of reusable and ready software components is a great thing. And for a multitude of reasons, like ensuring DRY development or boosting efficiency. A software component is a self contained unit of program code which can be accessed only by a defined interface. Or like [Berkely University puts it](http://www.eecs.berkeley.edu/~newton/Classes/EE290sp99/lectures/ee290aSp994_1/tsld009.htm):
@@ -18,7 +18,7 @@ When using a preprocessor like [Sass](http://www.sass-lang.com), we might achiev
 
 ## Handling components with Bower and Revision Control
 
-That's especially true when used with a package manager like [Bower](http://bower.io). Bower was designed to take care of all your third party libraries which you can install from GitHub. Bower provides a command line interface for (un-)installing components. You might know that with 
+That's especially true when used with a package manager like [Bower](http://bower.io). Bower was designed to take care of all your third party libraries which you can install from GitHub. Bower provides a command line interface for (un-)installing components. You might know that with
 
 ```
 bower install konamicode.js
@@ -30,7 +30,7 @@ you just download the newest version of that component in your components folder
 bower install konamicode.js --save
 ```
 
-you also add this library to a file called `bower.json`, which records all your installations. 
+you also add this library to a file called `bower.json`, which records all your installations.
 
 {% highlight javascript %}
 {
@@ -43,7 +43,7 @@ you also add this library to a file called `bower.json`, which records all your 
 }
 {% endhighlight %}
 
-The main benefit of this file is that -- even if you accidentally delete one of the installations or mess up with them -- a simple 
+The main benefit of this file is that -- even if you accidentally delete one of the installations or mess up with them -- a simple
 
 ```
 bower install
@@ -55,11 +55,11 @@ Now think of revision control. When you are saving your project in some sort of 
 
 Why you shouldn't commit those files? Because not only do you save space and unnecessary transactions, you can also keep your project's repository clean and clear, and focus just on the files that are *really* the contents of *your* project. For a more detailed explanation and even more reasons, checkout [Mikeal Rogers' excellent article on that topic](http://www.futurealoof.com/posts/nodemodules-in-git.html).
 
-And this just works really well for JavaScript components, because (at least most of the time) you don't have to make any changes to the library itself. Take *jQuery* for example: This is just one file you download from the repo and your done with. 
+And this just works really well for JavaScript components, because (at least most of the time) you don't have to make any changes to the library itself. Take *jQuery* for example: This is just one file you download from the repo and your done with.
 
-*Modernizr* is more advanced: ~~Download~~ *Install* the whole repository and build a custom `modernizr.js` depending on the actually used CSS and JS properties without touching the original files. No need to commit all the thousand-something files in your repository. 
+*Modernizr* is more advanced: ~~Download~~ *Install* the whole repository and build a custom `modernizr.js` depending on the actually used CSS and JS properties without touching the original files. No need to commit all the thousand-something files in your repository.
 
-Also, Sass/LESS mixing libraries fulfil the requirements for being handled like this. But with other CSS -- or rather Sass components -- you have one big obstacle if you want to do so: They are (mostly) meant to be adapted and changed. Be it colour values in *[Twitter Bootstrap](https://github.com/jlong/sass-bootstrap)* or font properties in Harry's recent [Typecsset](https://github.com/csswizardry/typecsset). 
+Also, Sass/LESS mixing libraries fulfil the requirements for being handled like this. But with other CSS -- or rather Sass components -- you have one big obstacle if you want to do so: They are (mostly) meant to be adapted and changed. Be it colour values in *[Twitter Bootstrap](https://github.com/jlong/sass-bootstrap)* or font properties in Harry's recent [Typecsset](https://github.com/csswizardry/typecsset).
 
 But actually the latter one is a prime example of how to keep those kind of modules manageable.
 

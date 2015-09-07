@@ -6,6 +6,7 @@ categories:
 - Javascript
 - Tools
 - Workflows
+- grunt
 tags:
 - connect
 - Grunt
@@ -78,7 +79,7 @@ if (options.livereload !== false) {
   if (options.livereload === true) {
     options.livereload = 35729;
   }
-  //put livereload to the first place 
+  //put livereload to the first place
   middleware.unshift(injectLiveReload({port: options.livereload}));
 }
 {% endhighlight %}
@@ -103,7 +104,7 @@ if (options.livereload !== false) {
 {% highlight javascript %}
 function(req, res, next) {
   if(req.url.endsWith('.php')) {
-    exec('php ' + directory + req.url, 
+    exec('php ' + directory + req.url,
       function callback(error, stdout, stderr){
         if(error) {
           console.error(stderr);
@@ -146,7 +147,7 @@ grunt.initConfig({
       livereload: 35729,
       hostname: 'localhost',
       middleware: function(connect, options) {
-        // Add here the code snippet below                   
+        // Add here the code snippet below
       }
     },
     ...
