@@ -10,7 +10,7 @@ categories:
 
 Another nice addition to `vinyl-fs` that will end up in Gulp 4 is the possibility
 of having "passthrough" source streams. This basically allows `gulp.src` to be
-writeable. So what does this mean for you?
+writable. So what does this mean for you?
 
 Usually, `gulp.src` would create a stream of file objects based on the globbing
 pattern you provide. This made `gulp.src` mandatory to be at the beginning of
