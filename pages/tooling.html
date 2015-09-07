@@ -40,7 +40,7 @@ titleimg: /wp-content/uploads/2015/fe-tooling.jpg
 		{% if post.categories contains 'grunt' %}
 		<article class="post">
 			<div class="post__date">{{ post.date | date_to_long_string }}</div>
-			<h2 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			<h3 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h3>
 		</article>
 		{% endif %}
 	{% endfor %}
@@ -52,7 +52,7 @@ titleimg: /wp-content/uploads/2015/fe-tooling.jpg
 		{% if post.categories contains 'yeoman' %}
 		<article class="post">
 			<div class="post__date">{{ post.date | date_to_long_string }}</div>
-			<h2 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			<h3 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h3>
 		</article>
 		{% endif %}
 	{% endfor %}
@@ -65,7 +65,7 @@ titleimg: /wp-content/uploads/2015/fe-tooling.jpg
 		{% if post.categories contains 'bower' %}
 		<article class="post">
 			<div class="post__date">{{ post.date | date_to_long_string }}</div>
-			<h2 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			<h3 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h3>
 		</article>
 		{% endif %}
 	{% endfor %}
