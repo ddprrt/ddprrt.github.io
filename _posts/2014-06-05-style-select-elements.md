@@ -1,7 +1,7 @@
 ---
 title: "Formular One - or - How to style &lt;select&gt; elements"
 published: true
-layout: post
+layout: book
 permalink: /style-select-elements/
 categories:
 - CSS
@@ -14,7 +14,7 @@ We took this pattern over to HTML sites and were close to recreating every singl
 We had (good) jQuery plugins like [Select2](http://ivaynberg.github.io/select2/), who even were accessible and had lots of good extra features, but what we thoroughly missed was usability on those little buggers everyone has in their pockets: Smartphones.
 
 Smartphones do have extra controls and keyboards for different input types, and that is absolutely great! Different way of doing input requires to have different controls, so all those form elements got optimised in behaviour for *your* finger. Most of them popping up some wheel control in your keyboard area.
- 
+
 <img width="49%" src="/wp-content/uploads/2014/pasted-image-1184.jpg" alt="old style dropdowns are not that handy on smartphones">
 <img width="49%" src="/wp-content/uploads/2014/pasted-image-1180.jpg" alt="better: a native control">
 
@@ -83,7 +83,7 @@ And have the styled select box you ever wanted.
 
 ## Disclaimer
 
-While this sample works at the moment, parts of it are rather hacky and thus might have a different outcome in the future. At the moment there isn't a standard for styling native controls, so be aware that everything here might change! 
+While this sample works at the moment, parts of it are rather hacky and thus might have a different outcome in the future. At the moment there isn't a standard for styling native controls, so be aware that everything here might change!
 
 ### Update
 
