@@ -16,3 +16,14 @@ sass:
 gems:
 - jekyll-sitemap
 - jekyll-redirect-from
+
+collections:
+  snippets:
+    output: true
+    permalink: snippets/:title/
+defaults:
+  -
+    scope:
+      type: "snippets"
+    values:
+      layout: "snippet"
