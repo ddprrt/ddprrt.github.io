@@ -31,7 +31,10 @@ $ rm -rf node_modules
 $ npm install
 ```
 
-And you should be ready to go again.
+And you should be ready to go again. Frederic gives more help here:
+
+<blockquote class="twitter-tweet" lang="de"><p lang="en" dir="ltr"><a href="https://twitter.com/ddprrt">@ddprrt</a> Yes, all native modules require recompiling against latest V8 (best using nan@3).</p>&mdash; Frederic Hemberger (@fhemberger) <a href="https://twitter.com/fhemberger/status/641981760688005120">10. September 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## libsass bindings not found
 
