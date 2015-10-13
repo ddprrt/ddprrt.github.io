@@ -40,7 +40,7 @@ gulp.task('js', function() {
 
 1. We request the latest jQuery version from the jQuery CDN. The `request` package
    allows for streaming. What we get in return is a readable stream.
-2. We create a valid vinyl file object with vinyl source stream This makes it
+2. We create a valid vinyl file object with `vinyl-source-stream`. This makes it
    compatible with Gulp
 3. Our main file is selected from the file system as usual
 4. The `merge2` package allows us to combine both streams
