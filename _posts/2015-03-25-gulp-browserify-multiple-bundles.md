@@ -102,7 +102,7 @@ var gulp       = require('gulp'),
     source     = require('vinyl-source-stream'),
     rename     = require('gulp-rename'),
     browserify = require('browserify'),
-    glob       = require('node-glob'),
+    glob       = require('glob'),
     es         = require('event-stream');
 
 gulp.task('default', function(done) {
