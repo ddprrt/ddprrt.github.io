@@ -3,4 +3,5 @@ window.onload = function() {
   var now = ruxitApi.now();
   var actionId = ruxitApi.enterAction('Speed Index','speedIndex',now - RUMSpeedIndex(), null);
   ruxitApi.leaveAction(actionId, now);
+  console.log('Speed Index is', RUMSpeedIndex());
 }
