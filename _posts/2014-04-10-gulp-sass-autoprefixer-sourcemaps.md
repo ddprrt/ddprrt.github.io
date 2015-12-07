@@ -9,6 +9,7 @@ categories:
 - Gulp
 ---
 **Update 2015/03**: *There has been a breaking change with `gulp-ruby-sass` v1.0. The files have been updated.*
+**Update 2015/12**: *There have been some updates with `gulp-sourcemaps` and the way sourcemaps are treated with `gulp-ruby-sass`. The code snippet has been updated*
 
 Having Sourcemaps is one of the new big things in Sass 3.3. And rightfully so: The opportunity to fully track selectors and rules back to its very origin in your debugger is really, really helpful! And also, it's rather easy to set up. Just add the `--sourcemaps` flag and you are done.
 
@@ -51,7 +52,7 @@ var prefix = require('gulp-autoprefixer');
 gulp.task('default', function () {
     sass('src/app.scss', {sourcemap: true, style: 'compact'})
         .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7"))
-        .pipe(sourcemaps('.'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'));
 });
 {% endhighlight %}
