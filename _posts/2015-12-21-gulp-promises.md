@@ -44,6 +44,26 @@ remove them in your destination directory.
 
 ## Getting the diff between two directories
 
+To get the difference between the source and destination directory we have
+several possibilities, even Gulp plugins to use. However, most of them feel
+kind of clumsy or "do too much", something that a Gulp plugin should never do.
+
+So, why not do it on our own? Here's the plan:
+
+- Read both source and destination directory.
+- Compare both lists and find the difference
+- Delete the files that are left, hence: The ones that are not in the source
+directory anymore.
+
+We have some Promised-based Node modules for that:
+
+- `globby`: Creates a list of file paths based on a glob. Something very similar
+to Gulp.s
+- `del`: A module that deletes files based on a glob. This is actually the
+preferred way by Gulp to take care of deleting files.
+
+And here's how we are going to combine them:
+
 {% highlight javascript %}
 gulp.task('diff', function() {
   return Promise.all([                                    /* 1 */
@@ -71,7 +91,15 @@ our sourc directory. By using the `cwd` param, the file list has the same
 structure as from the first `globby` call.
 Since we run both Promises with Promise.all, we also get an array of results.
 4. The array of results contain two arrays of file names. The first one from
-the destination, the second one from our source.
+the destination, the second one from our source. We use the
+[`Array.prototype.filter`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`Array.prototype.indexOf`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) function to compare our results: We filter all elements that are not in our second
+array. Note: This procedure might take some time depending on how many file paths you
+are going to compare. We are talking seconds here. This is quite some time in
+the Gulp world.
+5. The result of this step is an array with "leftovers": All those files that have
+been removed from the source directory but still exist in our working directoy.
+We use Sindre Sorhus' `del` module that takes care of this files. It returns also a
+Promise, so it's perfectly usable with the Promise-chain that we made here.
 
 ## ES6 fat arrows
 
@@ -88,6 +116,8 @@ gulp.task('diff', function() {
 });
 {% endhighlight %}
 
+Nice, clean and totally in tune with Gulp!
+
 ## Bottom line
 
 With Gulp you have a vast ecosystem of plugins at your hand. This ecosystem
@@ -97,3 +127,10 @@ work with the Gulp task system! So the amount of tools to choose from grows even
 more!
 
 ## Software used:
+
+- Node.js: 5.2.0
+- `[gulp-newer](https://www.npmjs.com/package/gulp-newer)`: 0.5.1
+- `[del](https://www.npmjs.com/package/del)`: 2.2.0
+- `[globby](https://www.npmjs.com/package/globby)`: 4.0.0
+
+Works with both Gulp 3 and Gulp 4. The rest is Node.js native.
