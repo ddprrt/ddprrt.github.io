@@ -87,7 +87,7 @@ our file system.
 Gulp-style globbing (including directories) with Promises. Add the `nodir`
 parameter to the `globby` call to not get directory file handles.
 3. Do the same for the source directory. We change the working directory to
-our sourc directory. By using the `cwd` param, the file list has the same
+our source directory. By using the `cwd` parameter, the file list has the same
 structure as from the first `globby` call.
 Since we run both Promises with Promise.all, we also get an array of results.
 4. The array of results contain two arrays of file names. The first one from
@@ -97,7 +97,7 @@ array. Note: This procedure might take some time depending on how many file path
 are going to compare. We are talking seconds here. This is quite some time in
 the Gulp world.
 5. The result of this step is an array with "leftovers": All those files that have
-been removed from the source directory but still exist in our working directoy.
+been removed from the source directory but still exist in our working directory.
 We use Sindre Sorhus' `del` module that takes care of this files. It returns also a
 Promise, so it's perfectly usable with the Promise-chain that we made here.
 
@@ -129,8 +129,8 @@ more!
 ## Software used:
 
 - Node.js: 5.2.0
-- `[gulp-newer](https://www.npmjs.com/package/gulp-newer)`: 0.5.1
-- `[del](https://www.npmjs.com/package/del)`: 2.2.0
-- `[globby](https://www.npmjs.com/package/globby)`: 4.0.0
+- [`gulp-newer`](https://www.npmjs.com/package/gulp-newer): 0.5.1
+- [`del`](https://www.npmjs.com/package/del): 2.2.0
+- [`globby`](https://www.npmjs.com/package/globby): 4.0.0
 
 Works with both Gulp 3 and Gulp 4. The rest is Node.js native.
