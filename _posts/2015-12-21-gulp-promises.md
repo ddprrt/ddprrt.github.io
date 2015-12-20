@@ -22,7 +22,9 @@ master doesn't kill your intermediates. And on the other: Your intermediates or 
 don't interfere with everything new coming from your Git branch.
 
 So, what we are aiming for is a call that copies all the files from a source directory
-to a destination directory, where Gulp awaits to execute your build tasks. 
+to a destination directory, where Gulp awaits to execute your build tasks. With the
+concepts we learned from [incremental builds](/gulp-4-incremental-builds/) we are able
+to create the first part: Copying new files from a source to a destination:
 
 {% highlight javascript %}
 var globArray = [ ... ]  // all the files you want to read
@@ -34,7 +36,7 @@ gulp.task('copy-src', function(){
 });
 {% endhighlight %}
 
-So that takes care of all the new files or changed files, without copying
+That takes care of all the new files or changed files, without copying
 anything that doesn't need to be there. That's half the battle. What about the
 files that have been copied from a previous run, but then got removed? If you
 really want to have a direct copy of your source directory, you also want to
