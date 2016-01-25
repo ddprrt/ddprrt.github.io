@@ -11,16 +11,16 @@ categories:
 
 For quite some while people love to echo the amazing power of NPM's package scripts.
 With a view additions to `package.json`, you are able to run shell commands and other
-tools directly with NPM, without needing any build tools at all. See [Substack's article](http://substack.net/task_automation_with_npm_run) on that topic. A good one.
+tools with NPM, without needing any build tools at all. See [Substack's article](http://substack.net/task_automation_with_npm_run) on that topic. A good one.
 
-And yes, NPM scripts are absolutely wonderful. The Grunt and Gulp and whatnot killer?
-Maybe, depends totally on your use case. Decide for yourself.
+And yes, NPM scripts are wonderful. The Grunt and Gulp and whatnot killer?
+Maybe, depends on your use case. Decide for yourself.
 
-There is however one little thing about NPM scripts that is totally awesome. I would
-even consider it the best feature of them: It adds the local `node_modules` binary
+There is one little thing about NPM scripts that is awesome. I would
+even consider it the best feature of them. It adds the local `node_modules` binary
 folder to your execution path.
 
-What does that mean? Well, when you install Node modules locally, you get this
+What does that mean? When you install Node modules locally, you get a
 `node_modules` folder containing everything you've installed. You know that. If you
 install a tool locally that has some executable, this executable will be added
 in a hidden `.bin` folder in `node_modules`.
