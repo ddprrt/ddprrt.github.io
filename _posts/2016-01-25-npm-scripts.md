@@ -1,5 +1,6 @@
 ---
 title: "The best thing about NPM scripts"
+layout: post
 published: true
 permalink: /npm-scripts/
 categories:
