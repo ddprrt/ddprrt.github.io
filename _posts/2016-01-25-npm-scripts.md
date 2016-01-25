@@ -31,8 +31,7 @@ tool in your `node_modules` folder. Without explicitly adding it to your
 execution path, this won't do anything. But if you run NPM scripts, this path is
 exactly what's included. For example:
 
-{% highlight javscript %}
-{% raw %}
+{% highlight javascript %}
 {
   ...
   "scripts": {
@@ -40,7 +39,6 @@ exactly what's included. For example:
   },
   ...
 }
-{% endraw %}
 {% endhighlight %}
 
 So `npm run gulp` would be the same as running a globally installed "Gulp CLI".
