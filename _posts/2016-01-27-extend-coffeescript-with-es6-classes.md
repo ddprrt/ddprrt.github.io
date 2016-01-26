@@ -65,7 +65,10 @@ the classical object oriented languages like Java or C#. Instead, it provides
 some syntactic sugar for JavaScript's prototype chain.
 
 ES6 classes do they same, but baked in your runtime environment. In this case:
-Node 5. If you want to learn more about prototypical inheritance, I strongly
+Node 5. Should you use Babel to transpile ES6 classes to ES5, you will see that
+the outcome is somewhat similar to the output created by CoffeeScript.
+
+If you want to learn more about prototypical inheritance, I strongly
 suggest you check out Eric Elliot's fantastic articles on that topic:
 
 - [Difference between class and prototypal inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
