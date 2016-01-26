@@ -61,4 +61,5 @@ also when you are regularly switching Node versions with `nvm`. This also helps
 if you have to handle multiple versions of one command line tool. For example
 running Gulp 3.x and Gulp 4 in parallel.
 
-Cool stuff! I wouldn't want to work without it.
+Cool stuff! I wouldn't want to work without it. I'd even say: Never install Node
+tools globally again!
