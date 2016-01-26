@@ -40,7 +40,11 @@ module.exports = class Highlight extends Liquid.Block { // 2
   render(context) {
     return super.render(context) // 4
       .then(chunks => highlight.highlight(this.language, chunks.join('')))
-      .then(parsed => `<div class="highlight"><pre><code class="${this.language}">${parsed.value}</code></pre></div>`);
+      .then(parsed => `<div class="highlight">
+        <pre>
+          <code class="${this.language}">${parsed.value}</code>
+        </pre>
+      </div>`);
   }
 }
 {% endhighlight %}
@@ -56,8 +60,13 @@ done with CoffeeScript
 
 ## Why does that work
 
-The CoffeeScript class syntax didn't create *real* classes like you know from
-the classical object oriented languages like Java or C#. Instead, it provided
+The CoffeeScript class syntax doesn't create classes like you know from
+the classical object oriented languages like Java or C#. Instead, it provides
 some syntactic sugar for JavaScript's prototype chain.
 
-ES6 classes do they same, but baked in your runtime environment.
+ES6 classes do they same, but baked in your runtime environment. In this case:
+Node 5. If you want to learn more about prototypical inheritance, I strongly
+suggest you check out Eric Elliot's fantastic articles on that topic:
+
+- [Difference between class and prototypal inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
+- [The Heart & Soul of Prototypal OO: Concatenative Inheritance](https://medium.com/javascript-scene/the-heart-soul-of-prototypal-oo-concatenative-inheritance-a3b64cb27819#.plcy9jq2g)
