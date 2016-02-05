@@ -66,8 +66,11 @@ I would have loved some progressively enhanced food: Vegetarian first, meat as a
 extra.
 
 We will definitely take care of this issue the next time. With Chris not being
-a Linzer, it's hard for him to get to the right addresses on his own. We will hook
-him up with the right people to get some proper and delicious food the next time.
+a Linzer, it's hard for him to get to the right addresses on his own. This is
+something that we from the program commitee should've kept an eye on. Think about
+you organising a conference at some place you rarely be, relying on Google and
+some recommendations? We will hook him up with the right people to get some proper 
+and delicious food the next time. We already have some providers in mind.
 
 The beer was excellent, though.
 
