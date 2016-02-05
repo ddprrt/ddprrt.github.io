@@ -1,6 +1,6 @@
 name: front-end technology talk
 url: http://www.fettblog.eu
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["strikethrough"]
 highlighter: pygments
