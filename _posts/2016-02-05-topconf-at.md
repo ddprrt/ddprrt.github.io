@@ -90,4 +90,6 @@ All the attendees who joined us at the conference, at lunch, at the bars. Seeing
 you all engage in wonderful discussions and having so much fun together was constantly
 telling me: Totally worth it. Glad that you enjoyed being here.
 
-And last, but not least: To Chris and Laura. Thank you for expanding to Linz. On 2017!
+And last, but not least: To Chris and Laura. You put so much effort into giving 
+our community a great event and gave us such a wonderful time.
+Thank you for everything. On 2017!
