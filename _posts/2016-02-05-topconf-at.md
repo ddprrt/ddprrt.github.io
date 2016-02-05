@@ -9,16 +9,15 @@ categories:
 
 So, Linz has a software conference. One that's supposed to stay. I think it's
 about time. Linz has a wonderful IT community, with lots of great companies and
-so many schools and universities specialised for software development. With the
-exception of the short-lived Kod.io movement (spanning [Kod.io](/blog/2014/03/02/kodio/),
-Codefront and Railsgirls in 2014), as well as some Linuxwochen every now and then,
+so many schools and universities specialised for software development. Except for the short-lived Kod.io movement (spanning [Kod.io](/blog/2014/03/02/kodio/),
+Codefront and Railsgirls in 2014), as well as some Linuxwochen now and then,
 I hardly can remember any full-fledged Software conference.
 So hey, we finally got one!
 
 Usually I would give some sort of review. But as I was partly involved with
 the conference's organisation, I decided to put a little twist on the usual
 review you would expect. As people recognised my involvement, they asked me
-a lot of questions around the conference inbetween sessions. I gathered (or
+a lot of questions around the conference in-between sessions. I gathered (or
 rather: remembered) the few questions attendees asked me the most.
 
 ## Why did you organise the Austrian Topconf in Linz?
@@ -28,7 +27,7 @@ the program committee. This put me in a wonderful position of being able to
 wish for incredible speakers and create some wonderful tracks. When I see
 Ben Reitzammer say [on Twitter](https://twitter.com/benjamin/status/695150175094988800)
 that *"Your program committee did really great work to put together a diverse program
-& set of speakers! Very well done!"**, I feel both flattered and happy.
+& set of speakers! Very well done!"*, I feel both flattered and happy.
 
 How Topconf came to Linz was partly my fault. I spoke at [Topconf Tallinn back in 2013](http://fettblog.eu/blog/2013/11/13/topconf-tallinn-2013/).
 Chris Frei wanted to expand from Estonia to other countries in Europe and asked
@@ -81,8 +80,8 @@ The wonderful speakers who came: Eva-Lotta, Harry, Rachel, Tim, Martin, Mario,
 Phil, Alessandro, Henning and Kahlil.
 
 My former client "BGT", who sponsored the event and had some great time with us.
-Also to my current employer Dynatrace who sponsored, and all my colleagues who came to the event.
-Speaking to you inbetween sessions was valuable and immediate feedback to react quickly.
+My current employer Dynatrace who sponsored, and all my colleagues who came to the event.
+Speaking to you in-between sessions was valuable and immediate feedback to react quickly.
 
 All the attendees who joined us at the conference, at lunch, at the bars. Seeing
 you all engage in wonderful discussions and having so much fun together was constantly
