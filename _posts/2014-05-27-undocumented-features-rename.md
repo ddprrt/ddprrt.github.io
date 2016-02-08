@@ -5,7 +5,7 @@ published: true
 permalink: /blog/2014/05/27/undocumented-features-rename/
 categories:
 - Tools
-- Grunt
+- grunt
 ---
 Recently I had to deploy some static sites for some client, whose server didn't allow to automatically redirect to `index.html` when accessing a directory. It had to be named `index.php` for whatever reason.
 
