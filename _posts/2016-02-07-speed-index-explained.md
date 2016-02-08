@@ -16,7 +16,7 @@ I managed to put the video on Youtube, for all of you to enjoy:
 
 And here are the slides. You can also find them on [Speakerdeck](https://speakerdeck.com/ddprrt/speed-index-explained).
 
-<div class="aspect ratio-4-to-3">
+<div class="aspect ratio-16-to-9">
   <iframe class="speakerdeck-iframe" frameborder="0" src="//speakerdeck.com/player/4a6522cea272498a91a1508b28824155?" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </div>
 
