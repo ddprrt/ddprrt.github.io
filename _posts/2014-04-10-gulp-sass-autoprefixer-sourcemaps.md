@@ -8,7 +8,10 @@ categories:
 - Sass
 - Gulp
 ---
+**Update 2016/02**: *This is old. This might not be up to date anymore!*
+
 **Update 2015/03**: *There has been a breaking change with `gulp-ruby-sass` v1.0. The files have been updated.*
+
 **Update 2015/12**: *There have been some updates with `gulp-sourcemaps` and the way sourcemaps are treated with `gulp-ruby-sass`. The code snippet has been updated*
 
 Having Sourcemaps is one of the new big things in Sass 3.3. And rightfully so: The opportunity to fully track selectors and rules back to its very origin in your debugger is really, really helpful! And also, it's rather easy to set up. Just add the `--sourcemaps` flag and you are done.
@@ -32,7 +35,7 @@ gem install sass
 Initialize your gulp setup:
 
 ```
-npm init && npm install --save-dev gulp gulp-autoprefixer gulp-ruby-sass
+npm init && npm install --save-dev gulp gulp-autoprefixer gulp-ruby-sass gulp-sourcemaps
 ```
 
 The interface of `gulp-sass` (which uses a much faster native implementation) and the one of `gulp-ruby-sass` are **not** identical. So once `gulp-sass` is based on Sass 3.3, you not only have to switch plugins, but also adapt their parameters.
