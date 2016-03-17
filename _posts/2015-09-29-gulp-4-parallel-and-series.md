@@ -71,8 +71,8 @@ task manager "Undertaker".
 Gulp 4 drops the dependency parameter completely and replaces them with execution functions
 that can be used instead:
 
-- `gulp.series` for a sequential execution
-- `gulp.parallel` for a parallel execution.
+- `gulp.series` for sequential execution
+- `gulp.parallel` for parallel execution.
 
 Each of those functions allow for parameters of the following kind:
 
