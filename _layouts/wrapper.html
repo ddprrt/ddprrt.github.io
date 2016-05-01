@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="wrapper h-entry">
+<main role="main" class="wrapper h-entry">
 
 	{{ content }}
 
@@ -12,7 +12,7 @@ layout: default
 	</p>
 	{% endunless %}
 
-</div>
+</main>
 <nav class="navigation-wrapper">
 	<ul class="navigation paging">
 		{% if page.previous %}<li class="paging__prev"><a rel="prev" href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}

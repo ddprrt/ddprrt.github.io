@@ -30,10 +30,12 @@
 	<link rel="canonical" href="https://fettblog.eu{{ page.url }}" />
 </head>
 <body>
-
-	<main role="main">
-	{{ content }}
-	</main>
+	<div class="content">
+		{% include nav.html %}
+		<div class="main-content">
+		{{ content }}
+		</div>
+	</div>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-30512766-1']);
