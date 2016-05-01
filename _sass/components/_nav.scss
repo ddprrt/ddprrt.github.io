@@ -5,5 +5,13 @@
 
 .nav__item {
   display: block;
+  color: white;
   padding: 0.5em 1em;
+  border-bottom: 1px solid #fcfcfc;
+  min-width: 13rem;
+}
+
+.nav__item:hover {
+  color: white;
+  background-color: $that-green;
 }
