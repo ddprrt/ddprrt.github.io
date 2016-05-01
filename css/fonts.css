@@ -1,6 +1,7 @@
 @font-face{
   font-family: 'Fira Sans';
   src: url('/fonts/FiraSans-Light.woff2') format('woff2');
+  font-display: swap;
   font-weight: 300;
   font-style: normal;
 }
