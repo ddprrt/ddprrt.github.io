@@ -57,7 +57,7 @@ Why you shouldn't commit those files? Because not only do you save space and unn
 
 And this just works really well for JavaScript components, because (at least most of the time) you don't have to make any changes to the library itself. Take *jQuery* for example: This is just one file you download from the repo and your done with.
 
-*Modernizr* is more advanced: ~~Download~~ *Install* the whole repository and build a custom `modernizr.js` depending on the actually used CSS and JS properties without touching the original files. No need to commit all the thousand-something files in your repository.
+*Modernizr* is more advanced: <s>Download</s> *Install* the whole repository and build a custom `modernizr.js` depending on the actually used CSS and JS properties without touching the original files. No need to commit all the thousand-something files in your repository.
 
 Also, Sass/LESS mixing libraries fulfil the requirements for being handled like this. But with other CSS -- or rather Sass components -- you have one big obstacle if you want to do so: They are (mostly) meant to be adapted and changed. Be it colour values in *[Twitter Bootstrap](https://github.com/jlong/sass-bootstrap)* or font properties in Harry's recent [Typecsset](https://github.com/csswizardry/typecsset).
 

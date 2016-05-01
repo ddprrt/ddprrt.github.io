@@ -30,6 +30,10 @@ a:focus {
   color: lighten($deep-blue, 10);
 }
 
+img {
+  max-width: 100%;
+}
+
 @media(min-width: 30em) {
   body {
     font-size: 1.25rem;

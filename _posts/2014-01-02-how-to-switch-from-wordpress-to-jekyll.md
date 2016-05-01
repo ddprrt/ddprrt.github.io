@@ -34,7 +34,7 @@ gem install jekyll
 
 Depending on your configuration, `sudo` might be required. What I found strange is, that on Mac, even with installed gnu compile tools, Jekyll requires Xcode to build native extensions. Make sure you have that on your computer. You can use Jekyll without the gem and with GitHub pages perfectly fine, but it's still good if you know how the whole thing will look like before you publish something live.
 
-Once installed, just create a new directory and type 
+Once installed, just create a new directory and type
 
 ```
 jekyll new .
@@ -106,7 +106,7 @@ layout: none
     <title>{{ site.name }}</title>
     <description>{{ site.description }}</description>
     <link>http://fettblog.eu</link>
-    <atom:link href="http://fettblog.eu/feed" 
+    <atom:link href="http://fettblog.eu/feed"
       rel="self" type="application/rss+xml" />
     {% for post in site.posts %}
       {% unless post.preview %}
@@ -140,7 +140,7 @@ GitHub recently created a very nice and short tutorial on how to use [Pages](htt
 
 1. No search anymore. Not that I really needed them
 2. No categories and category search results as in Wordpress, at least not without a plugin
-3. ~~No custom 404~~. Forget that... Just provide a 404.html and your done!
+3. <s>No custom 404</s>. Forget that... Just provide a 404.html and your done!
 
 ### Benefits
 
