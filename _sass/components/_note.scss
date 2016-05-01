@@ -1,0 +1,17 @@
+.note {
+  margin-left: -5rem;
+  margin-right: -5rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: $not-black;
+  font-style: italic;
+  background-color: $narwhal-orange;
+}
+
+.note--top {
+  margin-top: 2rem;
+}

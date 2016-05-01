@@ -9,6 +9,7 @@ permalink: /snippets/wordpress/wordpress-remove-admin-bar-in-theme/
 The admin bar in Wordpress can be annoying sometimes, hiding some of your design and even having certain side effects you don't want. With this snippet, you can turn it off:
 
 {% highlight php %}
+<?
 function my_function_admin_bar() {
   return false;
 }

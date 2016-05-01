@@ -11,7 +11,7 @@ It's rather easy to revert that commit and delete it from your pushed remote:
 
 First, get the commit hash using `git log`:
 
-```
+{% highlight bash %}
 $ git log
 
 commit f0b7a5ae40afd21e7b0269f72ff51dca8a073c6f
@@ -32,12 +32,12 @@ Date:   Fri Jan 2 19:05:17 2015 +0100
 
     no scrolling there
 :
-```
+{% endhighlight %}
 
 You need the first 8 digits of this hash. Then, run the following:
 
-```
+{% highlight bash %}
 $ git push remotename +f0b7a5ae^:branchname
-```
+{% endhighlight %}
 
-Git interprets the `^`` after the hash as the parent of this very commmit, and the `+` as a force push. Reset done!
+Git interprets the `^` after the hash as the parent of this very commmit, and the `+` as a force push. Reset done!
