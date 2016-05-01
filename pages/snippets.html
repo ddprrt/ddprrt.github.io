@@ -20,6 +20,8 @@ permalink: /snippets/
 	{% endunless %}
 	{% endfor %}
 	</p>
+</section>
+<section class="wrapper">
 	<h2 id="wordpress">Wordpress</h2>
 	{% for post in site.snippets reversed %}
 		{% if post.categories contains 'Wordpress' %}
@@ -28,6 +30,8 @@ permalink: /snippets/
 		</article>
 		{% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="jekyll">Jekyll</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'Jekyll' %}
@@ -36,6 +40,8 @@ permalink: /snippets/
 	  </article>
 	  {% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="git">Git</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'Git' %}
@@ -44,6 +50,8 @@ permalink: /snippets/
 	  </article>
 	  {% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="javascript">JavaScript</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'JavaScript' %}
@@ -52,6 +60,8 @@ permalink: /snippets/
 	  </article>
 	  {% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="html">HTML / Semantics</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'HTML' %}
@@ -60,6 +70,8 @@ permalink: /snippets/
 	  </article>
 	  {% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="php">PHP</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'PHP' %}
@@ -68,6 +80,8 @@ permalink: /snippets/
 	  </article>
 	  {% endif %}
 	{% endfor %}
+</section>
+<section class="wrapper">
 	<h2 id="node.js">Node.js</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'Node.js' %}
@@ -75,7 +89,9 @@ permalink: /snippets/
 	    <h3 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h3>
 	  </article>
 	  {% endif %}
-	{% endfor %}
+	{% endfor %}	
+</section>
+<section class="wrapper">
 	<h2 id="server">Server</h2>
 	{% for post in site.snippets reversed %}
 	  {% if post.categories contains 'Server' %}

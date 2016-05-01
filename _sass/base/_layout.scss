@@ -1,8 +1,11 @@
 .wrapper {
   padding: 2rem 5rem;
   max-width: 60rem;
+  margin: 1rem;
+  background-color: white;
 }
 
 .content {
   display: flex;
+  min-height: 100vh;
 }
