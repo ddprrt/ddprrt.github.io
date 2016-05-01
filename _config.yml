@@ -16,6 +16,7 @@ sass:
 gems:
 - jekyll-sitemap
 - jekyll-redirect-from
+- jekyll-paginate
 
 collections:
   snippets:

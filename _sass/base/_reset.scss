@@ -1,139 +1,26 @@
 * {
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-html {
-	font-size: 16px;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-size-adjust: 100%;
-	color: #333;
-
-	@media(min-width: $minWidth) {
-		font-size: 18px;
-	}
-
-    @media(min-width: $minWidthWide) {
-        font-size: 21px;
-    }
+*:after,
+*:before {
+  box-sizing: inherit;
 }
 
 body {
-	line-height: 1.5em;
-	font-family: $serifFont;
-	background-color: $bgColor;
-	border-top: 5px solid $linkColor;
-	border-bottom: 5px solid $linkColor;
+  color: $not-black;
+  font-size: 16px;
+  font-family: 'Fira Sans';
+  font-weight: 300;
 }
 
-p, ul, ol, dl,
-blockquote, pre, td, th, label, textarea, caption, details, figure, blockquote {
-	margin-top: 1.5rem;
-	line-height: 1.5em;
+a {
+  text-decoration: none;
+  color: $deep-blue;
 }
 
-ul, ol {
-	margin-left: 1rem;
-
-	@media(min-width: $minWidth) {
-		margin-left: 0;
-	}
-}
-
-li {
-	text-align: justify;
-
-	+ li {
-		margin-top: $spacing / 2;
-	}
-}
-
-blockquote {
-	padding-left: $spacing;
-	border-left: 3px solid $areaColor;
-	font-style: italic;
-}
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -0.5rem;
-}
-
-sub {
-	bottom: -0.25rem;
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $sansFont;
-	font-weight: 900;
-	line-height: 1.2em;
-	margin-top: 1.2em;
-}
-
-p {
-	text-align: justify;
-}
-
-h1 {
-	font-size: 2.18rem;
-}
-
-h2 {
-	font-size: 1.64rem;
-}
-
-h3 {
-	font-size: 1.45rem;
-}
-
-h4 {
-	font-size: 1.18rem;
-}
-
-h5 {
-	font-size: 1.1rem;
-}
-
-h6 {
-	font-size: 1rem;
-}
-
-a, a:active {
-	color: $linkColor;
-	text-decoration: none;
-	-webkit-transition: color 0.1s;
-	-moz-transition: color 0.1s;
-	-ms-transition: color 0.1s;
-	-o-transition: color 0.1s;
-	transition: color 0.1s;
-}
-
-a:hover {
-	color: darken($linkColor, 20);
-	text-decoration: underline;
-}
-
-code {
-	font-family: $monoFont;
-}
-
-img {
-	max-width: 100%;
-}
-
-@-ms-viewport {
-	width: device-width;
-}
-
-@viewport {
-	width: device-width;
+a:hover,
+a:focus {
+  color: lighten($deep-blue, 10);
 }
