@@ -100,12 +100,12 @@ Since we aim for the maximum currency, one would think to replace all dependency
 arrays with `gulp.parallel` functions, like that:
 
 {% highlight javascript %}
-gulp.task('default', gulp.parallel('scripts', 'styles'));
-
 gulp.task('styles', gulp.parallel('clean', function() {...}));
 gulp.task('scripts', gulp.parallel('clean', function() {...}));
 
 gulp.task('clean', function() {...});
+
+gulp.task('default', gulp.parallel('scripts', 'styles'));
 {% endhighlight %}
 
 However, this causes even more problems. First of all, the dependency is still
@@ -135,16 +135,16 @@ function. The others are ordered in a `gulp.series` function. Like that:
 The accompanying source code:
 
 {% highlight javascript %}
-// Per default, start scripts and styles
-gulp.task('default',
-  gulp.series('clean', gulp.parallel('scripts', 'styles'),
-  function() {...}));
-
 // The tasks don't have any dependencies anymore
 gulp.task('styles', function() {...});
 gulp.task('scripts', function() {...});
 
 gulp.task('clean', function() {...});
+
+// Per default, start scripts and styles
+gulp.task('default',
+  gulp.series('clean', gulp.parallel('scripts', 'styles'),
+  function() {...}));
 {% endhighlight %}
 
 The execution order at *default* stays the same as previously, but all the
