@@ -6,7 +6,8 @@ title: front-end technology talk
 	<section class="wrapper post {% if post.external %}post--external{% endif %}">
 		<div class="post__date">{{ post.date | date_to_long_string }}</div>
 		<h2 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
-		{{post.excerpt}} &mdash; <a href="{{post.url}}">Read more</a>
+		{% capture readmore %}&mdash; <a href="{{post.url}}">Read more</a>{% endcapture %}
+		<p>{{post.excerpt | strip_html | append: readmore }}</p>
 	</section>
 {% endfor %}
 
