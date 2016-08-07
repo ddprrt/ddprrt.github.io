@@ -7,8 +7,9 @@ title: front-end technology talk
 	<h1 class="visually-hidden">List of articles</h1>
 	{% for post in paginator.posts %}
 		<article class="post">
-			<div class="post__date">{{ post.date | date_to_long_string }}</div>
-			<h2 class="post__title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			<h2 class="post-title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			<div class="post-date">{{ post.date | date_to_long_string }}</div>
+			<p>{{post.excerpt}}</p>
 		</article>
 	{% endfor %}
 </section>

@@ -1,23 +1,12 @@
-@import "variables";
+@import
+  "base/variables",
+  "base/fonts",
+  "base/base",
+  "base/layout";
 
-// BASE
+@import
+  "components/aspect",
+  "components/posts";
 
-@import "base/reset";
-@import "base/modifiers";
-@import "base/fonts";
-
-// LAYOUT
-
-@import "layout/grid";
-
-// MODULES
-
-@import "modules/header";
-@import "modules/overview";
-@import "modules/footer";
-@import "modules/navigation";
-@import "modules/syntax";
-@import "modules/talks";
-@import "modules/aspect";
-@import "modules/profile";
-@import "modules/note";
+@import
+  "base/util";
