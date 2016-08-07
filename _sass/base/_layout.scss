@@ -4,5 +4,5 @@
   max-width: 53em;
   background-color: white;
   color: $text;
-  min-height: 100vh;
+  min-height: calc(100vh - 63px);
 }

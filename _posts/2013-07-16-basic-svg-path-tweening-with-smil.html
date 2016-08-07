@@ -14,6 +14,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+excerpt_small: "I'm working on a tribute to one of my childhood heroes, the Caped Crusader, the Dark Knight, the world's greatest detective: Batman. And when I say childhood hero, I do mean a hero to this day. Anyhow, inspired by an EPS file i got over on DeviantArt, I wanted to create a history of his emblems from the very first to the very last, spanning all 73 years, much like this now infamous video did."
 ---
 <style>@media(max-width:500px){.responsive-svg{width:100%;}.responsive-svg path{-webkit-transform:scale(0.5); transform:scale(0.5);}}.note{display:none;}.sorrynote{background-color: #c84941; color:white;display:block;}</style>
 
@@ -54,15 +55,15 @@ meta:
 
 {% highlight html %}
 <!-- The 'd' in path is the first bat -->
-<path 
+<path
   d="M 256,213 C 245,181 206,187  ..."
   fill="#000000">
-  <!-- The 'values' include the first 
+  <!-- The 'values' include the first
       as well as the second bat -->
-  <animate  dur="2s" 
-    repeatCount="indefinite" 
-    attributeName="d" 
-    values="M 256,213 C 245,181 206,187 ... Z; 
+  <animate  dur="2s"
+    repeatCount="indefinite"
+    attributeName="d"
+    values="M 256,213 C 245,181 206,187 ... Z;
             M 212,220 C 197,171 156,153 ... Z;"/>
 </path>
 {% endhighlight %}
@@ -88,12 +89,12 @@ meta:
 <p>We are not done with that. One thing you might realize is that the animation always jumps back to it's initial frame (which is why we also need to define the original path in the parent <code class="language-markup">&lt;path&gt;</code> element). To make sure that the ending state is preserved, we add another attribute called <code class="language-markup">fill</code> and set its value to <code class="language-markup">freeze</code>. In other elements, <code class="language-markup">fill</code> is used to define the filling color, in animation it's the state at the end.</p>
 
 {% highlight html %}
-<animate 
-  dur="2s" 
+<animate
+  dur="2s"
 
   fill="freeze"
 
-  repeatCount="1" 
+  repeatCount="1"
   attributeName="d"
   values="..." />
 {% endhighlight %}
@@ -170,7 +171,7 @@ meta:
 <svg>
   <path d="...">
     <animate
-      dur="2s" fill="freeze" 
+      dur="2s" fill="freeze"
       begin="click" id="anim1"
       values="..." />
   </path>
@@ -179,7 +180,7 @@ meta:
 <svg>
   <path d="...">
     <animate
-      dur="2s" fill="freeze" 
+      dur="2s" fill="freeze"
       begin="anim1.begin"
       values="..." />
   </path>
@@ -206,13 +207,13 @@ meta:
 <p>I dropped this idea due to browser constraints, tough it would've been easy: Simply add the callback into your markup, or use <code class="language-javascript">addEventListener</code> to achieve the same.</p>
 
 {% highlight html %}
-<animate 
+<animate
   dur="2s" fill="freeze" begin="click"
-  repeatCount="1" 
+  repeatCount="1"
   attributeName="d"
-  
+
   onend="cry()"
-  
+
   values="..." >
 {% endhighlight %}
 
@@ -262,7 +263,7 @@ function smilEventsSupported() {
 document.body.innerHTML += '<svg width="0" height="0">'
   + '<path d="m 1,1 1,1 0,0">'
   + '<animate values="m 0,0 0,0 0,0"'
-  + 'attributeName="d" begin="0s" repeatCount="0"' 
+  + 'attributeName="d" begin="0s" repeatCount="0"'
   + 'onbegin="smilEventsSupported()"/>'
   + '</path></svg>'
 {% endhighlight %}

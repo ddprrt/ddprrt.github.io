@@ -18,6 +18,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+excerpt_small: "On mobile devices it's pretty easy (and in some cases also pretty cool) to change the look of your website respectively to the orientation of your device with media queries. However, sometimes the orientation does not only affect your layout, but also the routines of your Javascript. "
 ---
 <p>On mobile devices it's pretty easy (and in some cases also pretty cool) to change the look of your website respectively to the orientation of your device with media queries. However, sometimes the orientation does not only affect your layout, but also the routines of your Javascript. This article shows some possibilites how to detect portrait/landscape orientation on your mobile device. Some are less robust considering multiple device vendors, and some are in exchange a lot more hacky. You're gonna love it.</p>
   <p>When searching for portrait/landscape orientation detection we mostly get the following, well known results on Stackoverflow and consorts:</p>
@@ -50,14 +51,14 @@ The new Samsung Galaxy Tab (and some other devices like Toshiba Thrive) however,
 
 <h2>matchMedia for media queries in Javascript</h2>
 
-Media queries are cool for device detection because they're really checking for portrait and landscape orientation, not for the devices degree orientation. And there is actually a way to use media queries in Javascript. Credits to the code snipplet go to <a target="_blank" href="http://davidwalsh.name/orientation-change">David Walsh</a>. 
+Media queries are cool for device detection because they're really checking for portrait and landscape orientation, not for the devices degree orientation. And there is actually a way to use media queries in Javascript. Credits to the code snipplet go to <a target="_blank" href="http://davidwalsh.name/orientation-change">David Walsh</a>.
 
 <pre class="prettyprint"><code class="language-javascript">var mql = window.matchMedia("(orientation: portrait)");
 
 // If there are matches, we're in portrait
-if(mql.matches) {  
+if(mql.matches) {
   // Portrait orientation
-} else {  
+} else {
   // Landscape orientation
 }
 

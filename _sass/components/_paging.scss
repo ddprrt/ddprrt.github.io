@@ -1,0 +1,38 @@
+.paging {
+  list-style-type: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  padding-left: 4rem;
+  max-width: 53em;
+  display: flex;
+  background-color: $color;
+  color: white;
+}
+
+.paging-item {
+  flex: 1 0 50%;
+  padding: 0;
+}
+
+.paging-link,
+.paging-link:visited {
+  padding: 1rem;
+  display: block;
+  color: white;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.paging-link:hover,
+.paging-link:focus {
+  background-color: white;
+  color: $color;
+}
+
+.link-prev:before {
+  content: 'Previous: ';
+}
+
+.link-next:before {
+  content: 'Next: ';
+}

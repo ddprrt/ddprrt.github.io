@@ -8,15 +8,19 @@ title: front-end technology talk
 	{% for post in paginator.posts %}
 		<article class="post">
 			<h2 class="post-title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
-			<div class="post-date">{{ post.date | date_to_long_string }}</div>
-			<p>{{post.excerpt}}</p>
+			<div class="post-date">{{ post.date | date_to_long_string }} | Posted in: <span>{{ post.categories | join: ', '}}</span></div>
+			{% if post.excerpt_small %}
+			<p>{{ post.excerpt_small }}</p>
+			{% else %}
+			<p>{{ post.excerpt }}</p>
+			{% endif %}
 		</article>
 	{% endfor %}
 </section>
 
 <nav class="navigation-wrapper">
 	<ul class="navigation paging">
-		{% if paginator.previous_page %}<li class="paging__prev"><a rel="prev" href="{{ paginator.previous_page_path }}">Previous</a></li>{% endif %}
-		{% if paginator.next_page %}<li class="paging__next"><a rel="next" href="{{ paginator.next_page_path }}">Next</a></li>{% endif %}
+		{% if paginator.previous_page %}<li class="paging-item prev"><a class="paging-link" rel="prev" href="{{ paginator.previous_page_path }}">Next articles</a></li>{% endif %}
+		{% if paginator.next_page %}<li class="paging-item next"><a class="paging-link" rel="next" href="{{ paginator.next_page_path }}">Previous articles</a></li>{% endif %}
 	</ul>
 </nav>
