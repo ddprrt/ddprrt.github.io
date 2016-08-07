@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+{% else %}
+<meta name="description" content="Blog with articles on all things web development: CSS, JS, Node, HTML, A11Y">
+{% endif %}
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{% else %}
+<meta name="keywords" content="Web, Web Ops, DevOps, Performance, Front-End, JavaScript, CSS">
+{% endif %}
+{% include tracker/agent.html %}
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/main.css">
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="front-end technology talk &raquo; Updates" href="http://www.fettblog.eu/atom.xml" />
+
+<!-- Webmentions -->
+<link rel="pingback" href="https://webmention.io/fettblog.eu/xmlrpc" />
+<link rel="webmention" href="https://webmention.io/fettblog.eu/webmention" />

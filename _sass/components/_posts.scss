@@ -1,0 +1,13 @@
+.post-title a[href^=http]:before {
+  content: '\279e  ';
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: -0.7em;
+}
+
+.read-more:before {
+  content: '\279e  ';
+}

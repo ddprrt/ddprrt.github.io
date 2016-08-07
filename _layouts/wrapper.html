@@ -15,7 +15,15 @@ layout: default
 </article>
 <nav class="navigation-wrapper">
 	<ul class="navigation paging">
-		{% if page.previous %}<li class="paging__prev"><a rel="prev" href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>{% endif %}
-		{% if page.next %}<li class="paging__next"><a rel="next" href="{{ page.next.url }}">{{ page.next.title }}</a></li>{% endif %}
+		{% if page.previous %}
+		<li class="paging-item prev">
+			<a class="paging-link link-prev" rel="prev" href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+		</li>
+		{% endif %}
+		{% if page.next %}
+		<li class="paging-item next">
+			<a class="paging-link link-next" rel="next" href="{{ page.next.url }}">{{ page.next.title }}</a>
+		</li>
+		{% endif %}
 	</ul>
 </nav>

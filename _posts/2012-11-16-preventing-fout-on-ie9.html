@@ -18,6 +18,7 @@ type: post
 published: true
 meta:
   _edit_last: '1'
+excerpt_small: "FOUT is an abbrevation for flash of unstyled text (or type) and is one of those really nasty bits in modern frontend development. Summarized it means that if you use webfonts it might happen that you first see your text displayed in a fallback font until the downloadble webfont is loaded, parsed and inserted. Remy Sharp and Paul Irish did a lot of research on that topic more than three years ago."
 ---
 <p>FOUT is an abbrevation for flash of unstyled text (or type) and is one of those really nasty bits in modern frontend development. Summarized it means that if you use webfonts it might happen that you first see your text displayed in a fallback font until the downloadble webfont is loaded, parsed and inserted. <a href="http://remysharp.com/2009/06/23/safaris-problem-with-font-face/" target="_blank">Remy Sharp</a> and <a href="http://paulirish.com/2009/fighting-the-font-face-fout/" target="_blank">Paul Irish</a> did a lot of research on that topic more than three years ago.</p>
 
@@ -40,7 +41,7 @@ meta:
 }
 {% endhighlight %}
 
-<p>All modern browsers are capable of handling WOFF, so this should be your format of choice. EOT is more or less just for legacy purposes, and so is TrueType or SVG. So, if you are just reducing your Webfont declaration to the one you need for modern 
+<p>All modern browsers are capable of handling WOFF, so this should be your format of choice. EOT is more or less just for legacy purposes, and so is TrueType or SVG. So, if you are just reducing your Webfont declaration to the one you need for modern
 browsers, you end up with this.</p>
 
 {% highlight css %}
@@ -58,7 +59,7 @@ browsers, you end up with this.</p>
 {% highlight css %}
 @font-face {
     font-family: 'MySpecialFont';
-    src: url('../fonts/MySpecialFont.woff'), 
+    src: url('../fonts/MySpecialFont.woff'),
          url('../fonts/MySpecialFont.ttf'),
          url('../fonts/MySpecialFont.svg');
     font-weight: normal;
