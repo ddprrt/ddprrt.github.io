@@ -1,0 +1,24 @@
+.main-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  line-height: 2em;
+  display: block;
+  transition: all 0.3s ease;
+  padding: 0 1rem;
+  margin: 0 -1rem;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  background-color: $color;
+  color: white;
+}
+
+.main-title {
+  font-weight: 300;
+  color: $color;
+}
