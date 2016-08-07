@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'Fira Sans';
+  font-display: swap;
   font-weight: 300;
   src: local('Fira Sans'), url(/font/FiraSans-Light.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Fira Sans';
+  font-display: swap;
   font-weight: 500;
   src: local('Fira Sans'), url(/font/FiraSans-Medium.woff) format('woff');
 }
