@@ -17,6 +17,7 @@ body {
   line-height: 1.5em;
   font-family: "Fira Sans", $systemfonts;
   color: #454545;
+  margin: 0;
 }
 
 @media (min-width: 40em) {
@@ -50,4 +51,17 @@ h1, h2, h3, h4, h5 {
 
 img {
   max-width: 100%;
+}
+
+code {
+  font-family: 'Monaco', monospace;
+  font-size: 0.8rem;
+}
+
+ol {
+  padding-left: 1rem;
+}
+
+ul {
+  padding-left: 1.1rem;
 }
