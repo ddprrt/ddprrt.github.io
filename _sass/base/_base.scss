@@ -16,7 +16,7 @@ body {
   font-size: 1rem;
   line-height: 1.5em;
   font-family: "Fira Sans", $systemfonts;
-  color: #454545;
+  color: $text;
   margin: 0;
 }
 
@@ -35,6 +35,10 @@ a:visited {
 a:focus,
 a:hover {
   color: lighten($color, 10);
+}
+
+h1 {
+  font-size: 1.7rem;
 }
 
 h1,
