@@ -7,12 +7,20 @@ title: front-end technology talk
 	<h1 class="visually-hidden">List of articles</h1>
 	{% for post in paginator.posts %}
 		<article class="post">
-			<h2 class="post-title">{% unless post.external %}<a href="{{ post.url }}">{% else %} <a href="{{ post.external }}">{% endunless %}{{ post.title }}</a></h2>
+			{% if post.external %}
+			<h2 class="post-title"><a href="{{ post.external }}">{{ post.title }}</a></h2>
+			<div class="post-date">{{ post.date | date_to_long_string }} | Posted in: <span>{{ post.categories | join: ', '}}</span></div>
+			{{ post.content}}
+			{% else %}
+			<h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			<div class="post-date">{{ post.date | date_to_long_string }} | Posted in: <span>{{ post.categories | join: ', '}}</span></div>
 			{% if post.excerpt_small %}
-			<p>{{ post.excerpt_small }}</p>
+			{{ post.excerpt_small }}
+			<p><a class="read-more" href="{{post.url}}">Read more</a></p>
 			{% else %}
-			<p>{{ post.excerpt }}</p>
+			{{ post.excerpt }}
+			<p><a class="read-more" href="{{post.url}}">Read more</a></p>
+			{% endif %}
 			{% endif %}
 		</article>
 	{% endfor %}
