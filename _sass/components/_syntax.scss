@@ -21,7 +21,7 @@ $tag: #fff;
 .highlight .gi { color: $inserted; background-color: #ddffdd } /* Generic.Inserted */
 .highlight .gi .x { color: $inserted; background-color: #aaffaa } /* Generic.Inserted.Specific */
 .highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gp { color: $generic; } /* Generic.Prompt */
 .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
 .highlight .gt { color: #aa0000 } /* Generic.Traceback */
 .highlight .kt { color: #445588; } /* Keyword.Type */
@@ -34,7 +34,7 @@ $tag: #fff;
 .highlight .ni { color: #800080 } /* Name.Entity */
 .highlight .ne { color: $func; } /* Name.Exception */
 .highlight .nf { color: $func; } /* Name.Function */
-.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nn { color: $generic; } /* Name.Namespace */
 .highlight .nt { color: $tag; } /* Name.Tag */
 .highlight .nv { color: $name; } /* Name.Variable */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
