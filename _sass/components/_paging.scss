@@ -2,7 +2,6 @@
   list-style-type: none;
   margin: 1rem 0 0;
   padding: 0;
-  padding-left: 4rem;
   max-width: 53em;
   display: flex;
   background-color: $color;
@@ -35,4 +34,11 @@
 
 .link-next:before {
   content: 'Next: ';
+}
+
+@media (min-width: $content-breakpoint) {
+
+  .paging {
+    padding-left: 4rem;
+  }
 }

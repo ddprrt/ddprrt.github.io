@@ -1,8 +1,15 @@
 .wrapper {
-  padding: 1rem 5rem 1rem;
+  padding: 1rem;
   margin-top: -1rem;
   max-width: 53em;
   background-color: white;
   color: $text;
   min-height: calc(100vh - 63px);
+}
+
+@media (min-width: $content-breakpoint) {
+
+  .wrapper {
+    padding: 1rem 5rem 1rem;
+  }
 }

@@ -1,8 +1,16 @@
 .highlight {
-  width: calc(100% + 10rem);
-  margin: 1rem -5rem;
-  padding: 0 5rem;
+  margin: 1rem -1rem;
+  padding: 0 1rem;
   overflow: auto;
   color: #fafafa;
   background-color: $text;
+}
+
+@media (min-width: $content-breakpoint) {
+
+  .highlight {
+    width: calc(100% + 10rem);
+    margin: 1rem -5rem;
+    padding: 0 5rem;
+  }
 }
