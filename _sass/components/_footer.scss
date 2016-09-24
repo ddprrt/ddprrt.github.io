@@ -1,0 +1,20 @@
+.foot {
+  font-size: 0.7rem;
+  color: white;
+  background-color: #454546;
+  padding: 0.1rem 1rem;
+}
+
+@media (min-width: $content-breakpoint) {
+
+  .foot {
+    padding: 0.1rem 3rem;
+  }
+}
+
+@media (min-width: $nav-breakpoint) {
+
+  .foot {
+    margin-right: 3rem;
+  }
+}

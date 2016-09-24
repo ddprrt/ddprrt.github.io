@@ -1,12 +1,12 @@
 .wrapper {
   position: relative;
-  padding: 1rem;
-  padding-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 53em;
   background-color: white;
   color: $text;
+  padding: 1rem;
+  max-width: 53em;
+  padding-bottom: 2rem;
   min-height: calc(100vh - 47px);
 }
 
@@ -20,7 +20,7 @@
 @media (min-width: $nav-breakpoint) {
 
   .wrapper {
-    margin-top: -1rem;
     margin-left: 0;
+    margin-top: -1rem;
   }
 }
