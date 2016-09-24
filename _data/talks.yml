@@ -1,0 +1,255 @@
+-
+  year: 2016
+  conferences:
+    -
+      title: CSSConf Budapest
+      country: Hungary
+      city: Budapest
+      date: 2016-05-11
+      url: http://cssconfbp.rocks/
+      talks:
+        -
+          title: The Super Mario Bros. Principle
+          abstract: http://cssconfbp.rocks/speaker/stefan-baumgartner.html
+    -
+      title: JSConf Budapest
+      country: Hungary
+      city: Budapest
+      date: 2016-05-12
+      url: http://jsconfbp.com/
+      talks:
+        -
+          title: HTTP/2 is coming! Unbundle all the things?
+          abstract: http://jsconfbp.com/speakers/stefan-baumgartner.html
+          slides: https://speakerdeck.com/ddprrt/2-is-coming-unbundle-all-the-things
+          video: https://www.youtube.com/watch?v=98z0XjYWX0o
+    -
+      title: PortoTechHub
+      country: Portugal
+      city: Porto
+      date: 2016-09-23
+      url: http://portotechhub.com/
+      talks:
+        -
+          title: The Super Mario Bros. Principle
+          slides: https://speakerdeck.com/ddprrt/2-is-coming-unbundle-all-the-things
+    -
+      title: ViennaJS
+      country: Austria
+      city: Vienna
+      date: 2016-09-28
+      url: https://www.meetup.com/de-DE/viennajs/events/230515299/
+      talks:
+        -
+          title: Me, myself and AI
+          abstract: https://www.meetup.com/de-DE/viennajs/events/230515299/
+    -
+      title: Topconf Tallin
+      country: Estonia
+      city: Tallinn
+      date: 2016-11-17
+      url: http://topconf.com/tallinn-2016/trackevent/the-pull-request-cms/
+      talks:
+        -
+          title: The Pull Request CMS
+          abstract: http://topconf.com/tallinn-2016/trackevent/the-pull-request-cms/
+-
+  year: 2015
+  conferences:
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Munich
+      date: 2015-03-05
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+    -
+      title: Webinale
+      country: Germany
+      city: Berlin
+      date: 2015-06-10
+      talks:
+        -
+          title: Data Driven Performance Optimisation
+          slides: https://speakerdeck.com/ddprrt/data-driven-performance-optimisation
+    -
+      title: Digital Visions
+      country: Austria
+      city: Vienna
+      date: 2015-10-09
+      talks:
+        -
+          title: The UX of Speed
+          slides: https://speakerdeck.com/ddprrt/the-ux-of-speed
+    -
+      title: Devoxx
+      country: Belgium
+      city: Antwerp
+      date: 2015-11-10
+      talks:
+        -
+          title: JavaScript building pipelines with Gulp
+          slides: https://speakerdeck.com/ddprrt/plumbin-pipelines-with-gulp-dot-js-3hr-workshop
+          type: Workshop
+          video: https://www.youtube.com/watch?v=AcCtLUZZkvE
+    -
+      title: Topconf Tallin
+      country: Estonia
+      city: Tallinn
+      date: 2015-11-18
+      url: http://topconf.com/tallinn-2015
+      talks:
+        -
+          title: Plumbin' Pipelines
+          slides: https://speakerdeck.com/ddprrt/advanced-javascript-build-pipelines-using-gulp-dot-js
+          abstract: http://topconf.com/tallinn-2015/trackevent/plumbin-pipelines-javascript-build-tools-on-steroid/
+        -
+          title: Speed Index, explained
+          abstract: http://topconf.com/tallinn-2015/trackevent/speed-index-explained/
+          video: https://www.youtube.com/watch?v=ssC8FAVg0Zg
+          slides: https://speakerdeck.com/ddprrt/speed-index-explained
+-
+  year: 2014
+  conferences:
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Munich
+      date: 2014-03-07
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+          video: https://www.youtube.com/watch?v=NyQHh3HkcZE
+    -
+      title: Mobile Tech Conference
+      country: Germany
+      city: Munich
+      date: 2014-03-20
+      talks:
+        -
+          title: Gaining Control for the Great Unknown
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-mobiletechcon-march-2014
+        -
+          title: Panel discussion with Sven Wolfermann, Roland Guelle and Tobias Baldauf
+          type: Panel
+    -
+      title: Webinale
+      country: Germany
+      city: Berlin
+      date: 2014-06-03
+      talks:
+        -
+          title: Keeping the web native!
+          slides: https://speakerdeck.com/ddprrt/keeping-the-web-native
+          video: https://www.youtube.com/watch?v=BMwWNkvkZYI
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Berlin
+      date: 2014-10-15
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+          video: https://www.youtube.com/watch?v=gKC51DyvVkQ
+    -
+      title: Codeweek
+      country: Austria
+      city: Linz
+      date: 2014-10-17
+      talks:
+        -
+          title: Introduction to Yeoman
+          slides: https://speakerdeck.com/ddprrt/a-short-introduction-to-yeoman
+-
+  year: 2013
+  conferences:
+    -
+      title: Breaking Development
+      country: USA
+      city: Orlando, FL
+      date: 2013-04-08
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+          video: https://vimeo.com/64197060
+    -
+      title: "Beyond Tellerrand - Developer Garden"
+      country: Germany
+      city: Düsseldorf
+      date: 2013-05-28
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: Digital Visions
+      country: Austria
+      city: Vienna
+      date: 2013-10-04
+      talks:
+        -
+          title: The perfect steak
+          slides: https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak
+    -
+      title: Topconf Tallinn
+      country: Estonia
+      city: Tallinn
+      date: 2013-11-06
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+        -
+          title: The perfect steak
+          slides: https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak
+        -
+          title: Panel Discussion on Mobile HTML5 with Max Firtman
+          type: Panel
+    -
+      title: DrupalCamp
+      country: Austria
+      city: Vienna
+      date: 2013-11-23
+      talks:
+        -
+          title: Gaining Control in the Great Unknown
+          slides: https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-the-state-of-mobile-browsers-and-how-to-handle-them
+-
+  year: 2012
+  conferences:
+    -
+      title: "The next web"
+      country: Austria
+      city: Salzburg
+      date: 2012-03-23
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: "ATAG"
+      country: Austria
+      city: Vienna
+      date: 2012-10-25
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: "Digital Visions"
+      country: Austria
+      city: Salzburg
+      date: 2012-03-12
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
