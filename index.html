@@ -9,11 +9,11 @@ title: front-end technology talk
 		<article class="post">
 			{% if post.external %}
 			<h2 class="post-title"><a href="{{ post.external }}">{{ post.title }}</a></h2>
-			<div class="post-date">{{ post.date | date_to_long_string }} | Posted in: <span>{{ post.categories | join: ', '}}</span></div>
+			<div class="post-date">{{ post.date | date_to_long_string }}</div>
 			{{ post.content}}
 			{% else %}
 			<h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-			<div class="post-date">{{ post.date | date_to_long_string }} | Posted in: <span>{{ post.categories | join: ', '}}</span></div>
+			<div class="post-date">{{ post.date | date_to_long_string }}</div>
 			{% if post.excerpt_small %}
 			{{ post.excerpt_small }}
 			<p><a class="read-more" href="{{post.url}}">Read more</a></p>
