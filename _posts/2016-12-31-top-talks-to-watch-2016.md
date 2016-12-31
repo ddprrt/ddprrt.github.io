@@ -33,7 +33,7 @@ Alice Bartlett works for the Financial Times and had the distinct task of creati
 
 ## Harry Roberts: Refactoring CSS Without Losing Your Mind
 
-I got such a Brocrush on Harry, folks. He's the guy who single-handedly invented CSS engineering. And with good reason. In this talk, Harry shows how you can refactor CSS. And more importantly: WHY you should refactor CSS. It appears to me Harry is the only one who can apply common software engineering practices to CSS without trying to reinvent everything the language has to offer. This is one of his best talks so far.
+Harry is the guy who single-handedly invented CSS engineering. And with good reason. In this talk, Harry shows how you can refactor CSS. And more importantly: WHY you should refactor CSS. It appears to me Harry is the only one who can apply common software engineering practices to CSS without trying to reinvent everything the language has to offer. This is one of his best talks so far.
 
 <div class="aspect ratio-16-to-9">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kbGYPm9uYfk" frameborder="0" allowfullscreen></iframe>
