@@ -69,7 +69,7 @@ We will definitely take care of this issue the next time. With Chris not being
 a Linzer, it's hard for him to get to the right addresses on his own. This is
 something that we from the program commitee should've kept an eye on. Think about
 you organising a conference at some place you rarely be, relying on Google and
-some recommendations? We will hook him up with the right people to get some proper 
+some recommendations? We will hook him up with the right people to get some proper
 and delicious food the next time. We already have some providers in mind.
 
 The beer was excellent, though.
@@ -90,6 +90,6 @@ All the attendees who joined us at the conference, at lunch, at the bars. Seeing
 you all engage in wonderful discussions and having so much fun together was constantly
 telling me: Totally worth it. Glad that you enjoyed being here.
 
-And last, but not least: To Chris and Laura. You put so much effort into giving 
+And last, but not least: To Chris and Laura. You put so much effort into giving
 our community a great event and gave us such a wonderful time.
 Thank you for everything. On 2017!
