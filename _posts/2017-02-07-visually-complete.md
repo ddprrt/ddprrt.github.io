@@ -1,6 +1,6 @@
 ---
 title: "Real user speed index and visually complete"
-layout: book
+layout: post
 published: true
 permalink: /real-user-visually-complete/
 categories:
