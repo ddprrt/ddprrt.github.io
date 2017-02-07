@@ -20,8 +20,8 @@ Metrics that our products did not feature back then, but would have helped me a 
 And I was nagging a lot. And complaining a lot. And teasing the right people ... alot! 
 
 I almost felt if I'm not welcome because of my attitude (being a bit cocky at times), but I was 
-totally wrong. My colleagues just loved to have a new challenge! Now, almost 2 years later, we not
-only have [Speed Index and visually complete](https://www.dynatrace.com/capabilities/digital-experience-monitoring/visually-complete/) available in
+totally wrong. My colleagues just loved to have a new challenge! Now, almost 2 years later, we have
+[Speed Index and visually complete](https://www.dynatrace.com/capabilities/digital-experience-monitoring/visually-complete/) available in
 our products. Not only that, but we have it available through real user monitoring as an industry first.
 
 And this is what I totally love about this company. I am able to work with the brightest minds and really
