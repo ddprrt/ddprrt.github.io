@@ -6,6 +6,8 @@ permalink: /scriptconf-and-devone/
 categories: conferences
 ---
 
+About two years ago, [Sebastian](https://twitter.com/sebgie) and I had our first chats about having a JavaScript conference in our town of Linz. And this January, we made our vision reality and launched [ScriptConf](https://scriptconf.org), a conference about JavaScript. Giving it the (quite bold) tagline "The conference this city needs", we wanted to make JavaScript more popular in Linz, while having a great time with an amazing community.
+
 <style>
 .gallery {
   display: grid;
@@ -27,7 +29,6 @@ categories: conferences
 
 </style>
 
-About two years ago, [Sebastian](https://twitter.com/sebgie) and I had our first chats about having a JavaScript conference in our town of Linz. And this January, we made our vision reality and launched [ScriptConf](https://scriptconf.org), a conference about JavaScript. Giving it the (quite bold) tagline "The conference this city needs", we wanted to make JavaScript more popular in Linz, while having a great time with an amazing community.
 
 <div class="aspect ratio-16-to-9">
   <iframe src="//www.youtube.com/embed/wUuWQTuXYOg" frameborder="0" allowfullscreen></iframe>
