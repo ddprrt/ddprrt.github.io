@@ -74,6 +74,6 @@ Dear Stefan, Irene, Hartwig and Katrin: You are simply amazing!
 
 ## On to Script'18
 
-Content-wise, #devone is like necessary counterpiece to #scriptconf. Both events balance the topics relevant to the developer scene in Austria, while making sure that everyone gets a quality conference for a reasonable price. As said: Making the investment worthwhile. 
+Content-wise, #devone is like a necessary counterpiece to #scriptconf. Both events balance the topics relevant to the developer scene in Austria, while making sure that everyone gets a quality conference for a reasonable price. As said: Making the investment worthwhile. 
 
 After MC'ing #devone I can't wait doing [ScriptConf](https://scriptconf.org) again, hopefully continuing the cycle that brings quality events directly to your door. Script'18, we're coming!
