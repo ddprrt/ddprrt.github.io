@@ -8,15 +8,21 @@ categories: conferences
 
 <style>
 .gallery {
-  margin: -1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
 }
 
 .item {
-  height: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.item img {
+  width: 100%;
+  height: 400px;
   object-fit: cover;
+  object-position: top;
 }
 
 </style>
