@@ -53,7 +53,7 @@ I'm still not sure how close we came to the conference we envisioned. But I know
 
 About a week after ScriptConf, I was summoned to a meeting room in our office at [Dynatrace](https://www.dynatrace.com). Dynatrace wanted to do their own conference, on topics which are key to the day to day workflow of their development teams. It should be an event for Dynatrace employees, but open for everybody else to join and hang out with us and have a good time.
 
-Since ScriptConf was such a success, the event's organising team wanted to see what makes up a good conference. So we went through a tremendous list of all things big and little: The right selection of a ticket service, branding, catering, -pricing, social media, agenda, breaks ... we left out no little detail and had a very open talk on things to consider, as well as how much effort to put in. Both in time and budget. Organising a conference is not an easy task. That's for sure. But it's even harder when you have just four months available.
+Since ScriptConf was such a success, the event's organising team wanted to see what makes up a good conference. So we went through a tremendous list of all things big and little: The right selection of a ticket service, branding, catering, pricing, social media, agenda, breaks ... we left out no little detail and had a very open talk on things to consider, as well as how much effort to put in. Both in time and budget. Organising a conference is not an easy task. That's for sure. But it's even harder when you have just four months available.
 
 <div class="aspect ratio-16-to-9">
   <iframe src="//www.youtube.com/embed/dFYDm5SM3pk" frameborder="0" allowfullscreen></iframe>
