@@ -39,12 +39,12 @@ Sebastian and I are avid conference goers. And if you've seen lots and lots of c
 Everybody who is involved in a conference invests a lot of time, money and effort: Attendees, organisers, speakers, partners, the crew. And since everyone is giving so much, it's your duty as organiser to make sure that everyone's investment was worth it. Stick to your promises. Don't screw with people's expectations. Ensure everyone feels at home.
 
 <div class="gallery">
-  <div class="item"><img src="https://scriptconf.org/assets/images/general/stage.jpg"></div>
-  <div class="item"><img src="https://scriptconf.org/assets/images/2018/crowd-5.jpg"></div>
-  <div class="item"><img src="https://scriptconf.org/assets/images/2018/crowd.jpg"></div>
-  <div class="item"><img src="https://scriptconf.org/assets/images/2018/crowd-6.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16124022_1831347640463165_4070844228773609472_n.jpg"></div>
-  <div class="item"><img src="https://scriptconf.org/assets/images/2018/crowd-2.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scriptconf.org/assets/images/general/stage.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scriptconf.org/assets/images/2018/crowd-5.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scriptconf.org/assets/images/2018/crowd.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scriptconf.org/assets/images/2018/crowd-6.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16124022_1831347640463165_4070844228773609472_n.jpg"></div>
+  <div class="item"><img alt="scriptconf impressions" src="https://scriptconf.org/assets/images/2018/crowd-2.jpg"></div>
 </div>
 
 I'm still not sure how close we came to the conference we envisioned. But I know that we got one big thing we were aiming for: A wonderful night with wonderful people around us.
@@ -62,12 +62,12 @@ Since ScriptConf was such a success, the event's organising team wanted to see w
 This Thursday, the first round of the "developer and ops" conference [#devone](https://devone.at) took place. I was asked to MC the event, and to share the stage with friends and colleagues. And after the event, I can't hold back with excitement and deep admiration I have for all those people involved. The crew did an outstanding job organising, spend so much care into all the little details, and made sure that this was one cozy, warm and fun party! I got so many good vibes, and it all felt like being back at ScriptConf again.
 
 <div class="gallery">
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18723404_1958722420820145_8572236105515008000_n.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18812552_267741377022783_5168508114374230016_n.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18722316_115836269002562_3429997406987485184_n.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18879120_1645285788833638_1962322355124436992_n.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/e35/18809512_299688947155371_1388883666364530688_n.jpg"></div>
-  <div class="item"><img src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18809399_454026054952095_5823141446173065216_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18723404_1958722420820145_8572236105515008000_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18812552_267741377022783_5168508114374230016_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18722316_115836269002562_3429997406987485184_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18879120_1645285788833638_1962322355124436992_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/e35/18809512_299688947155371_1388883666364530688_n.jpg"></div>
+  <div class="item"><img alt="devone impressions" src="https://scontent-vie1-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18809399_454026054952095_5823141446173065216_n.jpg"></div>
 </div>
 
 Dear Stefan, Irene, Hartwig and Katrin: You are simply amazing!
