@@ -1,6 +1,6 @@
 ---
 title: "Grid layout, grid layout everywhere!"
-published: true
+published: false
 layout: post
 permalink: /grid-concepts/
 categories: css, grid, layout
