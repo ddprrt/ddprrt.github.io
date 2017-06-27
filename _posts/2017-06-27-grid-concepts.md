@@ -69,7 +69,7 @@ My most favourite example is where you tell Grid to “just use as many columns 
  
 We can achieve this by using a few of the baked in grid functions. “repeat” tells us to, well… repeat this pattern a couple of times. One use case would be to enter a digit telling us how many columns we use. Another one is to use “as many as we can get”: auto-fill. The next function is to select any range between 200px minimum width and 1 fraction of the total width. The result is remarkable:
  
-<video src="https://fettblog.eu/wp-content/uploads/grid.mp4" loop></video>
+<video src="https://fettblog.eu/wp-content/uploads/grid.mp4" loop controls style="max-width: 100%"></video>
  
 A fully flexible grid layout with no media queries at all. ([Pen](https://codepen.io/ddprrt/pen/EmLVYd)) 
  
