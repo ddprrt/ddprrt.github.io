@@ -1,13 +1,13 @@
 ---
 title: "Grid layout, grid layout everywhere!"
-published: false
+published: true
 layout: post
 permalink: /grid-concepts/
 categories: css, grid, layout
 ---
 One of the great things about Microsoft Edge is that as a developer, you always know what to expect from an upcoming version. Communication is key! The [platform status page](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/) gives you a by feature list of the current development status, and the [Edge user voice](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6514853-update-css-grid) allows you to actively influence the developers' backlog! 
  
-I used this privilege to cast my three votes to the "Update CSS Grid" feature request. IE 10 was one of the first browsers to implement the CSS Grid specification. This specification comes from a time where Microsoft pushed the web plattform hard to be a fully competitive platform for app development. And for that, it needed a proper layouting mechanism. Hello, grid layouts! The original spec was pretty early and has been improved over the years. The new specification has reached candidate recommendation and has been since implement in … well, all major desktop browsers! The only one missing was Edge, until last week, when I got a notification from the Microsoft Edge Developer User Voice:
+I used this privilege to cast my three votes to the "Update CSS Grid" feature request. [IE 10 was one of the first browsers to implement the CSS Grid specification](https://channel9.msdn.com/Events/Build/2012/3-114). This specification comes from a time where Microsoft pushed the web plattform hard to be a fully competitive platform for app development. And for that, it needed a proper layouting mechanism. Hello, grid layouts! The original spec was pretty early and has been improved over the years. The new specification has reached candidate recommendation and has been since implement in … well, all major desktop browsers! The only one missing was Edge, until last week, when I got a notification from the Microsoft Edge Developer User Voice:
  
 ![Grid landed in Edge preview](/wp-content/uploads/grid/grid0.png)
 
@@ -73,7 +73,7 @@ We can achieve this by using a few of the baked in grid functions. “repeat” 
  
 A fully flexible grid layout with no media queries at all. ([Pen](https://codepen.io/ddprrt/pen/EmLVYd)) 
  
-This is layouting heaven! Automatic layouting is also the one thing that is hugely different from the previous grid specification that's available from IE10 onwards. With the old spec you have to place each grid item on its own, otherwise all items would overlap on the first position. A little bit of extra work, but a good fallback if you have to support those browsers as well. Speaking of which …
+This is layouting heaven! Automatic layouting is also the one thing that is hugely different from the previous grid specification that's available from IE10 onwards. With the old spec you have to place each grid item explicitely on both x- and y- axis, otherwise all items would overlap on the first position. A little bit of extra work, but a good fallback if you have to support those browsers as well. Speaking of which …
  
 ## Using Grid layout now
 
