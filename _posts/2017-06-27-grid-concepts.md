@@ -34,7 +34,7 @@ Flexbox and Grid do it differently. You define the overall layout on a parent le
  
 The code at the parent level tells us that it wants three columns with one fraction each. And all the elements underneath it know what to do and where to be. Great! ([Pen](https://codepen.io/ddprrt/pen/WOZaOe))
  
-![Grid landed in Edge preview](/wp-content/uploads/grid/grid1.png)
+![Grid example one: Auto-columns](/wp-content/uploads/grid/grid1.png)
  
 On a child level, you can define exceptions to that rule. You can make the kids rebel, and no *!important* can change that!
  
@@ -48,7 +48,7 @@ On a child level, you can define exceptions to that rule. You can make the kids 
  
 The third element is one of those rebels and wants to be placed on column 1 and row 2. The basic configuration sets this item at this exact position and lets the other elements rearrange based on the parent's rules. ([Pen](https://codepen.io/ddprrt/pen/jwGewE))
  
-![Grid landed in Edge preview](/wp-content/uploads/grid/grid2.png)
+![One child is different than the rest](/wp-content/uploads/grid/grid2.png)
  
 That's the clue of the new CSS layout: Defining rules, making exceptions. Same goes for flexbox, but we will get to that another time. 
  
@@ -84,7 +84,7 @@ When I published the example above on Twitter a couple of weeks ago, one of the 
  
 If you create an overall page layout with header, sidebar and content area, you can easily do that with the previous grid layout specification on IE10 and IE11. Arguably with some extra work to it. [Check out this pen](https://codepen.io/ddprrt/pen/dRVgXd) to see an example.
 
-![Grid landed in Edge preview](/wp-content/uploads/grid/grid-ie11.jpg)
+![IE11 grid works a bit differently](/wp-content/uploads/grid/grid-ie11.jpg)
  
 If you need auto layouting for a responsive gallery, you might be able to have a similar effect with something like Flexbox or floats. Just don't expect the same magic and power that you have with Grid layout. And that's perfectly okay. If we would be able to recreate grid designs without the new CSS Grid layout, why would we need CSS Grid layout in the first place? This just doesn't make any sense. 
  
