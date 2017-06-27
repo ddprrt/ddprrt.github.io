@@ -3,7 +3,10 @@ title: "Grid layout, grid layout everywhere!"
 published: true
 layout: post
 permalink: /grid-concepts/
-categories: css, grid, layout
+categories:
+- css
+- grid
+- layout
 ---
 One of the great things about Microsoft Edge is that as a developer, you always know what to expect from an upcoming version. Communication is key! The [platform status page](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/) gives you a by feature list of the current development status, and the [Edge user voice](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6514853-update-css-grid) allows you to actively influence the developers' backlog! 
  
