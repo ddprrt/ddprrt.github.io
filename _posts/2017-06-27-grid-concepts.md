@@ -79,7 +79,7 @@ This is layouting heaven! Automatic layouting is also the one thing that is huge
 
 When I published the example above on Twitter a couple of weeks ago, one of the first responses were: “Great! But how do I handle that on older browsers?”. Tricky question, my definitive answer would be: “It depends”. First of all: Don't try to recreate grid layout with other layout techniques (you know, the ones that are bending till it breaks), and even worse: Lots of JavaScript! Better use something that fits your content best. 
  
-If you create an overall page layout with header, sidebar and content area, you can easily do that with the previous grid layout specification on IE10 and IE11. Arguably with some extra work to it. Check out this pen to see an example.
+If you create an overall page layout with header, sidebar and content area, you can easily do that with the previous grid layout specification on IE10 and IE11. Arguably with some extra work to it. [Check out this pen](https://codepen.io/ddprrt/pen/dRVgXd) to see an example.
 
 ![Grid landed in Edge preview](/wp-content/uploads/grid/grid-ie11.jpg)
  
