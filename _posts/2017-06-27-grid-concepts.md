@@ -10,7 +10,7 @@ categories:
 ---
 One of the great things about Microsoft Edge is that as a developer, you always know what to expect from an upcoming version. Communication is key! The [platform status page](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/) gives you a by feature list of the current development status, and the [Edge user voice](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6514853-update-css-grid) allows you to actively influence the developers' backlog! 
  
-I used this privilege to cast my three votes to the "Update CSS Grid" feature request. [IE 10 was one of the first browsers to implement the CSS Grid specification](https://channel9.msdn.com/Events/Build/2012/3-114). This specification comes from a time where Microsoft pushed the web plattform hard to be a fully competitive platform for app development. And for that, it needed a proper layouting mechanism. Hello, grid layouts! The original spec was pretty early and has been improved over the years. The new specification has reached candidate recommendation and has been since implement in … well, all major desktop browsers! The only one missing was Edge, until last week, when I got a notification from the Microsoft Edge Developer User Voice:
+I used this privilege to cast my three votes to the "Update CSS Grid" feature request. [IE 10 was one of the first browsers to implement the CSS Grid specification](https://channel9.msdn.com/Events/Build/2012/3-114). This specification comes from a time where Microsoft pushed the web platform hard to be a fully competitive platform for app development. And for that, it needed a proper layout mechanism. Hello, grid layouts! The original spec was pretty early and has been improved over the years. The new specification has reached candidate recommendation and has been since implement in … well, all major desktop browsers! The only one missing was Edge, until last week, when I got a notification from the Microsoft Edge Developer User Voice:
  
 ![Grid landed in Edge preview](/wp-content/uploads/grid/grid0.png)
 
@@ -20,7 +20,7 @@ There are a ton of great guides out there that go in depth with CSS grid layout.
 
 ## A system at a parent level
 
-With both Flexbox and Grid layout one very particular thing has changed compared to the layout techniques of old. Before Flexbox and Grid we actually didn't have a proper way to do layout, so like everything in the web, people used things meant for something completely different to achieve their goals. Enter floats and inline-blocks. Both ways were originally envisioned for text flow, but with some tweaks here and there you could bend them to create some much desired column layouting. However, both floats and inline-blocks are happening on a child level. Which is odd, it means that each element knows how it wants to be placed and hopes for its surroundings to have roughly the same idea. Bending it until it breaks.
+With both Flexbox and Grid layout one very particular thing has changed compared to the layout techniques of old. Before Flexbox and Grid we actually didn't have a proper way to do layout, so like everything in the web, people used things meant for something completely different to achieve their goals. Enter floats and inline-blocks. Both ways were originally envisioned for text flow, but with some tweaks here and there you could bend them to create some much desired column layouts. However, both floats and inline-blocks are happening on a child level. Which is odd, it means that each element knows how it wants to be placed and hopes for its surroundings to have roughly the same idea. Bending it until it breaks.
  
 Flexbox and Grid do it differently. You define the overall layout on a parent level. You create a system with certain rules, and the child elements have to comply. Take this example for instance:
 
@@ -76,7 +76,7 @@ We can achieve this by using a few of the baked in grid functions. “*repeat*�
  
 A fully flexible grid layout with no media queries at all. ([Pen](https://codepen.io/ddprrt/pen/EmLVYd)) 
  
-This is layouting heaven! Automatic layouting is also the one thing that is hugely different from the previous grid specification that's available from IE10 onwards. With the old spec you have to place each grid item explicitely on both x- and y- axis, otherwise all items would overlap on the first position. A little bit of extra work, but a good fallback if you have to support those browsers as well. Speaking of which …
+This is layout heaven! Automatic layout is also the one thing that is hugely different from the previous grid specification that's available from IE10 onwards. With the old spec you have to place each grid item explicitely on both x- and y- axis, otherwise all items would overlap on the first position. A little bit of extra work, but a good fallback if you have to support those browsers as well. Speaking of which …
  
 ## Using Grid layout now
 
@@ -86,10 +86,10 @@ If you create an overall page layout with header, sidebar and content area, you 
 
 ![IE11 grid works a bit differently](/wp-content/uploads/grid/grid-ie11.jpg)
  
-If you need auto layouting for a responsive gallery, you might be able to have a similar effect with something like Flexbox or floats. Just don't expect the same magic and power that you have with Grid layout. And that's perfectly okay. If we would be able to recreate grid designs without the new CSS Grid layout, why would we need CSS Grid layout in the first place? This just doesn't make any sense. 
+If you need auto layout for a responsive gallery, you might be able to have a similar effect with something like Flexbox or floats. Just don't expect the same magic and power that you have with Grid layout. And that's perfectly okay. If we would be able to recreate grid designs without the new CSS Grid layout, why would we need CSS Grid layout in the first place? This just doesn't make any sense. 
  
 Find something that's suitable for the content you want to show, but be good with little cuts in look and feel. If 90% of your users can see the work you've done with 10% of effort, it's okay to give the last 10% of your users a less advanced view. Just don't block them out. Give something their browsers can digest easily.
  
-With that, I invite you to start using CSS Grid layout now! It's a lot of fun to use and makes layouting as easy as possible. 
+With that, I invite you to start using CSS Grid layout now! It's a lot of fun to use and makes layout as easy as possible. 
  
  
