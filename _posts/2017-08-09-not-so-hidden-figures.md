@@ -1,5 +1,5 @@
 ---
-title: "Object streams in Node.js"
+title: "Not so hidden figures - Organizing ScriptConf"
 published: true
 layout: post
 permalink: /not-so-hidden-figures/
