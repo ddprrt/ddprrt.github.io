@@ -18,193 +18,30 @@ meta:
 ---
 <p>From time to time I speak at conferences and other events, mostly about mobile browser quirks, progressive enhancement, front-end development in large groups and tooling. Be sure to check out my <a href="http://lanyrd.com/profile/ddprrt/">Lanyrd page</a>!</a></p>
 
-<!--h2>Upcoming appearances</h2>
+<h2>Appearances</h2>
 
-<h3>2017</h3>
+{% for year in site.data.talks %}
 
+<h3>{{year.year}}</h3>
 <ul class="appearances">
-  <li class="appearance__detail">April 2017, 10th: <a href="https://www.meetup.com/de-DE/stahlstadt-js/">Webclerks</a>, Vienna</li>
-	<ol class="talks">
-  	<li class="talk__entry">Technical Writing</li>
-	</ol>
-</ul-->
+	
+{% assign conferences = year.conferences  | sort: 'date' | reverse %}
+{% for conf in conferences %}
 
-<h2>Previous appearances</h2>
-
-<h3>2017</h3>
-
-<ul class="appearances">
-  <li class="appearance__detail">Februar 2017, 6th-9th: <a href="https://www.dynatrace.com/perform">Perform</a>, Las Vegas</li>
-  <li class="appearance__detail">April 2017, 10th: <a href="https://www.meetup.com/de-DE/stahlstadt-js/">Webclerks</a>, Vienna</li>
-	<ol class="talks">
-  	<li class="talk__entry">Technical Writing</li>
-	</ol>
+<li class="appearance__detail">
+	<span class="appearance__date">{{ conf.date | date: "%-d %B %Y" }}</span> <a href="{{conf.url}}">{{conf.title}}</a> &mdash; {{conf.city}}, {{conf.country}}
+<ol class="talks">
+{% for talk in conf.talks  %}
+	<li class="talk__entry{% if talk.type == 'Workshop' %} talk--workshop{% endif %}">
+		{{talk.title}}
+		{% if talk.abstract or talk.slides or talk.video %}&mdash;{% endif %}
+		{% if talk.abstract %}<a class="talk__coverage" href="{{talk.abstract}}">Abstract</a>{% endif %}
+		{% if talk.slides %}<a class="talk__coverage" href="{{talk.slides}}">Slides</a>{% endif %}
+		{% if talk.video %}<a class="talk__coverage" href="{{talk.video}}">Video</a>{% endif %}
+	</li>
+{% endfor %}
+</ol>
+{% endfor %}
+</li>
 </ul>
-
-
-<h3>2016</h3>
-
-<ul class="appearances">
-  <li class="appearance__detail">November 2016, 17th: <a href="http://topconf.com/tallinn-2016/trackevent/the-pull-request-cms/">Topconf Tallinn</a>, Porto, Portugal
-    <ol class="talks">
-  	<li class="talk__entry">The Pull Request CMS</li>
-    </ol>
-  </li>
-  <li class="appearance__detail">September 2016, 28th: ViennaJS, Vienna
-    <ol class="talks">
-      <li class="talk__entry">Me, myself and AI</li>
-    </ol>
-  </li>
-   <li class="appearance__detail">September 2016, 23rd: <a href="http://portotechhub.com">PortoTechHub</a>, Porto, Portugal
-     <ol class="talks">
-    	<li class="talk__entry">The Super Mario Bros. Principle - <a href="https://speakerdeck.com/ddprrt/the-super-mario-bros-principle-extended-edition">Slides</a></li>
-     </ol>
-   </li>
-   <li class="appearance__detail">May 2016, 12-13th: <a href="http://jsconfbp.com">JSConf Budapest</a>, Hungary
-     <ol class="talks">
-        <li class="talk__entry">HTTP/2 is coming! Unbundle all the things? - <a href="http://jsconfbp.com/speakers/stefan-baumgartner.html">Abstract</a>, <a href="https://speakerdeck.com/ddprrt/2-is-coming-unbundle-all-the-things">Slides</a>, <a href="https://www.youtube.com/watch?v=98z0XjYWX0o">Video</a></li>
-     </ol>
-   </li>
-   <li class="appearance__detail">May 2016, 11th: <a href="http://cssconfbp.rocks">CSSConf Budapest</a>, Hungary
-     <ol class="talks">
-        <li class="talk__entry">The Super Mario Bros. Principle - <a href="http://cssconfbp.rocks/speaker/stefan-baumgartner.html">Abstract</a></li>
-     </ol>
-   </li>
-</ul>
-
-
-<h3>2015</h3>
-
-<ul class="appearances">
-   <li class="appearance__detail">November 2015, 18-19th: <a href="http://topconf.com/tallinn-2015">Topconf</a>, Tallinn, Estonia
-      <ol class="talks">
-	<li class="talk__entry">Plumbin' Pipelines: JavaScript build tools on steroid - <a href="http://topconf.com/tallinn-2015/trackevent/plumbin-pipelines-javascript-build-tools-on-steroid/">Abstract</a></li>
-	<li class="talk__entry">Speed Index, explained - <a href="http://topconf.com/tallinn-2015/trackevent/speed-index-explained/">Abstract</a></li>
-    </ol>
-  </li>
-  <li class="appearance__detail">November 2015, 9-13th: <a href="http://devoxx.be/2015">Devoxx</a>, Antwerp, Belgium
-      <ol class="talks">
-        <li class="talk__entry">Workshop: JavaScript building pipelines with Gulp - <a href="http://cfp.devoxx.be/2015/talk/UNJ-5508/JavaScript_build_pipelines_with_Gulp.js">Abstract</a>, <a href="https://speakerdeck.com/ddprrt/plumbin-pipelines-with-gulp-dot-js-3hr-workshop">Slides</a></li>
-      </ol>
-  </li>
-  <li class="appearance__detail">October 2015, 9th: <a href="http://digitalvisions.at">Digital Visions</a>, Vienna, Austria
-      <ol class="talks">
-        <li class="talk__entry">The UX of Speed - <a href="http://digitalvisions.at/speaker/stefan-baumgartner/">Abstract</a></li>
-      </ol>
-  </li>
-	<li class="appearance__detail">June 2015, 10th: <a href="http://webinale/2015/">Webinale</a>, Berlin
-		<ol class="talks">
-			<li class="talk__entry">Data Driven Performance Optimisation - <a href="https://webinale.de/2015/sessions/data-driven-performance-optimisation">Abstract</a>, <a href="https://speakerdeck.com/ddprrt/data-driven-performance-optimisation">Slides</a></li>
-		</ol>
-	</li>
-	<li class="appearance__detail">March 2015, 5th: <a href="http://javascript-days.de/2015">JavaScript Days</a>, Munich
-    <ol class="talks">
-			<li class="talk__entry">Frontend Tooling with Yeoman and Grunt</li>
-    </ol>
-  </li>
-</ul>
-
-
-<h3>2014</h3>
-
-<ul class="appearances">
-	<li class="appearance__detail">October 2014, 17th: <a href="http://codeweek.eu">Codeweek</a>, Linz
-        <ol class="talks">
-			<li class="talk__entry">Introduction to Yeoman - <a href="https://speakerdeck.com/ddprrt/a-short-introduction-to-yeoman">Slides</a></li>
-        </ol>
-    </li>
-    <li class="appearance__detail">October 2014, 15th: <a href="http://javascript-days.de/2014fall">JavaScript Days</a>, Berlin
-        <ol class="talks">
-			<li class="talk__entry">Frontend Tooling with Yeoman and Grunt</li>
-        </ol>
-        <p>
-    		Interview on Yeoman and different tooling chains (German):
-    	</p>
-        <div class="aspect ratio-16-to-9">
-        	<iframe src="//www.youtube.com/embed/gKC51DyvVkQ" allowfullscreen frameborder="0"></iframe>
-        </div>
-    </li>
-	<li class="appearance__detail">June 2014, 3rd: <a href="http://webinale.de">Webinale 2014</a>, Berlin
-        <ol class="talks">
-            <li class="talk__entry">Keeping the web native! - <a href="https://speakerdeck.com/ddprrt/keeping-the-web-native">Slides</a>
-            </li>
-        </ol>
-		<div class="aspect ratio-16-to-9">
-			<iframe width="560" height="315" src="//www.youtube.com/embed/BMwWNkvkZYI" frameborder="0" allowfullscreen></iframe>
-		</div>
-    </li>
-    <li class="appearance__detail">March 2014, 20th: <a href="http://mobiletechcon.de/2014">Mobile Tech Conference 2014</a>, Munich
-        <ol class="talks">
-            <li class="talk__entry">Gaining Control for the Great Unknown - <a href="https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-mobiletechcon-march-2014">Slides</a></li>
-            <li class="talk__entry">Panel discussion on Responsive Design with Sven Wolfermann, Roland Gülle and Tobias Baldauf</li>
-        </ol>
-    </li>
-	<li class="appearance__detail">March 2014, 7th: <a href="http://javascript-days.de/2015">JavaScript Days</a>, Munich
-		<ol class="talks">
-			<li class="talk__entry">Frontend Tooling with Yeoman and Grunt - <a href="https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014">Slides</a></li>
-		</ol>
-		<p>
-			Interview on Grunt and Gulp (German):
-		</p>
-		<div class="aspect ratio-16-to-9">
-			<iframe src="//www.youtube.com/embed/NyQHh3HkcZE" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</li>
-</ul>
-
-<h3>2013</h3>
-
-<ul class="appearances">
-	<li class="appearance__detail">November 2013: <a href="http://2013.drupalcamp.at/">DrupalCamp</a>, Vienna
-		<ol class="talks">
-			<li class="talk_entry">Gaining Control in the Great Unknown - <a href="https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-the-state-of-mobile-browsers-and-how-to-handle-them">Slides (Speakerdeck)</a></li>
-		</ol>
-	</li>
-	<li class="appearance__detail">November 2013: <a href="http://topconf.com">Topconf</a>, Tallinn
-		<ol class="talks">
-			<li class="talk_entry">Mobile Browser Games - <a href="https://speakerdeck.com/ddprrt/mobile-browser-games-topconf-tallin-html5-games-browsers">Slides (Speakerdeck)</a></li>
-			<li class="talk_entry">Keep Calm and Browse Happy - <a href="https://speakerdeck.com/ddprrt/keep-calm-and-browse-happy-gaining-speed-on-mobile-browsers">Slides (Speakerdeck)</a></li>
-			<li class="talk_entry">Panel Discussion on Mobile HTML5 with Max Firtman</li>
-		</ol>
-	</li>
-
-	<li class="appearance__detail">October 2013: <a href="http://digitalvisions.liechtenecker.at">Digital Visions</a>, Vienna
-		<ol class="talks">
-			<li class="talk_entry">The Perfect Steak - <a href="https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak">Slides (Speakerdeck)</a></li>
-		</ol>
-	</li>
-	<li class="appearance__detail">May 2013: <a href="http://beyondtellerand.com">beyond tellerrand 2013 - Developer Garden Stage</a>, D&uuml;sseldorf
-		<ol class="talks">
-			<li class="talk_entry">Mobile Browser Games - Great Expectations - <a href="https://speakerdeck.com/ddprrt/beyond-tellerrand-developer-garden-talk-mobile-browser-games">Slides (Speakerdeck)</a></li>
-		</ol>
-	</li>
-	<li class="appearance__detail">April 2013: <a href="http://bdconf.com">Breaking Development - Orlando 2013</a>
-		<ol class="talks">
-			<li class="talk_entry">Mobile Browser Games - Great Expectations - <a href="http://vimeo.com/64197060">Video</a> - <a href="https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013">Slides (Speakerdeck)</a>
-			</li>
-		</ol>
-		<div class="aspect ratio-16-to-9">
-			<iframe src="//player.vimeo.com/video/64197060" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
-	</li>
-</ul>
-
-<h3>2012</h3>
-
-<ul class="appearances">
-	<li class="appearance__detail">October 2012: <a href="http://liechtenecker.at/digital-visions-2012/#blog-article" target="_blank">Digital Visions</a>, Vienna
-		<ol class="talks">
-			<li class="talk__entry">Mobile Frontend Development</li>
-		</ol>
-	</li>
-	<li class="appearance__detail">October 2012: <a href="http://atag.accessiblemedia.at/2012/" target="_blank">ATAG 2012</a>, Vienna
-		<ol class="talks">
-			<li class="talk__entry">Mobile Frontend Development(ext.)</li>
-		</ol>
-	</li>
-	<li class="appearance__detail">March 2012: <a href="http://lanyrd.com/2012/salzburg-nextweb-march-2012/" target="_blank">Barcamp "The next web"</a> in Salzburg
-		<ol class="talks">
-			<li class="talk__entry">HTML 5 Mobile</li>
-		</ol>
-	</li>
-</ul>
+{% endfor %}

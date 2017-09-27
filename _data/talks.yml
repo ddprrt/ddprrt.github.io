@@ -1,4 +1,13 @@
 -
+  year: 2018
+  conferences:
+    -
+      title: Script'18 (MC)
+      country: Austria
+      city: Linz
+      date: 2018-01-19
+      url: https://scriptconf.org/
+-
   year: 2017
   conferences:
     -
@@ -11,6 +20,12 @@
         -
           title: Get a grid for flex' sake!
           slides: https://speakerdeck.com/ddprrt/get-a-grid-for-flex-sake
+    -
+      title: Devone (MC)
+      country: Austria
+      city: Linz
+      date: 2017-06-01
+      url: https://devone.at
     -
       title: Webclerks
       country: Austria
@@ -31,6 +46,12 @@
         -
           title: Performance optimisation for single page apps
           slides: https://speakerdeck.com/ddprrt/web-performance-optimisation-for-single-page-applications
+    -
+      title: Script'17 (MC)
+      country: Austria
+      city: Linz
+      date: 2017-01-26
+      url: https://scriptconf.org/2017/
     -
       title: Technologieplauscherl
       country: Austria
