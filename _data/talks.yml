@@ -1,4 +1,47 @@
 -
+  year: 2017
+  conferences:
+    -
+      title: Frontend Con
+      country: Poland
+      city: Warsaw
+      date: 2017-09-23
+      url: http://www.frontend-con.io/
+      talks:
+        -
+          title: Get a grid for flex' sake!
+          slides: https://speakerdeck.com/ddprrt/get-a-grid-for-flex-sake
+    -
+      title: Webclerks
+      country: Austria
+      city: Vienna
+      date: 2017-04-10
+      url: https://www.meetup.com/de-DE/webclerks/events/236971764
+      talks:
+        -
+          title: Technical writing
+          slides: https://speakerdeck.com/ddprrt/technical-writing
+    -
+      title: Perform
+      country: USA
+      city: Las Vegas
+      date: 2017-02-06
+      url: https://www.dynatrace.com/perform
+      talks:
+        -
+          title: Performance optimisation for single page apps
+          slides: https://speakerdeck.com/ddprrt/web-performance-optimisation-for-single-page-applications
+    -
+      title: Technologieplauscherl
+      country: Austria
+      city: Linz
+      date: 2017-01-17
+      url: http://technologieplauscherl.at/43/
+      talks:
+        -
+          title: Technical writing
+          slides: https://speakerdeck.com/ddprrt/technical-writing
+-
   year: 2016
   conferences:
     -
