@@ -1,0 +1,92 @@
+.checkbox {
+  clip: rect(0 0 0 0);
+  position: absolute; }
+
+.checkbox__label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.checkbox__caption {
+  font-family: "BerninaSans", "Open Sans", sans-serif;
+  font-size: 14px;
+  padding-right: 20px; }
+
+.checkbox__label.theme--dark,
+.theme--dark .checkbox__label {
+  color: #fff; }
+
+.checkbox__label:before {
+  content: " ";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid 2px #00a1b2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box; }
+
+.checkbox__label.theme--dark:before,
+.theme--dark .checkbox__label:before {
+  border: solid 2px #fff; }
+
+.checkbox__label:after {
+  content: " ";
+  position: absolute;
+  background-image: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/images/icons/Icons_file_003_Checkmark_turquoise.svg);
+  background-size: 16px;
+  top: 2px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  margin-left: 2px;
+  display: none; }
+
+.checkbox__label.theme--dark:after,
+.theme--dark .checkbox__label:after {
+  background-image: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/images/icons/Icons_file_003_Checkmark_white.svg); }
+
+.checkbox__label:focus,
+.checkbox:focus + .checkbox__label:before {
+  outline: none;
+  box-shadow: 0 0 0 2px #ccc; }
+
+.checkbox__label:hover:before {
+  border-color: #00848e; }
+
+.checkbox__label.theme--dark:hover:before,
+.theme--dark .checkbox__label:hover:before {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+.checkbox:checked + .checkbox__label:after,
+.checkbox:checked + .checkbox__label.theme--dark:after,
+.theme--dark .checkbox:checked + .checkbox__label:after {
+  display: block; }
+
+.checkbox[disabled] + .checkbox__label,
+.checkbox[disabled] + .checkbox__label.theme--dark,
+.theme--dark .checkbox[disabled] + .checkbox__label {
+  color: #ccc;
+  cursor: default; }
+
+.checkbox[disabled] + .checkbox__label:before {
+  border-color: #ccc;
+  background-color: transparent; }
+
+.checkbox[disabled] + .checkbox__label:after,
+.checkbox[disabled] + .checkbox__label.theme--dark:after,
+.theme--dark .checkbox[disabled] + .checkbox__label:after {
+  display: none; }
+
+.checkbox[disabled]:checked + .checkbox__label:before {
+  border-color: #ccc; }
+
+.checkbox[disabled]:checked + .checkbox__label:after {
+  display: block;
+  background-image: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/images/icons/Icons_file_003_Checkmark_disabled.svg); }

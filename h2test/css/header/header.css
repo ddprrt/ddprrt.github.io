@@ -1,0 +1,8 @@
+.header {
+  text-align: center;
+  padding: 2rem;
+  width: 100%; }
+
+.theme--blue .header {
+  background-color: #008cdb;
+  color: #fff; }

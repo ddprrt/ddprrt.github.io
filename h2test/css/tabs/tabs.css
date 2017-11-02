@@ -1,0 +1,167 @@
+/*
+* Tab group
+*/
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "BerninaSans", "Open Sans", sans-serif; }
+
+/*
+* Tab stylings
+*/
+.tab {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100px;
+          flex: 1 1 100px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+  box-shadow: none;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: inherit; }
+
+.tab:active,
+.tab:focus {
+  outline: 0;
+  box-shadow: none; }
+
+.tab:first-of-type {
+  margin-left: 0; }
+
+.tab:last-of-type {
+  margin-right: 0; }
+
+.tab:after {
+  content: " ";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: height 100ms ease-out;
+  background-color: #00a1b2; }
+
+/*
+* Hide tab__radio input
+*/
+.tab__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  clip: rect(0, 0, 0, 0); }
+
+/*
+* Tab hover and active states
+*/
+.tab:hover:after {
+  height: 4px;
+  background-color: #00a1b2; }
+
+.tab.is-active,
+.tab__input:checked + .tab {
+  pointer-events: none;
+  color: #fff;
+  background-color: #00a1b2; }
+
+/*
+* Themes
+*/
+/*
+* themes
+*/
+.theme--blue .tab:after {
+  background-color: #14a8f5; }
+
+.theme--blue .tabhighlight {
+  color: #14a8f5; }
+
+.theme--blue .tab.is-active,
+.theme--blue .tab__input:checked + .tab {
+  background-color: #14a8f5;
+  color: #fff; }
+
+.theme--turquoise .tab:after {
+  background-color: #00a1b2; }
+
+.theme--turquoise .tabhighlight {
+  color: #00a1b2; }
+
+.theme--turquoise .tab.is-active,
+.theme--turquoise .tab__input:checked + .tab {
+  background-color: #00a1b2;
+  color: #fff; }
+
+.theme--purple .tab:after {
+  background-color: #7c38a1; }
+
+.theme--purple .tabhighlight {
+  color: #7c38a1; }
+
+.theme--purple .tab.is-active,
+.theme--purple .tab__input:checked + .tab {
+  background-color: #7c38a1;
+  color: #fff; }
+
+.theme--royalblue .tab:after {
+  background-color: #526cff; }
+
+.theme--royalblue .tabhighlight {
+  color: #526cff; }
+
+.theme--royalblue .tab.is-active,
+.theme--royalblue .tab__input:checked + .tab {
+  background-color: #526cff;
+  color: #fff; }
+
+/*
+* Disabled
+*/
+.tab.is-disabled,
+.tab__input:disabled + .tab {
+  color: #ccc;
+  pointer-events: none; }
+  .tab.is-disabled:after, .tab.is-disabled:hover:after,
+  .tab__input:disabled + .tab:after,
+  .tab__input:disabled + .tab:hover:after {
+    background-color: #ccc;
+    height: 1px; }
+  .tab.is-disabled .tabhighlight,
+  .tab__input:disabled + .tab .tabhighlight {
+    color: #ccc; }
+
+/*
+* increase specificity to ensure error overrides general themecolor
+*/
+.tabs.tabs--error .tab:after {
+  background-color: #dc172a; }
+
+.tabs.tabs--error .tabhighlight {
+  color: #dc172a; }
+
+.tabs.tabs--error .tab.is-active,
+.tabs.tabs--error .tab__input:checked + .tab {
+  background-color: #dc172a;
+  color: #fff; }
+
+.tab.is-active .tabhighlight,
+.tab__input:checked + .tab .tabhighlight {
+  color: #fff; }

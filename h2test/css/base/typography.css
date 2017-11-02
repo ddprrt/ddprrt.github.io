@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * Typecsset
+ *
+ * Typecsset is a small, unopinionated library for creating beautifully set type
+ * on the web. Typecsset gives perfect vertical rhythm at any configurable font
+ * size, as well as many other typographical niceties.
+ */
+/*------------------------------------*#SHARED
+\*------------------------------------*/
+/**
+ * A lot of elements in Typecsset need to share some declarations (mainly for
+ * vertical rhythm), so we `@extend` some silent classes.
+ */
+h1,
+h2,
+h3, ul,
+ol, p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.8rem; }
+
+/*------------------------------------*#BASE
+\*------------------------------------*/
+/**
+ * 1. Set the base element’s `font-size` to the value of your choosing. Set in
+ *    ems, assuming a browser default of 16px.
+ * 2. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your project’s
+ *    base font size.
+ */
+html {
+  font-size: 16px;
+  /* [1] */
+  line-height: 1.5;
+  /* [2] */ }
+
+/*------------------------------------*#HEADINGS
+\*------------------------------------*/
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.2; }
+
+h1 {
+  font-size: calc(32px + (44 - 32) * (100vw - 360px) / (1920 - 360)); }
+
+h2 {
+  font-size: calc(24px + (32 - 24) * (100vw - 360px) / (1920 - 360));
+  line-height: 1.2; }
+
+h3 {
+  font-size: calc(20px + (24 - 20) * (100vw - 360px) / (1920 - 360)); }
+
+h4,
+h5,
+h6 {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 0.4rem; }
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child),
+h6:not(:first-child) {
+  margin-top: 2rem; }
+
+/*------------------------------------*#LISTS
+\*------------------------------------*/
+/*------------------------------------*#PARAGRAPHS
+\*------------------------------------*/
+p {
+  line-height: 1.6; }

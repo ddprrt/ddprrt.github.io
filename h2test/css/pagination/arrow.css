@@ -1,0 +1,19 @@
+.arrow {
+  display: block;
+  overflow: hidden;
+  text-indent: -1000%;
+  background-image: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/images/icons/icons_file_002_dropdownclosed.svg);
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center center;
+  width: 1.5rem;
+  height: 2rem; }
+
+.arrow--reversed {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.arrow--disabled {
+  pointer-events: none !important;
+  background-image: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/images/icons/icons_file_002_dropdownclosed_grey.svg);
+  cursor: default; }

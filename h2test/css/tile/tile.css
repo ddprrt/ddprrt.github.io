@@ -1,0 +1,167 @@
+.tile {
+  font-family: "BerninaSans", "Open Sans", sans-serif;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: -moz-block-height;
+  border: 1px solid #ececec;
+  white-space: nowrap;
+  overflow: hidden;
+  appearance: none;
+  width: 100%;
+  padding: 0;
+  background: initial;
+  text-align: left;
+  text-decoration: none;
+  display: block; }
+
+.tile:hover {
+  text-decoration: none; }
+
+.tile * {
+  /* use border-box for whole button widget to be independent from global box-sizing applied with * selector */
+  box-sizing: border-box; }
+
+.tile:not(:first-of-type) {
+  margin-top: 16px; }
+
+/*
+* tile header
+*/
+.tile__header {
+  background-color: #f8f8f8;
+  height: 52px;
+  border: 1px solid transparent;
+  border-radius: 3;
+  border-bottom: none;
+  width: 100%; }
+
+.tile__iconbox {
+  width: 52px;
+  height: 52px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-bottom: none;
+  border-right: none;
+  background-color: #00a1b2; }
+
+.tile .icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  margin-top: 10px; }
+
+.tile .tile__heading {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #454646;
+  margin-left: 63px;
+  padding-top: 17px;
+  line-height: 0; }
+
+.tile .tile__subheading {
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #898989;
+  position: relative;
+  margin-left: 63px; }
+
+.tile__content {
+  font-size: 14px;
+  color: #454646;
+  margin: 0;
+  padding: 11px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  border-top: none;
+  background-color: #fff; }
+
+/*
+* tile border styling
+*/
+.tile__iconbox {
+  margin: auto; }
+
+.tile--blue .tile__iconbox {
+  background-color: #14a8f5; }
+
+.tile--royalblue .tile__iconbox {
+  background-color: #526cff; }
+
+.tile--purple .tile__iconbox {
+  background-color: #7c38a1; }
+
+.tile--error .tile__iconbox {
+  background-color: #dc172a; }
+
+.tile--gray .tile__iconbox {
+  background-color: #454646; }
+
+/*
+* tile hover states
+*/
+.tile:hover,
+.tile:hover .tile__header,
+.tile:hover .tile__iconbox,
+.tile:hover .tile__content {
+  border-color: #00a1b2; }
+
+.tile--blue:hover,
+.tile--blue:hover .tile__header,
+.tile--blue:hover .tile__iconbox,
+.tile--blue:hover .tile__content {
+  border-color: #14a8f5; }
+
+.tile--royalblue:hover,
+.tile--royalblue:hover .tile__header,
+.tile--royalblue:hover .tile__iconbox,
+.tile--royalblue:hover .tile__content {
+  border-color: #526cff; }
+
+.tile--purple:hover,
+.tile--purple:hover .tile__header,
+.tile--purple:hover .tile__iconbox,
+.tile--purple:hover .tile__content {
+  border-color: #7c38a1; }
+
+.tile--error:hover,
+.tile--error:hover .tile__header,
+.tile--error:hover .tile__iconbox,
+.tile--error:hover .tile__content {
+  border-color: #dc172a; }
+
+.tile--gray:hover,
+.tile--gray:hover .tile__header,
+.tile--gray:hover .tile__iconbox,
+.tile--gray:hover .tile__content {
+  border-color: #454646; }
+
+.tile:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ccc;
+  border-color: #ccc; }
+
+/*
+* disabled styles
+*/
+.tile[disabled] {
+  pointer-events: none;
+  border-color: #ccc;
+  cursor: default;
+  box-shadow: none; }
+
+.tile[disabled] * {
+  color: #ccc; }
+
+.tile[disabled] .tile__iconbox {
+  background-color: #ccc; }
