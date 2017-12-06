@@ -8,6 +8,16 @@
       date: 2018-01-19
       url: https://scriptconf.org/
     -
+      title: Perform
+      country: USA
+      city: Las Vegas
+      date: 2017-01-29
+      url: https://www.dynatrace.com/perform
+      talks:
+        -
+          title: Performance optimisation for single page apps
+          workshop: true
+    -
       title: Devone (MC)
       country: Austria
       city: Linz
