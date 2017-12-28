@@ -35,7 +35,7 @@ For me, he succeeds. Some of those stories seem like told right out of from my o
 
 How can I create a list of my favourite reads and not mention Heydon's <em>[Inclusive Design Patterns](https://www.smashingmagazine.com/printed-books/inclusive-front-end-design-patterns/)</em>. Accessibility is a topic that concerns us all, even if we don't expect it at first. An inclusive and accessible web should be our highest priority. Heydon's book gives you a handy guide in how to make your apps and websites useable for even more people.
 
-I already loved Heydon's <em>[Apps for all](https://www.smashingmagazine.com/ebooks/apps-for-all-coding-accessible-web-applications/)</em>, and <em>Inclusive Design Patterns</a> is a perfect follow up giving you a much broader spectrum of what's necessary to achieve a more inclusive web. With his unique style and humour, Heydon manages to convey complex topics in an easy to understand manner, and makes me giggle all the way through. The illustrations are hilarious, and with every page you turn you recognize that <em>not</em> doing accessibility right is actually much harder for you in the long run.
+I already loved Heydon's <em>[Apps for all](https://www.smashingmagazine.com/ebooks/apps-for-all-coding-accessible-web-applications/)</em>, and <em>Inclusive Design Patterns</em> is a perfect follow up giving you a much broader spectrum of what's necessary to achieve a more inclusive web. With his unique style and humour, Heydon manages to convey complex topics in an easy to understand manner, and makes me giggle all the way through. The illustrations are hilarious, and with every page you turn you recognize that <em>not</em> doing accessibility right is actually much harder for you in the long run.
 
 A must read!
 
