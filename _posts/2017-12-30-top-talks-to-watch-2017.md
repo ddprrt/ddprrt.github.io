@@ -7,7 +7,9 @@ layout: post
 
 So it IS finally a tradition. After *[my most favourite talks of 2015](/top-talks-to-watch-2015/)*, and *[the top talks to watch in 2016 -- the conference videos strike back!](/top-talks-to-watch-2016/)*, we complete the trilogy with *my most favourite talks of 2017 -- Return of the Bingewatch*:
 
-If I would be completely honest, I would send you to the [Script'17 playlist](https://www.youtube.com/playlist?list=PLaFYZNhF0RvAqxBkMHK7Bke3kQc2bjrPT) on YouTube. Yes, this is my own conference, but I'm incredibly happy in how amazing the line-up for 2017 turned out and how amazing the talks were at this little and fun event. But there was more. As a conference organiser, I try to keep an eye on outstanding topics and compelling presentations. So let's see what I enjoyed as well:
+If I would be completely honest, I would send you to the [Script'17 playlist](https://www.youtube.com/playlist?list=PLaFYZNhF0RvAqxBkMHK7Bke3kQc2bjrPT) on YouTube. Yes, this is my own conference, but I'm incredibly happy in how amazing the line-up for 2017 turned out.
+
+But of course there is more. As a conference organiser, I try to keep an eye on outstanding topics and compelling presentations. So let's see what I enjoyed as well:
 
 ## Tom Dale - Making the Jump: How Desktop-Era Frameworks Can Thrive on Mobile
 
