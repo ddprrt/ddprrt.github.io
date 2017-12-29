@@ -5,7 +5,7 @@ permalink: /top-books-to-read-2017/
 layout: post
 ---
 
-I started taking reading seriously again in 2017. I had heights where I read about 10 books a month (phew), and also lows where I haven't touched a page for a couple of months. Now with having both a toddler and a Kindle<sup>*</sup>, I gladly spend night again guarding the crib while reading both fiction and non-fiction. And oh, did I read a lot of non-fiction this year. There were some amazing books, and I want to share with you the ones that I found the most compelling.
+I started taking reading seriously again in 2017. I had highs where I read about 10 books a month (phew), and also lows where I haven't touched a page for a couple of months. Now with having both a toddler and a Kindle<sup>*</sup>, I gladly spend night again guarding the crib while reading both fiction and non-fiction. And oh, did I read a lot of non-fiction this year. There were some amazing books, and I want to share with you the ones that I found the most compelling.
 
 ## Alla Kholmatova - Design Systems
 
