@@ -21,7 +21,7 @@ One thing that always gets me excited about Ember and Glimmer are the EmberConf 
 
 ## Nadieh Bremer - Hacking the Visual Norm
 
-I had the pleasure seeing this talk by Nadieh Bremer at *[beyond tellerrand](https://beyondtellerrand.com)* Düsseldorf this year. I always like exploring new topics where I have basically no knowledge of, and Nadieh gives a whirlwind tour through her work in data visualisation. Her work is simply astounding! I never thought that information displayed right can be this wonderful form of art! And Nadieh's passion for her projects can be felt every single minute of the talk. Watch it and become hooked!
+I had the pleasure seeing this talk by Nadieh Bremer at *[beyond tellerrand](https://beyondtellerrand.com)* Düsseldorf this year. I always like exploring new topics where I have basically no knowledge of, and Nadieh gives a whirlwind tour through her work in data visualisation. Her work is simply astounding! I never thought that information displayed right can be this wonderful form of art! And Nadieh's passion for her projects can be felt every single minute of the talk. Watch it and get hooked!
 
 <div class="aspect ratio-16-to-9">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gBFtER8yHVY" frameborder="0" allowfullscreen></iframe>
