@@ -1,5 +1,5 @@
 ---
-title: "My most favourite podcasts in 2017"
+title: "My most favourite podcast episodes in 2017"
 published: true
 permalink: /top-podcast-episodes-2017/
 layout: post
