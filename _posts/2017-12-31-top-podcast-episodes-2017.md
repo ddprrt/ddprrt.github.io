@@ -28,7 +28,7 @@ Key takeaway: Surround yourself with decent human beings.
 
 Listen to it here:
 
-<audio controls class="visible" src="http://traffic.libsyn.com/pursuitpod/Pursuit_Podcast_021_John_Resig.mp3?dest-id=576993"></audio>
+<audio controls class="visible" src="https://traffic.libsyn.com/pursuitpod/Pursuit_Podcast_021_John_Resig.mp3?dest-id=576993"></audio>
 
 Or visit the [Pursuit podcast webpage of this episode](http://hyperurl.co/zukdmh).
 
@@ -40,7 +40,7 @@ Key takeaway: Talk, talk, talk. Spend 50% of your time talking to people who hav
 
 Listen to it here:
 
-<audio controls class="visible" src="http://traffic.libsyn.com/googledesignmethod/05.RachelBeen_from_Material.mp3"></audio>
+<audio controls class="visible" src="https://traffic.libsyn.com/googledesignmethod/05.RachelBeen_from_Material.mp3"></audio>
 
 Or visit the [Method podcast webpage of this episode](https://design.google/library/method-podcast-episode-5/).
 
