@@ -141,7 +141,7 @@ This pipeline fetches all data from the Wordpress API, and then runs it through 
 
 ### Layout file
 
-The layout file is a handlebars file which defines the basic HTML structure. ```{{contents}}}``` refers to the field we defined earlier in our Wordpress Metalsmith plug-in. The rest comes from the object directly, including the `_embedded` Author data. It's pretty straightforward:
+The layout file is a handlebars file which defines the basic HTML structure. `contents` refers to the field we defined earlier in our Wordpress Metalsmith plug-in. The rest comes from the object directly, including the `_embedded` Author data. It's pretty straightforward:
 
 {% raw %}
 ```handlebars
