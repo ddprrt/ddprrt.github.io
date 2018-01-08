@@ -66,7 +66,7 @@ fetch(url)                                        /* 1 */
 ```
 
 1. Let's fetch the first 100 posts from our blog. If our Wordpress blog has less than 100 posts, we won't need any more fetches.
-2. The `X-WP-TotalPages' header has information on how many more pages we need to fetch.
+2. The `X-WP-TotalPages` header has information on how many more pages we need to fetch.
 3. We create an array of fetch promises, fetching data from page 2 onwards (we fetched page 1 already).
 4. `Promise.all` allows us to pass the first result and all subsequent results from our `pagesToFetch` array.
 5. Next promise call: Convert all results to JSON.
