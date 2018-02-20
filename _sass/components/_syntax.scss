@@ -24,7 +24,10 @@ $tag: #fff;
 .highlight .gp { color: $generic; } /* Generic.Prompt */
 .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
 .highlight .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight .kt { color: #445588; } /* Keyword.Type */
+.highlight .k,
+.highlight .kd,
+.highlight .kr,
+.highlight .kt { color: $name; } /* Keyword.Type */
 .highlight .m { color: $number; } /* Literal.Number */
 .highlight .s { color: $string; } /* Literal.String */
 .highlight .na { color: $name; } /* Name.Attribute */
