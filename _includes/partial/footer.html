@@ -3,3 +3,16 @@
 </footer>
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Sans:500,300" as="style" onload="this.rel='stylesheet'">
 {% include tracker/ga.html %}
+
+<script>
+if (navigator.serviceWorker.controller) {
+  console.log('[PWA Builder] active service worker found, no need to register')
+} else {
+  //Register the ServiceWorker
+  navigator.serviceWorker.register('/pwabuilder-sw.js', {
+    scope: './'
+  }).then(function(reg) {
+    console.log('Service worker has been registered for scope:'+ reg.scope);
+  });
+}
+</script>
