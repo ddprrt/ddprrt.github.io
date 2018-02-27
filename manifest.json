@@ -3,7 +3,7 @@
     "lang": "en",
     "name": "front-end technology talk",
     "scope": "/",
-    "display": "browser",
+    "display": "standalone",
     "start_url": "https://fettblog.eu/",
     "short_name": "fettblog",
     "theme_color": "transparent",
