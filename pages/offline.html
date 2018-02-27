@@ -147,8 +147,8 @@ function CheckMousePos(mX,mY,click){
   
   for(i = 0; i < 3; i++){
     for(j = 0; j < 3; j++){
-      left = boardL + i*sqOffset + cvs.offsetLeft;
-      top = boardT + j*sqOffset + cvs.offsetTop;     
+      left = boardL + i*sqOffset + cvs.getBoundingClientRect().x;
+      top = boardT + j*sqOffset + cvs.getBoundingClientRect().y;     
       if (squares[CoordsToIndex(i,j)] === null && 
           PointInRect(mX, mY, left, top, sqSize, sqSize)){        
         index = CoordsToIndex(i,j);
