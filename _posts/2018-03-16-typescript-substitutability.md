@@ -2,7 +2,6 @@
 title: "TypeScript and Substitutability"
 layout: post
 categories:
-- tools
 - typescript
 published: true
 permalink: /typescript-substitutability/
