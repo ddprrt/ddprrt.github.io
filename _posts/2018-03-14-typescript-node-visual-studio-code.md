@@ -1,5 +1,5 @@
 ---
-title: "Debugging Node.js in TypeScript with Visual Studio Code"
+title: "Debugging Node.js apps in TypeScript with Visual Studio Code"
 layout: post
 categories:
 - tools
