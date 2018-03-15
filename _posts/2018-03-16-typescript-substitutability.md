@@ -6,6 +6,8 @@ categories:
 - typescript
 published: true
 permalink: /typescript-substitutability/
+og:
+  img: /wp-content/uploads/ogimgs/typescript-substitutability.png
 ---
 
 When starting with TypeScript it took not much time to stumble upon some of the type system's odds. Odds that make a lot of sense if you take a closer look. In this article I want to show you why and how in some cases, TypeScript allows non-matching method signatures.
