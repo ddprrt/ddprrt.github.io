@@ -73,7 +73,17 @@ fetchResults(handler); // compiles, no problem!
 
 Even though the method signature declares a boolean return type, the code still compiles. Even though the method signatures don't match. This is special when declaring a `void` return type. The original caller `fetchResults` does not expect a return value when calling the callback. 
 
-TypeScript would throw an error if we did assign the result to a variable or constant inside `fetchResult`. That's why we can pass callbacks with any return type. Even if the callback returns something, this value isn't used and goes into the void.
+TypeScript would throw an error if we did assign the result to a variable or constant inside `fetchResult`. 
+
+```javascript
+function fetchResults(callback: (statusCode: number, results: number[]) => void) {
+  // get results from somewhere
+  ...
+  const didItWork = callback(200, results); // ⚡️ compile error!
+}
+```
+
+That's why we can pass callbacks with any return type. Even if the callback returns something, this value isn't used and goes into the void.
 
 The power lies within the calling function. The calling function knows best what to expect from the callback function. And if the calling function doesn't require a return value at all from the callback, anything goes!
 
