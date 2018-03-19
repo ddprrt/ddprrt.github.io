@@ -21,7 +21,7 @@ With TypeScript, it's fine to pass functions to other functions that have fewer 
 function fetchResults(callback: (statusCode: number, results: number[]) => void) {
   // get results from somewhere
   ...
-  callback(200, results);
+  callback(200, results); // this is line 4
 }
 ```
 
