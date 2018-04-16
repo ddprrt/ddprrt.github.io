@@ -24,14 +24,20 @@
       date: 2018-04-26
       url: https://devone.at/
     -
-      title: mobility.builders
+      title: We Are Developers (MC)
       country: Austria
-      city: Vienna
-      date: 2018-03-21
-      url: https://mobility.builders
-      talks:
-        -
-          title: From 0 to PWA in 30 minutes
+      city: Linz
+      date: 2018-05-17
+      url: https://www.wearedevelopers.com/congress/
+#    -
+#      title: mobility.builders
+#      country: Austria
+#      city: Vienna
+#      date: 2018-03-21
+#      url: https://mobility.builders
+#      talks:
+#        -
+#          title: From 0 to PWA in 30 minutes
 -
   year: 2017
   conferences:
