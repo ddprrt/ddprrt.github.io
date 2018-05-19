@@ -29,6 +29,15 @@
       city: Vienna
       date: 2018-05-17
       url: https://www.wearedevelopers.com/congress/
+    -
+      title: Webkongress
+      country: Germany
+      city: Erlangen
+      date: 2018-09-13
+      url: https://www.webkongress.fau.de/
+      talks:
+        -
+          title: "Off with their head! - Modern cloud infrastructure for scalable web development"
 #    -
 #      title: mobility.builders
 #      country: Austria
