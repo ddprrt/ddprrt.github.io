@@ -30,6 +30,17 @@
       date: 2018-05-17
       url: https://www.wearedevelopers.com/congress/
     -
+      title: Technologieplauscherl
+      country: Austria
+      city: Linz
+      date: 2018-06-26
+      url: http://technologieplauscherl.at/58
+      talks:
+        -
+          title: "TypeScript oddities"
+          slides: https://noti.st/stefan/hCTgGb/typescript-oddities
+          video: https://www.youtube.com/watch?v=S7Y1rZsmHN4
+    -
       title: Webkongress
       country: Germany
       city: Erlangen
