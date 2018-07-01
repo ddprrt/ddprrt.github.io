@@ -16,7 +16,7 @@
       talks:
         -
           title: Performance optimisation for single page apps
-          workshop: true
+          type: Workshop
     -
       title: Devone (MC)
       country: Austria
@@ -97,7 +97,7 @@
         -
           title: Performance optimisation for single page apps
           slides: https://speakerdeck.com/ddprrt/web-performance-optimisation-for-single-page-applications
-          workshop: true
+          type: Workshop
     -
       title: Script'17 (MC)
       country: Austria
