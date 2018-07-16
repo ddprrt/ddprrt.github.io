@@ -4,9 +4,9 @@
 {% include tracker/ga.html %}
 
 <script async>
-if (navigator.serviceWorker.controller) {
+if (navigator.serviceWorker && navigator.serviceWorker.controller) {
   console.log('[PWA Builder] active service worker found, no need to register')
-} else {
+} else if(navigator.serviceWorker) {
   //Register the ServiceWorker
   navigator.serviceWorker.register('/pwabuilder-sw.js', {
     scope: '/'
