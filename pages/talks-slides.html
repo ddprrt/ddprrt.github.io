@@ -29,7 +29,7 @@ meta:
 {% for conf in conferences %}
 
 <li class="appearance__detail">
-	<span class="appearance__date">{{ conf.date | date: "%-d %B %Y" }}</span> <a href="{{conf.url}}">{{conf.title}}</a> &mdash; {{conf.city}}, {{conf.country}}
+	<span class="appearance__date">{{ conf.date | date: "%-d %B %Y" }}</span> {% if conf.url %}<a href="{{conf.url}}">{% endif %}{{conf.title}}{% if conf.url %}</a>{% endif %} &mdash; {{conf.city}}, {{conf.country}}
 <ol class="talks">
 {% for talk in conf.talks  %}
 	<li class="talk__entry{% if talk.type == 'Workshop' %} talk--workshop{% endif %}">
