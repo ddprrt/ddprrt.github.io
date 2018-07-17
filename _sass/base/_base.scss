@@ -69,3 +69,27 @@ ol {
 ul {
   padding-left: 1.1rem;
 }
+
+figure {
+  margin: 1rem 0 1rem -1rem;
+  width: calc(100% + 2rem);
+}
+
+figcaption {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-style: italic;
+}
+
+@media (min-width: 800px) {
+
+  figure {
+    margin: 2rem 0 2rem -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  figcaption {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
