@@ -49,6 +49,15 @@
       talks:
         -
           title: "Off with their head! - Modern cloud infrastructure for scalable web development"
+    -
+      title: Angular Connect
+      country: England
+      city: London
+      date: 2018-11-06
+      url: https://angularconnect.com
+      talks:
+        -
+          title: "Automating UI development"
 #    -
 #      title: mobility.builders
 #      country: Austria
