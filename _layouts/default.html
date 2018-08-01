@@ -7,7 +7,7 @@
 <head>
 	{% include partial/head.html %}
 </head>
-<body>
+<body {% if layout.mainClass %}class="{{layout.mainClass}}"{% endif %}>
 
 	{% include partial/header.html %}
 

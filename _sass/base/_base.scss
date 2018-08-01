@@ -29,12 +29,14 @@ body {
 a,
 a:visited {
   color: $color;
+  color: var(--main-color, $color);
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
   color: lighten($color, 10);
+  color: var(--highlight-color, lighten($color, 10));
 }
 
 h1 {
@@ -63,7 +65,11 @@ code {
 }
 
 ol {
-  padding-left: 1rem;
+  padding-left: 1.4rem;
+}
+
+ol li {
+  padding-left: 0.5rem;
 }
 
 ul {
