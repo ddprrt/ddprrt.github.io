@@ -20,13 +20,14 @@ to get huge productivity boost when writing your applications!
 This guide assumes that you are familiar with the basic concepts of both React and TypeScript. 
 We will focus on the combination of the technologies and the resulting features.
 
-Ready, let's go!
+Also, this guide does not claim to be complete. It's one way and more important one easy way to
+dive into React and TypeScript, modelled after two core principles:
 
-## Table of contents:
+1. Using as little setup and tools as possible. TypeScript already has a transpiler and a JSX compiler, so the only thing we need extra is some bundling. I will link to guides if your project needs some extra tooling.
+2. Using TypeScript features only where needed. TypeScript has brilliant type inference, so you get
+a ton of features like autocompletion and type safety already out of the box and without any extra code. Wherever we can improve on what's given,
+we will.
 
-1. [Getting started](./getting-started/): How to set up TypeScript and React, and what are your options
-2. [Components](./components/): Components are everything in React. TypeScript gives you a lot of ways how to deal with them.
-3. [Children](./children/):
-4. [Context](./context/): 
-5. [Redux](./redux/):
-6. [Styles](./styles):
+Ready? Let's go!
+
+{% include typescript-react-menu.md %}
