@@ -3,6 +3,7 @@
 1. [Getting started](./getting-started/): How to set up TypeScript and React, and what are your options
 2. [Components](./components/): Components are everything in React. TypeScript gives you a lot of ways how to deal with them.
 3. [Children](./children/):
-4. [Context](./context/): 
-5. [Redux](./redux/):
-6. [Styles](./styles/):
+4. [Render props and child render props](./render-pros/): 
+5. [Context](./context/): 
+6. [Redux](./redux/):
+7. [Styles](./styles/):
