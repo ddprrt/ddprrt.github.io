@@ -86,6 +86,8 @@ export const Card: SFC<CardProps> = (props) => <aside>
 </aside>
 ```
 
+{% comment %}
+
 If you think this is boring, you are right. Let's do something more!
 
 ## Specific children types
@@ -94,8 +96,67 @@ As you can see from the screenshot above, the autocompletion tells us `children`
 `React.ReactNode`. `React.ReactNode` is very generic (it can be everything). Let's be more
 specific about that!
 
+When we use the default typings of `Component` and `SFC`, the `children` prop gets patched
+to our prop type. Once we specify children explicitly in our type, we have a lot more possibilites:
+
+Look at the following example. A gallery that features only gallery items:
+
+```javascript
+import React, { Component } from 'react';
+
+type GalleryItemProps = {
+  url: string,
+  alt: string
+}
+
+export class GalleryItem extends Component<GalleryItemProps> {
+  render() {
+    return <img src={ this.props.url } alt={ this.props.alt }/>
+  }
+}
+
+// Here we specify the children to be of type gallery item. Only
+// gallery items allowed in our gallery
+type GalleryProps = {
+  children: GalleryItem
+}
+
+export class Gallery extends Component<GalleryProps> {
+  render() {
+    return <>{ this.props.children }</>
+  }
+}
+```
+
+With the code above, things like
+
+```javascript
+const el = <Gallery>
+  Here is text, not possible
+</Gallery>
+
+const el2 = <Gallery>
+  <p>An element, also not possible!</p>
+</Gallery>
+
+const el3 = <Gallery>
+  <AComponent description="Is also not possible!"/>
+</Gallery>
+```
+
+Won't work. You get a fine error with TypeScript:
+
+![Showing an error](../img/children-2.png)
+
+We are only allowed to pass `GalleryItem`:
+
+
+Same goes for stateless functional components, of course.
+
 ## Disallowing children
 
 ## Function children
 
 ## Node vs. Element vs. Component
+
+{% endcomment %}
