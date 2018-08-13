@@ -58,6 +58,16 @@
       talks:
         -
           title: "Automating UI development"
+    -
+      title: Devoxx
+      country: Belgium
+      city: Antwerp
+      url: https://devoxx.be
+      date: 2018-11-12
+      talks:
+        -
+          title: TypeScript: Complete
+          type: Workshop
 #    -
 #      title: mobility.builders
 #      country: Austria
