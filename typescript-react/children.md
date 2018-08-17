@@ -14,10 +14,6 @@ the `children` props in each component. With TypeScript, we have the possibilty 
 type safe.
 
 1. [Default behaviour](#default-behaviour)
-2. Specific children types
-3. Disallowing children
-4. Function children
-
 
 ## Default behaviour
 
