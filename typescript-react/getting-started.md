@@ -109,6 +109,23 @@ To make this work, we need to set both `allowSyntheticDefaultImports` and `esMod
 }
 ```
 
+### Libraries
+
+We use React for client-side development. That's why we need to import some libraries to support this.
+In our case, we import ES 2015 (good baseline ES features) and DOM. With DOM, we get type definitions for
+things like Events, HTML nodes, ... 
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "lib": [
+      "dom", "es2015"
+    ],
+    ...
+}
+```
+
 ### Decorators
 
 Decorators are an experimental language feature that was added to TypeScript back when
