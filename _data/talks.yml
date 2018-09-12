@@ -49,6 +49,7 @@
       talks:
         -
           title: "Off with their head! - Modern cloud infrastructure for scalable web development"
+          slides: https://www.slideshare.net/ddprrt/german-ab-mit-dem-kopf
     -
       title: Angular Connect
       country: England
