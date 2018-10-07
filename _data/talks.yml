@@ -1,4 +1,13 @@
 -
+  year: 2019
+  conferences:
+    -
+      title: JS Kongress (Program Comittee)
+      country: Germany
+      city: Munich
+      date: 2019-03-11
+      url: https://js-kongress.com/
+-
   year: 2018
   conferences:
     -
