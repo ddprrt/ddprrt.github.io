@@ -166,7 +166,7 @@ and it's of type `Date`
 `Date` of course is a built-in JavaScript type, so we get full access to all its methods. 
 Ever wanted to know what `Date` can do? Let TypeScript tell you:
 
-![Date is a built-in JS type, we have full autocompletion](../img/class-2.png)
+![Date is a built-in JS type, we have full autocompletion](../img/class-3.png)
 
 That's a lot of tooling support, just for a couple of keystrokes more. The type inference of React does the rest.
 
