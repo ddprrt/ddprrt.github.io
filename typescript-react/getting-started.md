@@ -148,5 +148,5 @@ MobX, though, they might come in handy.
 
 ## Bottom line
 
-A ton to set up... I suggest getting [my starter package on Github](https://github.com/ddprrt/typescript-react-starter).
+A ton to set up... I suggest getting [the official starter package on Github](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter).
 If you have an existing setup, the infos above will help you getting everything right. Let's start with some real code.
