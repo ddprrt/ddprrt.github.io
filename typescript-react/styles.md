@@ -5,8 +5,8 @@ categories:
 - typescript
 published: true
 next:
-  title: Styles
-  url: ../styles/
+  title: Further reading
+  url: ../further-reading/
 ---
 
 Working on it ... brb!
