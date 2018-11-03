@@ -1,4 +1,13 @@
 -
+  year: 2019
+  conferences:
+    -
+      title: JS Kongress (Program Comittee)
+      country: Germany
+      city: Munich
+      date: 2019-03-11
+      url: https://js-kongress.com/
+-
   year: 2018
   conferences:
     -
@@ -49,6 +58,18 @@
       talks:
         -
           title: "Off with their head! - Modern cloud infrastructure for scalable web development"
+          slides: https://www.slideshare.net/ddprrt/german-ab-mit-dem-kopf
+          video: https://www.video.uni-erlangen.de/clip/id/9476
+    -
+      title: Stahlstadt.js
+      country: Austria
+      city: Linz
+      date: 2018-10-09
+      url: https://www.meetup.com/de-DE/stahlstadt-js/events/254352412/
+      talks:
+        -
+          title: "A hero's journey in JavaScript frameworks"
+          slides: https://noti.st/stefan/HcYudf/a-hero-s-journy-in-javascript-frameworks
     -
       title: Angular Connect
       country: England
@@ -58,6 +79,16 @@
       talks:
         -
           title: "Automating UI development"
+    -
+      title: Devoxx
+      country: Belgium
+      city: Antwerp
+      url: https://devoxx.be
+      date: 2018-11-12
+      talks:
+        -
+          title: "TypeScript: Complete"
+          type: Workshop
 #    -
 #      title: mobility.builders
 #      country: Austria

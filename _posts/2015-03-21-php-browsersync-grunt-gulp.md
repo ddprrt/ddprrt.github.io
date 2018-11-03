@@ -118,7 +118,7 @@ gulp.task('php', function() {
     php.server({ base: 'build', port: 8010, keepalive: true});
 });
 gulp.task('browser-sync',['php'], function() {
-    browserSync({
+    browserSync.init({
         proxy: '127.0.0.1:8010',
         port: 8080,
         open: true,
