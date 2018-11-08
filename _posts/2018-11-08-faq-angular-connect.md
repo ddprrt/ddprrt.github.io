@@ -56,7 +56,7 @@ Yes. We can parse any app that runs in the browser. At the moment we get additio
 
 ## A couple of last words
 
-I'm genuinely humbled and overwhelmed to work with such a great team. Katrin and [Lukas](https://twitter.com/luka5c0m) are amazing colleagues and such a joy to work with. I also loved presenting as a duo. I had the feeling that Katrin relies on me, that's why I wanted to give the best presentation possible. I also could rely on Katrin, which gave me much more confidence than I had in any other talk before. Thank you Katrin for doing this with me. It was a pleasure and a privilege sharing the stage with you.
+I'm genuinely humbled to be able to work with such a great team. Katrin and [Lukas](https://twitter.com/luka5c0m) are amazing colleagues and such a joy to work with. I also loved presenting as a duo. I had the feeling that Katrin relies on me, that's why I wanted to give the best presentation possible. I also could rely on Katrin, which gave me much more confidence than I had in any other talk before. Thank you Katrin for doing this with me. It was a pleasure and a privilege sharing the stage with you.
 
 ## Slides
 
