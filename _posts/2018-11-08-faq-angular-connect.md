@@ -40,7 +40,7 @@ So put your production code into focus, and let every other part of your process
 
 ### Does this mean your designers code?
 
-Yes! Partly. Our designers don't have to know Angular or every trick in the box in HTML and CSS. But they have the basic skills to do the simple tasks. Working in fonts. Changing colours. Adjusting padding.
+Yes! Partly. Our designers don't have to know Angular or every trick in the book in HTML and CSS. But they have the basic skills to do the simple tasks. Working in fonts. Changing colours. Adjusting padding.
 
 If there's something more complicated or something new, our design systems team is going to help. New components will be prototyped first, and developed together with UX assistance. After the component is ready, all our designers get it through their Sketch symbols library. And it stays up to date.
 
