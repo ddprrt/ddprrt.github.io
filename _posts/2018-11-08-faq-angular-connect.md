@@ -50,10 +50,6 @@ So you have the traditional process for very small and clear parts of your desig
 
 I hope so! We got tremendous feedback at Angular Connect. That's why I'm in talks with people at our company to make this an open source project. But even when I get the go, we still have a ton to do. There're some parts of it which are sound enough to be released, other parts are still very much tailored the Dynatrace infrastructure. This needs to be cleaned out. Watch this space for more details. 
 
-<div class="aspect ratio-16-to-9">
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/zoklMYRQwqhUI4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-</div>
-
 ### Does it work with other things than Angular?
 
 Yes. We can parse any app that runs in the browser. Angular's meta information we get via TypeScript decorators helps us in creating the back-link to the component library. This is something we would have to investigate when moving it to React or Vue. But the parts are movable and flexible, so there's only time keeping that from happening. If you want to get in touch, please do! We'd love to have your contributions here, even if it's just ideas.
@@ -61,3 +57,12 @@ Yes. We can parse any app that runs in the browser. Angular's meta information w
 ## A couple of last words
 
 I'm genuinely humbled and overwhelmed to work with such a great team. Katrin and [Lukas](https://twitter.com/luka5c0m) are amazing colleagues and such a joy to work with. I also loved presenting as a duo. I had the feeling that Katrin relies on me, that's why I wanted to give the best presentation possible. I also could rely on Katrin, which gave me much more confidence than I had in any other talk before. Thank you Katrin for doing this with me. It was a pleasure and a privilege sharing the stage with you.
+
+## Slides
+
+You can click trough the slides right here:
+
+
+<div class="aspect ratio-16-to-9">
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/zoklMYRQwqhUI4" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+</div>

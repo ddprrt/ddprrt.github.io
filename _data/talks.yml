@@ -79,25 +79,7 @@
       talks:
         -
           title: "Automating UI development"
-    -
-      title: Devoxx
-      country: Belgium
-      city: Antwerp
-      url: https://devoxx.be
-      date: 2018-11-12
-      talks:
-        -
-          title: "TypeScript: Complete"
-          type: Workshop
-#    -
-#      title: mobility.builders
-#      country: Austria
-#      city: Vienna
-#      date: 2018-03-21
-#      url: https://mobility.builders
-#      talks:
-#        -
-#          title: From 0 to PWA in 30 minutes
+          slides: https://www.slideshare.net/ddprrt/automating-ui-development
 -
   year: 2017
   conferences:
