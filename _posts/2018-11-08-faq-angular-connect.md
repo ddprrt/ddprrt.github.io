@@ -52,7 +52,7 @@ I hope so! We got tremendous feedback at Angular Connect. That's why I'm in talk
 
 ### Does it work with other things than Angular?
 
-Yes. We can parse any app that runs in the browser. Angular's meta information we get via TypeScript decorators helps us in creating the back-link to the component library. This is something we would have to investigate when moving it to React or Vue. But the parts are movable and flexible, so there's only time keeping that from happening. If you want to get in touch, please do! We'd love to have your contributions here, even if it's just ideas.
+Yes. We can parse any app that runs in the browser. At the moment we get additional beneft from Angular's meta information through TypeScript decorators. This helps us in creating the back-link to the component library. This is something we would have to investigate when moving it to React or Vue. But the parts are movable and flexible, so there's only time keeping that from happening. If you want to get in touch, please do! We'd love to have your contributions here, even if it's just ideas.
 
 ## A couple of last words
 
