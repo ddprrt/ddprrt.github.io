@@ -62,7 +62,7 @@ My personal prefered way of using functional components in TypeScript is by usin
 
 
 ```javascript
-import React, { FunctionComponent } from 'react'; // importing SFC
+import React, { FunctionComponent } from 'react'; // importing FunctionComponent
 
 type CardProps = {
   title: string,
@@ -79,7 +79,7 @@ export const Card: FunctionComponent<CardProps> = ({ title, paragraph }) => <asi
 const el = <Card title="Welcome!" paragraph="To this example" />
 ```
 
-The parameters of our function are infered from the generic SFC. Other than that, 
+The parameters of our function are infered from the generic FunctionComponent. Other than that, 
 it seems very similar to the first example. However, it allows for optional child components:
 
 
@@ -229,7 +229,7 @@ export class Notice extends Component<NoticeProps> {
 const el = <Notice /> // Will compile in TS 3.0
 ```
 
-For SFCs, I suggest using the ES6 default value syntax and optional type properties:
+For FunctionComponents, I suggest using the ES6 default value syntax and optional type properties:
 
 ```javascript
 type CardProps = {
@@ -238,7 +238,7 @@ type CardProps = {
 }
 
 // No need to define the defaultProps property
-export const Card: SFC<CardProps> = ({ title, paragraph = 'Hello World' }) => 
+export const Card: FunctionComponent<CardProps> = ({ title, paragraph = 'Hello World' }) => 
 <aside>
   <h2>{ title }</h2>
   <p>

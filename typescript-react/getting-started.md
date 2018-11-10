@@ -94,7 +94,7 @@ import React from 'react'
 is a wee bit nicer. Mostly because you can import type definitions and React features in a destructured way:
 
 ```javascript
-import React { Component, SFC } from 'react'
+import React { Component, FunctionComponent } from 'react'
 ```
 
 To make this work, we need to set both `allowSyntheticDefaultImports` and `esModuleInterop` to true:
