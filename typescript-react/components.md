@@ -13,14 +13,14 @@ Components are at the heart of React. Let's see what we can do to get better err
 
 In this section:
 
-1. [Stateless functional components](#stateless-functional-components---sfc)
-2. [Stateful class components](#stateful-class-components)
+1. [Functional components](#functional-components)
+2. [Stateful class components](#class-components)
 3. [defaultProperties](#defaultprops)
 
-## Stateless functional components - SFC
+## Functional components
 
-SFCs are my most favourite thing in React. They are simple, purely functional and super easy to reason about. 
-The following shows an example of a stateless functional component with some typed properties.
+Functional components are my most favourite thing in React. They are simple, purely functional and super easy to reason about. 
+The following shows an example of a functional component with some typed properties.
 
 ```javascript
 import React from 'react'; // we need this to make JSX compile
@@ -58,18 +58,18 @@ type CardProps = {
 }
 ```
 
-My personal prefered way of using SFCs in TypeScript is by using the generic type provided by the official typings:
+My personal prefered way of using functional components in TypeScript is by using the generic type provided by the official typings:
 
 
 ```javascript
-import React, { SFC } from 'react'; // importing SFC
+import React, { FunctionComponent } from 'react'; // importing SFC
 
 type CardProps = {
   title: string,
   paragraph: string
 }
 
-export const Card: SFC<CardProps> = ({ title, paragraph }) => <aside>
+export const Card: FunctionComponent<CardProps> = ({ title, paragraph }) => <aside>
   <h2>{ title }</h2>
   <p>
     { paragraph }
@@ -90,7 +90,7 @@ type CardProps = {
 }
 
 // we can use children even though we haven't defined them in our CardProps
-export const Card: SFC<CardProps> = ({ title, paragraph, children }) => <aside>
+export const Card: FunctionComponent<CardProps> = ({ title, paragraph, children }) => <aside>
   <h2>{ title }</h2>
   <p>
     { paragraph }
@@ -101,16 +101,16 @@ export const Card: SFC<CardProps> = ({ title, paragraph, children }) => <aside>
 
 More on the usage of child components in [Children](../children/).
 
-## Stateful class components
+## Class components
 
 One of the things that convinced me to use React were functional components. The "olde way" of doing
-components is with class components. And they can keep state. State is like props, but private and only
+components is with class components. And they can keep state per class. State is like props, but private and only
 controlled by the component.
 
 `@types/react` typings of course have full support for those, and are also equally easy to use.
 
 Class components need to be extended from the base `React.Component` class. Typings enhance this class 
-with generics, passing props (like `SFC` earlier) and state. Let's do a clock component:
+with generics, passing props (like `FunctionComponent` earlier) and state. Let's do a clock component:
 
 ```javascript
 import React, { Component } from 'react'; // let's also import Component

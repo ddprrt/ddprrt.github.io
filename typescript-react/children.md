@@ -36,11 +36,11 @@ Tools like Visual Studio Code already help:
 
 ![Auto-completion for children](../img/children-1.png)
 
-For stateless functional components, we need to use the `SFC` generic type to access children. Check out the example
+For functional components, we need to use the `FunctionComponent` generic type to access children. Check out the example
 we had earlier:
 
 ```javascript
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 type CardProps = {
   title: string,
@@ -48,7 +48,7 @@ type CardProps = {
 }
 
 // we can use children even though we haven't defined them in our CardProps
-export const Card: SFC<CardProps> = ({ title, paragraph, children }) => <aside>
+export const Card: FunctionComponent<CardProps> = ({ title, paragraph, children }) => <aside>
   <h2>{ title }</h2>
   <p>
     { paragraph }
@@ -63,7 +63,7 @@ code looks like this:
 
 
 ```javascript
-import React, { SFC } from 'react';
+import React, { FunctionComponent } from 'react';
 
 // no children defined here
 type CardProps = {
@@ -72,7 +72,7 @@ type CardProps = {
 }
 
 // undestructured
-export const Card: SFC<CardProps> = (props) => <aside>
+export const Card: FunctionComponent<CardProps> = (props) => <aside>
   <h2>{ props.title }</h2>
   <p>
     { props.paragraph }
