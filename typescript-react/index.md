@@ -5,7 +5,7 @@ categories:
 - typescript
 published: true
 og:
-  img: /typescript-react/img/children-1.png
+  img: /wp-content/uploads/ogimgs/ts-react.png
 ---
 
 Welcome to this little primer on TypeScript and React! A match made in heaven!
