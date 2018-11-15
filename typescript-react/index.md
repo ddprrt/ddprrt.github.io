@@ -38,6 +38,7 @@ Ready? Let's go!
 2. [Components](./components/): Components are everything in React. TypeScript gives you a lot of ways how to deal with them.
 3. [Children](./children/): There's nothing more beautiful than children. In React, they even can be functions.
 4. [Events](./events/): Apps are boring if you don't interact with them. Clicks, inputs, etc. are handled here.
+5. [Hooks](./hooks/): Hooks are pretty new and pretty exciting. And already pretty well typed.
 5. [Render props and child render props](./render-props/): Coming soon!
 6. [Context](./context/): Coming soon!
 7. [Styles](./styles/): Coming soon!
