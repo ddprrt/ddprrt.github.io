@@ -32,7 +32,7 @@ In this section:
 
 `useState` is probably one you are going to use a lot. Instead of using `this.state` from class components, you can access the
 current state of a component instance, and initialise it, with one single function call. Our desire for strong typing is that
-values we intially set, get per component update, and set through events, always have the same type. With the provided 
+values we initially set, get per component update, and set through events, always have the same type. With the provided 
 typings, this works without any additional TypeScript:
 
 ```javascript
@@ -190,7 +190,7 @@ change, not every time the component updates. `useMemo` returns a memoized resul
 when parameters change. 
 
 To use that with TypeScript, we want to make sure that the return type from `useMemo` is the same as the return type from
-the callback;
+the callback:
 
 ```javascript
 /**
@@ -221,7 +221,7 @@ function Histogram() {
 
 The React typings are pretty good at that, so you don't have to do much else.
 
-`useCallback` is very similar. In fact it's a shortcut that can be expressed with `useMemo` as well. But it returns a 
+`useCallback` is very similar. In fact, it's a shortcut that can be expressed with `useMemo` as well. But it returns a 
 callback function, not a value. Typings work similar:
 
 ```javascript
@@ -240,7 +240,7 @@ The key here is: Get your typings right. The React typings do the rest.
 
 ## useReducer
 
-Now this is something, isn't it? The core of Redux and similar state management libaries baked into a hook. Sweet and
+Now this is something, isn't it? The core of Redux and similar state management libraries baked into a hook. Sweet and
 easy to use. The typings are also pretty straightforward, but let's look at everything step by step. We take the example
 from the website, and try to make it type safe.
 
@@ -260,7 +260,7 @@ function reducer(state, action) {
   }
 }
 
-function Counter({initialCount}) {
+function Counter({ initialCount = 0}) {
   const [state, dispatch] = useReducer(reducer, { count: initialCount });
   return (
     <>
@@ -311,7 +311,7 @@ function reducer(state, action: ActionType) {
   }
 }
 
-function Counter({initialCount}) {
+function Counter({ initialCount = 0 }) {
   const [state, dispatch] = useReducer(reducer, { count: initialCount });
   return (
     <>
@@ -327,33 +327,29 @@ function Counter({initialCount}) {
 }
 ```
 
-That's not much to make our actions type safe. If you want to add another, do it at your type declaration.
-
-It's a bit trickier if you want to make the state type safe. You currently have to do it at two places.
-
-1. The reducer function
-2. The initial value for the initial state.
-
-The `useReducer` typings get the type of state from the initial state. They don't infer from the state parameter
-of the reducer function. Something like this works:
+That's not much to do, to make our actions type safe. If you want to add another action, do it at your type declaration.
+It's the same with the state. The `useReducer` typings infer state types from the reducer function:
 
 ```javascript
-...
-const initialState = { count: 0 };
-type StateType = typeof initialState;
+type StateType = {
+  counte: number
+}
 
-// now our reducer function knows the props of the state
 function reducer(state: StateType, action: ActionType) {
   ...
 }
-
-// make sure to set the initialCount value right
-export const Counter:FunctionComponent<{ initialCount: number }> 
-  = ({initialCount}) => {
-  // now state is of the same type
-  const [state, dispatch] = useReducer(reducer, {count: initialCount});
+function Counter({ initialCount = 0 }) {
+  // ⚡️ Compile error! Strings are not compatible with numbers
+  const [state, dispatch] = useReducer(reducer, { count: 'whoops, a string' });
+  ...
+  // ✅ All good
+  const [state, dispatch] = useReducer(reducer, { count: initialCount });
+  ...
 }
 ```
 
-Note that you can't wrongly set `initialCount` to `string` or similar. Type inference works well into the other direction, and
-TypeScript will check that your initialCount is nothing incompatible. It's just that `any` is compatible with `number` 😉
+## Bottom line
+
+I think hooks are exciting. I also think that TypeScript's great generics and type inference features are a perfect
+match to make your hooks type safe, without doing too much. That's TypeScript's greatest strength: Being as little
+invasive as possible, while getting the most out of it.
