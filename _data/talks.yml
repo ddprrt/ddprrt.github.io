@@ -7,6 +7,12 @@
       city: Munich
       date: 2019-03-11
       url: https://js-kongress.com/
+    -
+      title: Devone (MC)
+      country: Austria
+      city: Linz
+      date: 2019-04-11
+      url: https://devone.at/
 -
   year: 2018
   conferences:
@@ -31,7 +37,7 @@
       country: Austria
       city: Linz
       date: 2018-04-26
-      url: https://devone.at/
+      url: https://devone.at/2018
     -
       title: We Are Developers (MC)
       country: Austria
