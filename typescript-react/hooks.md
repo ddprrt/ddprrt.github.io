@@ -25,6 +25,8 @@ In this section:
 2. [useEffect](#useeffect)
 3. [useContext](#usecontext)
 4. [useRef](#useref)
+5. [useMemo and useCallback](#usememo---usecallback)
+6. [useReducer](#usereducer)
 
 ## useState
 
@@ -55,6 +57,45 @@ And that's it. Your code works with out any extra type annotations, but still ty
 
 ## useEffect
 
+`useEffect` is here for all side effects. Adding event listeners, changing things in the document, fetching data. 
+Everything you would use component lifecycle methods for (`componentDidUpdate`, `componentDidMount`, `componentWillUnmount`)
+The method signature is pretty straightforward. It accepts two parameters:
+
+- A function that is called without any parameters. This is the side-effect you want to call.
+- An array of values of type `any`. This parameter is optional. If you don't provide it, the function provided is called 
+  every time the component update. If you do, React will check if those values did change, and triggers the function only
+  if there's a difference. 
+
+```javascript
+// Standard use case.
+const [name, setName] = useState('Stefan');
+useEffect(() => {
+  document.title = `Hello ${name}`;
+}, [name])
+```
+
+You don't need to provide any extra typings. TypeScript will check that the method signature of the function
+you provide is correct. This function also has a return value (for cleanups). And TypeScript will check that you provide
+a correct function as well:
+
+```javascript
+useEffect(() => {
+  const handler = () => {
+    document.title = window.width;
+  }
+  window.addEventListener('resize', handler);
+
+  // ⚡️ won't compile
+  return true;
+
+  // ✅  compiles
+  return () => {
+    window.removeEventListener('resize', handler);
+  }
+})
+```
+
+This also goes for `useLayoutEffect` and `useMutationEffect`.
 
 ## useContext
 
@@ -138,3 +179,181 @@ function TextInputWithFocusButton() {
 
 A bit more type safety for all of us ❤️
 
+
+## useMemo - useCallback
+
+You know from `useEffect` that you can influence the execution of certain functions by passing some parameters to it.
+React checks if those parameters have changed, and will execute this function only if there's a difference.
+
+`useMemo` does something similar. Let's say you have computation heavy methods, and only want to run them when their parameters
+change, not every time the component updates. `useMemo` returns a memoized result, and executes the callback function only
+when parameters change. 
+
+To use that with TypeScript, we want to make sure that the return type from `useMemo` is the same as the return type from
+the callback;
+
+```javascript
+/**
+ *  returns the occurence of if each shade of the 
+ *  red color component. Needs to browse through every pixel 
+ *  of an image for that.
+ */
+function getHistogram(image: ImageData): number[] {
+  // details not really necessary for us right now 😎
+  ...
+  return histogram;
+}
+
+function Histogram() {
+  ...
+  /*
+   * We don't want to run this method all the time, that's why we save
+   * the histogram and only update it if imageData (from a state or somewhere)
+   * changes.
+   *
+   * If you provide correct return types for your function or type inference is
+   * strong enough, your memoized value has the same type.
+   * In that case, our histogram is an array of numbers
+   */
+  const histogram = useMemo(() => getHistogram(imageData), [imageData]);
+}
+```
+
+The React typings are pretty good at that, so you don't have to do much else.
+
+`useCallback` is very similar. In fact it's a shortcut that can be expressed with `useMemo` as well. But it returns a 
+callback function, not a value. Typings work similar:
+
+```javascript
+const memoCallback = useCallback((a: number) => {
+  // doSomething
+}, [a])
+
+// ⚡️ Won't compile, as the callback needs a number
+memoCallback();
+
+// ✅ compiles
+memoCallback(3);
+```
+
+The key here is: Get your typings right. The React typings do the rest.
+
+## useReducer
+
+Now this is something, isn't it? The core of Redux and similar state management libaries baked into a hook. Sweet and
+easy to use. The typings are also pretty straightforward, but let's look at everything step by step. We take the example
+from the website, and try to make it type safe.
+
+```javascript
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'reset':
+      return initialState;
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter({initialCount}) {
+  const [state, dispatch] = useReducer(reducer, { count: initialCount });
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'reset' })}>
+        Reset
+      </button>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </>
+  );
+}
+```
+
+`useReducer` accepts a reducer function and an initial state. The reducer function switches the `action.type` 
+property and selects the respective action. Nothing new. It's just that right now, everything is of type `any`.
+We can change that.
+
+The `useReducer` typings are nice as you don't have to change anything in the usage of `useReducer`, but can control
+everything via type inference from the reducer function. Let's start by making the actions more type safe. Here's what we 
+want to avoid:
+
+- listening to actions that are not `reset`, `increment` or `decrement`
+- Making sure that the `type` property is set.
+
+For that, we create an `ActionType` type definition. We use union types to make sure that `type` can only be of 
+`reset`, `increment` or `decrement`.
+
+```javascript
+type ActionType = {
+  type: 'reset' | 'decrement' | 'increment'
+}
+
+const initialState = { count: 0 };
+
+// We only need to set the type here ...
+function reducer(state, action: ActionType) {
+  switch (action.type) {
+    // ... to make sure that we don't have any other strings here ...
+    case 'reset':
+      return initialState;
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter({initialCount}) {
+  const [state, dispatch] = useReducer(reducer, { count: initialCount });
+  return (
+    <>
+      Count: {state.count}
+      { /* and can dispatch certain events here */ }
+      <button onClick={() => dispatch({ type: 'reset' })}>
+        Reset
+      </button>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </>
+  );
+}
+```
+
+That's not much to make our actions type safe. If you want to add another, do it at your type declaration.
+
+It's a bit trickier if you want to make the state type safe. You currently have to do it at two places.
+
+1. The reducer function
+2. The initial value for the initial state.
+
+The `useReducer` typings get the type of state from the initial state. They don't infer from the state parameter
+of the reducer function. Something like this works:
+
+```javascript
+...
+const initialState = { count: 0 };
+type StateType = typeof initialState;
+
+// now our reducer function knows the props of the state
+function reducer(state: StateType, action: ActionType) {
+  ...
+}
+
+// make sure to set the initialCount value right
+export const Counter:FunctionComponent<{ initialCount: number }> 
+  = ({initialCount}) => {
+  // now state is of the same type
+  const [state, dispatch] = useReducer(reducer, {count: initialCount});
+}
+```
+
+Note that you can't wrongly set `initialCount` to `string` or similar. Type inference works well into the other direction, and
+TypeScript will check that your initialCount is nothing incompatible. It's just that `any` is compatible with `number` 😉
