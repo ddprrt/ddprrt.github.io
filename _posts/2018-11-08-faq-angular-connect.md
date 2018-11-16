@@ -22,7 +22,7 @@ Our talk was about how we generate Sketch symbol files from our Angular componen
 
 What I didn't expect though, was the tremendous feedback we got after the show. Originally I wanted to watch some talks at the conference, but I ended up answering questions and getting into dialogue with so many attendees who have similar or the same challenges ahead. While I had many chats, there were some questions that came up more often than others. What puzzled others might be puzzling you as well. That's why I want to put up a post-conference FAQ for everyone who watched our talk.
 
-You can read it right away, but be sure to check out our [Slides](https://www.slideshare.net/ddprrt/automating-ui-development) and the video from [Angular Connect](https://youtu.be/OEOrgR1g3Ks?t=909). It's still the live stream video, the separated one will come in shortly, I assume. 
+You can read it right away, but be sure to check out our [Slides](https://www.slideshare.net/ddprrt/automating-ui-development) and the video from [Angular Connect](https://www.youtube.com/watch?v=3_XvaSD_0xo). 
 
 Watched it? Then let's go!
 
