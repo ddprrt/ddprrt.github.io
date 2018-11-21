@@ -7,6 +7,8 @@ categories:
 - Vue.js
 published: true
 permalink: /jsx-syntactic-sugar/
+og:
+  img: wp-content/uploads/ogimgs/jsx.png
 ---
 
 If you follow me you know that I'm super late to the React game. It was not until functional components showed up that I got 
