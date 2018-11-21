@@ -231,3 +231,5 @@ code can happen to everybody in every programming language. A bit of syntactic s
 For me, putting together this little example helped me a lot to understand what's going on behind the scenes. And it made me 
 appreciate JSX and React a lot more. Now I know that I'm not mixing HTML with JavaScript or something like that. I'm calling
 functions. It just has a lot of angle brackets...
+
+*P.S. You can find the code at [GitHub](https://github.com/ddprrt/dom-jsx)*
