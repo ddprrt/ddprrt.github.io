@@ -200,8 +200,12 @@ const Button = ({ msg }) => {
 const el = <div>
   <h1 className="what">Hello world</h1>
   <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sed consectetur placeat veritatis 
-    illo vitae quos aut unde doloribus, minima eveniet et eius voluptatibus minus aperiam sequi asperiores, odio ad?
+    Lorem ipsum dolor sit, amet consectetur 
+    adipisicing elit. Quae sed consectetur 
+    placeat veritatis 
+    illo vitae quos aut unde doloribus, minima eveniet et 
+    eius voluptatibus minus aperiam 
+    sequi asperiores, odio ad?
   </p>
   <Button msg='Yay' />
   <Button msg='Nay' />
