@@ -17,6 +17,10 @@ Here's a list of all built-in generics, with examples!
 4. [Partial](#partial)
 5. [Required](#required)
 6. [NonNullable](#nonnullable)
+6. [Pick](#pick)
+6. [Record](#record)
+6. [Exclude](#exclude)
+6. [Extract](#extract)
 
 ## Readonly
 
@@ -181,3 +185,54 @@ print(null); // ⚡️ Error
 print(undefined); // ⚡️ Error
 ```
 
+## Pick
+
+With `Pick<T, K extends keyof T>` you can create a new type from an existing object, by only using a selected list of properties.
+I find this very useful especially with other generic types. 
+
+
+## Record
+
+`Record<K, T>` is funny. With it you can say that *every key `K` should be of type `T`. With it you can do things like
+
+```javascript
+type Person = Record<'firstName' | 'lastName', string>
+```
+
+which is the same as `{ firstName: string, lastName: string }`. Or, something like
+
+```javascript
+type MetaInfo = {
+  title: string,
+  url: string
+}
+
+type Episodes = Record<string, MetaInfo>
+```
+
+Which allows an object with any key possible, but values of type `MetaInfo`.
+This is very much alike to `{ [k: string]: MetaInfo }`.
+
+So far, so good. But why have this generic `Record` type if we can achieve similar, if not the same results with other methods?
+`Record` helps when you deal with other generic types. Let's look at that example: We can create a function that transforms all values
+of an object to a string representation:
+
+```javascript
+// The implementation is somewhere else. It converts all values to strings.
+declare function allToString<T>(obj: T): Record<keyof T, string>;
+
+const person = {
+    firstName: 'Stefan',
+    lastName: 'Baumgartner',
+    age: Number.MAX_VALUE
+}
+
+// all properites in strPerson are now strings
+const strPerson = allToString(person);
+```
+
+[Check it out here](https://www.typescriptlang.org/play/index.html#src=function%20allToString%3CT%3E(obj%3A%20T)%3A%20Record%3Ckeyof%20T%2C%20string%3E%20%7B%0D%0A%20%20%20%20let%20transfer%3A%20Partial%3CRecord%3Ckeyof%20T%2C%20string%3E%3E%20%3D%20%7B%7D%3B%0D%0A%20%20%20%20for%20(let%20key%20in%20obj)%20%7B%0D%0A%20%20%20%20%20%20%20%20transfer%5Bkey%5D%20%3D%20obj%5Bkey%5D.toString()%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20return%20transfer%20as%20Record%3Ckeyof%20T%2C%20string%3E%3B%0D%0A%7D%0D%0A%0D%0Aconst%20person%20%3D%20%7B%0D%0A%20%20%20%20firstName%3A%20'Stefan'%2C%0D%0A%20%20%20%20lastName%3A%20'Baumgartner'%2C%0D%0A%20%20%20%20age%3A%20Number.MAX_VALUE%0D%0A%7D%0D%0A%0D%0Atype%20Person%20%3D%20typeof%20person%3B%0D%0A%0D%0Aconst%20strPerson%20%3D%20allToString(person)%3B%0D%0A);
+
+## Exclude
+
+## Extract
