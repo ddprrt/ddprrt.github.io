@@ -70,7 +70,7 @@ What are the implications of that, especially compared to templates?
 
 So everything *looks* like XML, except that it's JavaScript functions. If you are a seasoned web developer like I am, think like that:
 Ever wanted to write to the DOM directly, but gave up because it's so unwieldy? Come on, `document.createElement` is probably easy, 
-but you have to do a ton of calls to the DOM API do get what you can achieve so easily by writing HTML.
+but you have to do a ton of calls to the DOM API to get what you can achieve so easily by writing HTML.
 
 JSX solves that. With JSX you have a nice and familiar syntax of writing elements without HTML. 
 
