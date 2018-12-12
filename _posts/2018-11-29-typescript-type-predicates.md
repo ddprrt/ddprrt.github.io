@@ -132,3 +132,5 @@ function evalThrow(count: number) {
 A lot type safer for us, and for our colleagues. Of course this "type casts" can be anything that makes sense to strengthen your
 applications. Even if you validate complex objects, you can narrow down your parameters to a specific type and make sure they
 get along with the rest of your code. Useful, especially if you rely on a lot of functions.
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}

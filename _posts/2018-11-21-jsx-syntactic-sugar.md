@@ -233,3 +233,5 @@ appreciate JSX and React a lot more. Now I know that I'm not mixing HTML with Ja
 functions. It just has a lot of angle brackets...
 
 *P.S. You can find the code at [GitHub](https://github.com/ddprrt/dom-jsx)*
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}

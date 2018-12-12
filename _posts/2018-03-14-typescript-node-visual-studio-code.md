@@ -3,7 +3,7 @@ title: "Debugging Node.js apps in TypeScript with Visual Studio Code"
 layout: post
 categories:
 - tools
-- typescript
+- TypeScript
 published: true
 permalink: /typescript-node-visual-studio-code/
 ---
@@ -124,3 +124,5 @@ And with that, you are all set up. Press the ▶️ button the debug view. You s
 ![VSCode in action](/wp-content/uploads/vscode.jpg) 
 
 Try setting a breakpoint somewhere and have fun with all the details!
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}

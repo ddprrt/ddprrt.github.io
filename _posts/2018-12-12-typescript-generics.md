@@ -365,3 +365,5 @@ want to have convered here, let me [know](https://twitter.com/ddprrt).
 
 *Update*: My buddy Martin Hochel has a couple of mapped types that build on top of
 those. They are pretty good, so [check them out](https://github.com/Hotell/rex-tils#2-compile-time-typescript-type-helpers)
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}

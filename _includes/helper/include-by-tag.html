@@ -1,0 +1,10 @@
+{% assign count = 1 %}
+{% if include.title %}<h2>{{include.title}}</h2>{% endif %}
+<ul>
+{% for post in site.posts %}
+{% if post.categories contains include.tag and count < 6 %}
+<li><a href="{{post.url}}">{{post.title}}</a></li>
+{% assign count = count | plus: 1 %}
+{% endif %}
+{% endfor %}
+</ul>

@@ -2,7 +2,7 @@
 title: "TypeScript and Substitutability"
 layout: post
 categories:
-- typescript
+- TypeScript
 published: true
 permalink: /typescript-substitutability/
 og:
@@ -90,3 +90,5 @@ The power lies within the calling function. The calling function knows best what
 ## Substitutability
 
 TypeScript calls this feature "substitutability". The ability to substitute one thing for another, wherever it makes sense. This might strike you odd at first. But especially when you work with libraries that you didn't author, you will find this feature very usable.
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
