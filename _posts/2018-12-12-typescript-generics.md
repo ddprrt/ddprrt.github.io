@@ -361,7 +361,7 @@ when you generate type definitions for methods that allow different parameter ty
 every possible type outcome on its own.
 
 Again, I'm sure I missed a ton. So if you have any generic built-in type that you 
-want to have convered here, let me [https://twitter.com/ddprrt](know);
+want to have convered here, let me [know](https://twitter.com/ddprrt).
 
 *Update*: My buddy Martin Hochel has a couple of mapped types that build on top of
 those. They are pretty good, so [check them out](https://github.com/Hotell/rex-tils#2-compile-time-typescript-type-helpers)
