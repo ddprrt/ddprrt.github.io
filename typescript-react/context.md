@@ -143,5 +143,7 @@ const App = () => {
 }
 ```
 
+There's a [StackBlitz](https://stackblitz.com/edit/react-ts-d4toch?file=index.tsx) you can check out.
+
 And that's context! I think it's nicer to use with the [hooks](./hooks/#usecontext) API, but nevertheless, it's
 incredibly useful!
