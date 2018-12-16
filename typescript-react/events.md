@@ -14,9 +14,10 @@ have great support for them.
 
 In this section:
 
-1. [Basic Event Handling](#basic-event-handling)
-2. [Restrictive Event Handling](#restrictive-event-handling)
-3. [Where's InputEvent?](#wheres-inputevent)
+- [url: ../hooks/](#url-hooks)
+- [Basic Event Handling](#basic-event-handling)
+- [Restrictive Event Handling](#restrictive-event-handling)
+- [Where's InputEvent?](#wheres-inputevent)
 
 ## Basic Event Handling
 

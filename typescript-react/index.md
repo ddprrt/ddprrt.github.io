@@ -40,6 +40,6 @@ Ready? Let's go!
 4. [Events](./events/): Apps are boring if you don't interact with them. Clicks, inputs, etc. are handled here.
 5. [Hooks](./hooks/): Hooks are pretty new and pretty exciting. And already pretty well typed.
 5. [Render props and child render props](./render-props/): Coming soon!
-6. [Context](./context/): Coming soon!
+6. [Context](./context/): React's context API gives you global state with a very lean API.
 7. [Styles](./styles/): Coming soon!
 8. [Further reading](./further-reading/): So many things not covered in our guide. You will find them here.
