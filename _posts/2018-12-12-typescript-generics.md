@@ -341,7 +341,7 @@ type Circle = typeof circle;
 type RectOnlyProperties = Exclude<keyof Rect, keyof Circle>;
 
 // An object of type { width: number, height: number }
-type RectOnly = Record<RectOnlyProperties, number>;
+type RectOnly = Pick<Rect, RectOnlyProperties>;
 
 declare function area<T extends RectOnly>(obj: T)
 
