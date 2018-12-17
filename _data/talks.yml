@@ -2,6 +2,12 @@
   year: 2019
   conferences:
     -
+      title: Angular Vienna
+      country: Austria
+      city: Vienna
+      date: 2019-01-18
+      url: https://www.meetup.com/de-DE/Angular-Vienna/events/257239756/
+    -
       title: JS Kongress (Program Comittee)
       country: Germany
       city: Munich
