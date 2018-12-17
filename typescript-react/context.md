@@ -47,11 +47,11 @@ Our app component provides this context. It also sets values different from defa
 
 ```javascript
 const App = () => {
-  return <AppContext.Provider value={{
+  return <AppContext.Provider value={ {
     lang: 'de',
     authenticated: true,
     theme: 'light'
-  }}>
+  } }>
     <Header/>
   </AppContext.Provider>
 }
@@ -65,9 +65,9 @@ property or use the wrong type:
 
 const App = () => {
   // ⚡️ compile error! Missing properties
-  return <AppContext.Provider value={{
+  return <AppContext.Provider value={ {
     lang: 'de', 
-  }}>
+  } }>
     <Header/>
   </AppContext.Provider>
 }
@@ -135,9 +135,9 @@ const Header = () => {
 
 // Now, we can set only the properties we really need
 const App = () => {
-  return <AppContext.Provider value={{
+  return <AppContext.Provider value={ {
     authenticated: true,
-  }}>
+  } }>
     <Header/>
   </AppContext.Provider>
 }
