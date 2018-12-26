@@ -108,7 +108,21 @@ gulp.task('clean', function() {...});
 gulp.task('default', gulp.parallel('scripts', 'styles'));
 {% endhighlight %}
 
-However, this causes even more problems. First of all, the dependency is still
+The first problem with this approach is that `clean` always gets executed with the
+actual task that creates the output. In a concurrent world, this can mean that we
+immediately delete the files we created. We don't want that. So let's exchange the
+tasks that are meant to be executed after another with `gulp.series`.
+
+{% highlight javascript %}
+gulp.task('styles', gulp.series('clean', function() {...}));
+gulp.task('scripts', gulp.series('clean', function() {...}));
+
+gulp.task('clean', function() {...});
+
+gulp.task('default', gulp.parallel('scripts', 'styles'));
+{% endhighlight %}
+
+Better. However, there are still problems. First of all, the dependency is still
 hard-wired: "Clean" gets called every time we call *scripts* or *styles*.
 
 Second, Gulp 4 does not have any dependency check (because they aren't dependencies)
