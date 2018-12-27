@@ -23,14 +23,14 @@ the Audience awakens*. Let's go!
 ## Isabella Silveira De Souza - Empathy Driven Development
 
 *Empathy Driven Development* by [Isabella](https://twitter.com/silveira_bells) is not your everyday performance talk. 
-Instead of jumping right into performance optimisation land, Isa takes her time to
+Instead of jumping right into performance optimization land, Isa takes her time to
 showcase life in Brazil. Life that can be totally different from what I as a Central 
 European am used to. Sometimes the differences are big. Sometimes nuanced.
 
 Isa centers around communication. And how people in Brazil use the web to stay connected, 
 even if some boundaries might appear in real life. Fascinating!
 
-From there Isa segues seamlessly into a tech heavy performance optimisation talk. Solving real problems of real people. Chapeau! 👏
+From there Isa segues seamlessly into a tech heavy performance optimization talk. Solving real problems of real people. Chapeau! 👏
 
 <div class="aspect ratio-16-to-9">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LjGQiEcBn1Y" frameborder="0" allowfullscreen></iframe>
@@ -49,7 +49,7 @@ references in programming languages. A concept that some languages want to get r
 of. Languages like JavaScript, well, they have even two null reference concepts.
 
 Richard shows the struggles of `null` in an incredibly entertaining way. Leading
-to the age old question: What if there were no null references?
+to the age-old question: What if there were no null references?
 
 I immediately bought [his book "Elm in Action"](https://www.manning.com/books/elm-in-action)
 afterwards. Check it out, it's a fun talk:
@@ -58,13 +58,13 @@ afterwards. Check it out, it's a fun talk:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3h4sIfKfqEs" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## Siren Hofvander - Making Security an integreated part of the SW Dev Lifecycle
+## Siren Hofvander - Making Security an integrated part of the SW Dev Lifecycle
 
 I had the pleasure to see [Siren](https://twitter.com/securitypony)'s talk this year life at [DevOne](https://devone.at).
 Siren gave probably the best introduction to security in software one can think of. 
 
 Where the usual security talk is filled with creepy stories of big security holes and
-the devastating effects of not thinking everythin through to the end, Siren takes a step
+the devastating effects of not thinking everything through to the end, Siren takes a step
 back, tells everyone to relax, and shows a good way of taking on security one step at
 a time.
 
@@ -88,7 +88,7 @@ Brilliant way of presenting, wonderful life demos. And once you thought: Can thi
 Ryan Florence comes on stage to show a real world example refactored with hooks. Just to
 make you even more excited.
 
-90 mintues of footage worth to check out!
+90 minutes of footage worth to check out!
 
 <div class="aspect ratio-16-to-9">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dpw9EHDh2bM" frameborder="0" allowfullscreen></iframe>
@@ -97,7 +97,7 @@ make you even more excited.
 ## Kelsey Hightower - Kubernetes and the Path to Serverless
 
 I'm pretty new to the whole Kubernetes thing and most likely won't touch it too much
-in my career. Nonetheless I enjoyed [Kelsey Hightower's](https://twitter.com/kelseyhightower) take on Kubernetes with Serverless.
+in my career. Nonetheless, I enjoyed [Kelsey Hightower's](https://twitter.com/kelseyhightower) take on Kubernetes with Serverless.
 
 I won't spoil too much, but Kelsey's way of presenting is so engaging, fun, inspiring and
 motivational. He gets an audience applauding the black heroines of 60s NASA, segueing into
@@ -134,7 +134,7 @@ A shameless plug: My most favourite speaking experience in 2018. Talking togethe
 Katrin about some work we've been cooking for the last months at Europe's biggest
 Angular conference.
 
-I've spoken at lenghts about our talk [in another place](/angular-connect/). Allow me to 
+I've spoken at lengths about our talk [in another place](/angular-connect/). Allow me to 
 end this list with a quick link to the video.
 
 <div class="aspect ratio-16-to-9">
