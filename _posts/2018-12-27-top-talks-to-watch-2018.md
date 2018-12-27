@@ -14,7 +14,7 @@ Before we start, let's have a quick recap on the previous years:
 
 - [My most favourite talks in 2015](/top-talks-to-watch-2015/)
 - [My most favourite talks in 2016 -- the conference videos strike back!](/top-talks-to-watch-2016/)
-- [My most favourite talks of 2017 -- Return of the Bingewatch](/top-talks-to-watch-2018/):
+- [My most favourite talks of 2017 -- Return of the Bingewatch](/top-talks-to-watch-2018/)
 
 Now it's the fourth part of this series, which means I have to de-construct everything I had
 done before and let in some new things. Let's call it *My most favourite talks of 2018 - 
