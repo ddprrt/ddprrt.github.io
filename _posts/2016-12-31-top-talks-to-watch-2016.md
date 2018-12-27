@@ -44,7 +44,7 @@ Harry is the guy who single-handedly invented CSS engineering. And with good rea
 We just don't care too much about security. This talk by Vincent Haupert from this year's [CCC](http://ccc.de) shows perfectly what can go wrong if you don't spend resources on making your app secure and thinking about all the things that can go wrong. Usually, security guys can get way too cocky when talking about their hacks, but Vincent manages it to show it in a very toned down and funny way. Watch this. Just go and watch this. And show it to everybody.
 
 <div class="aspect ratio-16-to-9">
-<iframe width="1024" height="576" src="https://media.ccc.de/v/33c3-7969-shut_up_and_take_my_money/oembed" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KopWe2ZpVQI" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Brian Lonsdorf: You are doing it wrong, Underscore!
