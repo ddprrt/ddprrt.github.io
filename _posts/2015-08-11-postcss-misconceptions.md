@@ -2,7 +2,7 @@
 title: "PostCSS Misconceptions"
 layout: post
 published: true
-permalink: /postcss-misconceptions/
+permalink: /postcss-misconceptions-orig/
 layout: redirect
 external: https://medium.com/@ddprrt/postcss-misconceptions-faf5dc5038df
 showcontent: true
