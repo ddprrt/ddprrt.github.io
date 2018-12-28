@@ -2,7 +2,7 @@
 title: "Deconfusing Pre- and Post-Processing"
 layout: post
 published: true
-permalink: /deconfusing-pre-and-post-processing/
+permalink: /deconfusing-pre-and-post-processing-orig/
 layout: redirect
 external: https://medium.com/@ddprrt/deconfusing-pre-and-post-processing-d68e3bd078a3
 showcontent: true
