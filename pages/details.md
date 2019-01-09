@@ -23,6 +23,6 @@ Stefan Baumgartner is a Software Engineer working at Dynatrace. He writes for Ma
 
 ## Image
 
-Here's an image you can use. If you need a high resolution image, you can find one in [800x800px resolution here](https://drive.google.com/open?id=0B0r5SsyehojocXFlZGJNeG9YaDQ)
+Here's an image you can use. If you need a high resolution image, you can find one in [800x800px here](https://drive.google.com/open?id=0B0r5SsyehojocXFlZGJNeG9YaDQ)
 
 ![That's me](/wp-content/uploads/stefan.jpg)
