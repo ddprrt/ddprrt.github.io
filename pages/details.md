@@ -10,8 +10,6 @@ permalink: /details/
 nocomments: true
 ---
 
-# Details 
-
 Here's all you need to bring me on your conference website.
 
 ## Connect
