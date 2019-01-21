@@ -7,6 +7,10 @@
       city: Vienna
       date: 2019-01-18
       url: https://www.meetup.com/de-DE/Angular-Vienna/events/257239756/
+      talks:
+        -
+          title: Design Systems tooling
+          slides: https://www.slideshare.net/ddprrt/sketchmine-design-systems-tooling
     -
       title: JS Kongress (Program Comittee)
       country: Germany
