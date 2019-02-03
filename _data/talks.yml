@@ -12,6 +12,15 @@
           title: Design Systems tooling
           slides: https://www.slideshare.net/ddprrt/sketchmine-design-systems-tooling
     -
+      title: Devtreff Amstetten
+      country: Austria
+      city: Amstetten
+      date: 2019-02-121
+      url: https://www.devtreff.io
+      talks:
+        -
+          title: The Hero's Journey
+    -
       title: JS Kongress (Program Comittee)
       country: Germany
       city: Munich
