@@ -21,6 +21,15 @@
         -
           title: The Hero's Journey
     -
+      title: Webentwicklung Bad Nauheim
+      country: Germany
+      city: Bad Nauheim
+      date: 2019-02-26
+      url: https://www.meetup.com/de-DE/Webentwicklung-Bad-Nauheim-Meetup/events/258670904/
+      talks:
+        -
+          title: Type driven development
+    -
       title: JS Kongress (Program Comittee)
       country: Germany
       city: Munich
