@@ -23,7 +23,7 @@ import styles from "./Button.css";
 
 Especially the last one lets you use CSS class names like object properties, how nice!
 
-If you are like me and use TypeScript for all you code, you will also quickly realise that TypeScript is not so happy with non-TypeScript or non-JavaScript files being imported.
+If you are like me and use TypeScript for all you code, you will  quickly realise that TypeScript is not so happy with non-TypeScript or non-JavaScript imports.
 
 ## TypeScript's modules
 
@@ -107,7 +107,7 @@ declare module '*.svg' {
 
 ## Where to put ambient modules
 
-To make ambient modules available to your app, I recommend creating an `@types` folder somewhere in your project (probably root level), where you can put any amount of `.d.ts` files with your module definitions in. Add a referal to your `tsconfig.json` and TypeScript knows what to do 👍
+To make ambient modules available to your app, I recommend creating an `@types` folder somewhere in your project (probably root level). There you can put any amount of `.d.ts` files with your module definitions in. Add a referal to your `tsconfig.json` and TypeScript knows what to do 👍
 
 ```javascript
 {
