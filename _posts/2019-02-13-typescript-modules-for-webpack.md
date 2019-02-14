@@ -105,4 +105,23 @@ declare module '*.svg' {
 
 `any` is perfectly OK if we just care about importing, rather than getting proper tooling support.
 
+## Where to put ambient modules
+
+To make ambient modules available to your app, I recommend creating an `@types` folder somewhere in your project (probably root level), where you can put any amount of `.d.ts` files with your module definitions in. Add a referal to your `tsconfig.json` and TypeScript knows what to do 👍
+
+```javascript
+{
+  ...
+  "compilerOptions": {
+    ...
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ],
+    ...
+  }
+}
+
+```
+
 {% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
