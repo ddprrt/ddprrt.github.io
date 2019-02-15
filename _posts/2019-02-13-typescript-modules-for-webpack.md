@@ -97,13 +97,9 @@ function App() {
 If you don't know what to expect, make your life easy:
 
 ```javascript
-declare module '*.svg' {
-  const content: any;
-  export default content;
-}
+declare module '*.svg';
 ```
 
-`any` is perfectly OK if we just care about importing, rather than getting proper tooling support.
 
 ## Where to put ambient modules
 
@@ -123,5 +119,7 @@ To make ambient modules available to your app, I recommend creating an `@types` 
 }
 
 ```
+
+As [Martin](https://twitter.com/martin_hotell) suggests, a good pattern is to create folders with the package name, and put `index.d.ts` files in them. But that's up to you!
 
 {% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
