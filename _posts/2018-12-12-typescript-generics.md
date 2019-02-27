@@ -8,7 +8,7 @@ title: "TypeScript: Built-in generic types"
 
 ---
 
-TypeScript comes with a ton of built in generic types that ease your development workflow. Here's a list of all built-in generics, with examples!
+TypeScript comes with a ton of built in generic types that ease your development workflow. Here's a list of all built-in generic types, with examples!
 
 **Note**: This list is probably (most definitely) not complete. If you miss something and 
 want to have it added, please reach out to me via [Twitter](https://twitter.com/ddprrt)
