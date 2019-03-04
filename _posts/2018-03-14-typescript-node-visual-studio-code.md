@@ -63,14 +63,13 @@ VSCode is pretty clever, as based on your file structure it automatically finds 
 
 ![Build tasks](/wp-content/uploads/vscode-task.jpg)
 
-You can run them by selecting them. If you hit the wheel icon next to it, VSCode creates a `tasks.json` in the `.vscode` project folder, with all the setup you need. The only thing we have to add is an identifier to make it available from our debug config. See below:
+You can run them by selecting them. If you hit the wheel icon next to it, VSCode creates a `tasks.json` in the `.vscode` project folder, with all the setup you need. See below:
 
 ```javascript
 {
   "version": "2.0.0",
   "tasks": [
     {
-      "identifier": "typescript",
       "type": "typescript",
       "tsconfig": "tsconfig.json",
       "problemMatcher": [
