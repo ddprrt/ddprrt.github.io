@@ -42,6 +42,24 @@
       city: Linz
       date: 2019-04-11
       url: https://devone.at/
+    -
+      title: Global Azure Bootcamp 2019
+      country: Austria
+      city: Linz
+      date: 2019-04-27
+      url: https://coding-club-linz.github.io/global-azure-bootcamp-2019/
+      talks:
+        -
+          title: JAMStack on Azure
+    -
+      title: NG Vikings
+      country: Denmark
+      city: Copenhagen
+      date: 2019-05-27
+      url: https://ngvikings.org/
+      talks:
+        -
+          title: Real world component libraries at scale
 -
   year: 2018
   conferences:
