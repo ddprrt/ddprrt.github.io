@@ -52,6 +52,15 @@
         -
           title: JAMStack on Azure
     -
+      title: ASCII Art Meetup
+      country: Austria
+      city: Linz
+      date: 2019-05-06
+      url: https://www.meetup.com/de-DE/ascii-art/events/260234908/
+      talks:
+        -
+          title: 137 years of typed art
+    -
       title: NG Vikings
       country: Denmark
       city: Copenhagen
