@@ -51,6 +51,7 @@
       talks:
         -
           title: JAMStack on Azure
+          slides: https://www.slideshare.net/ddprrt/jamstack-on-azure
     -
       title: ASCII Art Meetup
       country: Austria
