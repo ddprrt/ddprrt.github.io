@@ -30,6 +30,7 @@
       talks:
         -
           title: Type driven development
+          slides: https://www.slideshare.net/ddprrt/typescripts-type-system
     -
       title: JS Kongress (Program Comittee)
       country: Germany
