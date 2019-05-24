@@ -72,6 +72,14 @@
       talks:
         -
           title: Real world component libraries at scale
+    -
+      title: Dev Meetup Enns
+      country: Austria
+      city: Enns
+      date: 2019-07-09
+      talks:
+        -
+          title: JAMStack on Azure (2hr JAMMIN')
 -
   year: 2018
   conferences:
