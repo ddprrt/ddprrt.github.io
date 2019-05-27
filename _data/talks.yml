@@ -72,6 +72,7 @@
       talks:
         -
           title: Real world component libraries at scale
+          slides: https://www.slideshare.net/ddprrt/real-worldcomponentlibraries
     -
       title: Dev Meetup Enns
       country: Austria
