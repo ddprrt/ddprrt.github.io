@@ -82,6 +82,12 @@
       talks:
         -
           title: JAMStack on Azure (2hr JAMMIN')
+    -
+      title: Script'19 (MC + Org)
+      country: Austria
+      city: Enns
+      date: 2019-10-25
+      url: https://scriptconf.org
 -
   year: 2018
   conferences:
