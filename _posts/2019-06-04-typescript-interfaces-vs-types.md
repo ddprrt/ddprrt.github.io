@@ -104,7 +104,7 @@ Different tools for different use cases, I presume.
 
 There's a bit more to it. You see it when you read the articles linked above. But there's still one more thing we tend to overlook:
 
-## Circular type definitions only work in interfaces
+## Circular type references
 
 This is it. The one difference that made my mind spin. Most of the time I'm working with type aliases and leave interfaces completely on the side. But if I have a data structure that is more complex and might reference itself, I always need to rely to interfaces. Check out this example for instance:
 
