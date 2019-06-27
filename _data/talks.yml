@@ -93,6 +93,15 @@
         -
           title: JAMStackin'
     -
+      title: StripeCon
+      country: Austria
+      city: Krems
+      date: 2019-10-12
+      url: https://stripecon.eu/
+      talks:
+        -
+          title: JAMStackin'
+    -
       title: Script'19 (MC + Org)
       country: Austria
       city: Linz
