@@ -84,6 +84,15 @@
         -
           title: JAMStack on Azure (2hr JAMMIN')
     -
+      title: Halfstack Conf
+      country: Austria
+      city: Vienna
+      date: 2019-09-19
+      url: https://halfstackconf.com/vienna/
+      talks:
+        -
+          title: JAMStackin'
+    -
       title: Script'19 (MC + Org)
       country: Austria
       city: Linz
