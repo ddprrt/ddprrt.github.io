@@ -3,6 +3,8 @@ layout: default
 title: front-end technology talk
 ---
 
+{% assign first_post = true %}
+
 <section class="wrapper">
 	<h1 class="visually-hidden">List of articles</h1>
 	{% for post in paginator.posts %}
@@ -10,10 +12,19 @@ title: front-end technology talk
 			{% if post.external %}
 			<h2 class="post-title"><a href="{{ post.external }}">{{ post.title }}</a></h2>
 			<div class="post-date">{{ post.date | date_to_long_string }}</div>
+			{% if first_post %}
+			{% assign first_post = false %}
+			<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7DT2JM&placement=fettblogeu" id="_carbonads_js"></script>
+			{% endif %}
+
 			{{ post.content}}
 			{% else %}
 			<h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			<div class="post-date">{{ post.date | date_to_long_string }}</div>
+			{% if first_post %}
+			{% assign first_post = false %}
+			<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7DT2JM&placement=fettblogeu" id="_carbonads_js"></script>
+			{% endif %}
 			{% if post.excerpt_small %}
 			{{ post.excerpt_small }}
 			<p><a class="read-more" href="{{post.url}}">Read more</a></p>
