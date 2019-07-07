@@ -24,6 +24,7 @@ See more on:
 - [Record](#record)
 - [Extract](#extract)
 - [Exclude](#exclude)
+- [Omit](#omit)
 - [Bottom line](#bottom-line)
 
 ## Readonly
@@ -349,6 +350,28 @@ area({
   width: 100,
   height: 100
 })  // ✅ compiles;
+```
+
+## Omit
+
+Since version 3.5, TypeScript includes the `Omit<T, K>` helper type. `Omit<T, K>` is
+a shortcut for `Pick<T, Exclude<keyof T, K>>`, but since it was used so often, the team decided to 
+add it:
+
+```javascript
+type Person = {
+    name: string;
+    age: number;
+    location: string;
+};
+
+type Cosmopolitan = Omit<Person, 'location'>;
+
+// equivalent to
+type Cosmopolitan = {
+    name: string;
+    age: number;
+};
 ```
 
 ## Bottom line
