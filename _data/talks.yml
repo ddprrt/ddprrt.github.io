@@ -83,6 +83,7 @@
       talks:
         -
           title: JAMStack on Azure (2hr JAMMIN')
+          slides: https://www.slideshare.net/ddprrt/jamstack-on-azure
     -
       title: Mozilla Roadshow
       country: Austria
