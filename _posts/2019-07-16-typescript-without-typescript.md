@@ -66,9 +66,104 @@ If there's one particular line that errors, but you think you know better, add t
 addVAT('1200', 0.1); // would error otherwise
 ```
 
+## Inline types
+
+Defining parameters is one thing. Sometimes you want to make sure that a variable, which hasn't been assigned
+yet, has the correct type. TypeScript supports inline comment annotations.
+
+```javascript
+/** @type {number} */
+let amount;
+amount = '12'; // 💥 does not work
+```
+
+Don't forget the correct comment syntax. Inline comments with `//` won't work.
+
 ## Defining objects
 
+Basic types is one thing, but in JavaScript you usually deal with complex types and objects. 
+No problem for comment based type annotations:
+
+```javascript
+/**
+ * @param {[{ price: number, vat: number, title: string }]} articles
+ */
+function totalAmount(articles) {
+  return articles.reduce((total, article) => {
+    return total + addVAT(article)
+  }, 0)
+}
+```
+See that we defined a complex object type (just like we would do in TypeScript) inline as 
+a parameter.
+
+Annotating everything inline can become crowded very quickly. There's a more elegant way of defining
+object types through `@typedef`:
+
+```javascript
+/**
+ * @typedef {Object} Article
+ * @property {number} price
+ * @property {number} vat
+ * @property {string} string
+ */
+
+/**
+ * Now we can use Article as a proper type
+ * @param {[Article]} articles
+ */
+function totalAmount(articles) {
+  return articles.reduce((total, article) => {
+    return total + addVAT(article)
+  }, 0)
+}
+```
+
+More work writing, but ultimately more readable. Also TypeScript now can identify `Article` with the name
+`Article`, providing better information in your IDE.
+
 ## Defining functions
+
+Functions can be defined inline, just like their object counterparts:
+
+```javascript
+/**
+ * @param {string} url
+ * @param {(status: number, response: string) => void} cb
+ */
+function loadData(url, cb) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url)
+  xhr.onload = () => {
+    cb(xhr.status, xhr.responseText)
+  }
+}
+```
+
+Again, this can get very confusing quickly. There's the `@callback` annotation that helps with that:
+
+```javascript
+/**
+ * @callback LoadingCallback
+ * @param {number} status
+ * @param {string} response
+ * @returns {void}
+ */
+
+/**
+ * @param {string} url
+ * @param {LoadingCallback} cb
+ */
+function loadData(url, cb) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url)
+  xhr.onload = () => {
+    cb(xhr.status, xhr.responseText)
+  }
+}
+```
+
+`@callback` takes the same parameters as function annotation, but works like `@typedef`
 
 ## Importing types
 
