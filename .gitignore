@@ -3,3 +3,4 @@ _site/
 *.sublime-workspace
 .sass-cache
 .DS_Store
+.vscode
