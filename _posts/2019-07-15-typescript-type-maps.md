@@ -7,15 +7,15 @@ permalink: /typescript-type-maps/
 title: "TypeScript: Mapped types for type maps"
 ---
 
-Factory functions are a popular tool in JavaScript to create a diversity of objects with just one call.
+Factory functions are a popular tool in JavaScript to create a diversity of objects with a single call.
 There's a particular factory function that you might have used at some point:
 
 ```javascript
 document.createElement('video') // creates an HTMLVideoElement
 ```
 
-`document.createElement` takes any string and creates `HTMLElement` instances. `HTMLElement` is probably one
-of the most derived objects in the DOM. Every tag name that is known to the browser creates it's on
+`document.createElement` takes any string and creates `HTMLElement` instances. `HTMLElement` is one
+of the most derived objects in the DOM. Every available tag creates it's on
 derivate. For example `document.createElement('video')` creates an instance of `HTMLVideoElement`.
 
 But how do we type a factory function like that? One that has a couple of dozen different return types? Let's try.
@@ -24,14 +24,14 @@ But how do we type a factory function like that? One that has a couple of dozen 
 
 ## With conditional types
 
-The original typings for `document.createElement` take a string as parameter (let's ignore the options for now),
+The original typings for `document.createElement` take a string as parameter,
 and returns an object of type `HTMLElement`:
 
 ```javascript
 declare function createElement(tag: string, options?: any): HTMLElement
 ```
 
-This is true, but not specific enough. We can be a lot more specific, since we know which tags implement which
+This is true, but not specific enough. We can be a lot more specific, since we know which tags implement corresponding
 `HTMLElement` derivates.
 
 The first thing that came into my mind were conditional types. They were made for use cases like that! 
