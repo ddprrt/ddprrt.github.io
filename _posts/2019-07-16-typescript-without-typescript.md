@@ -86,7 +86,7 @@ No problem for comment based type annotations:
 
 ```javascript
 /**
- * @param {[{ price: number, vat: number, title: string }]} articles
+ * @param {[{ price: number, vat: number, title: string, sold?: boolean }]} articles
  */
 function totalAmount(articles) {
   return articles.reduce((total, article) => {
@@ -106,6 +106,7 @@ object types through `@typedef`:
  * @property {number} price
  * @property {number} vat
  * @property {string} string
+ * @property {boolean=} sold
  */
 
 /**
@@ -122,6 +123,9 @@ function totalAmount(articles) {
 More work writing, but ultimately more readable. Also TypeScript now can identify `Article` with the name
 `Article`, providing better information in your IDE.
 
+Please note the optional parameter `sold`. It's defined with `@property {boolean=} sold`. An alternative 
+syntax is `@property {boolean} [sold]`. Same goes for function `@params`.
+
 ## Defining functions
 
 Functions can be defined inline, just like their object counterparts:
@@ -129,7 +133,7 @@ Functions can be defined inline, just like their object counterparts:
 ```javascript
 /**
  * @param {string} url
- * @param {(status: number, response: string) => void} cb
+ * @param {(status: number, response?: string) => void} cb
  */
 function loadData(url, cb) {
   const xhr = new XMLHttpRequest();
@@ -146,7 +150,7 @@ Again, this can get very confusing quickly. There's the `@callback` annotation t
 /**
  * @callback LoadingCallback
  * @param {number} status
- * @param {string} response
+ * @param {string=} response
  * @returns {void}
  */
 
