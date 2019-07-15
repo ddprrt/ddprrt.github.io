@@ -205,3 +205,5 @@ Pretty sweet, huh?
 
 Type maps are a good tool for factory functions which produce a ton of different results. And most likely
 for a lot, lot more. If you want to expand on the example shown above, take this [gist](https://gist.github.com/ddprrt/61644bdbbb48e577ca54fdb2ee16ed56).
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
