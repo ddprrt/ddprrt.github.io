@@ -20,6 +20,8 @@ derivate. For example `document.createElement('video')` creates an instance of `
 
 But how do we type a factory function like that? One that has a couple of dozen different return types? Let's try.
 
+**NOTE: TypeScript with the `dom` library activated in `tsconfig.json` knows of all `HTMLElement` derivates**.
+
 ## With conditional types
 
 The original typings for `document.createElement` take a string as parameter (let's ignore the options for now),
@@ -88,7 +90,7 @@ type CreatedElement<T extends string> =
 So it's nested. This also means that with every further comparision, there has to be reference to the original 
 comparison. Internally, this can be best done via a recursion. And recursions take up memory. 
 
-This is why TypeScript gives you a hard limit of 50 nested comparisons to make sure memory and performance
+This is why TypeScript gives you a hard limit of **50 nested comparisons** to make sure memory and performance
 goals are met. If you extend your list beyond 50 comparisions, you get the error 
 **"Type instantiation is excessively deep and possibly infinite"**. Check out the issue [#28663](https://github.com/microsoft/TypeScript/issues/28663) on
 Github.
@@ -112,11 +114,8 @@ const elementMap = {
 }
 
 function createElement(tag) {
-  const constr = elementMap[tag];
-  if(constr) {
-    return new constr();
-  }
-  return new HTMLElement();
+  return tag in elementMap ? new elementMap[tag]()
+    : new HTMLElement()
 }
 ```
 
@@ -124,3 +123,85 @@ This obviously doesn't work, that's what the `document.createElement` factory fu
 the way of accessing via the index access operator rather nice. Since every key in an object can be accessed using a
 string, we select the right constructor out of this list, and create a new instance. If we don't have a constructor,
 let's create a generic `HTMLElement`.
+
+In TypeScript, we can create types that work in a similar manner. First, let's create the `AllElements` type which is
+a map of all tags to their corresponding `HTMLElement` derivate:
+
+```javascript
+type AllElements = {
+  'a': HTMLAnchorElement;
+  'div': HTMLDivElement;
+  'video': HTMLVideoElement;
+  ... //extend as you need
+}
+```
+
+This is what I like to call a **type map**. We *could* use this type to create an object of type `AllElements`,
+but in reality we most likely won't need that. We only use this type as an helper type for `CreatedElement`:
+
+```javascript
+type CreatedElement<T extends string> = 
+  T extends keyof AllElements ? AllElements[T] : /** 1 **/
+  HTMLElement;                                   /** 2 **/
+```
+
+1. The type signatur is the same as in the previous example. The generic placeholder `T` extends from `string`.
+   But now we check if `T` is somewhere in the keys of `AllElements`. If so, we index the type that is stored
+   with this particular key `T`. That's how we get the correct derivate!
+2. In all other cases, we have "just" an `HTMLElement`.
+
+Do you see how similar this type definition is to the JavaScript example above? Of course the way I wrote 
+JavaScript earlier is just one way to express myself, and I used it deliberately to show the similarities
+with conditional types. But it shows how close TypeScript tries to be to JavaScript in terms of syntax and
+semantics.
+
+The cool thing is: We are just moving in type space. No source created, just information to make your 
+code a lot safer. Like that:
+
+```javascript
+declare function createElement<T extends string>(tag: T, options?: any): CreatedElement<T>
+```
+
+We can use the function like that:
+
+```javascript
+createElement('video') // It's an HTMLVideoElement
+createElement('video').src = '' // `src` exists
+createElement('a').href = '' // It's an HTMLAnchorElement with an `href`
+```
+
+We can even write our own factory functions, that can do a little more that *just* creating elements:
+
+```javascript
+function elementFactory<T extends string>(tag: T, 
+  defaultProps: Partial<CreatedElement<T>) : CreatedElement<T> {
+
+  const element = createElement(tag);
+  for(key in defaultProps) {
+    element[key] = defaultOptions[key]
+  }
+
+  return element;
+}
+```
+
+This factory takes a couple of default properties that need to be available in the
+generated output element. So things like:
+
+```javascript
+elementFactory('video', { src: '' });
+```
+
+Can even be autocompleted. And TypeScript warns you if you want to specify a property
+that does not exist:
+
+```javascript
+elementFactory('video', { source: '' }) // 💥 Error: this property does not exist
+```
+
+Pretty sweet, huh?
+
+## Bottom line
+
+Type maps are a good tool for factory functions which produce a ton of different results. And most likely
+for a lot, lot more. If you want to expand on the example shown above, take this [gist](https://gist.github.com/ddprrt/61644bdbbb48e577ca54fdb2ee16ed56).
