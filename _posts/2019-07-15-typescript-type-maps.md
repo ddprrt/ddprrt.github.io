@@ -129,9 +129,9 @@ a map of all tags to their corresponding `HTMLElement` derivate:
 
 ```javascript
 type AllElements = {
-  'a': HTMLAnchorElement;
-  'div': HTMLDivElement;
-  'video': HTMLVideoElement;
+  'a': HTMLAnchorElement,
+  'div': HTMLDivElement,
+  'video': HTMLVideoElement,
   ... //extend as you need
 }
 ```
