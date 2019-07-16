@@ -9,7 +9,7 @@ title: "TypeScript without TypeScript -- JSDoc superpowers"
 
 One way to think about TypeScript is as a thin layer around JavaScript that adds type annotations.
 Type annotations that make sure you don't make any mistakes. The TypeScript team worked hard on making
-sure that type checking also works with regular JavaScript files. Let's see how.
+sure that type checking also works with regular JavaScript files. TypeScript's compiler (`tsc`) as well as language support in editors like VSCode give you a great developer experience without any compilation step. Let's see how.
 
 ## Table of contents
 
