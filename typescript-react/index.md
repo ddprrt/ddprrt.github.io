@@ -38,8 +38,9 @@ Ready? Let's go!
 2. [Components](./components/): Components are everything in React. TypeScript gives you a lot of ways how to deal with them.
 3. [Children](./children/): There's nothing more beautiful than children. In React, they even can be functions.
 4. [Events](./events/): Apps are boring if you don't interact with them. Clicks, inputs, etc. are handled here.
-5. [Hooks](./hooks/): Hooks are pretty new and pretty exciting. And already pretty well typed.
-5. [Render props and child render props](./render-props/): Coming soon!
-6. [Context](./context/): React's context API gives you global state with a very lean API.
-7. [Styles](./styles/): Coming soon!
-8. [Further reading](./further-reading/): So many things not covered in our guide. You will find them here.
+5. [Prop Types](./prop-types/): Prop Types are React's built-in way of type checking. We can make good use of that with TypeScript.
+6. [Hooks](./hooks/): Hooks are pretty new and pretty exciting. And already pretty well typed.
+7. [Render props and child render props](./render-props/): Coming soon!
+8. [Context](./context/): React's context API gives you global state with a very lean API.
+9. [Styles](./styles/): Coming soon!
+10. [Further reading](./further-reading/): So many things not covered in our guide. You will find them here.

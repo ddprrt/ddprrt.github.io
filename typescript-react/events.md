@@ -5,8 +5,8 @@ categories:
 - typescript
 published: true
 next:
-  title: Hooks
-  url: ../hooks/
+  title: Prop Types
+  url: ../prop-types/
 ---
 
 Web apps are really boring if you don't interact with them. Events are key, and TypeScript's React typings
@@ -14,7 +14,6 @@ have great support for them.
 
 In this section:
 
-- [url: ../hooks/](#url-hooks)
 - [Basic Event Handling](#basic-event-handling)
 - [Restrictive Event Handling](#restrictive-event-handling)
 - [Where's InputEvent?](#wheres-inputevent)
