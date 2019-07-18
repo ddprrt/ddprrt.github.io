@@ -150,10 +150,10 @@ Typings stay the same.
 ## Context
 
 One concept that relies heavily on render props is Context. I explain context in its
-[own chapter](../context)
+[own chapter](../context).
 
 ## Bottom line
 
 With typings you can easily see that state is the key for render props. We pass state from
 one component to the other through a function. This also means that state is the one type
-that gets shared between components.
+that gets shared between components. Again, there's some excellent reading by [Ali Sharif](https://dev.to/busypeoples/notes-on-typescript-render-props-1f3p)
