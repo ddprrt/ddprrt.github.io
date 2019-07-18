@@ -14,11 +14,11 @@ a full, end-to-end type-checking experience: Compiler and run-time.
 
 In this section:
 
-- [Installing Prop Types](#Installing-Prop-Types)
-- [Inferring Prop Types](#Inferring-Prop-Types)
-- [Combined with defaultProps](#Combined-with-defaultProps)
-- [Children](#Children)
-- [Further reading](#Further-reading)
+- [Installing Prop Types](#installing-prop-types)
+- [Inferring Prop Types](#inferring-prop-types)
+- [Combined with defaultProps](#combined-with-defaultprops)
+- [Children](#children)
+- [Further reading](#further-reading)
 
 ## Installing Prop Types
 
