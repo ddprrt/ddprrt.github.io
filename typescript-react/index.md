@@ -40,7 +40,7 @@ Ready? Let's go!
 4. [Events](./events/): Apps are boring if you don't interact with them. Clicks, inputs, etc. are handled here.
 5. [Prop Types](./prop-types/): Prop Types are React's built-in way of type checking. We can make good use of that with TypeScript.
 6. [Hooks](./hooks/): Hooks are pretty new and pretty exciting. And already pretty well typed.
-7. [Render props and child render props](./render-props/): Coming soon!
+7. [Render props and child render props](./render-props/): *A technique for sharing code between React components using a prop whose value is a function*. We can type that!
 8. [Context](./context/): React's context API gives you global state with a very lean API.
 9. [Styles](./styles/): Coming soon!
 10. [Further reading](./further-reading/): So many things not covered in our guide. You will find them here.
