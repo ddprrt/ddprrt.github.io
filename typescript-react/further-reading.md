@@ -15,5 +15,6 @@ Here's a couple of resources that help you getting more out of TypeScript and Re
 - [ScriptCast episode on TypeScript + React](https://javascript-podcast.com/podcast/16). Recorded with Martin. Check it out!
 - [Building Scalable, Maintainable Apps Using React and TypeScript](https://www.youtube.com/watch?v=owcuEwn-pSM). A pretty good talk by Kamran Ayub on that topic.
 - [Ali Sharif's notes on TypeScript](https://dev.to/busypeoples). Excellent insights into some inner workings of complex types.
+- [Swyx's React + TypeScript cheat sheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet). Comprehensive description on a lot of React + TypeScript topics. Also checkout Swyx's other TypeScript cheat sheets.
 
 If you have more, let me know!
