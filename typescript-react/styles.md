@@ -184,6 +184,22 @@ an emoji 💅. And TypeScript support! TypeScript support comes through `Definit
 npm install @types/styled-components
 ```
 
+It works immediately:
+
+```javascript
+import styled from "styled-components";
+
+export const Heading = styled.h1`
+  font-weight: normal;
+  font-style: italic;
+`;
+```
+
+You get typings directly out of the box. The official [docs](https://www.styled-components.com/docs/api#typescript)
+show you how to work with theming and properties.
+
+Tooling support is available through: [Styled Components for VSCode](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) extension
+
 ## Styled JSX
 
 Styled JSX is by [Zeit](https://zeit.co) and comes with the [Next.js](https://nextjs.org) framework.
@@ -280,5 +296,6 @@ ambient files and include another loader: [css-modules-typescript-loader](https:
 
 Styling requires a bit of infrastructure. Here's some demos to get you started.
 
-- [This Codesandbox](https://codesandbox.io/s/funny-frost-1bxwk) has samples for inline styles and emotion
+- [This Codesandbox](https://codesandbox.io/s/funny-frost-1bxwk) has samples for inline styles, emotion
+  and styled components. Yes! All of them!
 - [The ScriptConf website](https://github.com/stahlstadtjs/scriptconf.org) uses CSS imports and styled-jsx
