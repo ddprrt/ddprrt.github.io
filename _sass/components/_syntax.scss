@@ -13,12 +13,12 @@ $tag: #fff;
 .highlight .cp { color: $generic; } /* Comment.Preproc */
 .highlight .c1 { color: $comment; font-style: italic } /* Comment.Single */
 .highlight .cs { color: $generic; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .gd { color: $inserted; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd { color: red; } /* Generic.Deleted */
 .highlight .gd .x { color: $inserted; background-color: #ffaaaa } /* Generic.Deleted.Specific */
 .highlight .ge { font-style: italic } /* Generic.Emph */
 .highlight .gr { color: #aa0000 } /* Generic.Error */
 .highlight .gh { color: $generic } /* Generic.Heading */
-.highlight .gi { color: $inserted; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi { color: limegreen; } /* Generic.Inserted */
 .highlight .gi .x { color: $inserted; background-color: #aaffaa } /* Generic.Inserted.Specific */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: $generic; } /* Generic.Prompt */
