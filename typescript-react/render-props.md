@@ -15,6 +15,7 @@ In this section:
 - [Render props](#render-props)
 - [Children render props](#children-render-props)
 - [Context](#context)
+- [Bottom line](#bottom-line)
 
 ## Render props
 
