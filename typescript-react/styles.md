@@ -296,6 +296,6 @@ ambient files and include another loader: [css-modules-typescript-loader](https:
 
 Styling requires a bit of infrastructure. Here's some demos to get you started.
 
-- [This Codesandbox](https://codesandbox.io/s/funny-frost-1bxwk) has samples for inline styles, emotion
+- [This Codesandbox](https://codesandbox.io/s/funny-frost-1bxwk) has samples for inline styles, style imports, emotion
   and styled components. Yes! All of them!
 - [The ScriptConf website](https://github.com/stahlstadtjs/scriptconf.org) uses CSS imports and styled-jsx
