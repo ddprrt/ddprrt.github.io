@@ -1,5 +1,5 @@
 ---
-title: "TypeScript and React Guide: Added a new render props chapter"
+title: "TypeScript and React Guide: Added a new styles chapter"
 layout: post
 published: true
 permalink: /redirect-to-typescript-react-styles/
