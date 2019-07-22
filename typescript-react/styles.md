@@ -195,7 +195,28 @@ export const Heading = styled.h1`
 `;
 ```
 
-You get typings directly out of the box. The official [docs](https://www.styled-components.com/docs/api#typescript)
+You get typings directly out of the box.
+
+You can constraint CSS properties to certain values if you like, or even pass custom properties to
+regular CSS properties. You need to explicitly type your styled component:
+
+```javascript
+type FlexProps = {
+  direction?: 'row' | 'column',
+}
+
+export const Flex = styled.div<FlexProps>`
+    display: flex;
+    flex-direction: ${props => props.direction};
+`;
+
+// use it like that:
+const el = <Flex direction="row"></Flex>
+```
+
+All perfectly typed and autocompletion ready.
+
+The official [docs](https://www.styled-components.com/docs/api#typescript)
 show you how to work with theming and properties.
 
 Tooling support is available through: [Styled Components for VSCode](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components) extension
