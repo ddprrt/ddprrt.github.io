@@ -98,7 +98,7 @@ as an input for our laptop. Sounds hard! We can achieve this in two steps:
 We somehow need to make sure the speaker laptop video out not only goes to the projector, but also to us.
 For that we need to split the signal and lead it to both video input sinks.
 
-![Diagram showing what we want to do](/wp-content/uploads/2019/streaming-2.svg)
+![Diagram showing what we want to do](/wp-content/uploads/2019/streaming-2.svg?id=2)
 
 For that, I can highly recommend the CSL HDMI Splitter. Works like a charm, has external power supply to
 make sure that it can handle the signal. One input, two outputs, 20 EUR:
