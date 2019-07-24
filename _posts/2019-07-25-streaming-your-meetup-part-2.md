@@ -48,17 +48,35 @@ With every option you get, you'll also see info for those two criterias:
 1. Is an external microphone possible
 2. Do you need CamLink
 
-Ready? Let's check out our first option.
+Also, you most likely need a [Tripod](https://amzn.to/2OqUpoK). This one costs roughly 30 EUR.
+
+Ready? Let's check our first option.
 
 ## The webcam
 
+Who would have thought, a simple Webcam does the trick. Those things are not as popular anymore since
+every notebook has one built-in, but they still exist and are of great quality.
+
+One that is very popular with streamers is the [Logitech C920](https://amzn.to/30PFwh6). Great video quality,
+plug and play, extra software to fine-tune it. My friend Tom uses it to stream meetups, check out one 
+[of the recordings on YouTube](https://www.youtube.com/watch?v=KMfM7cV49Ts). Keep in mind that you have to be
+very close to the speaker to get a proper video.
+
+The camera costs around 100 EUR, but sometimes it's sold for around 70 EUR.
+
+The best thing: IT FITS ON A TRIPOD! Yes! Probably the only webcam I know that fits perfectly well on a
+regular Tripod.
+
+- No external microphone possible 👎
+- Does not need CamLink 👍
+
 ## The camcorder
+
+
 
 ## The DSLR
 
 ## The iPhone
-
-## Pro equipment
 
 ## Summary
 
