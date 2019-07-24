@@ -6,6 +6,8 @@ categories:
 published: true
 permalink: /streaming-your-meetup-part-1-projector/
 title: "Streaming your Meetup - Part 1: Basics and Projector"
+og:
+  img: wp-content/uploads/2019/streaming-1.jpg
 ---
 
 When we did [Script'18](https://scriptconf.org/2018) in January 2018, we borrowed an A/V equipment worth of 35.000 EUR
