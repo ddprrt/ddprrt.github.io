@@ -25,8 +25,8 @@ to quite expensive in some cases. But I always refrain from pro equipment.
 
 I split the whole series into four pieces:
 
-1. Basics and Projector -- *you are here*
-2. Recording the speaker -- *coming soon*
+1. Basics and Projector -- 📍*you are here*
+2. [Recording the speaker](/streaming-your-meetup-part-2-video/)
 3. Recording audio -- *coming soon*
 4. Directing and streaming with OBS -- *coming soon*
 
