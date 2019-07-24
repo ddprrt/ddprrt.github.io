@@ -14,7 +14,7 @@ We successfully set up the projector in our last [chapter](/streaming-your-meetu
 Now it's time to record the speaker himself. I'll show you a couple of options how you can record
 the speaker video. It's up to your budget and up to the quality you want to achieve. 
 
-![Recording with a camera](/wp-content/2019/streaming-5.jpg)
+![Recording with a camera](/wp-content/uploads/2019/streaming-5.jpg)
 
 Maybe you are already into photography and have nice DSLR at home. This might totally do for recording
 the speaker video. Even better: This might acutally be the best option. 
@@ -140,7 +140,7 @@ If you don't use an external webcam, almost all solutions are able to have an ex
 
 This is the setup so far:
 
-![The streaming setup](/wp-content/2019/streaming-6.jpg)
+![The streaming setup](/wp-content/uploads/2019/streaming-6.png)
 
 - 2 extra HDMI cables (we assume that there is one available from the projector)
 - An HDMI splitter
