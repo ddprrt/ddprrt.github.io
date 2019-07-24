@@ -41,7 +41,8 @@ There's two things to keep in mind:
 2. Not every camera has the possibility to be connected to your laptop. Most of them have HDMI out to be connected
    to a monitor or to your TV screen. There's a solution for that, and you know it already from the last chapter:
    [CamLink](https://amzn.to/2K3NiNX). I bought a second one just for our cams. Also: never connect two CamLinks to
-   the same USB port. Use two different ones, because they use all the power they need.
+   the same USB port. Use two different ones, because they use all the power they need. Definitely check if your
+   [camera is compatible with CamLink](https://www.elgato.com/de/gaming/cam-link/camera-check).
 
 With every option you get, you'll also see info for those two criterias:
 
@@ -58,7 +59,7 @@ Who would have thought, a simple Webcam does the trick. Those things are not as 
 every notebook has one built-in, but they still exist and are of great quality.
 
 One that is very popular with streamers is the [Logitech C920](https://amzn.to/30PFwh6). Great video quality,
-plug and play, extra software to fine-tune it. My friend Tom uses it to stream meetups, check out one 
+plug and play, extra software to fine-tune it. My friend [Tom](https://twitter.com/tompson) uses it to stream meetups, check out one 
 [of the recordings on YouTube](https://www.youtube.com/watch?v=KMfM7cV49Ts). Keep in mind that you have to be
 very close to the speaker to get a proper video.
 
@@ -72,11 +73,51 @@ regular Tripod.
 
 ## The camcorder
 
+For my meetups we use a camcorder. We bought the [Legria HF R806](https://amzn.to/2GsPhu3), but I'm not entirely 
+convinced. It's nice as it works with CamLink, but it doesn't have any external microphone input. Also, the quality
+lacks when lights are dim. You can do a lot with the onboard settings, but overall, I expected a bit more. THe price
+is ok. Around 250 EUR.
 
+The cool thing is, though, that you can record hours of material next to streaming it to your laptop. Which means
+I always have a video backup should anything crash on the laptop.
+
+My friend [Rainer](https://twitter.com/rstropek) uses a [Sony FDR-AX33](https://amzn.to/2LGdlOn). This one has an audio jack for an external microphone, and the quality is supreme. It also costs a lot more, this one is sold for 500 EUR.
+
+But hey, check out the quality in [one of Rainer's videos](https://www.youtube.com/watch?v=umJE9my_Aeg).
+
+- External microphone possible 👍
+- Does need CamLink 👎
 
 ## The DSLR
 
+DSLRs are not camcorders or video recorders. They are not there to record lengthy videos, and most of them
+stop after 15 minutes due to some taxation issues. But: They are available. Either you or one of your relatives
+could have one and they create *great* shots. 
+
+I would not recommend buying one extra for streaming, because they are expensive. Around 500-800 EUR just
+for the camera, and then you have to invest in lenses. The Canon EOS series allows for external microphones,
+but is hard to use with CamLink. 
+
+The Sony cameras (A5100, A6000) don't have an external microphone check, but work great with CamLink.
+Your choice.
+
+- External microphone possible 👍
+- Does need CamLink 👎
+
+## The action camera
+
+Another possibility, somewhere inbetween Camcorder and DSLR, is a [GoPro action camera](https://amzn.to/2YnHFTI). They
+are affordable ([180EUR](https://amzn.to/2YpT3P1) to 350 EUR), and have great accessories. There's an adapter for [10 EUR for an external microphone](https://amzn.to/2OiwF6t).
+
+The video is not typically conference like, but you might like that.
+
+- External microphone possible 👍
+- Does need CamLink 👎
+
 ## The iPhone
+
+- External microphone possible 👍
+- Does not need CamLink 👍
 
 ## Summary
 
