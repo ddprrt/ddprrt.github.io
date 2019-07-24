@@ -14,6 +14,8 @@ We successfully set up the projector in our last [chapter](/streaming-your-meetu
 Now it's time to record the speaker himself. I'll show you a couple of options how you can record
 the speaker video. It's up to your budget and up to the quality you want to achieve. 
 
+![Recording with a camera](/wp-content/2019/streaming-5.jpg)
+
 Maybe you are already into photography and have nice DSLR at home. This might totally do for recording
 the speaker video. Even better: This might acutally be the best option. 
 
@@ -116,9 +118,44 @@ The video is not typically conference like, but you might like that.
 
 ## The iPhone
 
+There's another possibility that has popped up: The iPhone. Elgato (the people behind CamLink), released
+[Stream Link for 11 EUR](https://www.elgato.com/de/gaming/screen-link). This, together with the [Game Capture Studio](https://www.elgato.com/de/gaming/game-capture-software) allows you to stream your iPhone camera (or screen!) to your
+PC. It requires *great* WiFi, thought. Don't be fooled, it's nowhere as stable as good old plugs. But it might be an
+option if your laptop hardware and the WiFi you have is strong enough to support this. And: an external microphone is
+possible. Great!
+
+Other than that: There's a possibility to connect your phone with CamLink and use it as a camera. Sweet.
+
 - External microphone possible 👍
 - Does not need CamLink 👍
 
 ## Summary
 
-## Money we spent so far
+Lots of options, all of them good, all of them different. They might suit your situation or your
+budget, or you might not produce the results you wish to achieve. Make sure the hardware selected is
+suitable for your everyday need.
+
+If you don't use an external webcam, almost all solutions are able to have an external microphone
+(if you select the right model), and need CamLink. They differ in quality, budget, and availability.
+
+This is the setup so far:
+
+![The streaming setup](/wp-content/2019/streaming-6.jpg)
+
+- 2 extra HDMI cables (we assume that there is one available from the projector)
+- An HDMI splitter
+- 1-2 CamLinks
+- A webcam (or similar)
+- Your streaming notebook
+
+
+## Money spent so far
+
+You have a ton of options that are all cheaper than a pro camera. But they produce different results. If you do a
+lot of streaming, I'd recommend investing in a Sony camcorder with an external microphone jack, and CamLink. Another CamLink costs another 130 EUR. Don't forget to add that amount to your calculations.
+If you are for the most affordable one, let's buy a Logitech Webcam on sale and a tripod:
+
+- [Tripod (Amazon)](https://amzn.to/2OqUpoK): 30 EUR
+- [Logitech C920](https://amzn.to/30PFwh6): 70 EUR on sale
+
+100 EUR. Together with 190 EUR from the first chapter, we spent **290 EUR** to stream.
