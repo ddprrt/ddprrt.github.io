@@ -67,7 +67,7 @@ very close to the speaker to get a proper video.
 
 The camera costs around 100 EUR, but sometimes it's sold for around 70 EUR.
 
-The best thing: IT FITS ON A TRIPOD! Yes! Probably the only webcam I know that fits perfectly well on a
+The best thing: IT FITS ON A TRIPOD! Yes! Probably the only webcam I know that can be mounted on a
 regular Tripod.
 
 - No external microphone possible 👎
