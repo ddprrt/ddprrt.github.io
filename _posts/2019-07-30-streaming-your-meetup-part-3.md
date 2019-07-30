@@ -7,7 +7,7 @@ published: true
 permalink: /streaming-your-meetup-part-2-audio/
 title: "Streaming your Meetup - Part 3: Speaker audio"
 og:
-  img: wp-content/uploads/2019/streaming-7.jpg
+  img: wp-content/uploads/2019/streaming-8.jpg
 ---
 
 We successfully set up the projector in the [first chapter](/streaming-your-meetup-part-1-projector/).
