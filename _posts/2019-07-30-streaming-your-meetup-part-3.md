@@ -4,7 +4,7 @@ categories:
   - Conferences
   - Meetups
 published: true
-permalink: /streaming-your-meetup-part-2-audio/
+permalink: /streaming-your-meetup-part-3-audio/
 title: "Streaming your Meetup - Part 3: Speaker audio"
 og:
   img: wp-content/uploads/2019/streaming-8.jpg
