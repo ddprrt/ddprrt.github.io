@@ -28,7 +28,7 @@ I split the whole series into four pieces:
 1. Basics and Projector -- 📍*you are here*
 2. [Recording the speaker](/streaming-your-meetup-part-2-video/)
 3. [Recording audio](/streaming-your-meetup-part-2-audio/)
-4. Directing and streaming with OBS -- *coming soon*
+4. [Directing and streaming with OBS](/streaming-your-meetup-part-4-obs/)
 
 Enjoy!
 

@@ -24,7 +24,7 @@ So check out how to record and stream your speaker, and be sure to check out the
 1. [Basics and Projector](/streaming-your-meetup-part-1-projector/)
 2. Recording the speaker -- 📍*you are here*
 3. [Recording audio](/streaming-your-meetup-part-2-audio/)
-4. Directing and streaming with OBS -- *coming soon*
+4. [Directing and streaming with OBS](/streaming-your-meetup-part-4-obs/)
 
 Let's go!
 

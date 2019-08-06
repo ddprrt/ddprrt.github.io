@@ -21,7 +21,7 @@ There are a ton of options for sound, let's make sure your speakers sound great!
 1. [Basics and Projector](/streaming-your-meetup-part-1-projector/)
 2. [Recording the speaker](/streaming-your-meetup-part-2-video/)
 3. Recording audio -- 📍*you are here*
-4. Directing and streaming with OBS -- *coming soon*
+4. [Directing and streaming with OBS](/streaming-your-meetup-part-4-obs/)
 
 Let's go!
 
