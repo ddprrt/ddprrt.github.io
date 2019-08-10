@@ -183,7 +183,7 @@ when you know you can afford it.
 ## The end.
 
 This is it! So far, at least. We were able to get a decent streaming setup for **315 EUR**,
-and with the professional, yet free **Open Broadtcaster Software** we are able to stream
+and with the professional, yet free **Open Broadcaster Software** we are able to stream
 the whole show over the wire to your meetup members who can't attend.
 
 We've done this a lot with meetups like [Technologieplauscherl](https://www.youtube.com/channel/UCm-I-sGS8ZivBDHB9erkjCg)
