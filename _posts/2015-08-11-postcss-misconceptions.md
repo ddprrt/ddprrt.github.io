@@ -1,5 +1,5 @@
 ---
-title: "PostCSS Misconceptions"
+title: "PostCSS Misconceptions (ext)"
 layout: post
 published: true
 permalink: /postcss-misconceptions-orig/
