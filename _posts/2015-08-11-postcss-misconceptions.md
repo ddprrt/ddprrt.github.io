@@ -1,8 +1,9 @@
 ---
-title: "PostCSS Misconceptions (ext)"
+title: "PostCSS Misconceptions"
 layout: post
 published: true
 permalink: /postcss-misconceptions-orig/
+id: /postcss-misconceptions-orig/
 layout: redirect
 external: https://medium.com/@ddprrt/postcss-misconceptions-faf5dc5038df
 showcontent: true
