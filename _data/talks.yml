@@ -117,6 +117,15 @@
       city: Linz
       date: 2019-10-25
       url: https://scriptconf.org
+    -
+      title: Nodeconf.eu
+      country: Ireland
+      city: Kilkenny
+      date: 2019-11-11
+      url: https://nodeconf.eu/
+      talks:
+        -
+          title: JAMStackin'
 -
   year: 2018
   conferences:
