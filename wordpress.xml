@@ -27,13 +27,13 @@
 
 <channel>
 	<title>frontend technology talk</title>
-	<link>http://www.fettblog.eu</link>
+	<link>https://fettblog.eu</link>
 	<description></description>
 	<pubDate>Thu, 12 Dec 2013 19:30:28 +0000</pubDate>
 	<language>en-GB</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://www.fettblog.eu</wp:base_site_url>
-	<wp:base_blog_url>http://www.fettblog.eu</wp:base_blog_url>
+	<wp:base_site_url>https://fettblog.eu</wp:base_site_url>
+	<wp:base_blog_url>https://fettblog.eu</wp:base_blog_url>
 
 	<wp:author><wp:author_id>1</wp:author_id><wp:author_login>admin</wp:author_login><wp:author_email>sbaumg@gmail.com</wp:author_email><wp:author_display_name><![CDATA[ddprrt]]></wp:author_display_name><wp:author_first_name><![CDATA[Stefan]]></wp:author_first_name><wp:author_last_name><![CDATA[Baumgartner]]></wp:author_last_name></wp:author>
 	<wp:author><wp:author_id>2</wp:author_id><wp:author_login>thpnk</wp:author_login><wp:author_email>thomas.pink@me.com</wp:author_email><wp:author_display_name><![CDATA[Thomas Pink]]></wp:author_display_name><wp:author_first_name><![CDATA[Thomas]]></wp:author_first_name><wp:author_last_name><![CDATA[Pink]]></wp:author_last_name></wp:author>
@@ -133,10 +133,10 @@
 
 	<item>
 				<title>Speaking</title>
-		<link>http://www.fettblog.eu/talks-slides/</link>
+		<link>https://fettblog.eu/talks-slides/</link>
 		<pubDate>Mon, 19 Nov 2012 15:44:04 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?page_id=57</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?page_id=57</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>From time to time I speak at conferences and other events, mostly about mobile browser quirks, progressive enhancement, front-end development in large groups and tooling.</p>
 
@@ -206,10 +206,10 @@
 	</item>
 	<item>
 				<title>When to use jQuery - Part 1</title>
-		<link>http://www.fettblog.eu/?p=62</link>
+		<link>https://fettblog.eu/?p=62</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=62</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=62</guid>
 		<description></description>
 		<content:encoded><![CDATA[jQuery is a blast! It has a very easy to understand and mighty API, plus it does us web developers a big favour: It fixes years of DOM raping with one handy interface. Getting into jQuery is very easy, and even if you don't have that much experience in software development or programming in general, you will get good results very fast. 
 
@@ -287,10 +287,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>Foto 22.11.12 18 39 45</title>
-		<link>http://www.fettblog.eu/blog/2012/11/26/technologieplauscherl-at-netural/foto-22-11-12-18-39-45/</link>
+		<link>https://fettblog.eu/blog/2012/11/26/technologieplauscherl-at-netural/foto-22-11-12-18-39-45/</link>
 		<pubDate>Mon, 26 Nov 2012 13:30:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2012/11/Foto-22.11.12-18-39-45.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2012/11/Foto-22.11.12-18-39-45.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -306,7 +306,7 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2012/11/Foto-22.11.12-18-39-45.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2012/11/Foto-22.11.12-18-39-45.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2012/11/Foto-22.11.12-18-39-45.jpg]]></wp:meta_value>
@@ -314,10 +314,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>Test</title>
-		<link>http://www.fettblog.eu/?page_id=98</link>
+		<link>https://fettblog.eu/?page_id=98</link>
 		<pubDate>Thu, 06 Dec 2012 14:15:01 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?page_id=98</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?page_id=98</guid>
 		<description></description>
 		<content:encoded><![CDATA[<ul>
 <li>Pseudoelemente
@@ -357,10 +357,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>Forecast.io</title>
-		<link>http://www.fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-52-57/</link>
+		<link>https://fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-52-57/</link>
 		<pubDate>Wed, 24 Apr 2013 19:24:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -376,7 +376,7 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/04/Foto-24.04.13-20-52-57.png]]></wp:meta_value>
@@ -388,10 +388,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>Forecast.io</title>
-		<link>http://www.fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-53-46/</link>
+		<link>https://fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-53-46/</link>
 		<pubDate>Wed, 24 Apr 2013 19:24:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -407,7 +407,7 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/04/Foto-24.04.13-20-53-46.png]]></wp:meta_value>
@@ -419,10 +419,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>ExtFM, based on PhoneGap</title>
-		<link>http://www.fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-54-34/</link>
+		<link>https://fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/foto-24-04-13-20-54-34/</link>
 		<pubDate>Wed, 24 Apr 2013 19:24:32 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -438,7 +438,7 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/04/Foto-24.04.13-20-54-34.png]]></wp:meta_value>
@@ -450,10 +450,10 @@ Why? Because it changed 200 elements in our tree synchronously and by adding dif
 	</item>
 	<item>
 				<title>Brugger Comment Palace</title>
-		<link>http://www.fettblog.eu/brugger-comment-palace/</link>
+		<link>https://fettblog.eu/brugger-comment-palace/</link>
 		<pubDate>Mon, 06 May 2013 14:41:29 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?page_id=152</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?page_id=152</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>This is a place to appreciate and worship the great lyrical greatness of the talented comment writer Brugger.</p>
 
@@ -636,14 +636,14 @@ carouselElements.each(function(){
 	</item>
 	<item>
 				<title>About</title>
-		<link>http://www.fettblog.eu/contact/</link>
+		<link>https://fettblog.eu/contact/</link>
 		<pubDate>Mon, 03 Jun 2013 10:16:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?page_id=171</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?page_id=171</guid>
 		<description></description>
 		<content:encoded><![CDATA[I'm Stefan Baumgartner, I'm a web developer/web lover based in Linz, Austria. I'm the head of the frontend development team at <a href="http://www.netural.com">Netural</a>. Recently I became co-host at the German <a href="http://www.workingdraft.de">Workingdraft</a> podcast.
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33-220x300.jpg" alt="@ddprrt" width="220" height="300" class="alignnone size-medium wp-image-221" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33-220x300.jpg" alt="@ddprrt" width="220" height="300" class="alignnone size-medium wp-image-221" /></a></p>
 
 <h2>ddprrt? What the ...?</h2>
 
@@ -676,10 +676,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>Bildschirmfoto 2013-06-04 um 16.07.15</title>
-		<link>http://www.fettblog.eu/?attachment_id=197</link>
+		<link>https://fettblog.eu/?attachment_id=197</link>
 		<pubDate>Tue, 04 Jun 2013 14:20:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -695,7 +695,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png]]></wp:meta_value>
@@ -707,10 +707,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>Foto 03.06.13 11 58 13</title>
-		<link>http://www.fettblog.eu/?attachment_id=198</link>
+		<link>https://fettblog.eu/?attachment_id=198</link>
 		<pubDate>Tue, 04 Jun 2013 14:21:01 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -726,7 +726,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/Foto-03.06.13-11-58-13.png]]></wp:meta_value>
@@ -738,10 +738,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>beyond1</title>
-		<link>http://www.fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond1/</link>
+		<link>https://fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond1/</link>
 		<pubDate>Thu, 06 Jun 2013 11:31:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -757,7 +757,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/beyond1.jpg]]></wp:meta_value>
@@ -769,10 +769,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>beyond2kate</title>
-		<link>http://www.fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond2kate/</link>
+		<link>https://fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond2kate/</link>
 		<pubDate>Thu, 06 Jun 2013 11:31:44 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -788,7 +788,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/beyond2kate.jpg]]></wp:meta_value>
@@ -800,10 +800,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>beyond3josh</title>
-		<link>http://www.fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond3josh/</link>
+		<link>https://fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond3josh/</link>
 		<pubDate>Thu, 06 Jun 2013 11:31:45 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -819,7 +819,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/beyond3josh.jpg]]></wp:meta_value>
@@ -831,10 +831,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>beyond4james</title>
-		<link>http://www.fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond4james/</link>
+		<link>https://fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/beyond4james/</link>
 		<pubDate>Thu, 06 Jun 2013 11:31:46 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -850,7 +850,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/beyond4james.jpg]]></wp:meta_value>
@@ -862,10 +862,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>@ddprrt</title>
-		<link>http://www.fettblog.eu/contact/foto-02-05-12-10-54-33/</link>
+		<link>https://fettblog.eu/contact/foto-02-05-12-10-54-33/</link>
 		<pubDate>Fri, 07 Jun 2013 10:09:35 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -881,7 +881,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/06/Foto-02.05.12-10-54-33.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/06/Foto-02.05.12-10-54-33.jpg]]></wp:meta_value>
@@ -893,10 +893,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>bat63</title>
-		<link>http://www.fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/bat63/</link>
+		<link>https://fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/bat63/</link>
 		<pubDate>Mon, 15 Jul 2013 11:37:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/07/bat63.svg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/07/bat63.svg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -912,7 +912,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/07/bat63.svg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/07/bat63.svg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/07/bat63.svg]]></wp:meta_value>
@@ -920,10 +920,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>thomas</title>
-		<link>http://www.fettblog.eu/blog/2013/10/10/digital-visions-2013/thomas/</link>
+		<link>https://fettblog.eu/blog/2013/10/10/digital-visions-2013/thomas/</link>
 		<pubDate>Thu, 10 Oct 2013 09:39:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/10/thomas.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/10/thomas.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -939,7 +939,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/10/thomas.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/10/thomas.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/10/thomas.jpg]]></wp:meta_value>
@@ -951,10 +951,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>mespeaking</title>
-		<link>http://www.fettblog.eu/blog/2013/10/10/digital-visions-2013/mespeaking/</link>
+		<link>https://fettblog.eu/blog/2013/10/10/digital-visions-2013/mespeaking/</link>
 		<pubDate>Thu, 10 Oct 2013 09:40:20 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -970,7 +970,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/10/mespeaking.jpg]]></wp:meta_value>
@@ -982,10 +982,10 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>crowd</title>
-		<link>http://www.fettblog.eu/blog/2013/10/10/digital-visions-2013/crowd/</link>
+		<link>https://fettblog.eu/blog/2013/10/10/digital-visions-2013/crowd/</link>
 		<pubDate>Thu, 10 Oct 2013 09:43:17 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/wp-content/uploads/2013/10/crowd.jpg</guid>
+		<guid isPermaLink="false">https://fettblog.eu/wp-content/uploads/2013/10/crowd.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1001,7 +1001,7 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 		<wp:post_type>attachment</wp:post_type>
 		<wp:post_password></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-		<wp:attachment_url>http://www.fettblog.eu/wp-content/uploads/2013/10/crowd.jpg</wp:attachment_url>
+		<wp:attachment_url>https://fettblog.eu/wp-content/uploads/2013/10/crowd.jpg</wp:attachment_url>
 		<wp:postmeta>
 			<wp:meta_key>_wp_attached_file</wp:meta_key>
 			<wp:meta_value><![CDATA[2013/10/crowd.jpg]]></wp:meta_value>
@@ -1013,12 +1013,12 @@ If you want to get in touch with me, just shoot an <a href="mailto:sbaumg@gmail.
 	</item>
 	<item>
 				<title>HTML5 Audio on mobile devices</title>
-		<link>http://www.fettblog.eu/blog/2012/04/08/html5-audio-on-mobile-devices/</link>
+		<link>https://fettblog.eu/blog/2012/04/08/html5-audio-on-mobile-devices/</link>
 		<pubDate>Sun, 08 Apr 2012 20:05:43 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=6</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=6</guid>
 		<description></description>
-		<content:encoded><![CDATA[ <p>HTML5 Audio on desktop browsers is a mess. But you haven't experienced true pain and suffering until you try to get HTML5 audio done on mobile devices. This article is a follow-up to <a href="http://www.fettblog.eu/slides/HTML5Mobile">my talk at the Barcamp in Salzburg</a> in March and was inspired by <a href="https://twitter.com/#!/codepo8/status/187790267464679424">Chris Heilmans tweets</a> on that topic a few days ago.</p>
+		<content:encoded><![CDATA[ <p>HTML5 Audio on desktop browsers is a mess. But you haven't experienced true pain and suffering until you try to get HTML5 audio done on mobile devices. This article is a follow-up to <a href="https://fettblog.eu/slides/HTML5Mobile">my talk at the Barcamp in Salzburg</a> in March and was inspired by <a href="https://twitter.com/#!/codepo8/status/187790267464679424">Chris Heilmans tweets</a> on that topic a few days ago.</p>
   <p>
 First of all: We all know <a href="http://www.modernizr.org/">Modernizr</a>, we all use it and we all love it. With Modernizr we made a huge step away from applying features by browser detection towards feature detection. This is not only the recommended way of building websites and web-apps, but even more a mindset or way of thinking: Ask your browser what he can do (do a <strong>test</strong>), and you know what you <strong>can use</strong>, absolutely independent of browser vendors and versions.
 </p>
@@ -1136,7 +1136,7 @@ function playSoundFile(idx) {
 			<wp:comment_id>2</wp:comment_id>
 			<wp:comment_author><![CDATA[Of mice and touches | front-end technology talk]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.fettblog.eu/blog/2012/05/01/of-mice-and-touches/</wp:comment_author_url>
+			<wp:comment_author_url>https://fettblog.eu/blog/2012/05/01/of-mice-and-touches/</wp:comment_author_url>
 			<wp:comment_author_IP>81.19.145.238</wp:comment_author_IP>
 			<wp:comment_date>2012-11-15 22:25:13</wp:comment_date>
 			<wp:comment_date_gmt>2012-11-15 20:25:13</wp:comment_date_gmt>
@@ -1149,10 +1149,10 @@ function playSoundFile(idx) {
 	</item>
 	<item>
 				<title>Remake, Remodel.</title>
-		<link>http://www.fettblog.eu/blog/2012/11/15/remake-remodel/</link>
+		<link>https://fettblog.eu/blog/2012/11/15/remake-remodel/</link>
 		<pubDate>Thu, 15 Nov 2012 20:08:48 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=14</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=14</guid>
 		<description></description>
 		<content:encoded><![CDATA[Let's face it: ModX -- even with the Articles Plugin -- isn't suitable for fast blogging. At least not in the way I need it. So I switched back to Wordpress. Setting the whole thing up from scratch. So there will be some changes in the next days/weeks/months.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1180,10 +1180,10 @@ function playSoundFile(idx) {
 	</item>
 	<item>
 				<title>Robust (but hacky) way of portrait / land&#173;scape detection</title>
-		<link>http://www.fettblog.eu/blog/2012/04/16/robust-but-hacky-way-of-portraitlandscape-detection/</link>
+		<link>https://fettblog.eu/blog/2012/04/16/robust-but-hacky-way-of-portraitlandscape-detection/</link>
 		<pubDate>Mon, 16 Apr 2012 20:18:05 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=20</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=20</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>On mobile devices it's pretty easy (and in some cases also pretty cool) to change the look of your website respectively to the orientation of your device with media queries. However, sometimes the orientation does not only affect your layout, but also the routines of your Javascript. This article shows some possibilites how to detect portrait/landscape orientation on your mobile device. Some are less robust considering multiple device vendors, and some are in exchange a lot more hacky. You're gonna love it.</p>
   <p>When searching for portrait/landscape orientation detection we mostly get the following, well known results on Stackoverflow and consorts:</p>
@@ -1363,10 +1363,10 @@ Know your devices and if possible, use <code>window.matchMedia</code> for your o
 	</item>
 	<item>
 				<title>Of mice and touches</title>
-		<link>http://www.fettblog.eu/blog/2012/05/01/ie9-mobile-is-no-touch-browser/</link>
+		<link>https://fettblog.eu/blog/2012/05/01/ie9-mobile-is-no-touch-browser/</link>
 		<pubDate>Tue, 01 May 2012 20:21:43 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=22</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=22</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Unbelievable, but true: Imagine you bought a new Windows Phone 7 (e.g. Nokia Lumia or Samsung Omnia) with "Mango" on it and try to get your mobile web app running, you will be really surprised when finding out, that there's no touch event available.</p>
   <p>
@@ -1436,7 +1436,7 @@ function myMethod(ev) {
 <li>Downloadable fonts. Font face is supported, but fonts aren't cached</li>
 <li>Cross window communication</li>
 <li>CMYK images (do we need that?)</li>
-<li>Streaming audio. And that leads us to <a href="http://www.fettblog.eu/blog/2012/04/08/html5-audio-on-mobile-devices/">this issue we had to face once</a>
+<li>Streaming audio. And that leads us to <a href="https://fettblog.eu/blog/2012/04/08/html5-audio-on-mobile-devices/">this issue we had to face once</a>
 </li></ul>
 
 <p>Actually, it's quite nice that the mobile version of this browser behaves <strong>almost</strong> the same as the desktop browser, which makes developing alot easier. On the other hand, I think a touch device, and thus a browser on a touch device, is much more different than your average desktop. So we also need a certain differency in behaviour! The features added by the touch event on mobile webkit browsers allow us much more flexibilty and possibilites for our web apps. Furthermore, it's just wrong to treat your finger as a mouse.</p>]]></content:encoded>
@@ -1469,10 +1469,10 @@ function myMethod(ev) {
 	</item>
 	<item>
 				<title>Forcing browsers to print all pages in grayscale</title>
-		<link>http://www.fettblog.eu/blog/2012/06/11/forcing-chrome-to-print-all-pages-in-grayscale/</link>
+		<link>https://fettblog.eu/blog/2012/06/11/forcing-chrome-to-print-all-pages-in-grayscale/</link>
 		<pubDate>Mon, 11 Jun 2012 20:25:43 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=24</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=24</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Very short snipplet, but very effective.</p>
   <p>With Chrome 18 CSS3 filters are finally implemented and you can do amazing stuff with them. One thing we tried and which we found rather useful than fancy is to force Chrome printing all content on your website in grayscale.</p>
@@ -1581,10 +1581,10 @@ And here's the SVG Markup for the grayscale filter:
 	</item>
 	<item>
 				<title>Preventing FOUT in IE9</title>
-		<link>http://www.fettblog.eu/blog/2012/11/16/preventing-fout-on-ie9/</link>
+		<link>https://fettblog.eu/blog/2012/11/16/preventing-fout-on-ie9/</link>
 		<pubDate>Fri, 16 Nov 2012 18:33:57 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=32</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=32</guid>
 		<description></description>
 		<content:encoded><![CDATA[FOUT is an abbrevation for flash of unstyled text (or type) and is one of those really nasty bits in modern frontend development. Summarized it means that if you use webfonts it might happen that you first see your text displayed in a fallback font until the downloadble webfont is loaded, parsed and inserted. <a href="http://remysharp.com/2009/06/23/safaris-problem-with-font-face/" target="_blank">Remy Sharp</a> and <a href="http://paulirish.com/2009/fighting-the-font-face-fout/" target="_blank">Paul Irish</a> did a lot of research on that topic more than three years ago.
 
@@ -1696,10 +1696,10 @@ The seperating of those browser related stylesheets might not be the most elegan
 	</item>
 	<item>
 				<title>&quot;Tech&#173;no&#173;logie&#173;plausch&#173;erl&quot; at Netural</title>
-		<link>http://www.fettblog.eu/blog/2012/11/26/technologieplauscherl-at-netural/</link>
+		<link>https://fettblog.eu/blog/2012/11/26/technologieplauscherl-at-netural/</link>
 		<pubDate>Mon, 26 Nov 2012 13:31:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=84</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=84</guid>
 		<description></description>
 		<content:encoded><![CDATA[On Thursday we held the "<a href="http://www.barcamp.at/Technologieplauscherl" target="_blank">Technologieplauscherl</a>" at Netural for the first time. The "Plauscherl" (which translates to technology talk, but is unrelated to my beloved F.E.T.T.) is some sort of short evening barcamp held by the local dev community of Linz in different locations, mostly offices from attending persons. In its eight edition it had the unique topic "books", which was also a first for the group, I guess. The goal was: Present a book and give a short review.
 
@@ -1749,10 +1749,10 @@ What was even more interesting was the resulting discussion among the nerds. Cof
 	</item>
 	<item>
 				<title>Top CSS preprocessor mistakes</title>
-		<link>http://www.fettblog.eu/?p=92</link>
+		<link>https://fettblog.eu/?p=92</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=92</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=92</guid>
 		<description></description>
 		<content:encoded><![CDATA[<h2>Wrong use of variables</h2>
 
@@ -1822,10 +1822,10 @@ h1, .h1 {
 	</item>
 	<item>
 				<title>Content Loading Priorities or: When is the document ready()?</title>
-		<link>http://www.fettblog.eu/?p=108</link>
+		<link>https://fettblog.eu/?p=108</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=108</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=108</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>A client of ours had a desperate call: Their website, though highly optimised with modern frontend technologies, loads just outright slow with a 1 MBit connection on IE9. Our first reaction was, "Right, it's just 1 MBit", but that wasn't the troubling part. Our customer's issue was "<strong>It takes forever until our logo is shown!</strong>".</p>
 
@@ -1889,10 +1889,10 @@ h1, .h1 {
 	</item>
 	<item>
 				<title>Fire.js</title>
-		<link>http://www.fettblog.eu/?p=116</link>
+		<link>https://fettblog.eu/?p=116</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[thpnk]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=116</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=116</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Here goes the content</p>
 ]]></content:encoded>
@@ -1917,10 +1917,10 @@ h1, .h1 {
 	</item>
 	<item>
 				<title>Nobody wants HTML5 apps</title>
-		<link>http://www.fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/</link>
+		<link>https://fettblog.eu/blog/2013/04/24/nobody-wants-html5-apps/</link>
 		<pubDate>Wed, 24 Apr 2013 19:48:17 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=120</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=120</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>There's much buzz going on about HTML5 being just the wrong way of developing apps. Facebook switched to "kind of native" a while ago (and still has an app below standards), now <a href="http://venturebeat.com/2013/04/17/linkedin-mobile-web-breakup/" target="_blank">LinkedIn</a> dropped their HTML5 based app in favor of a native one.</p>
 
@@ -1941,11 +1941,11 @@ h1, .h1 {
 <p>I love weather reports. It's a shtick, I guess. I learned about <a href="http://forecast.io">forecast.io</a> and was pretty amazed that the website didn't want to lead me to the app store, but instead just bookmark their site on my home screen. Said and done, I started the app the first time and fell in love with the UI.</p>
 
 <p class="img-holder">
-  <a href="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png"><img src="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46-200x300.png" alt="Forecast.io" width="200" height="300" class="alignnone size-medium wp-image-124" /></a>
+  <a href="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46.png"><img src="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-53-46-200x300.png" alt="Forecast.io" width="200" height="300" class="alignnone size-medium wp-image-124" /></a>
 </p>
 
 <p class="img-holder">
- <a href="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png"><img src="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57-200x300.png" alt="Forecast.io" width="200" height="300" class="alignnone size-medium wp-image-123" /></a>
+ <a href="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57.png"><img src="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-52-57-200x300.png" alt="Forecast.io" width="200" height="300" class="alignnone size-medium wp-image-123" /></a>
 </p></p>
 
 <p>Be sure to check out the video by <a href="http://www.youtube.com/watch?v=ystXvkb0yIY" target="_blank">CNET</a> so you get a glimpse of how this neat little application feels. All done with HTML5, and by just adding it to the home screen, you get the full Safari features and not just the stripped down UIWebView.</p>
@@ -1957,7 +1957,7 @@ h1, .h1 {
 <p>Next is ExtFM. ExtFM is a music discovery application, where you can find new tunes according to your listening habits. Good for music nerds like me, and even better for HTML5 enthusiasts. Their application was written using PhoneGap. You know, that tool that allows you to use web rendering for your applications. And again, a very nice UI with good responses and virtually not distinguishable from a native app.</p>
 
 <p class="img-holder">
-  <a href="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png"><img src="http://www.fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34-200x300.png" alt="ExtFM, based on PhoneGap" width="200" height="300" class="alignnone size-medium wp-image-125" /></a>
+  <a href="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34.png"><img src="https://fettblog.eu/wp-content/uploads/2013/04/Foto-24.04.13-20-54-34-200x300.png" alt="ExtFM, based on PhoneGap" width="200" height="300" class="alignnone size-medium wp-image-125" /></a>
 </p>
 
 <p>Even cooler is that they switched <a href="http://phonegap.com/blog/2013/04/23/story-behind-exfm/" target="_blank">from native to HTML5</a>, and not the other way round. "We have now more stars" - quotes aside they show some useful insights in how they developed the new client.</p>
@@ -2022,10 +2022,10 @@ h1, .h1 {
 	</item>
 	<item>
 				<title>Remake. Remodel. Part 2</title>
-		<link>http://www.fettblog.eu/blog/2013/04/30/remake-remodel-part-2/</link>
+		<link>https://fettblog.eu/blog/2013/04/30/remake-remodel-part-2/</link>
 		<pubDate>Tue, 30 Apr 2013 14:52:04 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=147</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=147</guid>
 		<description></description>
 		<content:encoded><![CDATA[<a href="http://blog.cloudfour.com">@grigs</a> said I should blog, so I'm going to take this thing seriously now. I spent the last few days (finally) creating a new look for my website. With the advent of flat designs I think I'm able to create at least one style that doesn't fail completely. And actually I'm pretty happy with it. 
 
@@ -2065,10 +2065,10 @@ Check out their video and try some parts on their <a href="http://tryghost.org/f
 	</item>
 	<item>
 				<title>Responsive Reengineering / Refactoring</title>
-		<link>http://www.fettblog.eu/?p=196</link>
+		<link>https://fettblog.eu/?p=196</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=196</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=196</guid>
 		<description></description>
 		<content:encoded><![CDATA[So i had the task of creating some sort of "responsive add-on" to our company's website at <a href="http://www.netural.com">Netural</a>. Those tasks I usually do on my own, because the effort going into that cannot be estimated before. It was about 4 hours. And I'm pretty happy with the result, despite it being the thing no developer wants: an old webpage "modernized".
 
@@ -2076,9 +2076,9 @@ Here's how I approached it:
 
 <!--more-->
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15-300x243.png" alt="Desktop Variant" width="300" height="243" class="alignnone size-medium wp-image-197" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15.png"><img src="https://fettblog.eu/wp-content/uploads/2013/06/Bildschirmfoto-2013-06-04-um-16.07.15-300x243.png" alt="Desktop Variant" width="300" height="243" class="alignnone size-medium wp-image-197" /></a></p>
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13-200x300.png" alt="Mobile Variant" width="200" height="300" class="alignnone size-medium wp-image-198" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13.png"><img src="https://fettblog.eu/wp-content/uploads/2013/06/Foto-03.06.13-11-58-13-200x300.png" alt="Mobile Variant" width="200" height="300" class="alignnone size-medium wp-image-198" /></a></p>
 
 First of all, the code to this webpage was at least 4 years old. So plenty of pixel-loving and IE6/IE7 hotfixing. Furthermore, each design template (talking PSDs now) got its own sort of "namespace" once it was translated into CSS. Which meant: And ID per template.
 
@@ -2132,10 +2132,10 @@ Easy: You have a wrapper holding all the elements together, so the elements insi
 	</item>
 	<item>
 				<title>beyond our own noses - the &quot;beyond tellerrand 2013&quot;</title>
-		<link>http://www.fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/</link>
+		<link>https://fettblog.eu/blog/2013/06/06/beyond-our-own-noses-the-beyond-tellerrand-2013/</link>
 		<pubDate>Thu, 06 Jun 2013 11:34:43 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=208</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=208</guid>
 		<description></description>
 		<content:encoded><![CDATA[Crosspost from <a href="http://www.netural.com">Netural</a>:
 
@@ -2143,24 +2143,24 @@ Not one single line of JavaScript code? At a conference where web developers vis
 
 <!--more-->
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond1-300x200.jpg" alt="beyond1" width="300" height="200" class="alignnone size-medium wp-image-209" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/beyond1.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/06/beyond1-300x200.jpg" alt="beyond1" width="300" height="200" class="alignnone size-medium wp-image-209" /></a></p>
 
 <a href="http://adactio.com">Jeremy Keith</a>'s opening keynote set the pace and defined the discourse level. He discussed the web's sustainability and longevity, stating that "the web never forgets" is not necessarily set in stone - at least not as solidly as some would like to believe. He challenged the audience to name web addresses which are still relevant after 15 years of existence.  Indeed, there are not many, if any. Keith then presented the archivars of the web (the <a href="http://archive.org/web/web.php">Wayback Machine</a>) and introduced a number of other relevant projects in this field.
 
 Regarding design, the loudest slogan at the conference was "Photoshop Lies!". In the face of the multiple aspects of mobile design, Adobe's long-familiar tool runs the danger of being reduced to a sidekick role in design processes, still indispensable for final touch ups,  but replaced by early prototyping in HTML and CSS  for the new flexible layouts. This view was stated by <a href="https://twitter.com/owltastic">Megan Fisher </a>and shared by Twitter's <a href="http://jbrewer.me">Josh Brewer</a>, who took a radical, if time-honored approach to getting the message across: Grabbing his six-string and singing his "Photoshop, you damn liar!" protest song, he gave a whole new meaning to the word "keynote". 
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond3josh-300x200.jpg" alt="beyond3josh" width="300" height="200" class="alignnone size-medium wp-image-211" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/beyond3josh.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/06/beyond3josh-300x200.jpg" alt="beyond3josh" width="300" height="200" class="alignnone size-medium wp-image-211" /></a></p>
 
 Oh, yes - CSS: Of course there were also stylesheet gurus, presenting new principles and methods to update processes on the developers' side. The CSS Wizard himself, <a href="http://csswizardry.com">Harry Roberts</a>, gave vivid examples for making directives scaleable and recyclable, and <a href="http://bradfrostweb.com">Brad Fros</a>t with his Pattern Lab proclaimed the birth of the "Atomic Design" movement: not just a buzzword (although that would have been helfpful enough in itself), rather a well-considered new structuring of websites.
 
 My personal highlight at the "beyond tellerrand" shone a good distance away from development, design and typo themes: <a href="http://www.forbes.com/fdc/welcome_mjx.shtml">Kate Kiefer-Lee </a>discussed the voice in which a website talks to the user. As the content mastermind of newsletter providers <a href="http://mailchimp.com">Mailchimp</a>, she discussed the thin red line between humor and impertinence and the art of getting the message across according to varying circumstances. A visible result of her work is <a href="http://voiceandtone.com">Voice and Tone</a>, a Website which does not only observe user moods, but also works on them.
 
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond2kate-300x200.jpg" alt="beyond2kate" width="300" height="200" class="alignnone size-medium wp-image-210" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/beyond2kate.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/06/beyond2kate-300x200.jpg" alt="beyond2kate" width="300" height="200" class="alignnone size-medium wp-image-210" /></a></p>
 
 Living up to its name, beyond tellerrand presents not only elite exponents of the web, there are surprise cameos as well: Enter <a href="http://www.jamesvictore.com">James Victore</a>, whose polemical "500 years America" posters produced disputes in the 90ies and are now on exhibition in the MOM. Working not just beyond the rim of our plates, but at least a cupboard away, he still brought a message that gave the audience pause: Do a job you yourself can enjoy, because your work is a gift!
 
-<p class="img-holder"><a href="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/06/beyond4james-300x200.jpg" alt="beyond4james" width="300" height="200" class="alignnone size-medium wp-image-212" /></a></p>
+<p class="img-holder"><a href="https://fettblog.eu/wp-content/uploads/2013/06/beyond4james.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/06/beyond4james-300x200.jpg" alt="beyond4james" width="300" height="200" class="alignnone size-medium wp-image-212" /></a></p>
 
 So this was my first "beyond tellerrand", and it was definitely not my last one. The phantastic lineup of choice international speakers and the flawless organisation created a unique environment. Somehow the conference resembled a class reunion of a web developer scene which enjoyed a time out from JavaScript. Kudos to organiserr Marc Thiele: Marc, you have created something absolutely beautiful!
 
@@ -2190,10 +2190,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title>Content issues on responsive refactoring</title>
-		<link>http://www.fettblog.eu/?p=223</link>
+		<link>https://fettblog.eu/?p=223</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=223</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=223</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2217,10 +2217,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title>Image traffic compared to other assets on responsive websites</title>
-		<link>http://www.fettblog.eu/?p=224</link>
+		<link>https://fettblog.eu/?p=224</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=224</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=224</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2244,10 +2244,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title>Adding CSS logic with siblings selectors</title>
-		<link>http://www.fettblog.eu/?p=225</link>
+		<link>https://fettblog.eu/?p=225</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=225</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=225</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2271,10 +2271,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title>Women in tech</title>
-		<link>http://www.fettblog.eu/?p=262</link>
+		<link>https://fettblog.eu/?p=262</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=262</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=262</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2298,10 +2298,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title>Icon Font Workflow w. IcoMoon</title>
-		<link>http://www.fettblog.eu/?p=414</link>
+		<link>https://fettblog.eu/?p=414</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=414</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=414</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2332,10 +2332,10 @@ Fotos by <em><a href="https://twitter.com/stn1978" target="_blank">Stefan Nitzsc
 	</item>
 	<item>
 				<title></title>
-		<link>http://www.fettblog.eu/?p=417</link>
+		<link>https://fettblog.eu/?p=417</link>
 		<pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=417</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=417</guid>
 		<description></description>
 		<content:encoded><![CDATA[Recently I've been co-supervising the go-live of a -- at least by Austrian standards -- rather huge project.
 
@@ -2361,10 +2361,10 @@ Much to my chagrin, rather early in the project the project leaders decided not 
 	</item>
 	<item>
 				<title>Preserving aspect ratio for embedded iframes</title>
-		<link>http://www.fettblog.eu/blog/2013/06/16/preserving-aspect-ratio-for-embedded-iframes/</link>
+		<link>https://fettblog.eu/blog/2013/06/16/preserving-aspect-ratio-for-embedded-iframes/</link>
 		<pubDate>Sun, 16 Jun 2013 12:10:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=173</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=173</guid>
 		<description></description>
 		<content:encoded><![CDATA[If you want to use videos on your webpage which are hosted on another server (YouTube, Vimeo, whatever), you most likely will use their embedding possibility rather than the HTML5 &lt;video&gt; Tag or a flash plugin hosted on your server. These embedding codes mostly use &lt;iframe&gt;, which is good since they detect all your needs on their site, like in "what format do you need", "use either HTML5 or Flash", or "streaming HD or lower definition for mobile phones". A lot of decisions are taken from you!
 
@@ -2434,10 +2434,10 @@ Resize the window and try it!]]></content:encoded>
 	</item>
 	<item>
 				<title>Caring for Sharing: Social share URLs</title>
-		<link>http://www.fettblog.eu/blog/2013/06/17/caring-for-sharing-social-share-urls/</link>
+		<link>https://fettblog.eu/blog/2013/06/17/caring-for-sharing-social-share-urls/</link>
 		<pubDate>Mon, 17 Jun 2013 12:17:00 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=235</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=235</guid>
 		<description></description>
 		<content:encoded><![CDATA[I truly hate social media share buttons. Especially those plugins which not only are coded badly but also create heavy traffic and performance issues. Plus, they're a pain in the ass to place correctly. If you really want to use (or have to use) those social liking/sharing/tweeting stuff, use their share URLs. Every single one of them has such, and you can either open them in a pop-up or in a new window. Here they are:
 
@@ -2492,10 +2492,10 @@ Just replace {articleUrl} with the respective location.]]></content:encoded>
 	</item>
 	<item>
 				<title>Preparing for an unprefixed future</title>
-		<link>http://www.fettblog.eu/blog/2013/07/02/preparing-for-an-unprefixed-future/</link>
+		<link>https://fettblog.eu/blog/2013/07/02/preparing-for-an-unprefixed-future/</link>
 		<pubDate>Tue, 02 Jul 2013 19:53:46 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=236</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=236</guid>
 		<description></description>
 		<content:encoded><![CDATA[I realized recently that I don't have to use "<em>-webkit</em>" on the transition property anymore for Chrome. Actually, to use transitions in modern desktop browsers I don't have to use any prefix at all. This was almost unimaginable a few months ago!
 
@@ -2557,10 +2557,10 @@ Yeah, I know: This means a big change on certain platforms! While a lot of featu
 	</item>
 	<item>
 				<title>Basic SVG path tweening with SMIL</title>
-		<link>http://www.fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/</link>
+		<link>https://fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/</link>
 		<pubDate>Tue, 16 Jul 2013 18:50:41 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=264</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=264</guid>
 		<description></description>
 		<content:encoded><![CDATA[<style>@media(max-width:500px){.responsive-svg{width:100%;}.responsive-svg path{-webkit-transform:scale(0.5); transform:scale(0.5);}}.note{display:none;}.sorrynote{background-color: #c84941; color:white;display:block;}</style>
 
@@ -2574,7 +2574,7 @@ After a little research, I stumbled upon two ways to do it: Animating SVG with R
 
 All right! To the Batcave, Robins!
 <!--more-->
-<p class="img-holder"><img style="width: 80%; height: auto" src="http://www.fettblog.eu/wp-content/uploads/2013/07/bat63.svg" /></p>
+<p class="img-holder"><img style="width: 80%; height: auto" src="https://fettblog.eu/wp-content/uploads/2013/07/bat63.svg" /></p>
 
 <h2>A short thought on RaphaëlJS</h2>
 
@@ -2847,7 +2847,7 @@ Use is limited, tough. Microsoft has no plans of including SMIL in their current
 			<wp:comment_id>2471</wp:comment_id>
 			<wp:comment_author><![CDATA[Digital Visions 2013 | frontend technology talk]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.fettblog.eu/blog/2013/10/10/digital-visions-2013/</wp:comment_author_url>
+			<wp:comment_author_url>https://fettblog.eu/blog/2013/10/10/digital-visions-2013/</wp:comment_author_url>
 			<wp:comment_author_IP>81.19.145.238</wp:comment_author_IP>
 			<wp:comment_date>2013-10-10 11:49:03</wp:comment_date>
 			<wp:comment_date_gmt>2013-10-10 09:49:03</wp:comment_date_gmt>
@@ -2872,10 +2872,10 @@ Use is limited, tough. Microsoft has no plans of including SMIL in their current
 	</item>
 	<item>
 				<title>Using assemble.io with yeoman.io&#039;s webapp Gruntfile</title>
-		<link>http://www.fettblog.eu/blog/2013/09/02/using-assemble-io-with-yeoman-ios-webapp-gruntfile/</link>
+		<link>https://fettblog.eu/blog/2013/09/02/using-assemble-io-with-yeoman-ios-webapp-gruntfile/</link>
 		<pubDate>Mon, 02 Sep 2013 09:54:21 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=421</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=421</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>With <a href="http://h5bp.github.io/Effeckt.css/dist/">Effeckt.css</a> I discovered <a href="http://assemble.io/">assemble.io</a>, a node-based static site generator for … well … assembling HTML files from different parts.</p>
 
@@ -3216,10 +3216,10 @@ Thanks again for the great feedback! I really appreciate it!
 	</item>
 	<item>
 				<title>Using grunt-connect-proxy</title>
-		<link>http://www.fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/</link>
+		<link>https://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/</link>
 		<pubDate>Fri, 20 Sep 2013 10:37:26 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=440</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=440</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>With any application that communicates with some sort of backend interface exchanging JSON data, you're often in the need to use proxies in your own server configuration to overcome CORS restrictions (either that, or use jsonp, which always seems like a workaround to me). Previously --- in the times we worked with our local Apache servers -- it was always a bit tedious and also caused a lot of time running into the project setup for every team member. Now with our yeoman-grunt-bower setup, it mostly takes no longer than a minute. Cause guess what, there's a already Grunt-task for that.</p>
 
@@ -3368,7 +3368,7 @@ connect: {
 
 <h2>Update</h2>
 
-In the meantime Grunt's interfaces have changed and Yeoman's generators use the new <code>grunt-contrib-connect package</code> instead of the deprecated <code>grunt-connect</code> one that has been used before. This package includes livereload as a default, though it's not that easy anymore to add middleware than it was before. I addressed this topic in my recent article on <a href="http://www.fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/">The magic behind grunt-contrib-connect</a>. Check it out and add your proxySnippet where it belongs!]]></content:encoded>
+In the meantime Grunt's interfaces have changed and Yeoman's generators use the new <code>grunt-contrib-connect package</code> instead of the deprecated <code>grunt-connect</code> one that has been used before. This package includes livereload as a default, though it's not that easy anymore to add middleware than it was before. I addressed this topic in my recent article on <a href="https://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/">The magic behind grunt-contrib-connect</a>. Check it out and add your proxySnippet where it belongs!]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>440</wp:post_id>
 		<wp:post_date>2013-09-20 12:37:26</wp:post_date>
@@ -3400,7 +3400,7 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 			<wp:comment_id>2482</wp:comment_id>
 			<wp:comment_author><![CDATA[The magic of grunt-contrib-connect, and how to run PHP with it | frontend technology talk]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/</wp:comment_author_url>
+			<wp:comment_author_url>https://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/</wp:comment_author_url>
 			<wp:comment_author_IP>81.19.145.238</wp:comment_author_IP>
 			<wp:comment_date>2013-11-17 17:14:36</wp:comment_date>
 			<wp:comment_date_gmt>2013-11-17 15:14:36</wp:comment_date_gmt>
@@ -3425,23 +3425,23 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 	</item>
 	<item>
 				<title>Digital Visions 2013</title>
-		<link>http://www.fettblog.eu/blog/2013/10/10/digital-visions-2013/</link>
+		<link>https://fettblog.eu/blog/2013/10/10/digital-visions-2013/</link>
 		<pubDate>Thu, 10 Oct 2013 09:48:56 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=454</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=454</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Last friday <a href="http://liechtenecker.at">Jürgen Liechtenecker and company</a> held the Digital Visions conference in Vienna for the second time. I was invited to speak and got the amazing opportunity to try out a new talk in front of an interested crowd. Digital Visions quickly became the no. 1 meeting point for all Front End devs and UX people in Austria, and I was not only happy to see a lot of familiar faces from Linz and Vienna, but also meet cab sharing buddy <a href="http://maddesigns.de">Sven Wolfermann</a> again. He's an amazing speaker and combines true "Berliner Schnauze" with a lot of interesting information. Have fun in Amsterdam, pal, see you in Düsseldorf at the latest!</p>
 
 <!--more-->
 
 <p class="img-holder">
-  <a href="http://www.fettblog.eu/wp-content/uploads/2013/10/crowd.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/10/crowd-300x199.jpg" alt="crowd" width="300" height="199" class="alignnone size-medium wp-image-465" /></a>
+  <a href="https://fettblog.eu/wp-content/uploads/2013/10/crowd.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/10/crowd-300x199.jpg" alt="crowd" width="300" height="199" class="alignnone size-medium wp-image-465" /></a>
 </p>
 
 <p>I was also happy to meet <a href="http://pragenanz.de">Gerrit van Aaken</a> and <a href="http://intuio.at">Thomas Nägele</a>, who were among the speakers. Great guys who shared a lot of interesting thoughts on the current state of the web. Gerrit was all about web typography and gave truly good information on how to use web fonts correctly and explained why some things just suck. If you know German, check out his <a href="http://webtypobuch.de">amazing book</a>. This comprehensive write-up cleared (respectively supported) all my doubts on font hosting services. Plus he was really interested in everything that happened at the conference and provided some good discussions.</p>
 
 <p class="img-holder">
-  <a href="http://www.fettblog.eu/wp-content/uploads/2013/10/thomas.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/10/thomas-300x199.jpg" alt="thomas" width="300" height="199" class="alignnone size-medium wp-image-460" /></a>
+  <a href="https://fettblog.eu/wp-content/uploads/2013/10/thomas.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/10/thomas-300x199.jpg" alt="thomas" width="300" height="199" class="alignnone size-medium wp-image-460" /></a>
 </p>
 
 <p>Thomas on the other hand supported the philosophy that designers should code and work in the browser. I loved how he explained his design workflow and showed again that designing/deciding in the browser is not only fancy but a necessity. And he gave a lot of connecting points to my talk. Thank you for that, mate!</p>
@@ -3460,7 +3460,7 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 <li>Phil Hawksworth wrote extensively about moto.oakley.com, mostly in <a href="http://hawksworx.com/blog/oakleys-monster-page-of-baubles/">this article</a> and in <a href="http://hawksworx.com/blog/oakleys-moto-diet/">Oakley's Moto diet</a></li>
 <li>Buddy Tim Kadlec wrote about <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8's viewport dillema</a></li>
 <li>One of the best Tumblrs out there: <a href="http://sighjavascript.tumblr.com/">Sigh, JavaScript</a></li>
-<li>Animated Batman logos in SVG? <a href="http://www.fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/">Look here!</a></li>
+<li>Animated Batman logos in SVG? <a href="https://fettblog.eu/blog/2013/07/16/basic-svg-path-tweening-with-smil/">Look here!</a></li>
 <li>Working Draft <a href="http://workingdraft.de/135">Revision 135: Progressive Enhancement</a> and <a href="http://workingdraft.de/137">Revision 137: Mobile Browser Bugs</a> are in German</li>
 <li>So is Svens excellent article on <a href="http://maddesigns.de/meta-viewport-1817.html">Viewports</a></li>
 <li>Luke Wilson on Facebook and Twitter <a href="http://www.lukew.com/ff/entry.asp?1801">as top used browsers</a></li>
@@ -3468,7 +3468,7 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 </ul>
 
 <p class="img-holder">
-  <a href="http://www.fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg"><img src="http://www.fettblog.eu/wp-content/uploads/2013/10/mespeaking-300x199.jpg" alt="mespeaking" width="300" height="199" class="alignnone size-medium wp-image-463" /></a>
+  <a href="https://fettblog.eu/wp-content/uploads/2013/10/mespeaking.jpg"><img src="https://fettblog.eu/wp-content/uploads/2013/10/mespeaking-300x199.jpg" alt="mespeaking" width="300" height="199" class="alignnone size-medium wp-image-463" /></a>
 </p>
 
 <p>You can find the slides on <a href="https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak">Speakerdeck</a>. Fotos are done by the Liechteneckers. Check out their <a href="https://www.facebook.com/media/set/?set=a.575130642546430.1073741829.514203818639113&amp;type=1">Facebook page for more</a>.</p>
@@ -3498,10 +3498,10 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 	</item>
 	<item>
 				<title>It&#039;s all about the content!</title>
-		<link>http://www.fettblog.eu/blog/2013/10/11/its-all-about-the-content/</link>
+		<link>https://fettblog.eu/blog/2013/10/11/its-all-about-the-content/</link>
 		<pubDate>Fri, 11 Oct 2013 14:44:09 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=469</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=469</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>You know parallel scrolling websites? The kind where big sunglasses assemble themselves, break through rocks and crash your browser? The kind everyone loves. Except developers. Today I found <a href="http://thereisnopagefold.com">thereisnopagefold.com</a> by <a href="http://twitter.com/coda_za">Damien du Toit</a>, who had his own opinion on the whole thing. Check it out.</p>
 
@@ -3562,10 +3562,10 @@ In the meantime Grunt's interfaces have changed and Yeoman's generators use the 
 	</item>
 	<item>
 				<title>Great Scott! Five lesser known shortcuts for Emmet.io that rock!</title>
-		<link>http://www.fettblog.eu/blog/2013/10/16/great-scott-five-lesser-known-shortcuts-for-emmet-io-that-rock/</link>
+		<link>https://fettblog.eu/blog/2013/10/16/great-scott-five-lesser-known-shortcuts-for-emmet-io-that-rock/</link>
 		<pubDate>Wed, 16 Oct 2013 19:17:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=482</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=482</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>I'm a huge fan of <a href="http://emmet.io">Emmet</a>. It allows you not only to create markup in no-time by using a CSS-like syntax in your most favourite code editor (e.g. <code>ul&gt;li*5</code> expands to one <code>&lt;ul&gt;</code> element with five nested <code>&lt;li&gt;</code> elements in HTML after hitting the tab key. Alternatively, you can just type <code>m20</code> in your CSS to get <code>margin: 20px</code> after hitting tab).</p>
 
@@ -3735,10 +3735,10 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 	</item>
 	<item>
 				<title>Content vs. value</title>
-		<link>http://www.fettblog.eu/blog/2013/10/21/content-vs-value/</link>
+		<link>https://fettblog.eu/blog/2013/10/21/content-vs-value/</link>
 		<pubDate>Mon, 21 Oct 2013 10:38:33 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=514</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=514</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>Title's for all content strategists out there who expect something really meta and with a lot of additional bla bla. Well, this is about HTML Content vs. Input Values.</p>
 
@@ -3810,10 +3810,10 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 	</item>
 	<item>
 				<title>Topconf Tallinn 2013</title>
-		<link>http://www.fettblog.eu/blog/2013/11/13/topconf-tallinn-2013/</link>
+		<link>https://fettblog.eu/blog/2013/11/13/topconf-tallinn-2013/</link>
 		<pubDate>Wed, 13 Nov 2013 18:26:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=527</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=527</guid>
 		<description></description>
 		<content:encoded><![CDATA[Last week I attended <a href="http://topconf.com">Topconf</a> in Tallinn, Estonia. It was my very first time in Estonia and also my first time at a conference which wasn't targeted to web developers or designers. Instead, it was a software conference which appealed both hardcore coders and project managers.<!--more-->
 
@@ -3878,10 +3878,10 @@ This week there will be a full round up of this conference at <a href="http://ne
 	</item>
 	<item>
 				<title>The magic of grunt-contrib-connect, and how to run PHP with it</title>
-		<link>http://www.fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/</link>
+		<link>https://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/</link>
 		<pubDate>Sun, 17 Nov 2013 15:14:26 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://www.fettblog.eu/?p=543</guid>
+		<guid isPermaLink="false">https://fettblog.eu/?p=543</guid>
 		<description></description>
 		<content:encoded><![CDATA[<p>One of the most loved <a href="http://gruntjs.com">Grunt.js</a> extensions in our team is the ability to spawn a server for your project with the virtual push of a button, and to be able to see all the changes directly in the browser with a little <a href="https://github.com/livereload/livereload-js">Livereload</a> magic. The seemingly endless Apache configuration days seemed to be over, and every front-end dev in our group was happy with the new workflow established. However, from time to time there was the urge to run some little PHP scripts. Not the big apps, mostly an inclusion of CMS managed labels. This need brought me to delve deeper into the mysteries of the connect task. <!--more--></p>
 
@@ -3891,7 +3891,7 @@ This week there will be a full round up of this conference at <a href="http://ne
 
 <p>Same goes for connect. The task you install with <strong>grunt-contrib-connect</strong> just provides an interface to SenchaLab's <a href="http://www.senchalabs.org/connect/">Connect</a> node module. Connect itself is a middleware framework for node's <code>http</code> package. Which means it comes with a lot of standard tasks which you need when creating a server.</p>
 
-<p>Creating a server is already a rather simple task with node, but connect has some really neat built-in middleware for browsing a directory, serving files with the correct mime-type, handle sessions, etc. It also comes with a lot of third party middleware, one of the most popular ones being mentioned <a href="https://github.com/intesso/connect-livereload">connect-livereload</a>, or the <a href="http://www.fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/">proxy middleware</a> we bespoke earlier on.</p>
+<p>Creating a server is already a rather simple task with node, but connect has some really neat built-in middleware for browsing a directory, serving files with the correct mime-type, handle sessions, etc. It also comes with a lot of third party middleware, one of the most popular ones being mentioned <a href="https://github.com/intesso/connect-livereload">connect-livereload</a>, or the <a href="https://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/">proxy middleware</a> we bespoke earlier on.</p>
 
 <h2>connect middleware</h2>
 
@@ -4079,7 +4079,7 @@ middleware: function(connect, options) {
 			<wp:comment_id>2484</wp:comment_id>
 			<wp:comment_author><![CDATA[Using grunt-connect-proxy | frontend technology talk]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/</wp:comment_author_url>
+			<wp:comment_author_url>https://fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/</wp:comment_author_url>
 			<wp:comment_author_IP>81.19.145.238</wp:comment_author_IP>
 			<wp:comment_date>2013-11-23 08:21:49</wp:comment_date>
 			<wp:comment_date_gmt>2013-11-23 06:21:49</wp:comment_date_gmt>
