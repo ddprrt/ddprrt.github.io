@@ -44,7 +44,7 @@ export class Cat extends Component<CatProps> {
   render() {
     const { mouse } = this.props;
     return (
-      <img src="cat.gif" style={{ position: 'absolute', left: mouse.x, top: mouse.y }} />
+      <img src="cat.gif" style={ { position: 'absolute', left: mouse.x, top: mouse.y } } />
     );
   }
 }
@@ -83,7 +83,7 @@ export class Mouse extends Component<MouseProps, MouseState> {
   render() {
     return (
       <div 
-        style={{ height: '100vh', width: '100vw' }}
+        style={ { height: '100vh', width: '100vw' } }
         onMouseMove={this.handleMouseMove}>
         {/*
           Instead of providing a static representation of what <Mouse> renders,
@@ -120,7 +120,7 @@ export class Mouse extends Component<MouseProps, MouseState> {
   render() {
     return (
       <div 
-        style={{ height: '100vh', width: '100vw' }}
+        style={ { height: '100vh', width: '100vw' } }
         onMouseMove={this.handleMouseMove}>
         {/*
           Instead of providing a static representation of what <Mouse> renders,
