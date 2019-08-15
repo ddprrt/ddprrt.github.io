@@ -12,11 +12,8 @@ sometimes get in your way. Look at the following class hierachy for instance:
 
 ```javascript
 abstract class FilterItem {
-
   constructor(private property: string) {}
-
   someFunction() { /* ... */ }
-
   abstract filter(): void;
 }
 
