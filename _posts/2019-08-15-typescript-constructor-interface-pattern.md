@@ -72,7 +72,7 @@ instances afterwards:
 
 ```javascript
 interface IFilter {
-  new (property: string: IFilter;
+  new (property: string): IFilter;
   someFunction(): void;
   filter(): void;
 }
