@@ -14,7 +14,7 @@ permalink: /archive/typescript
 {% assign firstTime = true %}
 
 {% for post in site.posts %}
-{% if post.categories include "TypeScript" %}
+{% if post.categories contains "TypeScript" %}
 {% assign currYear = post.date | date: '%Y' %}
 {% unless years contains currYear %}
 {% assign yearArray = currYear | split: "," %}
