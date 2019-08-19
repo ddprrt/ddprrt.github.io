@@ -27,7 +27,7 @@ savePerson(tooMany); // ✅ satisfies the contract
 ```
 
 This complements the way JavaScript works really well and gives you both flexibility and type safety.
-There are some occassions where you might want to rely on the exact shape of an object. E.g. 
+There are some scenarios where you might want the exact shape of an object. E.g. 
 when you send data to backend that errors if it gets too much information.
 
 ```javascript
