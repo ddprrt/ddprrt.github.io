@@ -170,3 +170,5 @@ filterMap.set('notworking', FilterItem)
 Traditional OOP, weaved in into our lovely type system. ✅
 
 *[Here's a playground with the full code](https://www.typescriptlang.org/play/index.html#code/JYOwLgpgTgZghgYwgAgGLADaSgYQPYgDOYUArgmHlMgN4CwAUMsiBAO7IAUADlHt9DABPAFzJiUUAHMAlGICS6LNADcjAL6NGobPCTJFmbLUbMYR6JznIAbnmAATNQ00NGcAEYTEYZAgxwhIRoFlDykAC2yMAR3BgQERDgwYbK1PRuTH4EEuSUUDySNnCQyLz8gqLiJNIyJpnMrqbInt4UyOZpVmJ2js5NDP6BwQDKNSBSSsYQAB6QIA7BU9DhCcwZzZ3YVvXMzAD0+8iUDnjN6sgaWplDQcgAcqQRHtDL1LPziyFpq1EbWVtLHUMntkIdjnhTudLi5rg4IEMoCgEDlfICoABZODcMRY7gAHgk0gANN9sPgiCQ8lQAHzORjovEAOkIEDAnAA5CAni8oBzSWNJBM3jIGaFmaz2Vy8GA2FQANbSflklaRUU3VEq6gAXg64uxTKkbM53Oe0A56uAME4wgEeBgWuQAEJtbqOaQFhBzKwHBbdtlKXq0shdawOG9OXALf0gA)*
+
+{% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
