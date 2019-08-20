@@ -98,7 +98,7 @@ type ValidateShape<T, Shape> =
 Let's adapt our original function:
 
 ```javascript
-declare function savePerson<T>(person: ValidateStructure<T, Person>): void;
+declare function savePerson<T>(person: ValidateShape<T, Person>): void;
 ```
 
 With that, it's impossible to pass objects that don't exactly match the
