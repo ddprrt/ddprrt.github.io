@@ -50,7 +50,7 @@ With that call we make sure that the object we pass as parameter is a subtype of
 Then, we check for any extra keys:
 
 ```diff
-type ValidateShape<T, Shape> ?
+type ValidateShape<T, Shape> =
   T extends Shape ? 
 +  Exclude<keyof T, keyof Shape> extends never ? ...
 ```
@@ -89,7 +89,7 @@ If this condition is true, we return the type we want to validate.
 In all other conditions, we return `never`:
 
 ```diff
-type ValidateShape<T, Shape> ?
+type ValidateShape<T, Shape> =
   T extends Shape ? 
   Exclude<keyof T, keyof Shape> extends never ? 
 +  T : never : never;
