@@ -52,7 +52,7 @@ Then, we check for any extra keys:
 ```diff
 type ValidateShape<T, Shape> =
   T extends Shape ? 
-+  Exclude<keyof T, keyof Shape> extends never ? ...
++ Exclude<keyof T, keyof Shape> extends never ? ...
 ```
 
 So how does this work? `Exclude<T, U>` is defined as `T extends U ? never : T`. We pass 
@@ -92,7 +92,7 @@ In all other conditions, we return `never`:
 type ValidateShape<T, Shape> =
   T extends Shape ? 
   Exclude<keyof T, keyof Shape> extends never ? 
-+  T : never : never;
++ T : never : never;
 ```
 
 Let's adapt our original function:
