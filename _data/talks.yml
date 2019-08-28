@@ -85,15 +85,6 @@
           title: JAMStack on Azure (2hr JAMMIN')
           slides: https://www.slideshare.net/ddprrt/jamstack-on-azure
     -
-      title: Mozilla Roadshow
-      country: Austria
-      city: Linz
-      date: 2019-08-29
-      url: https://ti.to/mdn/mozilla-developer-roadshow-2019-EU-Linz
-      talks:
-        -
-          title: Blazing fast websites
-    -
       title: Halfstack Conf
       country: Austria
       city: Vienna
