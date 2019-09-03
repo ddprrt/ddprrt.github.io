@@ -5,6 +5,16 @@
   padding: 0.1rem 1rem;
 }
 
+.foot a, .foot a:visited {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.foot a:hover {
+  color: #eee;
+}
+
 @media (min-width: $content-breakpoint) {
 
   .foot {
