@@ -21,7 +21,7 @@ const TITLE = Symbol('title')
 ```
 
 `Symbol` has no constructor function. The parameter is an optional description. By calling the
-factory function, `COL_RED` is assigned the unique value of this freshly created symbol. This 
+factory function, `TITLE` is assigned the unique value of this freshly created symbol. This 
 symbol is now unique, distinguishable from all other symbols and doesn't clash with any other
 symbols that have the same description.
 
