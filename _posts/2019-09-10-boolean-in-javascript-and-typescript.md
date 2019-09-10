@@ -103,7 +103,17 @@ If you know a practical use case, please [let me know](https://twitter.com/ddprr
 
 ## Boolean in TypeScript
 
-`boolean` in TypeScript is a primitive type and the only one we can express fully through union types:
+`boolean` in TypeScript is a primitive type. Be sure to use the lower case version and don't
+refer to object instances from `Boolean`
+
+```javascript
+const boolLiteral: boolean = false // 👍
+const boolObject: Boolean = false // 👎
+```
+
+It works, but it's bad practice as we really rarely need `new Boolean` objects.
+
+`boolean` is the only one we can express fully through union types:
 
 ```javascript
 type MyBoolean = true | false | null | undefined // same as boolean
