@@ -30,7 +30,7 @@ b = null
 if(b) console.log('not logged')
 ```
 
-Values frm other data types considered falsy are `""` (empty string), `-0` and `0`, as well as `NaN`.
+Values from other data types considered falsy are `""` (empty string), `-0` and `0`, as well as `NaN`.
 
 To get the boolean value of any value, you can use the `Boolean` function:
 
