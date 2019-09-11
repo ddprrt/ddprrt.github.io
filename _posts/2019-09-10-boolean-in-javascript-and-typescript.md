@@ -8,13 +8,13 @@ permalink: /boolean-in-javascript-and-typescript/
 title: "Boolean in JavaScript and TypeScript"
 ---
 
-`boolean` is a fun primitive data type in JavaScript. It's easy, it only features four values!
+`boolean` is a fun primitive data type in JavaScript. In TypeScript, it allows for a total of four values
 Wait, four?
 
 ## Boolean in JavaScript
 
-`boolean` can take the values of `true`, `false`, `undefined` and `null`. All values except `true`
-are considered falsy, which is important for conditionals:
+`boolean` can take the values of `true` and `false`. Values from other types can be truthy or falsy, 
+like `undefined` or `null`.
 
 ```javascript
 let b = true
@@ -30,7 +30,7 @@ b = null
 if(b) console.log('not logged')
 ```
 
-Values from other data types considered falsy are `""` (empty string), `-0` and `0`, as well as `NaN`.
+Values other than `undefined`, `null` or `false` considered falsy are `""` (empty string), `-0` and `0`, as well as `NaN`.
 
 To get the boolean value of any value, you can use the `Boolean` function:
 
@@ -113,7 +113,17 @@ const boolObject: Boolean = false // 👎
 
 It works, but it's bad practice as we really rarely need `new Boolean` objects.
 
-`boolean` is the only one we can express fully through union types:
+You can assign `true`, `false` and `undefined` and `null` to `boolean` in TypeScript 
+without strict null checks.
+
+```javascript
+const boolTrue: boolean = true // 👍
+const boolFalse: boolean = false // 👍
+const boolUndefined: boolean = undefined // 👍
+const boolNull: boolean = null // 👍
+```
+
+With that, `boolean` is the only one we can express fully through union types:
 
 ```javascript
 type MyBoolean = true | false | null | undefined // same as boolean
@@ -122,7 +132,16 @@ const mybool: MyBoolean = true
 const yourbool: boolean = false
 ```
 
-When we enable the `strictNullChecks` compiler flag, the set of values reduces to:
+When we enable the `strictNullChecks` compiler flag, the set of values reduces to `true` and `false`.
+
+```javascript
+const boolTrue: boolean = true // 👍
+const boolFalse: boolean = false // 👍
+const boolUndefined: boolean = undefined // 💥
+const boolNull: boolean = null // 💥
+```
+
+So our set reduces to two values in total.
 
 ```javascript
 type MyStrictBoolean = true | false
