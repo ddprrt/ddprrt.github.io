@@ -77,7 +77,7 @@ Now, let's consume our global state.
 
 ## Consume context
 
-Consuming context is done via render props (see the [previous chapter](./render-props/)) for more details). You can 
+Consuming context is done via render props (see the [previous chapter](../render-props/)) for more details). You can 
 destructure you render props as deep as you like, to get only the props you want to deal with:
 
 ```javascript
