@@ -102,6 +102,7 @@
       talks:
         -
           title: JAMStackin'
+          video: https://www.youtube.com/watch?v=SPIo_OZWlco
     -
       title: Script'19 (MC + Org)
       country: Austria
@@ -117,6 +118,8 @@
       talks:
         -
           title: JAMStackin'
+          video: https://www.youtube.com/watch?v=nZUwrCCKZrs
+          slides: https://noti.st/stefan/fIAs9C/jamstackin
 -
   year: 2018
   conferences:
