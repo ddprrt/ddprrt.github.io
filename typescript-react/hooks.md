@@ -332,7 +332,7 @@ It's the same with the state. The `useReducer` typings infer state types from th
 
 ```javascript
 type StateType = {
-  counte: number
+  count: number
 }
 
 function reducer(state: StateType, action: ActionType) {
