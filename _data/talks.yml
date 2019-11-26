@@ -123,6 +123,15 @@
           title: JAMStackin'
           video: https://www.youtube.com/watch?v=nZUwrCCKZrs
           slides: https://noti.st/stefan/fIAs9C/jamstackin
+    -
+      title: Webclerks
+      country: Austria
+      city: Vienna
+      date: 2019-11-25
+      url: https://webclerks.at
+      talks:
+        -
+          title: More Hurrah, less Krawuzzi Kapuzzi
 -
   year: 2018
   conferences:
