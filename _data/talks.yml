@@ -132,6 +132,15 @@
       talks:
         -
           title: More Hurrah, less Krawuzzi Kapuzzi
+    -
+      title: Vienna.js
+      country: Austria
+      city: Vienna
+      date: 2019-11-27
+      url: https://viennajs.at
+      talks:
+        -
+          title: What TypeScript taught me about JavaScript
 -
   year: 2018
   conferences:
