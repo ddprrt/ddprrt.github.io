@@ -76,6 +76,7 @@ You can run them by selecting them. If you hit the wheel icon next to it, VSCode
         "$tsc"
       ]
     }
+  ]
 }
 ```
 
