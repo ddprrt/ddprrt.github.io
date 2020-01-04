@@ -1,4 +1,16 @@
 -
+  year: 2020
+  conferences:
+    -
+      title: TSConf.jp
+      country: Japan
+      city: Tokyo
+      date: 2020-02-22
+      url: https://www.tsconf.jp/2020/
+      talks:
+        -
+          title: What TypeScript taught me about JavaScript
+-
   year: 2019
   conferences:
     -
