@@ -2,6 +2,12 @@
   year: 2020
   conferences:
     -
+      title: TSConf EU
+      country: Austria
+      city: Linz
+      date: 2020-03-31
+      url: https://www.tsconf.eu
+    -
       title: TSConf JP
       country: Japan
       city: Tokyo
