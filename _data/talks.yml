@@ -2,6 +2,14 @@
   year: 2020
   conferences:
     -
+      title: Global Azure Bootcamp
+      country: Austria
+      city: Linz
+      date: 2020-04-24
+      url: https://www.globalazurebootcamp.at/
+        -
+          title: Stories of void
+    -
       title: TSConf EU
       country: Austria
       city: Linz
