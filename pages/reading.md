@@ -10,7 +10,7 @@ permalink: /reading-list/
 nocomments: true
 ---
 
-A list of articles and books I've read. And liked!
+A list of articles and books I've read. And liked! Also check out my [watching list](/watching-list).
 
 ## January 2019
 
