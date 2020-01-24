@@ -12,7 +12,7 @@ nocomments: true
 
 A list of articles and books I've read. And liked! Also check out my [watching list](/watching-list).
 
-## January 2019
+## January 2019 
 
 - [The wrong Abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction) by Sandi Metz. Great piece on how we often do abstractions for abstraction's sake. They come at a cost. Duplication is ok if it supports a more flexible architecture.
 
