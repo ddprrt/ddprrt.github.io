@@ -77,5 +77,6 @@ if(typeof person === 'object'
 ```
 
 That's it! A lovely little helper to make TypeScript understand your code better.
+Here's a [playground](https://www.typescriptlang.org/play/index.html?ts=3.8-Beta&ssl=6&ssc=1&pln=3&pc=1#code/C4TwDgpgBACgTgezFAvFAzsOBLAdgcygB8pcBXAWwCMI5iMRqEAbAbgCh2AzM3AY2DYEuKAAsAhugDyAd1zwktUAB4AGlAgAPYBFwATdFADeAXwA0UAJobtug7ERgAfAAoEVAFYAuKKothHH0sASh93DyhsQ3UAMigAJQg+BDg9ZUsLXgBrXAQ5J2N2KCg4CGAyOBFwgDoJaTkFSDhQFwCkYPYTTj0k5nFSqGTcTCgQH1N2bC4oFzrZeUclEBcQCwByXHEKCDXgqBi4uYbF5uXVqDXMMi4uXb2jIsjpl1BIBGmQas3t1BQ0S6weHwa32cU+6Huj2Kjy6XXYQA) for you to fiddle around.
 
 {% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
