@@ -27,7 +27,7 @@ function print(msg: any) {
 This is a type-safety check in JavaScript, and TypeScript benefits from that. However, there are some cases where
 TypeScript *at the time of this writing* needs a little bit more assistance from us.
 
-Let's assume you have a JavaScript object where you don't know if a certain property exists. In JavaScript, you would check for properties like that:
+Let's assume you have a JavaScript object where you don't know if a certain property exists. The object might be `any` or `unknown`. In JavaScript, you would check for properties like that:
 
 ```javascript
 if(typeof obj === 'object' && 'prop' in obj) {
