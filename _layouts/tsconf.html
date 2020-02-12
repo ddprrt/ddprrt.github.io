@@ -1,6 +1,5 @@
 ---
 layout: wrapper
-mainClass: theme-blue
 ---
 
 <aside class="note">
@@ -8,6 +7,7 @@ mainClass: theme-blue
 </aside>
 
 <h1>{{ page.title }}</h1>
+<p data-modified="{%if page.modified %}{{ page.modified }}{% else %}{{ page.date }}{% endif %}" class="post__date">{{ page.date | date_to_long_string }} by <a href="http://twitter.com//ddprrt">@ddprrt</a> | Posted in: <span>{{ page.categories | join: ', '}}</span></p>
 
 <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7DT2JM&placement=fettblogeu" id="_carbonads_js"></script>
 
