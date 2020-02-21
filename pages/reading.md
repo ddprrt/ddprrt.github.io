@@ -12,7 +12,11 @@ nocomments: true
 
 A list of articles and books I've read. And liked! Also, check out my [watching list](/watching-list).
 
-## January 2019
+## February 2020
+
+- [Stateful Serverless](https://www.swyx.io/writing/stateful-serverless/) by Swyx. Good explanation on cold start / warm start and state of serverless functions. With examples!
+
+## January 2020
 
 - [Today, the Trident era ends](https://schepp.dev/posts/today-the-trident-era-ends/) by Schepp. A historical analysis of all the innovations Internet Explorer brought on the table. I think it's quite curious that people can develop hate towards products, so it's nice to see that somebody praises a browser that revolutionized the Internet in many ways. And it's not just *somebody*, it's Schepp. He's not only the best podcast buddy in the world but also a master in cross-browser polyfilling. Something that we did back in the day. Great work, Schepp!
 

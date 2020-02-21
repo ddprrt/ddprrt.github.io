@@ -12,11 +12,11 @@ nocomments: true
 
 A list of conference talks I've watched, and liked! Also, check out my [reading list](/reading-list)
 
-## February 2019
+## February 2020
 
 - [Stateful Serverless Applications](https://www.youtube.com/watch?v=lUyln5m6AhY) by Guillermo Rauch. Debunking some misconceptions about the internal workings of lambdas. Highly recommended if you work with [Now](https://zeit.co), Azure or AWS.
 
-## January 2019
+## January 2020
 
 - [The return of "Write Less, Do more"](https://www.youtube.com/watch?v=BzX4aTRPzno) by Rich Harris. The only introduction to Svelte that you ever need. And holy template compiler, Batman! Rich is a fantastic storyteller. The amount of detail he puts into his talks is astounding. His delivery feels like watching JavaScript fairy tales. Astounding!
 
