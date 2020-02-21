@@ -14,6 +14,8 @@ A list of conference talks I've watched, and liked! Also, check out my [reading 
 
 ## February 2020
 
+- [Reractive dynamic forms](https://www.youtube.com/watch?v=3xwxlHqrLsE) by Juri Strumpflohner. Juri gives a great intro to NGX Formly (see [formly.dev](https://formly.dev)), an Angular library for dynamic forms. You have use cases like that way too often when you do settings-heavy pages. So it's nice to see a really good generic solution for that. Wonder how this is solved in other frameworks.
+
 - [Stateful Serverless Applications](https://www.youtube.com/watch?v=lUyln5m6AhY) by Guillermo Rauch. Debunking some misconceptions about the internal workings of lambdas. Highly recommended if you work with [Now](https://zeit.co), Azure or AWS.
 
 ## January 2020
