@@ -14,6 +14,8 @@ A list of articles and books I've read. And liked! Also, check out my [watching 
 
 ## February 2020
 
+- [Keeping it simple with CSS that scales](https://hankchizljaw.com/wrote/keeping-it-simple-with-css-that-scales/) by Andy Bell. Extensive read on CSS best practices and how everything has been there already and doesn't need to be re-invented. I'm not sure if I agree with all of it, but most of it resonates very well with me. I also think more people should publish written versions of their talks.
+
 - [Stateful Serverless](https://www.swyx.io/writing/stateful-serverless/) by Swyx. Good explanation on cold start / warm start and state of serverless functions. With examples!
 
 ## January 2020
