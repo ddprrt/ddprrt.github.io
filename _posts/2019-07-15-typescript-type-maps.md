@@ -174,14 +174,10 @@ We can even write our own factory functions, that can do a little more that *jus
 
 ```javascript
 function elementFactory<T extends string>(tag: T, 
-  defaultProps: Partial<CreatedElement<T>) : CreatedElement<T> {
+  defaultProps: Partial<CreatedElement<T>>) : CreatedElement<T> {
 
   const element = createElement(tag);
-  for(key in defaultProps) {
-    element[key] = defaultOptions[key]
-  }
-
-  return element;
+  return Object.assign(element, defaultProps)
 }
 ```
 
@@ -204,6 +200,6 @@ Pretty sweet, huh?
 ## Bottom line
 
 Type maps are a good tool for factory functions which produce a ton of different results. And most likely
-for a lot, lot more. If you want to expand on the example shown above, take this [gist](https://gist.github.com/ddprrt/61644bdbbb48e577ca54fdb2ee16ed56).
+for a lot, lot more. If you want to expand on the example shown above, take this [gist](https://gist.github.com/ddprrt/61644bdbbb48e577ca54fdb2ee16ed56). And look at [this playground](https://www.typescriptlang.org/play/index.html?ssl=85&ssc=2&pln=80&pc=1#code/C4TwDgpgBAggNnAonCBbCA7YBnKBeKKAbwFgAoQgcgENKAuKACQBUBZAGRgwGMALAewBOyNJmABuclQAmASwBu9Jm3YARBSPRZJFKJWxhqGJSw4BlQxk1idVAK5wTKgKrtZ2YNe1Qpe4LOAUJw5mAJQvCV9KYAgAD2BqQQhaBlN2ZjjgGCTqCNs-NDA4ahjg9MLimLyo4AAzfn5gMuZqACMUMwhuf34rFC1I3WjeZOlmto6unr7RbRrW-mkQcfaITu7ZXuqh4EEVlAAlfgB3baoE1f2IM71ufkdUlRbVgGF7m8o7uABzQX47MBXN5Ifo2Gq8K6MUYQQQvCAID7AMaPEITCCqErUOEI0FzIbcahgaZAwnTD4eEBBFHsMygcK4wZUbDwqZlToobrk7iCWREtnc3meBn5SjtfjcADWAEc7I0IGUAIqyqrCqJSxXK66qoZgP6-CDYbBlAAKeqSho+uvl1NNWtmjL0hkE1FQJsSLstbudv0JvA+-2AYDsTWpAHlg0GhfaRfwiZtjGG41ttVRY8Bfv9AYngABxP4A-2tABWrLDxam-oeyg4obcHg+sgwRuprEWH2k8LKrekH3QMT2LYg-d7Q5S1fYrFHvcSMog1vHrBndjn06zC8JH3ksg7-DKADVtxB+B9qHY5LvqTAz5sPnBGxKym4MBLbxBvphkeP2G+P7e2p3qXYf8QWjKI70fABJBsMEjMoIJg4MG1Qb44NQah3wbWpnXQOCADFsLtAYRV4YBUCrNJGFIkCiKiXgAEYyihag5Awb4Pl4AAmRjRkbNiUz0XgAGZuOY3j2IAFhEli+NAoZeAAViksT+MoXgADYlNY9jRik9iB3HRgDg+LCXQNIcynw0zOijGihhMnDqUs9BjKEV1HNclysAs3obLBOzZHhaRmRDcdcICuBpGsj40FaCBPzSRBUFinsVOkTE7w8MoMQSOtfLxGRyJUVRco+AkMHkahm3HF4jAq7APlaYNgF6MoACEmuTWSqAWJY2sWEAGsq+c0laoaGv0kajJUxJkjKbJkgicgAF9yHIUBICgF4chiaQEoZAAeZgoEyD9cAlCAQH4WpYBxe1sAAPnwG7qLEbAAG1mAAXR0NbwGgLbkh2iJDuO+JTqgDweVYx68F8I6TowIKoHOy7rvgF6sFwAB+Tbtrivb7UOx7qW2cgO24YokigWo7B4aYoG5QHCLEEGEaRyHePugAKBJvgYZgABooDTeNsCxhgjBAABKBgAZKOLgeYe7VrIGm6fjY6GVw6huiEEBWbBxHcA56GefQ-mhd8DtalPOBgFNWNsAYY1En8ag4H2uWgYOpX7qlqBZbxlLCaV4gVcIO4m2ATX7Sexn5YiM3vil-IkmAOxBAwKBQ3LboADpKuwWRvgwLmWQGIXrdt+2-jAbApeWlXy7EbXdcEEAucoLcd0oIWiAhwRuAYShKCgJaU-IZusFb5r2877uj174gIf+QeIGH0fx6gAB6beoEAXg3AFKdqBEEEP5BAYYBeHcKBdVjGFQCgaR+ANKAMEaUH3GAcggA) to play around.
 
 {% include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript" %}
