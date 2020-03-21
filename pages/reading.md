@@ -12,6 +12,10 @@ nocomments: true
 
 A list of articles and books I've read. And liked! Also, check out my [watching list](/watching-list).
 
+## March 20
+
+- [JavaScript: The first 20 years](https://zenodo.org/record/3707008#.XnXvDpP0nyg) by Allen Wirfs-Brock and Brendan Eich. The creator of JavaScript details the first 20 years in over 190 pages. Wow. Use your self-isolation to browse through this over the week-end.
+
 ## February 2020
 
 - [Keeping it simple with CSS that scales](https://hankchizljaw.com/wrote/keeping-it-simple-with-css-that-scales/) by Andy Bell. Extensive read on CSS best practices and how everything has been there already and doesn't need to be re-invented. I'm not sure if I agree with all of it, but most of it resonates very well with me. I also think more people should publish written versions of their talks.
