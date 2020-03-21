@@ -12,6 +12,10 @@ nocomments: true
 
 A list of conference talks I've watched, and liked! Also, check out my [reading list](/reading-list)
 
+## March 2020
+
+- [Building the new Facebook](https://www.youtube.com/watch?v=KT3XKDBZW7M) by Ashley Watkins. I really don't like Facebook. I have an account, but I'm not using it. And I stay away from it as much as possible. I like good engineering stories, though! And Ashley's story is one of those! Starting with a regular architecture presentation, going a great deal into micro-optimizations. Wow!
+
 ## February 2020
 
 - [In defense of Utility First CSS](https://www.youtube.com/watch?v=R50q4NES6Iw) by Sarah Dayan. Debunking some myths about atomic/utility-first CSS. Atomic CSS development always got a bad rep, so it's really interesting to see how it now becomes so incredibly popular. One reason might be that people now know how to talk about it, and Sarah's talk is one of the best ones.
