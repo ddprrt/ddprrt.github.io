@@ -48,7 +48,7 @@ export const Body = () => {
 }
 ```
 
-So why does this fail? TypeScript's error message is very elaborate on this: *Type 'boolean | (() => void)' is not assignable to type '((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined'. Type 'false' is not assignable to type '((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined'.*
+So why does this fail? TypeScript's error message is very elaborate on this: *Type 'boolean \| (() => void)' is not assignable to type '((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) \| undefined'. Type 'false' is not assignable to type '((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) \| undefined'.*
 
 It might be very cryptic. But what we should look out for is the first type, which is declared incompatible: `boolean | (() => void)'`. This comes from returning an array. An array is a list of any length, that can hold as many elements as virtually possible. From the return value in `useToggle`, TypeScript infers an array type. Since the type of `value` is boolean (great!) and the type of `toggleValue` is `(() => void)` (a function returning nothing), TypeScript tells us that both types are possible in this array.
 
