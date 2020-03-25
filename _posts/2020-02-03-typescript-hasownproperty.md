@@ -1,5 +1,5 @@
 ---
-layout: tsconf
+layout: post
 categories:
   - TypeScript
   - JavaScript
