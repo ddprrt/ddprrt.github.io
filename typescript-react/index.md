@@ -44,3 +44,11 @@ Ready? Let's go!
 8. [Context](./context/): React's context API gives you global state with a very lean API.
 9. [Styles](./styles/): CSS in JS in lots of ways
 10. [Further reading](./further-reading/): So many things not covered in our guide. You will find them here.
+
+## Blog articles
+
+Next to this guide, I write regular blog articles that cover TypeScript. Occasionally, I also work on React related topics:
+
+- [JSX is syntactic sugar](/jsx-syntactic-sugar/): On how TypeScript is a pure JSX compiler
+- [Extending JSX elements](/typescript-react-extending-jsx-elements/): How to extend pre-defined JSX elements with attributes that are not yet available in all browsers
+- [Typing custom hooks with tuple types](/typescript-react-typeing-custom-hooks/): Tuple types are great for `useState` like hook patterns
