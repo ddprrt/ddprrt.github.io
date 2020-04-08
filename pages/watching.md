@@ -14,7 +14,7 @@ A list of conference talks I've watched, and liked! Also, check out my [reading 
 
 ## April
 
-- [Microservice Pipeline Architecture](https://www.youtube.com/watch?v=vUCr1oTtaKA) by Tim Perry. You might think that JAMstack and incremental pre-rendering is something entirely new, possibly an invention of a completely new category of websites. Or maybe it's something people have done ever since. Under different names. With different focus. This is software engineering. Nothing is ever new! Tim's talk is a wonderful example of creating a cloud-based architecture for massively scalable websites! Long before *JAMstack* was a name. Long before popular static site generators turned start-ups. Watch this!
+- [Microservice Pipeline Architecture](https://www.youtube.com/watch?v=vUCr1oTtaKA) by Tim Perry. You might think that JAMstack and incremental pre-rendering is something entirely new, possibly an invention of a completely new category of websites. Or maybe it's something people have done ever since. Under different names. With different focus. This is software engineering. Nothing is ever new! Tim's talk is a wonderful example of creating a cloud-based architecture for massively scalable websites! Long before *JAMstack* was a name.
 I wonder why I haven't seen this talk of you, Tim! We've been at least at two conferences together were you gave it! 
 
 ## March 2020
