@@ -12,7 +12,9 @@ nocomments: true
 
 A list of conference talks I've watched, and liked! Also, check out my [reading list](/reading-list)
 
-## April
+## April 2020
+
+- [I pressed ⌘B, you never know what happened next](https://www.youtube.com/watch?v=kVD-sjtFoEI) by Marcin Wichary. I love talks by Marcin and had the privilege to see him live a couple of times. This talk is about bold fonts. And all the variations they can have. It's a mess, but presented so funny and engaging that you not only learn a lot, but see regular tasks on typography in a slightly different light. Highly recommended. It's a joy to watch!
 
 - [Microservice Pipeline Architecture](https://www.youtube.com/watch?v=vUCr1oTtaKA) by Tim Perry. You might think that JAMstack and incremental pre-rendering is something entirely new, possibly an invention of a completely new category of websites. Or maybe it's something people have done ever since. Under different names. With different focus. This is software engineering. Nothing is ever new! Tim's talk is a wonderful example of creating a cloud-based architecture for massively scalable websites! Long before *JAMstack* was a name.
 I wonder why I haven't seen this talk of you, Tim! We've been at least at two conferences together were you gave it! 
