@@ -12,6 +12,10 @@ nocomments: true
 
 A list of conference talks I've watched, and liked! Also, check out my [reading list](/reading-list)
 
+## May 2020
+
+- [Design Microservice Architectures the Right Way](https://www.youtube.com/watch?v=j6ow-UemzBc) by Michael Bryzek. Michael starts with tons of misconceptions around microservices and microservice architectures, and gives some valuable insights on what they needed to create to make microservice architectures really work. This is maybe eye-opening for a lot of people.
+
 ## April 2020
 
 - [Porting DOOM to WebAssembly](https://www.youtube.com/watch?v=lZnz46a58_Y) by Manuel Wieser. Manuel shared his isolation story at one of our meetups, and he told us how he tried to make DOOM work in the browser. A wonderful developer journey where he shows how he came to his solution one step at a time. It's also so much fun! And he shows how similar C development is to Front-End development. Kudos!
