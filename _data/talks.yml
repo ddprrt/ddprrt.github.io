@@ -1,4 +1,17 @@
 -
+  year: 2020
+  conferences:
+    -
+      title: Global Azure Bootcamp Austria 2020
+      country: Online
+      city: Worldwide
+      date: 2020-04-23
+      url: https://globalazurebootcamp.at
+      talks:
+        -
+          title: Stories of void
+          video: https://www.youtube.com/watch?v=G0wRWWsLL5s
+-
   year: 2019
   conferences:
     -
