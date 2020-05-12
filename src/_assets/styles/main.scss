@@ -271,6 +271,18 @@ h1 {
 h2, h3 {
   font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   margin-top: 3em;
+  position: relative;
+}
+
+.direct-link {
+  opacity: 0;
+  position: absolute;
+  left: -1.2em;
+}
+
+:hover > .direct-link {
+  opacity: 1;
+  border-bottom: none;
 }
 
 @import "components/aspect"

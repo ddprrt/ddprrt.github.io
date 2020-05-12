@@ -1,5 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
 
 module.exports = function(config) {
 
@@ -43,6 +45,20 @@ module.exports = function(config) {
   })
 
   config.addPlugin(syntaxHighlight)
+
+  config.setLibrary(
+    'md',
+    markdownIt({
+      html: true,
+      breaks: false,
+      linkify: true,
+      typographer: true
+    }).use(markdownItAnchor, {
+      permalink: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#"
+    })
+  )
 
   config.addPassthroughCopy('./src/wp-content/')
   config.addPassthroughCopy('./src/manifest.json')
