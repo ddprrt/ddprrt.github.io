@@ -2,7 +2,7 @@
 title: "TypeScript and React: Children"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Events

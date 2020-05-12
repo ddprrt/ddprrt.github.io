@@ -4,7 +4,7 @@ layout: post
 published: true
 permalink: /real-user-visually-complete/
 categories:
-- conferences
+- Conferences
 - performance
 ---
 

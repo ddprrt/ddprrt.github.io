@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-4-sourcemaps/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 One really cool feature on the Gulp 4 roadmap is the inclusion of native

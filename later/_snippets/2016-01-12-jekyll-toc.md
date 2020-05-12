@@ -1,7 +1,8 @@
 ---
 title: "Jekyll table of contents per page"
 published: true
-categories: Jekyll
+categories:
+- Jekyll
 permalink: /snippets/jekyll/table-of-contents/
 ---
 

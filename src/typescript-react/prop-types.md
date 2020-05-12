@@ -2,7 +2,7 @@
 title: "TypeScript and React: Prop Types"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Hooks

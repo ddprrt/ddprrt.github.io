@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-4-parallel-and-series/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 One of the major changes in Gulp 4 is the new task execution system. In this

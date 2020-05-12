@@ -2,7 +2,7 @@
 title: "Debugging Node.js apps in TypeScript with Visual Studio Code"
 layout: post
 categories:
-- tools
+- Tools
 - TypeScript
 published: true
 permalink: /typescript-node-visual-studio-code/

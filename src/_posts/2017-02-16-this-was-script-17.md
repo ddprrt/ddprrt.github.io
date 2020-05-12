@@ -3,7 +3,8 @@ title: This was Script'17
 published: true
 layout: post
 permalink: /this-was-script-17/
-categories: conferences
+categories:
+- Conferences
 external: https://scriptconf.org/blog/script17-roundup
 ---
 

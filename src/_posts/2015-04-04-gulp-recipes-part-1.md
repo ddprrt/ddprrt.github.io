@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-recipes-part-1/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 In the last two weeks I spent a good deal of time on [StackOverflow](http://stackoverflow.com/questions/tagged/gulp), trying to solve every open Gulp question there is. The reasons for that are manifold, and besides an overall high amount of spare time and a strong tendency to masochism (it would be more if I'd watch the JavaScript channel there), there was one more reason, which I hope to address at some point in the future.

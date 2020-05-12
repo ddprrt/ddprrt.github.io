@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-merge-cdn-files-into-your-pipeline/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 This one is a shorty, but that's what it makes it so nice. Imagine that you

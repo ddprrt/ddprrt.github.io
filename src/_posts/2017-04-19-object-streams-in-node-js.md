@@ -3,7 +3,8 @@ title: "Object streams in Node.js"
 published: true
 layout: post
 permalink: /object-streams-in-node-js/
-categories: articles
+categories:
+- articles
 external: https://community.risingstack.com/the-definitive-guide-to-object-streams-in-node-js/
 ---
 

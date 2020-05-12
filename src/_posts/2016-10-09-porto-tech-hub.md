@@ -4,7 +4,7 @@ published: true
 layout: post
 permalink: /porto-tech-hub-2016/
 categories: 
-- conferences
+- Conferences
 ---
 
 I rarely talk about attending or speaking at conferences, but sometimes you just

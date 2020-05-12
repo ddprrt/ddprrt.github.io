@@ -1,7 +1,8 @@
 ---
 title: "Jekyll filter: Use Liquid in front-matter"
 published: true
-categories: Jekyll
+categories:
+- Jekyll
 permalink: /snippets/jekyll/liquid-in-frontmatter/
 ---
 

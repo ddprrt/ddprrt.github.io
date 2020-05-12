@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /plumbin-pipelines-with-gulp-js/
 categories:
-- conferences
-- gulp
+- Conferences
+- Gulp
 ---
 
 Now that [my book](https://manning.com/baumgartner) is out, I dug up an old workshop I held almost one and a half years ago in Belgium at Devoxx. Devoxx is a special type of conference, unlike any other conference I've ever seen. And speaking at a cinema definitely is one of the things that get stuck with you. Anyways, here's the 2 hour course (the rest of the show is a little off topic, intentionally), which is about 75% of the Gulp chapters in live coding.

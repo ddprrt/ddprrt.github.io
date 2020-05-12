@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-promises/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 The Gulp task system does not only work with streams alone, but also with other

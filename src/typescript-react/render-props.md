@@ -2,7 +2,7 @@
 title: "TypeScript and React: Render props and child render props"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Context

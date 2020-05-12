@@ -1,7 +1,8 @@
 ---
 title: "Custom Jekyll Includes Directory"
 published: true
-categories: Jekyll
+categories:
+- Jekyll
 permalink: /snippets/jekyll/custom-jekyll-includes-directory/
 ---
 

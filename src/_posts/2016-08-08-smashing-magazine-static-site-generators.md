@@ -7,7 +7,7 @@ external: https://www.smashingmagazine.com/2016/08/using-a-static-site-generator
 showcontent: true
 categories:
 - articles
-- static site generators
+- SSGs
 - web ops
 ---
 

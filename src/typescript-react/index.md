@@ -2,7 +2,7 @@
 title: "TypeScript and React"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 og:
   img: /wp-content/uploads/ogimgs/ts-react.png

@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-4-passthrough/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 Another nice addition to `vinyl-fs` that will end up in Gulp 4 is the possibility

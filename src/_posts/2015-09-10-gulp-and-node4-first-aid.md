@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-and-node4-first-aid/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 [Node.js 4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) just got released! The jump from 0.12.x

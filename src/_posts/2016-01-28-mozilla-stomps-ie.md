@@ -7,7 +7,7 @@ external: https://medium.com/@ddprrt/tales-from-the-browser-wars-mozilla-stomps-
 showcontent: true
 categories:
 - articles
-- browser
+- Browser
 - netscape
 ---
 

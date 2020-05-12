@@ -3,7 +3,8 @@ title: "Not so hidden figures - Organizing ScriptConf"
 published: true
 layout: post
 permalink: /not-so-hidden-figures/
-categories: articles
+categories:
+- articles
 external: http://foundation.travis-ci.org/2017/08/09/not-so-hidden-figures/
 ---
 

@@ -2,7 +2,7 @@
 title: "TypeScript and React: Getting Started"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Components

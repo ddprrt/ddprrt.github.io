@@ -4,9 +4,9 @@ layout: book
 published: true
 permalink: /gulp-browserify-multiple-bundles/
 categories:
-- gulp
-- browserify
-- tools
+- Gulp
+- Browserify
+- Tools
 ---
 
 With the ever-changing eco system of Node.js tools, a short version disclaimer. This article has been created using

@@ -4,7 +4,7 @@ published: true
 layout: post
 permalink: /grid-concepts/
 categories:
-- css
+- CSS
 - grid
 - layout
 ---

@@ -1,3 +1,4 @@
 {
-  "tags": ["posts"]
+  "tags": ["posts"],
+  "menuActive": "articles"
 }

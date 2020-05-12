@@ -5,7 +5,7 @@ published: true
 permalink: /npm-scripts/
 categories:
 - npm
-- tools
+- Tools
 ---
 
 **TL;DR:** NPM Scripts render global installations of NPM command line tools useless.

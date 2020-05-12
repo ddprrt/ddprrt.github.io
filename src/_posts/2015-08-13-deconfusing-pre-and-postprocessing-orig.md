@@ -8,8 +8,8 @@ external: https://medium.com/@ddprrt/deconfusing-pre-and-post-processing-d68e3bd
 showcontent: true
 categories:
 - articles
-- css
-- tools
+- CSS
+- Tools
 ---
 
 Some sort of follow-up to my first Medium article -- [PostCSS Misconceptions](https://medium.com/@ddprrt/postcss-misconceptions-faf5dc5038df) --  this one deals with the terms pre- and post-processing in general. Well illustrated and with a verdict.

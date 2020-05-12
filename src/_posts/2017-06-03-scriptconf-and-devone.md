@@ -3,7 +3,8 @@ title: "#scriptconf and #devone"
 published: true
 layout: post
 permalink: /scriptconf-and-devone/
-categories: conferences
+categories:
+- Conferences
 ---
 
 About two years ago, [Sebastian](https://twitter.com/sebgie) and I had our first chats about having a JavaScript conference in our town of Linz. And this January, we made our vision reality and launched [ScriptConf](https://scriptconf.org), a conference about JavaScript. Giving it the (quite bold) tagline "The conference this city needs", we wanted to make JavaScript more popular in Linz, while having a great time with an amazing community.

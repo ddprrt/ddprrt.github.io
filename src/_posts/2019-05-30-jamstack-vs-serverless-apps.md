@@ -3,7 +3,7 @@ title: JAMStack vs serverless web apps
 published: true
 layout: post
 categories:
-  - JAMStack
+  - Jamstack
 permalink: /jamstack-vs-serverless-web-apps/
 ---
 

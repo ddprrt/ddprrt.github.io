@@ -3,7 +3,8 @@ title: "My most favourite talks in 2018"
 published: true
 permalink: /top-talks-to-watch-2018/
 layout: post
-categories: review
+categories:
+- review
 ---
 
 It's that time of the year again! For the fourth time in a row, I'm sharing my most 

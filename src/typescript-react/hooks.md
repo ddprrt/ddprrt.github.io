@@ -2,7 +2,7 @@
 title: "TypeScript and React: Hooks"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Render props and child render props

@@ -5,8 +5,8 @@ permalink: /wordpress-and-jamstack-sites/
 layout: post
 categories:
 - Node.js
-- Static site generators
-- JAMstack
+- SSGs
+- Jamstack
 ---
 
 The almighty JAMStack brings you fast and secure static websites, and with things like [headless content management systems](https://storyblok.com) they become even easy to edit! However, every once in a while you will find yourself in front of a Wordpress blog that has way too many articles (and way too many authors that fear change!) to be reasonably transferred. But Wordpress can be headless, too. In fact, Wordpress' own hosting service uses its core only via API, the editing interface comes with the shiny new [Calypso](https://developer.wordpress.com/calypso/).

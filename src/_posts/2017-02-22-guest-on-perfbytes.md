@@ -3,7 +3,8 @@ title: I was a guest on the Perfbytes podcast
 published: true
 layout: post
 permalink: /guest-on-perfbytes/
-categories: conferences
+categories:
+- Conferences
 external: https://www.spreaker.com/user/pureperformance/dynatrace-perform-2017-wednesday-highlig
 ---
 

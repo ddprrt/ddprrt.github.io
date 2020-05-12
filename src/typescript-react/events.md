@@ -2,7 +2,7 @@
 title: "TypeScript and React: Events"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Prop Types

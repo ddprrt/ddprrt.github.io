@@ -4,7 +4,7 @@ layout: post
 published: true
 permalink: /topconf-at-2016/
 categories:
-- conferences
+- Conferences
 ---
 
 So, Linz has a software conference. One that's supposed to stay. I think it's

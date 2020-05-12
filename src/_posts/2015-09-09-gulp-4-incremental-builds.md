@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-4-incremental-builds/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 Incremental builds are a good way of speeding up your build iterations. Instead

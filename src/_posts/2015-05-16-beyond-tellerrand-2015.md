@@ -5,7 +5,7 @@ published: true
 permalink: /beyond-tellerrand-2015/
 titleimg: /wp-content/uploads/2015/beyond.jpg
 categories:
-- conferences
+- Conferences
 ---
 
 Last week I attended this year’s [beyond tellerrand](http://beyondtellerrand.com/) in Düsseldorf. It was now my third or fourth time (memories are actually really fuzzy … but then again you don’t remember how often you came back to your home during a year) and again I was blown away by both the quality of the conference and the warmth and open-mindedness of its audience.

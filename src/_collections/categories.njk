@@ -1,0 +1,16 @@
+---
+layout: post
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /categories/{{ category | slug }}/
+---
+
+<h1>Category “{{ category }}”</h1>
+
+<ol>
+{% for post in collections.categories[category] | reverse %}
+  <li>{{ post.date | prettyDate }}: <a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>

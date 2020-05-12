@@ -3,7 +3,8 @@ title: "Guest post in \"Human and the machine\": Get the gist"
 published: true
 layout: post
 permalink: /get-the-gist/
-categories: articles
+categories:
+- articles
 external: https://superyesmore.com/get-the-gist-8ff35dc28f30640e2d5fd54bcb7ff083
 ---
 

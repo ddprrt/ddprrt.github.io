@@ -3,7 +3,8 @@ title: "The Best Request Is No Request, Revisited"
 published: true
 layout: post
 permalink: /the-best-request/
-categories: articles
+categories:
+- articles
 external: https://alistapart.com/article/the-best-request-is-no-request-revisited
 ---
 

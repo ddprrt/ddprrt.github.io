@@ -8,7 +8,7 @@ layout: book
 published: true
 permalink: /javascript-101-arrays/
 categories:
-- javascript
+- JavaScript
 ---
 *This was the first contribution I've ever made at [GitHub](https://github.com/jquery/learn.jquery.com/pull/88), belonging to the original
 learn.jquery.com website. The original article is now offline, but saved here for the future.*

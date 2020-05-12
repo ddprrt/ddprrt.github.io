@@ -5,7 +5,7 @@ layout: post
 permalink: /scriptcast/
 categories:
 - podcast
-- personal
+- Personal
 ---
 
 I love podcasting. I started back in 2009 and hosted a literature podcast for roughly two years. That's where I made my first steps in producing non-written content and had lots of fun! I fiddled around doing interviews, chats, specials and audio dramas. Trying to read certain passages of books and added some sound effects to make those passages more interesting. Best thing was buying a semi-professional equipment and record public readings from authors directly from the mixer.

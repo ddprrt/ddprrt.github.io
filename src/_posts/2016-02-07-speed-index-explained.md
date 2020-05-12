@@ -4,7 +4,7 @@ layout: post
 published: true
 permalink: /speed-index-explained-topconf/
 categories:
-- conferences
+- Conferences
 ---
 
 I gave a talk on the beloved "Speed Index" metric at this year's Topconf in Tallinn.

@@ -2,7 +2,7 @@
 title: "TypeScript and React: Styles and CSS"
 layout: post-typescript
 categories:
-- typescript
+- TypeScript
 published: true
 next:
   title: Further reading

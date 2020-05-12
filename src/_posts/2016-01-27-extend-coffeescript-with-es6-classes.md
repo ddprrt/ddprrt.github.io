@@ -5,8 +5,8 @@ published: true
 permalink: /extend-coffeescript-with-es6-classes/
 categories:
 - ecmascript
-- javascript
-- node.js
+- JavaScript
+- Node.js
 ---
 
 **TL;DR**: If you want to extend from CoffeeScript written classes, you can use

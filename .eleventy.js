@@ -24,11 +24,30 @@ module.exports = function(config) {
     return value.toLowerCase()
   })
 
+  config.addCollection('categories', function (collection) {
+    const categories = collection.items.filter(Boolean).reverse().reduce((prev, current) => {
+      if(current.data.categories) {
+        return [...new Set([...current.data.categories, ...prev])]
+      }
+      return prev
+    }, [])
+    let cats = {}
+    categories.forEach(el => {
+      cats[el] = collection.items
+        .filter(item => item.data.categories && item.data.categories.includes(el))
+        .sort((a, b) => {
+          return a.date - b.date
+        })
+    })
+    return cats
+  })
+
   config.addPlugin(syntaxHighlight)
 
   config.addPassthroughCopy('./src/wp-content/')
   config.addPassthroughCopy('./src/manifest.json')
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
+  config.addPassthroughCopy('./src/typescript-react/img/')
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
 
   config.addWatchTarget('./src/_assets')

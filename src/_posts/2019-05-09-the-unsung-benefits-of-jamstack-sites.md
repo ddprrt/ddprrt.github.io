@@ -4,7 +4,7 @@ published: true
 description: You've heard about availability, performance, and security benefits of JAMStack sites. But there's more! 
 layout: post
 categories:
-  - JAMStack
+  - Jamstack
 permalink: /jamstack-the-unsung-benefits/
 ---
 

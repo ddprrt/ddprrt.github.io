@@ -21,6 +21,10 @@ body {
   color: #454545;
 }
 
+img {
+  max-width: 100%;
+}
+
 nav {
   background-image: var(--gradient);
   background-size: 100vw 10px;
@@ -33,6 +37,18 @@ nav {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
+}
+
+.wrapper ul, .wrapper ol {
+  padding-left: 1em;
+}
+
+.wrapper li {
+  margin-bottom: 0.5rem;
+}
+
+.wrapper ol li {
+  padding-left: 0.5em;
 }
 
 .logo {
@@ -256,3 +272,5 @@ h2, h3 {
   font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   margin-top: 3em;
 }
+
+@import "components/aspect"

@@ -4,8 +4,8 @@ layout: book
 published: true
 permalink: /gulp-recipes-part-2/
 categories:
-- gulp
-- tools
+- Gulp
+- Tools
 ---
 
 One month has passed, many questions on [StackOverflow](http://stackoverflow.com/questions/tagged/gulp) have been answered, so here's yet another round of common Gulp issues with a simple and repeatable solution to them. Be sure to check out last [month's edition](/gulp-recipes-part-1), as well as my articles on [Gulp, PHP and BrowserSync](/php-browsersync-grunt-gulp) and [multiple Browserify bundles](/gulp-browserify-multiple-bundles/).
