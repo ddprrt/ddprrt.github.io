@@ -285,7 +285,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  color: var(--pink);
+  color: var(--foreground);
 }
 
 .language-html .token.punctuation,
@@ -343,4 +343,17 @@ pre[class*="language-"] {
 
 .token.namespace {
   color: #e2777a;
+}
+
+.language-diff .token {
+  color: var(--foreground);
+}
+
+.language-diff .token.deleted {
+  color: var(--pink); 
+}
+
+
+.language-diff .token.inserted {
+  color: var(--green); 
 }

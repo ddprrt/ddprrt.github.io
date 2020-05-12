@@ -16,7 +16,7 @@ Wait, four?
 `boolean` can take the values of `true` and `false`. Values from other types can be truthy or falsy, 
 like `undefined` or `null`.
 
-```javascript
+```typescript
 let b = true
 if(b) console.log('logged')
 
@@ -34,7 +34,7 @@ Values other than `undefined`, `null` or `false` considered falsy are `""` (empt
 
 To get the boolean value of any value, you can use the `Boolean` function:
 
-```javascript
+```typescript
 Boolean(false) // false
 Boolean(true) // true
 Boolean("false") // true ❗️
@@ -57,7 +57,7 @@ for other values.
 
 The `Boolean` function is really good to filter empty values from collections:
 
-```javascript
+```typescript
 const collection = [
   { name: 'Stefan Baumgartner', age: 37 },
   undefined,
@@ -73,7 +73,7 @@ collection.filter(Boolean) // handy!
 Together with `Number` -- which converts all values into their `number` counterpart or `NaN`, this
 is a really cool way of getting to actual values quickly:
 
-```javascript
+```typescript
 const x = ["1.23", 2137123, "wut", false, "lol", undefined, null]
   .map(Number)
   .filter(Boolean) // [1.23, 2137123] 👍
@@ -83,7 +83,7 @@ const x = ["1.23", 2137123, "wut", false, "lol", undefined, null]
 However, with `new Boolean(...)` you create a wrapping object, making value comparisions truthy, 
 but reference comparisions falsy:
 
-```javascript
+```typescript
 const value = Boolean("Stefan") // true
 const reference = new Boolean("Stefan") // [Boolean: true]
 
@@ -93,7 +93,7 @@ value === reference // false
 
 You get to the value via `.valueOf()`:
 
-```javascript
+```typescript
 value === reference.valueOf() // true
 ```
 
@@ -106,7 +106,7 @@ If you know a practical use case, please [let me know](https://twitter.com/ddprr
 `boolean` in TypeScript is a primitive type. Be sure to use the lower case version and don't
 refer to object instances from `Boolean`
 
-```javascript
+```typescript
 const boolLiteral: boolean = false // 👍
 const boolObject: Boolean = false // 👎
 ```
@@ -116,7 +116,7 @@ It works, but it's bad practice as we really rarely need `new Boolean` objects.
 You can assign `true`, `false` and `undefined` and `null` to `boolean` in TypeScript 
 without strict null checks.
 
-```javascript
+```typescript
 const boolTrue: boolean = true // 👍
 const boolFalse: boolean = false // 👍
 const boolUndefined: boolean = undefined // 👍
@@ -125,7 +125,7 @@ const boolNull: boolean = null // 👍
 
 With that, `boolean` is the only one we can express fully through union types:
 
-```javascript
+```typescript
 type MyBoolean = true | false | null | undefined // same as boolean
 
 const mybool: MyBoolean = true
@@ -134,7 +134,7 @@ const yourbool: boolean = false
 
 When we enable the `strictNullChecks` compiler flag, the set of values reduces to `true` and `false`.
 
-```javascript
+```typescript
 const boolTrue: boolean = true // 👍
 const boolFalse: boolean = false // 👍
 const boolUndefined: boolean = undefined // 💥
@@ -143,13 +143,13 @@ const boolNull: boolean = null // 💥
 
 So our set reduces to two values in total.
 
-```javascript
+```typescript
 type MyStrictBoolean = true | false
 ```
 
 We can also get rid of null values with the NonNullable helper type:
 
-```javascript
+```typescript
 type NonNullable<T> = T extends null | undefined
   ? never
   : T;
@@ -163,7 +163,7 @@ allows for interesting conditional types.
 Think of an mutation in a datastore through a function. You set a flag in a function that
 updates e.g. the user id. You have to provide the user ID then:
 
-```javascript
+```typescript
 type CheckUserId<Properties, AddUserId> = 
     AddUserId extends true 
     ? Properties & { userId: string }
@@ -188,7 +188,7 @@ We can make this type more explicit by extending our generics from the types we 
 
 In use, it might declare a function like this:
 
-```javascript
+```typescript
 declare function mutate<P, A extends boolean = false>
   (props: CheckUserId<P, A>, addUserId?: A): void
 ```
@@ -198,7 +198,7 @@ info depending on `addUserId` to be set or not.
 
 The function in action:
 
-```javascript
+```typescript
 mutate({}) // 👍
 mutate({ data: 'Hello folks' }) // 👍
 mutate({ name: 'Stefan' }, false) // 👍

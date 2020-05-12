@@ -171,7 +171,7 @@ Again a set of conditions:
 
 Lots of helper types, but roughly 20 lines of code to get it right:
 
-```javascript
+```typescript
 type InferValue<Prop extends PropertyKey, Desc> =
   Desc extends { get(): any, value: any } ? never :  
   Desc extends { value: infer T } ? Record<Prop, T> : 
@@ -195,7 +195,7 @@ function defineProperty<
 
 Let's see what TypeScript does:
 
-```javascript
+```typescript
 
 const storage = {
   currentValue: 0
