@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>The other day I was holding a workshop on performance optimisation for single page applications. For this workshop I needed an example that I could optimise step by step. I decided not to use a framework, as I didn’t know the experiences and background of my attendees. Also, I didn’t want to draw attention to framework details, rather focus on concepts that build on the platform and that are universally applicable to SPAs.</p>
+<p>Coding modern JavaScript for quite a while (especially on Node!), I used every new language feature in my demo app: <code>import</code>/<code>export</code>, <code>async</code>/<code>await</code>, <code>fetch</code>, classes, arrow functions, template strings and literals. Basically everything that clashes with good old ES5 syntax-wise.</p>
+<p>After I wrote the first couple of lines, I was naturally thinking about transpiling everything down to something all browser could understand. Then I paused for a little while and asked myself: <em>Do I really have to?</em></p>
+<h2>Browsers don’t need to get there, they are here!</h2>
+<p>So before installing Babel and Webpack or Browserify, I realised something: Just like every single browser on all my books knows how to interpret CSS Grid, every single browser on all my books has implemented a great deal of ESnext syntax features. Features that would cause syntax errors on older platforms.</p>
+<p>I knew that from features like classes or arrow functions. But even things like <code>async</code>/<code>await</code> – which I rarely used before – <a href="https://caniuse.com/#feat=async-functions">are available on all major platforms</a>. This is amazing! This is living in the future! No need to transpile, no need to have a build script. Code, deploy, run!</p>
+<p>See the code below. This is the standard <a href="https://glitch.com/edit/#!/es5-jquery-version?path=public/client.js:1:0"><code>client.js</code></a> file from <a href="https://glitch.com">glitch.com</a>, but refactored to use modern JavaScript instead of jQuery and old syntax.</p>
+<pre><code class="language-javascript">const $ = (sel) =&gt; document.querySelector(sel);
+
+export async function init() {
+  console.log('hello world :o');
+  const res = await fetch('/dreams');
+  const dreams = await res.json();
+  $('#dreams').innerHTML = dreams.map(dream =&gt; `&lt;li&gt;${dream}&lt;/li&gt;`).join('');
+
+  $('form').addEventListener('submit', async (ev) =&gt; {
+    ev.preventDefault();
+    const dream = $('input').value;
+    const res = await fetch(`/dreams?dream=${dream}`, { method: 'POST' });
+    if(res.ok) {
+      $('#dreams').innerHTML = $('#dreams').innerHTML + `&lt;li&gt;${dream}&lt;/li&gt;`;
+      $('input').value = '';
+      $('input').focus();
+    }
+  });
+}
+</code></pre>
+<p>Look at all the goodness we can use now:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function"><code>async/await</code></a> - write asynchronous code in a synchronous way. Syntactic sugar for your promises!</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch"><code>fetch</code></a> - like XHR, but actually easy to use!</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions</a> - anonymous functions, easier to write, easier to scope</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template strings</a> - no more weird string concatenation</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">Modules</a> - export and import from other JavaScript files, natively</li>
+</ul>
+<p><em>But wait</em>, you might say, <em>what about the browsers that don’t support all those new features</em>? Yeah, what about those?</p>
+<h2>Cutting the mustard - 5 years ago</h2>
+<p>I loved it when <a href="https://twitter.com/codepo8">Chris Heilmann</a> said at <a href="https://scriptconf.org">ScriptConf</a> that “it’s <strong>not</strong> okay to block old browsers, but it’s a <strong>waste of time</strong> to support them 100%”. This is wonderful call to do progressive enhancement. Create a solid foundation, enhance when features are ready. You can do this for every feature on its own. Or you can be more aggressive and make a clean cut in which browsers you support and which you don’t.</p>
+<p>The BBC calls it <em><a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">cutting the mustard</a></em>. Having a strict set of rules a browser has to pass to get the full experience.</p>
+<pre><code class="language-javascript">if('querySelector' in document
+  &amp;&amp; 'localStorage' in window
+  &amp;&amp; 'addEventListener' in window) {
+  // bootstrap the javascript application
+}
+</code></pre>
+<p>If a browser does not fulfil one criteria, it won’t get any JavaScript and has to live with the plain old, but still usable, HTML only experience. The rules are a sign of the times. This article was published more than five years ago. It distinguishes between “HTML4” browsers (which had no unified API and would most likely need jQuery) and “HTML5” browsers.</p>
+<p>I think we now face a similar distinction between ES5 browsers and modern ESnext browsers. And I think we can once again make a clean cut: Deliver a solid, but reduced experience to non ESnext browsers, get the full featured experience on modern browsers.</p>
+<h2>Cutting the mustard - now!</h2>
+<p>The rules in the BBC article were checking for features available in the platform. This time it’s a bit different, as we most likely don’t even get to feature checks. The syntax updates are so entirely different, that some browsers might throw syntax errors before the whole script is parsed and executed.</p>
+<p>But, there’s a way to safely activate the feature-rich enhancement on modern platforms without causing any error at all. And it’s baked right into the platform itself!</p>
+<p>Along with all the modern syntax features comes a (not so) little but important specification: Modules. Not only modules in the sense of importing and exporting methods from other files, but also a <code>script</code> type that’s available in HTML:</p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot;&gt;
+import { init } from './client.js';
+init();
+&lt;/script&gt;
+</code></pre>
+<p>At time of writing this <code>script</code> type is available in all modern browsers (in Firefox behind a flag) and features a wonderful behaviour for our cause: Browsers that understand this type will load the module as defined. Browsers that don’t know what to do with that will simply ignore the whole lot. Perfect!</p>
+<p><em>But what about Firefox!</em>, I hear you say.  Firefox supports all the goodness I’ve shown you earlier, but modules are still behind a flag. However, as history shows, this is something that can change rather quickly. Every other browser features ES modules. And ES modules work pretty well in Firefox when the flag is activated. So the path for Firefox to feature ES modules in all upcoming releases is a good one. We just have to wait a little.</p>
+<p>And if you just can’t wait, than you can use a proposal by <a href="https://twitter.com/jouni_kantola">Jouni</a>: Doing <a href="https://github.com/jouni-kantola/webpack-promote-modern-browsers/blob/master/ViewTemplates/modern-script-view-template.tmpl">feature tests for async functions</a>.</p>
+<h2>Using it now</h2>
+<p>We reached a point with evergreen browsers where we can define another checkpoint, a new status quo for browser features. Just as we distinguished between non-HTML5 browsers and HTML5 browsers back in the day, we can make a watershed for non-ES6 and ES6 browsers from now on. A common understanding on what’s supported and what isn’t.</p>
+<p>After piecing all together, I decided to use this right away. All my new sites and projects will try to live without transpiling or bundling. Maybe a little <a href="https://rollupjs.org">Rollup</a> to reduce the amount of files, but no extra module loading behaviour that doesn’t come from platform. And inside my scripts I can freely use all the syntax I love and know from Babel-times and Node.js.</p>
+
+</body>
+</html>

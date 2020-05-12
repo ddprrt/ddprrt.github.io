@@ -1,0 +1,119 @@
+&lt;p&gt;In the last two weeks I spent a good deal of time on &lt;a href=&quot;http://stackoverflow.com/questions/tagged/gulp&quot;&gt;StackOverflow&lt;/a&gt;, trying to solve every open Gulp question there is. The reasons for that are manifold, and besides an overall high amount of spare time and a strong tendency to masochism (it would be more if I’d watch the JavaScript channel there), there was one more reason, which I hope to address at some point in the future.&lt;/p&gt;
+&lt;p&gt;After answering about 30 questions or so, I saw that while their issues seem to be unique, the solutions to them are often nearly the same. Focussing on the problems that lie underneath, I tried to compile a list of recipes which might help you with your own gulpy hiccups.&lt;/p&gt;
+&lt;p&gt;To make it more easily digestible, I’ll start with three recipes for now, continuing this series over time.&lt;/p&gt;
+&lt;h3&gt;Today’s menu:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#conditionally-delete-files&quot;&gt;Conditionally delete files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stopping-the-watch-process-after-some-time&quot;&gt;Stopping &lt;code&gt;gulp.watch&lt;/code&gt; after some time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#same-task-different-configurations&quot;&gt;Same task, different configurations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;conditionally-delete-files&quot;&gt;Conditionally delete files&lt;/h2&gt;
+&lt;p&gt;There was one user &lt;a href=&quot;http://stackoverflow.com/questions/29267041/how-to-conditionally-delete-generated-javascript-files/&quot;&gt;having fun with TypeScript&lt;/a&gt;, and putting the output of every compiled &lt;code&gt;.ts&lt;/code&gt; file into the same directory. This directory also contains other &lt;code&gt;.js&lt;/code&gt; files:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;scripts/
+├── module.ts   // the original TypeScript file
+├── module.js   // the compile JavaScript file, we need to get rid of this
+├── module2.ts  // the original TypeScript file
+├── module2.js  // compiled JS --&amp;gt; delete
+└── library.js  // original JavaScript file, this one should be kept
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, without changing the folder structure, how do you get rid of the compiled resources, without touching the original JavaScript files? We just cannot delete all “.js” files, because we would remove &lt;code&gt;library.js&lt;/code&gt; also. But what we can do is select all our TypeScript files, and find the accompanying JavaScript files. To do so, we use &lt;a href=&quot;https://www.npmjs.com/package/glob&quot;&gt;&lt;code&gt;glob&lt;/code&gt;&lt;/a&gt; (or &lt;a href=&quot;https://www.npmjs.com/package/globby&quot;&gt;&lt;code&gt;globby&lt;/code&gt;&lt;/a&gt;) to recreate the same file selection mechanism we know from Gulp. The output is different: Instead of getting a stream of vinyl objects, we get an array of filenames. And this array we are going to manipulate by replacing the file extension (&lt;code&gt;.ts&lt;/code&gt;) with a new one.&lt;/p&gt;
+&lt;p&gt;What we get is a new array, consisting of only JavaScript files. We pass this one to the &lt;code&gt;del&lt;/code&gt; module:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var gulp = require(&#39;gulp&#39;);
+var del = require(&#39;del&#39;);
+var glob = require(&#39;glob&#39;);
+
+// This method replaces all &amp;quot;.ts&amp;quot; occurrences at the
+// end of our filenames with &amp;quot;.js&amp;quot;
+var replaceTS = function(file) {
+    return file.replace(/.ts$/, &#39;.js&#39;);
+};
+
+gulp.task(&#39;delete&#39;, function(done) {
+    glob(&#39;./scripts/**/*.ts&#39;, function(err, files) {
+        del(files.map(replaceTS));
+        done();
+    })
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Please note that we don’t need any Gulp plugins or similar. Everything is done using standard node modules. One of the bigger strengths of Gulp.&lt;/p&gt;
+&lt;h2 id=&quot;stopping-the-watch-process-after-some-time&quot;&gt;Stopping `gulp.watch` after some time&lt;/h2&gt;
+&lt;p&gt;In this &lt;a href=&quot;http://stackoverflow.com/questions/29268054/how-to-timeout-gulp-watch-if-inactive/&quot;&gt;issue&lt;/a&gt;, Stack Overflow user Finglish wanted to know how to stop Gulp’s watch process after being idle for some time. You can use that to be reminded of your own laziness or – more likely – to kill demanding processes should you have forgotten them. The latter one actually happens lots of time to me.&lt;/p&gt;
+&lt;p&gt;I included this one in this series because you’ll learn that &lt;code&gt;gulp.watch&lt;/code&gt; has more to offer than just a simple watch process:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;gulp.task(&#39;watch&#39;, function() {
+	// gulp.watch here works like you would&#39;ve
+	// expected it. Only difference: We save the
+	// returned watcher in a variable.
+    var watcher = gulp.watch(&#39;./app/*.js&#39;, [&#39;jshint&#39;]);
+
+    // Simple and basic JavaScript: After one hour, we call
+    // watcher.end to end the watch process and thus
+    // Gulp, too.
+    var timeout = setTimeout(watcher.end, 60*60*1000);
+
+	// Should one of our watched files change ...
+    watcher.on(&#39;change&#39;, function() {
+    	// .. we clear the timeout call we created earlier ...
+        clearTimeout(timeout);
+        // .. and start it anew ...
+        timeout = setTimeout(watcher.end, 60*60*1000);
+    });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Prime example of how basic Gulp functionality mixed with a touch of basic JavaScript methods create something helpful and unique.&lt;/p&gt;
+&lt;h2 id=&quot;same-task-different-configurations&quot;&gt;Same task, different configurations&lt;/h2&gt;
+&lt;p&gt;This one I do get a lot: What if you want to run the same task, but with different configurations. Take this configuration object for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var config = [
+	{
+		src: &#39;project-one/scripts/**/*.js&#39;,
+		name: &#39;p1.bundle.js&#39;,
+		dest: &#39;public/compiled&#39;
+	},
+	{
+		src: &#39;project-two/scripts/**/*.js&#39;,
+		name: &#39;p2.bundle.js&#39;,
+		dest: &#39;public/compiled&#39;
+	},
+	{
+		src: &#39;project-three/scripts/**/*.js&#39;,
+		name: &#39;p3.bundle.js&#39;,
+		dest: &#39;private/compiled&#39;
+	},
+	{
+		src: &#39;project-four/scripts/**/*.js&#39;,
+		name: &#39;p4.bundle.js&#39;,
+		dest: &#39;private/compiled&#39;
+	}
+];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We want to run all of those to a pipeline of task which is absolutely identical. The only things different are inputs and outputs. We can achieve this by creating a so called stream array:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var gulp   = require(&#39;gulp&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var rename = require(&#39;gulp-rename&#39;);
+// this node module will do the trick
+var merge  = require(&#39;merge2&#39;);
+
+gulp.task(&#39;scripts&#39;, function() {
+	// we use the array map function to map each
+	// entry in our configuration array to a function
+	var tasks = config.map(function(entry) {
+		// the parameter we get is this very entry. In
+		// that case, an object containing src, name and
+		// dest.
+		// So here we create a Gulp stream as we would
+		// do if we just handle one set of files
+		return gulp.src(entry.src)
+			.pipe(concat())
+			.pipe(uglify())
+			.pipe(rename(entry.name))
+			.pipe(gulp.dest(entry.dest))
+	});
+	// tasks now includes an array of Gulp streams. Use
+	// the `merge-stream` module to combine them into one
+	return merge(tasks);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This pattern can be used by many problems. We had something similar last time when we created &lt;a href=&quot;/gulp-browserify-multiple-bundles/&quot;&gt;multiple Browserify bundles&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Bottom line&lt;/h2&gt;
+&lt;p&gt;All three recipes share one thing in common: There is no special gulp plugin or fancy core functionality doing magic tricks, it’s most of the time basic JavaScript and some already existing modules from the Node.js ecosystem. This might also be the reason those questions are asked that often on StackOverflow and consorts, because it’s a lot harder to find and requires some mental switch. Especially if you come from other build systems such as Grunt.&lt;/p&gt;
+

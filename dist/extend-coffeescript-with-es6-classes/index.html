@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p><strong>TL;DR</strong>: If you want to extend from CoffeeScript written classes, you can use<br>
+the ES6 class syntax to do so.</p>
+<p>Every once in a while you run into a library that was written with the best<br>
+intentions, but in CoffeeScript. Now you need that library badly, even want<br>
+to write your own extensions … but alas, the lack of parentheses keeps you<br>
+from the caffeine. That just happened to me with <a href="https://github.com/sirlantis/liquid-node">liquid-node</a>.</p>
+<p>Lovely tool, but to extend it to suit my needs, I would have to write in<br>
+CoffeeScript. Says the documentation. Turns out, you don’t have to. Not if your<br>
+runtime environment is capable of ES6 classes.</p>
+<h2>An example</h2>
+<p>Take this code listing for example:</p>
+<pre><code class="language-javascript">'use strict';
+
+const Liquid = require('liquid-node'); // 1
+const highlight = require('highlight.js')
+
+module.exports = class Highlight extends Liquid.Block { // 2
+  constructor(template, tag, params) {
+    super(template, tag, params); // 3
+    this.language = typeof params !== 'undefined' ?
+      params.trim() : 'bash';
+  }
+  render(context) {
+    return super.render(context) // 4
+      .then(chunks =&gt; highlight.highlight(this.language, chunks.join('')))
+      .then(parsed =&gt; `&lt;div class=&quot;highlight&quot;&gt;
+        &lt;pre&gt;
+          &lt;code class=&quot;${this.language}&quot;&gt;${parsed.value}&lt;/code&gt;
+        &lt;/pre&gt;
+      &lt;/div&gt;`);
+  }
+}
+</code></pre>
+<p>What’s going on?</p>
+<ol>
+<li>This is the library written in CoffeeScript. It features lots of classes that<br>
+can be used to create or own functionality.</li>
+<li>With ES6 syntax, we can extend from the class <code>Liquid.Block</code> like it would be<br>
+done with CoffeeScript</li>
+<li>You can even call the constructor from the class you extend from</li>
+<li>Or do any other <code>super</code> calls</li>
+</ol>
+<h2>Why does that work</h2>
+<p>The CoffeeScript class syntax doesn’t create classes like you know from<br>
+the classical object oriented languages like Java or C#. Instead, it provides<br>
+some syntactic sugar for JavaScript’s prototype chain.</p>
+<p>ES6 classes do they same, but baked in your runtime environment. In this case:<br>
+Node 5. Should you use Babel to transpile ES6 classes to ES5, you will see that<br>
+the outcome is somewhat similar to the output created by CoffeeScript.</p>
+<p>If you want to learn more about prototypical inheritance, I strongly<br>
+suggest you check out Eric Elliot’s fantastic articles on that topic:</p>
+<ul>
+<li><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9">Difference between class and prototypal inheritance</a></li>
+<li><a href="https://medium.com/javascript-scene/the-heart-soul-of-prototypal-oo-concatenative-inheritance-a3b64cb27819#.plcy9jq2g">The Heart &amp; Soul of Prototypal OO: Concatenative Inheritance</a></li>
+</ul>
+
+</body>
+</html>

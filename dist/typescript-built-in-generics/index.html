@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>TypeScript comes with a ton of built in generic types that ease your development workflow. Here’s a list of all built-in generic types, with examples!</p>
+<p><strong>Note</strong>: This list is probably (most definitely) not complete. If you miss something and<br>
+want to have it added, please reach out to me via <a href="https://twitter.com/ddprrt">Twitter</a></p>
+<p>See more on:</p>
+<ul>
+<li><a href="#readonly">Readonly</a></li>
+<li><a href="#readonlyarray">ReadonlyArray</a></li>
+<li><a href="#returntype">ReturnType</a></li>
+<li><a href="#partial">Partial</a></li>
+<li><a href="#required">Required</a></li>
+<li><a href="#nonnullable">NonNullable</a></li>
+<li><a href="#pick">Pick</a></li>
+<li><a href="#record">Record</a></li>
+<li><a href="#extract">Extract</a></li>
+<li><a href="#exclude">Exclude</a></li>
+<li><a href="#omit">Omit</a></li>
+<li><a href="#bottom-line">Bottom line</a></li>
+</ul>
+<h2>Readonly</h2>
+<p><code>const</code> in JavaScript is tricky, because it only means you can’t reassign any other values to<br>
+this name. It allows however for changing properties of an object. The <code>Readonly</code> built-in<br>
+type helps:</p>
+<pre><code class="language-javascript">type Point = {
+  x: number,
+  y: number
+};
+
+const p: Readonly&lt;Point&gt; = {
+  x: 4,
+  y: 2
+};
+
+p.x = 5; // ⚡️ compile error!
+</code></pre>
+<h2>ReadonlyArray</h2>
+<p>The generic, built-in type <code>ReadonlyArray</code> allows us to throw errors once we use an array<br>
+function that mutates the original array. See for yourself:</p>
+<pre><code class="language-javascript">const values: ReadonlyArray&lt;number&gt; = [1, 2, 3, 4, 5];
+
+values.push(6); // ⚡️ compile error! This mutates the array
+values.filter(x =&gt; x &gt; 4); // ✔︎ compiles! filter returns a new array
+</code></pre>
+<p>Handy if you want to keep an immutable array!</p>
+<h2>ReturnType</h2>
+<p>This built-in type gets you the return type of any function.</p>
+<pre><code class="language-javascript">type Point = {
+  x: number,
+  y: number
+}
+
+function generateSquare(bottomLeft: Point, topRight: Point) {
+  return {
+    bottomLeft,
+    bottomRight: {
+      x: topRight.x,
+      y: bottomLeft.y,
+    },
+    topLeft: {
+      x: bottomLeft.x,
+      y: topRight.y
+    },
+    topRight
+  }
+}
+
+type Square = ReturnType&lt;typeof generateSquare&gt;; 
+// here's the magic! I can use this return type now everywhere
+// in my code
+
+function areaOfSquare(square: Square): number {
+  //do something
+  return result;
+}
+</code></pre>
+<p>You can also access functions inside classes:</p>
+<pre><code class="language-javascript">class Square {
+  generate(bottomLeft, topRight) {
+    return {
+      bottomLeft,
+      bottomRight: {
+        x: topRight.x,
+        y: bottomLeft.y,
+      },
+      topLeft: {
+        x: bottomLeft.x,
+        y: topRight.y
+      },
+      topRight
+    }
+  }
+}
+
+type TSquare = ReturnType&lt;Square['generate']&gt;;
+declare let result: TSquare;
+</code></pre>
+<h2>Partial</h2>
+<p><code>Partial&lt;T&gt;</code> is a beauty. It takes all properties from one type, and makes them optional.<br>
+What is it good for? Think about having a set of default options, and you want to override<br>
+just parts and pieces from them. <code>Partial&lt;T&gt;</code> helps you getting autocomplete and<br>
+type-checking for that case:</p>
+<pre><code class="language-javascript">const defaultOptions = {
+  directory: '.',
+  incremental: true, 
+  filePattern: '**/*',
+}
+
+function start(options: Partial&lt;typeof defaultOptions&gt;) {
+  const allOptions = Object.assign({}, defaultOptions, options);
+  console.log(allOptions); 
+}
+
+start({
+  incremental: false, // Awesome! Typechecks!
+});
+
+start({
+  flatten: true // ⚡️ Error! This property has nothing to do with our options
+});
+</code></pre>
+<h2>Required</h2>
+<p><code>Required&lt;T&gt;</code> is the opposite to <code>Partial&lt;T&gt;</code>. Where <code>Partial&lt;T&gt;</code> makes every property<br>
+optional, required makes ever property necessary.</p>
+<pre><code class="language-javascript">type Container = {
+  width: number,
+  height: number, 
+  children?: Container[]
+}
+
+function getChildrenArea(parent: Required&lt;Container&gt;) {
+  let sum = 0;
+  for (let child of parent.children) {
+    sum = sum + (child.width * child.height)
+  }
+  return sum;
+}
+
+const mainContainer: Container = {
+  width: 200,
+  height: 100
+}
+
+getChildrenArea(mainContainer); // ⚡️ Error: Needs children
+</code></pre>
+<h2>NonNullable</h2>
+<p><code>NonNullable&lt;T&gt;</code> helps you to ensure you don’t pass <code>null</code> or <code>undefined</code> to your functions.<br>
+This complements the <code>strictNullChecks</code> compiler flag, so make sure you activate it.</p>
+<pre><code class="language-javascript">function print&lt;T&gt;(x: NonNullable&lt;T&gt;) {
+  console.log(x.toString());
+}
+
+print('Hello');
+print(2);
+print(null); // ⚡️ Error
+print(undefined); // ⚡️ Error
+</code></pre>
+<h2>Pick</h2>
+<p>With <code>Pick&lt;T, K extends keyof T&gt;</code> you can create a new type from an existing object, by only<br>
+using a selected list of properties. Lodash’s eponymous <code>pick</code> function is a good example of<br>
+its usage:</p>
+<pre><code class="language-javascript">/**
+ * The pick function is generic as well. It has two generic types:
+ * - T ... the type of the object we want to pick props from
+ * - K ... a subset of all keys in T
+ *
+ * Our method signature takes an object of type T, the other parameters
+ * are collected in an array of type K.
+ *
+ * The return type is a subset of keys of T.
+ */
+declare function pick&lt;T, K extends keyof T&gt;(obj: T, ...propsToPick: K[]): Pick&lt;T, K&gt;;
+
+const point3D = {
+  x: 2,
+  y: 0,
+  z: 4
+}
+
+const point2D = pick(point3D, 'x', 'y'); // returns a type { x: number, y: number }
+</code></pre>
+<p>This one is especially useful when used with other generic types, e.g. <code>Exclude</code>.</p>
+<h2>Record</h2>
+<p><code>Record&lt;K, T&gt;</code> is funny. With it you can say that *every key <code>K</code> should be of type <code>T</code>. With<br>
+it you can do things like</p>
+<pre><code class="language-javascript">type Person = Record&lt;'firstName' | 'lastName', string&gt;
+</code></pre>
+<p>which is the same as <code>{ firstName: string, lastName: string }</code>. Or, something like</p>
+<pre><code class="language-javascript">type MetaInfo = {
+  title: string,
+  url: string
+}
+
+type Episodes = Record&lt;string, MetaInfo&gt;
+</code></pre>
+<p>Which allows an object with any key possible, but values of type <code>MetaInfo</code>.<br>
+This is very much alike to <code>{ [k: string]: MetaInfo }</code>.</p>
+<p>So far, so good. But why have this generic <code>Record</code> type if we can achieve similar, if not<br>
+the same results with other methods?<br>
+<code>Record</code> helps when you deal with other generic types. Let’s look at that example: We can<br>
+create a function that transforms all values of an object to a string representation:</p>
+<pre><code class="language-javascript">// The implementation is somewhere else. It converts all values to strings.
+declare function allToString&lt;T&gt;(obj: T): Record&lt;keyof T, string&gt;;
+
+const person = {
+  firstName: 'Stefan',
+  lastName: 'Baumgartner',
+  age: Number.MAX_VALUE
+}
+
+// all properites in strPerson are now strings
+const strPerson = allToString(person);
+</code></pre>
+<p><a href="https://www.typescriptlang.org/play/index.html#src=function%20allToString%3CT%3E(obj%3A%20T)%3A%20Record%3Ckeyof%20T%2C%20string%3E%20%7B%0D%0A%20%20%20%20let%20transfer%3A%20Partial%3CRecord%3Ckeyof%20T%2C%20string%3E%3E%20%3D%20%7B%7D%3B%0D%0A%20%20%20%20for%20(let%20key%20in%20obj)%20%7B%0D%0A%20%20%20%20%20%20%20%20transfer%5Bkey%5D%20%3D%20obj%5Bkey%5D.toString()%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20return%20transfer%20as%20Record%3Ckeyof%20T%2C%20string%3E%3B%0D%0A%7D%0D%0A%0D%0Aconst%20person%20%3D%20%7B%0D%0A%20%20%20%20firstName%3A%20'Stefan'%2C%0D%0A%20%20%20%20lastName%3A%20'Baumgartner'%2C%0D%0A%20%20%20%20age%3A%20Number.MAX_VALUE%0D%0A%7D%0D%0A%0D%0Atype%20Person%20%3D%20typeof%20person%3B%0D%0A%0D%0Aconst%20strPerson%20%3D%20allToString(person)%3B%0D%0A">Check it out here</a>;</p>
+<h2>Extract</h2>
+<p><code>Extract&lt;T, K&gt;</code> extracts all types from <code>T</code> that are assignable to <code>K</code>. Let’s say you have<br>
+two different types of shape. Circles and rectangles. They look something like that:</p>
+<pre><code class="language-javascript">const rect = {
+  width: 200,
+  height: 100,
+  area() {
+    return this.width * this.height;
+  },
+  perimeter() {
+    return this.width * 2 + this.height * 2;
+  }
+}
+
+const circle = {
+  r: 50,
+  area() {
+    return this.r * this.r * Math.PI;
+  },
+  perimeter() {
+    return 2 * this.r * Math.PI;
+  }
+}
+</code></pre>
+<p>Their types are</p>
+<pre><code class="language-javascript">type Rect = typeof rect;
+type Circle = typeof circle;
+</code></pre>
+<p>They have something in common: They both have the same methods for <code>area</code> and <code>perimeter</code>.<br>
+These objects might change over time. We still want to make sure that we only access<br>
+methods that are available in both of them. With <code>Extract</code>, we can get the keys of those<br>
+functions:</p>
+<pre><code class="language-javascript">// extracts: 'area' | 'perimeter'
+type ShapeFunctionProps = Extract&lt;keyof Rect, keyof Circle&gt;
+</code></pre>
+<p>To create a type that has access to all those functions again, we can use the <code>Record</code> type<br>
+from earlier on:</p>
+<pre><code class="language-javascript">type ShapeFunctions = Record&lt;ShapeFunctionProps, () =&gt; number&gt;
+</code></pre>
+<p>Now we have this extra type safety in functions that may apply to all of those objects:</p>
+<pre><code class="language-javascript">declare function extensiveMath&lt;T extends ShapeFunctions&gt;(obj: T)
+
+extensiveMath(rect); // ✅ compiles
+extensiveMath(circle); // ✅ compiles
+</code></pre>
+<h2>Exclude</h2>
+<p><code>Exclude&lt;T, K&gt;</code> excludes all types from <code>T</code> that are assignable to <code>K</code>. It’s like the<br>
+opposite of <code>Extract</code>. Let’s take the example from earlier:</p>
+<pre><code class="language-javascript">type Rect = typeof rect;
+type Circle = typeof circle;
+
+// only has 'width' | 'height';
+type RectOnlyProperties = Exclude&lt;keyof Rect, keyof Circle&gt;;
+
+// An object of type { width: number, height: number }
+type RectOnly = Pick&lt;Rect, RectOnlyProperties&gt;;
+
+declare function area&lt;T extends RectOnly&gt;(obj: T)
+
+area({
+  width: 100,
+  height: 100
+})  // ✅ compiles;
+</code></pre>
+<h2>Omit</h2>
+<p>Since version 3.5, TypeScript includes the <code>Omit&lt;T, K&gt;</code> helper type. <code>Omit&lt;T, K&gt;</code> is<br>
+a shortcut for <code>Pick&lt;T, Exclude&lt;keyof T, K&gt;&gt;</code>, but since it was used so often, the team decided to<br>
+add it:</p>
+<pre><code class="language-javascript">type Person = {
+    name: string;
+    age: number;
+    location: string;
+};
+
+type Cosmopolitan = Omit&lt;Person, 'location'&gt;;
+
+// equivalent to
+type Cosmopolitan = {
+    name: string;
+    age: number;
+};
+</code></pre>
+<h2>Bottom line</h2>
+<p>That’s a couple of generic built-in types that might be useful for different cases.<br>
+I think the combination of all those generic types is super helpful if you want to<br>
+strengthen your library or application without interfering too much. Especially<br>
+when you generate type definitions for methods that allow different parameter types<br>
+(as it happens often in JavaScript), they might be much more useful than defining<br>
+every possible type outcome on its own.</p>
+<p>Again, I’m sure I missed a ton. So if you have any generic built-in type that you<br>
+want to have convered here, let me <a href="https://twitter.com/ddprrt">know</a>.</p>
+<p><em>Update</em>: My buddy Martin Hochel has a couple of mapped types that build on top of<br>
+those. They are pretty good, so <a href="https://github.com/Hotell/rex-tils#2-compile-time-typescript-type-helpers">check them out</a></p>
+<p>//include helper/include-by-tag.html tag=“TypeScript” title=“More articles about TypeScript”</p>
+
+</body>
+</html>

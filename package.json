@@ -1,0 +1,27 @@
+{
+  "name": "fettblog",
+  "version": "5.0.0",
+  "description": "My website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --watch --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddprrt/ddprrt.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddprrt/ddprrt.github.io/issues"
+  },
+  "homepage": "https://github.com/ddprrt/ddprrt.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "clean-css": "^4.2.3",
+    "cssesc": "^3.0.0",
+    "markdown-it": "^10.0.0",
+    "node-sass": "^4.14.1"
+  }
+}

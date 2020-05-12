@@ -1,0 +1,28 @@
+&lt;p&gt;Recently I had to deploy some static sites for some client, whose server didn’t allow to automatically redirect to &lt;code&gt;index.html&lt;/code&gt; when accessing a directory. It had to be named &lt;code&gt;index.php&lt;/code&gt; for whatever reason.&lt;/p&gt;
+&lt;p&gt;Having everything in one neat &lt;em&gt;Grunt.js&lt;/em&gt; build chain I tried using a plugin for this very task. And I had the very problem as with almost every &lt;em&gt;Grunt plugin&lt;/em&gt; out there: There were plenty, and none was in any way usable for my needs. &lt;em&gt;grunt-rename&lt;/em&gt; is some sort of &lt;em&gt;mv&lt;/em&gt; command (which is roughly the same, but just if you have the power of regexp), and &lt;em&gt;grunt-contrib-rename&lt;/em&gt; is neither a &lt;em&gt;contrib&lt;/em&gt; task nor does it rename files.&lt;/p&gt;
+&lt;p&gt;After some research and digging I actually found out that I didn’t have to look that far: I just can use &lt;em&gt;grunt-contrib-copy&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;You just need to attach one parameter to my configuration, which overrides the standard &lt;em&gt;rename&lt;/em&gt; function of the &lt;em&gt;Grunt&lt;/em&gt; file utilities.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;...
+copy: {
+  dist: {
+    files: [{
+      expand: true,
+      dot: true,
+      cwd: &#39;dist&#39;,
+      dest: &#39;dist/&#39;,
+      src: [
+        &#39;{,*/}*.html&#39;
+      ],
+      rename: function(dest, src) {
+        return dest + src.replace(&#39;.html&#39;,&#39;.php&#39;);
+      }
+    }]
+  }
+},
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The function takes two parameters: &lt;em&gt;dest&lt;/em&gt; and &lt;em&gt;src&lt;/em&gt;, with &lt;em&gt;dest&lt;/em&gt; being the destination directory. Be sure to attach a trailing slash at the end. &lt;em&gt;src&lt;/em&gt; is the current file, so if your expression catches more than one file, you can access them one by one here.&lt;/p&gt;
+&lt;p&gt;I just copied the files from the same directory &lt;em&gt;to&lt;/em&gt; the same directory. By having a different suffix all the files stay where the were. So afterwards, being already in the &lt;em&gt;dist&lt;/em&gt; folder, delete all the ‘html’ files using &lt;em&gt;grunt-contrib-clean&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Beware!&lt;/h2&gt;
+&lt;p&gt;Be aware that this very method is an internal utility for file operations in grunt and might not be there in the future. However, until we get something better, why not use what’s there!&lt;/p&gt;
+

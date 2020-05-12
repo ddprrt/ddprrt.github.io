@@ -1,0 +1,51 @@
+---
+layout: page
+title: Speaking
+categories: []
+tags: []
+status: publish
+type: page
+published: true
+nocomments: true
+permalink: /speaking/
+redirect_from:
+- /talks-slides/
+titleimg: /wp-content/uploads/2015/content.jpg
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  _sd_is_markdown: ''
+---
+<p>
+	From time to time I speak at conferences and other events, mostly about performance, web/design ops,
+	progressive enhancement, front-end development in large groups and tooling. 
+</p>
+
+<h2>Appearances</h2>
+
+{% for year in site.data.talks %}
+
+<h3>{{year.year}}</h3>
+<ul class="appearances">
+	
+{% assign conferences = year.conferences  | sort: 'date' | reverse %}
+{% for conf in conferences %}
+
+<li class="appearance__detail">
+	<span class="appearance__date">{{ conf.date | date: "%-d %B %Y" }}</span> {% if conf.url %}<a href="{{conf.url}}">{% endif %}{{conf.title}}{% if conf.url %}</a>{% endif %} &mdash; {{conf.city}}, {{conf.country}}
+<ol class="talks">
+{% for talk in conf.talks  %}
+	<li class="talk__entry{% if talk.type == 'Workshop' %} talk--workshop{% endif %}">
+		{{talk.title}}
+		{% if talk.abstract or talk.slides or talk.video %}&mdash;{% endif %}
+		{% if talk.abstract %}<a class="talk__coverage" href="{{talk.abstract}}">Abstract</a>{% endif %}
+		{% if talk.slides %}<a class="talk__coverage" href="{{talk.slides}}">Slides</a>{% endif %}
+		{% if talk.video %}<a class="talk__coverage" href="{{talk.video}}">Video</a>{% endif %}
+                {% if talk.podcast %}<a class="talk__coverage" href="{{talk.podcast}}">Podcast</a>{% endif %}
+	</li>
+{% endfor %}
+</ol>
+{% endfor %}
+</li>
+</ul>
+{% endfor %}

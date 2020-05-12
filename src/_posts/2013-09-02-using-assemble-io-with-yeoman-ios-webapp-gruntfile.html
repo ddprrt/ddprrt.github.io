@@ -1,0 +1,345 @@
+---
+layout: book
+title: Using assemble.io with yeoman.io's webapp Gruntfile
+categories:
+- Tools
+- Workflows
+- grunt
+- yeoman
+tags:
+- assemble.io
+- Grunt
+- static site generator
+- yeoman
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sd_is_markdown: ''
+excerpt_small: "With Effeckt.css I discovered assemble.io, a node-based static site generator for ... well ... assembling HTML files from different parts."
+---
+<p>With <a href="http://h5bp.github.io/Effeckt.css/dist/">Effeckt.css</a> I discovered <a href="http://assemble.io/">assemble.io</a>, a node-based static site generator for ... well ... assembling HTML files from different parts.</p>
+
+<p>A tool like that was much needed by our department once we switched from an inconvenient clutter of Ant builds, PHP includes, CodeKit and command line calls to our yeoman/grunt setup, so I gave it a try. And I was stunned how easy the set up was and how perfect it fits into the environment we created based upon yeoman's web app generator.</p>
+
+<p>In this short article, I'll show you how you can use assemble.io with Handlebars templates and the basic yeoman.io web app generator Gruntfile.</p>
+
+<!--more-->
+
+<h2>The Basics</h2>
+
+<p>When compiling, assemble.io clutches together bits and pieces from three different resource groups:</p>
+
+<ul>
+<li>Layouts: The basic layouts, with all the basic HTML setup, navigations, wrappers, and so on.</li>
+<li>Pages: Every page without the clutter around it. Just the "content" of a site</li>
+<li>Partials: Reusable Modules that can be included with different parameters on any of the above. Partials can also include other partials.</li>
+</ul>
+
+<p>The assembling process goes as follows: Every page is included into a layout, with partials completing everything in-between.</p>
+
+<h3>Layouts</h3>
+
+<p>A basic layout can be like that:</p>
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- the title from the page -->
+    <title>{% raw %}{{title}}{% endraw %}</title>
+</head>
+<body>
+  <!-- Include a nav from partials -->
+  {% raw %}{{>nav}}{% endraw %}
+
+  <div class="wrapper">
+    <!-- The body of the page -->
+    {% raw %}{{>body}}{% endraw %}
+  </div>
+
+  <!-- Another partial -->
+  {% raw %}{{>footer}}{% endraw %}
+
+</body>
+</html>
+```
+
+<p>We already included some partials (navigation and footer), as well as some parts we define later in the pages. Either with parameters (title) or with content (body).</p>
+
+<h3>Pages</h3>
+
+<p>With the whole HTML layout in the layout modules, a page is a lot cleaner. It defines parameters in a sort of setup header, after that there's the content that is included when calling <code class="language-stuff">{{> body}}</code></p>
+
+```html
+---
+title: About
+---
+<h1>About everything</h1>
+
+<p>Lorem Ipsum is not good for content</p>
+<ul>
+  ...
+</ul>
+```
+
+<p>Easy!</p>
+
+<h3>Partials</h3>
+
+<p>I guess you get the idea by now... I'll cover the usage of parameters and stuff sometime later. This is all about the grunt setup.</p>
+
+<h3>Folder structure</h3>
+
+<p>For our websites, those module categories do have separated folders in a template folder in our app directory:</p>
+
+<pre><code>app
+  |-- templates
+      |-- layouts
+      |-- pages
+      |-- partials
+</code></pre>
+
+<h2>Adding it to yeoman.io's webapp Gruntfile</h2>
+
+<p>yeoman.io's webapp setup is the best way to start any web related project. Plus, the generator can be easily adapted to be used with your workflow in particular (I guess this will also be an article for later).</p>
+
+<p>Anyhow: The cool thing with its Gruntfile is, that you not only get compiling and building done, but also have some sort of developing environment, where you can easily access all the files in it's plain source, unminified and as-is. We will now setup grunt for both the building process, as well as the "grunt server" task for your dev environment.</p>
+
+<h3>assemble.io setup</h3>
+
+<p>First of all: Be sure to install assemble correctly after scaffolding your web app:</p>
+
+<pre><code>yo webapp
+npm install --save-dev assemble
+</code></pre>
+
+<p>Open your Gruntfile.js, and add assemble right after defining the module:</p>
+
+```javascript
+module.exports = function (grunt) {
+  grunt.loadNpmTasks('assemble');
+  ...
+};
+
+```
+
+<p>With that done, we can do the basic setup for the assemble task. Just add this part anywhere inside the <code class="language-stuff">.initConfig</code> scope:</p>
+
+```javascript
+
+assemble: {
+  options: {
+    flatten: true,
+    layout: 'layout.hbs',
+    layoutdir: '<%= yeoman.app %>/templates/layouts',
+    assets: 'dist/images',
+    partials: ['<%= yeoman.app %>/templates/partials/*.hbs']
+  },
+  ...
+}
+
+```
+
+<p>Pretty self-explanatory. We'll define the location of layout, partials, and some other stuff which you can ignore for now. Note that partials can be an array of folders, make use of that.</p>
+
+<h3>grunt build</h3>
+
+<p>Before we'll check on the (oh so sweet) on the fly compiling when spawning a project dependent server, we just check on how to compile this baby when creating a build.</p>
+
+<p>With the setup being complete, just add a line for the "dist" target. This is yeoman's default target for anything building and distribution related.</p>
+
+```javascript
+assemble: {
+  options: {
+    flatten: true,
+    layout: 'layout.hbs',
+    layoutdir: '<%= yeoman.app %>;/templates/layouts',
+    assets: 'dist/images',
+    partials: ['<%= yeoman.app %>;/templates/partials/*.hbs']
+  },
+  dist: {
+    files: {
+      '<%= yeoman.dist %>;/': ['<%= yeoman.app %>;/templates/pages/*.hbs']
+    }
+  }
+}
+```
+
+<p>We have defined layouts and partials in the setup, the dist-target tells us where pages are located and where the assembled output should land. It's pretty straightforward: Just put all the pages in <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>, the output directory of the build process.</p>
+
+<p><strong>Note:</strong> This can create some conflicts if you're using the <code>htmlmin</code> task, since it tries for itself to copy everything HTML related from <code class="language-stuff">&lt;%= yeoman.app %&gt;/</code> to <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>. Just put everything done by assemble into a temporary directory, and let <code class="language-stuff">htmlmin</code> (which strangely never worked for me...) fetch the files from there:</p>
+
+```javascript
+assemble: {
+  options: {
+    flatten: true,
+    layout: 'layout.hbs',
+    layoutdir: '<%= yeoman.app %>/templates/layouts',
+    assets: 'dist/images',
+    partials: ['<%= yeoman.app %>/templates/partials/*.hbs']
+  },
+  dist: {
+    files: {
+      '.tmp': ['<%= yeoman.app %>/templates/pages/*.hbs']
+    }
+  }
+}
+```
+
+```javascript
+htmlmin: {
+  dist: {
+    options: {
+    },
+    files: [{
+      expand: true,
+      cwd: '.tmp',
+      src: '*.html',
+      dest: '<%= yeoman.dist %>'
+    }]
+  }
+},
+```
+
+<p>Voil&aaucte;, you're done.</p>
+
+<h3>grunt server</h3>
+
+<p>Now for the fun part: Having it compiled on the fly while changing your source files, and live reload it in your browser.</p>
+
+<p>This part of the yeoman Gruntfile actually got me interested into the scaffolding tool in the first place, since it's a LOT more convenient to have your changes displayed directly after doing them. No matter if it's in Sass, HTML or JavaScript.</p>
+
+<p>To achieve that, grunt creates a TMP directory where it puts all compiled stuff into. The server also points to that directory. So for having our HTML files assembled, just add this line of code to our assemble setup:</p>
+
+```javascript
+assemble: {
+  ...
+  server: {
+    files: {
+      '.tmp/': ['<%= yeoman.app %>/templates/pages/*.hbs']
+    }
+  }
+}
+```
+
+<p>If you start your server the first time, all pages are compiled and available. If you want to update your server anytime a <code class="language-stuff">*.hbs</code> file changes, add the following line to the <code class="language-stuff">watch</code> task:</p>
+
+```javascript
+watch: {
+  ...
+  assemble: {
+   files: ['<%= yeoman.app %>/templates/layouts/*.hbs',
+           '<%= yeoman.app %>/templates/pages/*.hbs',
+           '<%= yeoman.app %>/templates/partials/*.hbs'],
+   tasks: ['assemble:server']
+  }
+},
+...
+```
+
+<p>Which actually just says: If anything changed in our layout/pages/partials folder, execute the assemble task again!</p>
+
+<p>To have the changes displayed without refreshing, tell livereload to have a look at the HTML files compiled into the TMP directory of the server:</p>
+
+```javascript
+
+watch: {
+  ...
+  livereload: {
+    options: {
+      livereload: LIVERELOAD_PORT
+    },
+    files: [
+      '.tmp/*.html', // Add this
+      ...
+    ]
+  }
+},
+
+```
+
+<p>And you're done! Enjoy!</p>
+
+<h2>Updates</h2>
+
+<p>I got some great feedback in the comments. Thank you guys, you're amazing! Here are some issues I forgot to address:</p>
+
+<p>Peter pointed out that with the current setup, <code>usemin</code> won't be able to run through your code and compile scripts and style files. You can either point the <code>useminPrepare</code> task to one of the template or partial files, or you just direct them to the <code>.tmp</code> directory:</p>
+
+```javascript
+useminPrepare: {
+  options: {
+    dest: '<%= yeoman.dist %>'
+  },
+  html: '.tmp/index.html'
+},
+```
+
+<p>Just run <code>useminPrepare</code> after <code>assemble</code>, which I forgot to add anyways. Thanks Sarith for pointing me onto that one!</p>
+
+```javascript
+...
+  concurrent: {
+    server: [
+      'compass',
+      'jst',
+      'assemble'
+    ],
+    dist: [
+      'compass',
+      'jst',
+      'assemble',
+      'imagemin',
+      'svgmin'
+    ]
+  }
+...
+
+grunt.registerTask('build', [
+  'clean:dist',
+  'concurrent:dist',
+  'useminPrepare',
+  'concat',
+  'cssmin',
+  'uglify',
+  'copy:dist',
+  'usemin'
+]);
+```
+
+<p>Thanks again for the great feedback! I really appreciate it!</p>
+
+
+<p>As Mark Paul pointed out, you need some updates in your usemin configuration, otherwise you won't get any <code>rev</code> updates:</p>
+
+```javascript
+// Performs rewrites based on rev and the useminPrepare configuration
+...
+usemin: {
+  options: {
+    assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+  },
+  html: ['<%= config.dist %>/{,*/}*.html', '.tmp/{,*/}*.html'],
+  css: ['<%= config.dist %>/styles/{,*/}*.css']
+}
+...
+```
+
+<p>Thank you for mentioning!</p>
+
+
+<h2>Bottom line</h2>
+
+<p>Grunt and yeoman are found their way into our development process rather quickly, and I think assemble.io will also be a part in our development future.</p>
+
+<p>Setting up was rather easy and took me -- including research on how to use this in the first place -- about half an our. Plus, assemble.io solves major issues we faced after switching to yeoman+grunt:</p>
+
+<ul>
+<li>PHP includes weren't possible anymore, with assemble we can put template parts in separated files again</li>
+<li>With the much cleaner Handlebars syntax it's possible to prepare those modules for a later refining, e.g. to produce TYPO3/Wordpress/Name-your-CMS modules.</li>
+</ul>
+
+<p>If your website deployment is based upon yeoman and/or grunt, you should definitely give it a try.</p>

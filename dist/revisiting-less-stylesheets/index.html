@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>Back in 2011 when we started using preprocessors at our company the decision fell very quick to <a href="http://www.lesscss.org">LESS</a>. The reasons for that where mannifold:</p>
+<ol>
+<li>We could use <a href="http://www.winless.org">WinLESS</a> and LESSApp (not available anymore) to cover all our developer’s infrastructure</li>
+<li>The website was pretty</li>
+</ol>
+<p>And we where very happy with it. Let’s say for half a year or so, when we started to switch to much more popular <a href="http://sass-lang.org">Sass</a> preprocessor:</p>
+<ol>
+<li>We all had Macs by now and thus Ruby pre-installed. A short way to Sass. Especially if you want to run it on your Jenkins server, too.</li>
+<li>We had <code>@extend</code>, and I loved that.</li>
+</ol>
+<p>And stuck with it since. Life was good, and we’re still using it up to this day. When I started lecturing at the University of Applied Sciences in Hagenberg, me and my colleagues decided to teach them CSS preprocessors, because they rock. But our choice went  back to LESS. Mostly because it was easy to get on the university’s PCs (download a JS and include it, enough for running demos!) and one of my colleagues was very uncomfortable with every programming language that did not had at least a little “Java” in its name. Brr.</p>
+<p>Anyhow. As CSS and tooling guy, it was my task to take a closer look at LESS as it was now and create a little 2 hour talk on it. And I found out, boy, in three years time a lot has changed:</p>
+<ol>
+<li>LESS now has <code>extend</code> too</li>
+<li>The website looks like crap! <span id="up01">[<a href="#down01">1</a>]</span></li>
+</ol>
+<p>Hah! Same as Sass back then! So it has to be good!</p>
+<p>I was diving more into the topic and found out that it now has some really good features. And I want to show you which ones stuck with me the most. This ain’t going a lame “Sass vs LESS” (take that, SEO!) comparison which gets on everybody’s nerves. Except the fanbois. They love that.</p>
+<p>80 percent of pre-processor users use 20 percent of their features. And in that case Sass and LESS are absolutely identical. So deal with it!</p>
+<p>However, the stuff I want to show you is something that you can really use in your daily workflow, without being overly specific. Actually, this can be perfectly included in Sass once and we all will be happy by having it.</p>
+<h2><code>extend</code></h2>
+<p>Yeah! <code>extend</code> is there in LESS. And it works like you would expect, because you know it from Sass already. And yeah, that’s one of the features everybody loved and brought people to Sass in the first place, and now it’s considered kind of bad practice because you can do a lot of bullshit if you don’t know what to do with it. Guess what! You can do a lot more bullshit now with the LESS version of it!</p>
+<p>This is the basic code, which works as we would expect it:</p>
+<pre><code class="language-css">/** LESS **/
+.pattern {
+  color: blue;
+}
+
+.extender {
+  &amp;:extend(.pattern);
+}
+
+/** CSS RESULT **/
+
+.pattern,
+.extender {
+  color: blue;
+}
+
+</code></pre>
+<p>Tadaa! You don’t have placeholders like in Sass yet (classes you can extend from, but with aren’t in the output), but you got several other extend possibilites you don’t have in Sass. Which can be nice if you know what you’re doing:</p>
+<h3>The <code>all</code> keyword</h3>
+<p>Usually the selector you extend from has to be specified in the very same format, but the <code>all</code> keyword searches for a selector pattern and extends from all selectors in which this one occurs.</p>
+<pre><code class="language-css">/** LESS **/
+.pattern {
+  color: blue;
+}
+
+#stuff &gt; .pattern {
+  color: red;
+}
+
+.extender {
+  &amp;:extend(.pattern all)
+}
+
+/** CSS **/
+
+.pattern,
+.extender {
+  color: blue;
+}
+#stuff &gt; .pattern,
+#stuff &gt; .extender {
+  color: red;
+}
+</code></pre>
+<h3>Extend from any and multiple selectors</h3>
+<p>Sass extending is boring because you just can extend from one single class, tag, id or placeholder. Nested selectors are not allowed. In LESS however, you can extend from any selector pattern you like. Multiple times.</p>
+<pre><code class="language-css">/** LESS **/
+nav a {
+  color: blue;  
+}
+
+#topnav .item {
+  background-color: red;  
+}
+
+.other-link {
+  &amp;:extend(nav a, #topnav .item);
+}
+
+/** CSS **/
+nav a,
+.other-link {
+  color: blue;
+}
+#topnav .item,
+.other-link {
+  background-color: red;
+}
+</code></pre>
+<p>Handy!</p>
+<p>What I especially like is the possibility of attaching the extend rule directly to the selector like some sort of pseudo-class. That’s some syntactic sugar I like. I don’t use <code>extend</code> as often as I should (didn’t do it in Sass either), but I like how they tackle some edge cases. This is still something that’s pretty cool otherwise too.</p>
+<p>Anyways. The next feature is one which is super cool:</p>
+<h2>Importing CSS files</h2>
+<p>Let it roll over your tongue: Import CSS files! Oh yeah, you can import any CSS file as long as you don’t forget to state the extension and call what to do with it:</p>
+<pre><code class="language-css">@import 'mylessmodule';
+@import (inline) 'csscodefromtheinterwebs.css';
+</code></pre>
+<p>Boom! Use any blindly downloaded CSS code directly in your one and only <code>main.less</code> file. But importing does not stop here! Think of having more LESS modules which require one certain file to be imported. You want to make sure that this file <em>is</em> there, but you don’t want to import multiple times? There’s the keyword <code>once</code> which deals with that. And that’s even the default behaviour.</p>
+<h2>Namespaces</h2>
+<p>This one is huge if you are totally into the OOCSS craze, but don’t want to hurt your documents with a lot of classes in your DIVs and constantly calling them semantics. You can have namespaces! There you can</p>
+<ol>
+<li>Use IDs, even you some guys say you shouldn’t</li>
+<li>Can use all the OOCSS extravaganza you got butchered in your head over the last few years. Including all the BEMing</li>
+<li>Style actual HTML elements which represent the thing you actually want to have. Like, let’s say, buttons.</li>
+</ol>
+<p>So here’s how this works. Mixins in LESS are nothing more that classes. You can use <strong>any</strong> class (or ID) you defined in your CSS (or LESS) as a mixin somewhere else. This is pretty unique for LESS and totally cool if you’re used to:</p>
+<pre><code class="language-css">/** LESS **/
+
+.myclass { color: blue; }
+
+.otherclass { 
+  .myclass;
+}
+
+/** CSS **/
+
+.myclass { color: blue; }
+
+.otherclass { color: blue; }
+</code></pre>
+<p>(btw. you also can import basic CSS files per reference, which means that they are loaded, but not included in your output, and use <em>any</em> CSS file as mixin library. Sweet, huh?).</p>
+<p>That’s the basic usage. If you put parentheses next to the class, you can define parameters or just make sure that the mixin does not get written into your CSS output. It’s also possible that you <em>nest</em> mixins. This is where you can create some sort of bundles, like this one:</p>
+<pre><code class="language-css">/** LESS **/
+
+/**
+ * Don't forget the parentheses to make 
+ * sure this one's not in the CSS
+ */
+#bundle() {
+  .btn {
+    border-radius: 5px;
+    color: white;
+    background-color: blue;
+  }
+  
+  .btn--disabled {
+    color: gray;
+    background-color: gray;
+  }
+}
+
+button {
+  #bundle &gt; .btn;
+  
+  &amp;:disabled {
+    #bundle &gt; .btn--disabled;  
+  }
+}
+
+/** CSS **/
+
+button {
+  border-radius: 5px;
+  color: white;
+  background-color: blue;
+}
+button:disabled {
+  color: gray;
+  background-color: gray;
+}
+</code></pre>
+<p>This is like the best of <em>all</em> worlds! <a href="http://getbootstrap.com">Twitter Bootstrap</a> actually makes heavy use of this technique. Pretty cool because you include all those popular opinions on pattern and anti-pattern in one single example and piss off everybody at the same time! No, seriously, this is pretty cool if you want to work in that way.</p>
+<h2>Plugins</h2>
+<p>LESS now has a sweet little plugin architecture where you can extend the platform at your will. You aren’t limited to the basic features, but can include new functions and processes by simply writing JavaScript. Which I personally prefer compared to Ruby or consorts. The funny thing is that LESS also comes with a postprocessing chain, which means you can add things like <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> to the tool itself.</p>
+<p>This might not be so mind-blowing if you use something like Grunt or Gulp, but if you are just sticking to one tool, and that being LESS. It can come in totally handy. At the moment I’m writing a little plugin for the upcoming <a href="/hwb-colors/">HWB color space</a>.</p>
+<p>You can use <em>autoprefixer</em> from the command line like that:</p>
+<pre><code># Assuming that LESS is installed, install the plugin
+$ npm install -g less-plugin-autoprefix
+
+# Included when you run LESS on your files
+$ lessc file.less --autoprefix=&quot;last 2 versions&quot;
+</code></pre>
+<p>You can also include those plugins when using the Grunt-Plugin or the one for Gulp.</p>
+<h2>Getting rid of the Ruby dependecy</h2>
+<p>If you’re totally in front-end tooling and have a huge Node.js based toolchain with a lot of Grunt or Gulp code, creating your distributables on different levels using continuous integration (local, staging, live, whatever), you always have to make sure that there’s a Ruby installation available, along with the correct version of Sass installed (and the correct version of Ruby installed). LESS – which originally starting as a Ruby tool <span id="up02">[<a href="#down02">2</a>]</span> – runs on Node.js. The version of the compiler can be fixated in the package.json for every project, so that’s also a plus for CI.</p>
+<p>And it’s much, much faster.</p>
+<p>Here’s the output of compiling the LESS and Sass version of Bootstrap with their respective Grunt plugins (the <code>grunt-contrib-sass</code> plugin using the native one):</p>
+<pre><code># Sass
+
+$ grunt sass
+Running &quot;sass:dist&quot; (sass) task
+
+Done, without errors.
+
+
+Execution Time (2015-02-13 14:02:21 UTC)
+sass:dist   1.2s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 1.2s
+
+
+# LESS
+
+$ grunt less
+Running &quot;less:dist&quot; (less) task
+File main-less.css created
+
+Done, without errors.
+
+
+Execution Time (2015-02-13 14:01:20 UTC)
+less:dist    528ms  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 100%
+Total 530ms
+
+</code></pre>
+<p>Check out this <a href="https://gist.github.com/ddprrt/5a46331028250f79c412">gist</a> with all the files from my demo setup.</p>
+<h2>Bottom line</h2>
+<p>I know that this one was rather cheeky and way over the top. Actually I still don’t care which preprocessor you use, as long as you know that you need to use one. I’m one of those users who does not go that much further than the basic features. If you’re one of those gurus who stick on their absolutely advanced features where you need all those loops and conditions, LESS is still nothing for you. For the others: Well, you might like it!</p>
+<p>Things I still miss from LESS are also on a convenience level. I like the color output from Sass where the colors are much more optimised (that’s available per <a href="https://github.com/less/less-plugin-clean-css">plugin</a> in LESS), and the very reason that variables don’t start with the @-sign, which has some sort of meaning in basic CSS.</p>
+<p>But anyhow, after using it for a while, I strongly consider using it on projects again. I’m curious if my way of doing things really changes with switching the technology.</p>
+<p>Oh, and there’s still a lot more changes to check out. <a href="http://lesscss.org/features/#merge-feature">The merge feature</a> for instance are quite interesting, so are a lot of their new <a href="http://lesscss.org/functions/">functions</a>.</p>
+<p><span id="down01">[<a href="#up01">1</a>]</span> Forgive me, Jon Schlinkert. It was just for the laughs, I don’t mean it that way ;-)</p>
+<p><span id="down02">[<a href="#up02">2</a>]</span> Yup, that’s right. Actually LESS was originally not so different from the SCSS version of Sass. SCSS could be seen as the direct successor to LESS in the Ruby world</p>
+
+</body>
+</html>

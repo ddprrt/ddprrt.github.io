@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>If you come from traditional, strongly typed languages you might be familiar with the concept<br>
+of <code>void</code>: A type telling you that functions and methods return nothing when called.</p>
+<p><code>void</code> exists in both JavaScript as an operator and in TypeScript as a primitive type. And in both<br>
+worlds <code>void</code> works a little bit different than most people are used to.</p>
+<h2>void in JavaScript</h2>
+<p><code>void</code> in JavaScript is an operator which evaluates the expression next to it. No matter which<br>
+expression is evaluated, <code>void</code> always returns <code>undefined</code>.</p>
+<pre><code class="language-javascript">let i = void 2; // i === undefined
+</code></pre>
+<p>Why would we need something like this? First, in earlier times, people were able to override<br>
+<code>undefined</code> and giving it an actual value. <code>void</code> always returned the <em>real</em> undefined.</p>
+<p>Second, it’s a nice way to call immediately invoked functions:</p>
+<pre><code class="language-javascript">void function() {
+  console.log('What')
+}()
+</code></pre>
+<p>All without polluting the global namespace:</p>
+<pre><code class="language-javascript">void function aRecursion(i) {
+  if(i &gt; 0) {
+    console.log(i--)
+    aRecursion(i)
+  }
+}(3)
+
+console.log(typeof aRecursion) // undefined
+</code></pre>
+<p>Since <code>void</code> always returns <code>undefined</code>, and <code>void</code> always evaluates the expression next to it,<br>
+you have a very terse way of returning from a function without returning a value,<br>
+but still calling a callback for example:</p>
+<pre><code class="language-javascript">// returning something else than undefined would crash the app
+function middleware(nextCallback) {
+  if(conditionApplies()) {
+    return void nextCallback();
+  }
+}
+</code></pre>
+<p>Which brings me to the most important use case of <code>void</code>: It’s a security gate for your app. When<br>
+your function is always supposed to return <code>undefined</code>, you can make sure that this is always the case.</p>
+<pre><code class="language-javascript">button.onclick = () =&gt; void doSomething();
+</code></pre>
+<h2>void in TypeScript</h2>
+<p><code>void</code> in TypeScript is a subtype of <code>undefined</code>. Functions in JavaScript always return something.<br>
+Either it’s a value, or <code>undefined</code>:</p>
+<pre><code class="language-javascript">function iHaveNoReturnValue(i) {
+  console.log(i)
+} // returns undefined
+</code></pre>
+<p>Since functions without a return value always return <code>undefined</code>, and <code>void</code> always returns undefined<br>
+in JavaScript, <code>void</code> in TypeScript is a proper type for telling developers that this function returns<br>
+<code>undefined</code>:</p>
+<pre><code class="language-javascript">declare function iHaveNoReturnValue(i: number): void
+</code></pre>
+<p><code>void</code> as type can also be used for parameters and all other declarations. The only value that can be<br>
+passed is <code>undefined</code>:</p>
+<pre><code class="language-javascript">declare function iTakeNoParameters(x: void): void
+
+iTakeNoParameters() // 👍
+iTakeNoParameters(undefined) // 👍
+iTakeNoParameters(void 2) // 👍
+</code></pre>
+<p>So <code>void</code> and <code>undefined</code> are pretty much the same. There’s one little difference though, and<br>
+this difference is significant: <code>void</code> as a return type can be substituted with different types, to<br>
+allow for advanced callback patterns:</p>
+<pre><code class="language-javascript">function doSomething(callback: () =&gt; void) {
+  let c = callback() // at this position, callback always returns undefined
+  //c is also of type undefiend
+}
+
+// this function returns a number
+function aNumberCallback(): number {
+  return 2;
+}
+
+// works 👍 type safety is ensured in doSometing
+doSomething(aNumberCallback) 
+</code></pre>
+<p>This is desired behaviour and often used in JavaScript applications. Read more on this<br>
+pattern called <a href="/typescript-substitutability/">substitutability</a> in my other articles.</p>
+<p>If you want to make sure to pass functions who only return <code>undefined</code> (as in “nothing”),<br>
+be sure to adapt your callback method signature:</p>
+<pre><code class="language-diff">- function doSomething(callback: () =&gt; void) {
++ function doSomething(callback: () =&gt; undefined) { /* ... */ }
+
+function aNumberCallback(): number { return 2; }
+
+// 💥 types don't match
+doSomething(aNumberCallback) 
+</code></pre>
+<p>You’ll propably be good with <code>void</code> most of the time.</p>
+<p>//include helper/include-by-tag.html tag=“TypeScript” title=“More articles about TypeScript”</p>
+
+</body>
+</html>

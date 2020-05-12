@@ -1,0 +1,41 @@
+&lt;p&gt;This one is a shorty, but that’s what it makes it so nice. Imagine that you&lt;br&gt;
+have only one dependency in your project, which is some third party library&lt;br&gt;
+your code builds upon, like jQuery. Instead of having the complete dependency&lt;br&gt;
+management stack on your shoulders, you just want to use that single file.&lt;/p&gt;
+&lt;p&gt;Usually, you would use a CDN, but you prefer it having it added to your bundle.&lt;br&gt;
+With a library called &lt;code&gt;request&lt;/code&gt;, which allows you to fetch files from a webserver&lt;br&gt;
+and access the contents in a stream format, you can do the following in Gulp:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var gulp = require(&#39;gulp&#39;);
+var source = require(&#39;vinyl-source-stream&#39;);
+var request = require(&#39;request&#39;);
+var merge = require(&#39;merge2&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var buffer = require(&#39;gulp-buffer&#39;);
+
+gulp.task(&#39;js&#39;, function() {
+
+  var jquery = request(&#39;http://code.jquery.com/jquery-latest.js&#39;) /* 1 */
+    .pipe(source(&#39;jquery.js&#39;));                                   /* 2 */
+  var main = gulp.src(&#39;main.js&#39;);                                 /* 3 */
+
+  return merge(jquery, main)                                      /* 4 */
+    .pipe(buffer())                                               /* 5 */
+    .pipe(concat(&#39;concat.js&#39;))
+    .pipe(gulp.dest(&#39;dist&#39;));
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;We request the latest jQuery version from the jQuery CDN. The &lt;code&gt;request&lt;/code&gt; package&lt;br&gt;
+allows for streaming. What we get in return is a readable stream.&lt;/li&gt;
+&lt;li&gt;We create a valid vinyl file object with &lt;code&gt;vinyl-source-stream&lt;/code&gt;. This makes it&lt;br&gt;
+compatible with Gulp&lt;/li&gt;
+&lt;li&gt;Our main file is selected from the file system as usual&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;merge2&lt;/code&gt; package allows us to combine both streams&lt;/li&gt;
+&lt;li&gt;The contents of both streams are converted to text buffers&lt;br&gt;
+so &lt;code&gt;gulp-concat&lt;/code&gt; can handle them.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The use case for this might be limited, but it’s good to know that you can pipe&lt;br&gt;
+any web resource to your build pipeline. Think of assets that are available online,&lt;br&gt;
+or any data you want to prepare for your static site generator.&lt;/p&gt;
+&lt;p&gt;The awesome power of streams makes this possible.&lt;/p&gt;
+

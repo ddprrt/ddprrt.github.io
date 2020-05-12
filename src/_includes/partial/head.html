@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="/manifest.json"></link>
+<meta name="theme-color" content="dodgerblue">
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+{% else %}
+<meta name="description" content="Blog with articles on all things web development: CSS, JS, Node, HTML, A11Y">
+{% endif %}
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{% else %}
+<meta name="keywords" content="Web, Web Ops, DevOps, Performance, Front-End, JavaScript, CSS">
+{% endif %}
+{% include tracker/agent.html %}
+<!-- Custom CSS -->
+{% capture styles %}
+{% include styles/main.css %}
+{% endcapture %}
+
+<style>
+{{ styles | scssify }}
+</style>
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="front-end technology talk &raquo; Updates" href="https://fettblog.eu/atom.xml">
+
+<!-- Webmentions -->
+<link rel="pingback" href="https://webmention.io/fettblog.eu/xmlrpc">
+<link rel="webmention" href="https://webmention.io/fettblog.eu/webmention">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+<link rel="canonical" href="https://fettblog.eu{{ page.url | replace:'index.html','' }}" />
+
+{% if page.og.img %}
+<meta property="og:image" content="https://fettblog.eu/{{ page.og.img }}">
+<meta property="og:image:secure_url" content="https://fettblog.eu/{{ page.og.img }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:image" content="https://fettblog.eu/{{ page.og.img }}">
+<meta name="twitter:creator" content="@ddprrt">
+{% endif %}

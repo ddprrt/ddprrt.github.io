@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>Having a set of reusable and ready software components is a great thing. And for a multitude of reasons, like ensuring DRY development or boosting efficiency. A software component is a self contained unit of program code which can be accessed only by a defined interface. Or like <a href="http://www.eecs.berkeley.edu/~newton/Classes/EE290sp99/lectures/ee290aSp994_1/tsld009.htm">Berkely University puts it</a>:</p>
+<blockquote>
+<p>A software component is a unit of composition with contractually specified interfaces and explicit context dependencies only. A software component can be deployed independently and is subject to composition by third parties</p>
+</blockquote>
+<p>We already have a lot of components in JavaScript. In the CSS world, developing such components is a lot harder. CSS is a fairly easy language: You have a set of properties which can take certain values, and that’s it. The beauty of CSS lies in this simplicity, but same simplicity makes reusability difficult.</p>
+<p>When using a preprocessor like <a href="http://www.sass-lang.com">Sass</a>, we might achieve more possibilities for component building, but we still might have some of those difficulties regarding self-containment.</p>
+<h2>Handling components with Bower and Revision Control</h2>
+<p>That’s especially true when used with a package manager like <a href="http://bower.io">Bower</a>. Bower was designed to take care of all your third party libraries which you can install from GitHub. Bower provides a command line interface for (un-)installing components. You might know that with</p>
+<pre><code>bower install konamicode.js
+</code></pre>
+<p>you just download the newest version of that component in your components folder. With the <code>--save</code> flag</p>
+<pre><code>bower install konamicode.js --save
+</code></pre>
+<p>you also add this library to a file called <code>bower.json</code>, which records all your installations.</p>
+<pre><code class="language-javascript">{
+  &quot;name&quot;: &quot;demo&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;dependencies&quot;: {
+    &quot;konamicode.js&quot;: &quot;~1.0.0&quot;
+  },
+  &quot;devDependencies&quot;: {}
+}
+</code></pre>
+<p>The main benefit of this file is that – even if you accidentally delete one of the installations or mess up with them – a simple</p>
+<pre><code>bower install
+</code></pre>
+<p>will re-install all the previously installed and <code>--save</code>d components, even in the right version.</p>
+<p>Now think of revision control. When you are saving your project in some sort of repository (GitHub, SVN, whatever), you would just need to commit <code>bower.json</code>. Because everything can be reconstructed. Just like only committing <code>package.json</code> and calling <code>npm install</code> after checkout will reconstruct all the node modules you’ve previously had installed.</p>
+<p>Why you shouldn’t commit those files? Because not only do you save space and unnecessary transactions, you can also keep your project’s repository clean and clear, and focus just on the files that are <em>really</em> the contents of <em>your</em> project. For a more detailed explanation and even more reasons, checkout <a href="http://www.futurealoof.com/posts/nodemodules-in-git.html">Mikeal Rogers’ excellent article on that topic</a>.</p>
+<p>And this just works really well for JavaScript components, because (at least most of the time) you don’t have to make any changes to the library itself. Take <em>jQuery</em> for example: This is just one file you download from the repo and your done with.</p>
+<p><em>Modernizr</em> is more advanced: <s>Download</s> <em>Install</em> the whole repository and build a custom <code>modernizr.js</code> depending on the actually used CSS and JS properties without touching the original files. No need to commit all the thousand-something files in your repository.</p>
+<p>Also, Sass/LESS mixing libraries fulfil the requirements for being handled like this. But with other CSS – or rather Sass components – you have one big obstacle if you want to do so: They are (mostly) meant to be adapted and changed. Be it colour values in <em><a href="https://github.com/jlong/sass-bootstrap">Twitter Bootstrap</a></em> or font properties in Harry’s recent <a href="https://github.com/csswizardry/typecsset">Typecsset</a>.</p>
+<p>But actually the latter one is a prime example of how to keep those kind of modules manageable.</p>
+<h2>The <code>!default</code> flag</h2>
+<p>Enter the <code>!default</code> flag. This little command has everything we need to create default values for our variables, just like other programming languages would handle them.</p>
+<p>To quote the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_">Sass reference</a>:</p>
+<blockquote>
+<p>You can assign to variables if they aren’t already assigned by adding the !default flag to the end of the value. This means that if the variable has already been assigned to, it won’t be re-assigned, but if it doesn’t have a value yet, it will be given one.</p>
+</blockquote>
+<p>So, given a <code>!default</code> flag at the end of your variable assignment, we make sure that there is a value available no matter if your developer has assigned one or not. Take a look at this example:</p>
+<pre><code class="language-css">$spacing: 	1rem !default;
+
+.box {
+  margin: 0;
+  margin-bottom: $spacing;
+}
+</code></pre>
+<p>If I assign a value to <code>$spacing</code> on any other occasion <em>before</em> stating the class, the class will take that value. On the other hand, if I don’t, I still make sure that my statement <em>has</em> some value.</p>
+<p>This behaviour gives us one real benefit when developing Sass components: We can configure them from <em>outside</em>, without touching the source itself. We get a needed <em>interface</em> for configuration and usage, but the component is as self contained as it should be.</p>
+<p><a href="http://twitter.com/csswizardry">Harry’s</a> Sass libraries show perfectly how this might work. Again, take <em>Typecsset</em> as an example. To quote (and comment) the demo code from his README:</p>
+<pre><code class="language-css">/* YOUR configuration for typecsset, overriding the
+   default values from the library. Our interface to
+   the component
+ */
+$typecsset-base-font-size:      18px;
+$typecsset-base-line-height:    27px;
+
+[Your own CSS]
+
+/* Inclusion of the -- now parametrised -- library */
+@import &quot;path/to/typecsset&quot;;
+
+[More of your own CSS]
+</code></pre>
+<p>Another example comes from <a href="http://inuitcss.com">inuit.css</a>, his CSS framework, which is a lot bigger and features actually a set of different components.</p>
+<pre><code class="language-css">/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$use-grids:         false!default;
+$use-flexbox:       false!default;
+$use-columns:       false!default;
+$use-nav:           false!default;
+$use-options:       false!default;
+$use-pagination:    false!default;
+...
+</code></pre>
+<p>All of those sub-component can be activated on demand. And that’s the real beauty of it: Instead of adding a lot CSS definitions that you have to <em>remove</em>, you are opting them only if you really need them. Your Sass code might look like this:</p>
+<pre><code class="language-css">$use-grids: true;
+$use-flexbox: true;
+
+/* Next to the core definitions, just 'grids'
+   and 'flexbox' is going to be used */
+@import &quot;path/to/inuit&quot;;
+</code></pre>
+<h2>Your very own Sass component</h2>
+<p>If you have Sass code that you are going to reuse with different parameters, and one that is not meant to be in some sort of mixing or function, you can easily apply those learnings by yourself:</p>
+<ul>
+<li>Every value that can change across uses should be put in a Sass variable.</li>
+<li>This variable should be set to a default value in the library/component itself. Use the <code>!default</code> flag to apply the rule of using this very value if it has not been set yet.</li>
+<li>If the value needed differs from the default value, it should be assigned <em>outside</em> of the library files, just before it’s inclusion.</li>
+<li>If you want to register it with Bower, see their <a href="http://bower.io/">docs</a>, especially <em>Defining a package</em> and <em>Registering packages</em></li>
+</ul>
+<p><em>Thanks to <a href="http://twitter.com/yellowled">@yellowled</a> for proof-reading</em></p>
+
+</body>
+</html>

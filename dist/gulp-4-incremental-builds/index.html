@@ -1,0 +1,101 @@
+&lt;p&gt;Incremental builds are a good way of speeding up your build iterations. Instead&lt;br&gt;
+of building everything again with each and every iteration, you just process&lt;br&gt;
+the files that have changed.&lt;/p&gt;
+&lt;h2&gt;The Gulp 3 way&lt;/h2&gt;
+&lt;p&gt;Gulp has plenty of plugins for crafting incremental build pipelines. Some of the&lt;br&gt;
+most common used are &lt;code&gt;gulp-cached&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/** Gulp 3 Code **/
+
+var cached = require(&#39;gulp-cached&#39;);
+var jshint = require(&#39;gulp-jshint&#39;);
+
+gulp.task(&#39;jshint&#39;, function() {
+  return gulp.src(&#39;scripts/**/*.js&#39;)
+    .pipe(cached(&#39;scripts&#39;))  /** 1 **/
+    .pipe(jshint())
+    .pipe(jshint.reporter(&#39;default&#39;))
+    .pipe(jshint.reporter(&#39;fail&#39;));
+});
+
+gulp.watch(&#39;scripts/**/*.js&#39;, [&#39;jshint&#39;])
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;This line installs a build cache for incremental builds. With each iteration,&lt;br&gt;
+Gulp checks if the files have been updated. If not, they will be filtered, resulting&lt;br&gt;
+in a slimmer stream. &lt;code&gt;gulp-cached&lt;/code&gt; will check both timestamp and contents.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;While this appraoch delivers great results, they all have some caveat: With&lt;br&gt;
+&lt;code&gt;gulp.src&lt;/code&gt; all files are read. Which means that you have to transfer all the contents&lt;br&gt;
+into memory. This can be optimized with Gulp 4.&lt;/p&gt;
+&lt;h2&gt;The Gulp 4 way&lt;/h2&gt;
+&lt;p&gt;The virtual file sytem in Gulp 4 adds a new flag when globbing files&lt;br&gt;
+through &lt;code&gt;gulp.src&lt;/code&gt;. The &lt;code&gt;since&lt;/code&gt; option. This option takes a timestamp,&lt;br&gt;
+and &lt;code&gt;gulp.src&lt;/code&gt; will filter files that are older than the given time. This&lt;br&gt;
+alone is powerful enough, but it really shines when being combined with&lt;br&gt;
+the &lt;code&gt;lastRun&lt;/code&gt; function from the task manager.&lt;/p&gt;
+&lt;p&gt;With version 4, Gulp saves the time when a task has been executed last. Not only&lt;br&gt;
+for the whole system, but also for each task separately. We can combine those two&lt;br&gt;
+features by telling Gulp to “select files &lt;em&gt;since&lt;/em&gt;” “the last time task X ran”:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/** Gulp 4 Code **/
+
+var jshint = require(&#39;gulp-jshint&#39;);
+
+gulp.task(&#39;jshint&#39;, function() {
+  return gulp.src(&#39;scripts/**/*.js&#39;, { since: gulp.lastRun(&#39;jshint&#39;) })
+    .pipe(jshint())
+    .pipe(jshint.reporter(&#39;default&#39;))
+    .pipe(jshint.reporter(&#39;fail&#39;));
+});
+
+gulp.watch(&#39;scripts/**/*.js&#39;, gulp.parallel(&#39;jshint&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The biggest advantage here: The files don’t even get selected, which reduces&lt;br&gt;
+reading operations with every iteration.&lt;/p&gt;
+&lt;h2&gt;Where you still need some plugins&lt;/h2&gt;
+&lt;p&gt;You will still need plugins when you terminate Gulp between your iterations,&lt;br&gt;
+since Gulp loses all information on runs once it exits. &lt;code&gt;gulp-newer&lt;/code&gt; comes in&lt;br&gt;
+handy:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/** Gulp 3 Code **/
+var newer = require(&#39;gulp-newer&#39;);
+var imagemin = require(&#39;gulp-imagemin&#39;);
+
+gulp.task(&#39;images&#39;, function() {
+  return gulp.src(&#39;images/**/*&#39;)
+    .pipe(newer(&#39;dist&#39;)) /** 1 **/
+    .pipe(imagemin())
+    .pipe(gulp.dest(&#39;dist&#39;));
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;Here we use &lt;code&gt;gulp-newer&lt;/code&gt; to check if any of the images in our source stream&lt;br&gt;
+have a newer timestamp than their results in the &lt;code&gt;dist&lt;/code&gt; folder. &lt;code&gt;gulp-newer&lt;/code&gt; just&lt;br&gt;
+checks for newer timestamps and ignores contents. Compared to &lt;code&gt;gulp-cached&lt;/code&gt; it&lt;br&gt;
+can be used in multiple Gulp runs, not needing a watcher.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You also need the &lt;code&gt;cached&lt;/code&gt; plugin if you want to refill your stream with original&lt;br&gt;
+contents through &lt;code&gt;gulp-remember&lt;/code&gt; afterwards. However, this can be combined with&lt;br&gt;
+&lt;code&gt;lastRun&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;gulp.task(&#39;scripts&#39;, function() {
+  return gulp.src(&#39;src/**/*.js&#39;, since: {gulp.lastRun(&#39;scripts&#39;)}) /** 1 **/
+    .pipe(cached(&#39;scripts&#39;)) /** 2 **/
+    .pipe(jshint())
+    .pipe(jshint.reporter(&#39;default&#39;))
+    .pipe(jshint.reporter(&#39;fail&#39;))
+    .pipe(uglify())
+    .pipe(remember(&#39;scripts&#39;)) /** 3 **/
+    .pipe(concat(&#39;main.min.js&#39;))
+    .pipe(gulp.dest(&#39;dest&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;We select all files that have changed since the last run of this task. Which means&lt;br&gt;
+that for the first run, this contains all files.&lt;/li&gt;
+&lt;li&gt;We store those files in our cache. We will need them later. In the second run,&lt;br&gt;
+this actually does filter nothing&lt;/li&gt;
+&lt;li&gt;After our heavy tasks, we restore files from our cache so we can concatenate them.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is actually the same as we would’ve done with Gulp 4, but we save lots of file&lt;br&gt;
+reading operations with each iteration.&lt;/p&gt;
+

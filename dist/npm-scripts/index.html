@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p><strong>TL;DR:</strong> NPM Scripts render global installations of NPM command line tools useless.</p>
+<p>For quite some while people love to echo the amazing power of NPM’s package scripts.<br>
+With a view additions to <code>package.json</code>, you are able to run shell commands and other<br>
+tools with NPM, without needing any build tools at all. See <a href="http://substack.net/task_automation_with_npm_run">Substack’s article</a> on that topic. A good one.</p>
+<p>And yes, NPM scripts are wonderful. The Grunt and Gulp and whatnot killer?<br>
+Maybe, depends on your use case. Decide for yourself.</p>
+<p>There is one little thing about NPM scripts that is awesome. I would<br>
+even consider it the best feature of them. It adds the local <code>node_modules</code> binary<br>
+folder to your execution path.</p>
+<p>What does that mean? When you install Node modules locally, you get a<br>
+<code>node_modules</code> folder containing everything you’ve installed. You know that. If you<br>
+install a tool locally that has some executable, this executable will be added<br>
+in a hidden <code>.bin</code> folder in <code>node_modules</code>.</p>
+<p>That means if you install command line tools like Gulp, Grunt or Browserify not<br>
+with a <code>-g</code> flag, but as a dependency and local, you still get the command line<br>
+tool in your <code>node_modules</code> folder. Without explicitly adding it to your<br>
+execution path, this won’t do anything. But if you run NPM scripts, this path is<br>
+exactly what’s included. For example:</p>
+<pre><code class="language-javascript">{
+  ...
+  &quot;scripts&quot;: {
+    &quot;gulp&quot;: &quot;gulp&quot;
+  },
+  ...
+}
+</code></pre>
+<p>So <code>npm run gulp</code> would be the same as running a globally installed “Gulp CLI”.<br>
+You can even pass parameters:</p>
+<pre><code>$ npm run gulp -- build
+</code></pre>
+<p>is the same as</p>
+<pre><code>$ gulp build
+</code></pre>
+<p>This allows you to run any command line tool in continuous integration or on<br>
+your system without polluting your global <code>node_modules</code> directory. This helps<br>
+also when you are regularly switching Node versions with <code>nvm</code>. This also helps<br>
+if you have to handle multiple versions of one command line tool. For example<br>
+running Gulp 3.x and Gulp 4 in parallel.</p>
+<p>Cool stuff! I wouldn’t want to work without it. I’d even say: Never install Node<br>
+tools globally again!</p>
+
+</body>
+</html>

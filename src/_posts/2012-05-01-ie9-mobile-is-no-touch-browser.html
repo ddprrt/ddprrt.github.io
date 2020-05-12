@@ -1,0 +1,90 @@
+---
+layout: post
+title: Of mice and touches
+categories:
+- Browser
+- Mobile
+tags:
+- feature sniffing
+- javascript
+- Windows Phone
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: of-mice-and-touches
+excerpt_small: "Unbelievable, but true: Imagine you bought a new Windows Phone 7 (e.g. Nokia Lumia or Samsung Omnia) with \"Mango\" on it and try to get your mobile web app running, you will be really surprised when finding out, that there's no touch event available."
+---
+<p>Unbelievable, but true: Imagine you bought a new Windows Phone 7 (e.g. Nokia Lumia or Samsung Omnia) with "Mango" on it and try to get your mobile web app running, you will be really surprised when finding out, that there's no touch event available.</p>
+  <p>
+"But that's what i do", you will say, "I touch my shiny phone all the time!". And you are right with that, nonetheless, IE9 mobile does not register <code>touchstart</code>, <code>touchend</code> or <code>touchmove</code>. Instead of those well known events, IE9 thinks of your finger as a mouse.
+</p>
+<!--more-->
+<p>
+Usually, when developing for mobile web apps, you will have some code like this in your JS:</p>
+
+<pre class="prettyprint language-javascript"><code class=" language-javascript">var clickevent = (ontouchstart in window) ? 'touchstart' : 'click';</code>
+</pre>
+
+<p>And add event listeners using that variable.</p>
+
+<pre class="prettyprint language-javascript"><code class=" language-javascript">
+elem.addEventListener(clickevent, function(e) {
+  ...
+});
+</code>
+</pre>
+
+<h2>IE9 is no touch browser</h2>
+
+<p>
+That's good for developing your web app on the desktop as well as testing/using it on your mobile device. Even for IE9 Mobile, since all mobile browsers can handle <code>onclick</code>. But once you need gestures, you're going to need mouse events for deskop and IE9 Mobile.
+</p>
+
+<p>
+Onfortunately, the touch event objects, while not that much different from mouse events in terms of properties, differ in one significant point: There can be more than one touch event at a time.
+</p>
+
+<p>A way of handling both mouse and touch events would be something like this, considering you allow just one touch at a time and don't need complex touch related stuff:</p>
+
+<pre class="prettyprint language-javascript"><code class=" language-javascript">
+elem.addEventListener('touchstart', function(ev) {
+  myMethod(ev.changedTouches[0]);
+});
+
+elem.addEventListener('mousedown', myMethod);
+
+function myMethod(ev) {
+  //do something with ev.screenX and ev.screenY
+}
+</code>
+</pre>
+
+<p>Same for <code>touchend</code> --&gt; <code>mouseup</code> and <code>touchmove</code> --&gt; <code>mousemove</code>.</p>
+
+<p>This also means: it is <strong>not possible to have multi-touch gestures in IE9 Mobile</strong></p>
+
+<h2>Why does IE9 Mobile behave so different?</h2>
+
+<p>There's one simple explanation: Microsoft tried to put the whole IE9 "experience" to mobile devices, so what you can expect from IE9 mobile is the same as from IE9 on desktops.</p>
+
+<p>Well, that's not entirely true. There are some more differences:</p>
+
+<p>What's in IE9 mobile that's missing from the desktop version</p>
+<ul>
+<li>viewport meta-tag, well almost. The scale properties are not supported (which is a bummer)</li>
+<li><code>-ms-text-size-adjust</code> is added as CSS property, works the same as <code>-webkit-text-size-adjust</code></li>
+<li>GPS support for geocoding</li>
+</ul>
+
+<p>What you will miss in IE9 mobile</p>
+
+<ul>
+<li>Downloadable fonts. Font face is supported, but fonts aren't cached</li>
+<li>Cross window communication</li>
+<li>CMYK images (do we need that?)</li>
+<li>Streaming audio. And that leads us to <a href="https://fettblog.eu/blog/2012/04/08/html5-audio-on-mobile-devices/">this issue we had to face once</a>
+</li></ul>
+
+<p>Actually, it's quite nice that the mobile version of this browser behaves <strong>almost</strong> the same as the desktop browser, which makes developing alot easier. On the other hand, I think a touch device, and thus a browser on a touch device, is much more different than your average desktop. So we also need a certain differency in behaviour! The features added by the touch event on mobile webkit browsers allow us much more flexibilty and possibilites for our web apps. Furthermore, it's just wrong to treat your finger as a mouse.</p>

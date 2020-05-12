@@ -1,0 +1,54 @@
+---
+layout: post
+title: Top CSS preprocessor mistakes
+categories:
+- CSS
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+---
+<h2>Wrong use of variables</h2>
+
+<p>Honestly, variables was the first reason I did even take a look into preprocessors in the first place. And I'm sure I'm not the only one there. Still I thinkt those are one of Sass/LESS strongest features and variables are here even better handled than in the current CSS specification, which seems overly complicated even if it's very powerful. </p>
+
+<p>But then, even this small feature can be misused in a very unforgiving way, and I almost freaked out when I found this codebit:</p>
+
+```css
+$green:  #88b83b;
+$grey:   #505050;
+$h1-3:   #444;
+$text:   #444;
+$violet: #5c1c70;
+$red:    #d73a41;
+```
+
+<p>This is just amazing, since it lacks any semantics whatsoever. Alright, one might argue that it is okay giving $text and $h1-3 a certain color, but then please just give it a name which is somewhat describing. <code class="language-css">$headline-color: #444;</code> would be nice, since you could use it also with other headlines. <code class="language-css">$text</code> would be nice as <code class="language-css">$standard-text-color</code>, so you might notice that it is a <em>color</em> to begin with. </p>
+
+<p>But what's absolutely catastrophical is the declaration of the other colors in this snipplet. Imagine having a nice <code class="language-sass">$green</code> layout and suddenly changing everything to babyblue. You still would have your <code class="language-sass">$green</code> declarations all over your preprocessor CSS files, but the meaning would be already different. Change it to <code class="language-sass">$base-ci-color</code> or something like that.</p>
+
+<p>If you find it easier to give colors of a certain brand style guide a name like green, grey, whatsoever, define a position with colors in your preprocessor CSS file, and then using describtive variables, e.g.:</p>
+
+```css
+/** CI COLORS **/
+$green:  #88b83b;
+$red:    #d73a41;
+$violet: #5c1c70;
+
+/** global color variables **/
+$default-brand-color:    $green;
+$emphazised-brand-color: $red;
+$default-link-color:     $green;
+
+a, a:visited {
+	color: $default-link-color;
+}
+
+h1, .h1 {
+	color: $green;
+}
+
+...
+```

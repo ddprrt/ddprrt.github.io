@@ -1,0 +1,45 @@
+---
+layout: post
+title: 'Caring for Sharing: Social share URLs'
+categories:
+- HTML5
+tags:
+- Facebook
+- Google Plus
+- Pinterest
+- Social Media
+- Twitter
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+excerpt_small: "I truly hate social media share buttons. Especially those plugins which not only are coded badly but also create heavy traffic and performance issues. Plus, they're a pain in the ass to place correctly. If you really want to use (or have to use) those social liking/sharing/tweeting stuff, use their share URLs. Every single one of them has such, and you can either open them in a pop-up or in a new window. Here they are"
+---
+<p>I truly hate social media share buttons. Especially those plugins which not only are coded badly but also create heavy traffic and performance issues. Plus, they're a pain in the ass to place correctly. If you really want to use (or have to use) those social liking/sharing/tweeting stuff, use their share URLs. Every single one of them has such, and you can either open them in a pop-up or in a new window. Here they are:</p>
+
+<!--more-->
+<h3>Twitter</h3>
+```html %}http://twitter.com/home?status=Check%20out%20{articleUrl}{% endhighlight
+
+<h3>Facebook</h3>
+```html %}http://www.facebook.com/sharer.php?u={articleUrl}{% endhighlight
+
+<h3>LinkedIn</h3>
+
+```htmlhttp://www.linkedin.com/shareArticle?mini=true&url={articleUrl}
+  &title={articleTitle}
+  &summary={articleSummary}
+  &source={articleSource}```
+
+<h3>Google+</h3>
+
+```html %}https://plus.google.com/share?url={articleUrl}{% endhighlight
+
+<h3>Pinterest</h3>
+
+```htmlhttp://pinterest.com/pin/create/button/?url={articleUrl}
+  &media={articleImage}```
+
+
+<p>Just replace {articleUrl} with the respective location.</p>

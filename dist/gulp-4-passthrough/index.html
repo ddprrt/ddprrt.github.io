@@ -1,0 +1,58 @@
+&lt;p&gt;Another nice addition to &lt;code&gt;vinyl-fs&lt;/code&gt; that will end up in Gulp 4 is the possibility&lt;br&gt;
+of having “passthrough” source streams. This basically allows &lt;code&gt;gulp.src&lt;/code&gt; to be&lt;br&gt;
+writable. So what does this mean for you?&lt;/p&gt;
+&lt;p&gt;Usually, &lt;code&gt;gulp.src&lt;/code&gt; would create a stream of file objects based on the globbing&lt;br&gt;
+pattern you provide. This made &lt;code&gt;gulp.src&lt;/code&gt; mandatory to be at the beginning of&lt;br&gt;
+your stream. Now it can be anywhere in your pipeline, carrying over the intermediate&lt;br&gt;
+results from the earlier steps.&lt;/p&gt;
+&lt;p&gt;This makes up for some pretty interesting scenarios. The most useful one is&lt;br&gt;
+definitely merging streams. See the example&lt;br&gt;
+below: We want to lint our self-written JavaScript files, and concatenate them&lt;br&gt;
+with vendor specific files to one single JavaScript file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var gulp = require(&#39;gulp&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var jshint = require(&#39;gulp-jshint&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+
+gulp.task(&#39;default&#39;, function() {
+  return gulp.src(&#39;src/**/*.js&#39;) /** 1 **/
+    .pipe(jshint()) /** 2 **/
+    .pipe(jshint.reporter(&#39;default&#39;))
+    .pipe(jshint.reporter(&#39;fail&#39;))
+    .pipe(gulp.src(&#39;vendor/**/*.js&#39;, {passthrough: true})) /** 3 **/
+    .pipe(uglify())
+    .pipe(concat(&#39;main.min.js&#39;))
+    .pipe(gulp.dest(&#39;dest&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The process explained:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We glob all our source JavaScript files.&lt;/li&gt;
+&lt;li&gt;Those are the files &lt;strong&gt;we&lt;/strong&gt; create, which means we want to have them linted to our coding conventions&lt;/li&gt;
+&lt;li&gt;After the JSHint process, we get all our vendor files.&lt;br&gt;
+Those include things like jQuery, lodash, you name it. By using the &lt;code&gt;passthrough&lt;/code&gt;&lt;br&gt;
+flag, all the file objects from the original pipeline are passed through, and thus&lt;br&gt;
+added to the whole stream.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We can also benefit from this feature when we want to merge preprocessor output with&lt;br&gt;
+plain source files:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;gulp.task(&#39;styles&#39;, function(){
+  return gulp.src(&#39;styles/main.scss&#39;)
+    .pipe(sass())
+    .pipe(gulp.src(&#39;styles/**/*.css&#39;), {passthrough: true})
+    .pipe(concat(&#39;main.css&#39;))
+    .pipe(gulp.dest(&#39;dist&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Same with CoffeeScript, if you are into that:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;gulp.task(&#39;scripts&#39;, function(){
+  return gulp.src(&#39;scripts/*.coffee&#39;)
+    .pipe(coffee())
+    .pipe(gulp.src(&#39;scripts/*.js&#39;), {passthrough: true})
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;dist&#39;));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While this doesn’t solve all the scenarios where merging comes in handy, combining&lt;br&gt;
+different sources mid-stream is definitely a welcomed addition.&lt;/p&gt;
+

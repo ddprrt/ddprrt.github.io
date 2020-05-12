@@ -1,0 +1,541 @@
+-
+  year: 2020
+  conferences:
+    -
+      title: Global Azure Bootcamp Austria 2020
+      country: Online
+      city: Worldwide
+      date: 2020-04-23
+      url: https://globalazurebootcamp.at
+      talks:
+        -
+          title: Stories of void
+          video: https://www.youtube.com/watch?v=G0wRWWsLL5s
+-
+  year: 2019
+  conferences:
+    -
+      title: Angular Vienna
+      country: Austria
+      city: Vienna
+      date: 2019-01-18
+      url: https://www.meetup.com/de-DE/Angular-Vienna/events/257239756/
+      talks:
+        -
+          title: Design Systems tooling
+          slides: https://www.slideshare.net/ddprrt/sketchmine-design-systems-tooling
+    -
+      title: Devtreff Amstetten
+      country: Austria
+      city: Amstetten
+      date: 2019-02-21
+      url: https://www.devtreff.io
+      talks:
+        -
+          title: The Hero's Journey
+          slides: https://www.slideshare.net/ddprrt/the-heros-journey-132869662
+    -
+      title: Webentwicklung Bad Nauheim
+      country: Germany
+      city: Bad Nauheim
+      date: 2019-02-26
+      url: https://www.meetup.com/de-DE/Webentwicklung-Bad-Nauheim-Meetup/events/258670904/
+      talks:
+        -
+          title: Type driven development
+          slides: https://www.slideshare.net/ddprrt/typescripts-type-system
+          podcast: https://www.buzzsprout.com/176239/974250-folge-24-typescript-mit-stefan-baumgartner
+    -
+      title: JS Kongress (Program Comittee)
+      country: Germany
+      city: Munich
+      date: 2019-03-11
+      url: https://js-kongress.com/
+    -
+      title: Devone (MC)
+      country: Austria
+      city: Linz
+      date: 2019-04-11
+      url: https://devone.at/
+    -
+      title: Global Azure Bootcamp 2019
+      country: Austria
+      city: Linz
+      date: 2019-04-27
+      url: https://coding-club-linz.github.io/global-azure-bootcamp-2019/
+      talks:
+        -
+          title: JAMStack on Azure
+          slides: https://www.slideshare.net/ddprrt/jamstack-on-azure
+    -
+      title: ASCII Art Meetup
+      country: Austria
+      city: Linz
+      date: 2019-05-06
+      url: https://www.meetup.com/de-DE/ascii-art/events/260234908/
+      talks:
+        -
+          title: 137 years of typed art
+    -
+      title: NG Vikings
+      country: Denmark
+      city: Copenhagen
+      date: 2019-05-27
+      url: https://ngvikings.org/
+      talks:
+        -
+          title: Real world component libraries at scale
+          slides: https://www.slideshare.net/ddprrt/real-worldcomponentlibraries
+          video: https://www.youtube.com/watch?v=QtZMTRq9Ly4
+    -
+      title: Dev Meetup Enns
+      country: Austria
+      city: Enns
+      date: 2019-07-09
+      url: https://www.meetup.com/de-DE/developer-meetup-enns/events/261730342/
+      talks:
+        -
+          title: JAMStack on Azure (2hr JAMMIN')
+          slides: https://www.slideshare.net/ddprrt/jamstack-on-azure
+    -
+      title: Halfstack Conf
+      country: Austria
+      city: Vienna
+      date: 2019-09-19
+      url: https://halfstackconf.com/vienna/
+      talks:
+        -
+          title: JAMStackin'
+          video: https://halfstackconf.streameventlive.com/archive/61
+          slides: https://noti.st/stefan/jKCu3m/jamstackin
+    -
+      title: StripeCon
+      country: Austria
+      city: Krems
+      date: 2019-10-12
+      url: https://stripecon.eu/
+      talks:
+        -
+          title: JAMStackin'
+          video: https://www.youtube.com/watch?v=SPIo_OZWlco
+          slides: https://noti.st/stefan/fIAs9C/jamstackin
+    -
+      title: Script'19 (MC + Org)
+      country: Austria
+      city: Linz
+      date: 2019-10-25
+      url: https://scriptconf.org
+    -
+      title: Nodeconf.eu
+      country: Ireland
+      city: Kilkenny
+      date: 2019-11-11
+      url: https://nodeconf.eu/
+      talks:
+        -
+          title: JAMStackin'
+          video: https://www.youtube.com/watch?v=nZUwrCCKZrs
+          slides: https://noti.st/stefan/fIAs9C/jamstackin
+    -
+      title: Webclerks
+      country: Austria
+      city: Vienna
+      date: 2019-11-25
+      url: https://webclerks.at
+      talks:
+        -
+          title: More Hurrah, less Krawuzzi Kapuzzi
+    -
+      title: Vienna.js
+      country: Austria
+      city: Vienna
+      date: 2019-11-27
+      url: https://viennajs.at
+      talks:
+        -
+          title: What TypeScript taught me about JavaScript
+-
+  year: 2018
+  conferences:
+    -
+      title: Script'18 (MC)
+      country: Austria
+      city: Linz
+      date: 2018-01-19
+      url: https://scriptconf.org/
+    -
+      title: Perform
+      country: USA
+      city: Las Vegas
+      date: 2018-01-29
+      url: https://www.dynatrace.com/perform
+      talks:
+        -
+          title: Performance optimisation for single page apps
+          type: Workshop
+    -
+      title: Devone (MC)
+      country: Austria
+      city: Linz
+      date: 2018-04-26
+      url: https://devone.at/2018
+    -
+      title: We Are Developers (MC)
+      country: Austria
+      city: Vienna
+      date: 2018-05-17
+      url: https://www.wearedevelopers.com/congress/
+    -
+      title: Technologieplauscherl
+      country: Austria
+      city: Linz
+      date: 2018-06-26
+      url: http://technologieplauscherl.at/58
+      talks:
+        -
+          title: "TypeScript oddities"
+          slides: https://noti.st/stefan/hCTgGb/typescript-oddities
+          video: https://www.youtube.com/watch?v=S7Y1rZsmHN4
+    -
+      title: Webkongress
+      country: Germany
+      city: Erlangen
+      date: 2018-09-12
+      url: https://www.webkongress.fau.de/
+      talks:
+        -
+          title: "Off with their head! - Modern cloud infrastructure for scalable web development"
+          slides: https://www.slideshare.net/ddprrt/german-ab-mit-dem-kopf
+          video: https://www.video.uni-erlangen.de/clip/id/9476
+    -
+      title: Stahlstadt.js
+      country: Austria
+      city: Linz
+      date: 2018-10-09
+      url: https://www.meetup.com/de-DE/stahlstadt-js/events/254352412/
+      talks:
+        -
+          title: "A hero's journey in JavaScript frameworks"
+          slides: https://noti.st/stefan/HcYudf/a-hero-s-journy-in-javascript-frameworks
+    -
+      title: Angular Connect
+      country: England
+      city: London
+      date: 2018-11-06
+      url: https://angularconnect.com
+      talks:
+        -
+          title: "Automating UI development"
+          slides: https://www.slideshare.net/ddprrt/automating-ui-development
+          video: https://www.youtube.com/watch?v=3_XvaSD_0xo
+-
+  year: 2017
+  conferences:
+    -
+      title: Frontend Con
+      country: Poland
+      city: Warsaw
+      date: 2017-09-23
+      url: http://www.frontend-con.io/
+      talks:
+        -
+          title: Get a grid for flex' sake!
+          slides: https://speakerdeck.com/ddprrt/get-a-grid-for-flex-sake
+    -
+      title: Devone (MC)
+      country: Austria
+      city: Linz
+      date: 2017-06-01
+      url: https://devone.at
+    -
+      title: Webclerks
+      country: Austria
+      city: Vienna
+      date: 2017-04-10
+      url: https://www.meetup.com/de-DE/webclerks/events/236971764
+      talks:
+        -
+          title: Technical writing
+          slides: https://speakerdeck.com/ddprrt/technical-writing
+    -
+      title: Perform
+      country: USA
+      city: Las Vegas
+      date: 2017-02-06
+      url: https://www.dynatrace.com/perform
+      talks:
+        -
+          title: Performance optimisation for single page apps
+          slides: https://speakerdeck.com/ddprrt/web-performance-optimisation-for-single-page-applications
+          type: Workshop
+    -
+      title: Script'17 (MC)
+      country: Austria
+      city: Linz
+      date: 2017-01-26
+      url: https://scriptconf.org/2017/
+    -
+      title: Technologieplauscherl
+      country: Austria
+      city: Linz
+      date: 2017-01-17
+      url: http://technologieplauscherl.at/43/
+      talks:
+        -
+          title: Technical writing
+          slides: https://speakerdeck.com/ddprrt/technical-writing
+-
+  year: 2016
+  conferences:
+    -
+      title: CSSConf Budapest
+      country: Hungary
+      city: Budapest
+      date: 2016-05-11
+      url: http://cssconfbp.rocks/
+      talks:
+        -
+          title: The Super Mario Bros. Principle
+          abstract: http://cssconfbp.rocks/speaker/stefan-baumgartner.html
+    -
+      title: JSConf Budapest
+      country: Hungary
+      city: Budapest
+      date: 2016-05-12
+      url: http://jsconfbp.com/
+      talks:
+        -
+          title: HTTP/2 is coming! Unbundle all the things?
+          abstract: http://jsconfbp.com/speakers/stefan-baumgartner.html
+          slides: https://speakerdeck.com/ddprrt/2-is-coming-unbundle-all-the-things
+          video: https://www.youtube.com/watch?v=98z0XjYWX0o
+    -
+      title: PortoTechHub
+      country: Portugal
+      city: Porto
+      date: 2016-09-23
+      url: http://portotechhub.com/
+      talks:
+        -
+          title: The Super Mario Bros. Principle
+          slides: https://speakerdeck.com/ddprrt/2-is-coming-unbundle-all-the-things
+    -
+      title: ViennaJS
+      country: Austria
+      city: Vienna
+      date: 2016-09-28
+      url: https://www.meetup.com/de-DE/viennajs/events/230515299/
+      talks:
+        -
+          title: Me, myself and AI
+          abstract: https://www.meetup.com/de-DE/viennajs/events/230515299/
+    -
+      title: Topconf Tallin
+      country: Estonia
+      city: Tallinn
+      date: 2016-11-17
+      url: http://topconf.com/tallinn-2016/trackevent/the-pull-request-cms/
+      talks:
+        -
+          title: The Pull Request CMS
+          abstract: http://topconf.com/tallinn-2016/trackevent/the-pull-request-cms/
+-
+  year: 2015
+  conferences:
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Munich
+      date: 2015-03-05
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+    -
+      title: Webinale
+      country: Germany
+      city: Berlin
+      date: 2015-06-10
+      talks:
+        -
+          title: Data Driven Performance Optimisation
+          slides: https://speakerdeck.com/ddprrt/data-driven-performance-optimisation
+    -
+      title: Digital Visions
+      country: Austria
+      city: Vienna
+      date: 2015-10-09
+      talks:
+        -
+          title: The UX of Speed
+          slides: https://speakerdeck.com/ddprrt/the-ux-of-speed
+    -
+      title: Devoxx
+      country: Belgium
+      city: Antwerp
+      date: 2015-11-10
+      talks:
+        -
+          title: JavaScript building pipelines with Gulp
+          slides: https://speakerdeck.com/ddprrt/plumbin-pipelines-with-gulp-dot-js-3hr-workshop
+          type: Workshop
+          video: https://www.youtube.com/watch?v=AcCtLUZZkvE
+    -
+      title: Topconf Tallin
+      country: Estonia
+      city: Tallinn
+      date: 2015-11-18
+      url: http://topconf.com/tallinn-2015
+      talks:
+        -
+          title: Plumbin' Pipelines
+          slides: https://speakerdeck.com/ddprrt/advanced-javascript-build-pipelines-using-gulp-dot-js
+          abstract: http://topconf.com/tallinn-2015/trackevent/plumbin-pipelines-javascript-build-tools-on-steroid/
+        -
+          title: Speed Index, explained
+          abstract: http://topconf.com/tallinn-2015/trackevent/speed-index-explained/
+          video: https://www.youtube.com/watch?v=ssC8FAVg0Zg
+          slides: https://speakerdeck.com/ddprrt/speed-index-explained
+-
+  year: 2014
+  conferences:
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Munich
+      date: 2014-03-07
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+          video: https://www.youtube.com/watch?v=NyQHh3HkcZE
+    -
+      title: Mobile Tech Conference
+      country: Germany
+      city: Munich
+      date: 2014-03-20
+      talks:
+        -
+          title: Gaining Control for the Great Unknown
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-mobiletechcon-march-2014
+        -
+          title: Panel discussion with Sven Wolfermann, Roland Guelle and Tobias Baldauf
+          type: Panel
+    -
+      title: Webinale
+      country: Germany
+      city: Berlin
+      date: 2014-06-03
+      talks:
+        -
+          title: Keeping the web native!
+          slides: https://speakerdeck.com/ddprrt/keeping-the-web-native
+          video: https://www.youtube.com/watch?v=BMwWNkvkZYI
+    -
+      title: JavaScript Days
+      country: Germany
+      city: Berlin
+      date: 2014-10-15
+      talks:
+        -
+          title: Frontend Tooling with Yeoman and Grunt
+          type: Workshop
+          slides: https://speakerdeck.com/ddprrt/front-end-tooling-with-grunt-gulp-and-yeoman-javascript-days-2014
+          video: https://www.youtube.com/watch?v=gKC51DyvVkQ
+    -
+      title: Codeweek
+      country: Austria
+      city: Linz
+      date: 2014-10-17
+      talks:
+        -
+          title: Introduction to Yeoman
+          slides: https://speakerdeck.com/ddprrt/a-short-introduction-to-yeoman
+-
+  year: 2013
+  conferences:
+    -
+      title: Breaking Development
+      country: USA
+      city: Orlando, FL
+      date: 2013-04-08
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+          video: https://vimeo.com/64197060
+    -
+      title: "Beyond Tellerrand - Developer Garden"
+      country: Germany
+      city: Düsseldorf
+      date: 2013-05-28
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: Digital Visions
+      country: Austria
+      city: Vienna
+      date: 2013-10-04
+      talks:
+        -
+          title: The perfect steak
+          slides: https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak
+    -
+      title: Topconf Tallinn
+      country: Estonia
+      city: Tallinn
+      date: 2013-11-06
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+        -
+          title: The perfect steak
+          slides: https://speakerdeck.com/ddprrt/digital-visions-2013-the-perfect-steak
+        -
+          title: Panel Discussion on Mobile HTML5 with Max Firtman
+          type: Panel
+    -
+      title: DrupalCamp
+      country: Austria
+      city: Vienna
+      date: 2013-11-23
+      talks:
+        -
+          title: Gaining Control in the Great Unknown
+          slides: https://speakerdeck.com/ddprrt/gaining-control-in-the-great-unknown-the-state-of-mobile-browsers-and-how-to-handle-them
+-
+  year: 2012
+  conferences:
+    -
+      title: "The next web"
+      country: Austria
+      city: Salzburg
+      date: 2012-03-23
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: "ATAG"
+      country: Austria
+      city: Vienna
+      date: 2012-10-25
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013
+    -
+      title: "Digital Visions"
+      country: Austria
+      city: Vienna
+      date: 2012-10-12
+      talks:
+        -
+          title: "Mobile Browser Games - Great Expectations"
+          slides: https://speakerdeck.com/ddprrt/mobile-browser-games-breaking-development-orlando-2013

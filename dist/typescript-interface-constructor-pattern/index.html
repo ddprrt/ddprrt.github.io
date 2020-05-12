@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <p>If you are doing traditional OOP with TypeScript, the structural features of TypeScript might<br>
+sometimes get in your way. Look at the following class hierachy for instance:</p>
+<pre><code class="language-javascript">abstract class FilterItem {
+  constructor(private property: string) {}
+  someFunction() { /* ... */ }
+  abstract filter(): void;
+}
+
+
+class AFilter extends FilterItem {
+  filter() { /* ... */ } 
+}
+
+
+class BFilter extends FilterItem {
+  filter() { /* ... */ }
+}
+</code></pre>
+<p>The <code>FilterItem</code> abstract class needs to be implemented by other classes. In this example by<br>
+<code>AFilter</code> and <code>BFilter</code>. So far, so good. Classical typing works like you are used to from<br>
+Java or C#:</p>
+<pre><code class="language-javascript">const some: FilterItem = new AFilter('afilter'); // ✅
+</code></pre>
+<p>When we need the structural information, though, we leave the realms of traditional OOP.<br>
+Let’s say we want to instantiate new filters based on some token we get from an AJAX call.<br>
+To make it easier for us to select the filter, we store all possible filters in a map:</p>
+<pre><code class="language-javascript">declare const filterMap: Map&lt;string, typeof FilterItem&gt;;
+
+filterMap.set('number', AFilter)
+filterMap.set('stuff', BFilter)
+</code></pre>
+<p>The map’s generics are set to a string (for the token from the backend), and everything<br>
+that complements the type signature of <code>FilterItem</code>. We use the <code>typeof</code> keyword here<br>
+to be able to add classes to the map, not objects. We want to instantiate them afterwards,<br>
+after all.</p>
+<p>So far everything works like you would expect. The problem occurs when you want to<br>
+fetch a class from the map and create a new object with it.</p>
+<pre><code class="language-javascript">let obj: FilterItem;
+const ctor = filterMap.get('number');
+
+if(typeof ctor !== 'undefined') {
+  obj = new ctor(); // 💣 cannot create an object of an abstract class
+}
+</code></pre>
+<p>What a problem! TypeScript only knows at this point that we get a <code>FilterItem</code> back,<br>
+and we can’t instantiate <code>FilterItem</code>. Since abstract classes mix type information and<br>
+actualy language (something that I try to avoid), a possible solution is to move to<br>
+interfaces to define the actual type signature, and be able to create proper<br>
+instances afterwards:</p>
+<pre><code class="language-javascript">interface IFilter {
+  new (property: string): IFilter;
+  someFunction(): void;
+  filter(): void;
+}
+
+declare const filterMap: Map&lt;string, IFilter&gt;;
+</code></pre>
+<p>Note the <code>new</code> keyword. This is a way for TypeScript to define the type signature<br>
+of a constructor function.</p>
+<p>Lots of 💣s start appearing now. No matter where you put the <code>implements IFilter</code><br>
+command, no implementation seems to satisfy our contract:</p>
+<pre><code class="language-javascript">abstract class FilterItem implements IFilter { /* ... */ }
+// 💣 Class 'FilterItem' incorrectly implements interface 'IFilter'.
+// Type 'FilterItem' provides no match for the signature 
+// 'new (property: string): IFilter'.
+
+filterMap.set('number', AFilter)
+// 💣Argument of type 'typeof AFilter' is not assignable 
+// to parameter of type 'IFilter'. Type 'typeof AFilter' is missing 
+// the following properties from type 'IFilter': someFunction, filter
+</code></pre>
+<p>What’s happening here? Seems like neither the implementation, nor the<br>
+class itself seem to be able to get all the properties and functions<br>
+we’ve defined in our interface declaration. Why?</p>
+<p>JavaScript classes are special: They have not only one type we could easily<br>
+define, but two types! The type of the static side, and the type of the instance<br>
+side. It might get clearer if we transpile our class to what it was before ES6:<br>
+a constructor function and a prototype:</p>
+<pre><code class="language-javascript">function AFilter(property) { // this is part of the static side
+  this.property = property;  // this is part of the instance side
+}
+
+// instance
+AFilter.prototype.filter = function() {/* ... */} 
+
+// not part of our example, but instance
+Afilter.something = function () { /* ... */ }
+</code></pre>
+<p>One type to create the object. One type for the object itself. So let’s split<br>
+it up and create two type declarations for it:</p>
+<pre><code class="language-javascript">interface FilterConstructor {
+  new (property: string): IFilter;
+}
+
+interface IFilter {
+  someFunction(): void;
+  filter(): void;
+}
+</code></pre>
+<p>The first type <code>FilterConstructor</code> is the <strong>constructor interface</strong>. Here are all static properties,<br>
+and the constructor function itself. The constructor function returns an instance: <code>IFilter</code>.<br>
+<code>IFilter</code> contains type information of the instance side. All the functions we declare.</p>
+<p>By splitting this up, our subsequent typings also become a lot clearer:</p>
+<pre><code class="language-javascript">declare const filterMap: Map&lt;string, FilterConstructor&gt;; /* 1 */
+
+filterMap.set('number', AFilter)
+filterMap.set('stuff', BFilter)
+
+let obj: IFilter;  /* 2 */
+const ctor = filterMap.get('number')
+if(typeof ctor !== 'undefined') {
+  obj = new ctor('a');
+}
+</code></pre>
+<ol>
+<li>We add <code>FilterConstructor</code>s to our map. This means we only can add classes that<br>
+procude the desired objects.</li>
+<li>What we want in the end is an instance of <code>IFilter</code>. This is what the constructor<br>
+function returns when being called with <code>new</code>.</li>
+</ol>
+<p>Our code compiles again and we get all the auto completion and tooling we desire.<br>
+Even better: We are not able to add abstract classes to the map. Because they don’t<br>
+procude a valid instance:</p>
+<pre><code class="language-javascript">// 💣 Cannot assign an abstract constructor 
+//    type to a non-abstract constructor type.
+filterMap.set('notworking', FilterItem)
+</code></pre>
+<p>Traditional OOP, weaved in into our lovely type system. ✅</p>
+<p><em><a href="https://www.typescriptlang.org/play/index.html#code/JYOwLgpgTgZghgYwgAgGLADaSgYQPYgDOYUArgmHlMgN4CwAUMsiBAO7IAUADlHt9DABPAFzJiUUAHMAlGICS6LNADcjAL6NGobPCTJFmbLUbMYR6JznIAbnmAATNQ00NGcAEYTEYZAgxwhIRoFlDykAC2yMAR3BgQERDgwYbK1PRuTH4EEuSUUDySNnCQyLz8gqLiJNIyJpnMrqbInt4UyOZpVmJ2js5NDP6BwQDKNSBSSsYQAB6QIA7BU9DhCcwZzZ3YVvXMzAD0+8iUDnjN6sgaWplDQcgAcqQRHtDL1LPziyFpq1EbWVtLHUMntkIdjnhTudLi5rg4IEMoCgEDlfICoABZODcMRY7gAHgk0gANN9sPgiCQ8lQAHzORjovEAOkIEDAnAA5CAni8oBzSWNJBM3jIGaFmaz2Vy8GA2FQANbSflklaRUU3VEq6gAXg64uxTKkbM53Oe0A56uAME4wgEeBgWuQAEJtbqOaQFhBzKwHBbdtlKXq0shdawOG9OXALf0gA">Here’s a playground with the full code</a></em></p>
+<p>//include helper/include-by-tag.html tag=“TypeScript” title=“More articles about TypeScript”</p>
+
+</body>
+</html>

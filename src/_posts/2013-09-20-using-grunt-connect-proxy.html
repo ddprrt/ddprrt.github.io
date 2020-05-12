@@ -1,0 +1,172 @@
+---
+layout: book
+title: Using grunt-connect-proxy
+categories:
+- Javascript
+- Tools
+- Workflows
+- grunt
+tags:
+- Grunt
+- node.js
+- yeoman
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _sd_is_markdown: ''
+excerpt_small: "With any application that communicates with some sort of backend interface exchanging JSON data, you're often in the need to use proxies in your own server configuration to overcome CORS restrictions (either that, or use jsonp, which always seems like a workaround to me). Previously --- in the times we worked with our local Apache servers -- it was always a bit tedious and also caused a lot of time running into the project setup for every team member. Now with our yeoman-grunt-bower setup, it mostly takes no longer than a minute. Cause guess what, there's a already Grunt-task for that."
+---
+<p>
+  <em>Update 2014/01/13: The interface of <code>grunt-contrib-connect</code> has slightly changed. Please check <a href="/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/">my article on how to add middleware</a>. The proxy middleware is still the same, tough.</em>
+</p>
+
+
+<p>With any application that communicates with some sort of backend interface exchanging JSON data, you're often in the need to use proxies in your own server configuration to overcome CORS restrictions (either that, or use jsonp, which always seems like a workaround to me). Previously --- in the times we worked with our local Apache servers -- it was always a bit tedious and also caused a lot of time running into the project setup for every team member. Now with our yeoman-grunt-bower setup, it mostly takes no longer than a minute. Cause guess what, there's a already Grunt-task for that.</p>
+
+<!--more-->
+
+<h2>The problem</h2>
+
+<p>Why do we need proxies? Well, I assume your app uses JSON for data transfer, so by calling an URL like <code>http://someserver.com/API/Login</code> you get all the data you need for your JavaScript application. And in most cases your application is located on the same server, which makes those calls really easy. However, if your are developing locally on your machine and try to call this server, you'll soon see that you won't come very far. Due to <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> restrictions you are not allowed to retrieve data from a different domain than yours.</p>
+
+<p>Proxies help with that. They stand in for the server you want to reach, get the required data, while letting your browser think that you're all in the right domain. So instead by calling <code>http://someserver.com/API</code> you can call <code>http://localhost/API</code>.</p>
+
+<h2>Creating a proxy with Grunt</h2>
+
+<p>Task-runner Grunt has quickly become my most favorite tool when it comes to front-end development. It builds up on Node.js, which allows me to easily create new tasks, plus there are already a lot of great tasks out there which help me with my everyday development. Also for proxies, like the one created by <a href="https://github.com/drewzboto/grunt-connect-proxy">Drewzboto</a>.</p>
+
+<p>Recently we switched our scaffolding process from a GitHub clone clusterf**k to a more streamlined process with Bower and Yeoman, and Yeoman heavily uses Grunt. So this short tutorial will show you how to add a proxy to your already existing Yeoman-like Gruntfile (with <code>connect</code> and <code>livereload</code> already set in place.</p>
+
+<h3>Installing</h3>
+
+<p>Coulnd't be easier. Just type</p>
+
+<pre><code class="language">npm install --save-dev grunt-connect-proxy
+</code></pre>
+
+<p>With the parameter <code>--save-dev</code> the module gets added to your <code>package.json</code>, the one file you have to make available in your code repository for your co-developers.</p>
+
+<h3>Setting up a proxy</h3>
+
+<p>Search your <code>connect</code> task in your Gruntfile and add this little snippet:</p>
+
+```javascript
+connect: {
+    ...
+    server: {
+        proxies: [
+            {
+                context: '/',
+                host: 'someserver.com',
+                changeOrigin: true
+            }
+        ]
+    }
+}
+```
+
+<p>This snippet tells us, that any call which can't be answered by your machine will be forwared to <code>someserver.com</code>. There are a lot more options, you might also need <code>https</code> or <code>port</code> parameters for instance. Check out <a href="https://github.com/drewzboto/grunt-connect-proxy">the GitHub repo</a> for more information on that.</p>
+
+<p>Add this part to the top of your <code>Gruntfile.js</code>, right before <code>module.exports</code>.</p>
+
+```javascript
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+```
+
+<p>and call the <code>proxySnippet</code> middleware in your <code>livereload</code> configuration:</p>
+
+```javascript
+connect: {
+    ...
+    livereload: {
+        options: {
+            middleware: function (connect) {
+                return [
+                    lrSnippet,
+                    mountFolder(connect, '.tmp'),
+                    mountFolder(connect, yeomanConfig.app),
+                    proxySnippet
+                ];
+            }
+        }
+    }
+}
+```
+
+<p>Now you're all set up. The last thing you've to do is to call <code>configureProxies</code> before using <code>connect</code> in your task, and everything's ready to go:</p>
+
+```javascript
+grunt.task.run([
+    'clean:server',
+    'concurrent:server',
+    'configureProxies',
+    'connect:livereload',
+    'open',
+    'watch'
+]);
+```
+
+<p>It's as easy as that. We added this to our main Gruntfile we use for scaffolding our projects, so everytime we need a proxy, it's just peace of cake instead of endless subdomain and subserver configuration in the old <code>httpd-vhosts.conf</code> file.</p>
+
+<h2>Directing to more than one server</h2>
+
+<p>This was actually a part which required a lot more thinking and understanding of proxies to get this done right. We had the -- at least for us -- rather specific use case to retrieve our data from more than one server at the same time. Mainly because there was one server handling the content, and one server which took care of all the user data. As you can see, the <code>proxies</code> option in the default task is actually an array, which means we can easily define more than one proxy configuration.</p>
+
+```javascript
+connect: {
+    ...
+    server: {
+        proxies: [
+            {
+                context: '/user',
+                host: 'userserver.com',
+                changeOrigin: true
+            },
+            {
+                context: '/',
+                host: 'someserver.com',
+                changeOrigin: true
+            }
+        ]
+    }
+}
+```
+
+<p>Creating the new context <code>user</code> which should allow me to use <code>http://localhost:9000/user</code> to get to <code>http://userserver.com</code>. I put that one before the other on purpose, cause at the moment this will actually do nothing at all.</p>
+
+<p>Reason is that the proxy can't decide why to redirect all the <code>user</code> calls to the other service. We need to define a redirection for the original proxy to make this happen:</p>
+
+```javascript
+connect: {
+    ...
+    server: {
+        proxies: [
+            {
+                context: '/user',
+                host: 'userserver.com',
+                changeOrigin: true
+            },
+            {
+                context: '/',
+                host: 'someserver.com',
+                changeOrigin: true,
+                rewrite: {
+                   '/user' : '/user'
+                }
+            }
+        ]
+    }
+}
+```
+
+<p>This rewrite rule tells the proxy that ever call which starts with <code>user</code> gets redirected to the <code>user</code> context we defined earlier. It won't work the other way round, since the context has to be defined beforehand, but that shouldn't matter actually. Feel free to include as many proxies and rewrites. Using this structure everything should work fine.</p>
+
+<h2>Bottom line</h2>
+
+<p>I've to admit that I've grown on Grunt. Not only that everything just seams so easy to create, it's also one definition that works on every workstation in our department. No need for petty set up phases, just everything is on the go and ready if another team member joins a project. Proxies have been the crux for each project, often leading us to switch to JSONP files just for convenience, and because the Backend guys could actually implement that much, much quicker. No need for that anymore.</p>
+
+<h2>Update</h2>
+
+In the meantime Grunt's interfaces have changed and Yeoman's generators use the new <code>grunt-contrib-connect package</code> instead of the deprecated <code>grunt-connect</code> one that has been used before. This package includes livereload as a default, though it's not that easy anymore to add middleware than it was before. I addressed this topic in my recent article on <a href="https://fettblog.eu/blog/2013/11/17/the-magic-of-grunt-contrib-connect-and-how-to-run-php-with-it/">The magic behind grunt-contrib-connect</a>. Check it out and add your proxySnippet where it belongs!

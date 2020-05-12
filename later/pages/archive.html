@@ -1,0 +1,34 @@
+---
+layout: page
+title: Archive
+status: publish
+type: page
+published: true
+nocomments: true
+permalink: /archive/
+---
+
+<p>Here's a list of all {{ site.posts | size }} articles published on this website</p>
+
+{% assign years = "" | split: "" %}
+{% assign firstTime = true %}
+
+{% for post in site.posts %}
+
+{% assign currYear = post.date | date: '%Y' %}
+{% unless years contains currYear %}
+{% assign yearArray = currYear | split: "," %}
+{% assign years = years | concat: yearArray %}
+{% if firstTime %}
+{% assign firstTime = false %}
+{% else %}
+</ul>
+{% endif %}
+<h3>{{currYear}}</h3>
+
+<ul>
+{% endunless %}
+<li><a href="{{post.url}}">{{post.title}}</a> - <span class="categories">{{post.categories | join: ", " }}</span></li>
+
+{% endfor %}
+</ul>
