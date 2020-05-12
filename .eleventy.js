@@ -1,4 +1,5 @@
-const markdownIt = require('markdown-it')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const dateformat = require('dateformat')
 
 module.exports = function(config) {
 
@@ -10,23 +11,27 @@ module.exports = function(config) {
     return new Date().getFullYear()
   })
 
-  
+  config.addFilter('prettyDate', function(input) {
+    return dateformat(new Date(input), 'mmmm d, yyyy')
+  })
+
+  config.addFilter('readingTime', function(input) {
+    const words = input.split(' ').filter(el => el !== '').length
+    return parseInt(words / 200 + 0.5)
+  })
+
+  config.addNunjucksFilter('toLowerCase', function(value) {
+    return value.toLowerCase()
+  })
+
+  config.addPlugin(syntaxHighlight)
+
   config.addPassthroughCopy('./src/wp-content/')
   config.addPassthroughCopy('./src/manifest.json')
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
 
   config.addWatchTarget('./src/_assets')
-
-  config.setLibrary(
-    'md',
-    markdownIt({
-      html: true,
-      breaks: true,
-      linkify: true,
-      typographer: true
-    })
-  )  
 
   return {
     dir: {

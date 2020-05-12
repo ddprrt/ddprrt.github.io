@@ -1,8 +1,13 @@
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
-    {{ content | safe }}
-</body>
-</html>
+---
+layout: default.njk
+---
+<article class="wrapper h-entry">
+  <div class="bg">
+    {% include "navigation/preamble.njk" %}
+  </div>
+  <div class="grid">
+    <div class="e-content">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>

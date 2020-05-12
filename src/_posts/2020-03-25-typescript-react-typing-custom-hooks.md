@@ -11,13 +11,13 @@ title: "TypeScript + React: Typing custom hooks with tuple types"
 
 I recently stumbled upon a question on Reddit's [LearnTypeScript](https://www.reddit.com/r/LearnTypescript/) subreddit regarding custom React hooks. A user wanted to create a toggle custom hook, and stick to the naming convention as regular React hooks do: Returning an array that you destructure when calling the hook. For example `useState`:
 
-```javascript
+```typescript
 const [state, setState] = useState(0)
 ```
 
 Why an array? Because you the array's fields have no name, and you can set names on your own:
 
-```javascript
+```typescript
 const [count, setCount] = useState(0)
 const [darkMode, setDarkMode] = useState(true)
 ```
@@ -26,7 +26,7 @@ So naturally, if you have a similar pattern, you also want to return an array.
 
 A custom toggle hook might look like this:
 
-```javascript
+```typescript
 export const useToggle = (initialValue: boolean) => {
   const [value, setValue] = useState(initialValue)
   const toggleValue = () => setValue(!value)
@@ -35,7 +35,7 @@ export const useToggle = (initialValue: boolean) => {
 ```
 Nothing out of the ordinary. The only types we have to set are the types of our input parameters. Let's try to use it:
 
-```javascript
+```typescript
 export const Body = () => {
   const [isVisible, toggleVisible] = useToggle(false)
   return (
@@ -64,7 +64,7 @@ So we shouldn't return an array, but a tuple at `useToggle`. The problem: In Jav
 
 First possibility: Let's be intentional with our return type. Since TypeScript -- correctly! -- infers an array, we have to tell TypeScript that we are expecting a tuple. 
 
-```javascript
+```typescript
 // add a return type here
 export const useToggle = (initialValue: boolean): [boolean, () => void] => {
   const [value, setValue] = useState(initialValue)
@@ -79,7 +79,7 @@ With `[boolean, () => void]` as a return type, TypeScript checks that we are ret
 
 With a tuple, we know how many elements we are expecting, and know the type of these elements. This sounds like a job for freezing the type with a const assertion.
 
-```javascript
+```typescript
 export const useToggle = (initialValue: boolean) => {
   const [value, setValue] = useState(initialValue)
   const toggleValue = () => setValue(!value)
