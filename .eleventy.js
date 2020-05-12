@@ -16,7 +16,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
 
-  config.addWatchTarget('./src/assets')
+  config.addWatchTarget('./src/_assets')
 
   config.setLibrary(
     'md',
@@ -36,7 +36,7 @@ module.exports = function(config) {
       includes: '_includes',
       layouts: '_layouts'
     },
-    templateFormats : ['njk', 'md'],
+    templateFormats : ['njk', 'md', '11ty.js'],
     htmlTemplateEngine : 'njk',
     markdownTemplateEngine : 'njk',
     passthroughFileCopy: true,
