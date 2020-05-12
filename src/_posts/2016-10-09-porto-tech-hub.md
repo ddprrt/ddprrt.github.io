@@ -3,7 +3,8 @@ title: PortoTechHub 2016
 published: true
 layout: post
 permalink: /porto-tech-hub-2016/
-categories: conferences
+categories: 
+- conferences
 ---
 
 I rarely talk about attending or speaking at conferences, but sometimes you just

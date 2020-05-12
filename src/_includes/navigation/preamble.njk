@@ -15,6 +15,7 @@
       Written by  <span class="meta-highlight"><a class="" href="https://twitter.com//ddprrt">@ddprrt</a></span>
     </p>
     <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ content | readingTime }} minutes</span></p>
+    {% if categories %}
     <p class="meta-item">
       More on  <span class="meta-highlight">
         {% for category in categories %}
@@ -22,5 +23,6 @@
         {% endfor %}
       </span>
     </p>
+    {% endif %}
   </div>
 </div>
