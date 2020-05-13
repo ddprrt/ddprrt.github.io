@@ -29,8 +29,8 @@ module.exports = function(config) {
 
   config.addFilter('abstract', function(input) {
     const $ = cheerio.load(input)
-    // , p:first-child + :not(p, h2, h3, ul, ol
-    return $.html('p:first-child').toString()
+    // 
+    return $.html('p:first-child, p:first-child + :not(h2, h3, ul, ol)').toString()
   })
 
   config.addNunjucksFilter('toLowerCase', function(value) {
@@ -46,7 +46,7 @@ module.exports = function(config) {
     }, [])
     let cats = {}
     categories.forEach(el => {
-      cats[el] = collection.items
+      cats[el] = Array.from(collection.items)
         .filter(item => item.data.categories && item.data.categories.includes(el))
         .sort((a, b) => {
           return a.date - b.date

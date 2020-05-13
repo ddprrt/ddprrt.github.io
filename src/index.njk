@@ -31,18 +31,18 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item">
           Posted in <span class="meta-highlight">
             {% for category in article.data.categories %}
-            <a href="/categories/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            <a href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
             {% endfor %}
           </span>
         </p>
         {% endif %}
       </div>
-    </div>
-    <div class="e-content abstract">
-      {{ article.templateContent | abstract | safe }}
-    </div>
-    <div class="action-bar">
-      <a class="read-more" href="{{article.url}}">Read more</a>
+      <div class="e-content abstract">
+        {{ article.templateContent | abstract | safe }}
+      </div>
+      <div class="action-bar">
+        <a class="read-more" href="{{article.url}}">Read more</a>
+      </div>
     </div>
   </article>
   {% for i in range(1, 8) %}
@@ -61,7 +61,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item">
           Posted in <span class="meta-highlight">
             {% for category in article.data.categories %}
-            <a href="/categories/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            <a href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
             {% endfor %}
           </span>
         </p>
@@ -76,4 +76,8 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
   <div class="teaser teaser-happy">
   {% include "widgets/happy-stefan.njk" %}
   </div>
+</div>
+
+<div class="callout">
+  <a href="/articles" class="button"><span class="effect">💡</span> Want more? Check out all {{ collections["posts"] | length }} articles</a>
 </div>

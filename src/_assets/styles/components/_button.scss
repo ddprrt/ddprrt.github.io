@@ -1,0 +1,37 @@
+.button {
+  --color-start: var(--color-four);
+  --color-end: var(--color-five);
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 700;
+  background: linear-gradient(to right,
+    var(--color-start),
+    var(--color-end)
+  );
+  display: inline-block;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.effect {
+  filter: grayscale(100%)
+}
+
+.button:hover {
+  color: white;
+  --color-start: var(--color-three);
+  --color-end: var(--color-four);
+}
+
+.button:hover .effect {
+  filter: grayscale(0)
+}
+
+.callout {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}

@@ -20,7 +20,7 @@
     <p class="meta-item">
       More on  <span class="meta-highlight">
         {% for category in categories %}
-        <a href="/categories/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+        <a href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
         {% endfor %}
       </span>
     </p>
