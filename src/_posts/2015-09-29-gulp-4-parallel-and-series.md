@@ -18,7 +18,7 @@ Gulp would allow defining a dependency to a task. It would make sure that this
 dependency task gets executed before the original task gets triggered. Look
 at this code:
 
-```javascript
+```typescript
 // Per default, start scripts and styles
 gulp.task('default', ['scripts', 'styles'], function() {...});
 
@@ -82,7 +82,7 @@ Each of those functions allow for parameters of the following kind:
 So if you want to execute *styles* and *scripts* in parallel, you can write
 something like this:
 
-```javascript
+```typescript
 gulp.task('default', gulp.parallel('scripts', 'styles'));
 ```
 
@@ -99,7 +99,7 @@ The execution of the graph above is: A, then B, then C and D parallel, then E.
 Since we aim for the maximum currency, one would think to replace all dependency
 arrays with `gulp.parallel` functions, like that:
 
-```javascript
+```typescript
 gulp.task('styles', gulp.parallel('clean', function() {...}));
 gulp.task('scripts', gulp.parallel('clean', function() {...}));
 
@@ -113,7 +113,7 @@ actual task that creates the output. In a concurrent world, this can mean that w
 immediately delete the files we created. We don't want that. So let's exchange the
 tasks that are meant to be executed after another with `gulp.series`.
 
-```javascript
+```typescript
 gulp.task('styles', gulp.series('clean', function() {...}));
 gulp.task('scripts', gulp.series('clean', function() {...}));
 
@@ -148,7 +148,7 @@ function. The others are ordered in a `gulp.series` function. Like that:
 
 The accompanying source code:
 
-```javascript
+```typescript
 // The tasks don't have any dependencies anymore
 gulp.task('styles', function() {...});
 gulp.task('scripts', function() {...});

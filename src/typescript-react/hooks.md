@@ -35,7 +35,7 @@ current state of a component instance, and initialise it, with one single functi
 values we initially set, get per component update, and set through events, always have the same type. With the provided 
 typings, this works without any additional TypeScript:
 
-```javascript
+```typescript
 // import useState next to FunctionComponent
 import React, { FunctionComponent, useState } from 'react';
 
@@ -66,7 +66,7 @@ The method signature is pretty straightforward. It accepts two parameters:
   every time the component update. If you do, React will check if those values did change, and triggers the function only
   if there's a difference. 
 
-```javascript
+```typescript
 // Standard use case.
 const [name, setName] = useState('Stefan');
 useEffect(() => {
@@ -78,7 +78,7 @@ You don't need to provide any extra typings. TypeScript will check that the meth
 you provide is correct. This function also has a return value (for cleanups). And TypeScript will check that you provide
 a correct function as well:
 
-```javascript
+```typescript
 useEffect(() => {
   const handler = () => {
     document.title = window.width;
@@ -103,7 +103,7 @@ This also goes for `useLayoutEffect` and `useMutationEffect`.
 does in class components. Type inference works brilliantly here, you don't need to use any TypeScript specific language
 features to get everything done:
 
-```javascript
+```typescript
 import React, { useContext } from 'react';
 
 // our context sets a property of type string
@@ -125,7 +125,7 @@ Again, as it should be!
 `useRef` is nice as you can set references directly in your function components. However, this was the first time I found
 hooks together with TypeScript a bit tricky! When you are in strict mode, TypeScript might complain:
 
-```javascript
+```typescript
 import React, { useRef } from 'react';
 function TextInputWithFocusButton() {
   // it's common to initialise refs with null
@@ -155,7 +155,7 @@ That's not the only thing. Since TypeScript doesn't know which element we want t
 for us and for TypeScript, when we know which type of element we want to ref. This also helps us to not mix up element types 
 in the end:
 
-```javascript
+```typescript
 function TextInputWithFocusButton() {
   // initialise with null, but tell TypeScript we are looking for an HTMLInputElement
   const inputEl = useRef<HTMLInputElement>(null);
@@ -192,7 +192,7 @@ when parameters change.
 To use that with TypeScript, we want to make sure that the return type from `useMemo` is the same as the return type from
 the callback:
 
-```javascript
+```typescript
 /**
  *  returns the occurence of if each shade of the 
  *  red color component. Needs to browse through every pixel 
@@ -224,7 +224,7 @@ The React typings are pretty good at that, so you don't have to do much else.
 `useCallback` is very similar. In fact, it's a shortcut that can be expressed with `useMemo` as well. But it returns a 
 callback function, not a value. Typings work similar:
 
-```javascript
+```typescript
 const memoCallback = useCallback((a: number) => {
   // doSomething
 }, [a])
@@ -244,7 +244,7 @@ Now this is something, isn't it? The core of Redux and similar state management 
 easy to use. The typings are also pretty straightforward, but let's look at everything step by step. We take the example
 from the website, and try to make it type safe.
 
-```javascript
+```typescript
 const initialState = { count: 0 };
 
 function reducer(state, action) {
@@ -289,7 +289,7 @@ want to avoid:
 For that, we create an `ActionType` type definition. We use union types to make sure that `type` can only be of 
 `reset`, `increment` or `decrement`.
 
-```javascript
+```typescript
 type ActionType = {
   type: 'reset' | 'decrement' | 'increment'
 }
@@ -330,7 +330,7 @@ function Counter({ initialCount = 0 }) {
 That's not much to do, to make our actions type safe. If you want to add another action, do it at your type declaration.
 It's the same with the state. The `useReducer` typings infer state types from the reducer function:
 
-```javascript
+```typescript
 type StateType = {
   count: number
 }

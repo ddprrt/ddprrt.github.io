@@ -30,7 +30,7 @@ The easiest choice: Inline styles. Not the full flexibility of CSS, but decent b
 top level specificity. Every React HTML element has a style property that allows an object with 
 all your styling. Objects can look like this: 
 
-```javascript
+```typescript
 const h1Styles = {
   backgroundColor: 'rgba(255, 255, 255, 0.85)',
   position: 'absolute',
@@ -49,7 +49,7 @@ interface.
 When using React typings, these properties are already typed through [csstype](https://www.npmjs.com/package/csstype). To get 
 editor benefits, import types directly from `csstype`:
 
-```javascript
+```typescript
 import CSS from 'csstype';
 
 const h1Styles: CSS.Properties = {
@@ -66,7 +66,7 @@ const h1Styles: CSS.Properties = {
 
 And apply them:
 
-```javascript
+```typescript
 export function Heading({ title } : { title: string} ) {
   return <h1 style={h1Styles}>{title}</h1>;
 }
@@ -108,7 +108,7 @@ CSS and returns an object you can pass to your components.
 The properties are compatible with `CSS.Properties` from `csstype`. In fact, it uses 
 `csstype` under the hood.
 
-```javascript
+```typescript
 /** @jsx jsx */
 // the line above activates the jsx factory by emotion
 import { css, jsx } from '@emotion/core';
@@ -138,7 +138,7 @@ You also get the same type information as with `CSS.Properties`.
 Since properties are compatible, you can easily migrate and use your old 
 `CSS.Properties` styles:
 
-```javascript
+```typescript
 const h1Style = css({
   ...originalStyles,
   ...maybeMixedWithOtherStyles
@@ -148,7 +148,7 @@ const h1Style = css({
 Handy! When you want to create styled components with emotion, you can use the `styled`
 function. The same ground rules apply:
 
-```javascript
+```typescript
 /** @jsx jsx */
 import styled from '@emotion/styled';
 import { jsx } from '@emotion/core';
@@ -186,7 +186,7 @@ npm install @types/styled-components
 
 It works immediately:
 
-```javascript
+```typescript
 import styled from "styled-components";
 
 export const Heading = styled.h1`
@@ -200,7 +200,7 @@ You get typings directly out of the box.
 You can constraint CSS properties to certain values if you like, or even pass custom properties to
 regular CSS properties. You need to explicitly type your styled component:
 
-```javascript
+```typescript
 type FlexProps = {
   direction?: 'row' | 'column',
 }
@@ -247,7 +247,7 @@ export function Heading({ title }: { title: string }) {
 When you use it like that, this will break. You need to add an ambient type declaration 
 file `styled-jsx.d.ts`:
 
-```javascript
+```typescript
 import "react";
 
 declare module "react" {
@@ -283,7 +283,7 @@ You name it.
 To make things work with CSS or Sass in Webpack and TypeScript, you also need to add ambient type declarations.
 I call them `css.d.ts` or `scss.d.ts`.
 
-```javascript
+```typescript
 declare module '*.css' {
   interface IClassNames {
     [className: string]: string
@@ -293,7 +293,7 @@ declare module '*.css' {
 }
 ```
 
-```javascript
+```typescript
 declare module '*.scss' {
   interface IClassNames {
     [className: string]: string
@@ -306,7 +306,7 @@ declare module '*.scss' {
 Both tell you that everything you export from a `css` or `scss` file is a string. 
 You don't get any class names you can attach, but at least you can import styles:
 
-```javascript
+```typescript
 import './Button.css'
 ```
 

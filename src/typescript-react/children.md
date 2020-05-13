@@ -20,7 +20,7 @@ type safe.
 Once you have the default types installed, we already get autocompletion and code analysis out of the box.
 In class components, we get this even without using any TypeScript specific syntax:
 
-```javascript
+```typescript
 import React, { Component } from 'react';
 
 export class Wrapper extends Component {
@@ -39,7 +39,7 @@ Tools like Visual Studio Code already help:
 For functional components, we need to use the `FunctionComponent` generic type to access children. Check out the example
 we had earlier:
 
-```javascript
+```typescript
 import React, { FunctionComponent } from 'react';
 
 type CardProps = {
@@ -62,7 +62,7 @@ explicit that you want to access children as well. If you don't use destructurin
 code looks like this:
 
 
-```javascript
+```typescript
 import React, { FunctionComponent } from 'react';
 
 // no children defined here

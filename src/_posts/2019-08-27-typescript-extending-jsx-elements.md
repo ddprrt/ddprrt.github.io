@@ -24,7 +24,7 @@ interpret this. Other browsers are robust enough not to care.
 
 Your TypeScript JSX code? Errors. 
 
-```javascript
+```typescript
 function Image({ src, alt }) {
   // 💥 Property 'loading' does not exist...
   return <img src={src}
@@ -39,7 +39,7 @@ feature of TypeScript is called *declaration merging*.
 Create a `@types` folder and put a `jsx.d.ts` file in it. Change your TypeScript config
 so your compiler options allow for extra types:
 
-```javascript
+```typescript
 {
   "compilerOptions": {
     ...
@@ -57,7 +57,7 @@ We re-create the exact module and interface structure:
 
 We know that from the original typings. Here, we add the properties we want to have.
 
-```javascript
+```typescript
 import 'react'
 
 declare module 'react' {
@@ -88,7 +88,7 @@ We can use the same method, when we want `styled-jsx` to be compatible with Type
 TypeScript does not recognize the `jsx` and `global` attributes of the `style` tag.
 Let's change that:
 
-```javascript
+```typescript
 declare module 'react' {
   interface StyleHTMLAttributes<T> extends React.HTMLAttributes<T> {
     jsx?: boolean;
@@ -101,7 +101,7 @@ When working with **Preact**, things are a bit more complicated. The original
 HTML typings are very generous and not so specific as React's typings. That's why
 we have to be a bit more explicit when defining images:
 
-```javascript
+```typescript
 declare namespace JSX {
   interface IntrinsicElements {
     "img": HTMLAttributes & {
@@ -119,4 +119,4 @@ optional attribute `loading`.
 The technique is the same, though: Declaration merging, which works on namespaces,
 interfaces and modules.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

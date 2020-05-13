@@ -32,7 +32,7 @@ npm install --save-dev @types/prop-types
 Once everything is installed, you can start adding prop types by adding a field 
 called `propTypes` to your components:
 
-```javascript
+```typescript
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -53,7 +53,7 @@ Article.propTypes = {
 
 This is already enough to get IDE feedback when using the component:
 
-```javascript
+```typescript
 const book = <Article title="TypeScript and React" price={10} /> // ✅
 const video = <Article title="TypeScript Videos" price="1000" /> // 💥 - Type Error
 ```
@@ -67,7 +67,7 @@ There's one downside however: The props **inside** the component are still of ty
 you get type safety when *using* the components, you don't get any when *writing*. Thankfully,
 the `prop-types` types package gives you some handy tools. All you need is the `InferProps` generic:
 
-```javascript
+```typescript
 import PropTypes, { InferProps } from "prop-types";
 
 export function Article({
@@ -96,7 +96,7 @@ We were talking about `defaultProps` in the [components chapter](../components).
 and `propTypes`. E.g. when you set a prop type to `isRequired`, but add a `defaultProp` for it, TypeScript
 understands that this becomes optional.
 
-```javascript
+```typescript
 Article.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired
@@ -115,7 +115,7 @@ Compared to other ways of defining components like the `FunctionComponent` type,
 `InferProps` only deals with properties, not with the component itself. This also means that we have to explicitly
 provide information for children:
 
-```javascript
+```typescript
 export function ArticleList({
   children
 }: InferProps<typeof ArticleList.propTypes>) {

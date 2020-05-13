@@ -30,7 +30,7 @@ We had some [discussion](https://github.com/Modernizr/Modernizr/issues/1082) ove
 
 It's pretty easy to set up for you. I hope to have it [on the Modernizr web page](http://modernizr.com/download/) in the near future, but for now you just clone or fork or download the repo, and add one line of code in the file `config-all.json`. Try to figure out which one!
 
-```javascript
+```typescript
 "options": [
   "setClasses",
   "addTest",

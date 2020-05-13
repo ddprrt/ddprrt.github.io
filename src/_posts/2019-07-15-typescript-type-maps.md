@@ -10,7 +10,7 @@ title: "TypeScript: Mapped types for type maps"
 Factory functions are a popular tool in JavaScript to create a diversity of objects with a single call.
 There's a particular factory function that you might have used at some point:
 
-```javascript
+```typescript
 document.createElement('video') // creates an HTMLVideoElement
 ```
 
@@ -27,7 +27,7 @@ But how do we type a factory function like that? One that has a couple of dozen 
 The original typings for `document.createElement` take a string as parameter,
 and returns an object of type `HTMLElement`:
 
-```javascript
+```typescript
 declare function createElement(tag: string, options?: any): HTMLElement
 ```
 
@@ -40,7 +40,7 @@ tags available in your browser.
 
 A possible generic type for the `createElement` factory function could look like this:
 
-```javascript
+```typescript
 type CreatedElement<T extends string> =    /** 1 **/
   T extends 'a' ? HTMLAnchorElement :      /** 2 **/
   T extends 'div' ? HTMLDivElement :
@@ -63,7 +63,7 @@ So far, so good. This even looks like a map from string to HTMLElement derivate.
 to extend this list with all available tags and return the respective element instance. We can even use things like union types to 
 help with types that implement more than one tag:
 
-```javascript
+```typescript
 type CreatedElement<T extends string> = 
   T extends 'a' ? HTMLAnchorElement :  
   T extends 'div' ? HTMLDivElement :
@@ -78,7 +78,7 @@ type CreatedElement<T extends string> =
 The solution is good and robust, but has one catch. A rather big one. The amount of comparisions is finite. Even though this looks like
 a map of types, in reality it's a nested comparision chain:
 
-```javascript
+```typescript
 type CreatedElement<T extends string> = 
   T extends 'a' ? HTMLAnchorElement :  
     T extends 'div' ? HTMLDivElement :
@@ -106,7 +106,7 @@ And I would've indexed the object dynamically with an index access. Something li
 
 **NOTE: This does not work. This is just for demonstration purposes**
 
-```javascript
+```typescript
 const elementMap = {
   a: HTMLAnchorElement,
   div: HTMLDivElement,
@@ -127,7 +127,7 @@ let's create a generic `HTMLElement`.
 In TypeScript, we can create types that work in a similar manner. First, let's create the `AllElements` type which is
 a map of all tags to their corresponding `HTMLElement` derivate:
 
-```javascript
+```typescript
 type AllElements = {
   'a': HTMLAnchorElement,
   'div': HTMLDivElement,
@@ -139,7 +139,7 @@ type AllElements = {
 This is what I like to call a **type map**. We *could* use this type to create an object of type `AllElements`,
 but in reality we most likely won't need that. We only use this type as an helper type for `CreatedElement`:
 
-```javascript
+```typescript
 type CreatedElement<T extends string> = 
   T extends keyof AllElements ? AllElements[T] : /** 1 **/
   HTMLElement;                                   /** 2 **/
@@ -158,13 +158,13 @@ semantics.
 The cool thing is: We are just moving in type space. No source created, just information to make your 
 code a lot safer. Like that:
 
-```javascript
+```typescript
 declare function createElement<T extends string>(tag: T, options?: any): CreatedElement<T>
 ```
 
 We can use the function like that:
 
-```javascript
+```typescript
 createElement('video') // It's an HTMLVideoElement
 createElement('video').src = '' // `src` exists
 createElement('a').href = '' // It's an HTMLAnchorElement with an `href`
@@ -172,7 +172,7 @@ createElement('a').href = '' // It's an HTMLAnchorElement with an `href`
 
 We can even write our own factory functions, that can do a little more that *just* creating elements:
 
-```javascript
+```typescript
 function elementFactory<T extends string>(tag: T, 
   defaultProps: Partial<CreatedElement<T>>) : CreatedElement<T> {
 
@@ -184,14 +184,14 @@ function elementFactory<T extends string>(tag: T,
 This factory takes a couple of default properties that need to be available in the
 generated output element. So things like:
 
-```javascript
+```typescript
 elementFactory('video', { src: '' });
 ```
 
 Can even be autocompleted. And TypeScript warns you if you want to specify a property
 that does not exist:
 
-```javascript
+```typescript
 elementFactory('video', { source: '' }) // 💥 Error: this property does not exist
 ```
 
@@ -202,4 +202,4 @@ Pretty sweet, huh?
 Type maps are a good tool for factory functions which produce a ton of different results. And most likely
 for a lot, lot more. If you want to expand on the example shown above, take this [gist](https://gist.github.com/ddprrt/61644bdbbb48e577ca54fdb2ee16ed56). And look at [this playground](https://www.typescriptlang.org/play/index.html?ssl=85&ssc=2&pln=80&pc=1#code/C4TwDgpgBAggNnAonCBbCA7YBnKBeKKAbwFgAoQgcgENKAuKACQBUBZAGRgwGMALAewBOyNJmABuclQAmASwBu9Jm3YARBSPRZJFKJWxhqGJSw4BlQxk1idVAK5wTKgKrtZ2YNe1Qpe4LOAUJw5mAJQvCV9KYAgAD2BqQQhaBlN2ZjjgGCTqCNs-NDA4ahjg9MLimLyo4AAzfn5gMuZqACMUMwhuf34rFC1I3WjeZOlmto6unr7RbRrW-mkQcfaITu7ZXuqh4EEVlAAlfgB3baoE1f2IM71ufkdUlRbVgGF7m8o7uABzQX47MBXN5Ifo2Gq8K6MUYQQQvCAID7AMaPEITCCqErUOEI0FzIbcahgaZAwnTD4eEBBFHsMygcK4wZUbDwqZlToobrk7iCWREtnc3meBn5SjtfjcADWAEc7I0IGUAIqyqrCqJSxXK66qoZgP6-CDYbBlAAKeqSho+uvl1NNWtmjL0hkE1FQJsSLstbudv0JvA+-2AYDsTWpAHlg0GhfaRfwiZtjGG41ttVRY8Bfv9AYngABxP4A-2tABWrLDxam-oeyg4obcHg+sgwRuprEWH2k8LKrekH3QMT2LYg-d7Q5S1fYrFHvcSMog1vHrBndjn06zC8JH3ksg7-DKADVtxB+B9qHY5LvqTAz5sPnBGxKym4MBLbxBvphkeP2G+P7e2p3qXYf8QWjKI70fABJBsMEjMoIJg4MG1Qb44NQah3wbWpnXQOCADFsLtAYRV4YBUCrNJGFIkCiKiXgAEYyihag5Awb4Pl4AAmRjRkbNiUz0XgAGZuOY3j2IAFhEli+NAoZeAAViksT+MoXgADYlNY9jRik9iB3HRgDg+LCXQNIcynw0zOijGihhMnDqUs9BjKEV1HNclysAs3obLBOzZHhaRmRDcdcICuBpGsj40FaCBPzSRBUFinsVOkTE7w8MoMQSOtfLxGRyJUVRco+AkMHkahm3HF4jAq7APlaYNgF6MoACEmuTWSqAWJY2sWEAGsq+c0laoaGv0kajJUxJkjKbJkgicgAF9yHIUBICgF4chiaQEoZAAeZgoEyD9cAlCAQH4WpYBxe1sAAPnwG7qLEbAAG1mAAXR0NbwGgLbkh2iJDuO+JTqgDweVYx68F8I6TowIKoHOy7rvgF6sFwAB+Tbtrivb7UOx7qW2cgO24YokigWo7B4aYoG5QHCLEEGEaRyHePugAKBJvgYZgABooDTeNsCxhgjBAABKBgAZKOLgeYe7VrIGm6fjY6GVw6huiEEBWbBxHcA56GefQ-mhd8DtalPOBgFNWNsAYY1En8ag4H2uWgYOpX7qlqBZbxlLCaV4gVcIO4m2ATX7Sexn5YiM3vil-IkmAOxBAwKBQ3LboADpKuwWRvgwLmWQGIXrdt+2-jAbApeWlXy7EbXdcEEAucoLcd0oIWiAhwRuAYShKCgJaU-IZusFb5r2877uj174gIf+QeIGH0fx6gAB6beoEAXg3AFKdqBEEEP5BAYYBeHcKBdVjGFQCgaR+ANKAMEaUH3GAcggA) to play around.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

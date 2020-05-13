@@ -19,7 +19,7 @@ That's why I decided to use a headless Chrome instance with [puppeteer](https://
 
 I'm using Node v9 and only need a couple of extra packages. [puppeteer](https://www.npmjs.com/package/puppeteer), in version 1.1.0. I'm also using [fs-extra](https://www.npmjs.com/package/fs-extra) in version 5.0. It features a couple of nice shortcuts if you want to create folders and files in a single line.
 
-```javascript
+```typescript
 const puppeteer = require('puppeteer'); // v 1.1.0
 const { URL } = require('url');
 const fse = require('fs-extra'); // v 5.0.0
@@ -32,7 +32,7 @@ And that's it! The `url` and `path` packages are from core. I need both to extra
 
 Here's the full code for scraping and saving a website. Let it sink in for a bit, I'll explain each point afterwards in detail.
 
-```javascript
+```typescript
 async function start(urlToFetch) {
   /* 1 */
   const browser = await puppeteer.launch();
@@ -68,7 +68,7 @@ Let's dive into the code.
 
 First thing we have to do: Starting the browser!
 
-```javascript
+```typescript
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 ```
@@ -81,7 +81,7 @@ Once the browser started, we open up a new tab with `browser.newPage`. And we ar
 
 Before we navigate to the URL we want to scrape, we need to tell puppeteer what to do with all the responses in our browser tab. Puppeteer has an event interface for that.
 
-```javascript
+```typescript
 page.on('response', async (response) => {
   const url = new URL(response.url());
   let filePath = path.resolve(`./output${url.pathname}`);
@@ -104,7 +104,7 @@ It's important that this response handler is defined before navigating to a URL.
 
 The `page.goto` method is the right tool to start navigation.
 
-```javascript
+```typescript
 await page.goto(urlToFetch, {
   waitUntil: 'networkidle2'
 });
@@ -116,7 +116,7 @@ After this event, the async function call resolves and we go back to our synchro
 
 ### 4. Wait a bit
 
-```javascript
+```typescript
 setTimeout(async () => {
   await browser.close();
 }, 60000 * 4);

@@ -22,7 +22,7 @@ In this section:
 Functional components are my most favourite thing in React. They are simple, purely functional and super easy to reason about. 
 The following shows an example of a functional component with some typed properties.
 
-```javascript
+```typescript
 import React from 'react'; // we need this to make JSX compile
 
 type CardProps = {
@@ -51,7 +51,7 @@ And errors when you compile without passing all required properties:
 
 If you want to make some properties optional, do that in the respective Props type:
 
-```javascript
+```typescript
 type CardProps = {
   title: string,
   paragraph?: string  // the paragraph is optional
@@ -61,7 +61,7 @@ type CardProps = {
 My personal prefered way of using functional components in TypeScript is by using the generic type provided by the official typings:
 
 
-```javascript
+```typescript
 import React, { FunctionComponent } from 'react'; // importing FunctionComponent
 
 type CardProps = {
@@ -83,7 +83,7 @@ The parameters of our function are infered from the generic FunctionComponent. O
 it seems very similar to the first example. However, it allows for optional child components:
 
 
-```javascript
+```typescript
 type CardProps = {
   title: string,
   paragraph: string
@@ -112,7 +112,7 @@ controlled by the component.
 Class components need to be extended from the base `React.Component` class. Typings enhance this class 
 with generics, passing props (like `FunctionComponent` earlier) and state. Let's do a clock component:
 
-```javascript
+```typescript
 import React, { Component } from 'react'; // let's also import Component
 
 // the clock's state has one field: The current time, based upon the
@@ -181,7 +181,7 @@ with a completly new constructor, and TypeScript does not know which parameters 
 
 Therefore, TypeScript will imply them to be `any`. And implicit `any` in strict mode is not allowed.
 
-```javascript
+```typescript
 export class Sample extends Component<SampleProps> {
   constructor(props) { // ️⚡️ does not compile in strict mode
     super(props)
@@ -192,7 +192,7 @@ export class Sample extends Component<SampleProps> {
 Even though the `super` call knows which props to expect, we need to be explicit with our constructor 
 function:
 
-```javascript
+```typescript
 export class Sample extends Component<SampleProps> {
   constructor(props: SampleProps) {
     super(props)
@@ -209,7 +209,7 @@ components.
 TypeScript in version 3.0 is honouring `defaultProps`. With the latest React typings (v 16.4.8) you
 are ready to go:
 
-```javascript
+```typescript
 import React, { Component } from 'react';
 
 type NoticeProps = {
@@ -231,7 +231,7 @@ const el = <Notice /> // Will compile in TS 3.0
 
 For FunctionComponents, I suggest using the ES6 default value syntax and optional type properties:
 
-```javascript
+```typescript
 type CardProps = {
   title: string,
   paragraph?: string  // the paragraph is optional

@@ -21,7 +21,7 @@ Since PHP 5.4 you have the possibility to run an [on-demand web server](http://p
 
 Setup is rather easy if you're familiar with `connect`:
 
-```javascript
+```typescript
 grunt.initConfig({
     php: {
         test: {
@@ -42,7 +42,7 @@ This snippet opens up a PHP server running on localhost and port 8010, the `open
 
 You can do the same with Gulp. There's a plugin out there called `gulp-connect-php`, which is the most misleading name for a node module since you neither have to have Gulp for that one nor does it has anything to do with connect (so now tell me that the Grunt plugin directory is convoluted!). Anyhow, if you want to *use* it with Gulp, install it and start it that way:
 
-```javascript
+```typescript
 var gulp = require('gulp'),
     php  = require('gulp-connect-php');
 
@@ -61,7 +61,7 @@ So BrowserSync forwards all requests to some other server, like our newly create
 
 For Grunt, this setup looks like this:
 
-```javascript
+```typescript
 'use strict';
 
 module.exports = function(grunt) {
@@ -106,7 +106,7 @@ Take a look at the browserSync task: We told him which files to watch for reload
 
 In Gulp, our code's even less. And uses actually not a single Gulp function whatsoever. We can include `browser-sync` directly, due to not having the need for wrappers when it's not meant to run through the Gulp pipeline.
 
-```javascript
+```typescript
 // Gulp 3.8 code... differs in 4.0
 var gulp = require('gulp'),
     php = require('gulp-connect-php'),

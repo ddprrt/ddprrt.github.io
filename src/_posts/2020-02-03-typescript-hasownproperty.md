@@ -12,7 +12,7 @@ og:
 
 TypeScript's control flow analysis lets you narrow down from a broader type to a more narrow type:
 
-```javascript
+```typescript
 function print(msg: any) {
   if(typeof msg === 'string') {
     // We know msg is a string
@@ -29,15 +29,17 @@ TypeScript *at the time of this writing* needs a little bit more assistance from
 
 Let's assume you have a JavaScript object where you don't know if a certain property exists. The object might be `any` or `unknown`. In JavaScript, you would check for properties like that:
 
-```javascript
+```typescript
 if(typeof obj === 'object' && 'prop' in obj) {
   //it's safe to access obj.prop
-  console.assert(typeof obj.prop !== 'undefined') // But TS doesn't know :-(
+  console.assert(typeof obj.prop !== 'undefined')
+  // But TS doesn't know :-(
 }
 
 if(typeof obj === 'object' && obj.hasOwnProperty('prop')) {
   //it's safe to access obj.prop
-  console.assert(typeof obj.prop !== 'undefined') // But TS doesn't know :-(
+  console.assert(typeof obj.prop !== 'undefined') 
+  // But TS doesn't know :-(
 }
 ```
 
@@ -45,7 +47,7 @@ At the moment, TypeScript isn't able to extend the type of `obj` with a `prop`. 
 
 We can, however, write a little helper function to get correct typings:
 
-```javascript
+```typescript
 function hasOwnProperty<X extends {}, Y extends PropertyKey>
   (obj: X, prop: Y): obj is X & Record<Y, unknown> {
   return obj.hasOwnProperty(prop)
@@ -63,7 +65,7 @@ If you don't want to know how this works, copy it and be happy. If you want to k
 
 In use, `hasOwnProperty` works like that:
 
-```javascript
+```typescript
 // person is an object
 if(typeof person === 'object' 
   // person = { } & Record<'name', unknown>
@@ -79,4 +81,4 @@ if(typeof person === 'object'
 That's it! A lovely little helper to make TypeScript understand your code better.
 Here's a [playground](https://www.typescriptlang.org/play/index.html?ts=3.8-Beta&ssl=6&ssc=1&pln=3&pc=1#code/C4TwDgpgBACgTgezFAvFAzsOBLAdgcygB8pcBXAWwCMI5iMRqEAbAbgCh2AzM3AY2DYEuKAAsAhugDyAd1zwktUAB4AGlAgAPYBFwATdFADeAXwA0UAJobtug7ERgAfAAoEVAFYAuKKothHH0sASh93DyhsQ3UAMigAJQg+BDg9ZUsLXgBrXAQ5J2N2KCg4CGAyOBFwgDoJaTkFSDhQFwCkYPYTTj0k5nFSqGTcTCgQH1N2bC4oFzrZeUclEBcQCwByXHEKCDXgqBi4uYbF5uXVqDXMMi4uXb2jIsjpl1BIBGmQas3t1BQ0S6weHwa32cU+6Huj2Kjy6XXYQA) for you to fiddle around.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

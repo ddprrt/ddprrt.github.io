@@ -22,7 +22,7 @@ definitely merging streams. See the example
 below: We want to lint our self-written JavaScript files, and concatenate them
 with vendor specific files to one single JavaScript file:
 
-```javascript
+```typescript
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
@@ -52,7 +52,7 @@ added to the whole stream.
 We can also benefit from this feature when we want to merge preprocessor output with
 plain source files:
 
-```javascript
+```typescript
 gulp.task('styles', function(){
   return gulp.src('styles/main.scss')
     .pipe(sass())
@@ -64,7 +64,7 @@ gulp.task('styles', function(){
 
 Same with CoffeeScript, if you are into that:
 
-```javascript
+```typescript
 gulp.task('scripts', function(){
   return gulp.src('scripts/*.coffee')
     .pipe(coffee())

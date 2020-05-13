@@ -13,7 +13,7 @@ When you work on modern JS apps you most likely use Webpack. Webpack always look
 
 Once I got that Webpack configs weren't that scary anymore. It's loaders loading stuff in JavaScript. Stuff that wouldn't be loadable otherwise. Cool! You define the assets to load in the JavaScript file you develop.
 
-```javascript
+```typescript
 // like this
 import "./Button.css";
 
@@ -37,7 +37,7 @@ There is a way to solve this.
 
 TypeScript supports so called "**ambient module declarations**". Even for a module that is not "physically" there, but in the environment or reachable via tooling. One example are Node's main built-in modules, like `url`, `http` or `path`:
 
-```javascript
+```typescript
 declare module "path" {
   export function normalize(p: string): string;
   export function join(...paths: any[]): string;
@@ -47,7 +47,7 @@ declare module "path" {
 
 *The example above comes from the docs*. This is great for modules where we know the exact name. We can use the same pattern also for wildcard patterns. Let's declare a generic ambient module for all our CSS files:
 
-```javascript
+```typescript
 declare module '*.css' {
   // wait for it
 }
@@ -55,7 +55,7 @@ declare module '*.css' {
 
 The pattern is ready. This listens to all CSS files we want to import. What we expect is a list of class names that we can add to our components. Since we don't know which classes are defined in the CSS files, let's go with an object that accepts every string key and returns a string.
 
-```javascript
+```typescript
 declare module '*.css' {
   interface IClassNames {
     [className: string]: string
@@ -73,7 +73,7 @@ It's a bit easier if we want to import something like MDX into our modules. MDX 
 
 We expect a functional component (that we can pass props to) that returns a JSX element:
 
-```javascript
+```typescript
 declare module '*.mdx' {
   let MDXComponent: (props) => JSX.Element;
   export default MDXComponent;
@@ -82,7 +82,7 @@ declare module '*.mdx' {
 
 And voilà: Everything perfectly usable:
 
-```javascript
+```typescript
 import About from '../articles/about.mdx';
 
 function App() {
@@ -96,7 +96,7 @@ function App() {
 
 If you don't know what to expect, make your life easy:
 
-```javascript
+```typescript
 declare module '*.svg';
 ```
 
@@ -105,7 +105,7 @@ declare module '*.svg';
 
 To make ambient modules available to your app, I recommend creating an `@types` folder somewhere in your project (probably root level). There you can put any amount of `.d.ts` files with your module definitions in. Add a referal to your `tsconfig.json` and TypeScript knows what to do 👍
 
-```javascript
+```typescript
 {
   ...
   "compilerOptions": {
@@ -122,4 +122,4 @@ To make ambient modules available to your app, I recommend creating an `@types` 
 
 As [Martin](https://twitter.com/martin_hotell) suggests, a good pattern is to create folders with the package name, and put `index.d.ts` files in them. But that's up to you!
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

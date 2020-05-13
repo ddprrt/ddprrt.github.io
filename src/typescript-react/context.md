@@ -27,7 +27,7 @@ generics. You *consume* all the implied type information which `@types/react` *p
 
 Let's have a look! First, we create a context. The most important thing is to not forget default properties.
 
-```javascript
+```typescript
 import React from 'react';
 
 export const AppContext = React.createContext({ 
@@ -45,7 +45,7 @@ take this information to provide you with the correct types when you use them.
 
 Our app component provides this context. It also sets values different from default values.
 
-```javascript
+```typescript
 const App = () => {
   return <AppContext.Provider value={ {
     lang: 'de',
@@ -61,7 +61,7 @@ Now, every component inside this tree can consume this context. You already get 
 property or use the wrong type:
 
 
-```javascript
+```typescript
 
 const App = () => {
   // ⚡️ compile error! Missing properties
@@ -80,7 +80,7 @@ Now, let's consume our global state.
 Consuming context is done via render props (see the [previous chapter](../render-props/)) for more details). You can 
 destructure you render props as deep as you like, to get only the props you want to deal with:
 
-```javascript
+```typescript
 const Header = () => {
   return <AppContext.Consumer>
   {
@@ -105,7 +105,7 @@ you need to be more flexible in which properties you want to set.
 
 Generics for `createContext` and the `Partial` helper can help you greatly with that:
 
-```javascript
+```typescript
 import React from 'react';
 
 // We define our type for the context properties right here

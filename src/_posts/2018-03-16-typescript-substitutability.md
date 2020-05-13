@@ -17,7 +17,7 @@ With TypeScript, it's fine to pass functions to other functions that have fewer 
 
 `fetchResults` has one parameter, a callback function. The method gets data from somewhere, and afterwards executes a callback. The callback's method signature has two paramters. `statusCode` (type `number`) and results (array of `number`). You see the call in line 4.
 
-```javascript
+```typescript
 function fetchResults(callback: (statusCode: number, results: number[]) => void) {
   // get results from somewhere
   ...
@@ -27,7 +27,7 @@ function fetchResults(callback: (statusCode: number, results: number[]) => void)
 
 We call `fetchResults` with the following `handler` function. The method signature is different, though. It omits the second paramter `results`.
 
-```javascript
+```typescript
 function handler(statusCode: number) {
   // evaluate the status code
   ...
@@ -51,7 +51,7 @@ The power lies in the callback function. The callback function knows best what t
 
 If a function type specifies return type `void`, functions with a different, more specific, return type are also accepted. Again, the example from before:
 
-```javascript
+```typescript
 function fetchResults(callback: (statusCode: number, results: number[]) => void) {
   // get results from somewhere
   ...
@@ -61,7 +61,7 @@ function fetchResults(callback: (statusCode: number, results: number[]) => void)
 
 The callback function has two parameters in its signature, and the return type is `void`. Let's look at an adapted handler function from before:
 
-```javascript
+```typescript
 function handler(statusCode: number): boolean {
   // evaluate the status code
   ...
@@ -75,7 +75,7 @@ Even though the method signature declares a boolean return type, the code still 
 
 TypeScript would throw an error if we did assign the result to a variable or constant inside `fetchResult`. 
 
-```javascript
+```typescript
 function fetchResults(callback: (statusCode: number, results: number[]) => void) {
   // get results from somewhere
   ...
@@ -91,4 +91,4 @@ The power lies within the calling function. The calling function knows best what
 
 TypeScript calls this feature "substitutability". The ability to substitute one thing for another, wherever it makes sense. This might strike you odd at first. But especially when you work with libraries that you didn't author, you will find this feature very usable.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

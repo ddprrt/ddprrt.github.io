@@ -10,7 +10,7 @@ title: "TypeScript: Match the exact object shape"
 TypeScript is a structural type system. This means as long as your data structure satisfies a contract,
 TypeScript will allow it. Even if you have too many keys declared.
 
-```javascript
+```typescript
 type Person = {
   first: string, last: string
 }
@@ -30,7 +30,7 @@ This complements the way JavaScript works really well and gives you both flexibi
 There are some scenarios where you might want the exact shape of an object. E.g. 
 when you send data to backend that errors if it gets too much information.
 
-```javascript
+```typescript
 savePerson(tooMany); // ✅ satisfies the contract, 💥 bombs the backend
 ```
 
@@ -41,7 +41,7 @@ All with the help of conditional types.
 
 First, we check if the object we want to validate matches the original shape:
 
-```javascript
+```typescript
 type ValidateShape<T, Shape> = 
   T extends Shape ? ...
 ```
@@ -60,7 +60,7 @@ in the keys the object to validate and the shape. Let's say `Person` is our shap
 `tooMany = { first: 'Stefan', last: 'Baumgartner', age: 37 }` is the object we want 
 to validate. This are our keys:
 
-```javascript
+```typescript
 keyof Person = 'first' | 'last'
 keyof typeof tooMany = 'first' | 'last' | 'age'
 ```
@@ -68,7 +68,7 @@ keyof typeof tooMany = 'first' | 'last' | 'age'
 `'first'` and `'last'` are in both union types, so they return `never`, `age` returns
 itself because it isn't available in `Person`:
 
-```javascript
+```typescript
 keyof Person = 'first' | 'last'
 keyof typeof tooMany = 'first' | 'last' | 'age'
 
@@ -77,7 +77,7 @@ Exclude<keyof typeof tooMany, keyof Person> = 'age';
 
 Is it an exact match, `Exclude<T, U>` returns `never`:
 
-```javascript
+```typescript
 keyof Person = 'first' | 'last'
 keyof typeof exact = 'first' | 'last'
 
@@ -97,14 +97,14 @@ type ValidateShape<T, Shape> =
 
 Let's adapt our original function:
 
-```javascript
+```typescript
 declare function savePerson<T>(person: ValidateShape<T, Person>): void;
 ```
 
 With that, it's impossible to pass objects that don't exactly match the
 shape of the type we expect:
 
-```javascript
+```typescript
 savePerson(tooFew); // 💥 doesn't work
 savePerson(exact); // ✅ satisfies the contract
 savePerson(tooMany); // 💥 doesn't work
@@ -112,4 +112,4 @@ savePerson(tooMany); // 💥 doesn't work
 
 There's a [playground for you](https://www.typescriptlang.org/play/index.html#code/C4TwDgpgBAChBOBnA9gOygXigbwLACgooAzASyWAC4pFh5TUBzAGigBsBDW62+pggL4ECoSFABqHNqQAmHYBADKdAK4BjYCvgQAPABVWy+OuAA+TFAJE9UCAA8FqGYihGTUAPyXCUAKJ21NhUZXQBrCBBkYigDKHDI6LcNc3tHZyhUCAA3BE8YqGpMnPgCjOyEAG5hfBDAjm0SFVQNUjQaDhy4JDR9UwAKSG7UaklpOQUkzW19Vi6UVFMASmos5Fkq-AI1NFooYGRkADEIAHcLbBJybigAcmUIYg5UG6gBDe3UXfsODXPLimodwUj2erE41xuACEOCoALaMerATLwF5CfAfXb7ZAAWSeID+ZABt3uIJuYK4VFu0LhCPgSIQZKgHEYEGoAGYAOyvaqIDoQOZoPpY44nRYVKAAeglUEAvBuAUp2oDJkBBEM9gFATsh4KECLzOgh5n1vhoxZLpYBQcnawFIiDIKr2AAtoB86D9gLq+QLUEKDrjUCBTVLZQqlSq1RqtTrNvggA) to fiddle around. This helper won't get you around runtime checks, but it is a helping hand during development.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

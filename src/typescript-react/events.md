@@ -27,7 +27,7 @@ Luckily, React typings give you the proper equivalent of each event you might be
 DOM. They even have the same name, which can be tricky at times. You either need to be specific with e.g.
 `React.MouseEvent` or import the `MouseEvent` typing right from the React module:
 
-```javascript
+```typescript
 import React, { Component, MouseEvent } from 'react';
 
 export class Button extends Component {
@@ -63,7 +63,7 @@ all other events.
 
 If you want to restrict your event handlers to specific elements, you can use a generic to be more specific:
 
-```javascript
+```typescript
 import React, { Component, MouseEvent } from 'react';
 
 export class Button extends Component {
@@ -106,7 +106,7 @@ supported by all browsers. If you use the `onInput` property from all `input` el
 To be a bit more specific in your code you can import `SyntheticEvent` from the React typings.
 
 
-```javascript
+```typescript
 import React, { Component, SyntheticEvent } from 'react';
 
 export class Input extends Component {

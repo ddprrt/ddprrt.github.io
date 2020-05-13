@@ -22,7 +22,7 @@ I knew that from features like classes or arrow functions. But even things like 
 
 See the code below. This is the standard [`client.js`](https://glitch.com/edit/#!/es5-jquery-version?path=public/client.js:1:0) file from [glitch.com](https://glitch.com), but refactored to use modern JavaScript instead of jQuery and old syntax.
 
-```javascript
+```typescript
 const $ = (sel) => document.querySelector(sel);
 
 export async function init() {
@@ -59,7 +59,7 @@ I loved it when [Chris Heilmann](https://twitter.com/codepo8) said at [ScriptCon
 
 The BBC calls it *[cutting the mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)*. Having a strict set of rules a browser has to pass to get the full experience.
 
-```javascript
+```typescript
 if('querySelector' in document
   && 'localStorage' in window
   && 'addEventListener' in window) {

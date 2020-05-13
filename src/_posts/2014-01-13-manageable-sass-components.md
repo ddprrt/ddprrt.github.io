@@ -32,7 +32,7 @@ bower install konamicode.js --save
 
 you also add this library to a file called `bower.json`, which records all your installations.
 
-```javascript
+```typescript
 {
   "name": "demo",
   "version": "0.0.0",

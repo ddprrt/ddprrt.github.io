@@ -19,7 +19,7 @@ worlds `void` works a little bit different than most people are used to.
 `void` in JavaScript is an operator which evaluates the expression next to it. No matter which
 expression is evaluated, `void` always returns `undefined`.
 
-```javascript
+```typescript
 let i = void 2; // i === undefined
 ```
 
@@ -28,7 +28,7 @@ Why would we need something like this? First, in earlier times, people were able
 
 Second, it's a nice way to call immediately invoked functions:
 
-```javascript
+```typescript
 void function() {
   console.log('What')
 }()
@@ -36,7 +36,7 @@ void function() {
 
 All without polluting the global namespace:
 
-```javascript
+```typescript
 void function aRecursion(i) {
   if(i > 0) {
     console.log(i--)
@@ -51,7 +51,7 @@ Since `void` always returns `undefined`, and `void` always evaluates the express
 you have a very terse way of returning from a function without returning a value, 
 but still calling a callback for example:
 
-```javascript
+```typescript
 // returning something else than undefined would crash the app
 function middleware(nextCallback) {
   if(conditionApplies()) {
@@ -63,7 +63,7 @@ function middleware(nextCallback) {
 Which brings me to the most important use case of `void`: It's a security gate for your app. When
 your function is always supposed to return `undefined`, you can make sure that this is always the case.
 
-```javascript
+```typescript
 button.onclick = () => void doSomething();
 ```
 
@@ -72,7 +72,7 @@ button.onclick = () => void doSomething();
 `void` in TypeScript is a subtype of `undefined`. Functions in JavaScript always return something. 
 Either it's a value, or `undefined`:
 
-```javascript
+```typescript
 function iHaveNoReturnValue(i) {
   console.log(i)
 } // returns undefined
@@ -82,14 +82,14 @@ Since functions without a return value always return `undefined`, and `void` alw
 in JavaScript, `void` in TypeScript is a proper type for telling developers that this function returns
 `undefined`:
 
-```javascript
+```typescript
 declare function iHaveNoReturnValue(i: number): void
 ```
 
 `void` as type can also be used for parameters and all other declarations. The only value that can be
 passed is `undefined`:
 
-```javascript
+```typescript
 declare function iTakeNoParameters(x: void): void
 
 iTakeNoParameters() // 👍
@@ -101,9 +101,10 @@ So `void` and `undefined` are pretty much the same. There's one little differenc
 this difference is significant: `void` as a return type can be substituted with different types, to
 allow for advanced callback patterns:
 
-```javascript
+```typescript
 function doSomething(callback: () => void) {
-  let c = callback() // at this position, callback always returns undefined
+  // at this position, callback always returns undefined
+  let c = callback() 
   //c is also of type undefiend
 }
 
@@ -134,4 +135,4 @@ doSomething(aNumberCallback)
 
 You'll propably be good with `void` most of the time.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

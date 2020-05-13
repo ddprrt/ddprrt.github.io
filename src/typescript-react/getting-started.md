@@ -81,19 +81,19 @@ This uses the respective virtual DOM implementation of said libraries (`h`) inst
 
 TypeScript supports the ES module notation. You can import React with 
 
-```javascript
+```typescript
 import * as React from 'react'
 ```
 
 but writing
 
-```javascript
+```typescript
 import React from 'react'
 ```
 
 is a wee bit nicer. Mostly because you can import type definitions and React features in a destructured way:
 
-```javascript
+```typescript
 import React { Component, FunctionComponent } from 'react'
 ```
 

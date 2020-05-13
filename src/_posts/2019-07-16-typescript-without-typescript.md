@@ -30,7 +30,7 @@ sure that type checking also works with regular JavaScript files. TypeScript's c
 In the best case, TypeScript finds out types on its own by infering correctly from 
 the way you use JavaScript.
 
-```javascript
+```typescript
 function addVAT(price, vat) {
   return price * (1 + vat) // Oh! You add and mulitply with numbers, so it's a number
 }
@@ -41,7 +41,7 @@ TypeScript knows that the return value of `addVAT` will be of type `number`.
 
 To make sure the input values are correct, we can add default values:
 
-```javascript
+```typescript
 function addVAT(price, vat = 0.2) { // great, `vat`is also number!
   return price * (1 + vat)
 }
@@ -49,7 +49,7 @@ function addVAT(price, vat = 0.2) { // great, `vat`is also number!
 
 But type inference just can get so far. We can provide more information for TypeScript by adding JSDoc comments:
 
-```javascript
+```typescript
 /**
  * Adds VAT to a price
  * 
@@ -71,13 +71,13 @@ to it than a couple of basic types in comments. Turns out working with JSDoc typ
 To make sure you not only provide type information, but get actual error feedback in your editor (or via `tsc`), please
 activate the `@ts-check` flag in your source files:
 
-```javascript
+```typescript
 // @ts-check
 ```
 
 If there's one particular line that errors, but you think you know better, add the `@ts-ignore` flag:
 
-```javascript
+```typescript
 // @ts-ignore
 addVAT('1200', 0.1); // would error otherwise
 ```
@@ -87,7 +87,7 @@ addVAT('1200', 0.1); // would error otherwise
 Defining parameters is one thing. Sometimes you want to make sure that a variable, which hasn't been assigned
 yet, has the correct type. TypeScript supports inline comment annotations.
 
-```javascript
+```typescript
 /** @type {number} */
 let amount;
 amount = '12'; // 💥 does not work
@@ -100,7 +100,7 @@ Don't forget the correct comment syntax. Inline comments with `//` won't work.
 Basic types is one thing, but in JavaScript you usually deal with complex types and objects. 
 No problem for comment based type annotations:
 
-```javascript
+```typescript
 /**
  * @param {[{ price: number, vat: number, title: string, sold?: boolean }]} articles
  */
@@ -116,7 +116,7 @@ a parameter.
 Annotating everything inline can become crowded very quickly. There's a more elegant way of defining
 object types through `@typedef`:
 
-```javascript
+```typescript
 /**
  * @typedef {Object} Article
  * @property {number} price
@@ -146,7 +146,7 @@ syntax is `@property {boolean} [sold]`. Same goes for function `@params`.
 
 Functions can be defined inline, just like their object counterparts:
 
-```javascript
+```typescript
 /**
  * @param {string} url
  * @param {(status: number, response?: string) => void} cb
@@ -162,7 +162,7 @@ function loadData(url, cb) {
 
 Again, this can get very confusing quickly. There's the `@callback` annotation that helps with that:
 
-```javascript
+```typescript
 /**
  * @callback LoadingCallback
  * @param {number} status
@@ -192,7 +192,7 @@ can write TypeScript type definitions in TypeScript and import them in your sour
 
 See `article.ts`:
 
-```javascript
+```typescript
 export type Article = {
   title: string,
   price: number,
@@ -203,7 +203,7 @@ export type Article = {
 
 And our `main.js`:
 
-```javascript
+```typescript
 // The following line imports the Article type from article.ts and makes it
 // available under Article
 /** @typedef { import('./article').Article } Article */
@@ -218,7 +218,7 @@ const article = {
 
 You can also import a type directly in the type annotation:
 
-```javascript
+```typescript
 /** @type {import('./article').Article} */
 const article = {
   title: 'The best book in the world',
@@ -234,7 +234,7 @@ Great when working a mix of TypeScript where you don't have ambient type definit
 
 TypeScript's generics syntax is available wherever there's a type that can be generic:
 
-```javascript
+```typescript
 /** @type PromiseLike<string> */
 let promise;
 
@@ -245,7 +245,7 @@ promise.then(x => x.toUpperCase())
 But you can define more elaborate generics (esp. functions with generics) with the `@template`
 annotation:
 
-```javascript
+```typescript
 /**
  * @template T
  * @param {T} obj
@@ -258,7 +258,7 @@ function pluck(obj, ...params) {
 
 Convenient, but a bit hard to do for complex generics. Inline generics still work the TypeScript way:
 
-```javascript
+```typescript
 /** @type { <T, K extends keyof T>(obj: T, params: K[]) => Array<T[K]>} */
 function values(obj, ...params) {
   return params.map(el => obj[el])
@@ -275,7 +275,7 @@ Have even more complex generics? Consider putting them in a TypeScript file and 
 
 Turn a specially structured JavaScript object into an enum and make sure values are consistent:
 
-```javascript
+```typescript
 /** @enum {number} */
 const HTTPStatusCodes = {
   ok: 200,
@@ -287,7 +287,7 @@ const HTTPStatusCodes = {
 Enums differ greatly from regular TypeScript enums. They make sure that every key in this object has the specified
 type. 
 
-```javascript
+```typescript
 /** @enum {number} */
 const HTTPStatusCodes = {
   ok: 200,
@@ -303,7 +303,7 @@ That's all they do.
 
 One of my most favourite tools, `typeof` is also available. Saves you a ton of editing:
 
-```javascript
+```typescript
 /**
  * @param {number} status The status code as a number
  * @param {string} data The data to work with
@@ -332,7 +332,7 @@ function loadData(url, cb) {
 The `extends` annotation allow you to specify generic parameters when extending from a basic
 JavaScript class. See the example below:
 
-```javascript
+```typescript
 /**
  * @template T
  * @extends {Set<T>}
@@ -344,7 +344,7 @@ class SortableSet extends Set {
 
 `@augments` on the other hand allows you to be a lot more specific with generic parameters:
 
-```javascript
+```typescript
 /**
  * @augments {Set<string>}
  */
@@ -362,4 +362,4 @@ compiler at all.
 
 Know more? Shoot me a [tweet](https://twitter.com/ddprrt). I'm more than happy to add them here.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

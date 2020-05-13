@@ -10,7 +10,7 @@ title: "TypeScript: The constructor interface pattern"
 If you are doing traditional OOP with TypeScript, the structural features of TypeScript might
 sometimes get in your way. Look at the following class hierachy for instance:
 
-```javascript
+```typescript
 abstract class FilterItem {
   constructor(private property: string) {}
   someFunction() { /* ... */ }
@@ -32,7 +32,7 @@ The `FilterItem` abstract class needs to be implemented by other classes. In thi
 `AFilter` and `BFilter`. So far, so good. Classical typing works like you are used to from
 Java or C#:
 
-```javascript
+```typescript
 const some: FilterItem = new AFilter('afilter'); // ✅
 ```
 
@@ -40,7 +40,7 @@ When we need the structural information, though, we leave the realms of traditio
 Let's say we want to instantiate new filters based on some token we get from an AJAX call.
 To make it easier for us to select the filter, we store all possible filters in a map:
 
-```javascript
+```typescript
 declare const filterMap: Map<string, typeof FilterItem>;
 
 filterMap.set('number', AFilter)
@@ -55,7 +55,7 @@ after all.
 So far everything works like you would expect. The problem occurs when you want to 
 fetch a class from the map and create a new object with it.
 
-```javascript
+```typescript
 let obj: FilterItem;
 const ctor = filterMap.get('number');
 
@@ -70,7 +70,7 @@ actualy language (something that I try to avoid), a possible solution is to move
 interfaces to define the actual type signature, and be able to create proper 
 instances afterwards:
 
-```javascript
+```typescript
 interface IFilter {
   new (property: string): IFilter;
   someFunction(): void;
@@ -86,7 +86,7 @@ of a constructor function.
 Lots of 💣s start appearing now. No matter where you put the `implements IFilter`
 command, no implementation seems to satisfy our contract:
 
-```javascript
+```typescript
 abstract class FilterItem implements IFilter { /* ... */ }
 // 💣 Class 'FilterItem' incorrectly implements interface 'IFilter'.
 // Type 'FilterItem' provides no match for the signature 
@@ -107,7 +107,7 @@ define, but two types! The type of the static side, and the type of the instance
 side. It might get clearer if we transpile our class to what it was before ES6:
 a constructor function and a prototype:
 
-```javascript
+```typescript
 function AFilter(property) { // this is part of the static side
   this.property = property;  // this is part of the instance side
 }
@@ -122,7 +122,7 @@ Afilter.something = function () { /* ... */ }
 One type to create the object. One type for the object itself. So let's split
 it up and create two type declarations for it:
 
-```javascript
+```typescript
 interface FilterConstructor {
   new (property: string): IFilter;
 }
@@ -139,7 +139,7 @@ and the constructor function itself. The constructor function returns an instanc
 
 By splitting this up, our subsequent typings also become a lot clearer:
 
-```javascript
+```typescript
 declare const filterMap: Map<string, FilterConstructor>; /* 1 */
 
 filterMap.set('number', AFilter)
@@ -161,7 +161,7 @@ Our code compiles again and we get all the auto completion and tooling we desire
 Even better: We are not able to add abstract classes to the map. Because they don't
 procude a valid instance:
 
-```javascript
+```typescript
 // 💣 Cannot assign an abstract constructor 
 //    type to a non-abstract constructor type.
 filterMap.set('notworking', FilterItem)
@@ -171,4 +171,4 @@ Traditional OOP, weaved in into our lovely type system. ✅
 
 *[Here's a playground with the full code](https://www.typescriptlang.org/play/index.html#code/JYOwLgpgTgZghgYwgAgGLADaSgYQPYgDOYUArgmHlMgN4CwAUMsiBAO7IAUADlHt9DABPAFzJiUUAHMAlGICS6LNADcjAL6NGobPCTJFmbLUbMYR6JznIAbnmAATNQ00NGcAEYTEYZAgxwhIRoFlDykAC2yMAR3BgQERDgwYbK1PRuTH4EEuSUUDySNnCQyLz8gqLiJNIyJpnMrqbInt4UyOZpVmJ2js5NDP6BwQDKNSBSSsYQAB6QIA7BU9DhCcwZzZ3YVvXMzAD0+8iUDnjN6sgaWplDQcgAcqQRHtDL1LPziyFpq1EbWVtLHUMntkIdjnhTudLi5rg4IEMoCgEDlfICoABZODcMRY7gAHgk0gANN9sPgiCQ8lQAHzORjovEAOkIEDAnAA5CAni8oBzSWNJBM3jIGaFmaz2Vy8GA2FQANbSflklaRUU3VEq6gAXg64uxTKkbM53Oe0A56uAME4wgEeBgWuQAEJtbqOaQFhBzKwHBbdtlKXq0shdawOG9OXALf0gA)*
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

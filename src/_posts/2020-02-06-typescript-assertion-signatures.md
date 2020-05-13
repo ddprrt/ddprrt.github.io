@@ -12,7 +12,7 @@ og:
 
 In JavaScript, you can define object properties on the fly with `Object.defineProperty`. This is useful if you want your properties to be read-only or similar. Think of a storage object that has a maximum value that shouldn't be overwritten:
 
-```javascript
+```typescript
 const storage = {
   currentValue: 0
 }
@@ -31,7 +31,7 @@ console.log(storage.maxValue) // still 9001
 
 `defineProperty` and property descriptors are very complex. They allow you to do everything with properties that usually is reserved for built-in objects. So they're common in larger codebases. TypeScript -- *at the time of this writing* -- has a little problem with `defineProperty`:
 
-```javascript
+```typescript
 const storage = {
   currentValue: 0
 }
@@ -51,7 +51,7 @@ If we don't explicitly typecast, we don't get `maxValue` attached to the type of
 
 With TypeScript 3.7, the team introduced assertion signatures. Think of an `assertIsNumber` function where you can make sure some value is of type `number`. Otherwise, it throws an error. This is similar to the `assert` function in Node.js:
 
-```javascript
+```typescript
 function assertIsNumber(val: any) {
   if (typeof val !== "number") {
     throw new AssertionError("Not a number!");
@@ -81,7 +81,7 @@ To comply with behavior like this, we can add an assertion signature that tells 
 
 This works a lot like [type predicates](/typescript-type-predicates/), but without the control flow of a condition-based structure like `if` or `switch`.
 
-```javascript
+```typescript
 function multiply(x, y) {
   assertIsNumber(x);
   assertIsNumber(y);
@@ -99,7 +99,7 @@ This is just what `Object.defineProperty` does as well.
 
 Just as with [hasOwnProperty](/typescript-hasownproperty/), we create a helper function that mimics the original function signature:
 
-```javascript
+```typescript
 function defineProperty<
   Obj extends object,
   Key extends PropertyKey,
@@ -127,7 +127,8 @@ function defineProperty<
   Key extends PropertyKey,
   PDesc extends PropertyDescriptor>
 -  (obj: Obj, prop: Key, val: PDesc) {
-+  (obj: Obj, prop: Key, val: PDesc): asserts obj is Obj & DefineProperty<Key, PDesc> {
++  (obj: Obj, prop: Key, val: PDesc): 
++    asserts obj is Obj & DefineProperty<Key, PDesc> {
   Object.defineProperty(obj, prop, val);
 }
 ```
@@ -136,13 +137,15 @@ function defineProperty<
 
 This is the `DefineProperty` helper type:
 
-```javascript
-type DefineProperty<Prop extends PropertyKey, Desc extends PropertyDescriptor> = 
-  Desc extends { writable: any, set(val: any): any } ? never :
-  Desc extends { writable: any, get(): any } ? never :
-  Desc extends { writable: false } ? Readonly<InferValue<Prop, Desc>> :
-  Desc extends { writable: true } ? InferValue<Prop, Desc> :
-  Readonly<InferValue<Prop, Desc>>
+```typescript
+type DefineProperty<
+  Prop extends PropertyKey,
+  Desc extends PropertyDescriptor> = 
+    Desc extends { writable: any, set(val: any): any } ? never :
+    Desc extends { writable: any, get(): any } ? never :
+    Desc extends { writable: false } ? Readonly<InferValue<Prop, Desc>> :
+    Desc extends { writable: true } ? InferValue<Prop, Desc> :
+    Readonly<InferValue<Prop, Desc>>
 ```
 
 First, we deal with the `writeable` property of a `PropertyDescriptor`. It's a set of conditions to define some edge cases and conditions of how the original property descriptors work:
@@ -154,7 +157,7 @@ First, we deal with the `writeable` property of a `PropertyDescriptor`. It's a s
 
 This is the `InferValue` helper type, dealing with the set `value` property.
 
-```javascript
+```typescript
 type InferValue<Prop extends PropertyKey, Desc> =
   Desc extends { get(): any, value: any } ? never :  
   Desc extends { value: infer T } ? Record<Prop, T> : 
@@ -177,18 +180,21 @@ type InferValue<Prop extends PropertyKey, Desc> =
   Desc extends { value: infer T } ? Record<Prop, T> : 
   Desc extends { get(): infer T } ? Record<Prop, T> : never;
 
-type DefineProperty<Prop extends PropertyKey, Desc extends PropertyDescriptor> = 
-  Desc extends { writable: any, set(val: any): any } ? never :
-  Desc extends { writable: any, get(): any } ? never :
-  Desc extends { writable: false } ? Readonly<InferValue<Prop, Desc>> :
-  Desc extends { writable: true } ? InferValue<Prop, Desc> :
-  Readonly<InferValue<Prop, Desc>>
+type DefineProperty<
+  Prop extends PropertyKey,
+  Desc extends PropertyDescriptor> =    
+    Desc extends { writable: any, set(val: any): any } ? never :
+    Desc extends { writable: any, get(): any } ? never :
+    Desc extends { writable: false } ? Readonly<InferValue<Prop, Desc>> :
+    Desc extends { writable: true } ? InferValue<Prop, Desc> :
+    Readonly<InferValue<Prop, Desc>>
 
 function defineProperty<
   Obj extends object,
   Key extends PropertyKey,
   PDesc extends PropertyDescriptor>
-  (obj: Obj, prop: Key, val: PDesc): asserts obj is Obj & DefineProperty<Key, PDesc> {
+  (obj: Obj, prop: Key, val: PDesc): 
+    asserts  obj is Obj & DefineProperty<Key, PDesc> {
   Object.defineProperty(obj, prop, val)
 }
 ```
@@ -201,7 +207,9 @@ const storage = {
   currentValue: 0
 }
 
-defineProperty(storage, 'maxValue', { writable: false, value: 9001 })
+defineProperty(storage, 'maxValue', { 
+  writable: false, value: 9001 
+})
 
 storage.maxValue // it's a number
 storage.maxValue = 2 // Error! It's read-only
@@ -223,7 +231,8 @@ defineProperty(storage, 'broken', {
   value: 4000
 })
 
-// storage is never because we have a malicious property descriptor
+// storage is never because we have a malicious 
+// property descriptor
 storage 
 ```
 
@@ -231,4 +240,4 @@ As said, this most likely won't deal with all edge cases, but it's a good start.
 
 As always, [there's a playground for you to fiddle around](https://www.typescriptlang.org/play/index.html?ssl=47&ssc=76&pln=20&pc=1#code/C4TwDgpgBAkgdgMwgJwGoEMA2BXCAeABWQHswoIAPYCOAEwGcojSVQBpCEAGigBEJ6AYwB8UALwBYAFBQ+AweSo0GUAN5QA5hGAAKAJQAuKOjjcoANyy4jJkFAC+UAPxQ4EcyihGo02fyGK1HSM6pY4EEYAloieACoOzlAAShCCxMi0hCRgPLGiRr5yAZRBKupauoZQ0UjIUPGOLilpGVmkufmu7igA3NLSoJByCNEQzJDIoG1kJcqM46wgHGb+CrPBTNmLq8iRYMDpomI+MkVrShvqAO67wOgARpgRxqY89No6YTamVbYJLm4PHUDIVVoE5mooDdIndHs9bDwKvpvnZGl0gV5QfJwZcobcHk8jAgsO9-skIOhaMQ4JgQHh4LUMOFpjxVsJ8ljihcyniYQTnsBkLgyQyUEzcCyzhzTilKdTafSYmgrPhxqz5Oz+lIENg4IJgJFqVBaBARm4FpM6YUAPL3ABWOJUxHtqWAXEKy0d8y2luW7tOBDB6xUFtAOz2B2QwkKOmddqMtrtPDA2SMfosWCMgfkv3o70mjDj1UYiagADJhqNQ3T09mhKJVDaXfqAHQms1jH2gWP25PZHhhPTSexatJwejAKAT9LoLTiNSFQTYZDIGjAcXPAAMw617arXZAOmnyFnEB4AHIALboCgb888a74uFEklnjPhIwATk3m4AjA4hykaRj1PFtr1vFUoAAeig6pgHPRh0FcbBL3uFBgMjUDwI3ecACZoNggBRFd0gAQlgeDGFXSkAFp5RAUdqQnKdMK0AA5dBL2gY5zwAWTsABlViIHPaQ93NA8j2Ei84E4kSH0KJE9AXU5ZFXYBlzgFiZ3YuTChHKR7EAjCdIgFtZK4gi4IQ4wWN2OANFIrUYOsxg4GIScwGIPNIjhKADmMHyHNssJhRMWhbIqahkDE019xYS0pNMi97hIABrGh7xU2QlOy2QoHUzTtJPXSuP0-1ZFC54ABYf23QzjKkEC5xc5roEiNzujqNDBHQbBSSuaAAAt0A8Wzr0wSJBENfqoBTBLQGNeRdn2dJpCAA).
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -96,4 +96,4 @@ Btw. If you want the benefits, but stay away from the compile step, check out ho
 [Preact](https://github.com/preactjs/preact) manage to give you full TypeScript support and tooling, but 
 still stay in JavaScript land for contributions and coding.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -32,7 +32,7 @@ tool in your `node_modules` folder. Without explicitly adding it to your
 execution path, this won't do anything. But if you run NPM scripts, this path is
 exactly what's included. For example:
 
-```javascript
+```typescript
 {
   ...
   "scripts": {

@@ -20,7 +20,7 @@ can include multiple types of items, including other arrays.
 To create an array you can either use the object constructor or the literal declaration,
 by assigning your variable a list of values right after the declaration.
 
-```javascript
+```typescript
 // A simple array
 var myArray1 = new Array( 'hello', 'world' ); // with constructor
 var myArray2 = [ 'hello', 'world' ]; // literal declaration, the preferred way
@@ -33,7 +33,7 @@ for more information.
 If you don't know your values yet, it is also possible to declare an empty Array, and
 add elements either through functions or through accessing by index:
 
-```javascript
+```typescript
 // Creating empty arrays and adding values
 var myArray = [];
 
@@ -46,7 +46,7 @@ myArray[2] = '!';	   // adds '!' on index 2
 respectively. You also can directly add items by index. Missing indices will be filled
 with 'undefined';
 
-```javascript
+```typescript
 // Leaving indices
 var myArray = [];
 
@@ -61,7 +61,7 @@ So 'push' is far more safe, especially if you don't know the size of your
 array yet. With the index you not only assign values to array items, but also
 access those.
 
-```javascript
+```typescript
 // Accessing array items by index
 var myArray = [ 'hello', 'world', '!'];
 console.log(myArray[2]);   // logs '!'
@@ -73,7 +73,7 @@ console.log(myArray[2]);   // logs '!'
 
 The 'length' property is used to know the amount of items in your array.
 
-```javascript
+```typescript
 // Length of an array
 var myArray = [ 'hello', 'world', '!'];
 console.log(myArray.length);   // logs 3
@@ -81,7 +81,7 @@ console.log(myArray.length);   // logs 3
 
 You will need the length property for looping through an array:
 
-```javascript
+```typescript
 // For loops and arrays - a classic
 var myArray = ['hello', 'world', '!'];
 for(var i = 0; i < myArray.length; i = i + 1) {
@@ -91,7 +91,7 @@ for(var i = 0; i < myArray.length; i = i + 1) {
 
 Except when you are using for ... in loops:
 
-```javascript
+```typescript
 // or loops and arrays - alternate method
 var myArray = ['hello', 'world', '!'];
 for(var i in myArray) {
@@ -103,7 +103,7 @@ for(var i in myArray) {
 
 With 'concat', you can concatenate two or more arrays
 
-```javascript
+```typescript
 // Concatenating Arrays
 var myArray = [2, 3, 4];
 var myOtherArray = [5, 6, 7];
@@ -115,7 +115,7 @@ var wholeArray = myArray.concat(myOtherArray); // [2, 3, 4, 5, 6, 7]
 'join' creates a string representation of your array. It's parameter is as string
 which works as a seperator between elements (default is a comma);
 
-```javascript
+```typescript
 // Joining elements
 var myArray = ['hello', 'world', '!'];
 console.log(myArray.join(' ')); // logs "hello world !";
@@ -128,7 +128,7 @@ console.log(myArray.join('!!')) // logs "hello!!world!!!!!";
 
 'pop' removes the last element of an array. It is the opposite method to 'push'
 
-```javascript
+```typescript
 // pushing and popping
 var myArray = [];
 myArray.push(0); // [ 0 ]
@@ -142,7 +142,7 @@ myArray.pop();   // [ 0 , 2 ]
 As the name suggests, the elements of the array are in reverse order after calling
 this method
 
-```javascript
+```typescript
 // reverse
 var myArray = [ 'world' , 'hello' ];
 myArray.reverse(); // [ 'hello', 'world' ]
@@ -153,7 +153,7 @@ myArray.reverse(); // [ 'hello', 'world' ]
 Removes the first element of an array. With 'pop' and 'shift' you can recreate the
 method of a [queue](http://en.wikipedia.org/wiki/Queue_(data_structure))
 
-```javascript
+```typescript
 // queue with shift() and pop()
 var myArray = [];
 myArray.push(0); // [ 0 ]
@@ -167,7 +167,7 @@ myArray.shift(); // [ 2 , 7 ]
 Extracts a part of the array and returns them in a new one. This method takes one
 parameter, which is the starting index.
 
-```javascript
+```typescript
 // slicing
 var myArray = [1, 2, 3, 4, 5, 6, 7, 8];
 var newArray = myArray.slice(3);
@@ -181,7 +181,7 @@ console.log(newArray); // [4, 5, 6, 7, 8]
 Removes a certain amount of elements and adds new ones at the given index. It takes
 at least 3 parameters
 
-```javascript
+```typescript
 // splice method
 myArray.splice(idx, len, values, ...);
 ```
@@ -192,7 +192,7 @@ myArray.splice(idx, len, values, ...);
 
 For example:
 
-```javascript
+```typescript
 // splice example
 var myArray = [0, 7, 8, 5];
 myArray.splice(1, 2, 1, 2, 3, 4);
@@ -204,13 +204,13 @@ console.log(myArray); // [0, 1, 2, 3, 4, 5]
 Sorts an array. It takes one parameter, which is a comparing function. If this function is not
 given, the array is sorted ascending
 
-```javascript
+```typescript
 // sorting without comparing function
 var myArray = [3, 4, 6, 1];
 myArray.sort(); // 1, 3, 4, 6
 ```
 
-```javascript
+```typescript
 // sorting with comparing function
 function descending(a, b) {
 	return b - a;
@@ -227,7 +227,7 @@ If the return value is zero, the elements index is equal.
 
 Inserts an element at the first position of the array
 
-```javascript
+```typescript
 // unshift
 var myArray = [];
 myArray.unshift(0); // [ 0 ]
@@ -249,7 +249,7 @@ The function takes up to three arguments:
 
 All of the are optional, but you will need at least the 'element' parameter in most cases.
 
-```javascript
+```typescript
 // native forEach
 function printElement(elem) {
 	console.log(elem);

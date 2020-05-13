@@ -17,7 +17,7 @@ Usually, you would use a CDN, but you prefer it having it added to your bundle.
 With a library called `request`, which allows you to fetch files from a webserver
 and access the contents in a stream format, you can do the following in Gulp:
 
-```javascript
+```typescript
 var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var request = require('request');

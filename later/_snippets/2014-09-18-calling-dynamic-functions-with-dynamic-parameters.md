@@ -8,7 +8,7 @@ permalink: /snippets/javascript/calling-dynamic-functions-with-dynamic-parameter
 
 Useful for wrapper APIs or communicating with external interfaces:
 
-```javascript
+```typescript
 function callFunction(fn) {
   this[fn].apply(this, Array.prototype.slice.call(arguments, 1));
 }

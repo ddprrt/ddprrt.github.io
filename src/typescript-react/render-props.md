@@ -27,7 +27,7 @@ We want to have a Cat that chases a Mouse. It chases our computer's mouse, in th
 The `Cat` renders an image of cat that is positioned based on mouse coordinates. For this we
 need the `Cat`s props, which points to a `MouseState`. `MouseState` holds x and y coordinates for us.s
 
-```javascript
+```typescript
 import React, { FC, Component, MouseEvent } from 'react';
 
 type CatProps = {
@@ -56,7 +56,7 @@ The props from `Mouse` are pretty straight forward. We have one property -- `ren
 -- which accepts a `MouseState`. `MouseState` becomes the glue between `Cat` and `Mouse`
 
 
-```javascript
+```typescript
 type MouseProps = {
   render(state: MouseState): void
 }
@@ -65,7 +65,7 @@ type MouseProps = {
 The `Mouse` component itself builds on `MouseProps` and `MouseState`. Note that we call 
 the `render` function instead of merely adding children.
 
-```javascript
+```typescript
 export class Mouse extends Component<MouseProps, MouseState> {
   constructor(props: MouseProps) {
     super(props);
@@ -101,7 +101,7 @@ and the function returns the hunting `Cat`. Here we don't have any extra
 TypeScript annotations. But TypeScript warns us if the function properties from
 `mouse` are incompatible with the `mouse` prop from `Cat`:
 
-```javascript
+```typescript
 export const MouseTracker = () => <div>
   <h1>Move the mouse around!</h1>
   <Mouse render={mouse => (

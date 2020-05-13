@@ -37,7 +37,7 @@ So, without changing the folder structure, how do you get rid of the compiled re
 
 What we get is a new array, consisting of only JavaScript files. We pass this one to the `del` module:
 
-```javascript
+```typescript
 var gulp = require('gulp');
 var del = require('del');
 var glob = require('glob');
@@ -64,7 +64,7 @@ In this [issue](http://stackoverflow.com/questions/29268054/how-to-timeout-gulp-
 
 I included this one in this series because you'll learn that `gulp.watch` has more to offer than just a simple watch process:
 
-```javascript
+```typescript
 gulp.task('watch', function() {
 	// gulp.watch here works like you would've
 	// expected it. Only difference: We save the
@@ -92,7 +92,7 @@ Prime example of how basic Gulp functionality mixed with a touch of basic JavaSc
 
 This one I do get a lot: What if you want to run the same task, but with different configurations. Take this configuration object for example:
 
-```javascript
+```typescript
 var config = [
 	{
 		src: 'project-one/scripts/**/*.js',
@@ -120,7 +120,7 @@ var config = [
 We want to run all of those to a pipeline of task which is absolutely identical. The only things different are inputs and outputs. We can achieve this by creating a so called stream array:
 
 
-```javascript
+```typescript
 var gulp   = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');

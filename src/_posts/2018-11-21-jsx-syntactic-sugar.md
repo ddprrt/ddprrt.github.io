@@ -34,13 +34,13 @@ an array with more function calls.
 
 So:
 
-```javascript
+```typescript
 <Button onClick={() => alert('YES')}>Click me</Button>
 ```
 
 translates to:
 
-```javascript
+```typescript
 React.createElement(Button, { onClick: () => alert('YES') }, 'Click me');
 ```
 
@@ -48,14 +48,14 @@ With nested elements, it looks something like this:
 
 This JSX
 
-```javascript
+```typescript
 <Button onClick={() => alert('YES')}><span>Click me</span></Button>
 ```
 
 translates to:
 
 
-```javascript
+```typescript
 React.createElement(Button, { onClick: () => alert('YES') }, 
   React.createElement('span', {}, 'Click me'));
 ```
@@ -81,7 +81,7 @@ With TypeScript, we have the possibility to change the JSX factory. That's how
 TypeScript is able to compile JSX for React, Vue.js, Dojo... any other framework using JSX in one way or the other. 
 The virtual DOM implementations underneath might differ, but the interface is the same:
 
-```javascript
+```typescript
 /**
  * element: string or component
  * properties: object or null
@@ -101,7 +101,7 @@ Let's try! These are the features we want to implement:
 Step 1: TypeScript needs to know how to compile JSX for us. Setting two properties in `tsconfig.json` is all we need.
 
 
-```javascript
+```typescript
 {
   "compilerOptions": {
     ...
@@ -117,7 +117,7 @@ created function `DOMcreateElement` for that.
 Next, we implement our factory function. This is just a couple lines of code, so I'll leave everything here and have 
 detailed comments below:
 
-```javascript
+```typescript
 /**
  * A helper function that ensures we won't work with null values
  */
@@ -192,7 +192,7 @@ To sum it up:
 
 That's all there is! Look at the following code example:
 
-```javascript
+```typescript
 const Button = ({ msg }) => {
   return <button onclick={() => alert(msg)}>
     <strong>Click me</strong>
@@ -234,4 +234,4 @@ functions. It just has a lot of angle brackets...
 
 *P.S. You can find the code at [GitHub](https://github.com/ddprrt/dom-jsx)*
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

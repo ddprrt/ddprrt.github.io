@@ -15,7 +15,7 @@ use the excellent [gm](https://www.npmjs.com/package/gm) Node.js bindings to
 do so. This is some sample code, with an additional check if the conversion
 went well:
 
-```javascript
+```typescript
 const gm = require('gm');
 const isProgressive = require('is-progressive');
 

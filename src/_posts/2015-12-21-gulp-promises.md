@@ -26,7 +26,7 @@ to a destination directory, where Gulp awaits to execute your build tasks. With 
 concepts we learned from [incremental builds](/gulp-4-incremental-builds/) we are able
 to create the first part: Copying new files from a source to a destination:
 
-```javascript
+```typescript
 var globArray = [ ... ]  // all the files you want to read
 
 gulp.task('copy-src', function(){
@@ -64,7 +64,7 @@ preferred way by Gulp to take care of deleting files.
 
 And here's how we are going to combine them:
 
-```javascript
+```typescript
 gulp.task('diff', function() {
   return Promise.all([                                    /* 1 */
     globby(globArray, { nodir: true }),                   /* 2 */
@@ -105,7 +105,7 @@ Promise, so it's perfectly usable with the Promise-chain that we made here.
 
 It's even more beautiful when you work with ES6 fat arrow functions:
 
-```javascript
+```typescript
 gulp.task('diff', function() {
   return Promise.all([
     globby(globArray, { nodir: true }),

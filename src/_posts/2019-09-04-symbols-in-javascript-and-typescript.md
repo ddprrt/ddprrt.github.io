@@ -16,7 +16,7 @@ features that make them stand out.
 
 Symbols can be created using the `Symbol()`  factory function:
 
-```javascript
+```typescript
 const TITLE = Symbol('title')
 ```
 
@@ -25,7 +25,7 @@ factory function, `TITLE` is assigned the unique value of this freshly created s
 symbol is now unique, distinguishable from all other symbols and doesn't clash with any other
 symbols that have the same description.
 
-```javascript
+```typescript
 const ACADEMIC_TITLE = Symbol('title')
 const ARTICLE_TITLE = Symbol('title')
 
@@ -36,7 +36,7 @@ if(ACADEMIC_TITLE === ARTICLE_TITLE) {
 
 The description helps you to get info on the Symbol during development time:
 
-```javascript
+```typescript
 console.log(ACADEMIC_TITLE.description) // title
 console.log(ACADEMIC_TITLE.toString()) // Symbol(title)
 ```
@@ -44,7 +44,7 @@ console.log(ACADEMIC_TITLE.toString()) // Symbol(title)
 Symbols are great if you want to have comparable values that are exclusive and unique. For
 runtime switches or mode comparisons:
 
-```javascript
+```typescript
 // A shitty logging framework
 const LEVEL_INFO = Symbol('INFO')
 const LEVEL_DEBUG = Symbol('DEBUG')
@@ -68,7 +68,7 @@ function log(msg, level) {
 
 Symbols also work as property keys, but are not iterable, which is great for serialisation
 
-```javascript
+```typescript
 const print = Symbol('print')
 
 const user = {
@@ -88,7 +88,7 @@ user[print]() // Stefan is 37 years old
 There's a global symbols registry that allows you to access tokens across your whole
 application.
 
-```javascript
+```typescript
 Symbol.for('print') // creates a global symbol
 
 const user = {
@@ -104,7 +104,7 @@ const user = {
 First call to `Symbol.for` creates a symbol, second call uses the same symbol.
 If you store the symbol value in a variable and want to know the key, you can use `Symbol.keyFor()`
 
-```javascript
+```typescript
 const usedSymbolKeys = []
 
 function extendObject(obj, symbol, value) {
@@ -134,7 +134,7 @@ TypeScript has full support for symbols, and they are prime citizens in the type
 function from earlier on. To allow for all symbols to extend our object, we can use the
 `symbol` type:
 
-```javascript
+```typescript
 const sym = Symbol('foo')
 
 function extendObject(obj: any, sym: symbol, value: any) {
@@ -151,7 +151,7 @@ You can think of a nominal type in TypeScript for a very nominal value in JavaSc
 
 To get to the type of `unique symbol`s, you need to use the typeof operator.
 
-```javascript
+```typescript
 const PROD: unique symbol = Symbol('Production mode')
 const DEV: unique symbol = Symbol('Development mode')
 
@@ -172,7 +172,7 @@ An interesting use case of symbols is to re-create `enum` like behaviour at runt
 `enum`s in TypeScript are opaque. This effectively means that you can't assign string values to `enum`
 types, because TypeScript treats them as unique:
 
-```javascript
+```typescript
 enum Colors {
   Red = 'Red',
   Green = 'Green',
@@ -185,7 +185,7 @@ const c2: Colors = 'Red'; // 💣 No direct assigment possible
 
 Very interesting if you do comparisons:
 
-```javascript
+```typescript
 
 enum Moods {
   Happy = 'Happy',
@@ -206,7 +206,7 @@ In JavaScript land, we can create enums like that with symbols. See the colors o
 rainbow an black in the following example. Our "enum" `Colors` includes only symbols
 which are colors, not black:
 
-```javascript
+```typescript
 // All Color symbols
 const COLOR_RED: unique symbol = Symbol('RED')
 const COLOR_ORANGE: unique symbol = Symbol('ORANGE')
@@ -231,7 +231,7 @@ const Colors = {
 
 We can use this symbols just as we would use `enum`s:
 
-```javascript
+```typescript
 function getHexValue(color) {
   switch(color) {
     case Colors.COLOR_RED: return '#ff0000'
@@ -242,7 +242,7 @@ function getHexValue(color) {
 
 And the symbols can't be compared:
 
-```javascript
+```typescript
 const MOOD_HAPPY: unique symbol = Symbol('HAPPY')
 const MOOD_BLUE: unique symbol = Symbol('BLUE')
 
@@ -271,7 +271,7 @@ This allows us to get more type safety when defining our symbol "enums" for
 function declarations. We start with a helper type for getting all value types
 from an object.
 
-```javascript
+```typescript
 type ValuesWithKeys<T, K extends keyof T> = T[K];
 type Values<T> = ValuesWithKeys<T, keyof T>
 ```
@@ -281,7 +281,7 @@ the exact value type (e.g. type is `COLOR_RED`) instead of their overarching typ
 
 With that, we can declare our function like that:
 
-```javascript
+```typescript
 function getHexValue(color: Values<typeof Colors>) {
   switch(color) {
     case COLOR_RED:
@@ -299,7 +299,7 @@ function getHexValue(color: Values<typeof Colors>) {
 You can get rid of the helper and const context, if you use symbol keys and values 
 instead of only symbol values:
 
-```javascript
+```typescript
 const ColorEnum = {
   [COLOR_RED]: COLOR_RED,
   [COLOR_YELLOW]: COLOR_YELLOW,
@@ -332,4 +332,4 @@ and actual type safety at runtime with the unique characteristics of JavaScript'
 And, als always: [A playground](https://www.typescriptlang.org/play/index.html#code/LAKFGMHsDsGcBcAEBhA8gGVQJQPpYKIAiAXIgK7QCWAjmQKaKwCeAtgEaQA2iAvIgMqsOnABQByNJlwFCYgJQQYCFBmw5sAQQByAcXykKNeoyFdeA06Imrcm3fnmK4SSWoCa+dJgDqBqrQZmdjM+QWCrV1wPL1RvRxAoZxUpHB0CfC0-I0DLczDhcUjU9K14xOUigCF0AFV9cn9jIOE8y0KbHGq6sqUXDoBJLUJ+nVQsgJNw1vD2lMHh0Z6kooA1fox8ABVxptzQtusUtY3NpYqO6o1kAGkdnKn9mcO1S5v4pwquSAAnWHMAb1AiGSahkABogSDbFhtHoISBgUVoj54YiOml8BlUVDOrV8NiivMRqgCR1jugtqAAL6IACGf3K8AA3KBQPAmAAHBgrWmceiwbyUeAAC2udCYsAAPJswYhrog6AAPeB0aAAEz+AGtxZAAGaITYAPnMmwA2tcALoskDsrmIHl8uhSo3mB38wUisUS6Wy7VMPUGw2skC6ijgeCUGCIADmdHgAAklW66CIoJwfqRk1LbXQA8gvr9DXJEICEYwAO5C8DC1MF4ul4HA8D0hj59O-AB0VTxxEhjcQAHoB33G2xvnRaZrrf3m7BWxd0FdbogR8Ch6vEGOJ1PIVTqcHYwmk7z6CI2z9YF2F3UFGAEr1EABZVCoQg4eMaAAKn7cd0mLUeAoxA-b83DOJBn1fXE6j-ZoQgsJ4ugcW9QCHRANE4bg0wvBVFXAOgOSQSpOFpcBNQ+CDIEgDUAUhSC3xAn9sXo6D8GpOkGV6a1QEoXUREfKiNQ7FikN4Hg+HPTtuxvEtIX3O9GRQAt8GgMgWFostTSKGQLVIbSiGxLSOmRWJdJxEzvEMoo7D0MzrJhewrPREo7OczEtCclIkNcry8U8tQiVGHyAqGYl-NwcktmCiL1gpGV5NAUNoHDSNoBjONE0VZMPWFfIuC9WBa3bUg-QDHM82U1SWHrSFYEreBqyKn4arLJsWyU9sVLUozfLqXSN3XVrR3HSdp0bWd5xSGReyGtdh1mzcRp3IaJpxV5lwG+b+2BLdRt3akgA) for you to fiddle around.
 
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -15,7 +15,7 @@ After some research and digging I actually found out that I didn't have to look 
 
 You just need to attach one parameter to my configuration, which overrides the standard *rename* function of the *Grunt* file utilities.
 
-```javascript
+```typescript
 ...
 copy: {
   dist: {

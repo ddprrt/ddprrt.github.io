@@ -25,7 +25,7 @@ runtime environment is capable of ES6 classes.
 
 Take this code listing for example:
 
-```javascript
+```typescript
 'use strict';
 
 const Liquid = require('liquid-node'); // 1

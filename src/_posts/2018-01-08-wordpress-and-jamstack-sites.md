@@ -43,7 +43,7 @@ But after that, you have to fetch paginated. There's the `page` parameter where 
 
 To retrieve data, I'm using [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch), which provides the same `fetch` API both for Node and the browser. Let's see:
 
-```javascript
+```typescript
 const fetch = require('isomorphic-fetch');
 
 const mainURL = 'http://path-to-your-blog';
@@ -84,7 +84,7 @@ Metalsmith works with plug-ins. Each run of the Metalsmith build pipeline runs t
 
 Let's use the code sample from above and extend it to a Metalsmith plug-in:
 
-```javascript
+```typescript
 const { URL } = require('url');
 
 const wordpress = (url) => (files, smith, done) => { /* 1 */
@@ -118,7 +118,7 @@ Perfect. In just a few lines of code we told Metalsmith to extend the files it a
 
 We want to use our new plug-in with a very straightforward Metalsmith build pipeline. We don't use much but a layout plug-in that builds upon Handlebars to squeeze our content into something more semantically correct.
 
-```javascript
+```typescript
 const Metalsmith = require('metalsmith');
 const layouts = require('metalsmith-layouts');
 

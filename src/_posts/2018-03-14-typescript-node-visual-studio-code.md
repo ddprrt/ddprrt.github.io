@@ -27,7 +27,7 @@ I tried to make `ts-node` work for this setup, and made good progress. But at so
 
 My TypeScript configuration `tsconfig.json` is pretty standard. I use a pretty late ES target (having Node an all), and I use `commonjs` as module format to work nicely with Node.js. The folder structure is easy: I have my TypeScript files in `src`, my output in `bin`. 
 
-```javascript
+```typescript
 {
   "compilerOptions": {
     "target": "es2017",
@@ -65,7 +65,7 @@ VSCode is pretty clever, as based on your file structure it automatically finds 
 
 You can run them by selecting them. If you hit the wheel icon next to it, VSCode creates a `tasks.json` in the `.vscode` project folder, with all the setup you need. See below:
 
-```javascript
+```typescript
 {
   "version": "2.0.0",
   "tasks": [
@@ -98,7 +98,7 @@ Select "Node.js: Launch Program" and you get a couple of fields pre-filled. The 
 
 The whole file looks like this:
 
-```javascript
+```typescript
 {
   "version": "0.2.0",
   "configurations": [
@@ -125,4 +125,4 @@ And with that, you are all set up. Press the ▶️ button the debug view. You s
 
 Try setting a breakpoint somewhere and have fun with all the details!
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -66,11 +66,12 @@ First possibility: Let's be intentional with our return type. Since TypeScript -
 
 ```typescript
 // add a return type here
-export const useToggle = (initialValue: boolean): [boolean, () => void] => {
-  const [value, setValue] = useState(initialValue)
-  const toggleValue = () => setValue(!value)
-  return [value, toggleValue]
-}
+export const useToggle =
+  (initialValue: boolean): [boolean, () => void] => {
+    const [value, setValue] = useState(initialValue)
+    const toggleValue = () => setValue(!value)
+    return [value, toggleValue]
+  }
 ```
 
 With `[boolean, () => void]` as a return type, TypeScript checks that we are returning a tuple in this function. TypeScript does not infer anymore, but rather makes sure that your intended return type is matched by the actual values. And voila, your code doesn't throw errors anymore.
@@ -92,4 +93,4 @@ The return type is now `readonly [boolean, () => void]`, because `as const` make
 
 And this is, a perfect use case for tuple types! As always, there's a [playground link](https://www.typescriptlang.org/play/index.html?jsx=2#code/JYWwDg9gTgLgBAJQKYEMDGMA0cDecCuAzkgMowoxIC+cAZlBCHAORSobMBQnSAHpLDhoIAO0LwiSACoQA5rIA2SOAF44ACmAjgMYCgUA1ffiQAuOACMIEJShEBKcwG0rN1COzr7qgHxwAbhDAACYAur64nHBCouJwTv7GSNjEMEYKJuFqkmQUSJrauvrpJvZRMWLwMHKKSCXKal4RqfXqAISJGUhl0Www+FAi8Z0m2NXySvWhnFTcPPzQ8MKVBMQAwrEwMhMNGlo6eoZJ5q62DhE45ctxCUkpSGlJWauk5JQFB8VJPRVx47X1VQabwqPwtJLtEbdcp9AZDW5dMY1SZPOAoQi-GAzbh8ARLTZwABCEGCAE8gU1QZFotd4E5gIQDAzgBYlEidkzCCylM9JNtaupaPpiD9YYMNOVogAeHyS6JwKUWfAwapDURrBTANAAaxUOH+k2ZrOoPgAEkgFAoIFKAPRKlWiWXy+U4Bmc7nKABknoVwWA-h8AHVoApgra-QHZs7bU64GUqEA) for you to fiddle around! Have fun!
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -14,7 +14,7 @@ They way the work is, if a function returns true, change the type of the paramte
 
 Let's start with a basic example. Let's say you have a function that checks if a certain value is of type string:
 
-```javascript
+```typescript
 function isString(s) {
   return typeof s === 'string';
 }
@@ -22,7 +22,7 @@ function isString(s) {
 
 Use the `isString` function inside another function:
 
-```javascript
+```typescript
 function toUpperCase(x: unknown) {
   if(isString(x)) {
     x.toUpperCase(); // ⚡️ x is still of type unknown
@@ -35,7 +35,7 @@ a function, the type of `x` does not change (as opposed to type guards). Enter t
 
 Let's tell TypeScript explicitly that if `isString` evaluates to true, the type of the parameter is a string:
 
-```javascript
+```typescript
 function isString(s): s is string {
   return typeof s === 'string';
 }
@@ -43,7 +43,7 @@ function isString(s): s is string {
 
 TypeScript now knows that we are dealing with strings in our `toUpperCase` function.
 
-```javascript
+```typescript
 function toUpperCase(x: unknown) {
   if(isString(x)) {
     x.toUpperCase(); // ✅ all good, x is string
@@ -58,7 +58,7 @@ See that in the [TypeScript playground](https://www.typescriptlang.org/play/inde
 This not only helps you for unknown types, or multiple types, but also to narrow down sets within a type. Let's have a program where
 you throw a dice. Every time you throw a Six, you win.
 
-```javascript
+```typescript
 function pipsAreValid(pips: number) {
   // we check for every discrete value, as number can 
   // be something between 1 and 2 as well.
@@ -97,7 +97,7 @@ It's narrowed down to a discrete set of six values.
 So starting from the switch statement, my types are lying! To prevent any further complications, let's narrow down the set of numbers
 to those six discrete values, using union types:
 
-```javascript
+```typescript
 type Dice = 1 | 2 | 3 | 4 | 5 | 6;
 
 function pipsAreValid(pips: number): pips is Dice {
@@ -133,4 +133,4 @@ A lot type safer for us, and for our colleagues. Of course this "type casts" can
 applications. Even if you validate complex objects, you can narrow down your parameters to a specific type and make sure they
 get along with the rest of your code. Useful, especially if you rely on a lot of functions.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

@@ -24,7 +24,7 @@ There are actually two plugins out there doing this, the one being [gulp-confirm
 
 So why not use `inquirer` directly? The API is pretty straight forward, so give it a go:
 
-```javascript
+```typescript
 var inquirer = require('inquirer');
 
 gulp.task('default', function(done) {
@@ -55,7 +55,7 @@ Before I came up with solutions, I asked a few things back:
 
 Turned out that the true `A <-> B` scenario actually never happened, it was more of an `A -> B` scenario during development. And for this scenario the solution was strangely easy. If you want to have your contents in another folder, you don't need any Gulp plugin whatsoever. In fact, you don't need any Gulp plugin at all:
 
-```javascript
+```typescript
 // the sync
 gulp.task('sync', function() {
 	return gulp.src('./a/**/*')
@@ -70,7 +70,7 @@ gulp.task('watch', function() {
 
 This line will copy all files from folder `a` to folder `b`. Include the [gulp-newer](https://www.npmjs.com/package/gulp-newer) plugin to boost up performance as you go:
 
-```javascript
+```typescript
 var newer = require('gulp-newer');
 
 gulp.task('sync', function() {
@@ -82,7 +82,7 @@ gulp.task('sync', function() {
 
 But this is just half of the story. A real sync also deletes files in B should they've been deleted in A. For that we would need a change in our watcher:
 
-```javascript
+```typescript
 var del = require('del');
 var path = require('path');
 
@@ -108,7 +108,7 @@ Let's assume we want to change the output directory based on a command-line swit
 
 There's a wonderful Node.js package out there called [yargs](https://www.npmjs.com/package/yargs), which parses everything that happens on the CLI and gives it to you in an easily devourable way:
 
-```javascript
+```typescript
 var args = require('yargs').argv;
 
 var dest = args.destination ? args.destination : 'dist';

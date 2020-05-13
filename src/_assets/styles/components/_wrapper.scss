@@ -1,0 +1,31 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.wrapper ul, .wrapper ol {
+  padding-left: 1em;
+}
+
+.wrapper li {
+  margin-bottom: 0.5rem;
+}
+
+.wrapper ol li {
+  padding-left: 0.5em;
+}
+
+.wrapper a {
+  color: var(--color-five);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  transition: all 0.3s ease;
+}
+
+.wrapper a:focus, 
+.wrapper a:hover {
+  color: var(--color-three);
+}

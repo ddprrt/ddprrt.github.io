@@ -10,10 +10,11 @@ title: "TypeScript: Validate mapped types and const context"
 Mapped types are great, as they allow for the flexibility in object structures JavaScript is known for.
 But they have some crucial implications on the type system. Take this example:
 
-```javascript
+```typescript
 type Messages = 
   'CHANNEL_OPEN' | 'CHANNEL_CLOSE' | 'CHANNEL_FAIL' | 
-  'MESSAGE_CHANNEL_OPEN' | 'MESSAGE_CHANNEL_CLOSE' | 'MESSAGE_CHANNEL_FAIL'
+  'MESSAGE_CHANNEL_OPEN' | 'MESSAGE_CHANNEL_CLOSE' |
+  'MESSAGE_CHANNEL_FAIL'
 
 type ChannelDefinition = {
   [key: string]: {
@@ -28,7 +29,7 @@ This is from a generic messaging library, that takes a "channel definition" wher
 channel tokens can be defined. The keys from this channel definition object are what the user
 wants it to be. So this is a valid channel definition:
 
-```javascript
+```typescript
 const impl: ChannelDefinition = {
   test: {
     open: 'CHANNEL_OPEN',
@@ -47,7 +48,7 @@ We have a problem when we want to access the keys we defined so flexibly. Let's 
 a function that opens a channel. We pass the whole channel definition object, as well as the
 channel we want to open.
 
-```javascript
+```typescript
 declare function openChannel(
   def: ChannelDefinition,
   channel: keyof ChannelDefinition
@@ -59,8 +60,9 @@ moment we assign a specific type, TypeScript treats `impl` as this specific type
 the actual implementation. The contract is fulfilled. Moving on. This allows for wrong keys to
 be passed:
 
-```javascript
-openChannel(impl, 'massages') // Passes, even though "massages" is no part of impl
+```typescript
+// Passes, even though "massages" is no part of impl
+openChannel(impl, 'massages') 
 ```
 
 So we are more interested in the actualy implementation, not the type we assing to our constant.
@@ -99,7 +101,7 @@ with `Messages`):
 ```
 
 Without `const` context, the inferred type of `impl`is:
-```javascript
+```typescript
 /// typeof impl 
 {
   test: {
@@ -117,7 +119,7 @@ Without `const` context, the inferred type of `impl`is:
 
 With `const` context, the actual type of `impl` is now:
 
-```javascript
+```typescript
 /// typeof impl 
 {
   test: {
@@ -136,7 +138,7 @@ With `const` context, the actual type of `impl` is now:
 `const` context allows us to satisfy the contract made by
 `ChannelDefinition`. Now, `openChannel` correctly errors:
 
-```javascript
+```typescript
 openChannel(impl, 'messages') // ✅ satisfies contract
 openChannel(impl, 'massages') // 💥 bombs
 ```
@@ -145,19 +147,23 @@ You might be in a space where you need to work with the concrete type, that sati
 the `ChannelDefinition` contract, outside of a function. For that, we can mimic the same
 behaviour using the `Validate<T, U>` helper type:
 
-```javascript
+```typescript
 type Validate<T, U> = T extends U ? T : never; 
 ```
 
 Use this as follows:
 
-```javascript
+```typescript
 const correctImpl = {
-  test: { open: 'CHANNEL_OPEN', close: 'CHANNEL_CLOSE', fail: 'CHANNEL_FAIL' }
+  test: { 
+    open: 'CHANNEL_OPEN', close: 'CHANNEL_CLOSE', fail: 'CHANNEL_FAIL'
+  }
 } as const;
 
 const wrongImpl = {
-  test: { open: 'OPEN_CHANNEL', close: 'CHANNEL_CLOSE', fail: 'CHANNEL_FAIL' }
+  test: { 
+    open: 'OPEN_CHANNEL', close: 'CHANNEL_CLOSE', fail: 'CHANNEL_FAIL' 
+  }
 } as const;
 
 
@@ -172,4 +178,4 @@ type ValidatedWrong
 
 As always, there's a [pen](https://www.typescriptlang.org/play/index.html#code/C4TwDgpgBAshDO8CGBzBUC8UDkBhAEgIIByxAogDID6A8gApnHZQA+OBJ51uFNAymWZs8RUpSoAxQgEkKQqAFgAUFBwwyfPoQDiZKhzHV6jednWadeg1328Bp81t37RNqbOzLloSFFwALJAA7IIgAGwARCAAzAEsg2OBYgHsgzCgAb2VVAG0AawgQAC4oeGAAJ3iUAF0SrJVVKGTIIJK4RFQEABpsxoBjMOT4CDaEZDR4HobVaKRYsNGOid6AX2U1pWU+1LKoWIBbMDD0+tVgBGA63tVmiFb2V3FjJinGqAGhkYfOcR5+QVejVm8xKIh+1HcclWgP2Y06V2mTRaoMclhc4NoDBe13eg2GKI0Tisj24dgBOOBCzUhLR1nEkM8DQ2KygSHg7x2wAA3F4lAATCADJDlaDRACuQT6SVSSLuAWCoTCAAoBXEEtL7vKQuEomrEikgl13oFtVSCiBktE-CbFbr4vrUgBKEoAN2SsT5PM2SluQS1iqVByORuw5zKACZsI7eT5oAA1JBhD1Ic4AHmkRtwAD50tIoBAAB7nIJ89m4KAAfigeZKoRdEHKXMU3oFQpFUHFko1sr9NvCCaTfJTEFTABUsyqYvaNSUB8m06PM33IlP1Qas0a+suSubLVBR86oG6PV7lL7-f3E-OIIHDmEQ2HgJHoy3BWFhaKJVKDT2L2EyEWdx8mO+aASWZbLnaa6pBOqolIuxoKuEO6FHuB6uu6nq8uey4AcWfK3sGOCPs+QA) for you to fiddle around.
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

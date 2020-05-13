@@ -33,7 +33,7 @@ This is where `vinyl-source-stream` comes in. It does exactly what `gulp-browser
 
 So here's how you handle one Browserify bundle with Gulp
 
-```javascript
+```typescript
 var gulp       = require('gulp'),
     browserify = require('browserify'),
     source     = require('vinyl-source-stream');
@@ -57,7 +57,7 @@ What can you do? Of course you think: Well, if I need it for more than one bundl
 What we need are so called *stream arrays*. Define your stream, create an array of multiple streams, and execute all of them at once:
 
 
-```javascript
+```typescript
 'use strict';
 
 var gulp       = require('gulp'),
@@ -95,7 +95,7 @@ The original setup is self explaining, but the last line is important: We merge 
 
 Globs allow us to use patterns when selecting files. That functionality is in Gulp, but with our first entry point being browserify and the outcome being a stream array, we have to improvise. That's the way if you want to have all the files starting with `main-` and ending with `js` in your stream array:
 
-```javascript
+```typescript
 'use strict';
 
 var gulp       = require('gulp'),

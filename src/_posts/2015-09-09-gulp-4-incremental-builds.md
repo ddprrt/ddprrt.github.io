@@ -17,7 +17,7 @@ the files that have changed.
 Gulp has plenty of plugins for crafting incremental build pipelines. Some of the
 most common used are `gulp-cached`:
 
-```javascript
+```typescript
 /** Gulp 3 Code **/
 
 var cached = require('gulp-cached');
@@ -55,7 +55,7 @@ With version 4, Gulp saves the time when a task has been executed last. Not only
 for the whole system, but also for each task separately. We can combine those two
 features by telling Gulp to "select files *since*" "the last time task X ran":
 
-```javascript
+```typescript
 /** Gulp 4 Code **/
 
 var jshint = require('gulp-jshint');
@@ -79,7 +79,7 @@ You will still need plugins when you terminate Gulp between your iterations,
 since Gulp loses all information on runs once it exits. `gulp-newer` comes in
 handy:
 
-```javascript
+```typescript
 /** Gulp 3 Code **/
 var newer = require('gulp-newer');
 var imagemin = require('gulp-imagemin');
@@ -102,7 +102,7 @@ You also need the `cached` plugin if you want to refill your stream with origina
 contents through `gulp-remember` afterwards. However, this can be combined with
 `lastRun`:
 
-```javascript
+```typescript
 gulp.task('scripts', function() {
   return gulp.src('src/**/*.js', since: {gulp.lastRun('scripts')}) /** 1 **/
     .pipe(cached('scripts')) /** 2 **/

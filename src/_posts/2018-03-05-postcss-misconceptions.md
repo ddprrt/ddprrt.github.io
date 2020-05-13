@@ -31,7 +31,7 @@ The PostCSS developers not only provide us with their findings, but also tell us
 
 Compiling Bootstrap’s Sass version with *libsass* is easy, since it exists already. In lieu of a non-existent PostCSS Bootstrap, we create a similar, however reduced example: PostCSS should replace one variable, and import pre-compiled CSS files. You can find the complete test setup [here](https://github.com/ddprrt/postcss-playground), and the Gulpfile right below:
 
-```javascript
+```typescript
 var gulp      = require(‘gulp’)
 var sass      = require(‘gulp-sass’);
 var postcss   = require(‘gulp-postcss’);

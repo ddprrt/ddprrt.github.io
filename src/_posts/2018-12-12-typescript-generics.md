@@ -33,7 +33,7 @@ See more on:
 this name. It allows however for changing properties of an object. The `Readonly` built-in 
 type helps:
 
-```javascript
+```typescript
 type Point = {
   x: number,
   y: number
@@ -52,7 +52,7 @@ p.x = 5; // ⚡️ compile error!
 The generic, built-in type `ReadonlyArray` allows us to throw errors once we use an array 
 function that mutates the original array. See for yourself:
 
-```javascript
+```typescript
 const values: ReadonlyArray<number> = [1, 2, 3, 4, 5];
 
 values.push(6); // ⚡️ compile error! This mutates the array
@@ -65,7 +65,7 @@ Handy if you want to keep an immutable array!
 
 This built-in type gets you the return type of any function.
 
-```javascript
+```typescript
 type Point = {
   x: number,
   y: number
@@ -98,7 +98,7 @@ function areaOfSquare(square: Square): number {
 
 You can also access functions inside classes:
 
-```javascript
+```typescript
 class Square {
   generate(bottomLeft, topRight) {
     return {
@@ -127,7 +127,7 @@ What is it good for? Think about having a set of default options, and you want t
 just parts and pieces from them. `Partial<T>` helps you getting autocomplete and 
 type-checking for that case:
 
-```javascript
+```typescript
 const defaultOptions = {
   directory: '.',
   incremental: true, 
@@ -153,7 +153,7 @@ start({
 `Required<T>` is the opposite to `Partial<T>`. Where `Partial<T>` makes every property 
 optional, required makes ever property necessary.
 
-```javascript
+```typescript
 type Container = {
   width: number,
   height: number, 
@@ -181,7 +181,7 @@ getChildrenArea(mainContainer); // ⚡️ Error: Needs children
 `NonNullable<T>` helps you to ensure you don't pass `null` or `undefined` to your functions. 
 This complements the `strictNullChecks` compiler flag, so make sure you activate it.
 
-```javascript
+```typescript
 function print<T>(x: NonNullable<T>) {
   console.log(x.toString());
 }
@@ -198,7 +198,7 @@ With `Pick<T, K extends keyof T>` you can create a new type from an existing obj
 using a selected list of properties. Lodash's eponymous `pick` function is a good example of
 its usage:
 
-```javascript
+```typescript
 /**
  * The pick function is generic as well. It has two generic types:
  * - T ... the type of the object we want to pick props from
@@ -227,13 +227,13 @@ This one is especially useful when used with other generic types, e.g. `Exclude`
 `Record<K, T>` is funny. With it you can say that *every key `K` should be of type `T`. With 
 it you can do things like
 
-```javascript
+```typescript
 type Person = Record<'firstName' | 'lastName', string>
 ```
 
 which is the same as `{ firstName: string, lastName: string }`. Or, something like
 
-```javascript
+```typescript
 type MetaInfo = {
   title: string,
   url: string
@@ -250,7 +250,7 @@ the same results with other methods?
 `Record` helps when you deal with other generic types. Let's look at that example: We can 
 create a function that transforms all values of an object to a string representation:
 
-```javascript
+```typescript
 // The implementation is somewhere else. It converts all values to strings.
 declare function allToString<T>(obj: T): Record<keyof T, string>;
 
@@ -272,7 +272,7 @@ const strPerson = allToString(person);
 `Extract<T, K>` extracts all types from `T` that are assignable to `K`. Let's say you have 
 two different types of shape. Circles and rectangles. They look something like that:
 
-```javascript
+```typescript
 const rect = {
   width: 200,
   height: 100,
@@ -297,7 +297,7 @@ const circle = {
 
 Their types are
 
-```javascript
+```typescript
 type Rect = typeof rect;
 type Circle = typeof circle;
 ```
@@ -307,7 +307,7 @@ These objects might change over time. We still want to make sure that we only ac
 methods that are available in both of them. With `Extract`, we can get the keys of those
 functions:
 
-```javascript
+```typescript
 // extracts: 'area' | 'perimeter'
 type ShapeFunctionProps = Extract<keyof Rect, keyof Circle>
 ```
@@ -315,13 +315,13 @@ type ShapeFunctionProps = Extract<keyof Rect, keyof Circle>
 To create a type that has access to all those functions again, we can use the `Record` type
 from earlier on:
 
-```javascript
+```typescript
 type ShapeFunctions = Record<ShapeFunctionProps, () => number>
 ```
 
 Now we have this extra type safety in functions that may apply to all of those objects:
 
-```javascript
+```typescript
 declare function extensiveMath<T extends ShapeFunctions>(obj: T)
 
 extensiveMath(rect); // ✅ compiles
@@ -334,7 +334,7 @@ extensiveMath(circle); // ✅ compiles
 opposite of `Extract`. Let's take the example from earlier:
 
 
-```javascript
+```typescript
 type Rect = typeof rect;
 type Circle = typeof circle;
 
@@ -358,7 +358,7 @@ Since version 3.5, TypeScript includes the `Omit<T, K>` helper type. `Omit<T, K>
 a shortcut for `Pick<T, Exclude<keyof T, K>>`, but since it was used so often, the team decided to 
 add it:
 
-```javascript
+```typescript
 type Person = {
     name: string;
     age: number;
@@ -389,4 +389,4 @@ want to have convered here, let me [know](https://twitter.com/ddprrt).
 *Update*: My buddy Martin Hochel has a couple of mapped types that build on top of
 those. They are pretty good, so [check them out](https://github.com/Hotell/rex-tils#2-compile-time-typescript-type-helpers)
 
- //include helper/include-by-tag.html tag="TypeScript" title="More articles about TypeScript"
+ 

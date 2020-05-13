@@ -1,6 +1,6 @@
 :root {
   --background: #282a36;
-  --comment: #6272a4;
+  --comment: #7e93d4; // #6272a4;
   --foreground: #f8f8f2;
   --selection: #44475a;
 
@@ -184,6 +184,7 @@ pre[class*="language-"] {
   border-radius: 5px;
   margin: 2rem 0;
   min-width: 100%;
+  overflow: auto;
 }
 
 code[class*="language-"] {
@@ -244,6 +245,7 @@ pre[class*="language-"] {
 
 .token.comment {
   color: var(--comment);
+  font-style: italic;
 }
 
 .token.constant {
