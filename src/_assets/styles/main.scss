@@ -5,6 +5,7 @@
   --color-three: #ff006e;
   --color-four: #8338ec;
   --color-five: #3a86ff;
+  --main-font: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -44,8 +45,8 @@ h2, h3 {
   position: relative;
 }
 
-@import 'components/dracula';
 @import "components/aspect";
+@import "components/boxes";
 @import "components/layout";
 @import "components/nav";
 @import "components/meta";
@@ -55,5 +56,6 @@ h2, h3 {
 @import "components/happy-stefan";
 @import "components/footer";
 
+@import 'external/dracula';
 @import "external/carbon";
 

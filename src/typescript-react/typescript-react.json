@@ -1,4 +1,9 @@
 {
   "tags": ["guides-typescript-react"],
-  "menuActive": "guides"
+  "menuActive": "guides",
+  "breadcrumbs": [
+    { "title": "Home", "path": "/" },
+    { "title": "Guides", "path": "/guides/" },
+    { "title": "TypeScript & React", "path": "/typescript-react/" }
+  ]
 }

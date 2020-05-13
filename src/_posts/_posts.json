@@ -1,4 +1,8 @@
 {
   "tags": ["posts"],
-  "menuActive": "articles"
+  "menuActive": "articles",
+  "breadcrumbs": [
+    { "title": "Home", "path": "/" },
+    { "title": "Articles", "path": "/articles" }
+  ]
 }

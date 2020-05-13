@@ -6,6 +6,11 @@ categories:
 published: true
 og:
   img: /wp-content/uploads/ogimgs/ts-react.png
+breadcrumbs:
+- title: Home
+  path: /
+- title: Guides
+  path: /guides/
 ---
 
 Welcome to this little primer on TypeScript and React! A match made in heaven!

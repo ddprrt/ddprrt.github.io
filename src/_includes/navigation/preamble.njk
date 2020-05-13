@@ -1,7 +1,8 @@
 <div class="preamble main-frame">
   <span class="breadcrumbs">
-    <a href="/">Home</a>
-    <a href="/articles">Articles</a>
+    {%- for crumb in breadcrumbs -%}
+    <a href="{{crumb.path}}">{{crumb.title}}</a>
+    {%- endfor -%}
   </span>
   <h1>{{ title }}</h1>
   <div class="meta" data-modified="{{ page.date.toUTCString() }}">
