@@ -73,8 +73,9 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background-image: linear-gradient(to bottom,
-    #fff, hsl(217, 100, 96) 90%);
+  background-image: 
+    linear-gradient(to bottom, #fff, hsl(217, 100, 96) 90%);
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
