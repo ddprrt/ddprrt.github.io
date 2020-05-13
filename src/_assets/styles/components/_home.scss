@@ -1,6 +1,5 @@
 .teaser-area {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 2rem;
   background: 
   linear-gradient(to bottom, transparent, #fff 50%),
@@ -12,40 +11,25 @@
     hsl(hue($color-five), 100, 98));
   background-size: 100vw 50vh;
   background-repeat: no-repeat;
+  padding: 2rem;
 }
 
 .teaser {
-  padding: 2rem;
-  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.teaser-main {
-  grid-row: 1 / 3;
-  padding: 4rem;
-}
-
 
 .teaser-heading {
+  --color-gradient: linear-gradient(90deg,
+    var(--color-three),
+    var(--color-four),
+    var(--color-five));
   margin-top: 1rem;
-  background-image: linear-gradient(90deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-three));
+  background-image: var(--color-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.5;
-}
-
-.teaser:not(.teaser-main):nth-of-type(2n) > .teaser-heading {
-  background-image: linear-gradient(90deg,
-    var(--color-three),
-    var(--color-four));
-}
-
-.teaser:not(.teaser-main):nth-of-type(2n + 1) > .teaser-heading {
-  background-image: linear-gradient(90deg,
-    var(--color-four),
-    var(--color-five));
 }
 
 .teaser-heading:hover {
@@ -66,6 +50,7 @@
 .read-more {
   text-decoration: none;
   font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .read-more:before {
@@ -76,8 +61,161 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 1rem;
 }
 
 .abstract {
   padding-top: 3rem;
+}
+
+.teaser-happy {
+  justify-content: center;
+  align-items: center;
+}
+
+.teaser-small .meta {
+  display: block;
+}
+
+.teaser-small .meta .meta-highlight {
+  display: inline;
+}
+
+
+
+@media(min-width: 800px) {
+
+  .teaser-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .teaser-main {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }  
+
+
+  .teaser-happy {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .teaser-small {
+    grid-column: 1 / 3;
+  }
+
+  .teaser-small:nth-of-type(2) {
+    grid-column: 3 / 4;
+  }
+
+
+  .teaser-small .teaser-heading {
+    --color-start: var(--color-three);
+    --color-end: var(--color-four);
+    background-image: linear-gradient(90deg,
+      var(--color-start),
+      var(--color-end));
+  }
+
+  .teaser-heading {
+    --color-gradient: linear-gradient(90deg,
+      var(--color-two),
+      var(--color-three),
+      var(--color-four));
+  }
+
+  .teaser-small:nth-of-type(2) .teaser-heading{
+    --color-start: var(--color-four);
+    --color-end: var(--color-five);
+  }
+}
+
+@media(min-width: 1090px) {
+
+  .teaser {
+    padding: 2rem;
+    padding-top: 4rem;
+  }
+
+  .teaser-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .teaser-main {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }  
+
+
+  .teaser-happy {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .teaser-small {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .teaser-small:nth-of-type(3) .teaser-heading,
+  .teaser-small:nth-of-type(6) .teaser-heading {
+    --color-start: var(--color-two);
+    --color-end: var(--color-three);
+  }
+
+  .teaser-small:nth-of-type(2) .teaser-heading, 
+  .teaser-small:nth-of-type(5) .teaser-heading, 
+  .teaser-small:nth-of-type(8) .teaser-heading {
+    --color-start: var(--color-four);
+    --color-end: var(--color-five);
+  }
+
+  .teaser-small:nth-of-type(4) .teaser-heading,
+  .teaser-small:nth-of-type(7) .teaser-heading {
+    --color-start: var(--color-three);
+    --color-end: var(--color-four);
+  }
+
+}
+
+@media(min-width: 1400px) {
+
+  .teaser-area {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .teaser-heading {
+    --color-gradient: linear-gradient(90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-three));
+  }
+
+  .teaser-small:nth-of-type(2) .teaser-heading, 
+  .teaser-small:nth-of-type(3) .teaser-heading, 
+  .teaser-small:nth-of-type(7) .teaser-heading {
+    --color-start: var(--color-three);
+    --color-end: var(--color-four);
+  }
+
+  .teaser-small:nth-of-type(4) .teaser-heading, 
+  .teaser-small:nth-of-type(8) .teaser-heading {
+    --color-start: var(--color-four);
+    --color-end: var(--color-five);
+  }
+
+  .teaser-small:nth-of-type(5) .teaser-heading {
+    --color-start: var(--color-one);
+    --color-end: var(--color-two);
+  }
+
+  .teaser-small:nth-of-type(6) .teaser-heading {
+    --color-start: var(--color-two);
+    --color-end: var(--color-three);
+  }
+
+  .teaser-happy {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }  
 }

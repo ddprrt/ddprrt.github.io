@@ -29,7 +29,7 @@ module.exports = function(config) {
 
   config.addFilter('abstract', function(input) {
     const $ = cheerio.load(input)
-    return $.html('p:first-child, p:first-child + :not(p)').toString()
+    return $.html('p:first-child, p:first-child + :not(p, h2, h3, ul, ol)').toString()
   })
 
   config.addNunjucksFilter('toLowerCase', function(value) {
