@@ -21,7 +21,7 @@ React and Webpack and might be a good start.
 In this section:
 
 1. [NPM packages to install](#npm-packages-to-install)
-2. [tsconfig.json compiler options](#tsconfigjson-compiler-options)
+2. [tsconfig.json compiler options](#tsconfig.json-compiler-options)
 
 ## NPM Packages to install
 

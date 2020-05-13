@@ -1,5 +1,5 @@
 ---
-title: "TypeScript and React: Context"
+title: "TypeScript and React: Further reading"
 layout: post-typescript
 categories:
 - TypeScript
