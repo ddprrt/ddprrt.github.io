@@ -2,7 +2,7 @@
 .meta {
   color: hsla(265, 60%, 10%, 1);
   color: #4f4444;
-  display: flex;
+  display: block;
   align-items: center;
 }
 
@@ -11,7 +11,6 @@
 }
 
 .meta-highlight {
-  display: block;
   font-weight: 700;
 }
 
@@ -29,4 +28,16 @@
   height: 56px;
   padding: 3px;
   margin-left: 3px;
+}
+
+@media(min-width: 600px) {
+
+  .meta-grow {
+    display: flex;
+  }
+  
+  .meta-grow .meta-highlight {
+    display: block;
+  }
+  
 }

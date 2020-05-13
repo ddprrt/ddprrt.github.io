@@ -34,7 +34,7 @@ img {
 
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   position: relative;
   background-image: linear-gradient(90deg, var(--color-three), var(--color-four), var(--color-five));
   -webkit-background-clip: text;
@@ -50,6 +50,30 @@ h2, h3 {
   margin-top: 3em;
   position: relative;
 }
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+@media(min-width: 700px) {
+
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.17rem;
+  }
+}
+
 
 a {
   color: var(--color-five);

@@ -7,9 +7,17 @@
 }
 
 .grid {
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 4rem;
 }
+
+@media (min-width: 700px) {
+  
+  .grid {
+    margin-top: 5rem;
+  }
+}
+
 
 @media (min-width: 1140px) {
   .grid {

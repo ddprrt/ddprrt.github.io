@@ -2,16 +2,10 @@
   display: grid;
   grid-gap: 2rem;
   background: 
-  linear-gradient(to bottom, transparent, #fff 50%),
-  linear-gradient(to right, 
-    hsl(hue($color-one), 100, 98),
-    hsl(hue($color-two), 100, 98),
-    hsl(hue($color-three), 100, 98),
-    hsl(hue($color-four), 100, 98),
-    hsl(hue($color-five), 100, 98));
-  background-size: 100vw 50vh;
+    linear-gradient(to bottom, hsl(hue($color-three), 100, 98), #fff 50%);
+  background-size: 100vw 30vh;
   background-repeat: no-repeat;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .teaser {
@@ -73,20 +67,22 @@
   align-items: center;
 }
 
-.teaser-small .meta {
-  display: block;
-}
-
-.teaser-small .meta .meta-highlight {
-  display: inline;
-}
-
-
 
 @media(min-width: 800px) {
 
   .teaser-area {
     grid-template-columns: 1fr 1fr 1fr;
+    background: 
+      linear-gradient(to bottom, transparent, #fff 50%),
+      linear-gradient(to right, 
+        hsl(hue($color-one), 100, 98),
+        hsl(hue($color-two), 100, 98),
+        hsl(hue($color-three), 100, 98),
+        hsl(hue($color-four), 100, 98),
+        hsl(hue($color-five), 100, 98));
+    background-size: 100vw 50vh;
+    background-repeat: no-repeat;
+    padding: 2rem;
   }
 
   .teaser-main {

@@ -8,8 +8,7 @@
 
 .bg {
   position: relative;
-  padding: 6rem 0 3rem;
-  background: linear-gradient(180deg, #fef9f9, #fff);
+  padding: 2rem 0 0;
 }
 
 .preamble {
@@ -37,6 +36,14 @@
   font-size: 1.2rem;
   grid-area: content;
 }
+
+@media (min-width: 700px) {
+  
+  .bg {
+    padding: 6rem 0 3rem;
+  }
+}
+
 
 @media (min-width: 1150px) {
   .e-content > :first-child {
