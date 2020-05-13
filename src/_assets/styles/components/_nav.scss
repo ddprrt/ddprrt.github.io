@@ -3,9 +3,6 @@
   background-size: 100vw 10px;
   background-repeat: no-repeat;
   padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   /*border-bottom: 1px solid #eee;*/
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -25,15 +22,12 @@
   margin: 0;
   padding: 0;
   display: none;
-  align-items: center;
-  background-image: var(--gradient);
-  background-size: 100vw;
-  background-position: top right;
   overflow: hidden;
+  background: white;
+  position: absolute;
+  top: 5px; left: 0; right: 0; bottom: 0;
 }
 
-.navbar-item {
-}
 
 .navbar-link {
   text-decoration: none;
@@ -60,7 +54,22 @@
 
 @media(min-width: 800px) {
 
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .navbar {
     display: flex;
+    background-image: var(--gradient);
+    background-size: 100vw;
+    background-position: top right;
+    position: relative;
+    align-items: center;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
   }
 }
