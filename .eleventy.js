@@ -2,6 +2,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
+const cheerio = require('cheerio')
 
 module.exports = function(config) {
 
@@ -20,6 +21,15 @@ module.exports = function(config) {
   config.addFilter('readingTime', function(input) {
     const words = input.split(' ').filter(el => el !== '').length
     return parseInt(words / 200 + 0.5)
+  })
+
+  config.addFilter('keys', function(input) {
+    return JSON.stringify(Object.keys(input))
+  })
+
+  config.addFilter('abstract', function(input) {
+    const $ = cheerio.load(input)
+    return $.html('p:first-child, p:first-child + :not(p)').toString()
   })
 
   config.addNunjucksFilter('toLowerCase', function(value) {

@@ -1,0 +1,72 @@
+---
+layout: default.njk
+title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
+---
+
+{% set posts = collections["posts"] | reverse %}
+
+<h1 class="sr-only">Recent articles</h1>
+
+<div class="home teaser-area">
+  <article class="teaser teaser-main">
+    {% set article = posts[0] %}
+    <span class="breadcrumbs">
+      <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
+    </span>
+    <h2 class="h1 teaser-heading">
+      <a href="{{article.url}}">{{article.data.title}}</a>
+    </h2>
+    <div class="meta">
+      <div class="meta-item">
+        <div class="meta-image-wrapper">
+          <img class="author-image" alt="Stefan Baumgartner" src="https://pbs.twimg.com/profile_images/572642811029426177/GxgFcPtm_400x400.jpeg">
+        </div>
+      </div>
+      <p class="meta-item">
+        Written by  <span class="meta-highlight"><a class="" href="https://twitter.com//ddprrt">@ddprrt</a></span>
+      </p>
+      <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ article.templateContent | readingTime }} minutes</span></p>
+      {% if article.data.categories %}
+      <p class="meta-item">
+        Posted in <span class="meta-highlight">
+          {% for category in article.data.categories %}
+          <a href="/categories/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+          {% endfor %}
+        </span>
+      </p>
+      {% endif %}
+    </div>
+    <div class="e-content abstract">
+      {{ article.templateContent | abstract | safe }}
+    </div>
+    <div class="action-bar">
+      <a class="read-more" href="{{article.url}}">Read more</a>
+    </div>
+  </article>
+  {% for i in range(1, 5) %}
+  <article class="teaser">
+  {% set article = posts[i] %}
+  <span class="breadcrumbs">
+    <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
+  </span>  
+  <h2 class="teaser-heading">
+    <a href="{{article.url}}">{{article.data.title}}</a>
+  </h2>
+  <div class="meta">
+    <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ article.templateContent | readingTime }} minutes</span></p>
+    {% if article.data.categories %}
+    <p class="meta-item">
+      Posted in <span class="meta-highlight">
+        {% for category in article.data.categories %}
+        <a href="/categories/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+        {% endfor %}
+      </span>
+    </p>
+    {% endif %}
+  </div>
+  <div class="action-bar">
+    <a class="read-more" href="{{article.url}}">Read more</a>
+  </div>
+  </article>
+  {% endfor %}
+</div>
