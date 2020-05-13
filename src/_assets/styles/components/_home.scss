@@ -1,5 +1,6 @@
 .teaser-area {
   display: grid;
+  grid-template-columns: 100%;
   grid-gap: 2rem;
   background: 
     linear-gradient(to bottom, hsl(hue($color-three), 100, 98), #fff 50%);
