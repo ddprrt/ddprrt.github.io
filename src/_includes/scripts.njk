@@ -1,0 +1,13 @@
+<script>
+const nav = document.querySelector('.nav')
+
+document.querySelector('#open').addEventListener('click', function(e) {
+  e.preventDefault()
+  nav.classList.add('active')
+})
+
+document.querySelector('#close').addEventListener('click', function(e) {
+  e.preventDefault()
+  nav.classList.remove('active')
+})
+</script>
