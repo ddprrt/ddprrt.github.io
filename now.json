@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/talks-slides/", "destination": "/speaking/" }
+  ]
+}
