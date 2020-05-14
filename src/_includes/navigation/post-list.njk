@@ -1,0 +1,29 @@
+
+  <!-- print the year if necessary -->
+  {% set currYear = post.date | getYear %}
+  {% if years.indexOf(currYear) < 0 %}
+
+  <!-- close the previous list -->
+  {% if firstTime %}
+    {% set firstTime = false %}
+  {% else %}
+</ul>
+  <!-- end close the previous list -->
+  {% endif %}
+    {% set no = years.push(currYear) %}
+<h2 class="list-year">{{currYear}}</h2>
+
+<ul class="article-list">
+  {% endif %}
+  <!-- end print years -->
+
+  <li class="article-list-item">
+    <span class="meta-highlight">{{ post.date | prettyDate }} | 
+    {% if post.data.categories %}
+      {% for category in post.data.categories %}
+        <a class="article-list-category-link" href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+    {% endif %}
+    </span>
+    <a class="article-list-link" href="{{post.url}}">{{ post.data.title }}</a>
+  </li>

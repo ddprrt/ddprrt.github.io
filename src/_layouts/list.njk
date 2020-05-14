@@ -3,13 +3,14 @@ layout: default.njk
 ---
 <article class="wrapper h-entry">
   <div class="bg">
-    {% include "navigation/preamble.njk" %}
+    <div class="preamble main-frame list">
+      <h1>{{title}}</h1>
+    </div>
   </div>
-  <div class="grid main-frame article">
+  <div class="grid main-frame">
     {% include "widgets/happy-stefan.njk" %}
-    <div class="e-content">
+    <div class="list-content">
       {{ content | safe }}
-      {% include "widgets/posting-end.njk" %}
     </div>
   </div>
 </article>

@@ -14,6 +14,10 @@ module.exports = function(config) {
     return new Date().getFullYear()
   })
 
+  config.addFilter('getYear', function(input) {
+    return new Date(input).getFullYear()
+  })
+
   config.addFilter('prettyDate', function(input) {
     return dateformat(new Date(input), 'mmmm d, yyyy')
   })

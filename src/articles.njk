@@ -1,0 +1,13 @@
+---
+layout: list
+title: All articles
+menuActive: articles
+---
+
+{% set years = [] %}
+{% set firstTime = true %}
+{%- for post in collections.posts | reverse -%}
+{% include "navigation/post-list.njk" %}
+
+{% endfor %}
+</ul>

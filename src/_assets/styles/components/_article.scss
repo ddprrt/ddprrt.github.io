@@ -37,6 +37,18 @@
   grid-area: content;
 }
 
+.article {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 700px) {
+  
+  .article {
+    margin-top: 5rem;
+  }
+}
+
 @media (min-width: 700px) {
   
   .bg {
