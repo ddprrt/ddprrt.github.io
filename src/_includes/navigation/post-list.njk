@@ -21,7 +21,7 @@
     <span class="meta-highlight">{{ post.date | prettyDate }} | 
     {% if post.data.categories %}
       {% for category in post.data.categories %}
-        <a class="article-list-category-link" href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+        <a class="article-list-category-link" href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
     {% endif %}
     </span>

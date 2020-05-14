@@ -31,7 +31,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item">
           Posted in <span class="meta-highlight">
             {% for category in article.data.categories %}
-            <a href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            <a href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
             {% endfor %}
           </span>
         </p>
@@ -61,7 +61,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item">
           Posted in <span class="meta-highlight">
             {% for category in article.data.categories %}
-            <a href="/archive/{{ category | toLowerCase }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            <a href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
             {% endfor %}
           </span>
         </p>
