@@ -65,14 +65,9 @@
 
 .navbar-link.active,
 .navbar-link:hover {
-  background: transparent;
-  color: white;
-  z-index: 10;
+  color: var(--color-three);
 }
 
-.navbar-link.active {
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
-}
 
 .navbar-button {
   -webkit-appearance: none;
@@ -117,5 +112,16 @@
 
   .navbar-button {
     display: none !important;
+  }
+
+  .navbar-link.active,
+  .navbar-link:hover {
+    background: transparent;
+    color: white;
+    z-index: 10;
+  }
+
+  .navbar-link.active {
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
   }
 }
