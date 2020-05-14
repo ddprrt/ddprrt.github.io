@@ -5,7 +5,7 @@
   padding-top: 10px;
   /*border-bottom: 1px solid #eee;*/
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  // position: relative;
+  position: relative;
   z-index: 1;
 }
 
@@ -13,6 +13,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav.active {
+  position: static;
 }
 
 .logo {
