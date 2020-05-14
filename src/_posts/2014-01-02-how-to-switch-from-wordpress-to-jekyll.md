@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Remake, Remodel! Part Three: How to switch from Wordpress to Jekyll"
+permalink: /blog/2014/01/02/how-to-switch-from-wordpress-to-jekyll/
 categories:
 - Jekyll
 - Wordpress

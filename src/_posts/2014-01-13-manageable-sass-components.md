@@ -2,6 +2,7 @@
 title: Create manageable Sass components (to use with Bower, etc.)
 layout: post
 published: true
+permalink: /blog/2014/01/13/manageable-sass-components/
 categories:
 - Tools
 - Sass

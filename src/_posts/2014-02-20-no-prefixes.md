@@ -2,6 +2,7 @@
 title: noPrefixes flag in Modernizr
 layout: post
 published: true
+permalink: /blog/2014/02/20/no-prefixes/
 categories:
 - CSS
 - Browser

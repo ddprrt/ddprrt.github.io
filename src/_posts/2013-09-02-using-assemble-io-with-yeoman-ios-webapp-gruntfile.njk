@@ -6,11 +6,7 @@ categories:
 - Workflows
 - Grunt
 - Yeoman
-tags:
-- assemble.io
-- Grunt
-- static site generator
-- Yeoman
+permalink: /blog/2013/09/02/using-assemble-io-with-yeoman-ios-webapp-gruntfile/
 status: publish
 type: post
 published: true
@@ -43,47 +39,49 @@ excerpt_small: "With Effeckt.css I discovered assemble.io, a node-based static s
 
 <p>A basic layout can be like that:</p>
 
-```html
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- the title from the page -->
-    <title>{% raw %}{{title}}{% endraw %}</title>
-</head>
-<body>
-  <!-- Include a nav from partials -->
-  {% raw %}{{>nav}}{% endraw %}
+<pre class="language-html">
+  <code class="language-html">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;!-- the title from the page --&gt;
+    &lt;title&gt;{% raw %}{{title}}{% endraw %}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Include a nav from partials --&gt;
+  {% raw %}{{&gt;nav}}{% endraw %}
 
-  <div class="wrapper">
-    <!-- The body of the page -->
-    {% raw %}{{>body}}{% endraw %}
-  </div>
+  &lt;div class="wrapper"&gt;
+    &lt;!-- The body of the page --&gt;
+    {% raw %}{{&gt;body}}{% endraw %}
+  &lt;/div&gt;
 
-  <!-- Another partial -->
-  {% raw %}{{>footer}}{% endraw %}
+  &lt;!-- Another partial --&gt;
+  {% raw %}{{&gt;footer}}{% endraw %}
 
-</body>
-</html>
-```
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>We already included some partials (navigation and footer), as well as some parts we define later in the pages. Either with parameters (title) or with content (body).</p>
 
 <h3>Pages</h3>
 
-<p>With the whole HTML layout in the layout modules, a page is a lot cleaner. It defines parameters in a sort of setup header, after that there's the content that is included when calling <code class="language-stuff">{{> body}}</code></p>
+<p>With the whole HTML layout in the layout modules, a page is a lot cleaner. It defines parameters in a sort of setup header, after that there's the content that is included when calling <code>\{\{&gt; body\}\}</code></p>
 
-```html
+<pre class="language-html">
+  <code class="language-html">
 ---
 title: About
 ---
-<h1>About everything</h1>
+&lt;h1&gt;About everything&lt;/h1&gt;
 
-<p>Lorem Ipsum is not good for content</p>
-<ul>
+&lt;p&gt;Lorem Ipsum is not good for content&lt;/p&gt;
+&lt;ul&gt;
   ...
-</ul>
-```
+&lt;/ul&gt;
+</code></pre>
 
 <p>Easy!</p>
 
@@ -118,17 +116,19 @@ npm install --save-dev assemble
 
 <p>Open your Gruntfile.js, and add assemble right after defining the module:</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 module.exports = function (grunt) {
   grunt.loadNpmTasks('assemble');
   ...
 };
 
-```
+</code></pre>
 
-<p>With that done, we can do the basic setup for the assemble task. Just add this part anywhere inside the <code class="language-stuff">.initConfig</code> scope:</p>
+<p>With that done, we can do the basic setup for the assemble task. Just add this part anywhere inside the <code >.initConfig</code> scope:</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 
 assemble: {
   options: {
@@ -141,7 +141,7 @@ assemble: {
   ...
 }
 
-```
+</code></pre>
 
 <p>Pretty self-explanatory. We'll define the location of layout, partials, and some other stuff which you can ignore for now. Note that partials can be an array of folders, make use of that.</p>
 
@@ -151,7 +151,8 @@ assemble: {
 
 <p>With the setup being complete, just add a line for the "dist" target. This is yeoman's default target for anything building and distribution related.</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 assemble: {
   options: {
     flatten: true,
@@ -166,13 +167,14 @@ assemble: {
     }
   }
 }
-```
+</code></pre>
 
 <p>We have defined layouts and partials in the setup, the dist-target tells us where pages are located and where the assembled output should land. It's pretty straightforward: Just put all the pages in <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>, the output directory of the build process.</p>
 
 <p><strong>Note:</strong> This can create some conflicts if you're using the <code>htmlmin</code> task, since it tries for itself to copy everything HTML related from <code class="language-stuff">&lt;%= yeoman.app %&gt;/</code> to <code class="language-stuff">&lt;%= yeoman.dist %&gt;/</code>. Just put everything done by assemble into a temporary directory, and let <code class="language-stuff">htmlmin</code> (which strangely never worked for me...) fetch the files from there:</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 assemble: {
   options: {
     flatten: true,
@@ -187,9 +189,10 @@ assemble: {
     }
   }
 }
-```
+</code></pre>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 htmlmin: {
   dist: {
     options: {
@@ -202,7 +205,7 @@ htmlmin: {
     }]
   }
 },
-```
+</code></pre>
 
 <p>Voil&aaucte;, you're done.</p>
 
@@ -214,7 +217,8 @@ htmlmin: {
 
 <p>To achieve that, grunt creates a TMP directory where it puts all compiled stuff into. The server also points to that directory. So for having our HTML files assembled, just add this line of code to our assemble setup:</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 assemble: {
   ...
   server: {
@@ -223,11 +227,12 @@ assemble: {
     }
   }
 }
-```
+</code></pre>
 
 <p>If you start your server the first time, all pages are compiled and available. If you want to update your server anytime a <code class="language-stuff">*.hbs</code> file changes, add the following line to the <code class="language-stuff">watch</code> task:</p>
 
-```javascript
+<pre class="language-javascript">
+  <code class="language-javascript">
 watch: {
   ...
   assemble: {
@@ -238,14 +243,14 @@ watch: {
   }
 },
 ...
-```
+</code></pre>
 
 <p>Which actually just says: If anything changed in our layout/pages/partials folder, execute the assemble task again!</p>
 
 <p>To have the changes displayed without refreshing, tell livereload to have a look at the HTML files compiled into the TMP directory of the server:</p>
 
-```javascript
-
+<pre class="language-javascript">
+  <code class="language-javascript">
 watch: {
   ...
   livereload: {
@@ -259,7 +264,7 @@ watch: {
   }
 },
 
-```
+</code></pre>
 
 <p>And you're done! Enjoy!</p>
 
@@ -269,19 +274,19 @@ watch: {
 
 <p>Peter pointed out that with the current setup, <code>usemin</code> won't be able to run through your code and compile scripts and style files. You can either point the <code>useminPrepare</code> task to one of the template or partial files, or you just direct them to the <code>.tmp</code> directory:</p>
 
-```javascript
-useminPrepare: {
+<pre class="language-javascript">
+  <code class="language-javascript">useminPrepare: {
   options: {
     dest: '<%= yeoman.dist %>'
   },
   html: '.tmp/index.html'
 },
-```
+</code></pre>
 
 <p>Just run <code>useminPrepare</code> after <code>assemble</code>, which I forgot to add anyways. Thanks Sarith for pointing me onto that one!</p>
 
-```javascript
-...
+<pre class="language-javascript">
+  <code class="language-javascript">...
   concurrent: {
     server: [
       'compass',
@@ -308,15 +313,15 @@ grunt.registerTask('build', [
   'copy:dist',
   'usemin'
 ]);
-```
+</code></pre>
 
 <p>Thanks again for the great feedback! I really appreciate it!</p>
 
 
 <p>As Mark Paul pointed out, you need some updates in your usemin configuration, otherwise you won't get any <code>rev</code> updates:</p>
 
-```javascript
-// Performs rewrites based on rev and the useminPrepare configuration
+<pre class="language-javascript">
+  <code class="language-javascript">// Performs rewrites based on rev and the useminPrepare configuration
 ...
 usemin: {
   options: {
@@ -326,7 +331,7 @@ usemin: {
   css: ['<%= config.dist %>/styles/{,*/}*.css']
 }
 ...
-```
+</code></pre>
 
 <p>Thank you for mentioning!</p>
 

@@ -3,12 +3,7 @@ layout: post
 title: 'Caring for Sharing: Social share URLs'
 categories:
 - HTML5
-tags:
-- Facebook
-- Google Plus
-- Pinterest
-- Social Media
-- Twitter
+permalink: /blog/2013/06/17/caring-for-sharing-social-share-urls/
 status: publish
 type: post
 published: true
@@ -20,26 +15,34 @@ excerpt_small: "I truly hate social media share buttons. Especially those plugin
 
 <!--more-->
 <h3>Twitter</h3>
-```html %}http://twitter.com/home?status=Check%20out%20{articleUrl}{% endhighlight
+<pre class="language-void"><code class="language-void">
+  http://twitter.com/home?status=Check%20out%20{articleUrl}
+</code></pre>
 
 <h3>Facebook</h3>
-```html %}http://www.facebook.com/sharer.php?u={articleUrl}{% endhighlight
+<pre class="language-void"><code class="language-void">
+  http://www.facebook.com/sharer.php?u={articleUrl}
+</code></pre>
 
 <h3>LinkedIn</h3>
 
-```htmlhttp://www.linkedin.com/shareArticle?mini=true&url={articleUrl}
+<pre class="language-void"><code class="language-void">
+http://www.linkedin.com/shareArticle?mini=true&url={articleUrl}
   &title={articleTitle}
   &summary={articleSummary}
   &source={articleSource}```
 
 <h3>Google+</h3>
 
-```html %}https://plus.google.com/share?url={articleUrl}{% endhighlight
+<pre class="language-void"><code class="language-void">
+  https://plus.google.com/share?url={articleUrl}
+</code></pre>
 
 <h3>Pinterest</h3>
 
-```htmlhttp://pinterest.com/pin/create/button/?url={articleUrl}
-  &media={articleImage}```
+<pre class="language-void"><code class="language-void">
+http://pinterest.com/pin/create/button/?url={articleUrl}
+</code></pre>
 
 
 <p>Just replace {articleUrl} with the respective location.</p>

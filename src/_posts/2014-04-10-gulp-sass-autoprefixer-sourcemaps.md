@@ -3,6 +3,7 @@ title: "Gulp, Sass, Autoprefixer, Sourcemaps!"
 layout: book
 published: true
 modified: "2015-03-25"
+permalink: /blog/2014/04/10/gulp-sass-autoprefixer-sourcemaps/
 categories:
 - Tools
 - Sass
