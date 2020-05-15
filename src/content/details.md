@@ -2,6 +2,13 @@
 layout: page
 title: Details
 permalink: /speaking/details/
+breadcrumbs:
+-
+  path: /
+  title: Home
+-
+  path: /speaking/
+  title: Speaking
 ---
 
 Here's all you need to bring me on your conference website.
