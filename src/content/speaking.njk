@@ -1,6 +1,7 @@
 ---
 layout: list
 title: Speaking appearances
+permalink: /speaking/
 ---
 
 <div class="e-content">
@@ -12,11 +13,9 @@ title: Speaking appearances
 {% set firstTime = true %}
 {%- for year in talks %}
 <h2 class="list-year">{{year.year}}</h2>
-
+  
 <ul class="article-list">
-  {%- for conference in year.conferences -%}
-  <!-- end print years -->
-
+  {%- for conference in year.conferences | sort(true, false, 'date') -%}
   <li class="article-list-item">
     <span class="meta-highlight">
       {{ conference.date | prettyDate }} | 
