@@ -2,6 +2,15 @@
   year: 2020
   conferences:
     -
+      title: JNation
+      country: Online
+      city: Worldwide
+      date: 2020-06-02
+      url: https://2020.jnation.pt/
+      talks:
+        -
+          title: What TypeScript taught me about JavaScript
+    -
       title: Global Azure Bootcamp Austria 2020
       country: Online
       city: Worldwide

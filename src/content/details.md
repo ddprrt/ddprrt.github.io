@@ -1,13 +1,7 @@
 ---
 layout: page
 title: Details
-categories: []
-tags: []
-status: publish
-type: page
-published: true
-permalink: /details/
-nocomments: true
+permalink: /speaking/details/
 ---
 
 Here's all you need to bring me on your conference website.

@@ -5,25 +5,7 @@
     {%- endfor -%}
   </span>
   <h1>{{ title }}</h1>
-  <div class="meta meta-grow" data-modified="{{ page.date.toUTCString() }}">
-    <div class="meta-item">
-      <div class="meta-image-wrapper">
-        <img class="author-image" alt="Stefan Baumgartner" src="/wp-content/uploads/me.jpg">
-      </div>
-    </div>
-    <p class="meta-item post-date">Published on <span class="meta-highlight">{{ page.date | prettyDate }}</span></p>
-    <p class="meta-item">
-      Written by  <span class="meta-highlight"><a class="" href="https://twitter.com//ddprrt">@ddprrt</a></span>
-    </p>
-    <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ content | readingTime }} minutes</span></p>
-    {% if categories %}
-    <p class="meta-item">
-      More on  <span class="meta-highlight">
-        {% for category in categories %}
-        <a href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
-        {% endfor %}
-      </span>
-    </p>
-    {% endif %}
-  </div>
+  {% if includeMeta %}
+  {% include "navigation/meta.njk" %}
+  {% endif %}
 </div>

@@ -26,3 +26,22 @@ ul.article-list {
 .list-year:first-child {
   margin-top: 0;
 }
+
+.talk-list {
+  list-style-type: none;
+}
+
+.talk-list-item {
+  position: relative;
+}
+
+.talk-list-item:before {
+  content: '';
+  width: 10px;
+  height: 13px;
+  border-bottom: 1px dotted #999;
+  border-left: 1px dotted #999;
+  position: absolute;
+  left: -0.9rem;
+  top: 0.24rem;
+}
