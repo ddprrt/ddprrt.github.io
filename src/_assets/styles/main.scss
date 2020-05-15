@@ -12,7 +12,14 @@ $color-five: #3a86ff;
   --color-four: #8338ec;
   --color-five: #3a86ff;
   --main-font: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+@media(min-width: 500px) {
+
+  :root {
+    font-size: 16px;
+  }
 }
 
 * {
