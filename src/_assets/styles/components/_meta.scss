@@ -4,6 +4,7 @@
   color: #4f4444;
   display: block;
   align-items: center;
+  font-size: 0.8rem;
 }
 
 .meta-item {
@@ -28,6 +29,14 @@
   height: 56px;
   padding: 3px;
   margin-left: 3px;
+}
+
+
+@media (min-width: 500px) {
+
+  .meta {
+    font-size: 1rem;
+  }
 }
 
 @media(min-width: 600px) {

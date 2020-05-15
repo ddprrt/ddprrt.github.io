@@ -42,6 +42,13 @@
   margin-bottom: 4rem;
 }
 
+@media (min-width: 500px) {
+
+  .e-content {
+    font-size: 1.2rem;
+  }
+}
+
 @media (min-width: 700px) {
   
   .article {
@@ -50,10 +57,6 @@
   
   .bg {
     padding: 6rem 0 3rem;
-  }
-
-  .e-content {
-    font-size: 1.2rem;
   }
 }
 
