@@ -27,15 +27,16 @@ excerpt_small: "I'm a huge fan of Emmet. It allows you not only to create markup
 
 <p>I never can remember the values for both the <code>box-shadow</code> and <code>text-shadow</code> properties in CSS. I know them a little, but I always have to try it out first in dev tools. But if I type</p>
 
-<pre><code>bxsd
+<pre class="language-wut"><code class="language-wut">bxsd
 </code></pre>
 
 <p>and hit the tab key, I get this snippet inserted in my CSS code:</p>
 
-```css-webkit-box-shadow: inset hoff voff blur color;
+<pre class="language-css">
+<code class="language-css">-webkit-box-shadow: inset hoff voff blur color;
 -moz-box-shadow: inset hoff voff blur color;
 box-shadow: inset hoff voff blur color;
-```
+</code></pre>
 
 <p>Wohoo! Just need to adapt the values (Sublime does multi-cursor, too) and I'm all done.</p>
 
@@ -43,13 +44,14 @@ box-shadow: inset hoff voff blur color;
 
 <p>Same goes for <code>text-shadow</code>. A simple</p>
 
-<pre><code>txs
+<pre class="language-wut"><code class="language-wut">txs
 </code></pre>
 
 <p>expands to</p>
 
-```csstext-shadow: hoff voff blur #000;
-```
+<pre class="language-css">
+<code class="language-css">text-shadow: hoff voff blur #000;
+</code></pre>
 
 <p>I don't use prefixed <code>box-shadow</code> anymore, but deleting lines is always a lot easier than typing each value on its own.</p>
 
@@ -61,12 +63,12 @@ box-shadow: inset hoff voff blur color;
 
 <p>You know what</p>
 
-<pre><code>p*5>lorem
+<pre class="language-wut"><code class="language-wut">p*5>lorem
 </code></pre>
 
 <p>does? Exactly that. It inserts five paragraphs of Lorem Ipsum.</p>
 
-<pre><code>p*5>ipsum
+<pre class="language-wut"><code class="language-wut">p*5>ipsum
 </code></pre>
 
 <p>does the same. You know that <a href="http://www.youtube.com/watch?v=eB2p4UPXY1k">Lorem Ipsum is fucking evil</a>, and I'm absolutely behind that. But to check if your design holds a massive amount of text, there's no easier way to do that.</p>
@@ -77,26 +79,28 @@ box-shadow: inset hoff voff blur color;
 
 <p>box-sizing is at the moment the only CSS property that I still prefix. It's mostly (I even think just) used for layout tasks, and leaving it unprefixed would cause issues on older Android browsers. Writing all prefixed properties is cumbersome, so before using Emmet, I included a little Sass mixing that came with Bootstrap:</p>
 
-```css@mixin box-sizing($val: border-box) {
+<pre class="language-css">
+<code class="language-css">@mixin box-sizing($val: border-box) {
     -webkit-box-sizing: $val;
     -moz-box-sizing: $val;
     box-sizing: $val;
 }
-```
+</code></pre>
 
 <p>to use with:</p>
 
-```css@include box-sizing();
-```
+<pre class="language-css">
+<code class="language-css">@include box-sizing();
+</code></pre>
 
 <p>It's okay, but I always find mixins kinda laborious, especially if they just prefix stuff. Emmet knows, that if you want to add <code>box-sizing</code> in your CSS, you might just have one and only one desire: Set it to <code>border-box</code> for all available platforms. So if you type:</p>
 
-<pre><code>bz
+<pre class="language-wut"><code class="language-wut">bz
 </code></pre>
 
 <p>it expands to</p>
 
-<pre><code>-webkit-box-sizing: border-box;
+<pre class="language-wut"><code class="language-wut">-webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 </code></pre>
@@ -111,18 +115,20 @@ box-sizing: border-box;
 
 <p>Typing</p>
 
-```csslg(left, #bada55 60%, #c0ffee)
-```
+<pre class="language-css">
+<code class="language-css">lg(left, #bada55 60%, #c0ffee)
+</code></pre>
 
 <p>and hitting tab, results in</p>
 
-```cssbackground-image: -webkit-gradient(linear, 0 0, 100% 0,
+<pre class="language-css">
+<code class="language-css">background-image: -webkit-gradient(linear, 0 0, 100% 0,
   color-stop(0.6, #bada55), to(#c0ffee));
 background-image: -webkit-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -moz-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: -o-linear-gradient(left, #bada55 60%, #c0ffee 100%);
 background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
-```
+</code></pre>
 
 <p>This does not include the W3C proposed specification, well, at least yet. But I think it will be in a future update. For know, it works, at least for me.</p>
 
@@ -130,20 +136,20 @@ background-image: linear-gradient(left, #bada55 60%, #c0ffee 100%);
 
 <p>My most favourite of all is the <code>!</code> shortcut. I found it especially tedious to create the basic HTML structure, so i used a lot of HTML boilerplate code and created some snippets for sublime. Emmet just needs a little</p>
 
-<pre><code>!
+<pre class="language-wut"><code class="language-wut">!
 </code></pre>
 
 <p>at the start of a line in your HTML, and you get this:</p>
 
-```html<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-</html>
-```
+<pre class="language-html"><code class="language-html"><!doctype html>
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>with the cursor pointing to the start of the <code>&lt;title&gt;</code> tag (which is by the way the thing I forget most when creating new sites). This is heavy!</p>
 

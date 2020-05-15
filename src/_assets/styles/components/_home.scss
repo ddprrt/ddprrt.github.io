@@ -35,6 +35,12 @@
   -webkit-text-fill-color: unset;
 }
 
+
+.teaser-heading a {
+  border: none;
+  text-decoration: none;
+}
+
 .teaser-heading:hover a {
   color: var(--color-three);
   text-decoration: none;
