@@ -5,7 +5,7 @@ published: true
 permalink: /real-user-visually-complete/
 categories:
 - Conferences
-- performance
+- Performance
 ---
 
 This is a somewhat personal post today. I'm currently in Las Vegas (which would be a story on its own) to

@@ -4,5 +4,6 @@
   "breadcrumbs": [
     { "title": "Home", "path": "/" },
     { "title": "Articles", "path": "/articles" }
-  ]
+  ],
+  "layout": "post"
 }
