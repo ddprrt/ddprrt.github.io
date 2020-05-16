@@ -11,6 +11,7 @@ breadcrumbs:
   path: /
 - title: Guides
   path: /guides/
+permalink: /typescript-react/
 ---
 
 Welcome to this little primer on TypeScript and React! A match made in heaven!
