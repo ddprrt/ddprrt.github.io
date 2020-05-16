@@ -4,7 +4,9 @@
       <img class="author-image" alt="Stefan Baumgartner" src="/wp-content/uploads/me.jpg">
     </div>
   </div>
+  {% if showDate %}
   <p class="meta-item post-date">Published on <span class="meta-highlight">{{ page.date | prettyDate }}</span></p>
+  {% endif %}
   <p class="meta-item">
     Written by  <span class="meta-highlight"><a class="" href="https://twitter.com//ddprrt">@ddprrt</a></span>
   </p>

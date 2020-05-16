@@ -78,7 +78,9 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/wp-content/')
   config.addPassthroughCopy('./src/manifest.json')
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
-  config.addPassthroughCopy('./src/typescript-react/img/')
+  config.addPassthroughCopy({
+    './src/content/typescript-react/img/': 'typescript-react/img/' 
+  })
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
   config.addPassthroughCopy('./src/icon/')
 

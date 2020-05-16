@@ -1,4 +1,11 @@
 <div class="widget connect">
+  {% if next %}
+  <div class="box blue">
+    <p>
+      👉 Next: <a href="{{next.url}}">{{next.title}}</a>
+    </p>
+  </div>
+  {% endif %}
   <div class="box blue">
     <p>
       🐦 <a href="https://twitter.com/ddprrt">Got a comment? Need help? Shoot a tweet!</a>

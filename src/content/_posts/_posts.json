@@ -6,5 +6,6 @@
     { "title": "Articles", "path": "/articles" }
   ],
   "layout": "post",
-  "permalink": "{{page.fileSlug}}/"
+  "permalink": "/{{page.fileSlug}}/",
+  "showDate": true
 }
