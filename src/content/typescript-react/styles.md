@@ -7,6 +7,7 @@ published: true
 next:
   title: Further reading
   url: ../further-reading/
+date: 2019-07-17
 ---
 
 Is there any topic in the React space that has spawned more controversy than styling?

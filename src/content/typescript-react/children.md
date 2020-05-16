@@ -7,6 +7,7 @@ published: true
 next:
   title: Events
   url: ../events/
+date: 2018-12-12
 ---
 
 JSX elements can be nested, like HTML elements. In React, children elements are accessible via

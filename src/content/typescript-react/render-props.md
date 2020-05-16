@@ -7,6 +7,7 @@ published: true
 next:
   title: Context
   url: ../context/
+date: 2019-07-17
 ---
 
 Render props is, according to the [offical docs](https://reactjs.org/docs/render-props.html), *a technique for sharing code between React components using a prop whose value is a function.*  The idea is to make components composable but being flexible in what to share.

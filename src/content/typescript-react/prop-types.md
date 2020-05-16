@@ -7,6 +7,7 @@ published: true
 next:
   title: Hooks
   url: ../hooks/
+date: 2019-07-17
 ---
 
 React has its own, built-in way of type checking called "prop types". Together with TypeScript this provides

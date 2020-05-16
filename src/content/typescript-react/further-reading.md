@@ -1,9 +1,10 @@
 ---
-title: "TypeScript and React: Context"
+title: "TypeScript and React: Further reading"
 layout: post-typescript
 categories:
 - TypeScript
 published: true
+date: 2018-12-12
 ---
 
 Here's a couple of resources that help you getting more out of TypeScript and React:

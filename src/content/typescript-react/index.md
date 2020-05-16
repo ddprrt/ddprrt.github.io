@@ -12,6 +12,7 @@ breadcrumbs:
 - title: Guides
   path: /guides/
 permalink: /typescript-react/
+date: 2019-07-17
 ---
 
 Welcome to this little primer on TypeScript and React! A match made in heaven!

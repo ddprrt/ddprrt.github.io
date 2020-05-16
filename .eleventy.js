@@ -42,7 +42,6 @@ module.exports = function(config) {
   })
 
   config.addCollection('categories', function (collection) {
-    console.log(collection.items[0])
     const categories = collection.items.filter(Boolean).reverse().reduce((prev, current) => {
       if(current.data.categories) {
         return [...new Set([...current.data.categories, ...prev])]

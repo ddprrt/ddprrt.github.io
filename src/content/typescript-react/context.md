@@ -7,7 +7,7 @@ published: true
 next:
   title: Styles
   url: ../styles/
-
+date: 2019-07-17
 ---
 
 React's context API allows you to share data on a global level. To use it, you need two things:
