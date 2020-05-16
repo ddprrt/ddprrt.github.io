@@ -29,6 +29,7 @@
   height: 56px;
   padding: 3px;
   margin-left: 3px;
+  display: none;
 }
 
 @media(min-width: 600px) {
@@ -41,4 +42,8 @@
     display: block;
   }
   
+  .meta-image-wrapper {
+    display: block;
+  }
+
 }

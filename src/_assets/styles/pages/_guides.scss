@@ -1,0 +1,32 @@
+.guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  margin-bottom: 6rem;
+  grid-gap: 5rem;
+}
+
+.guide-entry {
+  position: relative;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-top: -2rem;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+}
+
+.guide-image {
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 8rem);
+  padding: 2rem 2rem;
+  background-color: hsl(hue($color-five), 30, 20);
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}

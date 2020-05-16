@@ -2,6 +2,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
+const markdownItLazy =  require('markdown-it-image-lazy-loading')
 const cheerio = require('cheerio')
 
 module.exports = function(config) {
@@ -73,7 +74,7 @@ module.exports = function(config) {
       permalink: true,
       permalinkClass: "direct-link",
       permalinkSymbol: "#"
-    })
+    }).use(markdownItLazy)
   )
 
   config.addPassthroughCopy('./src/wp-content/')

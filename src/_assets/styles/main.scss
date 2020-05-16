@@ -100,12 +100,14 @@ a:hover {
 @import "components/meta";
 @import "components/wrapper";
 @import "components/breadcrumbs";
-@import "components/article";
-@import "components/list";
-@import "components/home";
 @import "components/happy-stefan";
 @import "components/button";
 @import "components/footer";
+
+@import "pages/article";
+@import "pages/list";
+@import "pages/home";
+@import "pages/guides";
 
 @import "utility/screenreader";
 
