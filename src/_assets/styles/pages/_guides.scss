@@ -1,8 +1,14 @@
 .guides {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   margin-bottom: 6rem;
   grid-gap: 5rem;
+}
+
+@media (min-width: 500px) {
+
+  .guides {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
 }
 
 .guide-entry {
