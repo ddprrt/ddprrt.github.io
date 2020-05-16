@@ -1,4 +1,10 @@
 -
+  date: 2020-05-16
+  title: Why your private cloud is probably a bad ida
+  speaker: Sam Newman
+  youtubeId: MbaPtzSuQII
+  description: I've been trying to get Sam to one of my conferences for ages. And this video again shows why. With a certain tongue-in-cheek humor he tells us why Kubernetes is to blame for people picking a private cloud over a public one of the big three cloud players, and gives valid reason why someone shouldn't do their cloud stuff on their own. Fun session!
+-
   date: 2020-05-15
   title: Design Microservice Architectures the Right Way
   speaker: Michael Bryzek
