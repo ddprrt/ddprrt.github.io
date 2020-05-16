@@ -51,6 +51,7 @@ module.exports = function(config) {
     let cats = {}
     categories.forEach(el => {
       cats[el] = Array.from(collection.items)
+        .filter(item => !item.data.hideFromList)
         .filter(item => item.data.categories && item.data.categories.includes(el))
         .sort((a, b) => {
           return a.date - b.date

@@ -6,5 +6,6 @@
     { "title": "Guides", "path": "/guides/" },
     { "title": "TypeScript & React", "path": "/typescript-react/" }
   ],
-  "permalink": "/typescript-react/{{page.fileSlug}}/"
+  "permalink": "/typescript-react/{{page.fileSlug}}/",
+  "hideFromList": true
 }
