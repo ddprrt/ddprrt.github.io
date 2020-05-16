@@ -33,6 +33,7 @@
 .movie-nav {
   grid-area: list;
   position: relative;
+  border-left: 1px dotted rgba(0, 0, 0, 0.2);
 }
 
 .movie-list {
