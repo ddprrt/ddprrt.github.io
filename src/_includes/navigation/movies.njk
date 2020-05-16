@@ -1,0 +1,13 @@
+<ul class="movie-list">
+{% for movie in cinema %}
+  <li class="movie-entry">
+    {% set movieSlug = movie.title | slug %}
+    <a class="movie-link{% if page.url.includes(movieSlug) %} active{% endif %}" href="/cinema/{{ movie.title | slug}}">
+    <span class="meta-highlight">{{ movie.date | prettyDate }}</span>
+    <span class="movie-info">
+      {{ movie.speaker }}: <strong>{{ movie.title }}</strong>
+    </span>
+    </a>
+  </li>
+{% endfor %}
+</ul>

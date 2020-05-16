@@ -1,0 +1,21 @@
+---
+layout: default.njk
+---
+<div class="cinema">
+  <div class="movie">
+    <div class="aspect ratio-16-to-9">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{movie.youtubeId}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="movie-desc">
+    <h1>{{ movie.speaker }}: {{ movie.title }}</h1>
+    <div class="e-content movie-e-content">
+      <p>
+        {{ movie.description }}
+      </p>
+    </div>
+  </div>
+  <div class="movie-nav">
+    {% include "navigation/movies.njk" %}
+  </div>
+</div>
