@@ -15,7 +15,7 @@
   list-style-type: none;
 }
 
-@media(max-width: 599px) {
+@media(max-width: 1000px) {
 
   .stop-aspect-small {
     padding-bottom: 0 !important;
@@ -26,6 +26,7 @@
     position: relative !important;
   }
 }
+
 @media(min-width: 600px) {
 
   .cinema {
