@@ -10,4 +10,22 @@ document.querySelector('#close').addEventListener('click', function(e) {
   e.preventDefault()
   nav.classList.remove('active')
 })
+
+const movieSidebar = document.querySelector('.movie-list')
+const activeCinema = document.querySelector('a[href*=cinema].active')
+
+window.addEventListener('beforeunload', () => {
+  if(activeCinema && movieSidebar) {
+    sessionStorage.setItem('cinemaPos', movieSidebar.scrollTop)
+  } else {
+    sessionStorage.setItem('cinemaPos', 0)
+  }
+})
+
+const cineTop = sessionStorage.getItem('cinemaPos')
+
+if(cineTop && movieSidebar) {
+  movieSidebar.scrollTop = parseInt(cineTop, 10)
+}
+
 </script>
