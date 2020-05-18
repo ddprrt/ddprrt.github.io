@@ -1,0 +1,49 @@
+---
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+permalink: /teasers/{{ pagination.items[0].data.permalink | slug  }}.svg
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1452px" height="843px" viewBox="0 0 1452 843" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#ffffff" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFBE0B" offset="0%"></stop>
+            <stop stop-color="#FB5607" offset="24.7360642%"></stop>
+            <stop stop-color="#FF006E" offset="51.0029561%"></stop>
+            <stop stop-color="#8338EC" offset="78.8297086%"></stop>
+            <stop stop-color="#3A86FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-1.11022302e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FF006E" offset="0%"></stop>
+            <stop stop-color="#8338EC" offset="0.0316722973%"></stop>
+            <stop stop-color="#3A86FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(6.000000, 6.000000)">
+            <rect id="Rectangle" stroke="url(#linearGradient-2)" stroke-width="12" fill="url(#linearGradient-1)" x="0" y="0" width="1440" height="831"></rect>
+            <text id="TypeScript-+-React:" fill="url(#linearGradient-3)" font-family="Arial-BoldMT, Arial" font-size="80" font-weight="bold" line-spacing="101">
+                {% for line in post.data.title | splitlines %}
+                <tspan x="81" y="{{247 + loop.index0 * 101}}">{{line}}</tspan>
+                {% endfor %}
+            </text>
+            <text id="🔥-New-article!-Marc" font-family="AppleColorEmoji, Apple Color Emoji" font-size="36" font-weight="normal" line-spacing="101" fill="#080828">
+                <tspan x="81" y="110">🔥</tspan>
+                <tspan x="117" y="110" font-family="Arial-BoldMT, Arial" font-weight="bold">  New article!  {{ post.date | prettyDate }} </tspan>
+                <tspan x="81" y="211" font-family="Arial-BoldMT, Arial" font-size="24" font-weight="bold"></tspan>
+            </text>
+            <text id="👉-fettblog.eu" font-family="AppleColorEmoji, Apple Color Emoji" font-size="36" font-weight="normal" line-spacing="101" fill="#080828">
+                <tspan x="1168.02539" y="744">👉</tspan>
+                <tspan x="1204.02539" y="744" font-family="Arial-BoldMT, Arial" font-weight="bold"> fettblog.eu</tspan>
+                <tspan x="1398" y="744" font-family="Arial-BoldMT, Arial" font-size="24" font-weight="bold"></tspan>
+            </text>
+        </g>
+    </g>
+</svg>
