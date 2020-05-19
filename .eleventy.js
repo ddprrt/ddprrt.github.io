@@ -23,6 +23,10 @@ module.exports = function(config) {
     return dateformat(new Date(input), 'mmmm d, yyyy')
   })
 
+  config.addFilter('toISO', function(input) {
+    return new Date(input).toISOString()
+  })
+
   config.addFilter('readingTime', function(input) {
     const words = input.split(' ').filter(el => el !== '').length
     return parseInt(words / 200 + 0.5)
@@ -52,6 +56,18 @@ module.exports = function(config) {
     const $ = cheerio.load(input)
     // 
     return $.html('p:first-child, p:first-child + :not(h2, h3, ul, ol)').toString()
+  })
+
+
+  config.addFilter('excerpt', function(input) {
+    const $ = cheerio.load(input)
+    // 
+    return $.html('p:first-child').toString()
+  })
+
+
+  config.addShortcode('now', function() {
+    return new Date().toISOString()
   })
 
   config.addNunjucksFilter('toLowerCase', function(value) {

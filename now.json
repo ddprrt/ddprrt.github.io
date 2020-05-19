@@ -1,6 +1,8 @@
 {
   "redirects": [
     { "source": "/talks-slides/", "destination": "/speaking/" },
-    { "source": "/details/", "destination": "/speaking/details/" }
+    { "source": "/details/", "destination": "/speaking/details/" },
+    { "source": "/feed/", "destination": "/feed.xml" },
+    { "source": "/atom.xml", "destination": "/feed.xml" }
   ]
 }
