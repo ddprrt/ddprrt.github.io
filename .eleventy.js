@@ -1,4 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster')
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
@@ -94,6 +95,7 @@ module.exports = function(config) {
   })
 
   config.addPlugin(syntaxHighlight)
+  config.addPlugin(cacheBuster({ outputDirectory: './dist'}))
 
   config.setLibrary(
     'md',
