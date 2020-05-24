@@ -15,17 +15,6 @@
   list-style-type: none;
 }
 
-@media(max-width: 1000px) {
-
-  .stop-aspect-small {
-    padding-bottom: 0 !important;
-    height: auto !important;
-  }
-
-  .stop-aspect-small > * {
-    position: relative !important;
-  }
-}
 
 @media(min-width: 600px) {
 
@@ -113,15 +102,10 @@
 }
 
 .note {
-  line-height: 1.7em;
-  font-family: 'Source Serif Pro', -apple-system;
-  color: #fff;
-  font-size: 1.2rem;
-  background-color: #565656;
-  font-style: italic;
-  text-align: center;
-  padding: 4rem;
+  font-size: 4em;
+  filter: grayscale(100%);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: hsl(hue($color-one), 50, 30);
 }
