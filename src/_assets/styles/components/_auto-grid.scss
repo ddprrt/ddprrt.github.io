@@ -5,7 +5,14 @@
 }
 
 .auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: 100%;
+}
+
+@media(min-width: 600px) {
+
+  .auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
 }
 
 @media(min-width: 800px) {
