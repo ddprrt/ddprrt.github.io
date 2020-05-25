@@ -80,8 +80,22 @@
   align-items: center;
 }
 
+@media (min-width: 360px) and (max-width: 799px) {
 
-@media(min-width: 800px) {
+  .teaser-happy {
+    position: absolute;
+    top: 18rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .abstract {
+    padding-top: 11rem;
+  }
+}
+
+@media (min-width: 800px) {
 
   .teaser-area {
     grid-template-columns: 1fr 1fr 1fr;
