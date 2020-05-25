@@ -1,0 +1,19 @@
+{% set movie = cinema | first %}
+<div class="element-cover element-middle no-padding">
+  <a href="/cinema/{{movie.title | slug }}" rel="nofollow noopener" class="element-cover-link">
+    <img src="http://i3.ytimg.com/vi/{{movie.youtubeId}}/mqdefault.jpg" loading="lazy" alt="Cover art" class="element-cover-image fit">
+  </a>
+</div>
+<div class="element-content">
+  <span class="element-highlight meta-highlight">Cinema</span>
+  <h2>{{ movie.title }}</h2>
+  <div class="e-content">
+  <p>{{ movie.description | safe }}</p>
+    <div class="box blue">
+    <span aria-hidden="true">🍿</span>
+      <a href="/cinema/{{movie.title | slug }}" target="_blank" rel="nofollow noopener">
+        Open in Cinema
+      </a>
+    </div>
+  </div>
+</div>

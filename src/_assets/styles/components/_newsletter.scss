@@ -15,3 +15,13 @@
   margin: 4rem auto;
   position: relative;
 }
+
+
+.newsletter-widget {
+  text-align: center;
+  background: radial-gradient(
+    hsl(hue($color-two), 100, 97),
+    hsl(hue($color-three), 100, 97),
+    rgba(255, 255, 255, 0) 70%
+  )
+}

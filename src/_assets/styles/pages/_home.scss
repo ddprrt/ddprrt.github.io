@@ -1,8 +1,5 @@
 .teaser-area {
-  display: grid;
   grid-template-columns: 100%;
-  grid-gap: 2rem;
-  padding: 1.5rem;
   position: relative;
   z-index: 1;
 }
@@ -79,13 +76,6 @@
   align-items: center;
 }
 
-.cover {
-  width: 120px;
-  float: right;
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
 
 @media(min-width: 800px) {
 
@@ -158,11 +148,11 @@
     padding: 2rem;
   }
 
-  .element {
-    padding: 2rem;
+  .home {
+    padding-top: 5rem;
   }
 
-  .home {
+  .callout + .grid {
     padding-top: 5rem;
   }
 

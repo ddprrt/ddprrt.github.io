@@ -7,7 +7,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
 
 <h1 class="sr-only">Recent articles</h1>
 
-<div class="home teaser-area">
+<div class="home grid teaser-area">
   <article class="teaser teaser-main">
     {% set article = posts[0] %}
     <div class="teaser-content">
@@ -83,16 +83,16 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
 </div>
 
 
-<section class="teaser-area">
-  <div class="element span-2">
-    <h2>Stay up to date!</h2>
-    <p class="e-content">
-      3-4 updates per month, spam-free, hand-crafted. Our newsletter gives you links, updates on fettblog.eu, conference talks, coding soundtracks, and much more.
-    </p>
-    {% include "widgets/newsletter.njk" %}
-  </div>
-  <div class="element span-2">
+<section class="auto-fill grid">
+  <div class="element">
     {% include "widgets/soundtrack.njk" %}
+  </div>
+  <div class="element">
+    {% include "widgets/cinema.njk" %}
+  </div>
+  <div class="element">
+    {% include "widgets/guides.njk" %}
   </div>
 </section>
 
+{% include "widgets/full-newsletter-widget.njk" %}
