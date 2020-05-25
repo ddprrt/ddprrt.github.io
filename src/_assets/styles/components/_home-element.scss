@@ -36,6 +36,7 @@
   filter: grayscale(1);
   mix-blend-mode: screen;
   object-fit: scale-down;
+  transition: transform 2s ease;
 }
 
 .no-padding {
@@ -56,6 +57,7 @@
 
 .element-cover-link:hover .element-cover-image{
   filter: grayscale(0);
+  transform: scale(1.01);
   mix-blend-mode: normal;
 }
 
