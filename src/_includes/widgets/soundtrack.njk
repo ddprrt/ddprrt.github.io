@@ -7,14 +7,10 @@
 <div class="element-content">
   <span class="element-highlight meta-highlight">Coding soundtrack</span>
   <h2>{{ soundtrack.data.title }}</h2>
-  <div class="e-content">
-  {{ soundtrack.templateContent | safe }}
-    <div class="box blue">
-    <span aria-hidden="true">👨‍🎤</span>
-      <a href="{{soundtrack.data.spotify}}" target="_blank" rel="nofollow noopener">
-      
-        Open in Spotify
-      </a>
-    </div>
+  <div class="action-bar">
+    <a href="{{soundtrack.data.spotify}}" target="_blank" rel="nofollow noopener" class="read-more custom-emoji">
+      <span aria-hidden="true">👨‍🎤</span>
+      Open in Spotify
+    </a>
   </div>
 </div>
