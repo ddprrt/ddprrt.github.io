@@ -82,6 +82,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     margin: 2rem;
   }
+
+  .element,
+  .element-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .element-content {
+    flex-grow: 1;
+  }
 }
 
 
@@ -93,6 +104,15 @@
 
   .element-content {
     padding: 2rem;
+  }
+}
+
+@media(min-width: 1300px) {
+
+  .element-grid {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
