@@ -1,4 +1,4 @@
-.grid {
+.raster {
   display: grid;
   grid-gap: 2rem;
   padding: 1.5rem;
@@ -17,7 +17,7 @@
 
 @media(min-width: 800px) {
 
-  .grid {
+  .raster {
     padding: 2rem;
   }
 }
