@@ -12,5 +12,9 @@
         { "key" : "X-XSS-Protection", "value" : "1; mode=block"}
       ]
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ]
 }
