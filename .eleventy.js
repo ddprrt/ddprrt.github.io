@@ -60,9 +60,9 @@ module.exports = function(config) {
 
 
   config.addFilter('excerpt', function(input) {
-    const $ = cheerio.load(input)
-    // 
-    return $.html('p:first-child').toString()
+    const firstParagraph = input.indexOf('<p>')
+    const firstParagraphEnd = input.indexOf('</p>')
+    return `<p>${input.substring(firstParagraph + 3, firstParagraphEnd)}</p>`
   })
 
 
