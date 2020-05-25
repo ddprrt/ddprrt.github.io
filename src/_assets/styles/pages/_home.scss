@@ -2,13 +2,16 @@
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 2rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.home {
   background: 
     linear-gradient(to bottom, hsl(hue($color-three), 100, 98), #fff 50%);
   background-size: 100vw 30vh;
   background-repeat: no-repeat;
-  padding: 1.5rem;
-  position: relative;
-  z-index: 1;
 }
 
 .teaser {
@@ -76,11 +79,22 @@
   align-items: center;
 }
 
+.cover {
+  width: 120px;
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
 @media(min-width: 800px) {
 
   .teaser-area {
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
+  }
+
+  .home {
     background: 
       linear-gradient(to bottom, rgba(255, 255, 255, 0.01), #fff 70%),
       linear-gradient(to right, 
@@ -91,7 +105,6 @@
         hsl(hue($color-five), 100, 98));
     background-size: 100vw 50vh;
     background-repeat: no-repeat;
-    padding: 2rem;
   }
 
   .teaser-main {
@@ -133,6 +146,10 @@
     --color-start: var(--color-four);
     --color-end: var(--color-five);
   }
+
+  .span-2 {
+    grid-column: span 2;
+  }
 }
 
 @media(min-width: 1090px) {
@@ -141,9 +158,16 @@
     padding: 2rem;
   }
 
+  .element {
+    padding: 2rem;
+  }
+
+  .home {
+    padding-top: 5rem;
+  }
+
   .teaser-area {
     grid-template-columns: 1fr 1fr 1fr;
-    padding-top: 5rem;
   }
 
   .teaser-main {

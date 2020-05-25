@@ -79,5 +79,20 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
 </div>
 
 <div class="callout">
-  <a href="/articles" class="button"><span class="effect">💡</span> Want more? Check out all {{ collections["posts"] | length }} articles</a>
+  <a href="/articles" class="button"><span aria-hidden="true" class="effect">💡</span> Want more? Check out all {{ collections["posts"] | length }} articles</a>
 </div>
+
+
+<section class="teaser-area">
+  <div class="element span-2">
+    <h2>Stay up to date!</h2>
+    <p class="e-content">
+      3-4 updates per month, spam-free, hand-crafted. Our newsletter gives you links, updates on fettblog.eu, conference talks, coding soundtracks, and much more.
+    </p>
+    {% include "widgets/newsletter.njk" %}
+  </div>
+  <div class="element span-2">
+    {% include "widgets/soundtrack.njk" %}
+  </div>
+</section>
+
