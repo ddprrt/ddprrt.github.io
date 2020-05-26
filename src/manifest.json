@@ -1,20 +1,20 @@
 {
     "dir": "ltr",
     "lang": "en",
-    "name": "front-end technology talk",
+    "name": "fettblog.eu",
     "scope": "/",
     "display": "standalone",
     "start_url": "https://fettblog.eu/",
     "short_name": "fettblog",
-    "theme_color": "dodgerblue",
-    "description": "Blog with articles on all things web development: CSS, JS, Node, HTML, A11Y",
+    "theme_color": "#3a86ff",
+    "description": "Blog with articles on all things web development",
     "orientation": "natural",
-    "background_color": "dodgerblue",
+    "background_color": "#3a86ff",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/icon/apple-touch-icon.png",
+            "src": "/icon/apple-icon-180x180.png",
             "sizes": "180x180",
             "type": "image/png"
         },

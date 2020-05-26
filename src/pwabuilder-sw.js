@@ -9,7 +9,7 @@ var preLoad = function(){
   console.log('[PWA Builder] Install Event processing');
   return caches.open('pwabuilder-offline').then(function(cache) {
     console.log('[PWA Builder] Cached index and offline page during Install');
-    return cache.addAll(['/offline.html', '/index.html']);
+    return cache.addAll(['/404.html.html', '/index.html']);
   });
 }
 
@@ -46,7 +46,7 @@ var returnFromCache = function(request){
   return caches.open('pwabuilder-offline').then(function (cache) {
     return cache.match(request).then(function (matching) {
      if(!matching || matching.status == 404) {
-       return cache.match('offline.html')
+       return cache.match('404.html')
      } else {
        return matching
      }
