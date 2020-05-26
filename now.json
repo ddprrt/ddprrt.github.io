@@ -3,7 +3,9 @@
     { "source": "/talks-slides/", "destination": "/speaking/" },
     { "source": "/details/", "destination": "/speaking/details/" },
     { "source": "/feed/", "destination": "/feed.xml" },
-    { "source": "/atom.xml", "destination": "/feed.xml" }
+    { "source": "/atom.xml", "destination": "/feed.xml" },
+    { "source": "/watching-list/", "destination": "/cinema/" },
+    { "source": "/readiung-list/", "destination": "/books/" }
   ],
   "headers": [
     { "source": "/(.*)", "headers" : [
