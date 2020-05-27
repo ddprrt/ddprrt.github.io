@@ -72,7 +72,7 @@ h3 {
     font-size: 2.5rem;
   }
 
-  h2 {
+  h2, .h2 {
     font-size: 1.5rem;
   }
 
@@ -108,6 +108,7 @@ a:hover {
 @import "components/home-element";
 @import "components/auto-grid";
 @import "components/aside";
+@import "components/teaser-row";
 
 @import "pages/article";
 @import "pages/list";

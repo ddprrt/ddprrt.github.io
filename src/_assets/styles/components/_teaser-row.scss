@@ -1,0 +1,27 @@
+.teaser-row {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.article-teasers {
+  padding: 2rem;
+}
+
+.teaser-more.teaser-more {
+  padding: 0;
+}
+
+
+.teaser-more.teaser-more .teaser-heading {
+  --color-start: var(--color-four);
+  --color-end: var(--color-five);
+}
+
+
+@media(min-width: 1400px) {
+
+  .article-teasers{
+    padding: 0
+  }
+}
