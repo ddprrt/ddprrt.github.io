@@ -8,6 +8,7 @@ next:
   title: Children
   url: ../children/
 date: 2018-12-12
+order: 1
 ---
 
 Components are at the heart of React. Let's see what we can do to get better error handling and tooling for them!

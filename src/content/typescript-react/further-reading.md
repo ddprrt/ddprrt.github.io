@@ -5,6 +5,7 @@ categories:
 - TypeScript
 published: true
 date: 2018-12-12
+order: 9
 ---
 
 Here's a couple of resources that help you getting more out of TypeScript and React:

@@ -8,6 +8,7 @@ next:
   title: Prop Types
   url: ../prop-types/
 date: 2018-12-17
+order: 3
 ---
 
 Web apps are really boring if you don't interact with them. Events are key, and TypeScript's React typings

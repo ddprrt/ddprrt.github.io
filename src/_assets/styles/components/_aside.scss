@@ -2,9 +2,35 @@
   grid-area: menu;
 }
 
-.sidebar-book {
+.sidebar-element {
   max-width: 300px;
   margin: 0 auto;
+}
+
+.sidebar-heading {
+  margin-top: 0;
+}
+
+.sidebar-list {
+  margin-left: 1rem;
+}
+
+.sidebar-list-item.active {
+  position: relative;
+  list-style-type: none;
+}
+
+.sidebar-list-item.active:before {
+  content: '👉';
+  position: absolute;
+  margin-left: -1.7rem;
+  margin-top: -5px;
+  display: block;
+}
+
+.sidebar-list-item.active a {
+  color: var(--color-three);
+  font-style: italic;
 }
 
 .sidebar-book-cover {

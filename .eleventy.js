@@ -36,6 +36,16 @@ module.exports = function(config) {
     return JSON.stringify(Object.keys(input))
   })
 
+  config.addFilter('getGuide', function(tags) {
+    return tags.filter(elem => elem !== 'guides')
+      .filter(elem => elem.startsWith('guides'))
+      .pop()
+  })
+
+  config.addFilter('byOrder', function(coll) {
+    return coll.sort((a, b) => a.data.order - b.data.order)
+  })
+
   config.addFilter('splitlines', function(input) {
     const parts = input.split(' ')
     const lines = parts.reduce(function(prev, current) {

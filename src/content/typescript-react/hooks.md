@@ -8,6 +8,7 @@ next:
   title: Render props and child render props
   url: ../render-props/
 date: 2019-07-17
+order: 5
 ---
 
 Hooks have been announced at React Conf 2018. Check out [this page](https://reactjs.org/docs/hooks-intro.html) for more

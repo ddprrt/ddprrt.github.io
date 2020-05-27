@@ -1,5 +1,5 @@
 ---
-title: "TypeScript and React: Further reading"
+title: "TypeScript and React: Context"
 layout: post-typescript
 categories:
 - TypeScript
@@ -8,6 +8,7 @@ next:
   title: Styles
   url: ../styles/
 date: 2019-07-17
+order: 7
 ---
 
 React's context API allows you to share data on a global level. To use it, you need two things:

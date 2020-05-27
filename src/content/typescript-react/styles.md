@@ -8,6 +8,7 @@ next:
   title: Further reading
   url: ../further-reading/
 date: 2019-07-17
+order: 8
 ---
 
 Is there any topic in the React space that has spawned more controversy than styling?

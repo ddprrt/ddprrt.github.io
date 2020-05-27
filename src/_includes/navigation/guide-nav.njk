@@ -1,0 +1,17 @@
+{% if tags and 'guides' in tags %}
+<section class="sidebar-element">
+{% set coll =  tags | getGuide %}
+  {% if collections[coll] %}
+  <h3 class="sidebar-heading">Table of contents</h3>
+  <ol class="sidebar-list">
+    {% for post in collections[coll] | byOrder %}
+    {% if not post.data.excludeFromTOC %}
+      <li class="sidebar-list-item{% if page.url === post.url %} active{% endif %}">
+        <a href="{{post.url}}">{{post.data.title | replace(post.data.guideName, "") | replace(": ", "") }}</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ol>
+  {% endif %}
+</section>
+{% endif %}

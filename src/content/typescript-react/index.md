@@ -13,6 +13,7 @@ breadcrumbs:
   path: /guides/
 permalink: /typescript-react/
 date: 2019-07-17
+excludeFromTOC: true
 ---
 
 Welcome to this little primer on TypeScript and React! A match made in heaven!
