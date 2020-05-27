@@ -1,0 +1,30 @@
+.sidebar {
+  grid-area: menu;
+}
+
+.sidebar-book {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.sidebar-book-cover {
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+a.sidebar-book-cover-link {
+  border: none;
+  display: block;
+  transition: transform 5s ease;
+}
+
+.sidebar-book-cover-link:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.sidebar-book-content {
+  margin: 2rem auto;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.4;
+}

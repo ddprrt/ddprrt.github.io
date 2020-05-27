@@ -1,9 +1,12 @@
 .book-cover {
   width: 100%;
-  max-width: 300px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: block;
   margin-top: 1rem;
+}
+
+.book-page-cover {
+  max-width: 300px;
 }
 
 .book-article {

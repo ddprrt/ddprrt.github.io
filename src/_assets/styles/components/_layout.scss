@@ -8,6 +8,7 @@
 
 
 @media (min-width: 1140px) {
+
   .grid {
     display: grid;
     grid-gap: 4rem;
@@ -15,5 +16,9 @@
     grid-template-areas: 
       "content happy"
       "content menu";
+  }
+
+  .article {
+    grid-template-rows: 150px 1fr;
   }
 }
