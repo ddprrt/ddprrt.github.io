@@ -2,7 +2,7 @@
 <section class="sidebar-element">
 {% set coll =  tags | getGuide %}
   {% if collections[coll] %}
-  <h3 class="sidebar-heading">Table of contents</h3>
+  <h4 class="sidebar-heading">Table of contents</h4>
   <ol class="sidebar-list">
     {% for post in collections[coll] | byOrder %}
     {% if not post.data.excludeFromTOC %}

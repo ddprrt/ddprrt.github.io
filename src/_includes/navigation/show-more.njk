@@ -6,7 +6,7 @@
 {% set coll = showMore %}
 {% set showName = coll + ": "%}
   {% if collections.categories and collections.categories[coll] %}
-  <h3 class="sidebar-heading">More on <a href="/archive/{{showMore | slug}}">{{showMore}}</a></h3>
+  <h4 class="sidebar-heading">More on <a href="/archive/{{showMore | slug}}">{{showMore}}</a></h4>
   <ol class="sidebar-list">
     {% for post in collections.categories[coll] | reverse %}
     {% if page.url !== post.url  and loop.index0 < 6 %}
