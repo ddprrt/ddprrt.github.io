@@ -14,8 +14,9 @@
 
 
 .teaser-more.teaser-more .teaser-heading {
-  --color-start: var(--color-four);
-  --color-end: var(--color-five);
+  --color-gradient: linear-gradient(90deg,
+      var(--color-four),
+      var(--color-five));
 }
 
 
