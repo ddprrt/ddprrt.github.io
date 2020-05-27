@@ -2,14 +2,6 @@
   grid-area: menu;
 }
 
-.sidebar-element {
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.sidebar-heading {
-  margin-top: 0;
-}
 
 .sidebar-list {
   margin-left: 1rem;
@@ -53,4 +45,16 @@ a.sidebar-book-cover-link {
   font-style: italic;
   text-align: center;
   line-height: 1.4;
+}
+
+@media (min-width: 1140px) {
+
+  .sidebar-heading {
+    margin-top: 0;
+  }
+
+  .sidebar-element {
+    max-width: 300px;
+    margin: 0 auto;
+  }  
 }
