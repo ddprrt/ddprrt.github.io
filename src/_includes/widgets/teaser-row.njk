@@ -7,7 +7,7 @@
 {% set showName = coll + ": "%}
 {% if collections.categories and collections.categories[coll] %}
 <section class="main-frame article-teasers">
-  <h2>More articles on <a href="/archive/{{showMore | slug}}">{{showMore}}</a></h2>
+  <h2 class="sr-only">More articles on <a href="/archive/{{showMore | slug}}">{{showMore}}</a></h2>
   <article class="teaser-row">
   {% set myindex = 0 %}
   {% for post in collections.categories[coll] | reverse %}
