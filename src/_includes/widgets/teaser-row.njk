@@ -24,6 +24,9 @@
         <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ post.templateContent | readingTime }} minutes</span></p>
       </div>
     </div>
+    <div class="action-bar">
+      <a class="read-more" href="{{article.url}}">Read more</a>
+    </div>
   </div>
   {% endif %}
   {% endfor %}
