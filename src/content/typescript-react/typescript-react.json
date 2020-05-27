@@ -8,5 +8,6 @@
   ],
   "permalink": "/typescript-react/{{page.fileSlug}}/",
   "hideFromList": true,
-  "guideName": "TypeScript and React"
+  "guideName": "TypeScript and React",
+  "noSidebar": true
 }

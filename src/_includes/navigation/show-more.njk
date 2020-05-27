@@ -1,0 +1,21 @@
+{% if not noSidebar %}
+{% if not showMore and categories %}
+{% set showMore = categories[0] %}
+{% endif %}
+<section class="sidebar-element">
+{% set coll = showMore %}
+{% set showName = coll + ": "%}
+  {% if collections.categories and collections.categories[coll] %}
+  <h3 class="sidebar-heading">More on <a href="/archive/{{showMore | slug}}">{{showMore}}</a></h3>
+  <ol class="sidebar-list">
+    {% for post in collections.categories[coll] | reverse %}
+    {% if page.url !== post.url  and loop.index0 < 6 %}
+      <li class="sidebar-list-item">
+                <a href="{{post.url}}">{{post.data.title | replace(showName, "") }}</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ol>
+  {% endif %}
+</section>
+{% endif %}

@@ -7,6 +7,7 @@ categories:
 published: true
 permalink: /typescript-react-typeing-custom-hooks/
 title: "TypeScript + React: Typing custom hooks with tuple types"
+showMore: TypeScript
 ---
 
 I recently stumbled upon a question on Reddit's [LearnTypeScript](https://www.reddit.com/r/LearnTypescript/) subreddit regarding custom React hooks. A user wanted to create a toggle custom hook, and stick to the naming convention as regular React hooks do: Returning an array that you destructure when calling the hook. For example `useState`:
