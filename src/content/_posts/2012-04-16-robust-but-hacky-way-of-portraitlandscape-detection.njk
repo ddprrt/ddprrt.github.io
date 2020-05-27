@@ -16,7 +16,7 @@ excerpt_small: "On mobile devices it's pretty easy (and in some cases also prett
 <p>On mobile devices it's pretty easy (and in some cases also pretty cool) to change the look of your website respectively to the orientation of your device with media queries. However, sometimes the orientation does not only affect your layout, but also the routines of your Javascript. This article shows some possibilites how to detect portrait/landscape orientation on your mobile device. Some are less robust considering multiple device vendors, and some are in exchange a lot more hacky. You're gonna love it.</p>
   <p>When searching for portrait/landscape orientation detection we mostly get the following, well known results on Stackoverflow and consorts:</p>
 <!--more-->
-<pre class="prettyprint"><code class="language-javascript">window.onorientationchange = function() {
+<pre class="prettyprint language-prettyprint"><code class="language-javascript">window.onorientationchange = function() {
   switch(window.orientation) {
     case 0:
       //do portrait stuff
@@ -46,7 +46,7 @@ The new Samsung Galaxy Tab (and some other devices like Toshiba Thrive) however,
 
 Media queries are cool for device detection because they're really checking for portrait and landscape orientation, not for the devices degree orientation. And there is actually a way to use media queries in Javascript. Credits to the code snipplet go to <a target="_blank" href="http://davidwalsh.name/orientation-change">David Walsh</a>.
 
-<pre class="prettyprint"><code class="language-javascript">var mql = window.matchMedia("(orientation: portrait)");
+<pre class="prettyprint language-prettyprint"><code class="language-javascript">var mql = window.matchMedia("(orientation: portrait)");
 
 // If there are matches, we're in portrait
 if(mql.matches) {
@@ -71,7 +71,7 @@ mql.addListener(function(m) {
 
 <p>But there's another way to bring media queries to your Javascript for this use case. By its roots, the CSS file:</p>
 
-<pre class="prettyprint"><code class="language-css">body:after {
+<pre class="prettyprint language-prettyprint"><code class="language-css">body:after {
   content: "";
   position: absolute;
   color: transparent;
@@ -94,7 +94,7 @@ mql.addListener(function(m) {
 
 <p>And this is our Javascript:</p>
 
-<pre class="prettyprint"><code class="language-javascript">//get style of the body:after element
+<pre class="prettyprint language-prettyprint"><code class="language-javascript">//get style of the body:after element
 var bodyAfterStyle = window.getComputedStyle(
   document.body, ":after");
 
