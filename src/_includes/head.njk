@@ -43,12 +43,19 @@
 <link rel="preconnect" href="https://srv.carbonads.net" >
 <link rel="preconnect" href="https://cdn4.buysellads.net" >
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:creator" content="@ddprrt">
+
 {% if page.og.img %}
 <meta property="og:image" content="https://fettblog.eu/{{ page.og.img }}">
 <meta property="og:image:secure_url" content="https://fettblog.eu/{{ page.og.img }}">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:image" content="https://fettblog.eu/{{ page.og.img }}">
-<meta name="twitter:creator" content="@ddprrt">
+{% else %}
+{% if permalink %}
+{% set imgPath = permalink | slug %}
+<meta property="og:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
+<meta property="og:image:secure_url" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
+<meta name="twitter:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
+{% endif %}
 {% endif %}
