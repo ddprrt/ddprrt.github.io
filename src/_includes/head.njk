@@ -47,10 +47,10 @@
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:creator" content="@ddprrt">
 
-{% if page.og.img %}
-<meta property="og:image" content="https://fettblog.eu/{{ page.og.img }}">
-<meta property="og:image:secure_url" content="https://fettblog.eu/{{ page.og.img }}">
-<meta name="twitter:image" content="https://fettblog.eu/{{ page.og.img }}">
+{% if og.img %}
+<meta property="og:image" content="https://fettblog.eu/{{ og.img }}">
+<meta property="og:image:secure_url" content="https://fettblog.eu/{{ og.img }}">
+<meta name="twitter:image" content="https://fettblog.eu/{{ og.img }}">
 {% else %}
 {% if permalink %}
 {% set imgPath = permalink | slug %}
