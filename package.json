@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "eleventy --watch --serve",
-    "build": "eleventy"
+    "build": "eleventy && gulp"
   },
   "repository": {
     "type": "git",
