@@ -4,8 +4,6 @@ layout: post-typescript
 categories:
 - TypeScript
 published: true
-og:
-  img: /wp-content/uploads/ogimgs/ts-react.png
 breadcrumbs:
 - title: Home
   path: /
