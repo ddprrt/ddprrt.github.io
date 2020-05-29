@@ -4,7 +4,7 @@ published: true
 permalink: /top-podcast-episodes-2017/
 layout: post
 categories:
-- review
+- Review
 ---
 
 After my [most favourite tech books](/top-books-to-read-2017/) and my [most favourite tech talks](/top-talks-to-watch-2017/) I want to conclude my yearly review with some of podcast episodes I really enjoyed! I listen to one or two hours of podcasts a day. Most of the podcasts I subscribed to are about growing up in the 80s and loving things like the Nintendo Entertainment System or Indiana Jones. But I also listen to a couple of tech podcasts occasionally. And there I found some true gems. Let's go!
