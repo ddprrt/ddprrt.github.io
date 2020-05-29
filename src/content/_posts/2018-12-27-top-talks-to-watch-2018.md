@@ -4,7 +4,7 @@ published: true
 permalink: /top-talks-to-watch-2018/
 layout: post
 categories:
-- review
+- Review
 ---
 
 It's that time of the year again! For the fourth time in a row, I'm sharing my most 

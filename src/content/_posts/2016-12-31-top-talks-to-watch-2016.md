@@ -3,6 +3,8 @@ title: "My most favorite talks in 2016"
 published: true
 permalink: /top-talks-to-watch-2016/
 layout: post
+categories:
+- Review
 ---
 
 Let's make this a tradition! I love to watch conference talks. Be it live or on tape. And just like [last year](/top-talks-to-watch-2015/) I try to collect the talks that I loved most. I know, since I started organising [Script](https://scriptconf.org) I began seeing conference talks differently. However, those are the ones I put my attendee-hat on. And let's be honest: A good organiser needs to do that! So enjoy my list of talks I enjoyed most in 2016.

@@ -3,6 +3,8 @@ title: "My most favorite talks in 2015"
 published: true
 permalink: /top-talks-to-watch-2015/
 layout: post
+categories:
+- Review
 ---
 
 I enjoy being at conferences, however I can't be on all of them. Which is sad,

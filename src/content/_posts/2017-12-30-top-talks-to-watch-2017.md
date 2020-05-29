@@ -4,7 +4,7 @@ published: true
 permalink: /top-talks-to-watch-2017/
 layout: post
 categories:
-- review
+- Review
 ---
 
 So it IS finally a tradition. After *[my most favourite talks of 2015](/top-talks-to-watch-2015/)*, and *[the top talks to watch in 2016 -- the conference videos strike back!](/top-talks-to-watch-2016/)*, we complete the trilogy with *my most favourite talks of 2017 -- Return of the Bingewatch*:
