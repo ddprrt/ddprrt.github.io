@@ -1,6 +1,11 @@
 <script>
 const nav = document.querySelector('.nav')
 
+const movieSidebar = document.querySelector('.movie-list')
+const activeCinema = document.querySelector('a[href*=cinema].active')
+
+const cineTop = sessionStorage.getItem('cinemaPos')
+
 document.querySelector('#open').addEventListener('click', function(e) {
   e.preventDefault()
   nav.classList.add('active')
@@ -11,8 +16,6 @@ document.querySelector('#close').addEventListener('click', function(e) {
   nav.classList.remove('active')
 })
 
-const movieSidebar = document.querySelector('.movie-list')
-const activeCinema = document.querySelector('a[href*=cinema].active')
 
 window.addEventListener('beforeunload', () => {
   if(activeCinema && movieSidebar) {
@@ -22,15 +25,10 @@ window.addEventListener('beforeunload', () => {
   }
 })
 
-const cineTop = sessionStorage.getItem('cinemaPos')
-
 if(cineTop && movieSidebar) {
   movieSidebar.scrollTop = parseInt(cineTop, 10)
-}
-
+}  
 </script>
-
-
 <script async>
 if (navigator.serviceWorker && navigator.serviceWorker.controller) {
   console.log('[PWA Builder] active service worker found, no need to register')
@@ -44,19 +42,4 @@ if (navigator.serviceWorker && navigator.serviceWorker.controller) {
 }
 </script>
 
-<script>
-function togglePressed() {
-  let pressedState = this.getAttribute('aria-pressed')
-  document.body.classList.toggle(this.dataset.toggle)
-	if (pressedState === 'true') {
-		this.setAttribute('aria-pressed', 'false')
-	} else {
-		this.setAttribute('aria-pressed', 'true')
-	}
-}
-
-const toggles = document.querySelectorAll('.button-toggle')
-Array.from(toggles).forEach(el => {
-  el.addEventListener('click', togglePressed)
-})
-</script>
+<script src="/assets/scripts/main.js?v={{site.version}}" async></script>

@@ -1,8 +1,4 @@
-const COLORS = ['#ffbe0b', '#fb5607', '#ff006e', '#8338ec', '#3a86ff'];
-
 // init global elements
-const button = document.getElementById('button')
-var disabled = false
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 canvas.width = window.innerWidth
@@ -49,7 +45,7 @@ initConfettoVelocity = (xRange, yRange) => {
 }
 
 // Confetto Class
-function Confetto() {
+function Confetto(ev) {
   this.randomModifier = randomRange(0, 99)
   this.color = colors[Math.floor(randomRange(0, colors.length))]
   this.dimensions = {
@@ -57,8 +53,8 @@ function Confetto() {
     y: randomRange(8, 15),
   }
   this.position = {
-    x: randomRange(canvas.width/2 - button.offsetWidth/4, canvas.width/2 + button.offsetWidth/4),
-    y: randomRange(canvas.height/2 + button.offsetHeight/2 + 8, canvas.height/2 + (1.5 * button.offsetHeight) - 8),
+    x: randomRange(ev?.offsetX - 8, ev?.offsetX+ 8),
+    y: randomRange(ev?.offsetY - 8, ev?.offsetY + 8),
   }
   this.rotation = randomRange(0, 2 * Math.PI)
   this.scale = {
@@ -82,12 +78,12 @@ Confetto.prototype.update = function() {
 }
 
 // Sequin Class
-function Sequin() {
+function Sequin(ev) {
   this.color = colors[Math.floor(randomRange(0, colors.length))].back,
   this.radius = randomRange(1, 2),
   this.position = {
-    x: randomRange(canvas.width/2 - button.offsetWidth/3, canvas.width/2 + button.offsetWidth/3),
-    y: randomRange(canvas.height/2 + button.offsetHeight/2 + 8, canvas.height/2 + (1.5 * button.offsetHeight) - 8),
+    x: randomRange(ev?.offsetX - 8, ev?.offsetX+ 8),
+    y: randomRange(ev?.offsetY - 8, ev?.offsetY + 8),
   },
   this.velocity = {
     x: randomRange(-6, 6),
@@ -139,9 +135,6 @@ render = () => {
     ctx.setTransform(1, 0, 0, 1, 0, 0)
 
     // clear rectangle where button cuts off
-    if (confetto.velocity.y < 0) {
-      ctx.clearRect(canvas.width/2 - button.offsetWidth/2, canvas.height/2 + button.offsetHeight/2, button.offsetWidth, button.offsetHeight)
-    }
   })
 
   sequins.forEach((sequin, index) => {  
@@ -162,10 +155,6 @@ render = () => {
     // reset transform matrix
     ctx.setTransform(1, 0, 0, 1, 0, 0)
 
-    // clear rectangle where button cuts off
-    if (sequin.velocity.y < 0) {
-      ctx.clearRect(canvas.width/2 - button.offsetWidth/2, canvas.height/2 + button.offsetHeight/2, button.offsetWidth, button.offsetHeight)
-    }
   })
 
   // remove confetti and sequins that fall off the screen
@@ -177,32 +166,12 @@ render = () => {
     if (sequin.position.y >= canvas.height) sequins.splice(index, 1)
   })
 
-  window.requestAnimationFrame(render)
-}
-
-// cycle through button states when clicked
-clickButton = () => {
-  if (!disabled) {
-    disabled = true
-    // Loading stage
-    button.classList.add('loading')
-    button.classList.remove('ready')
-    setTimeout(() => {
-      // Completed stage
-      button.classList.add('complete')
-      button.classList.remove('loading')
-      setTimeout(() => {
-        window.initBurst()
-        setTimeout(() => {
-          // Reset button so user can select it again
-          disabled = false
-          button.classList.add('ready')
-          button.classList.remove('complete')
-        }, 4000)
-      }, 320)
-    }, 0)
+  if(sequins.length || confetti.length) {
+     window.requestAnimationFrame(render)
+    console.log('.')
   }
 }
+
 
 // re-init canvas if the window size changes
 resizeCanvas = () => {
@@ -217,23 +186,17 @@ window.addEventListener('resize', () => {
   resizeCanvas()
 })
 
-// click button on spacebar or return keypress
-document.body.onkeyup = (e) => {
-  if (e.keyCode == 13 || e.keyCode == 32) {
-    clickButton()
+
+document.querySelector('#canvas').onclick = (e) => {
+  if(!confetti.length && !sequins.length) {
+    confetti.push(new Confetto(e))
+    sequins.push(new Sequin(e))
+    render() 
+  }
+  for (let i = 0; i < confettiCount; i++) {
+    confetti.push(new Confetto(e))
+  }
+  for (let i = 0; i < sequinCount; i++) {
+    sequins.push(new Sequin(e))
   }
 }
-
-// Set up button text transition timings on page load
-textElements = button.querySelectorAll('.button-text')
-textElements.forEach((element) => {
-  characters = element.innerText.split('')
-  let characterHTML = ''
-  characters.forEach((letter, index) => {
-    characterHTML += `<span class="char${index}" style="--d:${index * 30}ms; --dr:${(characters.length - index - 1) * 30}ms;">${letter}</span>`
-  })
-  element.innerHTML = characterHTML
-})
-
-// kick off the render loop
-render()
