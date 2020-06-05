@@ -28,3 +28,7 @@
   text-decoration: none;
   border-bottom: 1px dashed currentColor;
 }
+
+.tldr .e-content > *:not(pre) {
+  filter: blur(5px);
+}

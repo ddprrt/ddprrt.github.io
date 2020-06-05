@@ -128,6 +128,8 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
   config.addPassthroughCopy('./src/icon/')
 
+  config.addPassthroughCopy('./src/js/')
+
   config.addWatchTarget('./src/_assets')
 
   return {
