@@ -1,10 +1,60 @@
+import { mediator } from '../bus/mediator'
+
 // init global elements
-const canvas = document.getElementById('canvas')
-const ctx = canvas.getContext('2d')
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-let cx = ctx.canvas.width / 2
-let cy = ctx.canvas.height / 2
+let canvas
+let ctx 
+let cx
+let cy
+
+function showCanvas() {
+  if(canvas) {
+    canvas.style.display = 'block'
+  } else {
+    canvas = document.createElement('canvas')
+    canvas.classList.add('confetti-canvas')
+    document.querySelector('.wrapper').appendChild(canvas)
+    ctx = canvas.getContext('2d')
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    cx = ctx.canvas.width / 2
+    cy = ctx.canvas.height / 2
+
+        // resize listenter
+    window.addEventListener('resize', () => {
+      resizeCanvas()
+    })
+
+
+    canvas.onclick = (e) => {
+      if(!confetti.length && !sequins.length) {
+        confetti.push(new Confetto(e))
+        sequins.push(new Sequin(e))
+        render() 
+      }
+      for (let i = 0; i < confettiCount; i++) {
+        confetti.push(new Confetto(e))
+      }
+      for (let i = 0; i < sequinCount; i++) {
+        sequins.push(new Sequin(e))
+      }
+    }
+  }
+}
+
+function destroyCanvas() {
+  if(canvas) {
+    canvas.style.display = 'none'
+  }
+}
+
+mediator.subscribe('confetti', function(on) {
+  console.log(on)
+  if(on === 'on') {
+    showCanvas()
+  } else {
+    destroyCanvas()
+  }
+})
 
 // add Confetto/Sequin objects to arrays to draw them
 let confetti = []
@@ -53,8 +103,8 @@ function Confetto(ev) {
     y: randomRange(8, 15),
   }
   this.position = {
-    x: randomRange(ev?.offsetX - 8, ev?.offsetX+ 8),
-    y: randomRange(ev?.offsetY - 8, ev?.offsetY + 8),
+    x: randomRange(ev.offsetX - 8, ev.offsetX+ 8),
+    y: randomRange(ev.offsetY - 8, ev.offsetY + 8),
   }
   this.rotation = randomRange(0, 2 * Math.PI)
   this.scale = {
@@ -82,8 +132,8 @@ function Sequin(ev) {
   this.color = colors[Math.floor(randomRange(0, colors.length))].back,
   this.radius = randomRange(1, 2),
   this.position = {
-    x: randomRange(ev?.offsetX - 8, ev?.offsetX+ 8),
-    y: randomRange(ev?.offsetY - 8, ev?.offsetY + 8),
+    x: randomRange(ev.offsetX - 8, ev.offsetX+ 8),
+    y: randomRange(ev.offsetY - 8, ev.offsetY + 8),
   },
   this.velocity = {
     x: randomRange(-6, 6),
@@ -167,7 +217,7 @@ render = () => {
   })
 
   if(sequins.length || confetti.length) {
-     window.requestAnimationFrame(render)
+    window.requestAnimationFrame(render)
     console.log('.')
   }
 }
@@ -181,22 +231,3 @@ resizeCanvas = () => {
   cy = ctx.canvas.height / 2
 }
 
-// resize listenter
-window.addEventListener('resize', () => {
-  resizeCanvas()
-})
-
-
-document.querySelector('#canvas').onclick = (e) => {
-  if(!confetti.length && !sequins.length) {
-    confetti.push(new Confetto(e))
-    sequins.push(new Sequin(e))
-    render() 
-  }
-  for (let i = 0; i < confettiCount; i++) {
-    confetti.push(new Confetto(e))
-  }
-  for (let i = 0; i < sequinCount; i++) {
-    sequins.push(new Sequin(e))
-  }
-}
