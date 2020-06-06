@@ -7,7 +7,6 @@ class Mediator {
   }
 
   publish(channel, ...args) {
-    console.log(channel)
     const chan = this.channels[channel]
     if(chan) {
       chan.forEach(fun => fun(...args))

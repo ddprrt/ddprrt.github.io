@@ -5,38 +5,41 @@ let canvas
 let ctx 
 let cx
 let cy
+let shown = false
 
 function showCanvas() {
   if(canvas) {
     canvas.style.display = 'block'
   } else {
-    canvas = document.createElement('canvas')
-    canvas.classList.add('confetti-canvas')
-    document.querySelector('.wrapper').appendChild(canvas)
-    ctx = canvas.getContext('2d')
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-    cx = ctx.canvas.width / 2
-    cy = ctx.canvas.height / 2
+    initCanvas()
+  }
+  shown = true
+}
 
-        // resize listenter
-    window.addEventListener('resize', () => {
-      resizeCanvas()
-    })
-
-
-    canvas.onclick = (e) => {
-      if(!confetti.length && !sequins.length) {
-        confetti.push(new Confetto(e))
-        sequins.push(new Sequin(e))
-        render() 
-      }
-      for (let i = 0; i < confettiCount; i++) {
-        confetti.push(new Confetto(e))
-      }
-      for (let i = 0; i < sequinCount; i++) {
-        sequins.push(new Sequin(e))
-      }
+function initCanvas() {
+  canvas = document.createElement('canvas')
+  canvas.classList.add('confetti-canvas')
+  document.querySelector('.wrapper').appendChild(canvas)
+  ctx = canvas.getContext('2d')
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  cx = ctx.canvas.width / 2
+  cy = ctx.canvas.height / 2
+  // resize listenter
+  window.addEventListener('resize', () => {
+    resizeCanvas()
+  })
+  canvas.onclick = (e) => {
+    if (!confetti.length && !sequins.length) {
+      confetti.push(new Confetto(e))
+      sequins.push(new Sequin(e))
+      render()
+    }
+    for (let i = 0; i < confettiCount; i++) {
+      confetti.push(new Confetto(e))
+    }
+    for (let i = 0; i < sequinCount; i++) {
+      sequins.push(new Sequin(e))
     }
   }
 }
@@ -45,10 +48,10 @@ function destroyCanvas() {
   if(canvas) {
     canvas.style.display = 'none'
   }
+  shown = false
 }
 
 mediator.subscribe('confetti', function(on) {
-  console.log(on)
   if(on === 'on') {
     showCanvas()
   } else {
@@ -216,7 +219,7 @@ render = () => {
     if (sequin.position.y >= canvas.height) sequins.splice(index, 1)
   })
 
-  if(sequins.length || confetti.length) {
+  if((sequins.length || confetti.length)) {
     window.requestAnimationFrame(render)
   }
 }
