@@ -218,7 +218,6 @@ render = () => {
 
   if(sequins.length || confetti.length) {
     window.requestAnimationFrame(render)
-    console.log('.')
   }
 }
 
