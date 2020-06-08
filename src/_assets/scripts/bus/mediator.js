@@ -1,5 +1,9 @@
 class Mediator {
-  channels = {}
+  channels
+
+  constructor() {
+    this.channels = {}
+  }
 
   subscribe(channel, listener) {
     this.channels[channel] = this.channels[channel] ?? []
