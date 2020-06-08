@@ -6,7 +6,7 @@ const path = require('path')
 const inputOptions = {
   input: path.join(__dirname, '/main.js'),
   plugins: [
-    terser()
+    //terser()
   ]
 }
 const outputOptions = {
