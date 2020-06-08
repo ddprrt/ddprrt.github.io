@@ -1,5 +1,5 @@
 {% if tags and 'guides' in tags %}
-<section class="sidebar-element">
+<section class="sidebar-element sticky">
 {% set coll =  tags | getGuide %}
   {% if collections[coll] %}
   <h4 class="sidebar-heading">Table of contents</h4>
