@@ -1,21 +1,18 @@
-class Mediator {
-  channels;
+const channels = {}
 
-  constructor() {
-    this.channels = {}
-  }
+function subscribe(channel, listener) {
+  channels[channel] = channels[channel] ?? []
+  channels[channel].push(listener)
+}
 
-  subscribe(channel, listener) {
-    this.channels[channel] = this.channels[channel] ?? []
-    this.channels[channel].push(listener)
-  }
-
-  publish(channel, ...args) {
-    const chan = this.channels[channel]
-    if(chan) {
-      chan.forEach(fun => fun(...args))
-    }
+function publish(channel, ...args) {
+  const chan = channels[channel]
+  if(chan) {
+    chan.forEach(fun => fun(...args))
   }
 }
 
-export const mediator = new Mediator()
+export const mediator = {
+  subscribe,
+  publish,
+}
