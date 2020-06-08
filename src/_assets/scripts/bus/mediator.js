@@ -1,5 +1,5 @@
 class Mediator {
-  channels
+  channels;
 
   constructor() {
     this.channels = {}
