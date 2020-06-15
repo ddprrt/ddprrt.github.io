@@ -53,7 +53,7 @@
 <meta name="twitter:image" content="https://fettblog.eu/{{ og.img }}">
 {% else %}
 {% if permalink %}
-{% set imgPath = permalink | slug %}
+{% set imgPath = permalink | teaserIMG | slug %}
 <meta property="og:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
 <meta property="og:image:secure_url" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
 <meta name="twitter:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">

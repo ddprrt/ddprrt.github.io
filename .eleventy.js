@@ -84,10 +84,11 @@ module.exports = function(config) {
     return value.toLowerCase()
   })
 
-  config.addNunjucksFilter('teaser', function(value) {
+  config.addNunjucksFilter('teaserIMG', function(value) {
     const { fileSlug } = value
     const { permalink} = value.data
     if(permalink.includes('page.fileSlug')) {
+      console.log('👍', permalink, fileSlug)
       return `/${fileSlug}/`
     }
     return permalink
