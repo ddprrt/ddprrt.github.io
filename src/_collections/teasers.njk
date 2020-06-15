@@ -3,7 +3,7 @@ pagination:
   data: collections.posts
   size: 1
   alias: post
-permalink: /teasers/{{ pagination.items[0] | teaser | slug  }}.svg
+permalink: /teasers/{{ pagination.items[0] | teaserIMG | slug  }}.svg
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
