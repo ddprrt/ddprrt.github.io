@@ -29,6 +29,6 @@
   border-bottom: 1px dashed currentColor;
 }
 
-.tldr .e-content > *:not(pre) {
+.tldr .e-content > *:not(pre):not(.not-tldr) {
   filter: blur(5px);
 }
