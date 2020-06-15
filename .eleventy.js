@@ -86,12 +86,16 @@ module.exports = function(config) {
 
   config.addNunjucksFilter('teaserIMG', function(value) {
     const { fileSlug } = value
-    const { permalink} = value.data
-    if(permalink.includes('page.fileSlug')) {
-      console.log('👍', permalink, fileSlug)
-      return `/${fileSlug}/`
-    }
-    return permalink
+    const { data } = value
+      if(data) {
+        const { permalink } = data
+        if(permalink.includes('page.fileSlug')) {
+          console.log('👍', permalink, fileSlug)
+          return `/${fileSlug}/`
+        }
+        return permalink  
+      }
+    return `/${fileSlug}/`
   })
 
   config.addCollection('categories', function (collection) {
