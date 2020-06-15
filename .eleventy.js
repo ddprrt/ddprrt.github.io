@@ -84,6 +84,15 @@ module.exports = function(config) {
     return value.toLowerCase()
   })
 
+  config.addNunjucksFilter('teaser', function(value) {
+    const { fileSlug } = value
+    const { permalink} = value.data
+    if(permalink.includes('page.fileSlug')) {
+      return `/${fileSlug}/`
+    }
+    return permalink
+  })
+
   config.addCollection('categories', function (collection) {
     const categories = collection.items.filter(Boolean).reverse().reduce((prev, current) => {
       if(current.data.categories) {
