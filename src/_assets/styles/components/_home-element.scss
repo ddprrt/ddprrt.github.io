@@ -1,0 +1,128 @@
+.element {
+  padding: 0;
+  overflow: hidden;
+}
+
+.element-grid {
+  grid-gap: 0 !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+  grid-template-columns: 100%;
+  padding: 0 !important;
+  margin: 1.5rem;
+}
+
+.element-cover {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.element-start {
+  background: linear-gradient(to right, var(--color-two), var(--color-three));
+}
+
+.element-middle {
+  background: linear-gradient(to right, var(--color-three), var(--color-four));
+}
+
+.element-end {
+  background: linear-gradient(to right, var(--color-four), var(--color-five));
+}
+
+.element-cover-image {
+  height: 170px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+  object-fit: scale-down;
+  transition: transform 2s ease;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
+.element-content {
+  padding: 1.5rem;
+}
+
+.element-cover-link {
+  display: block;
+}
+
+.element-cover-link:hover .element-cover-image{
+  filter: grayscale(0);
+  transform: scale(1.01);
+  mix-blend-mode: normal;
+}
+
+.element-cover-link:hover .element-cover-image.no-shadow {
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+
+.element h2 {
+  margin-top: 0;
+}
+
+.element-highlight {
+  line-height: 2;
+  color: #454545;
+  display: block;
+  font-weight: 600;
+}
+
+@media(min-width: 820px) {
+
+  .element-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2rem;
+  }
+
+  .element,
+  .element-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .element-content {
+    flex-grow: 1;
+  }
+}
+
+
+@media(min-width: 1090px) {
+  
+  .element-cover {
+    padding: 2rem;
+  }
+
+  .element-content {
+    padding: 2rem;
+  }
+}
+
+@media(min-width: 1300px) {
+
+  .element-grid {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.cover {
+  width: 120px;
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

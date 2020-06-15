@@ -1,0 +1,55 @@
+---
+layout: list
+title: Speaking appearances
+breadcrumbs:
+-
+  url: /
+  title: Home
+permalink: /speaking/
+---
+
+<div class="e-content">
+  <p>Please find a list of my talks on conferences and meetups below. If you want me to speak at your event, check out
+  <a href="/speaking/details">my details page</a> and <a href="/contact">get in touch</a>.</p>
+</div>
+
+{% set years = [] %}
+{% set firstTime = true %}
+{%- for year in talks %}
+<h2 class="list-year">{{year.year}}</h2>
+  
+<ul class="article-list">
+  {%- for conference in year.conferences | sort(true, false, 'date') -%}
+  <li class="article-list-item">
+    <span class="meta-highlight">
+      {{ conference.date | prettyDate }} | 
+      {{ conference.country}}, {{ conference.city }}
+    </span>
+    {%if conference.url %}
+    <a class="article-list-link" href="{{conference.url}}">
+    {% else %}
+    <span  class="article-list-link" >
+    {% endif %}
+    {{ conference.title }}
+    {%if conference.url %}
+    </a>
+    {% else %}
+    </span>
+    {% endif %}
+    {% if conference.talks %}
+    <ul class="talk-list">
+      {% for talk in conference.talks %}
+      <li class="talk-list-item">
+        {% if talk.type %}{{ talk.type}}{% else %}Talk{% endif %}: <strong>{{talk.title}}</strong>
+        {% if talk.slides %} | <a href="{{talk.slides}}">Slides</a>{% endif %}
+        {% if talk.video %} | <a href="{{talk.video}}">Video</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+
+</ul>
+{% endfor %}
+

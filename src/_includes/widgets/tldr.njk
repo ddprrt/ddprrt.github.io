@@ -1,0 +1,19 @@
+{% if tags and "posts" in tags %}
+<section class="gadgets sticky">
+  <button aria-pressed="false" class="button-toggle" id="button-toggle" data-toggle="tldr">
+    TL/DR
+    <span class="button-toggle-slider">
+      <span aria-hidden="true" class="button-toggle-on">🏃‍♀️</span>
+      <span aria-hidden="true" class="button-toggle-off">🚶‍♀️</span>
+    </span>
+  </button>
+
+  <button aria-pressed="false" class="button-toggle" id="button-toggle" data-toggle="confetti">
+    Celebrate
+    <span class="button-toggle-slider">
+      <span aria-hidden="true" class="button-toggle-on">🎉</span>
+      <span aria-hidden="true" class="button-toggle-off">🎉</span>
+    </span>
+  </button>
+</section>
+{% endif %}

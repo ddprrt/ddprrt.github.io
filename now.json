@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    { "source": "/talks-slides/", "destination": "/speaking/" },
+    { "source": "/details/", "destination": "/speaking/details/" },
+    { "source": "/feed/", "destination": "/feed.xml" },
+    { "source": "/atom.xml", "destination": "/feed.xml" },
+    { "source": "/watching-list/", "destination": "/cinema/" },
+    { "source": "/readiung-list/", "destination": "/books/" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers" : [
+        { "key" : "X-Content-Type-Options", "value" : "nosniff" },
+        { "key" : "X-Frame-Options", "value" : "DENY" },
+        { "key" : "X-XSS-Protection", "value" : "1; mode=block"}
+      ]
+    }
+  ],
+  "trailingSlash": true
+}

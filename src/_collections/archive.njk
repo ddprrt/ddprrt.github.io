@@ -1,0 +1,20 @@
+---
+layout: list
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /archive/{{ category | slug }}/
+menuActive: articles
+eleventyComputed:
+  title: All articles in "{{ category }}"
+---
+
+{% set years = [] %}
+{% set firstTime = true %}
+{%- for post in collections.categories[category] | reverse -%}
+
+{% include "navigation/post-list.njk" %}
+
+{% endfor %}
+</ul>

@@ -1,0 +1,130 @@
+.nav {
+  background-image: var(--gradient);
+  background-size: 100vw 10px;
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  /*border-bottom: 1px solid #eee;*/
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.nav.active {
+  position: static;
+}
+
+.logo {
+  padding: 1rem 2rem;
+  font-size: 16px;
+  display: block;
+  color: #454545;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar { 
+  background-image: var(--gradient);
+  background-size: 100vw 10px;
+  background-repeat: no-repeat;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.active .navbar {
+  display: flex;
+}
+
+
+.navbar-link {
+  text-decoration: none;
+  color: #454545;
+  font-weight: 500;
+  display: block;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-link.active,
+.navbar-link:hover {
+  color: var(--color-three);
+}
+
+
+.navbar-button {
+  -webkit-appearance: none;
+  font-size: 14px;
+  margin-right: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.7rem;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#close {
+  position: fixed;
+  display: none;
+  z-index: 1001;
+  top: 1.1rem; right: 0rem;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.active #close {
+  display: block;
+}
+
+@media(min-width: 800px) {
+
+  .navbar {
+    display: flex;
+    background-image: var(--gradient);
+    background-size: 100vw;
+    background-position: top right;
+    background-repeat: repeat;
+    position: relative;
+    align-items: center;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .navbar-button {
+    display: none !important;
+  }
+
+  .navbar-link.active,
+  .navbar-link:hover {
+    background: transparent;
+    color: white;
+    z-index: 10;
+  }
+
+  .navbar-link.active {
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  }
+}

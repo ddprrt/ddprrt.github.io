@@ -1,0 +1,94 @@
+---
+layout: post
+title: Preventing FOUT in IE9
+categories:
+- CSS
+- Webfonts
+permalink: /blog/2012/11/16/preventing-fout-on-ie9/
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+excerpt_small: "FOUT is an abbrevation for flash of unstyled text (or type) and is one of those really nasty bits in modern frontend development. Summarized it means that if you use webfonts it might happen that you first see your text displayed in a fallback font until the downloadble webfont is loaded, parsed and inserted. Remy Sharp and Paul Irish did a lot of research on that topic more than three years ago."
+---
+<p>FOUT is an abbrevation for flash of unstyled text (or type) and is one of those really nasty bits in modern frontend development. Summarized it means that if you use webfonts it might happen that you first see your text displayed in a fallback font until the downloadble webfont is loaded, parsed and inserted. <a href="http://remysharp.com/2009/06/23/safaris-problem-with-font-face/" target="_blank">Remy Sharp</a> and <a href="http://paulirish.com/2009/fighting-the-font-face-fout/" target="_blank">Paul Irish</a> did a lot of research on that topic more than three years ago.</p>
+
+<p>Luckily, with today's browsers you won't be seeing that so often as you might have been used to. The Webkit browsers as well as Firefox are really good in handling Webfonts, and even Internet Explorer, now in version 10, focusses heavily on webfont integration. However, IE10 just came out, and several people -- at least in bigger companies -- are just switching from ancient browsers to IE9...</p>
+<!--more-->
+<h2>And IE9 FOUTs. Badly.</h2>
+
+<p>In one certain case, after considering server architecture and our clients desktop environment, and even after applying caching routines, this effect was so bad that it wasn't bearable at all. Put there is a certain way of handling this. First of all, we take a look at the currently recommended way of including webfonts for cross browser purposes:</p>
+
+```css
+@font-face {
+    font-family: 'MySpecialFont';
+    src: url('../fonts/MySpecialFont.eot'); /* IE9 compatibility mode */
+    src: url('../fonts/MySpecialFont.eot?#iefix') format('embedded-opentype'), /* < IE9 */
+         url('../fonts/MySpecialFont.woff') format('woff'), /* Modern browers */
+         url('../fonts/MySpecialFont.ttf') format('truetype'), /* iOS, Android, Safari */
+         url('../fonts/MySpecialFont.svg#MySpecialFont') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<p>All modern browsers are capable of handling WOFF, so this should be your format of choice. EOT is more or less just for legacy purposes, and so is TrueType or SVG. So, if you are just reducing your Webfont declaration to the one you need for modern
+browsers, you end up with this.</p>
+
+```css
+@font-face {
+    font-family: 'MySpecialFont';
+    src: url('../fonts/MySpecialFont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<p>Maybe you add a fallback for older mobile devices, which know how to handle the comma seperated syntax.</p>
+
+
+```css
+@font-face {
+    font-family: 'MySpecialFont';
+    src: url('../fonts/MySpecialFont.woff'),
+         url('../fonts/MySpecialFont.ttf'),
+         url('../fonts/MySpecialFont.svg');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<p>Now, the only browser with FOUT would be IE9 by today's standards. IE9 has the problem that he first loads the stylesheet and then loads the font. The time between those two loading processes can vary. However, if you happen to have the font right here after parsing through the whole stylesheet, you won't get a FOUT. We simply can achieve this by embedding the whole font as a data-URI:</p>
+
+```css
+@font-face {
+    font-family: 'MySpecialFont';
+    src: url("data:application/x-font-woff;base64,MUMBOJUMBO"),
+         url('../fonts/MySpecialFont.ttf'),
+         url('../fonts/MySpecialFont.svg');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<p>Use a tool <a href="http://t.larskl.de/dataurl" target="_blank">like that one</a> for generating those embedded data streams. Now you need to support IE7 and IE8 extra, because IE9 might load the EOT file before checking on the embedded WOFF. We're doing this by creating another Stylesheet, soley for IE legacy purposes. With CSS preprocessors it's a quick thing to do.</p>
+
+```css
+@font-face {
+    font-family: 'MySpecialFont';
+    src: url('../fonts/MySpecialFont.eot');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<p>Seperate those two files by including them in that way:</p>
+
+
+```html
+<!--[if lt IE 9]><link rel="stylesheet" href="../static/css/styleie8.css"><![endif]-->
+<!--[if gt IE 8]><!--><link rel="stylesheet" href="../static/css/style.css"> <!--<![endif]-->
+```
+
+<p>The seperating of those browser related stylesheets might not be the most elegant way, but it definitely works and using CSS preprocessors, you won't have that much work in generating those files.</p>

@@ -1,0 +1,24 @@
+.book-cover {
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-top: 1rem;
+}
+
+.book-page-cover {
+  max-width: 300px;
+}
+
+.book-article {
+  display: grid;
+  grid-template: 300px 1fr;
+  grid-template-areas: "image" "content";
+  grid-gap: 2rem;
+}
+
+@media(min-width: 700px) {
+
+  .book-article {
+    grid-template-areas: "image content";
+  }
+}

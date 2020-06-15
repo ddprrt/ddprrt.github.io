@@ -1,0 +1,24 @@
+.main-frame {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(85ch + 350px);
+  position: relative;
+  width: 100%;
+}
+
+
+@media (min-width: 1140px) {
+
+  .grid {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: minmax(350px, 1fr) 350px;
+    grid-template-areas: 
+      "content happy"
+      "content menu";
+  }
+
+  .article {
+    grid-template-rows: 150px 1fr;
+  }
+}

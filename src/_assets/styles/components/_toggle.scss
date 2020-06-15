@@ -1,0 +1,83 @@
+.gadgets {
+  display: none;
+  margin: 3rem 0;
+  position: relative;
+  z-index: 4;
+}
+
+.button-toggle {
+  border: none;
+  font: var(--main-font);
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  height: 1.7rem;
+  outline: none;
+}
+
+.button-toggle-off {
+  filter: grayscale(1);
+}
+
+.button-toggle-on,
+.button-toggle-off {
+  opacity: 0;
+  font-size: 1.3rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: block;
+}
+
+.button-toggle[aria-pressed*=true] .button-toggle-on,
+.button-toggle[aria-pressed*=false] .button-toggle-off {
+  opacity: 1;
+}
+
+.button-toggle-slider {
+  background-color: #eee;
+  border-radius: 30px;
+  display: inline-flex;
+  margin-left: 1rem;
+  position: relative;
+  height: 1.7rem;
+  align-items: center;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button-toggle[aria-pressed*=true] .button-toggle-slider {
+  background-color: $color-five;
+}
+
+.button-toggle:focus .button-toggle-slider {
+  box-shadow: 0 0 5px 1px $color-three;
+}
+
+.button-toggle[aria-pressed*=true] .button-toggle-slider:before {
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-toggle-slider:before {
+  left: 0;
+  top: 0;
+  position: absolute;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  content: '';
+  display: block;
+  border-radius: 50%;
+  width: 1.7rem; height: 1.7rem;
+  transition: all 0.3s;
+}
+
+.button-toggle[aria-pressed*=true] .button-toggle-slider:before {
+  left: 1.7rem;
+}
+
+@media(min-width: 1140px) {
+  
+  .gadgets {
+    display: block;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="preamble main-frame">
+  <span class="breadcrumbs">
+    {%- for crumb in breadcrumbs -%}
+    <a href="{{crumb.path}}">{{crumb.title}}</a>
+    {%- endfor -%}
+  </span>
+  <h1>{{ title }}</h1>
+  {% if includeMeta %}
+  {% include "navigation/meta.njk" %}
+  {% endif %}
+</div>

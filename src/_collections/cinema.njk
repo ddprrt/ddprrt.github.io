@@ -1,0 +1,11 @@
+---
+layout: cinema.njk
+pagination:
+  data: cinema
+  size: 1
+  alias: movie
+permalink: /cinema/{{ movie.title | slug }}/
+menuActive: cinema
+eleventyComputed:
+  title: Watching {{ movie.title }}
+---

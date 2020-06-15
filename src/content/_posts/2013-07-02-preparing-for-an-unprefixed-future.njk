@@ -1,0 +1,43 @@
+---
+layout: post
+title: Preparing for an unprefixed future
+categories:
+- CSS3
+- Feature Detection
+- HTML5
+- Mobile
+permalink: /blog/2013/07/02/preparing-for-an-unprefixed-future/
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+excerpt_small: "I realized recently that I don't have to use <em>-webkit</em> on the transition property anymore for Chrome. Actually, to use transitions in modern desktop browsers I don't have to use any prefix at all. This was almost unimaginable a few months ago!"
+---
+<p>I realized recently that I don't have to use "<em>-webkit</em>" on the transition property anymore for Chrome. Actually, to use transitions in modern desktop browsers I don't have to use any prefix at all. This was almost unimaginable a few months ago!</p>
+
+<p>This is all part of a certain change. Google, Microsoft and Mozilla have a clear direction on that topic: If you are going to use the stable version of the browser, features don't require a vendor prefix. Actually, this is something we are already used to in the desktop world to a certain extent: Nobody would use a vendor prefix on <em>border-radius</em> or <em>box-shadow</em> anymore, because they left the experimental state.</p>
+<!--more-->
+<h2>The Past</h2>
+
+<p>Vendor prefixed features were really good back then, when we needed to overcome the "legacy browser" mindset of developers and clients alike, and had to show what was possible with all the new features now available. This trend was also driven by the new possibilities of HTML5 apps on mobile browsers: Everything you can do natively with CSS3 helps download and render times on your mobile client.</p>
+
+<p>Those features matured and became stable, and are now base of our day to day work. We have a new base available with browser updating on a regular basis and ensuring that features become available in a shorter amount of time.</p>
+
+<h2>... and now</h2>
+
+<p>Experimental (now) means: really not ready for production code. Experimental features are for you developers, to try and get familiar with the new APIs. Experimental (and thus prefixed) features are not for the things you throw at your users. Those features will most likely fail, or behave differently in other browsers, or worse: will change their API over the course of time. So don't use them in your production code. They are not ready yet.</p>
+
+<p>This goes for all those legacy browsers out there we still have to support. Developers and browser vendors created awareness that it's okay not to have the same experience in legacy IE compared to modern browsers. Everybody's fine with that. In the meantime, Android Stock Browser has become the biggest problem for web developers. Android browser (amongst others) has one really big issue: It has plenty of new features available, but they really suck in their implementation. Now-common things like <em>box-shadow</em>, <em>transitions</em> and even <em>border-radius</em> not only behave differently, but also can cause performance and display issues. Keep in mind that "available" does not have to mean "usable".</p>
+
+<p>So it's time to treat those features for what they are: experimental. Not ready for production code. Drop those vendor-prefixes!</p>
+
+<p>We don't care anymore if our corners are rounded on legacy desktop browsers, and we shouldn't care either on legacy mobile browsers.</p>
+
+<h2>but but but ...</h2>
+
+<p>Yeah, I know: This means a big change on certain platforms! While a lot of features are already unprefixed available, others are still in the experimental stage on almost all mobile browsers. Even such "game-changers" like <em>linear-gradient</em> or <em>animation</em>, and even on upcoming platforms. This goes especially for Mobile Safari, who -- according to the preview version -- still has some features prefixed. But hey, there is (or at least might be) a reason for that! So treat them for what they are: not ready yet.</p>
+
+<h2>Prefix free!</h2>
+
+<p>"Prefix-free" should not only be a JavaScript library, but a new mindest. And yeah: I do want a Modernizr distribution, that just checks for unprefixed and stable features.</p>

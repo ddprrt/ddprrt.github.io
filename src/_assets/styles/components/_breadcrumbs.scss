@@ -1,0 +1,15 @@
+.breadcrumbs {
+  display: block;
+}
+
+.breadcrumbs a {
+  color: #888484;
+  border: none;
+  font-weight: 500;
+}
+
+.breadcrumbs a:after {
+  content: " > ";
+  margin: 0 0.2rem;
+  color: #a09999;
+}

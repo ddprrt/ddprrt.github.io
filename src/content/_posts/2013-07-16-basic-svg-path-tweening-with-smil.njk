@@ -1,0 +1,271 @@
+---
+layout: post
+title: Basic SVG path tweening with SMIL
+categories:
+- SVG
+permalink: /blog/2013/07/16/basic-svg-path-tweening-with-smil/
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+excerpt_small: "I'm working on a tribute to one of my childhood heroes, the Caped Crusader, the Dark Knight, the world's greatest detective: Batman. And when I say childhood hero, I do mean a hero to this day. Anyhow, inspired by an EPS file i got over on DeviantArt, I wanted to create a history of his emblems from the very first to the very last, spanning all 73 years, much like this now infamous video did."
+---
+<style>@media(max-width:500px){.responsive-svg{width:100%;}.responsive-svg path{-webkit-transform:scale(0.5); transform:scale(0.5);}}.note{display:none;}.sorrynote{background-color: #c84941; color:white;display:block;}</style>
+
+<p id="feature-test2" class="note">Sorry, your browser does not support SVG animations with SMIL.<script>var el=document.getElementById('feature-test2');try{var n=document.createElementNS('http://www.w3.org/2000/svg', 'animate'); if(!n){ el.className+=" sorrynote";}}catch(e1){el.className+=" sorrynote";}</script></p>
+
+<p>I'm working on a tribute to one of my childhood heroes, the Caped Crusader, the Dark Knight, the world's greatest detective: Batman. And when I say childhood hero, I do mean a hero to this day. Anyhow, inspired by an EPS file i got over on DeviantArt, I wanted to create a history of his emblems from the very first to the very last, spanning all 73 years, much like <a href="http://www.youtube.com/watch?v=AKR_4kRDR9s" target="_blank">this now infamous video</a> did.</p>
+
+<p>First I had the idea of just fading over the logos, but that's actually kinda boring, so I went back to a rad idea I used once back then when Macromedia Flash 4 was still in its early days: Tweening! (well, just like in the video, no?)</p>
+
+<p>After a little research, I stumbled upon two ways to do it: Animating SVG with Rapha&euml;lJS, a JavaScript library for cross-browser SVG, or using the very powerful <strong>SMIL for SVG animations</strong>.</p>
+
+<p>All right! To the Batcave, Robins!</p>
+<!--more-->
+<p class="img-holder"><img style="width: 80%; height: auto" src="https://fettblog.eu/wp-content/uploads/2013/07/bat63.svg" /></p>
+
+<h2>A short thought on Rapha&euml;lJS</h2>
+
+<p>We already have some experience with <a href="http://raphaeljs.com/">Rapha&euml;lJS</a> in our company. We used the library to create parts of <a href="http://www.customize-eyewear.com">Adidas Customize</a> to achieve recolorable, complex formed widgets on IE7 and IE8.</p>
+
+<p>The library also allows to animate between paths, and does it in a very interesting, jQuery-like way: Instead of using SMIL, Rapha&euml;lJS interpolates path points between the start and ending state and constantly updates the path inside your SVG. I was stunned by the complexity of this rather powerful algorithm, but looking at it from a performance point of view ... nah, you get the same issues you love to hate from jQuery.</p>
+
+<p>Rapha&euml;lJS is good if you don't want to delve to deeply into drawing programs or SVG source code, and I used it mainly to apply certain transformations on exiting SVG paths, and then copying the new SVG result. But for my tribute page I dropped it completely and just used it as a fallback for IE, because SMIL is still not implemented and looking at the current preview of IE11, will not be landing there for quite some while.</p>
+
+<p>But the main reason for me to use SMIL was a rather clear one: Why using an 80kb JavaScript library if I can do everything with native means?</p>
+
+<h2>The first animation</h2>
+
+<p>My work is based on a great animation done by <a href="http://tavmjong.free.fr/blog/?p=741" target="_blank">Tavmjong Bah</a>. In his blog post he give additional information on how he actually implemented it. Some important parts were: The SVG paths you want to transform have to be in the same pattern, otherwise you don't get any animation at all:</p>
+
+<p class="img-holder"><svg width="200" height="180"><path fill="#000000" stroke="#000000" d="M89.71882,171.78893C89.71882,171.78893,89.45803999999998,172.95614999999998,95.51977999999997,134.96961999999996C101.57930999999996,96.96831999999999,107.63882999999998,86.47806999999999,113.69879999999995,86.28599999999999C119.76067999999992,86.10869999999998,124.42337999999995,96.49551999999998,127.21909999999997,106.52774999999998C130.01718999999997,116.54519999999998,132.58257999999995,134.96961999999996,132.58257999999995,134.96961999999996C132.58257999999995,134.96961999999996,136.54286999999994,113.75271999999997,138.17623999999995,105.36052999999997C139.80665999999997,96.96831999999996,146.80188999999996,79.48949999999998,152.39422999999994,79.25309999999998C157.99099999999993,79.01669999999997,162.88447999999994,87.88169999999998,166.14679999999993,100.23359999999998C169.41206999999991,112.58549999999998,167.5459899999999,128.66069999999996,167.5459899999999,128.66069999999996C167.5459899999999,128.66069999999996,179.43542999999988,108.62579999999998,179.43542999999988,74.58419999999997C179.43542999999988,40.55736999999998,166.14679999999987,20.862299999999962,166.14679999999987,20.862299999999962C126.52068999999989,45.21149999999996,105.7739299999999,41.72459999999997,105.7739299999999,41.72459999999997C109.26983999999987,16.784399999999962,103.6766199999999,-4.263256414560601e-14,103.6766199999999,-4.263256414560601e-14C103.6766199999999,-4.263256414560601e-14,97.61487999999991,10.711869999999962,97.61487999999991,10.711869999999962C95.51977999999991,8.613819999999961,89.71881999999994,8.39219999999996,89.71881999999994,8.39219999999996C89.71881999999994,8.39219999999996,83.91563999999994,8.613819999999961,81.81891999999993,10.711869999999962C81.81891999999993,10.711869999999962,75.75939999999991,-4.263256414560601e-14,75.75939999999991,-4.263256414560601e-14C75.75939999999991,-4.263256414560601e-14,70.16336999999993,16.784399999999962,73.65971999999994,41.72459999999997C73.65971999999994,41.72459999999997,52.91236999999995,45.21149999999996,13.286559999999952,20.862299999999962C13.286559999999952,20.862299999999962,-5.684341886080802e-14,40.55736999999998,-5.684341886080802e-14,74.58419999999997C-5.684341886080802e-14,108.62579999999996,11.887519999999938,128.66069999999996,11.887519999999938,128.66069999999996C11.887519999999938,128.66069999999996,10.02216999999996,112.58549999999998,13.286559999999952,100.23359999999998C16.550359999999955,87.88169999999998,21.44560999999993,79.01669999999997,27.038839999999936,79.25309999999998C32.63427999999993,79.48949999999998,39.62639999999993,96.96831999999996,41.257409999999936,105.36052999999997C42.890789999999924,113.75271999999997,46.85284999999993,134.96961999999996,46.85284999999993,134.96961999999996C46.85284999999993,134.96961999999996,49.416609999999935,116.54519999999998,52.21454999999992,106.52774999999998C55.01204999999993,96.49551999999998,59.675479999999936,86.10869999999998,65.73485999999991,86.28599999999999C71.79437999999993,86.47806999999999,77.85611999999992,96.96831999999999,83.91563999999994,134.96961999999996C89.97796999999991,172.95614999999998,89.71881999999994,171.78893,89.71881999999994,171.78893" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><animate dur="3s" repeatCount="indefinite" attributeName="d" values="M89.71882,171.78893C89.71882,171.78893,89.45803999999998,172.95614999999998,95.51977999999997,134.96961999999996C101.57930999999996,96.96831999999999,107.63882999999998,86.47806999999999,113.69879999999995,86.28599999999999C119.76067999999992,86.10869999999998,124.42337999999995,96.49551999999998,127.21909999999997,106.52774999999998C130.01718999999997,116.54519999999998,132.58257999999995,134.96961999999996,132.58257999999995,134.96961999999996C132.58257999999995,134.96961999999996,136.54286999999994,113.75271999999997,138.17623999999995,105.36052999999997C139.80665999999997,96.96831999999996,146.80188999999996,79.48949999999998,152.39422999999994,79.25309999999998C157.99099999999993,79.01669999999997,162.88447999999994,87.88169999999998,166.14679999999993,100.23359999999998C169.41206999999991,112.58549999999998,167.5459899999999,128.66069999999996,167.5459899999999,128.66069999999996C167.5459899999999,128.66069999999996,179.43542999999988,108.62579999999998,179.43542999999988,74.58419999999997C179.43542999999988,40.55736999999998,166.14679999999987,20.862299999999962,166.14679999999987,20.862299999999962C126.52068999999989,45.21149999999996,105.7739299999999,41.72459999999997,105.7739299999999,41.72459999999997C109.26983999999987,16.784399999999962,103.6766199999999,-4.263256414560601e-14,103.6766199999999,-4.263256414560601e-14C103.6766199999999,-4.263256414560601e-14,97.61487999999991,10.711869999999962,97.61487999999991,10.711869999999962C95.51977999999991,8.613819999999961,89.71881999999994,8.39219999999996,89.71881999999994,8.39219999999996C89.71881999999994,8.39219999999996,83.91563999999994,8.613819999999961,81.81891999999993,10.711869999999962C81.81891999999993,10.711869999999962,75.75939999999991,-4.263256414560601e-14,75.75939999999991,-4.263256414560601e-14C75.75939999999991,-4.263256414560601e-14,70.16336999999993,16.784399999999962,73.65971999999994,41.72459999999997C73.65971999999994,41.72459999999997,52.91236999999995,45.21149999999996,13.286559999999952,20.862299999999962C13.286559999999952,20.862299999999962,-5.684341886080802e-14,40.55736999999998,-5.684341886080802e-14,74.58419999999997C-5.684341886080802e-14,108.62579999999996,11.887519999999938,128.66069999999996,11.887519999999938,128.66069999999996C11.887519999999938,128.66069999999996,10.02216999999996,112.58549999999998,13.286559999999952,100.23359999999998C16.550359999999955,87.88169999999998,21.44560999999993,79.01669999999997,27.038839999999936,79.25309999999998C32.63427999999993,79.48949999999998,39.62639999999993,96.96831999999996,41.257409999999936,105.36052999999997C42.890789999999924,113.75271999999997,46.85284999999993,134.96961999999996,46.85284999999993,134.96961999999996C46.85284999999993,134.96961999999996,49.416609999999935,116.54519999999998,52.21454999999992,106.52774999999998C55.01204999999993,96.49551999999998,59.675479999999936,86.10869999999998,65.73485999999991,86.28599999999999C71.79437999999993,86.47806999999999,77.85611999999992,96.96831999999999,83.91563999999994,134.96961999999996C89.97796999999991,172.95614999999998,89.71881999999994,171.78893,89.71881999999994,171.78893;M89.7158785,166.02668C86.3619535,160.60424999999998,80.93657350000001,103.02607999999998,64.1551285,101.47469999999998C56.689320499999994,100.79505,51.4988635,118.52504999999996,51.4988635,118.52504999999996C50.4690455,112.83667999999994,41.6897405,91.14696999999995,26.195198500000004,89.86154999999997C10.702133500000002,88.56134999999995,0.11289030000000277,113.10262999999998,0.11289030000000277,113.10262999999998C0.11289030000000277,113.10262999999998,-1.6940921999999974,77.7165,9.150757500000005,47.76756999999998C19.995608500000007,17.81864999999999,39.105593500000005,1.2854199999999878,39.105593500000005,1.2854199999999878C48.402023500000006,23.492250000000013,67.25049050000001,27.88041999999996,70.86888850000001,29.180619999999976C74.48728550000001,30.466049999999996,73.96868350000001,26.07786999999996,73.96868350000001,26.07786999999996C73.96868350000001,7.224969999999985,84.01272850000001,-5.684341886080802e-14,84.01272850000001,-5.684341886080802e-14C80.8937255,5.156469999999956,84.01272850000001,12.913349999999923,84.01272850000001,12.913349999999923C85.55671550000001,11.361969999999928,87.3917705,11.110799999999927,89.7158785,11.110799999999927C92.0458955,11.110799999999927,93.8809505,11.361969999999928,95.4190285,12.913349999999923C95.4190285,12.913349999999923,98.5439415,5.156469999999899,95.4190285,-5.684341886080802e-14C95.4190285,-5.684341886080802e-14,105.4689815,7.224969999999928,105.4689815,26.07786999999996C105.4689815,26.07786999999996,104.95038149999999,30.46604999999994,108.5687815,29.180619999999976C112.1827415,27.88041999999996,131.0297315,23.492249999999956,140.3261615,1.2854199999999878C140.32716150000002,1.2854199999999878,159.4376315,17.81864999999999,170.28248150000002,47.76756999999998C181.12733150000003,77.7165,179.3203415,113.10262999999998,179.3203415,113.10262999999998C179.3203415,113.10262999999998,168.7296215,88.56134999999995,153.24247150000002,89.86154999999997C137.74793150000002,91.14696999999995,128.9686215,112.83667999999994,127.93437150000003,118.52504999999996C127.93437150000003,118.52504999999996,122.74391150000002,100.79504999999995,115.28254150000002,101.47469999999998C98.49518150000003,103.02607999999998,93.07571350000002,160.60424999999998,89.71587850000003,166.02668"/></path></svg></p>
+
+<p>Not even those funky effects we know from Flash back then, which is one of the main advantages of Rapha&euml;lJS: The algorithm interpolating between two paths might lead to quirky results, but is nonetheless bloody good!</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="ucDwz" data-user="ddprrt" data-safe="true"><code></code><a href="http://codepen.io/ddprrt/pen/ucDwz">Check out this Pen!</a></pre>
+<script src="http://codepen.io/assets/embed/ei.js"></script>
+
+<p>Anyhow, I did want to stick to SMIL, but even by using Tavmjongs data I wasn't able to recreate one transition between two bats. It took me some time to realize how Tavmjong was implementing his animation. Mostly because I didn't take a good look at the values. The <code class="language-markup">&lt;animate&gt;</code>-element is pretty straightforward, but the values do need some explanation: To create an animation from path A to B, the values inside the element have to feature both paths, separated by a semicolon. So if you want a transition from Figure A to B, you first have to include the path in your <code class="language-markup">&lt;path&gt;</code>-element, and then again as the first value tuple in your animation:</p>
+
+```html
+<!-- The 'd' in path is the first bat -->
+<path
+  d="M 256,213 C 245,181 206,187  ..."
+  fill="#000000">
+  <!-- The 'values' include the first
+      as well as the second bat -->
+  <animate  dur="2s"
+    repeatCount="indefinite"
+    attributeName="d"
+    values="M 256,213 C 245,181 206,187 ... Z;
+            M 212,220 C 197,171 156,153 ... Z;"/>
+</path>
+```
+
+<h3>Result</h3>
+
+<p class="img-holder"><svg id="svgex1" class="responsive-svg" width="600" height="300"><path d="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z" fill="#000000"><animate  dur="2s" repeatCount="indefinite" attributeName="d" values="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z;M 212,220 C 197,171 156,153 123,221 109,157 120,109  159,63.6 190,114  234,115  254,89.8 260,82.3 268,69.6 270,60.3 273,66.5 275,71.6 280,75.6 286,79.5 294,79.8 300,79.8 306,79.8 314,79.5 320,75.6 325,71.6 327,66.5 330,60.3 332,69.6 340,82.3 346,89.8 366,115  410,114  441,63.6 480,109  491,157 477,221 444,153 403,171 388,220 366,188 316,200 300,248 284,200 234,188 212,220 Z;"/></path></svg></p>
+
+<p>Actually, I lied a little bit. You don't need to include the path inside the "d" attribute of the <code class="language-markup">&lt;path&gt;</code>-element. The animation will work fine even without it. But: if you include the path data directly you can do some more, event-based stuff with your SVG. But more on that later. First, check on some of the attributes of the <code class="language-markup">&lt;animate&gt;</code> element.</p>
+
+<h2>Parameters</h2>
+
+<p>Some parameters are already visible in the example above: </p>
+
+<ul>
+  <li><code class="language-markup">dur</code> is short for "duration" and defines exactly that. Use any value in seconds for that.</li>
+  <li>Similar, <code class="language-markup">repeatCount</code> allows us to define how often the animation is going to be repeated. It takes any number, or <code class="language-markup">indefinite</code> for endless repeat.</li>
+  <li><code class="language-markup">attributeName</code> defines which attribute of the original element is going to be animated. Since the <code class="language-markup">&lt;animate&gt;</code> tag can be used on a multitude of SVG elements, this parameter has a multitude of possibilities. We use the "d" (<em>very</em> short for "path data"), since this is the parameter of the original <code class="language-markup">&lt;path&gt;</code> element.</li>
+  <li>Last, but not least we defined a set of <code class="language-markup">values</code></li>
+
+</ul>
+
+<p>We are not done with that. One thing you might realize is that the animation always jumps back to it's initial frame (which is why we also need to define the original path in the parent <code class="language-markup">&lt;path&gt;</code> element). To make sure that the ending state is preserved, we add another attribute called <code class="language-markup">fill</code> and set its value to <code class="language-markup">freeze</code>. In other elements, <code class="language-markup">fill</code> is used to define the filling color, in animation it's the state at the end.</p>
+
+```html
+<animate
+  dur="2s"
+
+  fill="freeze"
+
+  repeatCount="1"
+  attributeName="d"
+  values="..." />
+```
+
+<h3>Result</h3>
+
+<p>Trigger the animation by clicking or tapping on it.</p>
+
+<p class="img-holder" id="ex3">
+<svg width="600" class="responsive-svg"  height="300"><path id="pathex3" d="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z" fill="#000000"><animate id="animationex3" dur="2s" fill="freeze" begin="click" repeatCount="1" attributeName="d" values="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z;M 212,220 C 197,171 156,153 123,221 109,157 120,109  159,63.6 190,114  234,115  254,89.8 260,82.3 268,69.6 270,60.3 273,66.5 275,71.6 280,75.6 286,79.5 294,79.8 300,79.8 306,79.8 314,79.5 320,75.6 325,71.6 327,66.5 330,60.3 332,69.6 340,82.3 346,89.8 366,115  410,114  441,63.6 480,109  491,157 477,221 444,153 403,171 388,220 366,188 316,200 300,248 284,200 234,188 212,220 Z;"/></path></svg</p>
+
+<h2>Triggers</h2>
+
+</p>As you've seen, animations can be triggered on certain actions. Use the <code class="language-markup">begin</code> attribute to define the interaction or property which starts the animation, as well as <code class="language-markup">end</code> to define the interaction which should stop it.</p>
+
+</p>And this is where this stuff becomes really good, as you can add at least some control to your animation. You can either use DOM events for that, like <code class="language-javascript">click</code> (as shown in the example above) or <code class="language-javascript">mouseover</code>, but you also can use time constraints to apply a certain delay:</p>
+
+```html
+<!-- Triggers the animation after 1s -->
+<animate
+  dur="2s" repeatCount="indefinite"
+  attributeName="d"
+
+  begin="1s"
+
+  values="..."
+/>
+
+
+<!-- Triggers the animation when clicking
+  on the element -->
+<animate
+  dur="2s" repeatCount="indefinite"
+  attributeName="d"
+
+  begin="click"
+
+  values="..."
+/>
+
+<!-- Triggers the animation on mouseover,
+  stops it on mouseout -->
+<animate
+  dur="2s" repeatCount="indefinite"
+  attributeName="d"
+
+  begin="mouseover"
+  end="mouseout"
+
+  values="..."
+/>
+
+<!-- Triggers the animation on click,
+  stops it also on click -->
+<animate
+  dur="2s" repeatCount="indefinite"
+  attributeName="d"
+
+  begin="click"
+  end="click"
+
+  values="..."
+/>
+
+```
+
+<p>These parameters take almost any input based DOM event, but with one very special constraint: The SVG data has to be embedded in the DOM. If you have your SVG in a file and are referencing it in an image tag or whatever, the DOM events won't trigger.</p>
+
+<p>Trigger events can be expanded further by not only using the DOM event of an element itself, but also by referencing to an event by another element. For instance, <code class="language-markup">begin="button.click"</code> allows us to trigger the animation once a certain element with the id of <code class="language-markup">button</code> has been clicked.</p>
+
+<p>This gives us a multitude of possibilities. Look at that the following example:</p>
+
+```html
+<svg>
+  <path d="...">
+    <animate
+      dur="2s" fill="freeze"
+      begin="click" id="anim1"
+      values="..." />
+  </path>
+</svg>
+
+<svg>
+  <path d="...">
+    <animate
+      dur="2s" fill="freeze"
+      begin="anim1.begin"
+      values="..." />
+  </path>
+</svg>
+```
+
+<p>Here we start the second animation once the first one has already started.</p>
+
+<h3>Result</h3>
+
+<p>Click on the left bat to see the magic happen.</p>
+
+<p class="img-holder">
+<svg width="300" height="200" class="responsive-svg" ><path d="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z" fill="#000000" transform="scale(0.5)"><animate id="animex7" dur="2s" fill="freeze" begin="click" repeatCount="1" attributeName="d" values="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z;M 212,220 C 197,171 156,153 123,221 109,157 120,109  159,63.6 190,114  234,115  254,89.8 260,82.3 268,69.6 270,60.3 273,66.5 275,71.6 280,75.6 286,79.5 294,79.8 300,79.8 306,79.8 314,79.5 320,75.6 325,71.6 327,66.5 330,60.3 332,69.6 340,82.3 346,89.8 366,115  410,114  441,63.6 480,109  491,157 477,221 444,153 403,171 388,220 366,188 316,200 300,248 284,200 234,188 212,220 Z;"/></path></svg><svg width="300" height="200"><path d="M 166,154 C 179,119 154,95.4 114,79.3 155,79.1 197,78.9 239,78.7 242,103 250,109 283,109 289,109 290,93.9 291,83.7 292,88.3 292,92.9 293,97.5 295,97.5 298,97.5 300,97.5 302,97.5 305,97.5 307,97.5 308,92.9 308,88.3 309,83.7 310,93.9 311,109 317,109 350,109 358,103 361,78.7 403,78.9 445,79.1 486,79.3 446,95.4 421,119 434,154 377,151 320,151 300,207 280,151 223,151 166,154 Z" transform="scale(0.5)"><animate id="animation2" dur="2s" fill="freeze" begin="animex7.begin" repeatCount="1" attributeName="d" values="M 166,154 C 179,119 154,95.4 114,79.3 155,79.1 197,78.9 239,78.7 242,103 250,109 283,109 289,109 290,93.9 291,83.7 292,88.3 292,92.9 293,97.5 295,97.5 298,97.5 300,97.5 302,97.5 305,97.5 307,97.5 308,92.9 308,88.3 309,83.7 310,93.9 311,109 317,109 350,109 358,103 361,78.7 403,78.9 445,79.1 486,79.3 446,95.4 421,119 434,154 377,151 320,151 300,207 280,151 223,151 166,154 Z; M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z;"/></path></svg>
+
+</p>
+
+<h2>Events</h2>
+
+<p id="feature-test1" class="sorrynote note">Sorry, your browser does not support SMIL events<script>el=document.getElementById('feature-test1');function tstdoit() {el.className="note"};el.innerHTML += '\n<' + 'svg width="0" height="0"' + '>' +'<' + 'path' + ' d="m 1,1 1,1 0,0"><animate values="m 0,0 0,0 0,0" attributeName="d" begin="0s" repeatCount="0" onbegin="tstdoit()"/></path></svg>';</script></p>
+
+<p>SMIL supports some events to add additional control with JavaScript to your animation needs. Unfortunately, at the moment animation events are just implemented by Firefox (and pre-Blink Opera ...). I wanted to use this method not only to show some elements once the animation is done, but also to keep the state ready for the next animation, by removing the <code class="language-markup">&lt;animate&gt;</code>-element and changing the original path.</p>
+
+<p>I dropped this idea due to browser constraints, tough it would've been easy: Simply add the callback into your markup, or use <code class="language-javascript">addEventListener</code> to achieve the same.</p>
+
+```html
+<animate
+  dur="2s" fill="freeze" begin="click"
+  repeatCount="1"
+  attributeName="d"
+
+  onend="cry()"
+
+  values="..." >
+```
+
+```javascript
+function cry() {
+  alert("I'M BATMAN");
+}
+```
+
+<p>Other events include <code class="language-javascript">onbegin</code> which is obviously triggered when the animation starts, and <code class="language-javascript">onrepeat</code>, which counts the number of interations the animation has run and fires every time one iteration is complete.</p>
+
+<h3>Result</h3>
+
+<p>Start the animation by clicking or tapping the bat!</p>
+
+<p class="img-holder" id="ex5">
+<svg id="svg1" width="600" height="300" class="responsive-svg" ><script>function cry() {alert("I'M BATMAN");}</script><path id="pathex5" d="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z" fill="#000000"><animate id="animationex5" dur="2s" fill="freeze" begin="click" onend="cry()" repeatCount="1" attributeName="d" values="M 256,213 C 245,181 206,187 234,262 147,181 169,71.2 233,18   220,56   235,81   283,88   285,78.7 286,69.3 288,60   289,61.3 290,62.7 291,64   291,64   297,63   300,63   303,63   309,64   309,64   310,62.7 311,61.3 312,60   314,69.3 315,78.7 317,88   365,82   380,56   367,18   431,71   453,181 366,262 394,187 356,181 344,213 328,185 309,184 300,284 291,184 272,185 256,213 Z;M 212,220 C 197,171 156,153 123,221 109,157 120,109  159,63.6 190,114  234,115  254,89.8 260,82.3 268,69.6 270,60.3 273,66.5 275,71.6 280,75.6 286,79.5 294,79.8 300,79.8 306,79.8 314,79.5 320,75.6 325,71.6 327,66.5 330,60.3 332,69.6 340,82.3 346,89.8 366,115  410,114  441,63.6 480,109  491,157 477,221 444,153 403,171 388,220 366,188 316,200 300,248 284,200 234,188 212,220 Z;"/></path></svg</p>
+
+<p>Again, this will work only if the SVG is included directly in your DOM.</p>
+
+
+<h3>Feature test</h3>
+
+<p>As you all know, we just should feature detect to check if we're able to use SMIL. However, it might be that you get a false positive in IE9, according to this (somewhat old) <a href="https://github.com/Modernizr/Modernizr/issues/356">Modernizr issue</a>, so be aware!</p>
+
+<p>With that one you can detect SMIL:</p>
+
+```javascript
+return !!document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+```
+
+<p>Place it in a try-catch block! To check for event callbacks, this is how it <em>should</em> work.</p>
+
+```javascript
+var el = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+return !!el.onend;
+```
+
+<p>However, not even Firefox provides interfaces in their DOM API. This is a workaround: Add an almost empty SVG markup to your DOM and have it call a function once it starts. In this function, set your bools or classes, or whatever you like or need.</p>
+
+```javascript
+function smilEventsSupported() {
+  //set classes or whatever
+}
+
+//can be any element
+document.body.innerHTML += '<svg width="0" height="0">'
+  + '<path d="m 1,1 1,1 0,0">'
+  + '<animate values="m 0,0 0,0 0,0"'
+  + 'attributeName="d" begin="0s" repeatCount="0"'
+  + 'onbegin="smilEventsSupported()"/>'
+  + '</path></svg>'
+```
+
+
+<h2>Bottom line</h2>
+
+<p>This blog entry is based on about a weekend of research on that topic, fooling and playing around with values and constantly checking the <a href="http://www.w3.org/Graphics/SVG/IG/resources/svgprimer.html#SMIL_animations">specification</a>. And I'm sure that I just scratched the surface! I stumpled upon parameters such as <code class="language-markup">keytimes</code>, <code class="language-markup">keyspines</code> or <code class="language-markup">calcMode</code>, which I didn't read in depth. Also the possibility of an <code class="language-markup">animationPath</code> is available, where I've no bloody clue how they can be created whatsoever. SVG animations are a beast of their own, and very powerful once you understand them.</p>
+
+<p>Use is limited, tough. Microsoft has no plans of including SMIL in their current versions of IE. The spec has been out there for a while, but even the preview version of IE11 shows no sign of implementation. Furthermore, if you want to use that stuff on mobile browsers, be aware that performance might be below your expectations. Even iOS Safari, which is still one of the most performant mobile browsers out there, has a clear performance issue when it comes to basic tweening. It's not as bad as animating with Rapha&euml;lJS, tough, because there you just won't get any animation at all.</p>

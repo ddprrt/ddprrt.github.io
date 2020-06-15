@@ -1,0 +1,61 @@
+:not(pre) > code {
+  background-color: rgba(255, 190, 11, 0.2);
+  box-shadow: 0 0 2px rgba(255, 190, 11, 0.2);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.bg {
+  position: relative;
+  padding: 2rem 0 0;
+}
+
+.preamble {
+  z-index: 2;
+}
+
+.direct-link {
+  opacity: 0;
+  position: absolute;
+  left: -1.2em;
+}
+
+.direct-link:focus,
+:hover > .direct-link {
+  opacity: 1;
+  border-bottom: none;
+}
+
+.e-content {
+  max-width: 85ch;
+  width: 100%;
+  line-height: 1.7em;
+  font-family: 'Source Serif Pro', -apple-system;
+  color: #555;
+  font-size: 1.2rem;
+  grid-area: content;
+}
+
+.article {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 700px) {
+  
+  .article {
+    margin-top: 5rem;
+  }
+  
+  .bg {
+    padding: 6rem 0 3rem;
+  }
+}
+
+
+@media (min-width: 1150px) {
+  .e-content > :first-child {
+    margin-top: 0;
+  }
+}

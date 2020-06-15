@@ -1,0 +1,87 @@
+-
+  date: 2020-06-16
+  title: Building cloud-native applications with Kubernetes and Istio
+  youtubeId: 6BYq6hNhceI
+  speaker: Kelsey Hightower
+  description: "Every time I look for keynote speakers for DevOne, I end up with Kelsey's phenomenal keynote at Velocity. Incedribly engaging and approachable. This taught me what Kubernetes is actually about. I'm not sure how I feel that O'Reilly has dropped all conferences due to COVID-19, forever! Their content was sometimes extraordinary."
+-
+  date: 2020-05-16
+  title: Why your private cloud is probably a bad idea
+  speaker: Sam Newman
+  youtubeId: MbaPtzSuQII
+  description: I've been trying to get Sam to one of my conferences for ages. And this video again shows why. With a certain tongue-in-cheek humor he tells us why Kubernetes is to blame for people picking a private cloud over a public one of the big three cloud players, and gives valid reason why someone shouldn't do their cloud stuff on their own. Fun session!
+-
+  date: 2020-05-15
+  title: Design Microservice Architectures the Right Way
+  speaker: Michael Bryzek
+  twitter: mbryzek
+  youtubeId: j6ow-UemzBc
+  description: Michael starts with tons of misconceptions around microservices and microservice architectures, and gives some valuable insights on what they needed to create to make microservice architectures really work. This is maybe eye-opening for a lot of people.
+-
+  date: 2020-04-24
+  title: Porting DOOM to WebAssembly
+  speaker: Manuel Wieser
+  twitter: manuel_wieser
+  youtubeId: lZnz46a58_Y
+  description: Manuel shared his isolation story at one of our meetups, and he told us how he tried to make DOOM work in the browser. A wonderful developer journey where he shows how he came to his solution one step at a time. It's also so much fun! And he shows how similar C development is to Front-End development. Kudos!
+- 
+  date: 2020-04-17
+  title: Static Sites, Dynamic microservices, & Azure
+  youtubeId: EpYYe6aQjJM
+  speaker: Dan Fernandez
+  description: The Jamstack story behind Microsoft Docs. When I was working on the Dynatrace docs, the Microsoft Azure docs evolved in parallel, based on the same tech-stack, and with the same mindset. Whenever people doubted our choice of architecture was right (mostly because it was so fundamentally different from everything they knew), the MS Docs were a good big brother to point to, to make them rethink. Dan gives a full tour on what it means to develop a beast like the Microsoft Docs on the Jamstack, and there's lots of similaritires to what we did, but also lots of new stuff that's so unique and wonderful for their special use-case. Jumping from examples to a fully working Azure shell is simply amazing. Great, great stuff.
+- 
+  date: 2020-04-09
+  title: I pressed ⌘B, you never know what happened next
+  youtubeId: kVD-sjtFoEI
+  speaker: Marcin Wichary
+  description: I love talks by Marcin and had the privilege to see him live a couple of times. This talk is about bold fonts. And all the variations they can have. It's a mess, but presented so funny and engaging that you not only learn a lot, but see regular tasks on typography in a slightly different light. Highly recommended. It's a joy to watch!
+- 
+  date: 2020-04-02
+  title: Microservice Pipeline Architecture
+  youtubeId: vUCr1oTtaKA
+  speaker: Tim Perry
+  description: You might think that JAMstack and incremental pre-rendering is something entirely new, possibly an invention of a completely new category of websites. Or maybe it's something people have done ever since. Under different names. With different focus. This is software engineering. Nothing is ever new! Tim's talk is a wonderful example of creating a cloud-based architecture for massively scalable websites! Long before *JAMstack* was a name. I wonder why I haven't seen this talk of you, Tim! We've been at least at two conferences together were you gave it! 
+- 
+  date: 2020-03-15
+  title: Building the new Facebook
+  youtubeId: KT3XKDBZW7M
+  speaker: Ashley Watkins
+  description: I really don't like Facebook. I have an account, but I'm not using it. And I stay away from it as much as possible. I like good engineering stories, though! And Ashley's story is one of those! Starting with a regular architecture presentation, going a great deal into micro-optimizations. Wow!
+-
+  date: 2020-02-10
+  title: In defense of Utility First CSS
+  youtubeId: R50q4NES6Iw 
+  speaker: Sarah Dayan
+  description: Debunking some myths about atomic/utility-first CSS. Atomic CSS development always got a bad rep, so it's really interesting to see how it now becomes so incredibly popular. One reason might be that people now know how to talk about it, and Sarah's talk is one of the best ones.
+- 
+  date: 2020-02-09
+  title: Reactive dynamic forms
+  youtubeId: 3xwxlHqrLsE
+  speaker: Juri Strumpflohner
+  description: Juri gives a great intro to NGX Formly (see [formly.dev](https://formly.dev)), an Angular library for dynamic forms. You have use cases like that way too often when you do settings-heavy pages. So it's nice to see a really good generic solution for that. Wonder how this is solved in other frameworks.
+- date: 2020-02-08
+  title: Stateful Serverless Applications
+  youtubeId: lUyln5m6AhY
+  speaker: Guillermo Rauch
+  description: Debunking some misconceptions about the internal workings of lambdas. Highly recommended if you work with [Now](https://zeit.co), Azure or AWS.
+- date: 2020-01-20
+  title: The return of Write Less, Do more
+  youtubeId: BzX4aTRPzno
+  speaker: Rich Harris
+  description: The only introduction to Svelte that you ever need. And holy template compiler, Batman! Rich is a fantastic storyteller. The amount of detail he puts into his talks is astounding. His delivery feels like watching JavaScript fairy tales. Astounding!
+- date: 2020-01-13
+  title: Polly wants a message
+  youtubeId: YtROlyWWhV0
+  speaker: Sandi Metz
+  description: Sandi shows why object-oriented code doesn't have to be a nightmare. I usually don't do a lot of OO, but this one still got me. 
+- date: 2020-01-07
+  title: Building a resilient front-end architecture
+  youtubeId: TqfbAXCCVwE
+  speaker: Monica Lent
+  description: I deal with a lot of software architecture these days, reading tons of articles and books, and most of them are over-blown, over-complicated, and quite arrogant views on Software Engineering. Not Monica. Monica gives a fun, engaging, and immensely useful talk on architecture. Tips that you can put to use immediately. I could listen to her for lots more hours, I have the feeling that she just started sharing her architecture knowledge.
+- date: 2020-01-03
+  title: Write accessible Go
+  youtubeId: cVaDY0ChvOQ
+  speaker: Julia Ferraioli
+  description: "I love accessibility talks, especially some that go into totally different directions. This one by Julia is about writing code that's better to experience for people with visual impairments. I love this talk! Especially since the old rule prevails: If your product (in this case: your code) is accessible for everyone, also people without impairments benefit from it. Good coding guidelines never fail. Julia also does a brilliant delivery. Kudos!"

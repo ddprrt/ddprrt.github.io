@@ -1,0 +1,18 @@
+{% set movie = cinema | first %}
+<div class="element-cover element-middle">
+  <a href="/cinema/{{movie.title | slug }}"  class="element-cover-link">
+    <img src="https://i3.ytimg.com/vi/{{movie.youtubeId}}/mqdefault.jpg" loading="lazy" alt="Talk by {{movie.speaker}}" class="element-cover-image">
+  </a>
+</div>
+<div class="element-content">
+  <div class="element-top">
+    <span class="element-highlight meta-highlight">Cinema</span>
+    <h2>{{movie.speaker}}: {{ movie.title }}</h2>
+  </div>
+  <div class="action-bar">
+    <a href="/cinema/{{movie.title | slug }}" class="read-more custom-emoji">
+      <span aria-hidden="true">🍿</span>
+      Open in Cinema
+    </a>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<nav class="nav">
+  <a class="logo" href="/">fettblog.eu</a>
+  <ul class="navbar">
+    <li class="navbar-item"><a class="navbar-link{% if menuActive == 'articles' %} active{% endif %}" href="/articles/">Articles</a></li>
+    <li class="navbar-item"><a class="navbar-link{% if menuActive == 'guides' %} active{% endif %}" href="/guides/">Guides</a></li>
+    <li class="navbar-item"><a class="navbar-link{% if menuActive == 'books' %} active{% endif %}" href="/books/">Books</a></li>
+    <li class="navbar-item"><a class="navbar-link{% if menuActive == 'cinema' %} active{% endif %}" href="/cinema/">Cinema</a></li>
+    <li class="navbar-item"><a class="navbar-link{% if menuActive == 'about' %} active{% endif %}" href="/about/">About</a></li>
+  </ul>
+  <button class="navbar-button" id="open">Menu</button>
+  <button class="navbar-button" id="close">Close</button>
+</nav>

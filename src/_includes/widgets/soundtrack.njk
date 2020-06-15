@@ -1,0 +1,18 @@
+{% set soundtrack = collections.soundtracks | last %}
+<div class="element-cover element-start">
+  <a href="{{soundtrack.data.spotify}}" target="_blank" rel="nofollow noopener" class="element-cover-link">
+    <img src="{{soundtrack.data.cover}}" loading="lazy" alt="Cover art" class="element-cover-image">
+  </a>
+</div>
+<div class="element-content">
+  <div class="element-top">
+    <span class="element-highlight meta-highlight">Coding soundtrack</span>
+    <h2>{{ soundtrack.data.title }}</h2>
+  </div>
+  <div class="action-bar">
+    <a href="{{soundtrack.data.spotify}}" target="_blank" rel="nofollow noopener" class="read-more custom-emoji">
+      <span aria-hidden="true">👨‍🎤</span>
+      Open in Spotify
+    </a>
+  </div>
+</div>

@@ -1,9 +1,0 @@
-@font-face {
-  font-family: BerninaSans;
-  src: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/fonts/BerninaSans-Web-Regular.woff) format("woff"), url(//assets.dynatrace.com/groundhog/v3.2.0/assets/fonts/BerninaSans-Web-Regular.woff2) format("woff2");
-  font-weight: 400; }
-
-@font-face {
-  font-family: BerninaSans;
-  src: url(//assets.dynatrace.com/groundhog/v3.2.0/assets/fonts/BerninaSans-Web-Light.woff) format("woff"), url(//assets.dynatrace.com/groundhog/v3.2.0/assets/fonts/BerninaSans-Web-Light.woff2) format("woff2");
-  font-weight: 300; }

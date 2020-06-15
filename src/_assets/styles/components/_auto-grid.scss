@@ -1,0 +1,24 @@
+.raster {
+  display: grid;
+  grid-gap: 2rem;
+  padding: 1.5rem;
+}
+
+.auto-fill {
+  grid-template-columns: 100%;
+}
+
+@media(min-width: 600px) {
+
+  .auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+}
+
+@media(min-width: 800px) {
+
+  .raster {
+    padding: 2rem;
+  }
+}
+

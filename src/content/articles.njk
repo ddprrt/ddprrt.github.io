@@ -1,0 +1,19 @@
+---
+layout: list
+title: All articles
+menuActive: articles
+permalink: /articles/
+breadrcrumbs:
+-
+  path: /
+  title: Home
+---
+
+{% set years = [] %}
+{% set firstTime = true %}
+{%- for post in collections.posts | reverse -%}
+{% if not hideFromList %}
+{% include "navigation/post-list.njk" %}
+{% endif %}
+{% endfor %}
+</ul>

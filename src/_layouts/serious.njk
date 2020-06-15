@@ -1,0 +1,15 @@
+---
+layout: default.njk
+includeMeta: true
+---
+<article class="wrapper h-entry">
+  <div class="bg">
+    {% include "navigation/preamble.njk" %}
+  </div>
+  <div class="grid main-frame article">
+    <div class="e-content">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+

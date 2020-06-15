@@ -1,0 +1,98 @@
+---
+layout: default.njk
+title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
+---
+
+{% set posts = collections["posts"] | reverse %}
+
+<h1 class="sr-only">Recent articles</h1>
+
+<div class="home raster teaser-area">
+  <article class="teaser teaser-main">
+    {% set article = posts[0] %}
+    <div class="teaser-content">
+      <span class="breadcrumbs">
+        <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
+      </span>
+      <h2 class="h1 teaser-heading">
+        <a href="{{article.url}}">{{article.data.title}}</a>
+      </h2>
+      <div class="meta meta-grow">
+        <div class="meta-item">
+          <div class="meta-image-wrapper">
+            <img loading="lazy" class="author-image" alt="Stefan Baumgartner" src="/wp-content/uploads/me.jpg">
+          </div>
+        </div>
+        <p class="meta-item">
+          Written by  <span class="meta-highlight"><a class="" href="https://twitter.com//ddprrt">@ddprrt</a></span>
+        </p>
+        <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ article.templateContent | readingTime }} minutes</span></p>
+        {% if article.data.categories %}
+        <p class="meta-item">
+          Posted in <span class="meta-highlight">
+            {% for category in article.data.categories %}
+            <a href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            {% endfor %}
+          </span>
+        </p>
+        {% endif %}
+      </div>
+      <div class="e-content abstract">
+        {{ article.templateContent | abstract | safe }}
+      </div>
+      <div class="action-bar">
+        <a class="read-more" href="{{article.url}}">Read more</a>
+      </div>
+    </div>
+  </article>
+  {% for i in range(1, 8) %}
+  <article class="teaser teaser-small">
+  {% set article = posts[i] %}
+    <div class="teaser-content">
+      <span class="breadcrumbs">
+        <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
+      </span>  
+      <h2 class="teaser-heading">
+        <a href="{{article.url}}">{{article.data.title}}</a>
+      </h2>
+      <div class="meta">
+        <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ article.templateContent | readingTime }} minutes</span></p>
+        {% if article.data.categories %}
+        <p class="meta-item">
+          Posted in <span class="meta-highlight">
+            {% for category in article.data.categories %}
+            <a href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+            {% endfor %}
+          </span>
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="action-bar">
+      <a class="read-more" href="{{article.url}}">Read more</a>
+    </div>
+  </article>
+  {% endfor %}
+  <div class="teaser teaser-happy">
+  {% include "widgets/happy-stefan.njk" %}
+  </div>
+</div>
+
+<div class="callout">
+  <a href="/articles" class="button"><span aria-hidden="true" class="effect">💡</span> Want more? Check out all {{ collections["posts"] | length }} articles</a>
+</div>
+
+
+<section class="raster element-grid">
+  <div class="element">
+    {% include "widgets/soundtrack.njk" %}
+  </div>
+  <div class="element">
+    {% include "widgets/cinema.njk" %}
+  </div>
+  <div class="element">
+    {% include "widgets/guides.njk" %}
+  </div>
+</section>
+
+{% include "widgets/full-newsletter-widget.njk" %}

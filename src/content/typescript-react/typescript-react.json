@@ -1,0 +1,16 @@
+{
+  "tags": ["guides-typescript-react", "guides"],
+  "menuActive": "guides",
+  "breadcrumbs": [
+    { "title": "Home", "path": "/" },
+    { "title": "Guides", "path": "/guides/" },
+    { "title": "TypeScript & React", "path": "/typescript-react/" }
+  ],
+  "permalink": "/typescript-react/{{page.fileSlug}}/",
+  "hideFromList": true,
+  "guideName": "TypeScript and React",
+  "noSidebar": true,
+  "og": {
+    "img": "wp-content/uploads/react-guide-og.jpg"
+  }
+}

@@ -1,0 +1,47 @@
+ul.article-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.article-list-item {
+  padding: 0;
+  margin: 2rem 0;
+  line-height: 1.9;
+}
+
+.article-list-category-link {
+  color: #999;
+}
+
+.article-list-item .meta-highlight {
+  color: #777;
+  display: block;
+}
+
+.article-list-link {
+  font-size: 1.3rem;
+}
+
+.list-year:first-child {
+  margin-top: 0;
+}
+
+.talk-list {
+  list-style-type: none;
+}
+
+.talk-list-item {
+  position: relative;
+}
+
+.talk-list-item:before {
+  content: '';
+  width: 10px;
+  height: 13px;
+  border-bottom: 1px dotted #999;
+  border-left: 1px dotted #999;
+  position: absolute;
+  left: -0.9rem;
+  top: 0.24rem;
+}

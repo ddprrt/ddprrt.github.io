@@ -1,0 +1,19 @@
+<!doctype html>
+{% if page.lang %}
+<html lang="{{ page.lang }}">
+{% else %}
+<html lang="en">
+{% endif %}
+<head>
+	{% include "head.njk" %}
+</head>
+<body {% if layout.mainClass %}class="{{layout.mainClass}}"{% endif %}>
+
+	{% include "header.njk" %}
+
+	{{ content | safe }}
+
+	{% include "footer.njk" %}
+	{% include "scripts.njk" %}
+</body>
+</html>
