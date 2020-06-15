@@ -52,8 +52,12 @@
 <meta property="og:image:secure_url" content="https://fettblog.eu/{{ og.img }}">
 <meta name="twitter:image" content="https://fettblog.eu/{{ og.img }}">
 {% else %}
-{% if permalink %}
-{% set imgPath = permalink | teaserIMG | slug %}
+{% if permalink and tags and ("posts" in tags) %}
+{% if permalink == "/{{page.fileSlug}}/"%}
+{% set imgPath = page.fileSlug | slug %}
+{% else %}
+{% set imgPath = permalink | slug %}
+{% endif %}
 <meta property="og:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
 <meta property="og:image:secure_url" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
 <meta name="twitter:image" content="https://fettblog.eu/teasers/{{ imgPath }}.png">
