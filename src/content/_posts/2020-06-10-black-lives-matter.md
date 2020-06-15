@@ -1,6 +1,7 @@
 ---
 title: Black Lives Matter
 layout: serious.njk
+permalink: /black-lives-matter/
 categories:
 - General
 --- 
