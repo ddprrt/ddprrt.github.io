@@ -1,4 +1,10 @@
 -
+  date: 2020-06-16
+  title: Building cloud-native applications with Kubernetes and Istio
+  youtubeId: 6BYq6hNhceI
+  speaker: Kelsey Hightower
+  description: "Every time I look for keynote speakers for DevOne, I end up with Kelsey's phenomenal keynote at Velocity. Incedribly engaging and approachable. This taught me what Kubernetes is actually about. I'm not sure how I feel that O'Reilly has dropped all conferences due to COVID-19, forever! Their content was sometimes extraordinary."
+-
   date: 2020-05-16
   title: Why your private cloud is probably a bad idea
   speaker: Sam Newman
