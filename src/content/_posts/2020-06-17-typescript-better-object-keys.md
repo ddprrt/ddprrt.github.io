@@ -8,11 +8,8 @@ TypeScript's pre-defined types in `lib.d.ts` are usually very well typed and giv
 
 ```typescript
 type Person = {
-  name: string,
-  age: number,
-  id: number,
+  name: string, age: number, id: number,
 }
-
 declare const me: Person;
 
 Object.keys(me).forEach(key => {

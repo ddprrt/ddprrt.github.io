@@ -64,8 +64,9 @@ module.exports = function(config) {
 
   config.addFilter('abstract', function(input) {
     const $ = cheerio.load(input)
-    const x = $.html('p:first-child, p:first-child + :not(h2, h3, ol, ul)').toString()
-    return x
+    const x = $('p:first-of-type').eq(0).toString()
+    const y = $('p:first-of-type + :not(h2, h3, h4, ol, li, ul)').eq(0).toString()
+    return x + y
   })
 
 
