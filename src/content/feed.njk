@@ -16,7 +16,7 @@ permalink: /feed.xml
 	{% for post in collections.posts | reverse %}
 	<entry>
 		<title>{{ post.data.title }}</title>{% if post.data.permalink === "/{{page.fileSlug}}/" %}
-		<link href="{{ site.url }}/{{ post.fileSlug }}/">{% else %}
+		<link href="{{ site.url }}/{{ post.fileSlug }}/" />{% else %}
 		<link href="{{ site.url }}{{ post.data.permalink }}"/>{% endif %}
 		<updated>{{ post.date | toISO }}</updated>{% if post.data.permalink === "/{{page.fileSlug}}/" %}
 		<id>{{ site.url }}/{{ post.fileSlug }}/</id>{% else %}
