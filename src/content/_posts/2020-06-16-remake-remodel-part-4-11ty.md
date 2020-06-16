@@ -49,11 +49,11 @@ But the best thing is their speed. The lead time for a Vercel build is less tan 
 
 I spent a lot of time creating a build pipeline for Jamstack in-house. And getting a fast pipeline where deployments felt natural was one of the biggest challenges. This speed that you gain from using a tailored infrastructure is incredible. Vercel is really a ton of fun to use. 
 
-I moved to Vercel about a month ago. Even transferring the domain was more than easy. Nobody figured out that I switched. The only person who can see that is me, because suddenly cache hits in Cloudflare dropped. I
+I moved to Vercel about a month ago. Even transferring the domain was more than easy. Nobody figured out that I switched. The only person who can see that is me, because suddenly cache hits in Cloudflare dropped.
 
 ![Dropping cache hits](/wp-content/uploads/2020/caching.png)
 
-f you have an idea why, please [drop me a line](https://twitter.com/ddprrt).
+If you have an idea why, please [drop me a line](https://twitter.com/ddprrt).
 
 ## Design
 
