@@ -60,7 +60,7 @@ Object.keys(me).forEach((key) => {
 
 Better. Still not cool. This is something TypeScript should do on its own! So if TypeScript doesn't know yet, we can start *teaching* TypeScript how to do it.
 
-## Extending Object Constructor
+## Option 2. Extending Object Constructor
 
 Thanks to the declaration merging feature of interfaces, we can extend the `ObjectConstructor` interface with our own type definitions. We can do this directly where we need it, or create our own ambient declaration file.
 
