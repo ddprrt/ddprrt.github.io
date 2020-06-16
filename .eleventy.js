@@ -53,7 +53,7 @@ module.exports = function(config) {
         return [current]
       }
       let lastOne = prev[prev.length - 1]
-      if(lastOne.length + current.length > 20) {
+      if(lastOne.length + current.length > 18) {
         return [...prev, current]
       }
       prev[prev.length - 1] = lastOne + ' ' + current
@@ -92,11 +92,6 @@ module.exports = function(config) {
       return `/${fileSlug}/`
     }
     return permalink
-  })
-
-  config.addNunjucksFilter('useFileSlug', function(val) {
-    console.log(args)
-    return val
   })
 
   config.addCollection('categories', function (collection) {
