@@ -1,11 +1,11 @@
-.mono {
+.monochrome {
   filter: grayscale(1)
 }
 
-.mono .e-content p {
+.monochrome .e-content p {
   filter: contrast(2)
 }
 
-.mono .token.token.token {
+.monochrome .token.token.token {
   color: white;
 }
