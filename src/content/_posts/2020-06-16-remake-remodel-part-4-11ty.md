@@ -86,6 +86,12 @@ I also used the relaunch to make some content updates that were important to me.
 5. I had also a watching list, where I note down notable talks from conferences that inspired me, or that I saw suitable for [DevOne](https://devone.at) or [ScriptConf](https://scriptconf.org). This list still exists, but it's now called [Cinema](/cinema/). This is a thing that I had in mind for a long time. I don't want to leave my site when I browse through my list of favorite talks. So let's make it a website feature instead!
 6. I opened a section on [Books](/books/) that I wrote. Currently, it's one. But there's another in the works which I hope to share details soon. I just sent 57000 words to my editor. So let's see how soon we can release it!
 
+## Obligatory lighthouse score
+
+![All 4 pieces showing 100](/wp-content/uploads/2020/nice.png)
+
+💯💯💯💯
+
 I think that's it. I learned a lot in the last couple of weeks and had tremendous fun with it. 
 
 <p class="not-tldr">If you find anything unusual, a broken link or some missing info, please <a href="https://twitter.com/ddprrt">drop me a line</a>. I highly appreciate it!</p>
