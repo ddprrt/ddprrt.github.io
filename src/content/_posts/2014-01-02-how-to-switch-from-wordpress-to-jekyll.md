@@ -31,7 +31,7 @@ I'm a huge fan of static site generators like [assemble.io](/blog/2013/09/02/usi
 
 You need Ruby to run Jekyll, fortunately you don't need to *understand* Ruby at all. If you are on Mac or Linux, just open a Terminal (you will need this a lot!) and install the jekyll gem with
 
-```
+```bash
 gem install jekyll
 ```
 
@@ -39,7 +39,7 @@ Depending on your configuration, `sudo` might be required. What I found strange 
 
 Once installed, just create a new directory and type 
 
-```
+```bash
 jekyll new .
 ```
 
@@ -49,7 +49,7 @@ inside. And voilà, you have a basic theme with a standard post already there!
 
 Converting was a little challenge, since how the Jekyll developers *want* converting to happen is rather different from how it actually can be achieved. Thing is: The documentation on [the Jekyll Import site](http://import.jekyllrb.com/) is sometimes ready for the upcoming release of `jekyll-import`, but up until now, this package is still in beta. Install it with the `--pre` command:
 
-```
+```bash
 gem install jekyll-import --pre
 ```
 
@@ -59,7 +59,7 @@ Next: Export your old Wordpress blog via the Admin panel. That's pretty easy to 
 
 Now I just copied the detailed command from [Jekyll's Wordpress import page](http://import.jekyllrb.com/docs/wordpressdotcom/)
 
-```
+```bash
 ruby -rubygems -e 'require "jekyll-import";
     JekyllImport::Importers::WordpressDotCom.run({
       "source" => "wordpress.xml"
