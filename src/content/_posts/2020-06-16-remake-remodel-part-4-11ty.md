@@ -35,7 +35,7 @@ I've chosen [11ty](https://11ty.dev) for my static site generator. On the surfac
 
 But this is just the surface. It is so much more than that and I'm going to blog about my findings soon. I love that I can reduce front-matter to a bare minimum. A title, some categories. The rest is done with per-folder metadata files. This is pure magic!
 
-I also create title cards for each of my 150 posts in SVG. I render about 400 objects. It doesn't take me more than 2.5 seconds. This is ludicrous speed. I'm more than amazed by the flexibility, the power and the sheer performance. Had tip to [Max Böck's excellent boilerplate](https://github.com/maxboeck/eleventastic) and [Chris Coyier's conferences website](https://github.com/CSS-Tricks/conferences). They proved to be invaluable resources to me.
+I also create title cards for each of my 150 posts in SVG. I render about 400 objects. It doesn't take me more than 2.5 seconds. This is ludicrous speed. I'm more than amazed by the flexibility, the power and the sheer performance. Hat tip to [Max Böck's excellent boilerplate](https://github.com/maxboeck/eleventastic) and [Chris Coyier's conferences website](https://github.com/CSS-Tricks/conferences). They proved to be invaluable resources to me.
 
 The concept of how 11ty handles data, content and templates is pretty unique and allows for tons of pages to be generated without much maintenance. One piece that wouldn't work without 11ty's power is the [Cinema section](/cinema/). It's a YAML file that I maintain, and I get excellent web pages for free.
 
