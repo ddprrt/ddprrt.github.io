@@ -256,3 +256,13 @@
     grid-row: 1 / 2;
   }  
 }
+
+@media(min-width: 1800px) {
+
+  .teaser-area {
+    grid-template-columns: repeat(4, 450px);
+    position: relative;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
