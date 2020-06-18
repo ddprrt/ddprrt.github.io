@@ -45,7 +45,7 @@ type Bar<
 
 type T4 = Bar<[boolean], [number]>;  // [boolean, string, number]
 type T5 = Bar<[number, number], [boolean]>;  // [number, number, string, boolean]
-type T6 = Bar<[]. []>;  // [string]
+type T6 = Bar<[], []>;  // [string]
 ```
 
 Cool already! But why do we care so much about it?
