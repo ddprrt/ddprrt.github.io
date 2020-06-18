@@ -1,0 +1,11 @@
+.monochrome {
+  filter: grayscale(1)
+}
+
+.monochrome .e-content p {
+  filter: contrast(2)
+}
+
+.monochrome .token.token.token {
+  color: white;
+}
