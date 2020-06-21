@@ -1,5 +1,5 @@
 ---
-title: "Large node module dependencies &mdash; an issue?"
+title: "Are large node module dependencies an issue?"
 categories:
 - Node.js
 - Serverless
@@ -37,5 +37,24 @@ Let's target the question from three different angles:
 ## Regular Node.js apps
 
 ## Serverless
+
+When regular Node.js apps boot once and then run, Serverless functions boot once and then ... die some time. Also, Serverless functions run in (Docker) containers that need to be booted as well. And even if everything is supposed to be fast, it isn't as fast as running it on a server that understands Node.js or your local machine.
+
+This is also what [Franziska](https://twitter.com/fhinkel), who worked with the V8 team and is now with GCP, points out:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s a problem for lamdba/functions. Just parsing large deps takes significant time.</p>&mdash; Franziska Hinkelmann, Ph.D. (@fhinkel) <a href="https://twitter.com/fhinkel/status/1273953161703763970?ref_src=twsrc%5Etfw">June 19, 2020</a></blockquote>
+
+So what does significant mean? [Mikhail Shilkov](https://mikhail.io/serverless/coldstarts/big3/) did some great research on that topic. He deployed three different versions of an app that does roughly the same (Hello World style), but with differently sized dependencies. One as-is, around 1KB, one with 14MB of dependencies, one with 35MB of dependencies. 
+
+On GCP, Azure and AWS cold start time rose significantly, with AWS being the fastest:
+
+1. The 1KB as-is version always started below 0.5 seconds
+2. Cold start of the 14MB version took between 1.5 seconds and 2.5 seconds
+3. Cold start of the 35MB version took between 3.3 seconds and 5.8 seconds
+
+With other vendors, cold start can last up to 23 seconds. This *is* significant. Be sure to check out his [article](https://mikhail.io/serverless/coldstarts/big3/) and the details of each provider! Big shout-out to [Simona Cotin](https://twitter.com/simona_cotin) for pointing me to this one!
+
+[James](https://twitter.com/jasnell/status/1273955716999442433) from Nearform seconds this opinion and points to some work from [Anna](https://twitter.com/addaleax) (who works for Nearform on Node) to possibly enable V8 snapshots for this. 
+
 
 ## The DevOps view
