@@ -36,6 +36,12 @@ Let's target the question from three different angles:
 
 ## Regular Node.js apps
 
+[Matteo](https://twitter.com/matteocollina) from Nearform never experienced any big trouble with big node modules. Especially not with regular Node.js apps.
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;ve never experienced any significant problem about this, even in serverless environments. The few times this has been a problem was solved by splitting said lambda/service into multiple small bits as not all the deps are needed everywhere.</p>&mdash; Matteo Collina (@matteocollina) <a href="https://twitter.com/matteocollina/status/1273889481175810049?ref_src=twsrc%5Etfw">June 19, 2020</a></blockquote>
+
+[Tim Perry](https://twitter.com/pimterry/status/1273905137694752768?s=20) has found some issues with CLI tools where he wants to be as responsive as possible. He used one of Vercel's many Node.js tools to make it fast and swift. [PKG](https://twitter.com/vercel/pkg) creates executables for Windows, Mac and Linux that package the correct Node.js version with it.
+
 ## Serverless
 
 When regular Node.js apps boot once and then run, Serverless functions boot once and then ... die some time. Also, Serverless functions run in (Docker) containers that need to be booted as well. And even if everything is supposed to be fast, it isn't as fast as running it on a server that understands Node.js or your local machine.
@@ -58,3 +64,13 @@ With other vendors, cold start can last up to 23 seconds. This *is* significant.
 
 
 ## The DevOps view
+
+[Frederic](https://twitter.com/fhemberger), [Sebastian](https://twitter.com/sebgie), and [Marvin](https://twitter.com/marvinhagemeist) all point to the cost of CI build time and docker image size. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">+ 1 to Docker image size, CI build time and slow startup which has already been mentioned.<br><br>There is also a deployment package size limit of 50 MB (zipped), 250 MB (unzipped) on AWS Lambda (<a href="https://t.co/TA5x2jHozm">https://t.co/TA5x2jHozm</a>). Using rollup/ncc can save your deployment in this case.</p>&mdash; Sebastian Gierlinger (@sebgie) <a href="https://twitter.com/sebgie/status/1273946116682403840?ref_src=twsrc%5Etfw">June 19, 2020</a></blockquote>
+
+Which is definitely an issue. Especially if you pay for the minute in your CI environment.
+
+Frederic also found the best way to close this round-up:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With serverless, this should&#39;t be too much of a problem. If your single-purpose function requires *a lot* of dependencies to get the job done, you&#39;re probably doing something wrong and should reconsider the scope of it.</p>&mdash; Frederic&#39;); DROP TABLE tweets;-- (@fhemberger) <a href="https://twitter.com/fhemberger/status/1273890780550135808?ref_src=twsrc%5Etfw">June 19, 2020</a></blockquote>
