@@ -137,6 +137,7 @@ module.exports = function(config) {
     './src/content/typescript-react/img/': 'typescript-react/img/' 
   })
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
+  config.addPassthroughCopy('./src/robots.txt')
   config.addPassthroughCopy('./src/icon/')
   config.addWatchTarget('./src/_assets')
 
