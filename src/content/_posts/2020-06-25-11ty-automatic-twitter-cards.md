@@ -1,5 +1,5 @@
 ---
-title: "11ty: Generate Twitter cards for your posts"
+title: "11ty: Generate Twitter cards automatically"
 categories:
 - Eleventy
 - Jamstack
