@@ -108,3 +108,5 @@ The type of `key` is now `'id' | 'name' | 'age'`, just as we want it to be. Also
 Note: The behavior of passing an array or a string doesn't significantly change. But this is a good indicator that there might be something wrong with your code. Same with the empty array. Still, we retain the behavior of built-in functionality.
 
 Extending existing interfaces is a great way to opt-in to typings where for some reason we don't get the information we need. 
+
+*Hat tip to [Mirjam](https://twitter.com/mirjam_diala) who worked with me on that solution 👏*
