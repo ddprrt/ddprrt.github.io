@@ -1,21 +1,20 @@
-
-  <!-- print the year if necessary -->
+  {# print the year if necessary #}
   {% set currYear = post.date | getYear %}
   {% if years.indexOf(currYear) < 0 %}
-
-  <!-- close the previous list -->
+  
+  {# close the previous list #}
   {% if firstTime %}
     {% set firstTime = false %}
+    </ul>
   {% else %}
-</ul>
-  <!-- end close the previous list -->
+  {# end close the previous list #}
   {% endif %}
     {% set no = years.push(currYear) %}
 <h2 class="list-year">{{currYear}}</h2>
 
 <ul class="article-list">
   {% endif %}
-  <!-- end print years -->
+  {# end print years #}
 
   <li class="article-list-item">
     <span class="meta-highlight">{{ post.date | prettyDate }} | 
