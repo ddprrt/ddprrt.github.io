@@ -198,7 +198,7 @@ type Intersected = UnionToIntersection<
 // a union of conditionals:
 
 type Intersected = 
-  UnionToIntersection<{ format320p: string }>
+  UnionToIntersection<{ format320p: string }> |
   UnionToIntersection<{ format480p: string }> |
   UnionToIntersection<{ format720p: string }> |
   UnionToIntersection<{ format1080p: string }> 
