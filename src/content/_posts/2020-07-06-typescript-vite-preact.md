@@ -6,7 +6,7 @@ categories:
 - Preact
 ---
 
-Vite is a new web development build tool by [Evan You](https://twitter.com/youyuxi), the creator of Vue.js. It's in early beta at the time of this writing and was mainly created for Vue 3, but it's also able to build React and Preact and has TypeScript support out of the box.
+[Vite](https://github.com/vitejs/vite) is a new web development build tool by [Evan You](https://twitter.com/youyuxi), the creator of Vue.js. It's in early beta at the time of this writing and was mainly created for Vue 3, but it's also able to build React and Preact and has TypeScript support out of the box.
 
 Vite's biggest difference to other tools is that for development, it relies on the basic loading capabilities of ECMAScript modules. This means that your `import` statements translate are executed natively by the browser. Vite's task is to serve your files. Nothing more. Well, a little bit more.
 
