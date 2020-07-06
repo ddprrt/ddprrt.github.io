@@ -118,10 +118,21 @@ We're close! The last thing we need to do is adapting files.
 1. Rename all `.jsx` files to `.tsx`.
 2. Open `index.html` and refer to `main.tsx` instead of `main.jsx`.
   
-Last, but not least, let your `tsx` files know which factory and fragment factory you are using. Since we are not injecting globally anymore, we need to import them in each file. 
+Next, let your `tsx` files know which factory and fragment factory you are using. Since we are not injecting globally anymore, we need to import them in each file. 
 
 ```typescript
 import { Fragment, h } from 'preact'
+```
+
+Since we have TypeScript now up and running, our editor already gives us a sweet error message that we use `document.getElementById('app')` with way too much confidence. This might be `null`, after all!
+
+Let's be sure that this element exists:
+
+```typescript
+const el = document.getElementById('app')
+if(el) {
+  render(<App />, el)
+}
 ```
 
 And that's it! You can see a rough and unpolished demo setup on [GitHub](https://github.com/ddprrt/preact-vite-ts-playground). Let me know what you think!
