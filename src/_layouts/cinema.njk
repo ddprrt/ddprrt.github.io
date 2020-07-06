@@ -10,9 +10,7 @@ layout: default.njk
   <div class="movie-desc">
     <h1>{{ movie.speaker }}: {{ movie.title }}</h1>
     <div class="e-content movie-e-content">
-      <p>
-        {{ movie.description }}
-      </p>
+      {{ movie.description | markdownify | safe }}
     </div>
   </div>
   <div class="movie-nav">

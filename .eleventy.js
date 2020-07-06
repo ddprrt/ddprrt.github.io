@@ -1,6 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
+const inlineMd = markdownIt()
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItLazy =  require('markdown-it-image-lazy-loading')
 const cheerio = require('cheerio')
@@ -44,6 +45,10 @@ module.exports = function(config) {
 
   config.addFilter('byOrder', function(coll) {
     return coll.sort((a, b) => a.data.order - b.data.order)
+  })
+
+  config.addFilter('markdownify', function(input) {
+    return inlineMd.render(input)
   })
 
   config.addFilter('splitlines', function(input) {
