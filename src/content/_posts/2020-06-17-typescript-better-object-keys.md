@@ -110,3 +110,11 @@ Note: The behavior of passing an array or a string doesn't significantly change.
 Extending existing interfaces is a great way to opt-in to typings where for some reason we don't get the information we need. 
 
 *Hat tip to [Mirjam](https://twitter.com/mirjam_diala) who worked with me on that solution 👏*
+
+## Further reading
+
+[Dan](https://twitter.com/danvdk) Vanderkam pointed me to Anders' issue on why `Object.keys` does *not* return `keyof T`. Read this [GitHub issue comment](https://github.com/microsoft/TypeScript/pull/12253#issuecomment-263132208) for more details. The TLDR: While `keyof T` is valid in the type-level world, in run-time objects can have a lot more keys. 
+
+The question is what you expect from your type's contract and how you work with `Object.keys` in general. So be sure to handle this patch with care!
+
+Dan also pointed me to [an article of his](https://effectivetypescript.com/2020/05/26/iterate-objects/) where he detailed his strategies of iterating over objects. Be sure to check it out!
