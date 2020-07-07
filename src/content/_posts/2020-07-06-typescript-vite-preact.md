@@ -136,3 +136,7 @@ if(el) {
 ```
 
 And that's it! You can see a rough and unpolished demo setup on [GitHub](https://github.com/ddprrt/preact-vite-ts-playground). Let me know what you think!
+
+## Further reading
+
+- Please also check out [Snowpack](https://snowpack.dev) by Fred K. Schott. A very similar approach and a very detailled explanation on some ground concepts behind *O(1) build tooling*.
