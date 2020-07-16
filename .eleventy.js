@@ -1,3 +1,4 @@
+//@ts-ignore
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
@@ -70,7 +71,7 @@ module.exports = function(config) {
   config.addFilter('abstract', function(input) {
     const $ = cheerio.load(input)
     const x = $('p:first-of-type').eq(0).toString()
-    const y = $('p:first-of-type + :not(h2, h3, h4, ol, li, ul)').eq(0).toString()
+    const y = $('p:first-of-type ~ :not(h2, h3, h4, ol, li, ul)').eq(0).toString()
     return x + y
   })
 
