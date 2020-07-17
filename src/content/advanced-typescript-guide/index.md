@@ -22,7 +22,7 @@ While each article stands on its own I can recommend reading it like a book, as 
 
 Ready? let's go!
 
-**Last update**: July 18, 2020
+**Last update**: July 18, 2020 at 15.000 words!
 
 ## Table of contents
 
