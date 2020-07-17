@@ -64,7 +64,10 @@ If we can't wait, we just can add the typings ourselves. And only for the projec
 Let's assume we generated the types for `ResizeObserver`. We would store the output in a file called `resize-observer.d.ts`. Here are the contents:
 
 ```typescript
-type ResizeObserverBoxOptions = "border-box" | "content-box" | "device-pixel-content-box";
+type ResizeObserverBoxOptions =
+  "border-box" | 
+  "content-box" |
+  "device-pixel-content-box";
 
 interface ResizeObserverOptions {
   box?: ResizeObserverBoxOptions;
