@@ -1,4 +1,4 @@
-//@ts-ignore
+//@ts-nocheck
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
@@ -52,6 +52,12 @@ module.exports = function(config) {
     return inlineMd.render(input)
   })
 
+  config.addFilter('log', function(input) {
+    console.log('🤡', input)
+    return input
+  })
+
+
   config.addFilter('splitlines', function(input) {
     const parts = input.split(' ')
     const lines = parts.reduce(function(prev, current) {
@@ -82,6 +88,9 @@ module.exports = function(config) {
     return `<p>${input.substring(firstParagraph + 3, firstParagraphEnd)}</p>`
   })
 
+  config.addFilter('filterTOC', function(input) {
+    return input.filter(el => !el.data.excludeFromTOC)
+  })
 
   config.addShortcode('now', function() {
     return new Date().toISOString()

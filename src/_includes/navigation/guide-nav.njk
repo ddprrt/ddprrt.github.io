@@ -1,10 +1,11 @@
 {% if tags and 'guides' in tags %}
 <section class="sidebar-element sticky">
 {% set coll =  tags | getGuide %}
-  {% if collections[coll] %}
+{% set colli = collections[coll] | filterTOC %}
+  {% if colli and colli.length %}
   <h4 class="sidebar-heading">Table of contents</h4>
   <ol class="sidebar-list">
-    {% for post in collections[coll] | byOrder %}
+    {% for post in colli | byOrder %}
     {% if not post.data.excludeFromTOC %}
       <li class="sidebar-list-item{% if page.url === post.url %} active{% endif %}">
         <a href="{{post.url}}">{{post.data.title | replace(post.data.guideName, "") | replace(": ", "") }}</a>
