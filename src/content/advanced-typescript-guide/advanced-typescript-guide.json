@@ -1,0 +1,16 @@
+{
+  "tags": ["guides-advanced-typescript", "guides"],
+  "menuActive": "guides",
+  "breadcrumbs": [
+    { "title": "Home", "path": "/" },
+    { "title": "Guides", "path": "/guides/" },
+    { "title": "TypeScript & React", "path": "/advanced-typescript-guide/" }
+  ],
+  "permalink": "/advanced-typescript-guide/{{page.fileSlug}}/",
+  "hideFromList": true,
+  "guideName": "Advanced TypeScript",
+  "noSidebar": true,
+  "og": {
+    "img": "wp-content/uploads/2020/advanced-typescript-guide-og.jpg"
+  }
+}
