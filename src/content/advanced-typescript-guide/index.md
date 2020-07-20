@@ -45,7 +45,7 @@ You learn:
 - Value types (or literal types)
 
 
-### [Symbol in JavaScript and TypeScript](/symbol-in-javascript-and-typescript/)
+### [Symbol in JavaScript and TypeScript](/symbols-in-javascript-and-typescript/)
 
 Symbols are a very *unique* type in JavaScript, as every created symbol can only exist once. TypeScript even has a keyword for that:
 
