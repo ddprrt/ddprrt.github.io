@@ -26,7 +26,7 @@ Ready? let's go!
 
 ## Table of contents
 
-- [TypeScript and JavaScript](#typescript-and-javascript): 4 articles
+- [TypeScript and JavaScript](#typescript-and-javascript): 5 articles
 - [Control flow](#control-flow): 3 articles
 - [Ambient declarations](#ambient-declarations): 4 articles
 - [Working with generics](#working-with-generics): 4 articles
@@ -99,7 +99,7 @@ You learn:
 - Type predicates
 - `unknown` type
 
-[Assertion signatures](/typescript-assertion-signatures/)
+### [Assertion signatures](/typescript-assertion-signatures/)
 
 Assertion signatures are similar to type predicates, but they work outside branching statements. In this example, we create our own `defineProperty` function where we can add properties to the type we originally defined.
 
