@@ -5,7 +5,7 @@
     { "source": "/feed/", "destination": "/feed.xml" },
     { "source": "/atom.xml", "destination": "/feed.xml" },
     { "source": "/watching-list/", "destination": "/cinema/" },
-    { "source": "/reading-list/", "destination": "/books/" },
+    { "source": "/reading-list/", "destination": "/books/" }
   ],
   "headers": [
     { "source": "/(.*)", "headers" : [
