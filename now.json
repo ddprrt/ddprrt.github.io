@@ -5,7 +5,8 @@
     { "source": "/feed/", "destination": "/feed.xml" },
     { "source": "/atom.xml", "destination": "/feed.xml" },
     { "source": "/watching-list/", "destination": "/cinema/" },
-    { "source": "/readiung-list/", "destination": "/books/" }
+    { "source": "/readiung-list/", "destination": "/books/" },
+    { "source": "./well-known/brave-payment-verification.txt", "destination": "/brave-payment-verification.txt" }
   ],
   "headers": [
     { "source": "/(.*)", "headers" : [
