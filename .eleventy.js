@@ -148,6 +148,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/wp-content/')
   config.addPassthroughCopy('./src/manifest.json')
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
+  config.addPassthroughCopy('./src/brave-payment-verification.txt')
   config.addPassthroughCopy({
     './src/content/typescript-react/img/': 'typescript-react/img/' 
   })
