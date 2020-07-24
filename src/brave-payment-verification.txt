@@ -1,1 +1,4 @@
-brave-ledger-verification=69f72d9d330be9272b6bbc261d9a23c2857753e6ca3af35b95921d6e87171784
+This is a Brave Rewards publisher verification file.
+
+Domain: fettblog.eu
+Token: 69f72d9d330be9272b6bbc261d9a23c2857753e6ca3af35b95921d6e87171784
