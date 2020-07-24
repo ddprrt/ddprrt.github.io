@@ -150,7 +150,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
   config.addPassthroughCopy({
     './src/content/typescript-react/img/': 'typescript-react/img/',
-    './src/brave-payment-verification.txt': '.well-known/brave-payment-verification.txt'
+    './src/brave-payment-verification.txt': 'brave-payment-verification.txt'
   })
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
   config.addPassthroughCopy('./src/robots.txt')
