@@ -1,1 +1,1 @@
-brave-ledger-verification=1bb1ecadc5284cead29fa5d32018646933d5879bc314e7ca843f460c99c33cb4
+brave-ledger-verification=69f72d9d330be9272b6bbc261d9a23c2857753e6ca3af35b95921d6e87171784
