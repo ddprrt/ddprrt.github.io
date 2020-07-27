@@ -196,3 +196,7 @@ const zz = <Img alt="..." src="..." />;
 ```
 
 *to be extended*
+
+## Play around
+
+Instead of the usual TypeScript playground, I created a [Codesandbox](https://codesandbox.io/s/component-patterns-sw7x9?file=/src/Components.tsx) you can use to play around. Have fun!
