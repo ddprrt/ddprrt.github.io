@@ -56,9 +56,15 @@
   font-weight: 700;
 }
 
+
 .read-more:not(.custom-emoji):before {
   content: '👉 ';
 }
+
+.read-more[data-emoji]:before {
+  content: attr(data-emoji) ' ';
+}
+
 
 .custom-emoji {
   background: linear-gradient(0, #fff, #fff);

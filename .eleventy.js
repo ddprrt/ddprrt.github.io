@@ -103,11 +103,11 @@ module.exports = function(config) {
   config.addNunjucksFilter('teaserIMG', function(value) {
     const { fileSlug } = value
     const { permalink } = value.data
-    if(permalink.includes('page.fileSlug')) {
+    if(permalink && permalink.includes('page.fileSlug')) {
       console.log('👍', permalink, fileSlug)
       return `/${fileSlug}/`
     }
-    return permalink
+    return permalink || ''
   })
 
   config.addCollection('categories', function (collection) {
@@ -149,8 +149,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/manifest.json')
   config.addPassthroughCopy('./src/pwabuilder-sw.js')
   config.addPassthroughCopy({
-    './src/content/typescript-react/img/': 'typescript-react/img/',
-    './src/brave-payment-verification.txt': '.well-known/brave-rewards-verification.txt'
+    './src/content/typescript-react/img/': 'typescript-react/img/'
   })
   config.addPassthroughCopy('./src/googlea8ba377bc3684d37.html')
   config.addPassthroughCopy('./src/robots.txt')

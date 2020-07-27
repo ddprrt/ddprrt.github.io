@@ -12,7 +12,7 @@ breadrcrumbs:
 {% set years = [] %}
 {% set firstTime = true %}
 {%- for post in collections.posts | reverse -%}
-{% if not hideFromList %}
+{% if not post.data.hideFromList %}
 {% include "navigation/post-list.njk" %}
 {% endif %}
 {% endfor %}
