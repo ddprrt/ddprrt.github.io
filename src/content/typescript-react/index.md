@@ -38,6 +38,8 @@ we will.
 
 Ready? Let's go!
 
+**Last update:** July 28, 2020
+
 ## Table of contents:
 
 1. [Getting started](./getting-started/): How to set up TypeScript and React, and what are your options
@@ -58,3 +60,4 @@ Next to this guide, I write regular blog articles that cover TypeScript. Occasio
 - [JSX is syntactic sugar](/jsx-syntactic-sugar/): On how TypeScript is a pure JSX compiler
 - [Extending JSX elements](/typescript-react-extending-jsx-elements/): How to extend pre-defined JSX elements with attributes that are not yet available in all browsers
 - [Typing custom hooks with tuple types](/typescript-react-typeing-custom-hooks/): Tuple types are great for `useState` like hook patterns
+- [Component patterns](/typescript-react-component-patterns/): Some component patterns, a sort of best practices guide

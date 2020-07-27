@@ -24,6 +24,7 @@ Have fun!
 - [Preset attributes](#preset-attributes)
 - [Styled components](#styled-components)
 - [Required properties](#required-properties)
+- [Controlled input](#controlled-input)
 
 ## Basic function components
 
@@ -59,7 +60,7 @@ function Greeting({ name }: GreetingProps) {
 
 ## Default props
 
-Instead of setting default props, like in class-based React, it's easier to set default values to props. We mark props with a default value optional (see the question mark operator). The default value makes sure that `name` is never undefined.
+Instead of setting default props, like in class-based React, it's easier to set default values to props. We mark props with a default value optional (see the question-mark operator). The default value makes sure that `name` is never undefined.
 
 ```typescript
 type LoginMsgProps = {
@@ -123,7 +124,7 @@ type CardProps = { title: string } & WithChildren;
 
 ## Spread attributes to HTML elements
 
-Spreading attributes to HTML elements is a nice feature where you can make sure that you are able to set all the HTML properties that an element has without knowing upfront which you want to set. You pass them along. Here's a button wrapping component where we spread attributes. To get the right attributes, we acccess a `button`'s props through `JSX.IntrinsicElements`. This includes `children`, we spread them along.
+Spreading attributes to HTML elements is a nice feature where you can make sure that you are able to set all the HTML properties that an element has without knowing upfront which you want to set. You pass them along. Here's a button wrapping component where we spread attributes. To get the right attributes, we access a `button`'s props through `JSX.IntrinsicElements`. This includes `children`, we spread them along.
 
 ```typescript
 type ButtonProps = JSX.IntrinsicElements["button"];
@@ -135,7 +136,7 @@ function Button({ ...allProps }: ButtonProps) {
 
 ## Preset attributes
 
-Let's say we want to preset `type` to `button` as the default behaviour `submit` tries to send a form, and we just want to have things clickable. We can get type safety by omitting `type` from the set of button props.
+Let's say we want to preset `type` to `button` as the default behavior `submit` tries to send a form, and we just want to have things clickable. We can get type safety by omitting `type` from the set of button props.
 
 ```typescript
 type ButtonProps =
@@ -151,7 +152,7 @@ const z = <Button type="button">Hi</Button2>;
 
 ## Styled components
 
-Not to be confused with the *styled components* CSS-in-JS library. We want to set CSS classes based on a prop we define. E.g. a new `type` property that allows to be set to either `primary` or `secondary`.
+Not to be confused with the *styled-components* CSS-in-JS library. We want to set CSS classes based on a prop we define. E.g. a new `type` property that allows being set to either `primary` or `secondary`.
 
 We omit the original `type` and `className` and intersect with our own types:
 
@@ -193,6 +194,43 @@ export function Img({ alt, ...allProps }: ImgProps) {
 }
 
 const zz = <Img alt="..." src="..." />;
+```
+
+## Controlled Input
+
+When you use regular input elements in React and want to pre-fill them with values, you can't change them anymore afterward. This is because the `value` property is now controlled by React. We have to put `value` in our state and *control* it. Usually, it's enough to just intersect the original input element's props with our own idea:
+
+```typescript
+type ControlledProps = 
+  JSX.IntrinsicElements["input"] & {
+    value?: string;
+  };
+```
+
+Alternatively, we can drop the old property and rewrite it:
+
+```typescript
+type ControlledProps =
+  Omit<JSX.IntrinsicElements["input"], "value"> & {
+    value?: string;
+  };
+```
+
+And use `useState` with default values to make it work:
+
+```typescript
+function Controlled({ value = "", ...allProps }: ControlledProps) {
+  const [val, setVal] = useState(value);
+  return (
+    <input
+      value={val}
+      {...allProps}
+      onChange={e => {
+        setVal(() => e.target?.value);
+      }}
+    />
+  );
+}
 ```
 
 *to be extended*
