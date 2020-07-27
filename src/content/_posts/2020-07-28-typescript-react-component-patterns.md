@@ -147,7 +147,7 @@ function Button({ ...allProps }: ButtonProps) {
 }
 
 // 💥 This breaks, as we omitted type
-const z = <Button type="button">Hi</Button2>; 
+const z = <Button type="button">Hi</Button>; 
 ```
 
 ## Styled components
