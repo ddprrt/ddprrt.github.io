@@ -198,7 +198,7 @@ const zz = <Img alt="..." src="..." />;
 
 ## Controlled Input
 
-When you use regular input elements in React and want to pre-fill them with values, you can't change them anymore afterward. This is because the `value` property is now controlled by React. We have to put `value` in our state and *control* it. Usually, it's enough to just intersect the original input element's props with our own idea:
+When you use regular input elements in React and want to pre-fill them with values, you can't change them anymore afterward. This is because the `value` property is now controlled by React. We have to put `value` in our state and *control* it. Usually, it's enough to just intersect the original input element's props with our own type. It's optional as we want to set it to a default empty string in the component later on.
 
 ```typescript
 type ControlledProps = 
