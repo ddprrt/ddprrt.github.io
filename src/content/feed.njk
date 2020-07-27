@@ -14,6 +14,7 @@ permalink: /feed.xml
 	</author>
 
 	{% for post in collections.posts | reverse %}
+	{% if not post.data.hideFromList %}
 	<entry>
 		<title>{{ post.data.title }}</title>{% if post.data.permalink === "/{{page.fileSlug}}/" %}
 		<link href="{{ site.url }}/{{ post.fileSlug }}/" />{% else %}
@@ -23,5 +24,6 @@ permalink: /feed.xml
 		<id>{{ site.url }}{{ post.data.permalink }}</id>{% endif %}
 		<content type="html">{{ post.templateContent | excerpt | escape }}</content>
 	</entry>
+	{% endif %}
 	{% endfor %}
 </feed>

@@ -15,7 +15,11 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
       </span>
       <h2 class="h1 teaser-heading">
+        {% if article.data.linkTo %}
+        <a href="{{article.data.linkTo}}">{{article.data.title}}</a>
+        {% else %}
         <a href="{{article.url}}">{{article.data.title}}</a>
+        {% endif %}
       </h2>
       <div class="meta meta-grow">
         <div class="meta-item">
@@ -41,7 +45,11 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         {{ article.templateContent | abstract | safe }}
       </div>
       <div class="action-bar">
+        {% if article.data.linkTo %}
+        <a class="read-more" data-emoji="👍" href="{{article.data.linkTo}}">Follow link</a>
+        {% else %}
         <a class="read-more" href="{{article.url}}">Read more</a>
+        {% endif %}
       </div>
     </div>
   </article>
@@ -53,7 +61,11 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         <p class="meta-item post-date"><span class="teaser-highlight">{{ article.date | prettyDate }}</span></p>
       </span>  
       <h2 class="teaser-heading">
+        {% if article.data.linkTo %}
+        <a href="{{article.data.linkTo}}">{{article.data.title}}</a>
+        {% else %}
         <a href="{{article.url}}">{{article.data.title}}</a>
+        {% endif %}
       </h2>
       <div class="meta">
         <p class="meta-item post-date">Reading time: <span class="meta-highlight">{{ article.templateContent | readingTime }} minutes</span></p>
@@ -69,7 +81,11 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
       </div>
     </div>
     <div class="action-bar">
+      {% if article.data.linkTo %}
+      <a class="read-more" data-emoji="👍" href="{{article.data.linkTo}}">Follow link</a>
+      {% else %}
       <a class="read-more" href="{{article.url}}">Read more</a>
+      {% endif %}
     </div>
   </article>
   {% endfor %}
