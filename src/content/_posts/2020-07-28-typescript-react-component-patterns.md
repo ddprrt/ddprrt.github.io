@@ -216,10 +216,12 @@ type ControlledProps =
   };
 ```
 
-And use `useState` with default values to make it work:
+And use `useState` with default values to make it work. We also forward the `onChange` handler we pass from the original input props.
 
 ```typescript
-function Controlled({ value = "", ...allProps }: ControlledProps) {
+function Controlled({
+  value = "", onChange, ...allProps
+}: ControlledProps) {
   const [val, setVal] = useState(value);
   return (
     <input
@@ -227,6 +229,7 @@ function Controlled({ value = "", ...allProps }: ControlledProps) {
       {...allProps}
       onChange={e => {
         setVal(() => e.target?.value);
+        onChange && onChange(e);
       }}
     />
   );
