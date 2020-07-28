@@ -122,6 +122,8 @@ This is very similar to `FC`, but with the default generic parameter to `{}`, it
 type CardProps = { title: string } & WithChildren;
 ```
 
+If you are using Preact, you can use `h.JSX.Element` or `VNode` as a type instead of `React.ReactNode`.
+
 ## Spread attributes to HTML elements
 
 Spreading attributes to HTML elements is a nice feature where you can make sure that you are able to set all the HTML properties that an element has without knowing upfront which you want to set. You pass them along. Here's a button wrapping component where we spread attributes. To get the right attributes, we access a `button`'s props through `JSX.IntrinsicElements`. This includes `children`, we spread them along.
