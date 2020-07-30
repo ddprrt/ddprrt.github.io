@@ -38,7 +38,7 @@ we will.
 
 Ready? Let's go!
 
-**Last update:** July 28, 2020
+**Last update:** July 30, 2020
 
 ## Table of contents:
 
@@ -61,3 +61,4 @@ Next to this guide, I write regular blog articles that cover TypeScript. Occasio
 - [Extending JSX elements](/typescript-react-extending-jsx-elements/): How to extend pre-defined JSX elements with attributes that are not yet available in all browsers
 - [Typing custom hooks with tuple types](/typescript-react-typeing-custom-hooks/): Tuple types are great for `useState` like hook patterns
 - [Component patterns](/typescript-react-component-patterns/): Some component patterns, a sort of best practices guide
+- [Why I don't use React.FC](/typescript-react-why-i-dont-use-react-fc/): An opinion on why I don't use the built-in type `React.FC`

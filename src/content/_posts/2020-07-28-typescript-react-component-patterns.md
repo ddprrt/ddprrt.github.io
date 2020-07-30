@@ -3,13 +3,14 @@ title: "TypeScript + React: Component patterns"
 categories:
 - TypeScript
 - React
+- Preact
 ---
 
 This list is a collection of component patterns for React when working with TypeScript. See them as an extension to the [TypeScript + React Guide](/typescript-react/) that deals with overall concepts and types. This list has been heavily inspired by [chantastic's original React patterns list](https://reactpatterns.com/).
 
 Contrary to chantastic's guide I use mainly modern-day React, so function components and -- if necessary -- hooks. I also focus exclusively on types.
 
-**Last updated**: July 28, 2020
+**Last updated**: July 30, 2020
 
 Have fun!
 
@@ -101,6 +102,8 @@ type SaveButtonProps = {
   children: never
 }
 ```
+
+See my arguments why I don't use `FC` [in this editoral](/typescript-react-why-i-dont-use-react-fc/).
 
 ## WithChildren helper type
 
