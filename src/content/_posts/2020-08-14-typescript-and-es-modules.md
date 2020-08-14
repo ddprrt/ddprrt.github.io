@@ -58,7 +58,7 @@ import { obj } from './module.js'
 console.log('name')
 ```
 
-The same goes for `tsx` files. TypeScript knows this gets compiled to a `js` file, so it's safe to use the extension once you import.
+The same goes for `tsx` files. TypeScript knows `tsx` files get compiled to a `js` file, so it's safe to use the `js` extension once you import.
 
 ```typescript
 // Component.tsx
