@@ -3,9 +3,10 @@ title: "TypeScript and ECMAScript Modules"
 categories:
 - TypeScript
 - JavaScript
+- Preact
 ---
 
-Working with real, native, ECMAScript modules is becoming a thing. Tools like [Vite](https://github.com/vitejs/vite), [ES Dev server](https://open-wc.org/developing/es-dev-server.html), and [Snowkpack](https://snowpack.dev) get their fast development experience from leaving module resolution to the browser. Package CDNs like [Skypack](https://skypack.dev) and [UnPKG](https://unpkg.com/) are providing pre-compiled ES modules which you can use in both Deno and the browser just by referencing a URL.
+Working with real, native, ECMAScript modules is becoming a thing. Tools like [Vite](https://github.com/vitejs/vite), [ES Dev server](https://open-wc.org/developing/es-dev-server.html), and [Snowpack](https://snowpack.dev) get their fast development experience from leaving module resolution to the browser. Package CDNs like [Skypack](https://skypack.dev) and [UnPKG](https://unpkg.com/) are providing pre-compiled ES modules which you can use in both Deno and the browser just by referencing a URL.
 
 Combined with proper caching and knowing what HTTP can do, ES modules can become a *real* alternative to all the heavy bundling and building that we're used to. If you want to work with ECMAScript modules and TypeScript, there are a few things to consider.
 
