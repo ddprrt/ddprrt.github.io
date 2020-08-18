@@ -318,3 +318,25 @@ function handleClick(this:
   this.classList.add('clicked-once')
 }
 ```
+
+`OmitThisParameter` removes the `this` typing and gives you the blank type signature of a function.
+
+```typescript
+// No reason to type `this` here!
+function handleToggle(this: HTMLElement) {
+  console.log('clicked!')
+}
+
+type HandleToggleFn 
+  = OmitThisParameter<typeof handleToggle>
+
+declare function toggle(callback: HandleToggleFn)
+
+toggle(function() {
+  console.log('Yeah works too')
+}) // 👍
+```
+
+## ThisType
+
+There's another generic helper type that helps defining `this` for objects.

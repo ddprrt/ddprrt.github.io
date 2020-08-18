@@ -22,11 +22,11 @@ While each article stands on its own I can recommend reading it like a book, as 
 
 Ready? let's go!
 
-**Last update**: July 18, 2020 at 15.000 words!
+**Last update**: August 19, 2020 at 17.000 words!
 
 ## Table of contents
 
-- [TypeScript and JavaScript](#typescript-and-javascript): 5 articles
+- [TypeScript and JavaScript](#typescript-and-javascript): 6 articles
 - [Control flow](#control-flow): 3 articles
 - [Ambient declarations](#ambient-declarations): 4 articles
 - [Working with generics](#working-with-generics): 4 articles
@@ -53,6 +53,16 @@ You learn:
 - How Symbols work
 - The `unique` keyword
 - Run-time `enums`!
+
+### [this in JavaScript and TypeScript](/this-in-javascript-and-typescript/)
+
+
+*Sometimes when writing JavaScript, I want to shout "This is ridiculous!". But then I never know what `this` refers to*. All about `this` and how to type it.
+
+You learn:
+- `this`!
+- `this` parameters
+- `ThisParameterType`, `OmitThisParameter`, `ThisType` helpers
 
 ### [void in JavaScript and TypeScript](/void-in-javascript-and-typescript/)
 
