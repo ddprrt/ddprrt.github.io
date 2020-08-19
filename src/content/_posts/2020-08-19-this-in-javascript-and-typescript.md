@@ -7,7 +7,7 @@ categories:
 
 *Sometimes when writing JavaScript, I want to shout "This is ridiculous!". But then I never know what `this` refers to*. 
 
-If there is one concept in JavaScript that confuses people, it has to be `this`. Especially if your background is a class-based object oriented programming languages, where `this` always refers to an instance of a class. `this` in JavaScript is entirely different, but not necessarily harder to understand. There're a few basic rules, and about as much exceptions to keep in mind. And TypeScript can help greatly!
+If there is one concept in JavaScript that confuses people, it has to be `this`. Especially if your background is a class-based object-oriented programming languages, where `this` always refers to an instance of a class. `this` in JavaScript is entirely different, but not necessarily harder to understand. There're a few basic rules, and about as many exceptions to keep in mind. And TypeScript can help greatly!
 
 ## this in regular JavaScript functions
 
@@ -72,7 +72,7 @@ hi.apply(pet) // prints 'Finni'
 hi.call(author) // prints 'Stefan'
 ```
 
-The nearest object is the object we pass as the first argument. The documentation call the first argument `thisArg`, so the name tells you already what to expect.
+The nearest object is the object we pass as the first argument. The documentation calls the first argument `thisArg`, so the name tells you already what to expect.
 
 ### apply vs call
 
@@ -144,7 +144,16 @@ which makes it a bit more obvious why `this` is `button` in that case.
 
 ## this in arrow functions and classes
 
-So I spent half of my professional JavaScript career to totally understand what `this` refers to, just to see the rise of classes and arrow functions which turn everything upside down again. 
+So I spent half of my professional JavaScript career to totally understand what `this` refers to, just to see the rise of classes and arrow functions that turn everything upside down again. 
+
+<details>
+<summary>Here's my most favorite meme on this</summary>
+<figure class="img-holder wide">
+  <img src="/wp-content/uploads/2020/meme.jpg" loading="lazy"
+    alt="Two people shouting at each other: This is the difference between arrow functions and normal functions. What is the difference? This is the difference? And so on, and so on." />
+    <figcaption>My most favourite this meme</figcaption>
+</figure>
+</details>
 
 Arrow functions always resolve `this` respective to their lexical scope. Lexical scope means that the inner scope is the same as the outer scope, so `this` inside an arrow function is the same as outside an arrow function. For example:
 
@@ -209,7 +218,7 @@ author.hiMsg('Hello')() // prints 'Hello, Stefan'
 
 ### unbinding
 
-Problems occur if you accidentally *unbind* a function, e.g. by passing a function that is bound to some other function, or storing it in a variable.
+Problems occur if you accidentally *unbind* a function, e.g. by passing a function that is bound to some other function or storing it in a variable.
 
 ```typescript
 const author = {
@@ -339,4 +348,52 @@ toggle(function() {
 
 ## ThisType
 
-There's another generic helper type that helps defining `this` for objects.
+There's another generic helper type that helps defining `this` for objects called `ThisType`. It originally comes from the way e.g. Vue handles objects. For example:
+
+```typescript
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage() {
+      // OK, so what's this?
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+```
+
+Look at `this` in the `reverseMessage()` function. As we learned, `this` refers to the nearest object, which would be `methods`. But Vue transforms this object into something different, so you can access all elements in `data` and all methods in `methods` (eg. `this.reverseMessage()`).
+
+With `ThisType` we can declare the type of `this` at this particular position.
+
+The Object descriptor for the code above would look like this:
+
+```typescript
+type ObjectDescriptor<Data, Methods> = {
+  el?: string,
+  data?: Data;
+  methods?: Methods & ThisType<Data & Methods>;
+};
+```
+
+It tells TypeScript that within all functions of `methods`, this can access to fields from type `Data` and `Methods`. 
+
+Typing this minimalistic version of Vue looks like that:
+
+```typescript
+declare const Vue: VueConstructor;
+
+type VueConstructor = {
+  new<D, M>(desc: ObjectDescriptor<D, M>): D & M
+)
+```
+
+`ThisType<T>` in `lib.es5.d.ts` itself is empty. It's a marker for the compiler to point `this` to another object. As you can see in [this playground](https://www.typescriptlang.org/play?#code/G4QwTgBCAO0KwQLwQHYFMDuEBqBXNAFAN4BQEEaANgFwQDkAxDNALRx0A0ZEAJiAC4hapcuQC2aAM6SQAczS06ACSqUA9jnwA6AFaSAhHW4BfLuLT8AFmp6Th3cmDTA0YSWgCyUmfNoAzXBQAY34ASzUUCAIASggRUXIrUMktCWk5NCQIJJS0nzQtSWhKUP4COjporScXN0IqnTVQlHLKhwhjExJjaJISfgBPaEyAeQAjHTQQgBEpILBQ6H41MAAeaY4IDwA+LPiqWkl+BZRZM14BEAB+WmmAbm4JKxtJG62IADIIABVLZO+hmh1p8tts7hAAPQQn6AiBqPz0HJ0CDNCBPay2FGSCDTEEeboPEg8KaUcCZIIRI6aBTUgDClOOuBCK0Jg2GdIZYCZy0gyHi6Aw602OwIxMkQVo40mMzmCyWKyFoOitzx3SAA), `this` is exactly what it should be.
+
+## Bottom line
+
+I hope this piece on `this` did shed some light on the different quirks in JavaScript and how to type `this` in TypeScript. If you have any questions, feel free to reach out to me.
+
