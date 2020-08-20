@@ -147,7 +147,7 @@ which makes it a bit more obvious why `this` is `button` in that case.
 So I spent half of my professional JavaScript career to totally understand what `this` refers to, just to see the rise of classes and arrow functions that turn everything upside down again. 
 
 <details>
-<summary>Here's my most favorite meme on this</summary>
+<summary>Here's my most favorite meme on this (click to expand)</summary>
 <figure class="img-holder wide">
   <img src="/wp-content/uploads/2020/meme.jpg" loading="lazy"
     alt="Two people shouting at each other: This is the difference between arrow functions and normal functions. What is the difference? This is the difference? And so on, and so on." />
