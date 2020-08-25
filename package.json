@@ -38,7 +38,7 @@
     "preact": "^10.4.7",
     "rollup": "^2.13.1",
     "rollup-plugin-terser": "^6.1.0",
-    "shiki-twoslash": "^0.7.0",
+    "shiki-twoslash": "^0.8.0",
     "svg2png": "^4.1.1"
   },
   "dependencies": {

@@ -66,8 +66,10 @@ obj.name
 
 The same goes for `tsx` files. TypeScript knows `tsx` files get compiled to a `js` file, so it's safe to use the `js` extension once you import.
 
-```typescript
-// Component.tsx
+```typescript twoslash
+// @filename: Component.tsx
+// @jsxFactory: h
+
 import { h } from 'preact';
 
 export function Hello() {
@@ -76,7 +78,7 @@ export function Hello() {
   </div>
 }
 
-// index.ts
+// @filename: index.ts
 import { Hello } from './Component.js';
 
 console.log(Hello)
