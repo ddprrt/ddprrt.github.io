@@ -14,13 +14,13 @@ Combined with proper caching and knowing what HTTP can do, ES modules can become
 
 What we want to achieve is to write `import` and `export` statements in TypeScript:
 
-```typescript
-// File module.ts
+```typescript twoslash
+// @filename: module.ts
 export const obj = {
   name: 'Stefan'
 }
 
-// file index.ts
+// @filename: index.ts
 import { obj } from './module'
 
 console.log('name')
@@ -33,7 +33,7 @@ But preserve the syntax and let the browser handle module resolution. To do this
 
 Let's define this in our `tsconfig.json`:
 
-```typescript
+```json tsconfig
 {
   "compilerOptions": {
     "target": "esnext",
@@ -48,20 +48,28 @@ This already does one important thing: It leaves the syntax intact. A problem oc
 
 The solution: Specify a `js` extension, even though you are pointing to a `ts` file when you develop. TypeScript is smart enough to pick that up.
 
-```typescript
-// index.ts
-
+```typescript twoslash
+// @target: esnext
+// @module: esnext
+// @filename: module.ts
+export const obj = {
+  name: 'Stefan'
+}
+// ---cut---
+// @filename: index.ts
 // This still loads types from 'module.ts', but keeps
 // the reference intact once we compile.
 import { obj } from './module.js'
 
-console.log('name')
+obj.name
 ```
 
 The same goes for `tsx` files. TypeScript knows `tsx` files get compiled to a `js` file, so it's safe to use the `js` extension once you import.
 
-```typescript
-// Component.tsx
+```typescript twoslash
+// @filename: Component.tsx
+// @jsxFactory: h
+
 import { h } from 'preact';
 
 export function Hello() {
@@ -70,7 +78,7 @@ export function Hello() {
   </div>
 }
 
-// index.ts
+// @filename: index.ts
 import { Hello } from './Component.js';
 
 console.log(Hello)
@@ -104,7 +112,7 @@ $ npm install @types/react
 
 Next, do a path alias so TypeScript knows where to pick up types:
 
-```typescript
+```typescript tsconfig
 {
   "compilerOptions": {
     ...

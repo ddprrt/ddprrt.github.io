@@ -1,5 +1,5 @@
 //@ts-nocheck
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+// const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const dateformat = require('dateformat')
 const markdownIt = require('markdown-it')
 const inlineMd = markdownIt()
@@ -129,7 +129,7 @@ module.exports = function(config) {
     return cats
   })
 
-  config.addPlugin(syntaxHighlight)
+  // config.addPlugin(syntaxHighlight)
 
   config.setLibrary(
     'md',
@@ -142,7 +142,7 @@ module.exports = function(config) {
       permalink: true,
       permalinkClass: "direct-link",
       permalinkSymbol: "#"
-    }).use(markdownItLazy)
+    }).use(markdownItLazy).use(require("./plugins/twoslash"), { theme: "light_vs" })
   )
 
   config.addPassthroughCopy('./src/wp-content/')
