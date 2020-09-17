@@ -138,7 +138,7 @@ Works just as well and has one big benefit...
 
 If you are not using Preact, you should! It does the same thing, the `preact/compat` package makes sure you are compatible with the React ecosystem. You can save up to 100 KB of production size and you are using an independent library!
 
-Recently I started moving all my Preact projects to React. Preact is written in TypeScript (with JSDoc annotations), so you get all the good typing information with an installation of Preact. Everything from `@types/react` isn't compatible anymore. Since `React.FC` is tacked on, you would need to refactor all your existing code to something that, well, would mimic simple functions with typed props anyways.
+Recently I started moving all my React projects to Preact. Preact is written in TypeScript (with JSDoc annotations), so you get all the good typing information with an installation of Preact. Everything from `@types/react` isn't compatible anymore. Since `React.FC` is tacked on, you would need to refactor all your existing code to something that, well, would mimic simple functions with typed props anyways.
 
 ```typescript
 // The Preact version
