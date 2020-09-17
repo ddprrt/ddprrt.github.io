@@ -5,7 +5,7 @@ categories:
   - JavaScript
 ---
 
-*Sometimes when writing JavaScript, I want to shout "This is ridiculous!". But then I never know what `this` refers to*. 
+_Sometimes when writing JavaScript, I want to shout "This is ridiculous!". But then I never know what `this` refers to_.
 
 If there is one concept in JavaScript that confuses people, it has to be `this`. Especially if your background is a class-based object-oriented programming languages, where `this` always refers to an instance of a class. `this` in JavaScript is entirely different, but not necessarily harder to understand. There're a few basic rules, and about as many exceptions to keep in mind. And TypeScript can help greatly!
 
@@ -15,39 +15,39 @@ A way I like to think about `this` is that in regular functions (with the `funct
 
 ```typescript
 const author = {
-  name: 'Stefan',
+  name: "Stefan",
   // function shorthand
   hi() {
-    console.log(this.name)
-  }
-}
+    console.log(this.name);
+  },
+};
 
-author.hi() // prints 'Stefan'
+author.hi(); // prints 'Stefan'
 ```
 
-In the example above, `hi` is bound to `author`, so `this` is `author`. 
+In the example above, `hi` is bound to `author`, so `this` is `author`.
 
 JavaScript is flexible, you can attach functions or apply functions to an object on the fly.
 
 ```typescript
 const author = {
-  name: 'Stefan',
+  name: "Stefan",
   // function shorthand
   hi() {
-    console.log(this.name)
-  }
-}
+    console.log(this.name);
+  },
+};
 
-author.hi() // prints 'Stefan'
+author.hi(); // prints 'Stefan'
 
 const pet = {
-  name: 'Finni',
-  kind: 'Cat'
-}
+  name: "Finni",
+  kind: "Cat",
+};
 
-pet.hi = author.hi
+pet.hi = author.hi;
 
-pet.hi() // prints 'Finni'
+pet.hi(); // prints 'Finni'
 ```
 
 The "nearest object" is `pet`. `hi` is bound to `pet`.
@@ -56,20 +56,20 @@ We can declare a function independently from objects and still use it in the obj
 
 ```typescript
 function hi() {
-  console.log(this.name)
+  console.log(this.name);
 }
 
 const author = {
-  name: 'Stefan'
-}
+  name: "Stefan",
+};
 
 const pet = {
-  name: 'Finni',
-  kind: 'Cat'
-}
+  name: "Finni",
+  kind: "Cat",
+};
 
-hi.apply(pet) // prints 'Finni'
-hi.call(author) // prints 'Stefan'
+hi.apply(pet); // prints 'Finni'
+hi.call(author); // prints 'Stefan'
 ```
 
 The nearest object is the object we pass as the first argument. The documentation calls the first argument `thisArg`, so the name tells you already what to expect.
@@ -80,14 +80,14 @@ What's the difference between `call` and `apply`? Think of a function with argum
 
 ```typescript
 function sum(a, b) {
-  return a + b
+  return a + b;
 }
 ```
 
 With `call` you can pass the arguments one by one:
 
 ```typescript
-sum.call(null, 2, 3)
+sum.call(null, 2, 3);
 ```
 
 `null` is the object sum should be bound to, so no object.
@@ -95,27 +95,27 @@ sum.call(null, 2, 3)
 With `apply`, you have to pass the arguments in an array:
 
 ```typescript
-sum.apply(null, [2, 3])
+sum.apply(null, [2, 3]);
 ```
 
 An easy mnemonic to remember this behaviour is **a**rray for **a**pply, **c**ommas for **c**all.
 
 ### bind
 
-Another way to explicitly *bind* an object to an object-free function is by using `bind`
+Another way to explicitly _bind_ an object to an object-free function is by using `bind`
 
 ```typescript
 const author = {
-  name: 'Stefan'
-}
+  name: "Stefan",
+};
 
 function hi() {
-  console.log(this.name)
+  console.log(this.name);
 }
 
-hi.bind(author)
+const boundHi = hi.bind(author);
 
-hi() // prints 'Stefan'
+boundHi(); // prints 'Stefan'
 ```
 
 This is already cool, but more on that later.
@@ -125,26 +125,26 @@ This is already cool, but more on that later.
 The concept of the "nearest object" helps a lot when you work with event listeners:
 
 ```typescript
-const button = document.querySelector('button')
+const button = document.querySelector("button");
 
-button.addEventListener('click', function() {
-  this.classList.toggle('clicked')
-})
+button.addEventListener("click", function () {
+  this.classList.toggle("clicked");
+});
 ```
 
 `this` is `button`. `addEventListener` sets one of many `onclick` functions. Another way of doing that would be
 
 ```typescript
-button.onclick = function() {
-  this.classList.toggle('clicked')
-}
+button.onclick = function () {
+  this.classList.toggle("clicked");
+};
 ```
 
 which makes it a bit more obvious why `this` is `button` in that case.
 
 ## this in arrow functions and classes
 
-So I spent half of my professional JavaScript career to totally understand what `this` refers to, just to see the rise of classes and arrow functions that turn everything upside down again. 
+So I spent half of my professional JavaScript career to totally understand what `this` refers to, just to see the rise of classes and arrow functions that turn everything upside down again.
 
 <details>
 <summary>Here's my most favorite meme on this (click to expand)</summary>
@@ -160,14 +160,18 @@ Arrow functions always resolve `this` respective to their lexical scope. Lexical
 ```typescript
 const lottery = {
   numbers: [4, 8, 15, 16, 23, 42],
-  el: 'span',
+  el: "span",
   html() {
     // this is lottery
-    return this.numbers.map(number =>
-       //this is still lottery
-       `<${this.el}>${number}</${this.el}>`).join()
-  }
-}
+    return this.numbers
+      .map(
+        (number) =>
+          //this is still lottery
+          `<${this.el}>${number}</${this.el}>`
+      )
+      .join();
+  },
+};
 ```
 
 Calling `lottery.html()` gets us a string with all numbers wrapped in spans, as `this` inside the arrow function of `map` doesn't change. It's still `lottery`.
@@ -177,14 +181,18 @@ If we would use a regular function, `this` would be undefined, as there is no ne
 ```typescript
 const lottery = {
   numbers: [4, 8, 15, 16, 23, 42],
-  el: 'span',
+  el: "span",
   html() {
     // this is lottery
-    return this.numbers.map(function(number) {
-      return  `<${this.el}>${number}</${this.el}>`
-    }.bind(this)).join('')
-  }
-}
+    return this.numbers
+      .map(
+        function (number) {
+          return `<${this.el}>${number}</${this.el}>`;
+        }.bind(this)
+      )
+      .join("");
+  },
+};
 ```
 
 Tedious.
@@ -192,46 +200,45 @@ Tedious.
 In classes, `this` also refers to the lexical scope, which is the class instance. Now we're getting Java-y!
 
 ```typescript
-
 class Author {
   constructor(name) {
-    this.name = name
+    this.name = name;
   }
 
   // lexical, so Author
   hi() {
-    console.log(this.name)
+    console.log(this.name);
   }
 
   hiMsg(msg) {
     // lexical, so still author!
     return () => {
-      console.log(`${msg}, ${this.name}`)
-    }
+      console.log(`${msg}, ${this.name}`);
+    };
   }
 }
 
-const author = new Author('Stefan')
-author.hi() //prints '
-author.hiMsg('Hello')() // prints 'Hello, Stefan'
+const author = new Author("Stefan");
+author.hi(); //prints '
+author.hiMsg("Hello")(); // prints 'Hello, Stefan'
 ```
 
 ### unbinding
 
-Problems occur if you accidentally *unbind* a function, e.g. by passing a function that is bound to some other function or storing it in a variable.
+Problems occur if you accidentally _unbind_ a function, e.g. by passing a function that is bound to some other function or storing it in a variable.
 
 ```typescript
 const author = {
-  name: 'Stefan',
+  name: "Stefan",
   hi() {
-    console.log(this.name)
-  }
-}
+    console.log(this.name);
+  },
+};
 
-const hi = author.hi()
+const hi = author.hi();
 // hi is unbound, this refers to nothing
 // or window/global in non-strict mode
-hi() // 💥
+hi(); // 💥
 ```
 
 You would have to re-bind the function. This also explains some behaviour in React class components with event handlers:
@@ -241,7 +248,7 @@ class Counter extends React.Component {
   constructor() {
     super();
     this.state = {
-      count: 1
+      count: 1,
     };
   }
 
@@ -261,7 +268,7 @@ class Counter extends React.Component {
   // call `this.setState`
   handleClick() {
     this.setState(({ count }) => ({
-      count: count + 1
+      count: count + 1,
     }));
   }
 }
@@ -276,12 +283,12 @@ TypeScript is pretty good at finding the "nearest object" or knowing the lexical
 Think of extract an event handler function into its own function:
 
 ```typescript
-const button = document.querySelector('button')
-button.addEventListener('click', handleToggle)
+const button = document.querySelector("button");
+button.addEventListener("click", handleToggle);
 
 // Huh? What's this?
 function handleToggle() {
-  this.classList.toggle('clicked') //💥
+  this.classList.toggle("clicked"); //💥
 }
 ```
 
@@ -290,20 +297,20 @@ We lose all information on `this` since `this` would now be `window` or `undefin
 We add an argument at the first position of the function, where we can define the type of `this`.
 
 ```typescript
-const button = document.querySelector('button')
-button.addEventListener('click', handleToggle)
+const button = document.querySelector("button");
+button.addEventListener("click", handleToggle);
 
 function handleToggle(this: HTMLElement) {
-  this.classList.toggle('clicked') // 😃
+  this.classList.toggle("clicked"); // 😃
 }
 ```
 
 This argument gets removed once compiled. We now know that `this` will be of type `HTMLElement`, which also means that we get errors once we use `handleToggle` in a different context.
 
 ```typescript
-// The 'this' context of type 'void' is not 
+// The 'this' context of type 'void' is not
 // assignable to method's 'this' of type 'HTMLElement'.
-handleToggle() // 💥
+handleToggle(); // 💥
 ```
 
 ## ThisParameterType and OmitThisParameter
@@ -313,18 +320,16 @@ There are some helpers if you use `this` parameters in your function signatures.
 `ThisParameterType` tells you which type you expect `this` to be:
 
 ```typescript
-const button = document.querySelector('button')
-button.addEventListener('click', handleToggle)
+const button = document.querySelector("button");
+button.addEventListener("click", handleToggle);
 
 function handleToggle(this: HTMLElement) {
-  this.classList.toggle('clicked') // 😃
-  handleClick.call(this)
+  this.classList.toggle("clicked"); // 😃
+  handleClick.call(this);
 }
 
-function handleClick(this: 
-  ThisParameterType<typeof handleToggle>
-) {
-  this.classList.add('clicked-once')
+function handleClick(this: ThisParameterType<typeof handleToggle>) {
+  this.classList.add("clicked-once");
 }
 ```
 
@@ -333,17 +338,16 @@ function handleClick(this:
 ```typescript
 // No reason to type `this` here!
 function handleToggle(this: HTMLElement) {
-  console.log('clicked!')
+  console.log("clicked!");
 }
 
-type HandleToggleFn 
-  = OmitThisParameter<typeof handleToggle>
+type HandleToggleFn = OmitThisParameter<typeof handleToggle>;
 
-declare function toggle(callback: HandleToggleFn)
+declare function toggle(callback: HandleToggleFn);
 
-toggle(function() {
-  console.log('Yeah works too')
-}) // 👍
+toggle(function () {
+  console.log("Yeah works too");
+}); // 👍
 ```
 
 ## ThisType
@@ -352,17 +356,17 @@ There's another generic helper type that helps defining `this` for objects calle
 
 ```typescript
 var app5 = new Vue({
-  el: '#app-5',
+  el: "#app-5",
   data: {
-    message: 'Hello Vue.js!'
+    message: "Hello Vue.js!",
   },
   methods: {
     reverseMessage() {
       // OK, so what's this?
-      this.message = this.message.split('').reverse().join('')
-    }
-  }
-})
+      this.message = this.message.split("").reverse().join("");
+    },
+  },
+});
 ```
 
 Look at `this` in the `reverseMessage()` function. As we learned, `this` refers to the nearest object, which would be `methods`. But Vue transforms this object into something different, so you can access all elements in `data` and all methods in `methods` (eg. `this.reverseMessage()`).
@@ -373,13 +377,13 @@ The Object descriptor for the code above would look like this:
 
 ```typescript
 type ObjectDescriptor<Data, Methods> = {
-  el?: string,
+  el?: string;
   data?: Data;
   methods?: Methods & ThisType<Data & Methods>;
 };
 ```
 
-It tells TypeScript that within all functions of `methods`, this can access to fields from type `Data` and `Methods`. 
+It tells TypeScript that within all functions of `methods`, this can access to fields from type `Data` and `Methods`.
 
 Typing this minimalistic version of Vue looks like that:
 
@@ -396,4 +400,3 @@ type VueConstructor = {
 ## Bottom line
 
 I hope this piece on `this` did shed some light on the different quirks in JavaScript and how to type `this` in TypeScript. If you have any questions, feel free to reach out to me.
-
