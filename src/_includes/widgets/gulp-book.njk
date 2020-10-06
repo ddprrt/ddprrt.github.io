@@ -22,3 +22,28 @@
   </p>
 </section>
 {% endif %}
+
+
+{% if categories and ("TypeScript" in categories) %}
+<section class="sidebar-element">
+  <a 
+    class="sidebar-book-cover-link"
+    target="_blank"
+    rel="noopener"
+    href="https://typescript-book.com">
+    <img
+      loading="lazy"
+      src="/wp-content/uploads/2020/typescript-in-50-lessons-tiny.jpg"
+      alt="Cover of Front-End Tooling"
+      class="book-cover sidebar-book-cover">
+  </a>
+  <p class="sidebar-book-content">
+    I've written a book on TypeScript!
+    Check out  <a 
+    target="_blank"
+    rel="noopener"
+    href="https://typescript-book.com">
+      TypeScript in 50 lessons</a>, published by Smashing Magazine
+  </p>
+</section>
+{% endif %}
