@@ -6,7 +6,7 @@ permalink: /book-review-css-secrets/
 titleimg: /wp-content/uploads/2015/lea.jpg
 categories:
 - CSS
-- books
+- Books
 ---
 In 2012 I saw one of Lea Verou's talks for the first time. And if you every had the opportunity of seeing her, you know that you are in for a treat. Her unique way of teaching all those nifty CSS tricks is not only entertaining and engaging, but also a huge motivation for your own work. Every time I returned home from one of those conferences, I tried recreating those tricks and secrets (as she calls it) at home. Using her interactive slides I managed to recreate a good deal of what she's shown, but sometimes I wished I had some sort of documentation ready. Well, this is now available with her book "CSS Secrets".
 
