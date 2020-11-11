@@ -18,7 +18,7 @@ categories:
 
 ### Avoid static classes
 
-One thing I see a lot from people who worked a lot with Java is their urge to wrap everything inside a class. In Java, you don't have any other options as classes are the only way to structure code. In JavaScript (and thus: TypeScript) there are plenty of other possibilites that do what you want without any extra steps. One of those things are static classes or classes with static methods, a true Java pattern.
+One thing I see a lot from people who worked a lot with Java is their urge to wrap everything inside a class. In Java, you don't have any other options as classes are the only way to structure code. In JavaScript (and thus: TypeScript) there are plenty of other possibilities that do what you want without any extra steps. One of those things is static classes or classes with static methods, a true Java pattern.
 
 ```typescript
 // Environment.ts
@@ -93,7 +93,7 @@ That's why a proper module is always preferred to a class with static fields and
 
 ## Prefer unknown over any
 
-`any` is the happy-go-lucky type. Once you annotate a argument, variable or field with that, literally *anything* is allowed. The TypeScript compiler takes a step back and let's you take the driver's seat. You are in charge of making your code work.
+`any` is the happy-go-lucky type. Once you annotate an argument, variable, or field with that, literally *anything* is allowed. The TypeScript compiler takes a step back and lets you take the driver's seat. You are in charge of making your code work.
 
 ```typescript
 function shout(msg: any) {
@@ -104,7 +104,7 @@ function shout(msg: any) {
 }
 ```
 
-This is a big footgun, as you intentionally disable type-checking. And usually this happens at places where the types are more complex than `number` or `string`. A better way is to use `unknown`, `any`'s type-safe counterpart. Anything is assignable to `unknown`, but `unknown` isn't assignable to anything except itself and `any` without doing proper type checks before.
+This is a big foot gun, as you intentionally disable type-checking. And usually, this happens at places where the types are more complex than `number` or `string`. A better way is to use `unknown`, `any`'s type-safe counterpart. Anything is assignable to `unknown`, but `unknown` isn't assignable to anything except itself and `any` without doing proper type checks before.
 
 ```typescript
 function shout(msg: unknown) {
@@ -120,7 +120,7 @@ That's better! We deliberately say that what we pass can be anything, and inside
 
 ### no implicit any
 
-I have to note that `any` gets much more bad reputation as it deserves. I'm a fan of `any`, as it allows me not to think about types when I don't necessarily have to. This can be quite liberating, especially when you prototype. Here's the `any` version of a function that calls something from a deeply nested object:
+I have to note that `any` gets a much more bad reputation than it deserves. I'm a fan of `any`, as it allows me not to think about types when I don't necessarily have to. This can be quite liberating, especially when you prototype. Here's the `any` version of a function that calls something from a deeply nested object:
 
 ```typescript
 function display(chartData: any) {
@@ -186,7 +186,7 @@ This should help you track down potential holes in your type definitions.
 
 ## Prefer type aliases over interfaces
 
-There are two different ways in TypeScript do declare object types: Interfaces and type aliases. Both approaches on defining object types have been subject to lots of blog articles over the years. And all of them became outdated as time progressed. Right now, there is little difference between type alisases and interfaces. And everything that *was* different  has been gradually aligned.
+There are two different ways in TypeScript to declare object types: Interfaces and type aliases. Both approaches to defining object types have been subject to lots of blog articles over the years. And all of them became outdated as time progressed. Right now, there is little difference between type aliases and interfaces. And everything that *was* different has been gradually aligned.
 
 Syntactically, their difference is nuanced:
 
@@ -206,7 +206,7 @@ interface PersonAsInterface {
 }
 ```
 
-It's the equal sign. This nuance can have some effect on the time of type evaluation -- immediate for the type alias, lazy for interfaces -- but that's it. You can use interfaces and type aliases for the same things, in the same scenarios: 
+It's an equal sign. This nuance can have some effect on the time of type evaluation -- immediate for the type alias, lazy for interfaces -- but that's it. You can use interfaces and type aliases for the same things, in the same scenarios: 
 
 - In an `implements` declaration for classes
 - As a type annotation for object literals
@@ -230,7 +230,7 @@ interface Person {
 // Person is now { name: string; age: number; }
 ```
 
-TypeScript itself uses this technique alot in `lib.d.ts` files, making it possible to just add deltas of new JavaScript APIs based on ECMAScript versions. This is a great feature if you want to extend e.g. `Window`, but it can fire back in other scenarios. Take this as an example:
+TypeScript itself uses this technique a lot in `lib.d.ts` files, making it possible to just add deltas of new JavaScript APIs based on ECMAScript versions. This is a great feature if you want to extend e.g. `Window`, but it can fire back in other scenarios. Take this as an example:
 
 ```typescript
 // Some data we collect in a web form
@@ -247,7 +247,7 @@ function send(data: FormData) {
 }
 ```
 
-Oh bother, where does the `entries()` method come from? It's a [DOM API](https://github.com/microsoft/TypeScript/blob/9c71eaf59040ae75343da8cdff01344020f5bba2/src/lib/dom.iterable.d.ts#L81)! `FormData` is one of the interfaces provided by browser APIs, and there are lot of them. They are globally available, and nothing keeps you from extending those interfaces. And you get no notification if you do. 
+Oh, bother, where does the `entries()` method come from? It's a [DOM API](https://github.com/microsoft/TypeScript/blob/9c71eaf59040ae75343da8cdff01344020f5bba2/src/lib/dom.iterable.d.ts#L81)! `FormData` is one of the interfaces provided by browser APIs, and there are a lot of them. They are globally available, and nothing keeps you from extending those interfaces. And you get no notification if you do. 
 
 We can of course argue about proper naming, but the problem persists for all interfaces that you make available globally, maybe from some dependency where you don't even know they add an interface like that to the global space.
 
@@ -262,7 +262,7 @@ type FormData = {
 }
 ```
 
-It also prevents your types from being extended unknowingly. That's why I suggest to **prefer type aliases over interfaces**. Of course, if you are providing a library that has interfaces which should be extendable by others, interface are the way to go. But other than that, type aliases are clear, simple, and **tidy**.
+It also prevents your types from being extended unknowingly. That's why I suggest to **prefer type aliases over interfaces**. Of course, if you are providing a library that has interfaces that should be extendable by others, type aliases won't get you far. But other than that, type aliases are clear, simple, and **tidy**.
 
 ## Prefer union types over enums
 
@@ -293,13 +293,13 @@ var Direction;
 })(Direction || (Direction = {}));
 ```
 
-You can get rid of the output if you use a `const enum`, but way to often I've seen people using just regular enums all over and wondering why their output gets so big. Especially if you put "glue code" between front-end and back-end in enums you can end up with huge files and bundles.
+You can get rid of the output if you use a `const enum`, but too often I've seen people using just regular enums everywhere and wondering why their output gets so big. Especially if you put "glue code" between front-end and back-end in enums you can end up with huge files and bundles.
 
 Okay, that's one thing, and we can handle that by enforcing `const enum`s. But there is also this nasty ambiguity.
 
 ### Numeric enums are not type-safe
 
-Yes, you've heard right. Regular numeric enums -- as in: an enum where you don't set string values -- are not type safe! If we look back at the `Direction` enum from earlier a function that takes a direction also takes *any* number value instead.
+Yes, you've heard right. Regular numeric enums -- as in an enum where you don't set string values -- are not type-safe! If we look back at the `Direction` enum from earlier a function that takes a direction also takes *any* number value instead.
 
 ```typescript
 enum Direction {
@@ -315,7 +315,7 @@ move(30);
 // ☝️ This is totally ok! 😱
 ```
 
-The reason is that there is a use-case of implementing bitmasks with numeric enums. And people seem to actually do that! Do a quick search for "TypeScript enum bitmask" or "bitwise flags" and see lots of implementations and examples. Enums provide syntacic sugar for this scenario. I'd argue that why this scenario is valid to implement in JavaScript, I'd doubt it's the most common scenario you would use enums for. 
+The reason is that there is a use-case of implementing bitmasks with numeric enums. And people seem to actually do that! Do a quick search for "TypeScript enum bitmask" or "bitwise flags" and see lots of implementations and examples. Enums provide syntactic sugar for this scenario. I'd argue that why this scenario is valid to implement in JavaScript, I'd doubt it's the most common scenario you would use enums for. 
 
 Usually, you want to make sure you only can pass values that are actually valid.
 
@@ -342,11 +342,11 @@ closeThread(10, Status.Admin);
 //              ^ You have to be explicit!
 ```
 
-This is something you can leverage, but it's also very different to how number enums *and* the entire rest of TypeScript's type system work. 
+This is something you can leverage, but it's also very different from how number enums *and* the entire rest of TypeScript's type system work. 
 
 ### Prefer union types
 
-A simple union type gives you something that works similar and is much more aligned with TypeScript.
+A simple union type gives you something that works similarly and is much more aligned with TypeScript.
 
 ```typescript
 type Status = "Admin" | "User" | "Moderator"
@@ -357,7 +357,7 @@ closeThread(10, "Admin");
 // All good 😄
 ```
 
-You get all the benefits from enums like proper tooling and type-safety without going the extra round, and risking to output code that you don't want. It also becomes clearer what you need to pass, and where to get the value from. No need to manually map back-end strings to an enum just for the sake of it. Simple, clear, **tidy**!
+You get all the benefits from enums like proper tooling and type-safety without going the extra round and risking to output code that you don't want. It also becomes clearer what you need to pass, and where to get the value from. No need to manually map back-end strings to an enum just for the sake of it. Simple, clear, **tidy**!
 
 If you want to write your code enum-style, with an object and a named identifier, a `const` object with a `Values` helper type might just give you the desired behaviour and is *much* closer to JavaScript:
 
@@ -403,8 +403,8 @@ closeThread(10, Status.User); // enum style
 ```
 
 There are also no surprises.
-- You *know* what code you end up with in the output.
-- You don't end up with changed behaviour because somebody decides to go from a string enum to a numeric enums.
+- You *know* what code you end up within the output.
+- You don't end up with changed behavior because somebody decides to go from a string enum to a numeric enum.
 - You have type-safety where you need it. 
 - And you give your colleagues and users the same conveniences that you get with enums.
 
