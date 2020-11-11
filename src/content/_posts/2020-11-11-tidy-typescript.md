@@ -31,7 +31,7 @@ export default class Environment {
 }
 
 // Usage in another file
-import * as Environment from "./Environment.ts";
+import * as Environment from "./Environment";
 
 console.log(Environment.variables());
 ```
@@ -47,7 +47,7 @@ export function setVariable(key: string, value: any): void  { /* ... */ }
 export function getValue(key: string): unknown  { /* ... */ }
 
 // Usage in another file
-import * as Environment from "./Environment.ts";
+import * as Environment from "./Environment";
 
 console.log(Environment.variables());
 ```
@@ -80,7 +80,7 @@ No `this` means less to think about. As an added benefit, your bundlers have an 
 ```typescript
 // Only the variables function and variablesList 
 // end up in the bundle
-import { variables } from "./Environment.ts";
+import { variables } from "./Environment";
 
 console.log(variables());
 ```
@@ -88,6 +88,92 @@ console.log(variables());
 That's why a proper module is always preferred to a class with static fields and methods. That's just added boilerplate with no extra benefit.
 
 ### Avoid namespaces
+
+As with static classes, I see people with a Java or C# background clinging on to namespaces. Namespaces are a feature that TypeScript introduced to organize code long before ECMAScript modules were standardized. They allowed you to split things across files, merging them again with reference markers.
+
+```typescript
+// file users/models.ts
+namespace Users {
+  export interface Person {
+    name: string;
+    age: number;
+  }
+}
+
+// file users/controller.ts
+
+/// <reference path="./models.ts" />
+namespace Users {
+  export function updateUser(p: Person) {
+    // do the rest
+  }
+}
+```
+
+Back then, TypeScript even had a bundling feature. It should still work to this day. But as said, this was before ECMAScript introduced modules. Now with modules, we have a way to organize and structure code that is compatible with the rest of the JavaScript ecosystem. So that's a plus. 
+
+So what do we need namespaces for?
+
+### Extending declarations
+
+Namespaces are still valid if you want to extend definitions from a third party dependency, e.g. that lives inside node modules. Some of my articles use that heavily. For example if you want to extend the global `JSX` namespace and make sure `img` elements feature alt texts:
+
+```typescript
+declare namespace JSX {
+  interface IntrinsicElements {
+    "img": HTMLAttributes & {
+      alt: string,
+      src: string,
+      loading?: 'lazy' | 'eager' | 'auto';
+    }
+  }
+}
+```
+
+Or if you want to write elaborate type definitions in ambient modules. But other than that? There is not much use for it anymore. 
+
+### Needless namespaces
+
+Namespaces wrap your definitions into an Object. Writing something like this:
+
+```typescript
+export namespace Users {
+  type User = {
+    name: string;
+    age: number;
+  }
+
+  export function createUser(name: string, age: number): User {
+    return { name, age }
+  }
+}
+```
+
+emits something very elaborate:
+
+```typescript
+export var Users;
+(function (Users) {
+    function createUser(name, age) {
+        return {
+            name, age
+        };
+    }
+    Users.createUser = createUser;
+})(Users || (Users = {}));
+```
+
+This not only adds cruft, but also keeps your bundlers from tree-shaking properly! Also using them becomes a bit more wordy:
+
+```typescript
+import * as Users from "./users";
+
+Users.Users.createUser("Stefan", "39");
+```
+
+Dropping them makes things a lot easier. Stick to what JavaScript offers you. Not using namespaces outside of declaration files makes your code clear, simple, and tidy.
+
+### Avoid abstract classes
 
 
 
