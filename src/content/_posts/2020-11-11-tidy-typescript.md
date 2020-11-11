@@ -16,8 +16,6 @@ categories:
 
 ## Avoid traditional OOP patterns
 
-### Avoid namespaces
-
 ### Avoid static classes
 
 One thing I see a lot from people who worked a lot with Java is their urge to wrap everything inside a class. In Java, you don't have any other options as classes are the only way to structure code. In JavaScript (and thus: TypeScript) there are plenty of other possibilites that do what you want without any extra steps. One of those things are static classes or classes with static methods, a true Java pattern.
@@ -54,7 +52,9 @@ import * as Environment from "./Environment.ts";
 console.log(Environment.variables());
 ```
 
-The interface for your users is exactly the same. You can access module scope variables just the way you would access static properties in a class, but you have them module-scoped automatically. You decide what to export and what to make visible, not some TypeScript field modifiers. Even the implementation becomes easier. Check out the class version of `variables()`:
+The interface for your users is exactly the same. You can access module scope variables just the way you would access static properties in a class, but you have them module-scoped automatically. You decide what to export and what to make visible, not some TypeScript field modifiers. Also, you don't end up creating an `Environment` instance that doesn't do anything.
+
+Even the implementation becomes easier. Check out the class version of `variables()`:
 
 ```typescript
 export default class Environment {
@@ -86,6 +86,10 @@ console.log(variables());
 ```
 
 That's why a proper module is always preferred to a class with static fields and methods. That's just added boilerplate with no extra benefit.
+
+### Avoid namespaces
+
+
 
 ## Prefer unknown over any
 
