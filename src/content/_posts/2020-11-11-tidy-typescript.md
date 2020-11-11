@@ -5,22 +5,6 @@ categories:
   - JavaScript
 ---
 
-## Table of contents
-
-- [JavaScript first](#javascript-first)
-- [Inference first](#inference-first)
-- [Know when to check your contracts](#know-when-to-check-your-contracts)
-- [Avoid typecasting](#avoid-typecasting)
-- [Avoid namespaces](#avoid-namespaces)
-- [Avoid static classes](#avoid-static-classes)
-- [Prefer unknown over any](#prefer-unknown-over-any)
-- [Prefer type aliases over interfaces](#prefer-type-aliases-over-interfaces)
-  - [Declaration merging](#declaration-merging)
-- [Prefer union types over enums](#prefer-union-types-over-enums)
-  - [Enums emit code](#enums-emit-code)
-  - [Numeric enums are not type-safe](#numeric-enums-are-not-type-safe)
-  - [String enums are named types](#string-enums-are-named-types)
-  - [Prefer union types](#prefer-union-types)
 
 ## JavaScript first
 
@@ -30,11 +14,171 @@ categories:
 
 ## Avoid typecasting
 
-## Avoid namespaces
+## Avoid traditional OOP patterns
 
-## Avoid static classes
+### Avoid namespaces
+
+### Avoid static classes
+
+One thing I see a lot from people who worked a lot with Java is their urge to wrap everything inside a class. In Java, you don't have any other options as classes are the only way to structure code. In JavaScript (and thus: TypeScript) there are plenty of other possibilites that do what you want without any extra steps. One of those things are static classes or classes with static methods, a true Java pattern.
+
+```typescript
+// Environment.ts
+
+export default class Environment {
+  private static variableList: string[] = []
+  static variables(): string[] { /* ... */ }
+  static setVariable(key: string, value: any): void  { /* ... */ }
+  static getValue(key: string): unknown  { /* ... */ }
+}
+
+// Usage in another file
+import * as Environment from "./Environment.ts";
+
+console.log(Environment.variables());
+```
+
+While this works and is even -- sans type annotations -- valid JavaScript, it's way too much ceremony for something that can easily be just plain, boring functions:
+
+```typescript
+// Environment.ts
+const variableList: string = []
+
+export function variables(): string[] { /* ... */ }
+export function setVariable(key: string, value: any): void  { /* ... */ }
+export function getValue(key: string): unknown  { /* ... */ }
+
+// Usage in another file
+import * as Environment from "./Environment.ts";
+
+console.log(Environment.variables());
+```
+
+The interface for your users is exactly the same. You can access module scope variables just the way you would access static properties in a class, but you have them module-scoped automatically. You decide what to export and what to make visible, not some TypeScript field modifiers. Even the implementation becomes easier. Check out the class version of `variables()`:
+
+```typescript
+export default class Environment {
+  private static variableList: string[] = []
+  static variables(): string[] { 
+    return this.variableList;
+   }
+}
+```
+
+As opposed to the module version:
+
+```typescript
+const variableList: string = []
+
+export function variables(): string[] {
+  return variableList;
+}
+```
+
+No `this` means less to think about. As an added benefit, your bundlers have an easier time doing tree-shaking, so you end up only with the things you actually use:
+
+```typescript
+// Only the variables function and variablesList 
+// end up in the bundle
+import { variables } from "./Environment.ts";
+
+console.log(variables());
+```
+
+That's why a proper module is always preferred to a class with static fields and methods. That's just added boilerplate with no extra benefit.
 
 ## Prefer unknown over any
+
+`any` is the happy-go-lucky type. Once you annotate a argument, variable or field with that, literally *anything* is allowed. The TypeScript compiler takes a step back and let's you take the driver's seat. You are in charge of making your code work.
+
+```typescript
+function shout(msg: any) {
+  // This might work, it might not work
+  // Who knows? You do!
+  // TypeScript is fine with that 😎
+  return msg.toUpperCase()
+}
+```
+
+This is a big footgun, as you intentionally disable type-checking. And usually this happens at places where the types are more complex than `number` or `string`. A better way is to use `unknown`, `any`'s type-safe counterpart. Anything is assignable to `unknown`, but `unknown` isn't assignable to anything except itself and `any` without doing proper type checks before.
+
+```typescript
+function shout(msg: unknown) {
+  if(typeof msg === "string") {
+    // If it's a string, call toUpperCase()
+    return msg.toUpperCase();
+  }
+  return "I can only shout if you pass a string!";
+}
+```
+
+That's better! We deliberately say that what we pass can be anything, and inside we **have to make sure** that we do proper type checks. That's why I suggest you **prefer unknown over any**.
+
+### no implicit any
+
+I have to note that `any` gets much more bad reputation as it deserves. I'm a fan of `any`, as it allows me not to think about types when I don't necessarily have to. This can be quite liberating, especially when you prototype. Here's the `any` version of a function that calls something from a deeply nested object:
+
+```typescript
+function display(chartData: any) {
+  // Deeply nested. Objects! Functions! Everything!
+  chartData.rows.print();
+}
+```
+
+Proper type checks are for this construct are ... long!
+
+```typescript
+// A helper type for proper type guards
+function hasOwnProperty<T extends object, K extends string>(
+  obj: T,
+  prop: K
+): obj is T & Record<K, unknown> {
+  return obj.hasOwnProperty(prop);
+}
+
+function display(chartData: unknown) {
+  if (
+    // chartData exists and is an object
+    chartData && typeof chartData === "object" &&
+    // chartData has a property called  rows
+    hasOwnProperty(chartData, "rows") &&
+    // chartData.rows is not null and an object
+    chartData.rows && typeof chartData.rows === "object" &&
+    // chartData.rows has a property called print
+    hasOwnProperty(chartData.rows, "print") &&
+    // chartData.rows.print is not null and a function
+    chartData.rows.print && typeof chartData.rows.print === "function"
+  ) {
+    chartData.rows.print();
+  }
+}
+```
+
+And we still don't know if we pass the correct arguments to `print()`. `any` is good and has it's use-cases. However, `any` can fire back in the long run. And you want to be prepared for that. Switching on the `noImplicitAny` flag in your `tsconfig.json` helps, as it requires you to explicitly state your use of `any`. 
+
+```typescript
+// `noImplicitAny` switched on
+
+function display(chartData) {
+//               ^💥  Parameter 'chartData'
+//                    implicitly has an 'any' type.(7006)
+
+  // The rest of the function
+}
+
+// Better 👍
+
+function display(chartData: any) {
+//               ^ This helps you track down your 
+//                 missing types once you know how
+//                 your data should look like
+
+  // The rest of the function
+}
+
+```
+
+This should help you track down potential holes in your type definitions.
 
 ## Prefer type aliases over interfaces
 
