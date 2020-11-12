@@ -58,7 +58,7 @@ So how do we do that? The answer can be found in the academic description of [co
 
 ## The solution
 
-I'll start by presenting you with the solution. If you don't want to know how this works underneath, just see this as a TL/DR.
+I'll start by presenting the solution. If you don't want to know how this works underneath, just see this as a TL/DR.
 
 ```typescript
 type UnionToIntersection<T> = 
