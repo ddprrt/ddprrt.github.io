@@ -2,6 +2,23 @@
   year: 2020
   conferences:
     -
+      title: "WAD: The future of TypeScript"
+      country: Online
+      city: Worldwide
+      date: 2020-12-01
+      talks:
+        -
+          title: "The Art and Craft of Type Development with Michael Hladky"
+    -
+      title: Bayerwald Hackathon
+      country: Online
+      city: Worldwide
+      date: 2020-11-20
+      url: https://www.bayerwald-hackathon.de/
+      talks:
+        -
+          title: Intentional Tooling
+    -
       title: JNation
       country: Online
       city: Worldwide
