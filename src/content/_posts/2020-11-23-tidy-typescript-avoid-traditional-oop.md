@@ -6,7 +6,7 @@ categories:
   - Tidy Typescript
 ---
 
-This is the tgurd article in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated and you might find out things you don't like. Don't take it personal, it's just an opinion.
+This is the third article in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated and you might find out things you don't like. Don't take it personal, it's just an opinion.
 
 This time we look at POOP, as in "Patterns of Object Oriented Programming". With traditional OOP I mostly mean class-based OOP, what I assume the vast majority of developers thinks of when talking OOP. If you come from Java or C#, you might see a lot of familiar constructs in TypeScript, which might end up as false friends in the end.
 
