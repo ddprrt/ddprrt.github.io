@@ -1,9 +1,9 @@
 ---
 title: "Tidy TypeScript: Prefer type aliases over interfaces"
 categories:
+  - Tidy Typescript
   - TypeScript
   - JavaScript
-  - Tidy Typescript
 ---
 
 This is the second article in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. By nature, this series is heavily opinionated and is to be taken with grains of salt (that's plural).

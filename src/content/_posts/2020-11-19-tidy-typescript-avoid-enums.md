@@ -1,9 +1,9 @@
 ---
 title: "Tidy TypeScript: Prefer union types over enums"
 categories:
+  - Tidy Typescript
   - TypeScript
   - JavaScript
-  - Tidy Typescript
 ---
 
 This is the firstarticle in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated, so don't be angry if I ditch a feature that you learned to like. It's not personal.
