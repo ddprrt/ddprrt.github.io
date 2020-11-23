@@ -84,4 +84,60 @@ type FormData = {
 }
 ```
 
-It also prevents your types from being extended unknowingly. That's why I suggest to **prefer type aliases over interfaces**. Of course, if you are providing a library that has interfaces that should be extendable by others, type aliases won't get you far. But other than that, type aliases are clear, simple, and **tidy**.
+It also prevents your types from being extended unknowingly. 
+
+## Index access types
+
+Declaration merging is also the reason why interfaces won't work as a subset of *index access types*. Below is an example that sends data to a server. You can pass in any object and a set of HTTP headers that require all keys to be of `string` and all values to be of `string`.
+
+```typescript
+declare function 
+  send(data: any, headers: Record<string, string>): void;
+```
+
+`Record<string, string>` is the same as `{ [key: string]: string }`, which shows the flexible index access better.
+
+Let's do two type definitions for required HTTP headers. Once as object type:
+
+```typescript
+type HTTPHeaders = {
+  Accept: string,
+  Cookie: string
+}
+```
+
+And another one as an interface:
+
+```typescript
+interface HTTPHeaderInterface {
+  Accept: string,
+  Cookie: string,
+}
+```
+
+If you call `send` with an object that has been annotated as `HTTPHeaders`, everything is wonderful:
+
+```typescript
+const hdrs: HTTPHeaders = {
+  Accept: "text/html",
+  Cookie: ""
+};
+
+send({}, hdrs) // 👍
+```
+
+But the moment you change `hdrs` to `HTTPHeadersInterface`, things go boom:
+
+```typescript
+const hdrs: HTTPHeaderInterface = {
+  Accept: "text/html",
+  Cookie: ""
+};
+
+send({}, hdrs) 
+//       ^ 💥 Index signature is missing in type 'HTTPHeaderInterface'
+```
+
+TypeScript will complain that the *index signature is missing*. Only if the type is final, like with `HTTPHeaders`, TypeScript can correctly check if all properties and values are assignable to the `Record<string, string>` type we declared in `send`. Since interfaces are up for declaration merging, and therefore not all properties are known, TypeScript can't tell if the index signature is compatible with `Record<string, string>`. 
+
+That's why I suggest to **prefer type aliases over interfaces**. Of course, if you are providing a library that has interfaces that should be extendable by others, type aliases won't get you far. But other than that, type aliases are clear, simple, and **tidy**.
