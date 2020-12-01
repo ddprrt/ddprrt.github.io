@@ -2,6 +2,15 @@
   year: 2020
   conferences:
     -
+      title: "Rust Linz"
+      country: Online
+      city: Worldwide
+      date: 2020-12-17
+      url: https://rust-linz.at/
+      talks:
+        -
+          title: "The Exercist"
+    -
       title: "WAD: The future of TypeScript"
       country: Online
       city: Worldwide
