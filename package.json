@@ -26,7 +26,7 @@
     "dateformat": "^3.0.3",
     "gulp": "^4.0.2",
     "gulp-buffer": "0.0.2",
-    "gulp-cli": "^2.2.1",
+    "gulp-cli": "^2.3.0",
     "gulp-newy": "^2.0.4",
     "js-yaml": "^3.13.1",
     "markdown-it": "^10.0.0",
@@ -35,7 +35,7 @@
     "node-sass": "^4.14.1",
     "rollup": "^2.13.1",
     "rollup-plugin-terser": "^6.1.0",
-    "svg2png": "^4.1.1"
+    "svg2png": "^3.0.1"
   },
   "dependencies": {
     "http-proxy": "^1.18.1"
