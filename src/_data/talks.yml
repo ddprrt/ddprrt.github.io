@@ -10,6 +10,12 @@
       talks:
         -
           title: "The Art and Craft of Type Development"
+    -
+      title: "Contributing Today: Rust (MC)"
+      country: Online
+      city: Worldwide
+      date: 2020-01-27
+      url: https://www.contributing.today/
 -
   year: 2020
   conferences:
