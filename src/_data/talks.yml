@@ -16,6 +16,15 @@
       city: Worldwide
       date: 2020-01-27
       url: https://www.contributing.today/
+    -
+      title: "NG Leipzig"
+      country: Online
+      city: Worldwide
+      date: 2020-01-12
+      url: https://www.meetup.com/de-DE/Angular-Meetup-Leipzig/
+      talks:
+        -
+          title: "Low Maintenance Type Development"
 -
   year: 2020
   conferences:
