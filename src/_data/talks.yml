@@ -2,6 +2,15 @@
   year: 2021
   conferences:
     -
+      title: Laravel Worldwide
+      country: Online
+      city: Worldwide
+      date: 2020-02-23
+      url: https://meetup.laravel.com
+      talks:
+        -
+          title: "Dynamic Static Typing"
+    -
       title: "NDC London 2021"
       country: Online
       city: Worldwide
