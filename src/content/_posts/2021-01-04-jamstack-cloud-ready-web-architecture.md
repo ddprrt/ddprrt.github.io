@@ -49,7 +49,7 @@ Focussing on content management might seem reasonable. After all, this is what y
 
 There is a bigger group than your customers, though. Your customer's users. And they mostly care what ends up in their browser. With Jamstack, we put the front-end in focus.
 
-As a front-end developer, your main task is to produce semantic HTML browser's can consume. Even with React, what ends up is browser-ready DOM nodes that appear on a user's screen. 
+As a front-end developer, your main task is to produce semantic HTML browser's can consume. Even with React, what ends up are browser-ready DOM nodes that appear on a user's screen. 
 
 Each front-end project I worked on, no matter the technology or platform, had a certain templating phase. This was the moment where we were working on translating designs into code. During this process, we were aiming to **reuse as much as possible** so we had a set of snippets we could assemble in different ways. Nowadays, this is through React components, back in the day we used templating languages. 
 
@@ -81,9 +81,50 @@ So instead of rendering on demand, we render everything upfront. Through a build
 
 ## Effect on other layers
 
+Let's see how this new focus on the front-end, with a little help from static site generators and CI/CD pipelines influences all the other layers of a website.
 
-The process is straight forward: You take content from any source, combine them with reusable components, safe the result as a static HTML file and deploy it to ... well, anywhere.
+### Hosting
+
+The process is straight forward: You take content from any source, combine them with reusable components, safe the result as a static HTML file and deploy it to ... well, anywhere!
+
+As we pre-generate the HTML output, we gain the ability to host the results on any service or server that is capable of delivering static files. Which is every server. This can be the same machine that originally ran your Apache-PHP combo. Or a static file bucket in the cloud like AWS S3 or Azure Storage. Some folks even use their Dropbox account to serve static files.
+
+Add a CDN on top of it and you can deliver your content everywhere in the world fast. No load on the server. Globally distributed. And for the concerns of the hosting layer perfectly suited:
+
+1. Nothing is easier than serving static files. We can guarantee *availability* and *scalability* because it's super easy to distribute static HTML world-wide. One server goes down? It's easy to deploy to a new one. It's less headache to keep redudant copies and balance between them. And with CDNs, we can use globally available infrastructure to distribute your content world-wide. On the doorstep of your users.
+2. Regarding security, your static HTML is really hard to hack. The user's access to your content starts where your CI/CD ends. There is a clean cut between the process of generating said HTML which is occluded from public, and the actual access of the output. CI/CD output should also be **immutable**, meaning that you can only change content by creating a new version, making read-only disks a viable option. In short: Static sites are a fortress.
+
+Nothing but benefits for the hosting layer!
+
+### Application
+
+We also get more freedom for what we want to do with our application code. Instead of writing all the functionality of your application within the boundaries of your platform, you can pick any technology, on any host you see fit. The ones that work best for you. This can be a PHP app, a Java monolith running on Azure, or some third party application like *Auth0*.
+
+It's important to note that this is where the *JA* in *Jamstack* comes in.
+
+1. The *A* stands for APIs, this is the main communication method of your application layer. APIs that are consumed by your other server-side applications, or by your front-end app. Think of a site search you can send a search query, what you get in return are results in e.g. the JSON format.
+2. The *J* stands for *JavaScript*. The idea is that you enhance the static markup you deliver with dynamic functionality on the client-side.
+
+I'd argue that this approach is a little too restrictive for what's possible with this separation, and we come to that in later parts of this guide. For now it's important to know that you can create server-side processes with any technology you like. Freedom for the app developers to pick and choose based on their skillset.
+
+We also avoid technology lock-in. If your Java monolith becomes to big and unwieldy, you can create a Node.js server just on the side. Or you go with the preferred way of handling the application layer on the Jamstack: Serverless functions. Which is also what we ware going to use further on in this guide.
+### Content
+
+With a focus on front-end and statically generated sites, the content layer gets an entire new perspective. In a traditional CMS, content input was very strictly tied to content output. This lead to a lot techniques where the seperation between does two tasks was not always clear. Think WYSIWYG editors that transformed every content *management* system into a content *design* system -- go search for a "graphic design is my passion" meme, I'll wait! Or editors where you were able to edit on the live output, meaning you had user management and a direct connection to the database on every rendered page.
+
+Possible security holes aside, this strong connection meant that you never where entirely in control of the mark-up created. Users where able to influence in ways you couldn't think of, meaning you had to write a lot of defensive CSS and JavaScript to make sure your web page actually workds.
+
+Now that we generate the HTML output up-front, we can focus again on how to manage, organize, and structure content. We can consume content from any source available. You can mix CMS maintained content with Markdown files stored in a GtiHub repo, and a table full of API documentation that comes from the bespoke API itself!
+
+We again consume content via JSON APIs during the build process. No connection to our content systems after that (unless we want it).
 
 ## Routing is key
+
+<!-- ADD image -->
+
+## Downsides
+
+* **Fragmentation**
+* **Vendor lock-in**
 
 ## Upcoming
