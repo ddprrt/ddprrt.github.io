@@ -12,7 +12,7 @@ I want to recap this text piece and elaborate. And this series is called *Tidy T
 
 ## Generic programming
 
-TypeScript's generics are arguably one of the most powerful features of the language. They open a door to TypeScript's own meta-programming language, which allows for a very flexible and dynamic generation of types. It comes really close to being its own functional programming language, as Anders Hejslberg stated [in his 2020 TSConf keynote](https://www.youtube.com/watch?v=IGw2MRI0YV8).
+TypeScript's generics are arguably one of the most powerful features of the language. They open a door to TypeScript's own meta-programming language, which allows for a very flexible and dynamic generation of types. It comes really close to being its own functional programming language, as Anders Hejlsberg stated [in his 2020 TSConf keynote](https://www.youtube.com/watch?v=IGw2MRI0YV8).
 
 Especially with the arrival of *string literal types* and *recursive conditional types* in the most recent TypeScript versions, we can craft types that do astonishing things. This little type parses Express-style route information and retrieves an object with all its parameters:
 
