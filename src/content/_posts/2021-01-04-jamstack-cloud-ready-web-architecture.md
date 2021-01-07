@@ -15,7 +15,9 @@ This introductory article is a rewrite of a talk [I've given throughout 2019](ht
 
 Every website or web application has parts that can be assigned to a specific layer.
 
-<!-- TODO add image -->
+<figure class="img-holder wide" style="text-align:center">
+  <img src="/wp-content/uploads/2020/jamstack-intro-1.svg" class="no-frame" loading="lazy" alt="Four layers of every web application">
+</figure>
 
 * **Hosting**. First, there's hosting. Where does your website run, and what (software) do you need to run it? The hosting layer can take many forms, but primarily takes care about a web application's *availability*, *scalability*, and *security*.
 * **Content**. The content layer stores your web application's data and provides means to edit, maintain, and deliver. This is a traditional CMS job. *Data*, *data structures*, and *editing possibilities* are this layer's main concern.
@@ -65,7 +67,9 @@ Traditional web platforms like WordPress deliver HTML through a *pull* model:
 4. The content from the data storage gets rendered into HTML by the **renderer**
 5. The finished HTML from the renderer gets delivered to the user by the **routing layer**
 
-<!-- TODO ADD IMAGE -->
+<figure class="img-holder wide" style="text-align:center">
+  <img src="/wp-content/uploads/2020/jamstack-intro-2.svg" class="no-frame" loading="lazy" alt="The pull model visualized. See the description above" width="100%">
+</figure>
 
 Add a couple of caching layers on each step of the process, and you have every non-headless CMS out there. With Jamstack and static site generators, we go to a *push* model:
 
@@ -74,7 +78,10 @@ Add a couple of caching layers on each step of the process, and you have every n
 3. The renderer converts all available content into HTML. Cross-links, navigational structures, etc. are all known up-front.
 4. We store the available HTML somewhere, the routing layer can pick up everything pre-rendered as they need to.
 
-<!-- TODO ADD IMAGE -->
+
+<figure class="img-holder wide" style="text-align:center">
+  <img src="/wp-content/uploads/2020/jamstack-intro-3.svg" class="no-frame" loading="lazy" alt="The push model visualized. See the description above" width="100%">
+</figure>
 
 So instead of rendering on demand, we render everything upfront. Through a build proces. Preferably on some <abbr title="continuous integration">CI</abbr>/<abbr title="continuous delivery">CD</abbr> service.
 
