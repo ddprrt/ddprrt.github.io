@@ -97,6 +97,6 @@ It becomes a lot clearer what each type is meant to be. We also see that we need
 
 Arguably, a lot more readable than before!
 
-Counter arguments? Well, generic programming in TypeScript is close to functional programming. And you know that functional programming is where you name your functions *f*, your arguments *x*, and your patterns [https://wiki.haskell.org/Zygohistomorphic_prepromorphisms](*Zygohistomorphic prepromorphism*). 😜
+Counter arguments? Well, generic programming in TypeScript is close to functional programming. And you know that functional programming is where you name your functions *f*, your arguments *x*, and your patterns [Zygohistomorphic prepromorphism](https://wiki.haskell.org/Zygohistomorphic_prepromorphisms). 😜
 
 You can read a lot more on generics, how generics work in TypeScript and what they are capable of in my book [TypeScript in 50 lessons](https://typescript-book.com).
