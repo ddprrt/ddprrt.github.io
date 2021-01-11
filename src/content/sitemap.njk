@@ -8,9 +8,7 @@ eleventyExcludeFromCollections: true
   {% set mappedUrl %}{{ site.url}}{{ page.url | url }}{% endset %}
   <url>
     <loc>{{ mappedUrl }}</loc>
-    <lastmod>{{ page.date | toISO }}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
+    <lastmod>{% now %}</lastmod>
   </url>
 {%- endfor %}
 </urlset>
