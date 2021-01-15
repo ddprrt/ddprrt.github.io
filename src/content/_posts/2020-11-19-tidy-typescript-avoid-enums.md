@@ -163,6 +163,8 @@ Of course, you can learn and remember all the peculiarities of enums and know qu
 
 ## Further reading
 
+Note that as [Sergey and Romain](https://twitter.com/DeneauRomain/status/1348937601907097600) point out, refactoring might be more difficult with string unions than with enums.
+
 - [Rob Palmer from Bloomberg](https://www.techatbloomberg.com/blog/10-insights-adopting-typescript-at-scale/) wrote a great piece on how to adopt TypeScript at scale. The first point already nails it: TypeScript can be JavaScript plus types, so stay standards-compliant. Recommended read.
 - [I created a Symbol-based alternative to enums](https://fettblog.eu/symbols-in-javascript-and-typescript/). I still think for most use cases string union types are the way to go, but this is something worth exploring.
 - [The isolated module flag prohibits the use of const enums](https://www.typescriptlang.org/tsconfig#isolatedModules). This flag is on if you compile your stuff with Babel and use TypeScript just as a type checker. Important to know!
