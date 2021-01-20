@@ -6,18 +6,19 @@ categories:
   - Tidy Typescript
 ---
 
+
 This is the first article in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated, so don't be angry if I ditch a feature that you learned to like. It's not personal.
 
 Today we look at enums. Enums are a feature that I see used a lot by people who come from languages like Java or C# because they have been so prominent there. Enums are also a feature from "the old days" of TypeScript where the JavaScript landscape was a lot different than it is now. And you can see that, as enums work exceptionally different than any other type in TypeScript.
 
 ## Enums emit code
 
-My most prefered way of writing TypeScript is to 
+My most preferred way of writing TypeScript is to 
 
 - write regular, modern-day JavaScript.
 - add types wherever we can strengthen TypeScript's understanding of our code.
 
-This means after a compile step, you end up with the same code as before without the extra type defintions.
+This means after a compile step, you end up with the same code as before without the extra type definitions.
 
 Enums, like classes, create both a type and a value. Meaning that e.g. this declaration:
 
@@ -152,7 +153,7 @@ closeThread(10, Status.User); // enum style
 ```
 
 There are also no surprises.
-- You *know* what code you end up within the output.
+- You *know* what code you end up with within the output.
 - You don't end up with changed behavior because somebody decides to go from a string enum to a numeric enum.
 - You have type-safety where you need it. 
 - And you give your colleagues and users the same conveniences that you get with enums.
