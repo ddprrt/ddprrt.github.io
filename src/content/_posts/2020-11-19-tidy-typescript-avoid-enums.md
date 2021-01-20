@@ -6,7 +6,7 @@ categories:
   - Tidy Typescript
 ---
 
-This is the firstarticle in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated, so don't be angry if I ditch a feature that you learned to like. It's not personal.
+This is the first article in a [series of articles](/archive/tidy-typescript/) where I want to highlight ways on how to keep your TypeScript code neat and tidy. This series is heavily opinionated, so don't be angry if I ditch a feature that you learned to like. It's not personal.
 
 Today we look at enums. Enums are a feature that I see used a lot by people who come from languages like Java or C# because they have been so prominent there. Enums are also a feature from "the old days" of TypeScript where the JavaScript landscape was a lot different than it is now. And you can see that, as enums work exceptionally different than any other type in TypeScript.
 
