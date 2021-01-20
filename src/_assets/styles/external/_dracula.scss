@@ -351,11 +351,12 @@ pre[class*="language-"] {
   color: var(--foreground);
 }
 
+.language-diff .token.deleted > .token,
 .language-diff .token.deleted {
   color: var(--pink); 
 }
 
-
+.language-diff .token.inserted > .token,
 .language-diff .token.inserted {
   color: var(--green); 
 }
