@@ -86,6 +86,7 @@ But why? The information is already there! In `defaultOptions`, we tell TypeScri
 const defaultOptions = {
   from: "./src",
   to: "./dest",
+  overwrite: true,
 };
 
 function copy(options: Partial<typeof defaultOptions>) {
