@@ -104,6 +104,21 @@ There you go. Just annotation where we need to tell TypeScript what we're lookin
 
 And our code becomes a little bit terser. TypeScript becomes less intrusive and more aligned to how we write JavaScript.
 
+[David](https://twitter.com/dtanzer/status/1352169078681645056) pointed out another example that falls into this category. With the const context, `typeof` and index access operators, you are able to convert a tuple into a union:
+
+```typescript
+const categories = [
+  "beginner",
+  "intermediate",
+  "advanced",
+] as const;
+
+// "beginner" | "intermediate" | "advanced"
+type Category = (typeof categories)[number]
+```
+
+Again, we maintain just one piece, the actual data. We convert `categories` into a tuple type and index each element. Nice!
+
 ## Scenario 2: Connected Models
 
 I'm not against laying out your models, though. On the contrary, I think in most cases it makes sense to be explicit and intentional about your models and your data. Let's take a look at this toy shop:
@@ -224,7 +239,7 @@ The `Extract` type gives us a great utility to do exactly that.
 type GetKind<Group, Kind> = Extract<Group, { kind: Kind }>
 
 type DebugOne = GetKind<Toy, "doll"> // DebugOne = Doll
-type DebugTwo = GetKind<Toy, "puzzle"> // DebugOne = Puzzle
+type DebugTwo = GetKind<Toy, "puzzle"> // DebugTwo = Puzzle
 ```
 
 Let's apply that to `GroupedToys`:
