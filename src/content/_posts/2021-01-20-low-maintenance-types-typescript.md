@@ -225,7 +225,7 @@ We can use the newly created and self-maintaining `ToyKind` type to create a new
 
 ```typescript
 type GroupedToys = {
-  [K in ToyKind]: Toy[]
+  [Kind in ToyKind]: Toy[]
 }
 ```
 
@@ -247,7 +247,7 @@ Let's apply that to `GroupedToys`:
 
 ```typescript
 type GroupedToys = {
-  [K in ToyKind]: GetKind<Toy, K>[]
+  [Kind in ToyKind]: GetKind<Toy, Kind>[]
 };
 
 // this is equal to 
@@ -263,7 +263,7 @@ Great! Better, more correct types at no maintenance! But there's one thing that 
 
 ```typescript
 type GroupedToys = {
-  [K in ToyKind as `${K}s`]: GetKind<Toy, K>[]
+  [Kind in ToyKind as `${Kind}s`]: GetKind<Toy, Kind>[]
 };
 
 // this is equal to 
