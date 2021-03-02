@@ -59,7 +59,7 @@ try {
 }
 ```
 
-*Note*: The example above is also the only correct way to narrow down types for `catcH` clauses in TypeScript.
+*Note*: The example above is also the only correct way to narrow down types for `catch` clauses in TypeScript.
 
 And since all possible values can be thrown, and we only have one `catch` clause per `try` statement to handle them, the type range of `e` is exceptionally broad.
 
