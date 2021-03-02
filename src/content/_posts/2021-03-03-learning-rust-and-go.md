@@ -61,7 +61,8 @@ Thanks to the great Intellisense, I only needed a faint idea of which package fr
 There are some things I absolutely love:
 
 1. OO without BS. No weird inheritance patterns or reliance on abstractions where they aren't necessary. Structs and methods you call on structs. The methods look and work like regular functions if you want to. Just like I write my JavaScript.
-2. The standard library is huge and takes care of a ton of things that 
+2. The standard library is huge and takes care of a ton of things that you encouter in your everyday programming life.
+3. Heavily opinonated without losing expressiveness.
 
 ### Worries
 
@@ -69,12 +70,18 @@ With all the excitement, there are a couple of things that worry me:
 
 1. There are `nil` values and pointers. I know that they behave different and are a lot more safe than what I know from C, but it still feels like I can do something wrong where I shouldn't, giving that everything else is managed.
 2. Downloading packages from GitHub is something I have to get used to.
-3. 
+3. From time to time I miss some higher level abstractions like iterators or a more expressive type system, but hey. That's part of their philosophy!
 
 ### How to start learning
 
-Bryan Cantrill once said that JavaScript is "LISP in C's clothing".
+Bryan Cantrill once said that JavaScript is "LISP in C's clothing". There's much truth to it. The relation to Java is more accidental than intentional. There are a lot of LISP-isms in JS that are appraochable through the familiar syntax. In a way, this makes JavaScript a managed C sequel.
 
+If I look from this angle, Go falls into a similar category. A sequel to C, managed, cleaned, for modern applications.
 
+I think a good way to start if you want to get into some production-ready code would be to convert your Node applications to Go. Especially web servers and the like, things you usually need Express or Fastify for.
+
+Go has a tremendous HTTP package where you work with a similar API to create your servers. Try that out!
+
+If that's not your thing, I guess everything where you need to transform JSON, XML or any other file into someting is a good way to start to get your hands dirty with Go
 
 ## Rags to Rags, Rust to Rust
