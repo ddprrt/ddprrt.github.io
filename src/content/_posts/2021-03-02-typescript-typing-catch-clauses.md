@@ -67,7 +67,7 @@ And since all possible values can be thrown, and we only have one `catch` clause
 
 But hey, since you know about every error that can happen, wouldn't be a proper union type with all possible "throwables" work just as well? In theory, yes. In practice, there is no way to tell which types the exception will have. 
 
-Next to all your user-defined exceptions and errors, the system might throw errors when something is wrong with the memory when it encountered a type mismatch or one of your functions has been undefined.
+Next to all your user-defined exceptions and errors, the system might throw errors when something is wrong with the memory when it encountered a type mismatch or one of your functions has been undefined. A simple function call could exceed your call stack and cause the infamous *stack overflow*.
 
 The broad set of possible values, the single `catch` clause, and the uncertainty of errors that happen only allow two possible types for `e`: `any` and `unknown`.
 
