@@ -50,12 +50,16 @@ try {
     // you guessed it: EvalError
   } else if (typeof e === "string") {
     // The error is a string
+  } else if (axios.isAxiosError(e)) {
+    // axios does an error check for us!
   } else {
     // everything else  
     logMyErrors(e);
   }
 }
 ```
+
+*Note*: The example above is also the only correct way to narrow down types for `catcH` clauses in TypeScript.
 
 And since all possible values can be thrown, and we only have one `catch` clause per `try` statement to handle them, the type range of `e` is exceptionally broad.
 
