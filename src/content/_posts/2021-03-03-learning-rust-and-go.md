@@ -148,10 +148,11 @@ The same goes for the rich type system and their traits. You realize what makes 
 What do I like most about Rust?
 
 1. Traits and types. This gives a totally new spin on object orientation that I wouldn't even dare to call OO.
-2. Their package system (called *crates*) has some immensely useful utilities that I would've loved in any other language. Since iterators are so important for everything you do, `itertools` are something I wouldn't want to miss.
-3. Just like Go, Rust is very opinionated where it matters!
-4. Honestly? The community. I'm organizing [Rust Linz](https://rust-linz.at) with some folks, and I was baffled how welcoming and careful everybody is. The Rust folks take care of things!
-5. Rust gains importance in the industry. Thankfully it's not in the hand of a single corporation but has a foundation backing it.
+2. Expressions! Everything is an expression, even an *if* or a *for*. This makes room for so many nice patterns!
+3. Their package system (called *crates*) has some immensely useful utilities that I would've loved in any other language. Since iterators are so important for everything you do, `itertools` are something I wouldn't want to miss.
+4. Just like Go, Rust is very opinionated where it matters!
+5. Honestly? The community. I'm organizing [Rust Linz](https://rust-linz.at) with some folks, and I was baffled how welcoming and careful everybody is. The Rust folks take care of things!
+6. Rust gains importance in the industry. Thankfully it's not in the hand of a single corporation but has a foundation backing it.
 
 ### Worries
 
@@ -171,6 +172,8 @@ Other than that, I have no worries. It's a beautiful language and I enjoy writin
 I guess it won't be that easy to just port over some Node apps to Rust, even though there are crates that just work like Express. [Rocket for example](https://rocket.rs).
 
 I learned Rust by looking at [exercism.io](https://exercism.io) and making some programming 101 exercises, where I could focus on learning the language, its syntax, and its semantics without worrying too much about the problem at hand. It's nice for a change to generate Fibonacci numbers or find primes.
+
+Having this chance is important. Rust is by no means an easy language. And it takes time to get a hang of every concept that their is so are able to produce readable and purposeful code. 
 
 Half-way through the course, I knew that I needed some real project to chew on. I'm mostly working on distributing network requests to other services and orchestrating said services. It turns out that's a perfect use-case for Rust. But I guess so are other things. I really see no limit.
 
