@@ -36,15 +36,22 @@ And it's true! Even if you don't know how to write Go, if you have a little bit 
 The following snippet takes N random numbers out of a pot of M. I didn't need to understand most of the inner mechanics of Go to create something like this.
 
 ```go
-func takeNFromM(take int, from int) []int {
-	result := make([]int, take)
-	for i := 0; i < take; i++ {
-		source := rand.NewSource(time.Now().UnixNano())
-		rando := rand.New(source)
-		result[i] = rando.Intn(from) + 1
+func makeRange(min int, max int) []int {
+	numbers := make([]int, max-min)
+	for i := range numbers {
+		numbers[i] = min + i
 	}
-	sort.Ints(result)
-	return result
+	return numbers
+}
+
+func takeNFromM(take int, from int) []int {
+	source := rand.NewSource(time.Now().UnixNano())
+	rando := rand.New(source)
+	numbers := makeRange(0, from)
+	rando.Shuffle(len(numbers), func(i, j int) {
+		numbers[i], numbers[j] = numbers[j], numbers[i]
+	})
+	return numbers[0:take]
 }
 ```
 
