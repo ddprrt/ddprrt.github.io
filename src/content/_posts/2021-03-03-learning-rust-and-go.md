@@ -47,7 +47,7 @@ func makeRange(min int, max int) []int {
 func takeNFromM(take int, from int) []int {
 	source := rand.NewSource(time.Now().UnixNano())
 	rando := rand.New(source)
-	numbers := makeRange(0, from)
+	numbers := makeRange(1, from+1)
 	rando.Shuffle(len(numbers), func(i, j int) {
 		numbers[i], numbers[j] = numbers[j], numbers[i]
 	})
