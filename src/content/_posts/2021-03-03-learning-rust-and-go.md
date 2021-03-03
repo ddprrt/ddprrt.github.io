@@ -194,7 +194,7 @@ oh blow, heap overflow!<br>
 Soon may a SEGFAULT come,<br>
 When I debug, compile, and run.  <br>
 I ask myself what have I done.  <br>
-And rewrite in Rust or Go.*  <br>
+And rewrite in Rust or Go.  <br>
 </em>
 </p>
 
