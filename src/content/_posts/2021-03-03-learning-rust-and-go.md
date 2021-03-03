@@ -182,3 +182,20 @@ Half-way through the course, I knew that I needed some real project to chew on. 
 Rust and Go to me are a welcome distraction right now. It's good to do something entirely different from what I've done before, and both languages have their way of bringing me to my goals. Right now I couldn't say which one I would prefer for which task, as both are so appealing to me. Maybe this decision comes once I run into problems that I would be able to solve with ease in the opposite language.
 
 But hey, why choosing? Maybe I will continue to use both!
+
+<p>
+<em>
+🎶🎵<br>
+I once wrote a program in ANSI-C<br>
+transmitting data over TCP<br>
+A million mallocs, not a single free,<br>
+oh blow, heap overflow!<br>
+<br>
+Soon may a SEGFAULT come,<br>
+When I debug, compile, and run.  <br>
+I ask myself what have I done.  <br>
+And rewrite in Rust or Go.*  <br>
+</em>
+</p>
+
+That's right. That was a C-shanty!
