@@ -2,6 +2,15 @@
   year: 2021
   conferences:
     -
+      title: Global Azure
+      country: Online
+      city: Worldwide
+      date: 2020-04-16
+      url: https://globalazure.com
+      talks:
+        -
+          title: "Serverless Rendering"
+    -
       title: Laravel Worldwide
       country: Online
       city: Worldwide
