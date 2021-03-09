@@ -78,7 +78,7 @@ The same is true if you reject a Promise. The only thing TypeScript allows you t
 ```typescript
 const somePromise = () => new Promise((fulfil, reject) => {
   if (someConditionIsValid()) {
-    resolve(42);
+    fulfil(42);
   } else {
     reject("Oh no!");
   }
