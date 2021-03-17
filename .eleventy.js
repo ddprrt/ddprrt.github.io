@@ -34,7 +34,7 @@ module.exports = function (config) {
   });
 
   config.addFilter("keys", function (input) {
-    return JSON.stringify(Object.keys(input));
+    return Object.keys(input);
   });
 
   config.addFilter("getGuide", function (tags) {

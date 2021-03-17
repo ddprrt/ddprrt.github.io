@@ -9,11 +9,22 @@ breadrcrumbs:
   title: Home
 ---
 
-{% set years = [] %}
-{% set firstTime = true %}
-{%- for post in collections.posts | reverse -%}
-{% if not post.data.hideFromList %}
-{% include "navigation/post-list.njk" %}
-{% endif %}
-{% endfor %}
+{%- for key in collections.years | keys | reverse -%}
+
+<h2 class="list-year">{{key}}<span hidden> ({{collections.years[key] | length }} articles)</span></h2>
+
+<ul class="article-list">
+  {%- for post in collections.years[key] -%}
+  <li class="article-list-item">
+    <span class="meta-highlight">{{ post.date | prettyDate }} | 
+    {% if post.data.categories %}
+      {% for category in post.data.categories %}
+        <a class="article-list-category-link" href="/archive/{{ category | slug }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+    {% endif %}
+    </span>
+    <a class="article-list-link" href="{{post.url}}">{{ post.data.title }}</a>
+  </li>
+  {% endfor %}
 </ul>
+{% endfor %}
