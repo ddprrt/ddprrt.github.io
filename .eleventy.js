@@ -117,6 +117,33 @@ module.exports = function (config) {
     return permalink || "";
   });
 
+  config.addCollection("years", function (collection) {
+    const years = new Set(
+      collection.items
+        .filter(Boolean)
+        .reverse()
+        .map((el) => new Date(el.date).getFullYear())
+    );
+
+    let yrs = {};
+
+    years.forEach((el) => {
+      yrs[el] = Array.from(collection.items)
+        .filter((item) => !item.data.hideFromList)
+        .filter((item) => new Date(item.date).getFullYear() === el)
+        .filter((item) => item.data.page.inputPath.indexOf("/_posts/") > 0)
+        .sort((a, b) => {
+          return a.date - b.date;
+        });
+    });
+
+    Object.keys(yrs).map((el) => {
+      console.log(el, yrs[el].length);
+    });
+
+    return yrs;
+  });
+
   config.addCollection("categories", function (collection) {
     const categories = collection.items
       .filter(Boolean)
