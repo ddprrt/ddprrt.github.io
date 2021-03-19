@@ -1,0 +1,22 @@
+---
+layout: list
+title: Newsletter Archive
+permalink: /newsletter/archive/
+breadcrumbs:
+-
+  path: /
+  title: Home
+-
+  path: /newsletter/
+  title: Newsletter
+---
+
+
+<ul class="article-list">
+{%- for post in collections["newsletter-archive"] | reverse -%}
+<li class="article-list-item">
+  <span class="meta-highlight">{{ post.date | prettyDate }} </span>
+  <a class="article-list-link" href="{{post.url}}">{{ post.data.title }}</a>
+</li>
+{% endfor %}
+</ul>
