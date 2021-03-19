@@ -14,7 +14,7 @@ breadrcrumbs:
 <h2 class="list-year">{{key}}<span hidden> ({{collections.years[key] | length }} articles)</span></h2>
 
 <ul class="article-list">
-  {%- for post in collections.years[key] -%}
+  {%- for post in collections.years[key] | reverse -%}
   <li class="article-list-item">
     <span class="meta-highlight">{{ post.date | prettyDate }} | 
     {% if post.data.categories %}
