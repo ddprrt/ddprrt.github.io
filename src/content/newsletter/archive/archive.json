@@ -1,0 +1,22 @@
+{
+  "tags": [
+    "newsletter-archive"
+  ],
+  "breadcrumbs": [
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+      "title": "Newsletter",
+      "path": "/newsletter/"
+    },
+    {
+      "title": "Archive",
+      "path": "/newsletter/archive/"
+    }
+  ],
+  "permalink": "/newsletter/archive/{{page.fileSlug}}/",
+  "hideFromList": true,
+  "layout": "post"
+}
