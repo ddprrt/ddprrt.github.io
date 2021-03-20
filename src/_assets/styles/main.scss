@@ -5,7 +5,14 @@ $color-four: #8338ec;
 $color-five: #3a86ff;
 
 :root {
-  --gradient: linear-gradient(90deg, #ffbe0b, #fb5607, #ff006e, #8338ec, #3a86ff);
+  --gradient: linear-gradient(
+    90deg,
+    #ffbe0b,
+    #fb5607,
+    #ff006e,
+    #8338ec,
+    #3a86ff
+  );
   --color-one: #ffbe0b;
   --color-two: #fb5607;
   --color-three: #ff006e;
@@ -15,8 +22,20 @@ $color-five: #3a86ff;
   font-size: 14px;
 }
 
-@media(min-width: 500px) {
+.mono {
+  -gradient: linear-gradient(90deg, #ccc, #333);
+  --color-one: #111;
+  --color-two: #131313;
+  --color-three: #222;
+  --color-four: #252525;
+  --color-five: #333;
+}
 
+.mono.mono.mono a {
+  border-bottom: 1px dashed currentColor;
+}
+
+@media (min-width: 500px) {
   :root {
     font-size: 16px;
   }
@@ -26,9 +45,8 @@ $color-five: #3a86ff;
   box-sizing: border-box;
 }
 
-
 body {
-  font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin: 0;
   background-color: #fff;
@@ -39,11 +57,16 @@ img {
   max-width: 100%;
 }
 
-
-h1, .h1 {
+h1,
+.h1 {
   font-size: 1.5rem;
   position: relative;
-  background-image: linear-gradient(90deg, var(--color-three), var(--color-four), var(--color-five));
+  background-image: linear-gradient(
+    90deg,
+    var(--color-three),
+    var(--color-four),
+    var(--color-five)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: all 0.3s ease;
@@ -52,13 +75,15 @@ h1, .h1 {
   line-height: 1.5;
 }
 
-h2, h3 {
-  font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+h2,
+h3 {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   margin-top: 3em;
   position: relative;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.2rem;
 }
 
@@ -66,13 +91,14 @@ h3 {
   font-size: 1.05rem;
 }
 
-@media(min-width: 700px) {
-
-  h1, .h1 {
+@media (min-width: 700px) {
+  h1,
+  .h1 {
     font-size: 2.5rem;
   }
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 1.5rem;
   }
 
@@ -81,17 +107,15 @@ h3 {
   }
 }
 
-
 a {
   color: var(--color-five);
   transition: all 0.3s ease;
 }
 
-a:focus, 
+a:focus,
 a:hover {
   color: var(--color-three);
 }
-
 
 @import "components/aspect";
 @import "components/boxes";
@@ -121,11 +145,13 @@ a:hover {
 
 @import "utility/screenreader";
 
-@import 'external/dracula';
+@import "external/dracula";
 @import "external/carbon";
 
-.confetti .confetti-canvas  {
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎉</text></svg>") 16 0,auto; /*!emojicursor.app*/
+.confetti .confetti-canvas {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎉</text></svg>")
+      16 0,
+    auto; /*!emojicursor.app*/
 }
 
 .confetti-canvas {

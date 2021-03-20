@@ -13,6 +13,21 @@
   --yellow: #f1fa8c;
 }
 
+.mono {
+  --background: #282a36;
+  --comment: #ddd; // #6272a4;
+  --foreground: #f8f8f2;
+  --selection: #44475a;
+
+  --cyan: #e3e3e3;
+  --green: #e3e3e3;
+  --orange: #e3e3e3;
+  --pink: #e3e3e3;
+  --purple: #e3e3e3;
+  --red: #e3e3e3;
+  --yellow: #e3e3e3;
+}
+
 pre::-webkit-scrollbar {
   width: 14px;
 }
@@ -159,10 +174,9 @@ div.code-toolbar > .toolbar span:focus {
 }
 
 code {
-  font-family: 'Source Code Pro';
+  font-family: "Source Code Pro";
   font-size: 1.1rem;
 }
-
 
 pre[class*="language-"] {
   text-shadow: none;
@@ -192,7 +206,6 @@ code[class*="language-"] {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: var(--foreground);
   background: var(--background);
-  
 }
 
 :not(pre) > code[class*="language-"],
@@ -353,10 +366,10 @@ pre[class*="language-"] {
 
 .language-diff .token.deleted > .token,
 .language-diff .token.deleted {
-  color: var(--pink); 
+  color: var(--pink);
 }
 
 .language-diff .token.inserted > .token,
 .language-diff .token.inserted {
-  color: var(--green); 
+  color: var(--green);
 }
