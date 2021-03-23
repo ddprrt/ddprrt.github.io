@@ -48,7 +48,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
         {% if article.data.linkTo %}
         <a class="read-more" data-emoji="🔗" href="{{article.data.linkTo}}">Follow link</a>
         {% else %}
-        <a class="read-more" href="{{article.url}}">Read more</a>
+        <a class="read-more" href="{{article.url}}">Read more<span class="sr-only"> on {{article.data.title}}</span></a>
         {% endif %}
       </div>
     </div>
@@ -84,7 +84,7 @@ title: fettblog.eu | TypeScript, JavaScript, Web Dev Articles
       {% if article.data.linkTo %}
       <a class="read-more" data-emoji="🔗" href="{{article.data.linkTo}}">Follow link</a>
       {% else %}
-      <a class="read-more" href="{{article.url}}">Read more</a>
+      <a class="read-more" href="{{article.url}}">Read more<span class="sr-only"> on {{article.data.title}}</span></a>
       {% endif %}
     </div>
   </article>
