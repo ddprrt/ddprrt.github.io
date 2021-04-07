@@ -10,7 +10,7 @@
     <h2>{{movie.speaker}}: {{ movie.title }}</h2>
   </div>
   <div class="action-bar">
-    <a href="/cinema/{{movie.title | slug }}" class="read-more custom-emoji">
+    <a href="/cinema/{{movie.title | replace("'", "") | slug }}" class="read-more custom-emoji">
       <span aria-hidden="true">🍿</span>
       Open in Cinema
     </a>
