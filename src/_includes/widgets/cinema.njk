@@ -1,6 +1,6 @@
 {% set movie = cinema | first %}
 <div class="element-cover element-middle">
-  <a href="/cinema/{{movie.title | slug }}"  class="element-cover-link">
+  <a href="/cinema/{{movie.title | replace("'", "") | slug }}"  class="element-cover-link">
     <img src="https://i3.ytimg.com/vi/{{movie.youtubeId}}/mqdefault.jpg" loading="lazy" alt="Talk by {{movie.speaker}}" class="element-cover-image">
   </a>
 </div>
