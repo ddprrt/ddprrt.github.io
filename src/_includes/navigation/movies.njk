@@ -1,7 +1,7 @@
 <ul class="movie-list">
 {% for movie in cinema %}
   <li class="movie-entry">
-    {% set movieSlug = movie.title | slug %}
+    {% set movieSlug = movie.title | replace("'", "") | slug %}
     <a class="movie-link{% if page.url.includes(movieSlug) %} active{% endif %}" href="/cinema/{{ movie.title | replace("'", "") | slug}}">
     <span class="meta-highlight">{{ movie.date | prettyDate }}</span>
     <span class="movie-info">
