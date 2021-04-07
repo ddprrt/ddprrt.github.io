@@ -4,7 +4,7 @@ pagination:
   data: cinema
   size: 1
   alias: movie
-permalink: /cinema/{{ movie.title | slug }}/
+permalink: /cinema/{{ movie.title | replace("'", "") | slug }}/
 menuActive: cinema
 eleventyComputed:
   title: Watching {{ movie.title }}
