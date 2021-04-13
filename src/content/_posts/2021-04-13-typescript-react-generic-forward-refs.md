@@ -75,18 +75,111 @@ const items = [1, 2, 3, 4];
   } } />
 ```
 
-You want the extra type-safety so you can work with a type-safe `item` in your `onSelect` callback. Say you want to create a `ref` to the inner `ul` element, how do you proceed? The answer is tricky... you have a couple of options.
+You want the extra type-safety so you can work with a type-safe `item` in your `onSelect` callback. Say you want to create a `ref` to the inner `ul` element, how do you proceed? Let's change the `ClickableList` component to an inner function component that takes a `ForwardRef`, and use it as an argument in the `React.forwardRef` function.
 
-## Option 1: Do a type assertion
+```tsx
+// The original component extended with a `ref`
+function ClickableListInner<T>(
+  props: ClickableListProps<T>,
+  ref: React.ForwardedRef<HTMLUListElement>
+) {
+  return (
+    <ul ref={ref}>
+      {props.items.map((item, i) => (
+        <li key={i}>
+          <button onClick={(el) => props.onSelect(item)}>Select</button>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// As an argument in `React.forwardRef`
+const ClickableList = React.forwardRef(ClickableListInner)
+```
+
+This compiles, but has one downside: We can't assign a generic type variable for `ClickableListProps`. It becomes `unknown` by default. Which is good compared to `any`, but also slightly annoying. When we use `ClickableList`, we know which items to pass along! We want to have them typed accordingly! So how can we achieve this? The answer is tricky... and you have a couple of options.
+
+## Option 1: Type assertion
+
+One option would be to do a type assertion that restores the original function signature. 
+
+```tsx
+const ClickableList = React.forwardRef(ClickableListInner) as <T>(
+  props: ClickableListProps<T> & { ref?: React.ForwardedRef<HTMLUListElement> }
+) => ReturnType<typeof ClickableListInner>;
+```
+
+Type assertions are a little bit frowned upon as they look similar like type casts in other programming languages. They are a little bit different, and [Dan](https://effectivetypescript.com/2021/02/03/pet-peeves/) masterfully explains why. Type assertions have their place in TypeScript. Usually, my approach is to let TypeScript figure out everything from my JavaScript code that it can figure out on its own. Where it doesn't, I use type annotations to help a little bit. And where I know definitely more than TypeScript, I do a type assertion. 
+
+This is one of the cases, here I know that my original component accepts generic props! 
+
+Pro: It's easy. Contra: It's extra maintenance.
+
+## Option 2: Create a custom ref
+
+```tsx
+type ClickableListProps<T> = {
+  items: T[];
+  onSelect: (item: T) => void;
+  mRef?: React.Ref<HTMLUListElement> | null;
+};
+
+export function ClickableList<T>(
+  props: ClickableListProps<T>
+) {
+  return (
+    <ul ref={props.mRef}>
+      {props.items.map((item, i) => (
+        <li key={i}>
+          <button onClick={(el) => props.onSelect(item)}>Select</button>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
 
 
-## Option 2: Do a wrapper component
+## Option 3: The Wrapper Component
 
+```tsx
+function ClickableListInner<T>(
+  props: ClickableListProps<T>,
+  ref: React.ForwardedRef<HTMLUListElement>
+) {
+  return (
+    <ul ref={ref}>
+      {props.items.map((item, i) => (
+        <li key={i}>
+          <button onClick={(el) => props.onSelect(item)}>Select</button>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
-## Option 3: Create a custom ref
+const ClickableListWithRef = forwardRef(ClickableListInner);
+
+type ClickableListWithRefProps<T> = ClickableListProps<T> & {
+  mRef?: React.Ref<HTMLUListElement>;
+};
+
+export function ClickableList<T>({
+  mRef,
+  ...props
+}: ClickableListWithRefProps<T>) {
+  return <ClickableListWithRef ref={mRef} {...props} />;
+}
+```
 
 
 ## Option 4: Augment forwardRef
 
 
+
 ## Credits
+
