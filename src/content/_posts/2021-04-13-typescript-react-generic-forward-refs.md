@@ -5,7 +5,7 @@ category:
 - React
 ---
 
-If you are creating component libraries and design systems in React, you might already have fowarded Refs to the DOM elments inside your components.
+If you are creating component libraries and design systems in React, you might already have fowarded Refs to the DOM elements inside your components.
 
 This is especially useful if you wrap basic components or *leafs* in [proxy components](https://fettblog.eu/typescript-react-component-patterns/#preset-attributes), but want to use the `ref` property just like you're used to:
 
@@ -113,11 +113,11 @@ const ClickableList = React.forwardRef(ClickableListInner) as <T>(
 
 Type assertions are a little bit frowned upon as they look similar like type casts in other programming languages. They are a little bit different, and [Dan](https://effectivetypescript.com/2021/02/03/pet-peeves/) masterfully explains why. Type assertions have their place in TypeScript. Usually, my approach is to let TypeScript figure out everything from my JavaScript code that it can figure out on its own. Where it doesn't, I use type annotations to help a little bit. And where I know definitely more than TypeScript, I do a type assertion. 
 
-This is one of the cases, here I know that my original component accepts generic props! 
+This is one of these cases, here I know that my original component accepts generic props! 
 
-Pro: It's easy. Contra: It's extra maintenance.
+## Option 2: Create a custom ref / The Wrapper Component
 
-## Option 2: Create a custom ref
+While `ref` is a reserved word for React components, you can use your own, custom props to mimic a similar behavior. This works just as well.
 
 ```tsx
 type ClickableListProps<T> = {
@@ -142,8 +142,8 @@ export function ClickableList<T>(
 }
 ```
 
+You introduce a new API, though. For the record, there is also the possibility of using a wrapper component, that allows you to use `forwardRef`s inside in an *inner* component and expose a custom ref property to the outside. This circulates around the web, I just see no significant benefit compared to the previous solution -- [enlighten me if you know one!](https://twitter.com/ddprrt).
 
-## Option 3: The Wrapper Component
 
 ```tsx
 function ClickableListInner<T>(
@@ -176,10 +176,60 @@ export function ClickableList<T>({
 }
 ```
 
+Both are valid solutions if the only thing you want to achieve is passing that ref. If you want to have a consistent API, you might look for something else.
 
-## Option 4: Augment forwardRef
+
+## Option 3: Augment forwardRef
 
 
+This is actually my most favourite solution. 
+
+TypeScript has a feature called [*higher-order function type inference*](https://github.com/microsoft/TypeScript/pull/30215), that allows propagating free type parameters on to the outer function. 
+
+This sounds a lot like what we want to have with `forwardRef` to begin with, but for some reason it doesn't work with our current typings. The reason is that *higher-order function type inference* only works on plain function types. the function declarations inside `forwardRef` also add properties for `defaultProps`, etc. Relics from the class component days. Things you might not want to use anyway.
+
+So without the additional properties, it should be possible to use *higher-order function type inference*!
+
+And hey! We are using TypeScript, we have the possibility to redeclare and redefine global *module*, *namespace* and *interface* declarations on our own. Declaration merging is a powerful tool, and we're going to make use of it.
+
+```tsx
+// Redecalare forwardRef
+declare module "react" {
+  function forwardRef<T, P = {}>(
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+
+// Just write your components like you're used to!
+
+type ClickableListProps<T> = {
+  items: T[];
+  onSelect: (item: T) => void;
+};
+function ClickableListInner<T>(
+  props: ClickableListProps<T>,
+  ref: React.ForwardedRef<HTMLUListElement>
+) {
+  return (
+    <ul ref={ref}>
+      {props.items.map((item, i) => (
+        <li key={i}>
+          <button onClick={(el) => props.onSelect(item)}>Select</button>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export const ClickableList = React.forwardRef(ClickableListInner);
+```
+
+The nice thing about this solution is that you write regular JavaScript again, and work exclusively on a type level. Also, redeclarations are module-scoped. No interference with any `forwardRef` calls from other modules!
 
 ## Credits
 
+This article comes from a discussion with [Tom Heller](https://twitter.com/Haroldchen) as we had a case like this in our component library. While we came up with option 1, the assertion on our own, we did some digging to see if there are more options. [This StackOverflow discussion](https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref/58473012) -- especially the feedback from User [ford04](https://stackoverflow.com/users/5669456/ford04) brought up new perspectives. Big shout-out to them!
+
+I also put up a [Codesandbox](https://codesandbox.io/s/busy-carson-iuj3l?file=/src/App.tsx) where you can try out all the solutions on your own.
