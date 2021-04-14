@@ -40,9 +40,26 @@ function returnFromCache(request) {
 function fetchEventHandler(event) {
   event.respondWith(
     returnFromCache(event.request).catch(function () {
-      return fetch(event.request);
+      return checkResponse(event.request);
     })
   );
+}
+
+/**
+ *
+ * @param {Request} request
+ * @returns
+ */
+function checkResponse(request) {
+  return new Promise(function (fulfill, reject) {
+    fetch(request).then(function (response) {
+      if (response.status !== 404) {
+        fulfill(response);
+      } else {
+        reject();
+      }
+    }, reject);
+  });
 }
 
 self.addEventListener("fetch", fetchEventHandler);
