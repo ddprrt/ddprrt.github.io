@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 
-const version = "6";
+const version = "7";
 
 var offlineFundamentals = [
   `/assets/styles/main.css?v=${version}`,
