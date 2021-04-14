@@ -1,6 +1,6 @@
 ---
 title: "TypeScript + React: Typing Generic forwardRefs"
-category:
+categories:
 - TypeScript
 - React
 ---
