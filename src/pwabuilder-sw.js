@@ -3,7 +3,6 @@
 const version = "6";
 
 var offlineFundamentals = [
-  "",
   `/assets/styles/main.css?v=${version}`,
   `/assets/scripts/main.js?v=${version}`,
 ];
