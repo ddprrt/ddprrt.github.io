@@ -14,7 +14,7 @@ var preLoad = function () {
 };
 
 self.addEventListener("fetch", function (event) {
-  console.log("The service worker is serving the asset.", event.request.url);
+  console.log("The service worker is serving the asset. ", event.request.url);
   event.respondWith(
     checkResponse(event.request).catch(function () {
       return returnFromCache(event.request);
