@@ -181,7 +181,9 @@ function execute(action: string) {
 }
 ```
 
-Great!
+Great! 
+
+On a side note, the same solutions also work if you run into similar troubles with `Array.prototype.indexOf`!
 
 ## Bottom line
 
