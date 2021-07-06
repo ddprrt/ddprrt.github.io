@@ -22,7 +22,7 @@ While each article stands on its own I can recommend reading it like a book, as 
 
 Ready? let's go!
 
-**Last update**: August 19, 2020 at 17.000 words!
+**Last update**: July 6, 2021 at 19.000 words!
 
 ## Table of contents
 
@@ -131,6 +131,15 @@ You learn:
 - The `keyof` operator
 - The `ObjectConstructor` interface
 - Interface declaration merging
+
+### [Array.prototype.includes on narrow types](/typescript-array-includes/)
+
+Similar to the two above, you are going to check if you can modify `Array.prototype.includes` to work in situations where your array is alrady very narrow!
+
+You learn
+- Interface declaration merging
+- Type predicates
+- Type assertions
 
 ### [Ambient file modules](/typescript-modules-for-webpack/)
 
