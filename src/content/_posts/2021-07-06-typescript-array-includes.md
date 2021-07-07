@@ -190,3 +190,5 @@ On a side note, the same solutions also work if you run into similar troubles wi
 TypeScript aims to get all standard JavaScript functionality correct and right, but sometimes you have to make trade-offs. This case brings calls for trade-offs: Do you allow for an argument list that's looser than you would expect, or do you throw errors for types where you already should know more?
 
 Type assertions, declaration merging, and other tools help us to get around that in situations where the type system can't help us. Not until it becomes better than before, by allowing us to move even further in the type space!
+
+And, as always, here's a [playground](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAhsKBLcEYF4YG0BEBhAJQFEBBAFSJwBoYdiSARa2gVQAUHzKacGiAZIhRwBdeGlCQoAbgCwAKAUB6AFRIwUAKYAnAGYJNMAprgATcABsAniW3a4VgDxkAfDADeCmDHXALAV1NNCAAKCBNtYAALIgtNAFtNDQAueDArGl1tEHiASTAggA8AflSwf3iAIx0ASlTwuEiYuMSNHzQyOXkAXxUlBQVdfzBEFDAYTULNYH8tEIRkcDKK6u0ajy8fXRDfAKDQhbGIGkPwGvXPeW9vJSUYBhAYAGUczSgo9QBzTe6FX8V5EMRotxrtAsFnBNCloCmgWDQWC4QqALBZUsYzJYbHYHM4XDRNGiYCw6hMLO0YGQNlcYNo3v5tOMURYAHRg-YhQniSk1Lr-BRAA) for you to fiddle around!
