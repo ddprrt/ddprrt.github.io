@@ -44,7 +44,7 @@ Step 3. Check again!
 $ yarn audit
 ```
 
-Maybe that's all you needed. Just a fresh install of your existing dependencies, where all the peer dependencies got an update to the most recent versions. If that's not good enough, go the long way down.
+Maybe that's all you needed. Just a fresh install of your existing dependencies, where all the transient dependencies got an update to the most recent versions. If that's not good enough, go the long way down.
 
 
 ## The long way down
